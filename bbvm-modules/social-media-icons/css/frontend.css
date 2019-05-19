@@ -1,0 +1,112 @@
+.smi-screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+  }
+
+  /* Social Media Colors */
+  .bbvm-module-social.brand .icon-twitter {
+	fill: #00aced;
+  }
+  .bbvm-module-social.brand .icon-amazon {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-behance {
+	fill: #0692e9;
+  }
+  .bbvm-module-social.brand .icon-blogger {
+	fill: #fb8f3d;
+  }
+  .bbvm-module-social.brand .icon-codepen {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-dribble {
+	fill: #F46899;
+  }
+  .bbvm-module-social.brand .icon-dropbox {
+	fill: #018BD3;
+  }
+  .bbvm-module-social.brand .icon-eventbrite {
+	fill: #f6682F;
+  }
+  .bbvm-module-social.brand .icon-facebook {
+	fill: #3b5998;
+  }
+  .bbvm-module-social.brand .icon-flickr {
+	fill: #ff0084;
+  }
+  .bbvm-module-social.brand .icon-foursquare {
+	fill: #0072b1;
+  }
+  .bbvm-module-social.brand .icon-ghost {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-github {
+	fill: #070709;
+  }
+  .bbvm-module-social.brand .icon-google-plus {
+	fill: #CF3D2E;
+  }
+  .bbvm-module-social.brand .icon-instagram {
+	fill: #A1755C;
+  }
+  .bbvm-module-social.brand .icon-linkedin {
+	fill: #0085AE;
+  }
+  .bbvm-module-social.brand .icon-feed {
+	fill: #f26522;
+  }
+  .bbvm-module-social.brand .icon-medium {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-path {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-pinterest-alt {
+	fill: #CC2127;
+  }
+  .bbvm-module-social.brand .icon-pocket {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-polldaddy {
+	fill: #bc0b0b;
+  }
+  .bbvm-module-social.brand .icon-reddit {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-skype {
+	fill: #01AEF2;
+  }
+  .bbvm-module-social.brand .icon-spotify {
+	fill: #1ed760;
+  }
+  .bbvm-module-social.brand .icon-squarespace {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-stumbleupon {
+	fill: #EB4823;
+  }
+  .bbvm-module-social.brand .icon-telegram {
+	fill: #000000;
+  }
+  .bbvm-module-social.brand .icon-tumblr-alt {
+	fill: #314E6C;
+  }
+  .bbvm-module-social.brand .icon-twitch {
+	fill: #4b367c;
+  }
+  .bbvm-module-social.brand .icon-twitter-alt {
+	fill: #00aced;
+  }
+  .bbvm-module-social.brand .icon-vimeo {
+	fill: #1ab7ea;
+  }
+  .bbvm-module-social.brand .icon-wordpress {
+	fill: #21759b;
+  }
+  .bbvm-module-social.brand .icon-youtube {
+	fill: #bb0000;
+  }
