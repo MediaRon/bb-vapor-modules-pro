@@ -17,8 +17,8 @@ class BBVapor_Before_After_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if( $this->settings && ( 'separator_horizontal' === $this->settings->style || 'separator_vertical' === $this->settings->style ) ) {
-			$this->add_js('jquery-movemove', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/jquery-mousemove.js', array( 'jquery' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
-			$this->add_js('mediaron-move-horizontal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/move-horizontal.js', array( 'jquery-movemove' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('jquery-movemove', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/jquery-mousemove.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('mediaron-move-horizontal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/move-horizontal.js', array( 'jquery-movemove' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 		}
 	}
 }

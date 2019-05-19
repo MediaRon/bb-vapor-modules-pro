@@ -18,7 +18,7 @@ class BBVapor_Restaurant_Menu_Item_Add_Module extends FLBuilderModule {
 	public function enqueue_scripts() {
 		if( $this->settings && ! empty( $this->settings->restaurant_menu_item_title ) ) {
 			$this->add_css( 'jquery-magnificpopup' );
-			$this->add_js('mediaron-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-item/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), MEDIARON_BEAVER_BUILDER_VERSION  );
+			$this->add_js('mediaron-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-item/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION  );
 		}
 	}
 }

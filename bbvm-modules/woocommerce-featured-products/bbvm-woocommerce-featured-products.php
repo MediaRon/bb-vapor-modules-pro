@@ -17,7 +17,7 @@ class BBVapor_WooCommerce_Featured_Products_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if ( $this->settings && 'lightbox' === $this->settings->show_details_behavior ) {
-			$this->add_js('swal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/woocommerce-featured-products/js/sweetalert.min.js', array( 'jquery' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('swal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/woocommerce-featured-products/js/sweetalert.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 		}
 	}
 }

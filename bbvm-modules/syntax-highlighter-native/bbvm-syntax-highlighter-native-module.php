@@ -17,9 +17,9 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if ( $this->settings && 'none' !== $this->settings->code ) {
-			$this->add_js('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/highlight.pack.js', array('jquery'), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/highlight.pack.js', array('jquery'), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 			$theme = $this->settings->theme;
-			$this->add_css('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/styles/' . $theme . '.css', array(), MEDIARON_BEAVER_BUILDER_VERSION, 'all' );
+			$this->add_css('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/styles/' . $theme . '.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		}
 	}
 }
