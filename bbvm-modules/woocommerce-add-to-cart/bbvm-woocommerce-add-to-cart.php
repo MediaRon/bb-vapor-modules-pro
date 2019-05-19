@@ -1,14 +1,14 @@
 <?php
-class MediaRon_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
+class BBVapor_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Add Cart', 'mediaron-bb-modules' ),
 			'description'     => __( 'Add Cart', 'mediaron-bb-modules' ),
 			'category'        => __( 'WooCommerce', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/woocommerce-add-to-cart/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/woocommerce-add-to-cart/',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/woocommerce-add-to-cart/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/woocommerce-add-to-cart/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -18,7 +18,7 @@ class MediaRon_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('MediaRon_WooCommerce_Add_To_Cart_Module', array(
+FLBuilder::register_module('BBVapor_WooCommerce_Add_To_Cart_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

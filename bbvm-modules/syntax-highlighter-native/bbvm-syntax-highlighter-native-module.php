@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Syntax_Highlighter_Native_Module extends FLBuilderModule {
+class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Syntax Highlighter', 'mediaron-bb-modules' ),
 			'description'     => __( 'Syntax Highlighter for Beaver Builder', 'mediaron-bb-modules' ),
 			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/syntax-highlighter-native/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/syntax-highlighter-native/',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/syntax-highlighter-native/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -17,16 +17,16 @@ class MediaRon_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if ( $this->settings && 'none' !== $this->settings->code ) {
-			$this->add_js('syntax-highlighter', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/syntax-highlighter-native/js/highlight.pack.js', array('jquery'), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/highlight.pack.js', array('jquery'), MEDIARON_BEAVER_BUILDER_VERSION, true );
 			$theme = $this->settings->theme;
-			$this->add_css('syntax-highlighter', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/syntax-highlighter-native/js/styles/' . $theme . '.css', array(), MEDIARON_BEAVER_BUILDER_VERSION, 'all' );
+			$this->add_css('syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/styles/' . $theme . '.css', array(), MEDIARON_BEAVER_BUILDER_VERSION, 'all' );
 		}
 	}
 }
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('MediaRon_Syntax_Highlighter_Native_Module', array(
+FLBuilder::register_module('BBVapor_Syntax_Highlighter_Native_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

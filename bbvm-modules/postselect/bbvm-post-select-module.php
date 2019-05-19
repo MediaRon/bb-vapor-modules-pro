@@ -1,14 +1,14 @@
 <?php
-class MediaRon_PostSelect_Module extends FLBuilderModule {
+class BBVapor_PostSelect_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Post Select', 'mediaron-bb-modules' ),
-			'description'     => __( 'Post Select for Beaver Builder', 'mediaron-bb-modules' ),
-			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/postselect/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/postselect/',
+			'name'            => __( 'Post Select', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Post Select for Beaver Builder', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/postselect/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/postselect/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -23,7 +23,7 @@ class MediaRon_PostSelect_Module extends FLBuilderModule {
 		$post_type = $_POST['post_type'];
 		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
 		$selected_taxonomy = $_POST['selected_taxonomy'];
-		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'mediaron-bb-modules' ) );
+		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'bb-vapor-modules-pro' ) );
 		foreach( $taxonomies as $taxonomy ) {
 			$return_html .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $taxonomy->name ), selected( $taxnonomy->name, $selected_taxonomy, false ), esc_html( $taxonomy->label ) );
 		}
@@ -40,7 +40,7 @@ class MediaRon_PostSelect_Module extends FLBuilderModule {
 			'post_type' => $post_type,
 		) );
 		remove_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
-		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'mediaron-bb-modules' ) );
+		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
 		if( is_wp_error( $terms ) ) {
 			die( $return_html );
 		} else {
@@ -58,17 +58,17 @@ class MediaRon_PostSelect_Module extends FLBuilderModule {
 		$selected_term = !empty( $_POST['term'] ) ? sanitize_text_field( $_POST['term'] ) : '0';
 
 		$mediaron_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
-		$oost_html = sprintf( '<option value="0">%s</option>', esc_html__( 'Select a Post Type', 'mediaron-bb-modules' ) );
+		$oost_html = sprintf( '<option value="0">%s</option>', esc_html__( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
 		foreach( $mediaron_post_types as $post_type ) {
 			if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
 			$oost_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $post_type->name ), esc_html( $post_type->label ) );
 		}
-		$tax_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'mediaron-bb-modules' ) );
+		$tax_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'bb-vapor-modules-pro' ) );
 		$mediaron_taxonomies = get_object_taxonomies( $selected_post, 'objects' );
 		foreach( $mediaron_taxonomies as $taxonomy ) {
 			$tax_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $taxonomy->name ), esc_html( $taxonomy->label ) );
 		}
-		$term_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'mediaron-bb-modules' ) );
+		$term_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
 		add_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
 		$mediaron_terms = get_terms( array(
 			'taxonomy' => $selected_taxonomy,
@@ -93,7 +93,7 @@ class MediaRon_PostSelect_Module extends FLBuilderModule {
 }
 // Get Post Types
 $mediaron_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
-$mediaron_post_types_array = array( '0' => __( 'Select a Post Type', 'mediaron-bb-modules' ) );
+$mediaron_post_types_array = array( '0' => __( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
 foreach( $mediaron_post_types as $post_type ) {
 	if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
 	$mediaron_post_types_array[$post_type->name] = $post_type->label;
@@ -119,29 +119,29 @@ foreach( $mediaron_image_sizes as $size => $image_size ) {
 	$mediaron_thumbnail_sizes[$size] = $size;
 }
 
-FLBuilder::register_module('MediaRon_PostSelect_Module', array(
+FLBuilder::register_module('BBVapor_PostSelect_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Post Select', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Post Select', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'post_type' => array(
 						'type'          => 'select',
-						'label'         => __( 'Select A Post Type', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select A Post Type', 'bb-vapor-modules-pro' ),
 						'options'       => $mediaron_post_types_array,
 						'class' => 'mediaron-post-select'
 					),
 					'taxonomy_select' => array(
 						'type'          => 'select',
-						'label'         => __( 'Select A Taxonomy', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select A Taxonomy', 'bb-vapor-modules-pro' ),
 						'options'       => array(),
 						'class' => 'mediaron-taxonomy-select',
 						'default' => '0',
 					),
 					'terms_select' => array(
 						'type'          => 'select',
-						'label'         => __( 'Select A Term', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select A Term', 'bb-vapor-modules-pro' ),
 						'options'       => array(),
 						'class' => 'mediaron-term-select',
 						'default' => '0'
@@ -151,28 +151,28 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 		)
 	),
 	'options'       => array( // Tab
-		'title'         => __('Options', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Options', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Options', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Options', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'posts_per_page' => array(
 						'type'          => 'unit',
-						'label'         => __( 'Select Number of Items to Retrieve', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select Number of Items to Retrieve', 'bb-vapor-modules-pro' ),
 						'default' => '6',
 					),
 					'post_display' => array(
 						'type'          => 'select',
-						'label'         => __( 'Post Display', 'mediaron-bb-modules' ),
+						'label'         => __( 'Post Display', 'bb-vapor-modules-pro' ),
 						'options'       => array(
-							'grid' => __( 'Grid', 'mediaron-bb-modules' ),
-							'list' => __( 'List', 'mediaron-bb-modules' ),
+							'grid' => __( 'Grid', 'bb-vapor-modules-pro' ),
+							'list' => __( 'List', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'grid',
 					),
 					'columns' => array(
 						'type'          => 'unit',
-						'label'         => __( 'Select Number of Columns', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select Number of Columns', 'bb-vapor-modules-pro' ),
 						'default' => '4',
 						'slider' => array(
 							'min'  	=> 1,
@@ -182,17 +182,17 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 					),
 					'item_padding' => array(
 						'type'          => 'dimension',
-						'label'         => __( 'Select Padding For Post Items', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select Padding For Post Items', 'bb-vapor-modules-pro' ),
 						'responsive'    => true,
 					),
 					'orderby' => array(
 						'type'          => 'select',
-						'label'         => __( 'Order By', 'mediaron-bb-modules' ),
+						'label'         => __( 'Order By', 'bb-vapor-modules-pro' ),
 						'options'       => array(
-							'DATEDESC' => __( 'Newest to Oldest', 'mediaron-bb-modules' ),
-							'DATEASC' => __( 'Oldest to Newest', 'mediaron-bb-modules' ),
-							'TITLEASC' => __( 'A - Z', 'mediaron-bb-modules' ),
-							'TITLEDESC' => __( 'Z-A', 'mediaron-bb-modules' )
+							'DATEDESC' => __( 'Newest to Oldest', 'bb-vapor-modules-pro' ),
+							'DATEASC' => __( 'Oldest to Newest', 'bb-vapor-modules-pro' ),
+							'TITLEASC' => __( 'A - Z', 'bb-vapor-modules-pro' ),
+							'TITLEDESC' => __( 'Z-A', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'DATEASC',
 					),
@@ -201,26 +201,26 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 		)
 	),
 	'display'       => array( // Tab
-		'title'         => __('Display', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Display', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Display', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Display', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'display_taxonomies' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Taxonomies?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Taxonomies?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes'
 					),
 					'display_featured_image' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Featured Image?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Featured Image?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes',
 						'toggle' => array(
@@ -229,10 +229,10 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 					),
 					'featured_image_type' => array(
 						'type' => 'select',
-						'label' => __( 'Featured Image Type', 'mediaron-bb-modules' ),
+						'label' => __( 'Featured Image Type', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'featured' => __( 'Featured Image', 'mediaron-bb-modules' ),
-							'gravatar' => __( 'Gravatar', 'mediaron-bb-modules' ),
+							'featured' => __( 'Featured Image', 'bb-vapor-modules-pro' ),
+							'gravatar' => __( 'Gravatar', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'featured',
 						'toggle' => array(
@@ -241,7 +241,7 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 					),
 					'gravatar_size' => array(
 						'type' => 'unit',
-						'label' => __( 'Gravatar Size', 'mediaron-bb-modules' ),
+						'label' => __( 'Gravatar Size', 'bb-vapor-modules-pro' ),
 						'default' => '150',
 						'slider' => array(
 							'min'  	=> 100,
@@ -251,80 +251,80 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 					),
 					'featured_thumbnail_size' => array(
 						'type' => 'select',
-						'label' => __( 'Thumbnail Size', 'mediaron-bb-modules' ),
+						'label' => __( 'Thumbnail Size', 'bb-vapor-modules-pro' ),
 						'options' => $mediaron_thumbnail_sizes
 					),
 					'featured_image_location' => array(
 						'type' => 'select',
-						'label' => __( 'Featured Image Location', 'mediaron-bb-modules' ),
+						'label' => __( 'Featured Image Location', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'regular' => __( 'Regular Placement', 'mediaron-bb-modules' ),
-							'below_title' => __( 'Below Title', 'mediaron-bb-modules' ),
-							'below_title_meta' => __( 'Below Title and Post Meta', 'mediaron-bb-modules' ),
-							'bottom' => __( 'Bottom', 'mediaron-bb-modules' ),
+							'regular' => __( 'Regular Placement', 'bb-vapor-modules-pro' ),
+							'below_title' => __( 'Below Title', 'bb-vapor-modules-pro' ),
+							'below_title_meta' => __( 'Below Title and Post Meta', 'bb-vapor-modules-pro' ),
+							'bottom' => __( 'Bottom', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'regular'
 					),
 					'display_post_author' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Post Author?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Post Author?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes'
 					),
 					'display_post_date' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Post Date?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Post Date?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes'
 					),
 					'display_post_excerpt' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Post Excerpt?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Post Excerpt?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes'
 					),
 					'display_pagination' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Pagination?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Pagination?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'no'
 					),
 					'change_capitalization' => array(
 						'type'          => 'select',
-						'label'         => __( 'Change Capitalization?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Change Capitalization?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'no'
 					),
 					'center_text' => array(
 						'type'          => 'select',
-						'label'         => __( 'Center Text?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Center Text?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'no'
 					),
 					'display_continue_reading' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Continue Reading Link?', 'mediaron-bb-modules' ),
+						'label'         => __( 'Display Continue Reading Link?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes',
 						'toggle' => array(
@@ -333,7 +333,7 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 					),
 					'continue_reading' => array(
 						'type' => 'text',
-						'label' => __( 'Continue Reading Text', 'mediaron-bb-modules' ),
+						'label' => __( 'Continue Reading Text', 'bb-vapor-modules-pro' ),
 						'default' => 'Continue Reading'
 					)
 
@@ -342,49 +342,49 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 		),
 	),
 	'color'       => array( // Tab
-		'title'         => __('Color and Typography', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Color and Typography', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Color and Typography', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Color and Typography', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'heading_typography' => array(
 						'type'          => 'typography',
-						'label'         => __( 'Heading Typography', 'mediaron-bb-modules' ),
+						'label'         => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'meta_typography' => array(
 						'type'          => 'typography',
-						'label'         => __( 'Meta Typography', 'mediaron-bb-modules' ),
+						'label'         => __( 'Meta Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'excerpt_typography' => array(
 						'type'          => 'typography',
-						'label'         => __( 'Excerpt Typography', 'mediaron-bb-modules' ),
+						'label'         => __( 'Excerpt Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'readmore_typography' => array(
 						'type'          => 'typography',
-						'label'         => __( 'Read More Typography', 'mediaron-bb-modules' ),
+						'label'         => __( 'Read More Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'background_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Background Color', 'mediaron-bb-modules' ),
+						'label'         => __( 'Background Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'text_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color', 'mediaron-bb-modules' ),
+						'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'link_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Link Color', 'mediaron-bb-modules' ),
+						'label'         => __( 'Link Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'link_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Link Color Hover', 'mediaron-bb-modules' ),
+						'label'         => __( 'Link Color Hover', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 				)
@@ -392,49 +392,49 @@ FLBuilder::register_module('MediaRon_PostSelect_Module', array(
 		),
 	),
 	'pagination'       => array( // Tab
-		'title'         => __('Pagination', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Pagination', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Pagination', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Pagination', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'pagination_padding' => array(
 						'type'          => 'dimension',
-						'label'         => __( 'Select Padding for Pagination', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select Padding for Pagination', 'bb-vapor-modules-pro' ),
 						'responsive'    => true,
 					),
 					'pagination_border_color' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Border Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Border Color', 'bb-vapor-modules-pro' ),
 						'default' => 'EEEEEE'
 					),
 					'pagination_background' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Item Background', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Item Background', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'pagination_background_active' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Active Item Background', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Active Item Background', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'pagination_background_hover' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Item Hover Background', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Item Hover Background', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'pagination_active_color' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Active Text Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Active Text Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000',
 					),
 					'pagination_link_color' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Link Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Link Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF',
 					),
 					'pagination_link_color_hover' => array(
 						'type' => 'color',
-						'label' => __( 'Pagination Link Color Hover', 'mediaron-bb-modules' ),
+						'label' => __( 'Pagination Link Color Hover', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF',
 					)
 				)

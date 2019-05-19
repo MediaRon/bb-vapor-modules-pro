@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Soliloquy_Module extends FLBuilderModule {
+class BBVapor_Soliloquy_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Soliloquy', 'mediaron-bb-modules' ),
 			'description'     => __( 'Soliloquy for Beaver Builder', 'mediaron-bb-modules' ),
 			'category'        => __( 'External Plugins', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/soliloquy/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/soliloquy/',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/soliloquy/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/soliloquy/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => true, // Defaults to false and can be omitted.
@@ -26,7 +26,7 @@ if( ! empty( $sliders ) ) {
 		$sliders_array[$slider['id']] = $slider['config']['title'];
 	}
 }
-FLBuilder::register_module('MediaRon_Soliloquy_Module', array(
+FLBuilder::register_module('BBVapor_Soliloquy_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

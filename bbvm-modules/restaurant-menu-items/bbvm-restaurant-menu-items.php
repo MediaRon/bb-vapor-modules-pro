@@ -1,21 +1,21 @@
 <?php
-class MediaRon_Restaurant_Menu_Item_Module extends FLBuilderModule {
+class BBVapor_Restaurant_Menu_Item_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Restaurant Menu', 'mediaron-bb-modules' ),
 			'description'     => __( 'Add menu items for a restaurant', 'mediaron-bb-modules' ),
 			'category'        => __( 'Restaurant', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/restaurant-menu-items/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/restaurant-menu-items/',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-items/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-items/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
 		));
 
 		$this->add_css( 'jquery-magnificpopup' );
-		$this->add_js('mediaron-restaurant-items-for-beaver-builder', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/restaurant-menu-items/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), MEDIARON_BEAVER_BUILDER_VERSION );
+		$this->add_js('mediaron-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-items/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), MEDIARON_BEAVER_BUILDER_VERSION );
 	}
 }
 /**
@@ -102,7 +102,7 @@ FLBuilder::register_settings_form(
 		)
 	)
 );
-FLBuilder::register_module('MediaRon_Restaurant_Menu_Item_Module', array(
+FLBuilder::register_module('BBVapor_Restaurant_Menu_Item_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

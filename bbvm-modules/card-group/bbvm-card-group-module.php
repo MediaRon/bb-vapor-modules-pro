@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Card_Group_Module extends FLBuilderModule {
+class BBVapor_Card_Group_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Card Group', 'mediaron-bb-modules' ),
 			'description'     => __( 'Card Group', 'mediaron-bb-modules' ),
 			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/card-group/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/card-group',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/card-group/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/card-group',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -410,7 +410,7 @@ FLBuilder::register_settings_form(
 								'options' => array(
 									'none' => __( 'None', 'mediaron-bb-modules' ),
 									'before' => __( 'Before', 'mediaron-bb-modules' ),
-									'after' => __( 'After', 'mediarion-bb-modules' )
+									'after' => __( 'After', 'bb-vapor-modules-pro' )
 								),
 								'default' => 'none'
 							),
@@ -492,7 +492,7 @@ FLBuilder::register_settings_form(
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('MediaRon_Card_Group_Module', array(
+FLBuilder::register_module('BBVapor_Card_Group_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

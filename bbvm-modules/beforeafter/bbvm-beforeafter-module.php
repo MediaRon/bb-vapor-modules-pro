@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Before_After_Module extends FLBuilderModule {
+class BBVapor_Before_After_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
 			'name'            => __( 'Before and After', 'mediaron-bb-modules' ),
 			'description'     => __( 'Before and After', 'mediaron-bb-modules' ),
 			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/beforeafter/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/beforeafter/',
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/beforeafter/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -17,15 +17,15 @@ class MediaRon_Before_After_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if( $this->settings && ( 'separator_horizontal' === $this->settings->style || 'separator_vertical' === $this->settings->style ) ) {
-			$this->add_js('jquery-movemove', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/beforeafter/js/jquery-mousemove.js', array( 'jquery' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
-			$this->add_js('mediaron-move-horizontal', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/beforeafter/js/move-horizontal.js', array( 'jquery-movemove' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('jquery-movemove', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/jquery-mousemove.js', array( 'jquery' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
+			$this->add_js('mediaron-move-horizontal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/beforeafter/js/move-horizontal.js', array( 'jquery-movemove' ), MEDIARON_BEAVER_BUILDER_VERSION, true );
 		}
 	}
 }
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('MediaRon_Before_After_Module', array(
+FLBuilder::register_module('BBVapor_Before_After_Module', array(
 	'general'       => array( // Tab
 		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
 		'sections'      => array( // Tab Sections

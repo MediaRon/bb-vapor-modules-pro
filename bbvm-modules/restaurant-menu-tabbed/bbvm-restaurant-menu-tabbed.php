@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
+class BBVapor_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Restaurant Tabbed Menu', 'mediaron-bb-modules' ),
-			'description'     => __( 'Add a tabbed menu for a restaurant', 'mediaron-bb-modules' ),
-			'category'        => __( 'Restaurant', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/restaurant-menu-tabbed/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/restaurant-menu-tabbed/',
+			'name'            => __( 'Restaurant Tabbed Menu', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Add a tabbed menu for a restaurant', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Restaurant', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-tabbed/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-tabbed/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -19,7 +19,7 @@ class MediaRon_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
 	public function enqueue_scripts() {
 		if ( $this->settings && !empty( $this->settings->menu_item_form ) ) {
 			$this->add_css( 'jquery-magnificpopup' );
-			$this->add_js('mediaron-restaurant-items-for-beaver-builder', MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/restaurant-menu-tabbed/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), MEDIARON_BEAVER_BUILDER_VERSION );
+			$this->add_js('mediaron-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-tabbed/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), MEDIARON_BEAVER_BUILDER_VERSION );
 		}
 	}
 }
@@ -28,21 +28,21 @@ class MediaRon_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
  */
 FLBuilder::register_settings_form(
 	'mrbb_restaurant_menu_item', array(
-		'title' => __( 'Add Menu Item', 'mediaron-bb-modules' ),
+		'title' => __( 'Add Menu Item', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('General', 'mediaron-bb-modules'),
+				'title'         => __('General', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
 						'title'         => '',
 						'fields'        => array(
 							'restaurant_menu_item_has_photo'         => array(
 								'type'          => 'select',
-								'label'         => __('Enable a menu item photo', 'mediaron-bb-modules'),
+								'label'         => __('Enable a menu item photo', 'bb-vapor-modules-pro'),
 								'default'       => 'yes',
 								'options'       => array(
-									'no'       => __( 'No', 'mediaron-bb-modules' ),
-									'yes'       => __( 'Yes', 'mediaron-bb-modules' ),
+									'no'       => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes'       => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -52,24 +52,24 @@ FLBuilder::register_settings_form(
 							),
 							'restaurant_menu_item_photo'         => array(
 								'type'          => 'photo',
-								'label'         => __('Enter a menu item photo (optional)', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item photo (optional)', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_photo_size' => array(
 								'type'          => 'photo-sizes',
-								'label'         => __('Select a Photo Size', 'mediaron-bb-modules'),
+								'label'         => __('Select a Photo Size', 'bb-vapor-modules-pro'),
 								'default'       => 'medium'
 							),
 							'restaurant_menu_item_title'         => array(
 								'type'          => 'text',
-								'label'         => __('Enter a menu item title', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item title', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_icon_select'         => array(
 								'type'          => 'select',
-								'label'         => __('Enable menu item icon', 'mediaron-bb-modules'),
+								'label'         => __('Enable menu item icon', 'bb-vapor-modules-pro'),
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'icon'       => __( 'Icon', 'mediaron-bb-modules' ),
-									'photo'      => __( 'Photo', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'icon'       => __( 'Icon', 'bb-vapor-modules-pro' ),
+									'photo'      => __( 'Photo', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'icon' => array(
@@ -82,23 +82,23 @@ FLBuilder::register_settings_form(
 							),
 							'restaurant_menu_item_icon'         => array(
 								'type'          => 'icon',
-								'label'         => __('Enter a menu item icon', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item icon', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_icon_color'         => array(
 								'type'          => 'color',
-								'label'         => __('Enter a menu item icon color', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item icon color', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_icon_photo'         => array(
 								'type'          => 'photo',
-								'label'         => __('Enter a menu item icon photo', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item icon photo', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_description'         => array(
 								'type'          => 'text',
-								'label'         => __('Enter a menu item description or leave blank for no description', 'mediaron-bb-modules')
+								'label'         => __('Enter a menu item description or leave blank for no description', 'bb-vapor-modules-pro')
 							),
 							'restaurant_menu_item_price'         => array(
 								'type'          => 'text',
-								'label'         => __('Enter a price or leave blank for no price', 'mediaron-bb-modules')
+								'label'         => __('Enter a price or leave blank for no price', 'bb-vapor-modules-pro')
 							)
 						)
 					),
@@ -112,38 +112,38 @@ FLBuilder::register_settings_form(
  */
 FLBuilder::register_settings_form(
 	'mrbb_restaurant_menu_tab', array(
-		'title' => __( 'Add Tab', 'mediaron-bb-modules' ),
+		'title' => __( 'Add Tab', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('General', 'mediaron-bb-modules'),
+				'title'         => __('General', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
 						'title'         => '',
 						'fields'        => array(
 							'menu_tab_name'         => array(
 								'type'          => 'text',
-								'label'         => __('Add a Tab Item Name', 'mediaron-bb-modules'),
+								'label'         => __('Add a Tab Item Name', 'bb-vapor-modules-pro'),
 							),
 							'menu_show_by_default'         => array(
 								'type'          => 'select',
-								'label'         => __('Show Tab by Default', 'mediaron-bb-modules'),
+								'label'         => __('Show Tab by Default', 'bb-vapor-modules-pro'),
 								'options' => array(
-									'no' => __( 'No', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'no' => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'default' => 'no'
 							),
 							'menu_item_category'    => array( // Section Fields
 								'type'         => 'text',
-								'label'        => __( 'Category name', 'mediaron-bb-modules' ),
+								'label'        => __( 'Category name', 'bb-vapor-modules-pro' ),
 							),
 							'menu_item_category_description'    => array( // Section Fields
 								'type'         => 'text',
-								'label'        => __( 'Category description or leave blank for no description', 'mediaron-bb-modules' ),
+								'label'        => __( 'Category description or leave blank for no description', 'bb-vapor-modules-pro' ),
 							),
 							'menu_item_form'    => array( // Section Fields
 								'type'         => 'form',
-								'label'        => __( 'Menu Item', 'mediaron-bb-modules' ),
+								'label'        => __( 'Menu Item', 'bb-vapor-modules-pro' ),
 								'form'         => 'mrbb_restaurant_menu_item',
 								'multiple'     => true,
 								'preview_text' => 'restaurant_menu_item_title',
@@ -155,26 +155,26 @@ FLBuilder::register_settings_form(
 		)
 	)
 );
-FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
+FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Restaurant Menu', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Restaurant Menu', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'menu_item_form'    => array( // Section Fields
 						'type'         => 'form',
-						'label'        => __( 'Menu Tab', 'mediaron-bb-modules' ),
+						'label'        => __( 'Menu Tab', 'bb-vapor-modules-pro' ),
 						'form'         => 'mrbb_restaurant_menu_tab',
 						'preview_text' => 'menu_tab_name',
 						'multiple'     => true,
 					),
 					'image_photo' => array(
 						'type'        => 'select',
-						'label'       => __( 'Display Menu Item Photo', 'mediaron-bb-modules' ),
+						'label'       => __( 'Display Menu Item Photo', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' )
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' )
 						),
 						'default'     => 'yes',
 					),
@@ -187,20 +187,20 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'image_type' => array(
 						'type'        => 'select',
-						'label'       => __( 'Menu Item Image Type', 'mediaron-bb-modules' ),
+						'label'       => __( 'Menu Item Image Type', 'bb-vapor-modules-pro' ),
 						'default'     => 'square',
 						'options' => array(
-							'square' => __( 'Square', 'mediaron-bb-modules' ),
-							'circular' => __( 'Circular', 'mediaron-bb-modules' ),
+							'square' => __( 'Square', 'bb-vapor-modules-pro' ),
+							'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
 						)
 					),
 					'image_lightbox' => array(
 						'type'        => 'select',
-						'label'       => __( 'Popup Menu Item Image in Lightbox', 'mediaron-bb-modules' ),
+						'label'       => __( 'Popup Menu Item Image in Lightbox', 'bb-vapor-modules-pro' ),
 						'default'     => 'no',
 						'options' => array(
-							'no' => __( 'No', 'mediaron-bb-modules' ),
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						)
 					),
 				)
@@ -211,56 +211,56 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 		'title' => __( 'Tabs', 'mediaron-bb-module' ),
 		'sections' => array(
 			'general' => array(
-				'title'         => __('Tabs', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Tabs', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'tab_min_width' => array(
 						'type' => 'unit',
-						'label' => __( 'Tab Min Width', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Min Width', 'bb-vapor-modules-pro' ),
 						'responsive' => true,
 						'default' => '200',
 						'description' => 'px',
 					),
 					'tab_text_color' => array(
 						'type' => 'color',
-						'label' => __( 'Tab Text Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Text Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'tab_text_color_hover' => array(
 						'type' => 'color',
-						'label' => __( 'Tab Text Color on Hover', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Text Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'tab_background_color' => array(
 						'type' => 'color',
-						'label' => __( 'Tab Background Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Background Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'tab_background_color_hover' => array(
 						'type' => 'color',
-						'label' => __( 'Tab Background Color Hover/Active', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Background Color Hover/Active', 'bb-vapor-modules-pro' ),
 						'default' => 'a72c31'
 					),
 					'tab_border_bottom_width' => array(
 						'type' => 'unit',
-						'label' => __( 'Tab Border Bottom Width', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Border Bottom Width', 'bb-vapor-modules-pro' ),
 						'default' => '1'
 					),
 					'tab_border_bottom_width_color' => array(
 						'type' => 'color',
-						'label' => __( 'Tab Border Bottom Width Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Border Bottom Width Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'tab_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Tab Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true,
 					),
 					'tab_sticky' => array(
 						'type' => 'select',
-						'label' => __( 'Tabs Are Sticky?', 'mediaron-bb-modules' ),
+						'label' => __( 'Tabs Are Sticky?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'no' => __( 'No', 'mediaron-bb-modules' ),
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'yes'
 					),
@@ -272,15 +272,15 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 		'title' => __( 'Typography', 'mediaron-bb-module' ),
 		'sections' => array(
 			'general' => array(
-				'title'         => __('Typography', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Typography', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'tab_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Tab Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Tab Typography', 'bb-vapor-modules-pro' ),
 					),
 					'category_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Category Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
 							'selector'  => '.mediaron-restaurant-menu-items-heading',
@@ -288,7 +288,7 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'category_description_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Category Description Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Category Description Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
 							'selector'  => '.mediaron-restaurant-menu-items-description',
@@ -296,7 +296,7 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'menu_item_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Menu Item Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Menu Item Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
 							'selector'  => '.menu-item-title',
@@ -304,7 +304,7 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'menu_item_description_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Menu Item Description Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Menu Item Description Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
 							'selector'  => '.menu-item-description',
@@ -312,7 +312,7 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'menu_item_price_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Menu Item Price Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Menu Item Price Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
 							'selector'  => '.menu-item-price',
@@ -326,21 +326,21 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 		'title' => __( 'Spacing', 'mediaron-bb-module' ),
 		'sections' => array(
 			'general' => array(
-				'title'         => __('Spacing', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Spacing', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'category_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Category Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Category Padding', 'bb-vapor-modules-pro' ),
 						'responsive'  => true,
 					),
 					'category_description_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Category Description Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Category Description Padding', 'bb-vapor-modules-pro' ),
 						'responsive'  => true,
 					),
 					'menu_item_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Menu Item Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Menu Item Padding', 'bb-vapor-modules-pro' ),
 						'responsive'  => true,
 					)
 				)
@@ -351,15 +351,15 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 		'title' => __( 'Separators', 'mediaron-bb-module' ),
 		'sections' => array(
 			'general' => array(
-				'title'         => __('Separators', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Separators', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'category_separator'         => array(
 						'type'          => 'select',
-						'label'         => __('Select category separator', 'mediaron-bb-modules'),
+						'label'         => __('Select category separator', 'bb-vapor-modules-pro'),
 						'options'       => array(
-							'none'       => __( 'None', 'mediaron-bb-modules' ),
-							'line'       => __( 'line', 'mediaron-bb-modules' ),
-							'image'      => __( 'image', 'mediaron-bb-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'line'       => __( 'line', 'bb-vapor-modules-pro' ),
+							'image'      => __( 'image', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'none',
 						'toggle' => array(
@@ -373,39 +373,39 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'category_separator_line'         => array(
 						'type'          => 'select',
-						'label'         => __('Line type', 'mediaron-bb-modules'),
+						'label'         => __('Line type', 'bb-vapor-modules-pro'),
 						'options'       => array(
-							'single'       => __( 'Single line', 'mediaron-bb-modules' ),
-							'double'      => __( 'Double line', 'mediaron-bb-modules' ),
+							'single'       => __( 'Single line', 'bb-vapor-modules-pro' ),
+							'double'      => __( 'Double line', 'bb-vapor-modules-pro' ),
 						),
 					),
 					'category_separator_line_color' => array(
 						'type' => 'color',
-						'label' => __( 'Category line color', 'mediaron-bb-modules' ),
+						'label' => __( 'Category line color', 'bb-vapor-modules-pro' ),
 					),
 					'category_separator_line_image'    => array(
 						'type' => 'photo',
-						'label' => __( 'Line background image', 'mediaron-bb-modules' ),
+						'label' => __( 'Line background image', 'bb-vapor-modules-pro' ),
 					),
 					'category_separator_line_height'  => array(
 						'type'        => 'unit',
-						'label'       => __( 'Line height', 'mediaron-bb-modules' ),
+						'label'       => __( 'Line height', 'bb-vapor-modules-pro' ),
 						'description' => 'px',
 						'default'     => '1',
 					),
 					'category_seperator_margin'   => array(
 						'type' => 'dimension',
-						'label' => __( 'Margin', 'mediaron-bb-modules' ),
+						'label' => __( 'Margin', 'bb-vapor-modules-pro' ),
 					),
 					'item_separator'         => array(
 						'type'          => 'select',
-						'label'         => __('Select item separator', 'mediaron-bb-modules'),
+						'label'         => __('Select item separator', 'bb-vapor-modules-pro'),
 						'default'       => 'line',
 						'options'       => array(
-							'none'       => __( 'None', 'mediaron-bb-modules' ),
-							'line'       => __( 'Solid line', 'mediaron-bb-modules' ),
-							'dashed'     => __( 'Dashed line', 'mediaron-bb-modules' ),
-							'dotted'     => __( 'Dotted line', 'mediaron-bb-modules' )
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'line'       => __( 'Solid line', 'bb-vapor-modules-pro' ),
+							'dashed'     => __( 'Dashed line', 'bb-vapor-modules-pro' ),
+							'dotted'     => __( 'Dotted line', 'bb-vapor-modules-pro' )
 						),
 						'toggle' => array(
 							'line' => array(
@@ -421,12 +421,12 @@ FLBuilder::register_module('MediaRon_Restaurant_Menu_Tabbed_Module', array(
 					),
 					'item_separator_line_color' => array(
 						'type' => 'color',
-						'label' => __( 'Item line color', 'mediaron-bb-modules' ),
+						'label' => __( 'Item line color', 'bb-vapor-modules-pro' ),
 						'default' => 'EEEEEE',
 					),
 					'item_separator_line_height'  => array(
 						'type'        => 'unit',
-						'label'       => __( 'Line height', 'mediaron-bb-modules' ),
+						'label'       => __( 'Line height', 'bb-vapor-modules-pro' ),
 						'description' => 'px',
 						'default'     => '2',
 					),

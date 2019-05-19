@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Unordered_List_Module extends FLBuilderModule {
+class BBVapor_Unordered_List_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Unordered List', 'mediaron-bb-modules' ),
-			'description'     => __( 'Add Unordered List', 'mediaron-bb-modules' ),
-			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/unordered-list/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/unordered-list/',
+			'name'            => __( 'Unordered List', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Add Unordered List', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/unordered-list/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/unordered-list/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -17,17 +17,17 @@ class MediaRon_Unordered_List_Module extends FLBuilderModule {
 }
 FLBuilder::register_settings_form(
 	'mrbb_list', array(
-		'title' => __( 'Add List Item', 'mediaron-bb-modules' ),
+		'title' => __( 'Add List Item', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('General', 'mediaron-bb-modules'),
+				'title'         => __('General', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
-						'title'         => __( 'Add List Content', 'mediaron-bb-modules' ),
+						'title'         => __( 'Add List Content', 'bb-vapor-modules-pro' ),
 						'fields'        => array(
 							'list_content'         => array(
 								'type'          => 'editor',
-								'label' => __( 'List Content', 'mediaron-bb-modules' )
+								'label' => __( 'List Content', 'bb-vapor-modules-pro' )
 							),
 						)
 					)
@@ -39,17 +39,17 @@ FLBuilder::register_settings_form(
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('MediaRon_Unordered_List_Module', array(
+FLBuilder::register_module('BBVapor_Unordered_List_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('Settings', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Settings', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Settings', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Settings', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'list_entries' => array(
 						'type'          => 'form',
 						'form'          => 'mrbb_list',
-						'label'         => __( 'List Content', 'mediaron-bb-modules' ),
+						'label'         => __( 'List Content', 'bb-vapor-modules-pro' ),
 						'multiple'      => true,
 						'preview_text'  => 'list_content',
 					)
@@ -58,21 +58,21 @@ FLBuilder::register_module('MediaRon_Unordered_List_Module', array(
 		)
 	),
 	'styles'       => array( // Tab
-		'title'         => __('Styles', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Styles', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Styles', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Styles', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'list_style' => array(
 						'type'          => 'select',
 						'options' => array(
-							'none' => __( 'None', 'mediaron-bb-modules' ),
-							'icon' => __( 'Icon', 'mediaron-bb-modules' ),
-							'circular' => __( 'Circular', 'mediaron-bb-modules' ),
-							'square' => __( 'Square', 'mediaron-bb-modules' ),
-							'bar' => __( 'Bar', 'mediaron-bb-modules' ),
-							'hover' => __( 'Hover Effects', 'mediaron-bb-modules' ),
-							'list_background' => __( 'List Full Width', 'mediaron-bb-modules' ),
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
+							'icon' => __( 'Icon', 'bb-vapor-modules-pro' ),
+							'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+							'square' => __( 'Square', 'bb-vapor-modules-pro' ),
+							'bar' => __( 'Bar', 'bb-vapor-modules-pro' ),
+							'hover' => __( 'Hover Effects', 'bb-vapor-modules-pro' ),
+							'list_background' => __( 'List Full Width', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'none',
 						'toggle' => array(
@@ -87,87 +87,87 @@ FLBuilder::register_module('MediaRon_Unordered_List_Module', array(
 					'list_icon' => array(
 						'type' => 'icon',
 						'show_remove' => 'true',
-						'label' => __( 'List Item Icon', 'mediaron-bb-modules' ),
+						'label' => __( 'List Item Icon', 'bb-vapor-modules-pro' ),
 					),
 					'list_icon_size' => array(
 						'type' => 'unit',
-						'label' => __( 'List Item Icon Size', 'mediaron-bb-modules' ),
+						'label' => __( 'List Item Icon Size', 'bb-vapor-modules-pro' ),
 						'default' => '16'
 					),
 					'list_icon_color' => array(
 						'type' => 'color',
-						'label' => __( 'List Item Icon Color', 'mediaron-bb-modules' ),
+						'label' => __( 'List Item Icon Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'background_color' => array(
 						'type' => 'color',
-						'label' => __( 'Background Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Background Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'hover_color' => array(
 						'type' => 'color',
-						'label' => __( 'Hover Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Hover Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'background_hover_color' => array(
 						'type' => 'color',
-						'label' => __( 'Hover Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Hover Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'text_color' => array(
 						'type' => 'color',
-						'label' => __( 'Text Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Text Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'text_color_hover' => array(
 						'type' => 'color',
-						'label' => __( 'Text Hover Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Text Hover Color', 'bb-vapor-modules-pro' ),
 						'default' => '000000'
 					),
 					'border_bottom_color' => array(
 						'type' => 'color',
-						'label' => __( 'Border Bottom Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Border Bottom Color', 'bb-vapor-modules-pro' ),
 						'default' => 'FFFFFF'
 					),
 					'border_bottom_size' => array(
 						'type' => 'unit',
-						'label' => __( 'Border Bottom Size', 'mediaron-bb-modules' ),
+						'label' => __( 'Border Bottom Size', 'bb-vapor-modules-pro' ),
 						'default' => '2'
 					),
 					'hover_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true,
 					),
 					'item_size' => array(
 						'type' => 'unit',
-						'label' => __( 'Item Size', 'mediaron-bb-modules' ),
+						'label' => __( 'Item Size', 'bb-vapor-modules-pro' ),
 						'default' => '16'
 					),
 					'bar_width' => array(
 						'type' => 'unit',
-						'label' => __( 'Bar Width', 'mediaron-bb-modules' ),
+						'label' => __( 'Bar Width', 'bb-vapor-modules-pro' ),
 						'default' => '16'
 					),
 					'bar_height' => array(
 						'type' => 'unit',
-						'label' => __( 'Bar Height', 'mediaron-bb-modules' ),
+						'label' => __( 'Bar Height', 'bb-vapor-modules-pro' ),
 						'default' => '5'
 					),
 					'allow_spinning_animation' => array(
 						'type' => 'select',
-						'label' => __( 'Spin on Hover?', 'mediaron-bb-modules' ),
+						'label' => __( 'Spin on Hover?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'mediaron-bb-modules' ),
-							'no' => __( 'No', 'mediaron-bb-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'no'
 					),
 					'top_offset' => array(
 						'type' => 'unit',
-						'label' => __( 'Top Offset', 'mediaron-bb-modules' ),
+						'label' => __( 'Top Offset', 'bb-vapor-modules-pro' ),
 						'default' => '0',
-						'description' => __( 'Adjust the top offset according to your font size', 'mediaron-bb-modules' )
+						'description' => __( 'Adjust the top offset according to your font size', 'bb-vapor-modules-pro' )
 					),
 
 				)
@@ -175,14 +175,14 @@ FLBuilder::register_module('MediaRon_Unordered_List_Module', array(
 		),
 	),
 	'typography'       => array( // Tab
-		'title'         => __('Typography', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Typography', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Typography', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Typography', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'list_typography' => array(
 						'type'          => 'typography',
-						'label' => __( 'List Typography', 'mediaron-bb-modules' )
+						'label' => __( 'List Typography', 'bb-vapor-modules-pro' )
 					),
 				)
 			)

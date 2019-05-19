@@ -1,14 +1,14 @@
 <?php
-class MediaRon_Photoproof_Module extends FLBuilderModule {
+class BBVapor_Photoproof_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Photoproof', 'mediaron-bb-modules' ),
-			'description'     => __( 'Photoproof for Beaver Builder', 'mediaron-bb-modules' ),
-			'category'        => __( 'External Plugins', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'mediarion-bb-modules' ),
-			'dir'             => MEDIARON_BEAVER_BUILDER_DIR . 'mediaron-modules/photoproof/',
-			'url'             => MEDIARON_BEAVER_BUILDER_URL . 'mediaron-modules/photoproof/',
+			'name'            => __( 'Photoproof', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Photoproof for Beaver Builder', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/photoproof/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/photoproof/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => true, // Defaults to false and can be omitted.
@@ -19,7 +19,7 @@ class MediaRon_Photoproof_Module extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-$albums_array = array( '0' => __( 'Select an album', 'mediaron-bb-modules' ) );
+$albums_array = array( '0' => __( 'Select an album', 'bb-vapor-modules-pro' ) );
 $albums = get_posts( array(
 	'post_type' => 'album',
 	'post_status' => 'publish',
@@ -32,25 +32,25 @@ if( ! empty( $albums ) ) {
 		$albums_array[$album->ID] = $album->post_title;
 	}
 }
-FLBuilder::register_module('MediaRon_Photoproof_Module', array(
+FLBuilder::register_module('BBVapor_Photoproof_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Album Select', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Album Select', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'album' => array(
 						'type'          => 'select',
-						'label'         => __( 'Select an album', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select an album', 'bb-vapor-modules-pro' ),
 						'options'       => $albums_array
 					),
 					'album_type' => array(
 						'type'          => 'select',
-						'label'         => __( 'Album Type', 'mediaron-bb-modules' ),
+						'label'         => __( 'Album Type', 'bb-vapor-modules-pro' ),
 						'options'       => array(
-							'slider'  => __( 'Slider', 'mediaron-bb-modules' ),
-							'scroller' => __( 'Scroller', 'mediaron-bb-modules' ),
-							'gallery' => __( 'Gallery', 'mediaron-bb-modules' ),
+							'slider'  => __( 'Slider', 'bb-vapor-modules-pro' ),
+							'scroller' => __( 'Scroller', 'bb-vapor-modules-pro' ),
+							'gallery' => __( 'Gallery', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'gallery',
 						'toggle' => array(
@@ -61,119 +61,119 @@ FLBuilder::register_module('MediaRon_Photoproof_Module', array(
 					),
 					'slider_autoplay' => array(
 						'type' => 'select',
-						'label' => __( 'Slider Autoplay', 'mediaron-bb-modules' ),
+						'label' => __( 'Slider Autoplay', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'slider_texts' => array(
 						'type' => 'select',
-						'label' => __( 'Show Slider Images and Descriptions', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Slider Images and Descriptions', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'slider_thumbs' => array(
 						'type' => 'select',
-						'label' => __( 'Show Slider Thumbs', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Slider Thumbs', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'slider_social' => array(
 						'type' => 'select',
-						'label' => __( 'Show Slider Social', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Slider Social', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'slider_window_high' => array(
 						'type' => 'select',
-						'label' => __( 'Slider Full Height Mode', 'mediaron-bb-modules' ),
+						'label' => __( 'Slider Full Height Mode', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'slider_ratio' => array(
 						'type' => 'text',
-						'label' => __( 'Slider Radio', 'mediaron-bb-modules' ),
+						'label' => __( 'Slider Radio', 'bb-vapor-modules-pro' ),
 						'default' => '16/9'
 					),
 					'scroller_autoplay' => array(
 						'type' => 'select',
-						'label' => __( 'Scroller Autoplay', 'mediaron-bb-modules' ),
+						'label' => __( 'Scroller Autoplay', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'scroller_texts' => array(
 						'type' => 'select',
-						'label' => __( 'Show Slider Images and Descriptions', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Slider Images and Descriptions', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'scroller_social' => array(
 						'type' => 'select',
-						'label' => __( 'Show Scroller Social', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Scroller Social', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'scroller_window_high' => array(
 						'type' => 'select',
-						'label' => __( 'Scroller Full Height Mode', 'mediaron-bb-modules' ),
+						'label' => __( 'Scroller Full Height Mode', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'scroller_ratio' => array(
 						'type' => 'text',
-						'label' => __( 'Scroller Radio', 'mediaron-bb-modules' ),
+						'label' => __( 'Scroller Radio', 'bb-vapor-modules-pro' ),
 						'default' => '16/9'
 					),
 					'scroller_parallax' => array(
 						'type' => 'select',
-						'label' => __( 'Scroller Parallax', 'mediaron-bb-modules' ),
+						'label' => __( 'Scroller Parallax', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'scroller_effect' => array(
 						'type' => 'select',
-						'label' => __( 'Scroller Parallax', 'mediaron-bb-modules' ),
+						'label' => __( 'Scroller Parallax', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'off' => __( 'Off', 'mediaron-bb-modules' ),
-							'opacity' => __( 'Opacity', 'mediarion-bb-modules' ),
-							'scale-down' => __( 'Scale Down', 'mediarion-bb-modules' ),
-							'grayscale' => __( 'Grayscale', 'mediarion-bb-modules' ),
-							'blur' => __( 'Blur', 'mediarion-bb-modules' )
+							'off' => __( 'Off', 'bb-vapor-modules-pro' ),
+							'opacity' => __( 'Opacity', 'bb-vapor-modules-pro' ),
+							'scale-down' => __( 'Scale Down', 'bb-vapor-modules-pro' ),
+							'grayscale' => __( 'Grayscale', 'bb-vapor-modules-pro' ),
+							'blur' => __( 'Blur', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'off'
 					),
 					'gallery_columns' => array(
 						'type' => 'select',
-						'label' => __( 'Columns for Gallery', 'mediaron-bb-modules' ),
+						'label' => __( 'Columns for Gallery', 'bb-vapor-modules-pro' ),
 						'options' => array(
 							'1' => '1',
 							'2' => '2',
@@ -187,130 +187,130 @@ FLBuilder::register_module('MediaRon_Photoproof_Module', array(
 					'gallery_margin' => array(
 						'type' => 'unit',
 						'default' => '5',
-						'label' => __( 'Gallery Module', 'mediaron-bb-modules' ),
+						'label' => __( 'Gallery Module', 'bb-vapor-modules-pro' ),
 					),
 					'gallery_texts' => array(
 						'type' => 'select',
-						'label' => __( 'Show Images and Descriptions', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Images and Descriptions', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediarion-bb-modules' )
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => '0'
 					),
 					'gallery_texts_hover' => array(
 						'type' => 'select',
-						'label' => __( 'Show title/description on hover', 'mediaron-bb-modules' ),
+						'label' => __( 'Show title/description on hover', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_texts_position' => array(
 						'type' => 'select',
-						'label' => __( 'Text position over image', 'mediaron-bb-modules' ),
+						'label' => __( 'Text position over image', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'top_left' => __( 'Top Left', 'mediaron-bb-modules' ),
-							'top_center' => __( 'Top Center', 'mediaron-bb-modules' ),
-							'top_right' => __( 'Top Right', 'mediaron-bb-modules' ),
-							'mid_left' => __( 'Mid Left', 'mediaron-bb-modules' ),
-							'mid_center' => __( 'Mid Center', 'mediaron-bb-modules' ),
-							'mid_right' => __( 'Mid Right', 'mediaron-bb-modules' ),
-							'bottom_left' => __( 'Bottom Left', 'mediaron-bb-modules' ),
-							'bottom_center' => __( 'Bottom Center', 'mediaron-bb-modules' ),
-							'bottom_right' => __( 'Bottom Right', 'mediaron-bb-modules' ),
+							'top_left' => __( 'Top Left', 'bb-vapor-modules-pro' ),
+							'top_center' => __( 'Top Center', 'bb-vapor-modules-pro' ),
+							'top_right' => __( 'Top Right', 'bb-vapor-modules-pro' ),
+							'mid_left' => __( 'Mid Left', 'bb-vapor-modules-pro' ),
+							'mid_center' => __( 'Mid Center', 'bb-vapor-modules-pro' ),
+							'mid_right' => __( 'Mid Right', 'bb-vapor-modules-pro' ),
+							'bottom_left' => __( 'Bottom Left', 'bb-vapor-modules-pro' ),
+							'bottom_center' => __( 'Bottom Center', 'bb-vapor-modules-pro' ),
+							'bottom_right' => __( 'Bottom Right', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'bottom_center',
 					),
 					'gallery_filter' => array(
 						'type' => 'select',
-						'label' => __( 'Show Gallery Filter', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Gallery Filter', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_lightbox' => array(
 						'type' => 'select',
-						'label' => __( 'Open Image in Lightbox', 'mediaron-bb-modules' ),
+						'label' => __( 'Open Image in Lightbox', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '1',
 					),
 					'gallery_hover_effect' => array(
 						'type' => 'select',
-						'label' => __( 'Gallery Hover Effect', 'mediaron-bb-modules' ),
+						'label' => __( 'Gallery Hover Effect', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'cross' => __( 'Cross', 'mediaron-bb-modules' ),
-							'drop' => __( 'Drop', 'mediaron-bb-modules' ),
-							'shift' => __( 'Shift', 'mediaron-bb-modules' ),
-							'pop' => __( 'Pop', 'mediaron-bb-modules' ),
-							'border' => __( 'Border', 'mediaron-bb-modules' ),
-							'none' => __( 'None', 'mediaron-bb-modules' ),
+							'cross' => __( 'Cross', 'bb-vapor-modules-pro' ),
+							'drop' => __( 'Drop', 'bb-vapor-modules-pro' ),
+							'shift' => __( 'Shift', 'bb-vapor-modules-pro' ),
+							'pop' => __( 'Pop', 'bb-vapor-modules-pro' ),
+							'border' => __( 'Border', 'bb-vapor-modules-pro' ),
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'drop',
 					),
 					'gallery_gradient' => array(
 						'type' => 'select',
-						'label' => __( 'Show Gradient Be Displayed Over Item', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Gradient Be Displayed Over Item', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_gradient_hover' => array(
 						'type' => 'select',
-						'label' => __( 'Show Gradient Be Displayed Over Item on Hover', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Gradient Be Displayed Over Item on Hover', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_cover' => array(
 						'type' => 'select',
-						'label' => __( 'Should Cover Be Displayed Over Item', 'mediaron-bb-modules' ),
+						'label' => __( 'Should Cover Be Displayed Over Item', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_cover_hover' => array(
 						'type' => 'select',
-						'label' => __( 'Should Cover Be Displayed Over Item on Hover', 'mediaron-bb-modules' ),
+						'label' => __( 'Should Cover Be Displayed Over Item on Hover', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_cover_color' => array(
 						'type' => 'select',
-						'label' => __( 'Show Cover Color', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Cover Color', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_socials' => array(
 						'type' => 'select',
-						'label' => __( 'Show Sharing Icons Be Displayed?', 'mediaron-bb-modules' ),
+						'label' => __( 'Show Sharing Icons Be Displayed?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'0' => __( 'No', 'mediaron-bb-modules' ),
-							'1' => __( 'Yes', 'mediaron-bb-modules' ),
+							'0' => __( 'No', 'bb-vapor-modules-pro' ),
+							'1' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'default' => '0',
 					),
 					'gallery_ratio' => array(
 						'type' => 'select',
-						'label' => __( 'Gallery Radio', 'mediaron-bb-modules' ),
+						'label' => __( 'Gallery Radio', 'bb-vapor-modules-pro' ),
 						'default' => '0',
 						'options' => array(
 							'1/1' => '1/1',
