@@ -6,7 +6,7 @@ class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
 			'name'            => __( 'Vegas Full-width Slideshow', 'bb-vapor-modules' ),
 			'description'     => __( 'Vegas Full-width Slideshow for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
-			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/vegas-slideshow/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/vegas-slideshow/',
 			'editor_export'   => true, // Defaults to true and can be omitted.

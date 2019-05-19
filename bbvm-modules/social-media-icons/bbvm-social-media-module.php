@@ -3,10 +3,10 @@ class BBVapor_Social_Media_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Social Media Icons', 'bb-vapor-modules' ),
-			'description'     => __( 'Adds social media icons', 'bb-vapor-modules' ),
-			'category'        => __( 'Base', 'bb-vapor-modules' ),
-			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
+			'name'            => __( 'Social Media Icons', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Adds social media icons', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/social-media-icons/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/social-media-icons/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -20,7 +20,7 @@ class BBVapor_Social_Media_Module extends FLBuilderModule {
  */
 FLBuilder::register_settings_form(
 	'bbvm_social_form', array(
-		'title' => __( 'Add Social Media URL', 'bb-vapor-modules' ),
+		'title' => __( 'Add Social Media URL', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
 				'title'         => __('General', 'fl-builder'),
@@ -45,14 +45,14 @@ FLBuilder::register_settings_form(
 );
 FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'bb-vapor-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Add Social Icons', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Add Social Icons', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'social_form'    => array( // Section Fields
 						'type'         => 'form',
-						'label'        => __( 'Social Item', 'bb-vapor-modules' ),
+						'label'        => __( 'Social Item', 'bb-vapor-modules-pro' ),
 						'form'         => 'bbvm_social_form',
 						'preview_text' => 'social_share_type',
 						'multiple'     => true,
@@ -65,31 +65,31 @@ FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 		'title' => __( 'Styles', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
-				'title'         => __('Style', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Style', 'bb-vapor-modules-pro'), // Section Title
 				'fields' => array(
 					'padding' => array(
 						'type'        => 'dimension',
-						'label'       => __( 'Padding', 'bb-vapor-modules' ),
+						'label'       => __( 'Padding', 'bb-vapor-modules-pro' ),
 						'description' => 'px',
 						'responsive'  => true,
 					),
 					'orientation'    => array( // Section Fields
 						'type'         => 'select',
-						'label'        => __( 'Orientation', 'bb-vapor-modules' ),
+						'label'        => __( 'Orientation', 'bb-vapor-modules-pro' ),
 						'default' => 'horizontal',
 						'options' => array(
-							'horizontal'  => __( 'Horizontal', 'bb-vapor-modules' ),
-							'vertical' => __( 'Vertical', 'bb-vapor-modules' ),
+							'horizontal'  => __( 'Horizontal', 'bb-vapor-modules-pro' ),
+							'vertical' => __( 'Vertical', 'bb-vapor-modules-pro' ),
 						),
 					),
 					'background_select'    => array( // Section Fields
 						'type'         => 'select',
-						'label'        => __( 'Background Type', 'bb-vapor-modules' ),
+						'label'        => __( 'Background Type', 'bb-vapor-modules-pro' ),
 						'default' => 'color',
 						'options' => array(
-							'color'  => __( 'Color', 'bb-vapor-modules' ),
-							'gradient' => __( 'Gradient', 'bb-vapor-modules' ),
-							'photo' => __( 'Photo', 'bb-vapor-modules' ),
+							'color'  => __( 'Color', 'bb-vapor-modules-pro' ),
+							'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
+							'photo' => __( 'Photo', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'color' => array( 'fields' => array( 'background_color' ) ),
@@ -99,7 +99,7 @@ FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 					),
 					'background_image' => array(
 						'type'          => 'photo',
-						'label'         => __('Background Image', 'bb-vapor-modules'),
+						'label'         => __('Background Image', 'bb-vapor-modules-pro'),
 					),
 					'background_overlay' => array(
 						'type' => 'color',
@@ -109,14 +109,14 @@ FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 					),
 					'background_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Background Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Background Color', 'bb-vapor-modules-pro' ),
 						'default'       => 'FFFFFF',
 						'show_reset'    => true,
 						'show_alpha'    => true,
 					),
 					'background_gradient' => array(
 						'type'          => 'gradient',
-						'label'         => __( 'Gradient Background Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Gradient Background Color', 'bb-vapor-modules-pro' ),
 						'preview' => array(
 							'type'     => 'css',
 							'selector' => '.bbvm-module-social-wrapper',
@@ -125,14 +125,14 @@ FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 					),
 					'fill'    => array( // Section Fields
 						'type'         => 'select',
-						'label'        => __( 'Fill Color', 'bb-vapor-modules' ),
+						'label'        => __( 'Fill Color', 'bb-vapor-modules-pro' ),
 						'default' => 'none',
 						'options' => array(
-							'none'  => __( 'Select a color', 'bb-vapor-modules' ),
-							'FFFFFF' => __( 'White', 'bb-vapor-modules' ),
-							'000000' => __( 'Black', 'bb-vapor-modules' ),
-							'brand' => __( 'Brand Colors', 'bb-vapor-modules' ),
-							'custom' => __( 'Custom', 'bb-vapor-modules' )
+							'none'  => __( 'Select a color', 'bb-vapor-modules-pro' ),
+							'FFFFFF' => __( 'White', 'bb-vapor-modules-pro' ),
+							'000000' => __( 'Black', 'bb-vapor-modules-pro' ),
+							'brand' => __( 'Brand Colors', 'bb-vapor-modules-pro' ),
+							'custom' => __( 'Custom', 'bb-vapor-modules-pro' )
 						),
 						'toggle' => array(
 							'custom' => array(
@@ -142,14 +142,14 @@ FLBuilder::register_module('BBVapor_Social_Media_Module', array(
 					),
 					'fill_custom'    => array( // Section Fields
 						'type'         => 'color',
-						'label'        => __( 'Custom Fill Color', 'bb-vapor-modules' ),
+						'label'        => __( 'Custom Fill Color', 'bb-vapor-modules-pro' ),
 						'default' => '333333',
 						'show_reset' => true,
 						'show_alpha' => true
 					),
 					'icon_size' => array(
 						'type'        => 'select',
-						'label'       => __( 'Icon Size', 'bb-vapor-modules' ),
+						'label'       => __( 'Icon Size', 'bb-vapor-modules-pro' ),
 						'description' => 'px',
 						'default' => '24',
 						'options' => array(

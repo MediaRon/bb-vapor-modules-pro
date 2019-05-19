@@ -6,7 +6,7 @@ class BBVapor_Gist_Module extends FLBuilderModule {
 			'name'            => __( 'Gist', 'bb-vapor-modules' ),
 			'description'     => __( 'Gists for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
-			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/gist/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/gist/',
 			'editor_export'   => true, // Defaults to true and can be omitted.

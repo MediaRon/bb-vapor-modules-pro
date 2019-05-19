@@ -6,7 +6,7 @@ class BBVapor_Alerts_Module extends FLBuilderModule {
 			'name'            => __( 'Alerts', 'bb-vapor-modules' ),
 			'description'     => __( 'Alerts for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
-			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/alerts/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/alerts/',
 			'editor_export'   => true, // Defaults to true and can be omitted.

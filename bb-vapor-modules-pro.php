@@ -8,7 +8,7 @@
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
  * Contributors: ronalfy
- * Text Domain: bb-vapor-modules-pro
+ * Text Domain: bb-vapor-modules-pro-pro
  * Domain Path: /languages
  */
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
@@ -25,7 +25,7 @@ class BBVapor_Modules_Pro {
 		add_action( 'plugin_loaded', array( $this, 'bbvm_beaver_builder_plugin_loaded' ), 9 );
 
 		// Load text domain
-		load_plugin_textdomain( 'bb-vapor-modules-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'bb-vapor-modules-pro-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 	public function bbvm_beaver_builder_module_init() {
 
@@ -129,7 +129,7 @@ class BBVapor_Modules_Pro {
 			'site' => get_bloginfo( 'sitename' ),
 			'start' => false,
 			'end' => date('Y'),
-			'copyright_text' => __( 'Copyright', 'bb-vapor-modules' ),
+			'copyright_text' => __( 'Copyright', 'bb-vapor-modules-pro' ),
 			'symbol' => '&copy;'
 		), $atts );
 		$copyright_html = '';

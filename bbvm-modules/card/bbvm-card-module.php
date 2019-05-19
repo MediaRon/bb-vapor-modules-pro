@@ -6,7 +6,7 @@ class BBVapor_Card_Module extends FLBuilderModule {
 			'name'            => __( 'Card', 'bb-vapor-modules' ),
 			'description'     => __( 'Add a card', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
-			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/card/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/card/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -410,7 +410,7 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 						'options' => array(
 							'none' => __( 'None', 'bb-vapor-modules' ),
 							'before' => __( 'Before', 'bb-vapor-modules' ),
-							'after' => __( 'After', 'mediarion-bb-modules' )
+							'after' => __( 'After', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'none'
 					),
