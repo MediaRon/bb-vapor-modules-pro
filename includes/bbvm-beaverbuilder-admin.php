@@ -35,6 +35,22 @@ class BBVapor_BeaverBuilder_Admin {
 	 */
 	public function init() {
 
+		require_once BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'includes/EDD_SL_Plugin_Updater.php';
+		$license = get_site_option( 'bb_vapor_modules_license', false );
+		if ( false !== $license ) {
+			// setup the updater
+			$edd_updater = new BBVM_EDD_SL_Plugin_Updater( 'https://bbvapormodules.com', __FILE__,
+				array(
+					'version' => BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+					'license' => $license,
+					'item_id' => 688,
+					'author'  => 'Ronald Huereca',
+					'beta'    => false,
+					'url'     => home_url(),
+				)
+			);
+		}
+
 		// Add settings link
 		add_action( 'plugin_action_links_' . BBVAPOR_PRO_BEAVER_BUILDER_SLUG, array( $this, 'plugin_settings_link' ) );
 
@@ -54,7 +70,12 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @return null HTML Settings
 	 */
 	public function after_plugin_row( $plugin_file, $plugin_data, $status ) {
-		echo sprintf( '<tr class="active"><td colspan="3"><a href="%s">%s</a></td></tr>', esc_url( 'https://bbvapormodules.com' ), __( 'Update to Pro for more modules!', 'bb-vapor-modules-pro' ) );
+		$license = get_site_option( 'bbvm_for_beaver_builder_license', '' );
+		$license_status = get_site_option( 'bbvm_for_beaver_builder_license_status', false );
+		$options_url = add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) );
+		if( empty( $license ) || false === $license_status ) {
+			echo sprintf( '<tr class="active"><td colspan="3">%s <a href="%s">%s</a></td></tr>', __( 'Please enter a license to receive automatic updates.', 'bb-vapor-modules-pro' ), esc_url( $options_url ), __( 'Enter License.', 'bb-vapor-modules-pro' ) );
+		}
 	}
 
 	/**

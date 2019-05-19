@@ -167,3 +167,26 @@ function bbvm_pro_instagram_generage_sig($endpoint, $params, $secret) {
 }
 
 new BBVapor_Modules_Pro();
+
+function bbvm_bb_add_image_sizes() {
+	// Add a large WooCommerce Thumb
+	if ( class_exists( 'woocommerce' ) ) {
+		add_image_size( 'woocommerce_large_thumb', 600, 600, true );
+	}
+}
+add_action( 'after_setup_theme', 'bbvm_bb_add_image_sizes' );
+
+if( ! function_exists( 'bbvm_edd_download_count' ) ) {
+	function bbvm_edd_download_count( $id, $hash, $license, $expires ) {
+		$count = get_post_meta( $id, 'bbvm_edd_download_count', true );
+		if ( false == $count ) {
+			$count = 1;
+			update_post_meta( $id, 'bbvm_edd_download_count', $count );
+			return;
+		}
+		$count = absint( $count );
+		$count += 1;
+		update_post_meta( $id, 'bbvm_edd_download_count', $count );
+	}
+}
+add_action( 'edd_sl_before_package_download', 'bbvm_edd_download_count', 10, 4 );
