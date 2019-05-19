@@ -37,69 +37,175 @@ class BBVapor_Modules_Pro {
 			add_action( 'wp_head', array( $this, 'bbvm_beaver_builder_ajax_url' ) );
 
 			// Breadcrumb module
-			require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
-			new BBVapor_Breadcrumbs_Module();
+		require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
+		new BBVapor_Breadcrumbs_Module();
 
-			// Photo overlay module
-			require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
-			new BBVapor_Photo_Overlay_Module();
+		// Markdown module
+		require_once 'bbvm-modules/markdown/bbvm-markdown.php';
+		new BBVapor_Markdown_Module();
 
-			// Card Module
-			require_once 'bbvm-modules/card/bbvm-card-module.php';
-			new BBVapor_Card_Module();
+		// Photo overlay module
+		require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
+		new BBVapor_Photo_Overlay_Module();
+		require_once 'bbvm-modules/photo-overlay-advanced/bbvm-photo-overlay-advanced-module.php';
+		new BBVapor_Photo_Overlay_Advanced_Module();
 
-			// Alerts Module
-			require_once 'bbvm-modules/alerts/bbvm-alerts-module.php';
-			new BBVapor_Alerts_Module();
+		// Card Module
+		require_once 'bbvm-modules/card/bbvm-card-module.php';
+		new BBVapor_Card_Module();
 
-			// Animated Button Module
-			require_once 'bbvm-modules/animated-button/bbvm-animated-button.php';
-			new BBVapor_Animated_Button_Module();
+		// Card Group Module
+		require_once 'bbvm-modules/card-group/bbvm-card-group-module.php';
+		new BBVapor_Card_Group_Module();
 
-			// Button Module
-			require_once 'bbvm-modules/button/bbvm-button.php';
-			new BBVapor_Button_Module();
+		// Before and After Module
+		require_once 'bbvm-modules/beforeafter/bbvm-beforeafter-module.php';
+		new BBVapor_Before_After_Module();
 
-			// Gists Module
-			require_once 'bbvm-modules/gist/bbvm-gist-module.php';
-			new BBVapor_Gist_Module();
+		// Alerts Module
+		require_once 'bbvm-modules/alerts/bbvm-alerts-module.php';
+		new BBVapor_Alerts_Module();
 
-			// Gravatar module
-			require_once 'bbvm-modules/gravatar/bbvm-gravatar-module.php';
-			new BBVapor_Gravatar_Module();
+		// Animated Headlines Module
+		require_once 'bbvm-modules/animated-headlines/bbvm-animated-headlines-module.php';
+		new BBVapor_Animated_Headlines_Module();
 
-			// Social Media Icons Module
-			require_once 'bbvm-modules/social-media-icons/bbvm-social-media-module.php';
-			new BBVapor_Social_Media_Module();
+		// Animated Button Module
+		require_once 'bbvm-modules/animated-button/bbvm-animated-button.php';
+		new BBVapor_Animated_Button_Module();
 
-			// Copyright Module
-			require_once 'bbvm-modules/copyright/bbvm-copyright-module.php';
-			new BBVapor_Copyright_Module();
+		// Button Module
+		require_once 'bbvm-modules/button/bbvm-button.php';
+		new BBVapor_Button_Module();
 
-			// Syntax highlighter module
-			global $SyntaxHighlighter;
-			if( is_object( $SyntaxHighlighter ) ) {
-				require_once 'bbvm-modules/syntax-highlighter/bbvm-syntax-highlighter-module.php';
-				new BBVapor_Syntax_Highlighter_Module();
-			}
+		// Button Group Module
+		require_once 'bbvm-modules/button-group/bbvm-button-module.php';
+		new BBVapor_Button_Group_Module();
 
-			// Spacers/Separators
-			require_once 'bbvm-modules/simple-spacer/bbvm-simple-spacer-module.php';
-			new BBVapor_Simple_Spacer_Module();
-			require_once 'bbvm-modules/simple-separator/bbvm-simple-separator.php';
-			new BBVapor_Simple_Separator_Module();
-			require_once 'bbvm-modules/intermediate-separator/bbvm-intermediate-separator.php';
-			new BBVapor_Intermediate_Separator_Module();
-			require_once 'bbvm-modules/advanced-separator/bbvm-advanced-separator-module.php';
-			new BBVapor_Advanced_Separator_Module();
+		// Blockquote Module
+		require_once 'bbvm-modules/blockquotes/bbvm-blockquotes-module.php';
+		new BBVapor_Blockquotes_Module();
 
-			// Vegas Slideshow
-			require_once 'bbvm-modules/vegas-slideshow/bbvm-vegas-slideshow-module.php';
-			new BBVapor_Vegas_Slideshow_Module();
+		// FAQ Module
+		require_once 'bbvm-modules/faq/bbvm-faq-module.php';
+		new BBVapor_FAQ_Module();
 
-			// Instagram
-			require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
-			new BBVapor_Instagram_Module();
+		// Testimonials Module
+		require_once 'bbvm-modules/testimonials/bbvm-testimonials-module.php';
+		new BBVapor_Testimonials_Module();
+
+		// Select Posts Module
+		require_once 'bbvm-modules/postselect/bbvm-post-select-module.php';
+		new BBVapor_PostSelect_Module();
+
+		// Gists Module
+		require_once 'bbvm-modules/gist/bbvm-gist-module.php';
+		new BBVapor_Testimonials_Module();
+
+		// Unordered List Module
+		require_once 'bbvm-modules/unordered-list/bbvm-unordered-list-module.php';
+		new BBVapor_Unordered_List_Module();
+
+		// Gravatar module
+		require_once 'bbvm-modules/gravatar/bbvm-gravatar-module.php';
+		new BBVapor_Gravatar_Module();
+
+		// Social Media Icons Module
+		require_once 'bbvm-modules/social-media-icons/bbvm-social-media-module.php';
+		new BBVapor_Social_Media_Module();
+
+		// Copyright Module
+		require_once 'bbvm-modules/copyright/bbvm-copyright-module.php';
+		new BBVapor_Copyright_Module();
+
+		// Syntax highligheter module
+		global $SyntaxHighlighter;
+		if( is_object( $SyntaxHighlighter ) ) {
+			require_once 'bbvm-modules/syntax-highlighter/bbvm-syntax-highlighter-module.php';
+			new BBVapor_Syntax_Highlighter_Module();
+		}
+		require_once 'bbvm-modules/syntax-highlighter-native/bbvm-syntax-highlighter-native-module.php';
+		new BBVapor_Syntax_Highlighter_Native_Module();
+
+		// Jetpack Related Posts module
+		if( class_exists( 'Jetpack_RelatedPosts' ) ) {
+			require_once 'bbvm-modules/jetpack-related-posts/bbvm-jetpack-related-posts-module.php';
+			new BBVapor_Jetpack_Related_Posts_Module();
+		}
+
+		// Jetpack Sharing module
+		if( function_exists( 'sharing_display' ) ) {
+			require_once 'bbvm-modules/jetpack-sharing/bbvm-jetpack-sharing.php';
+			new BBVapor_Jetpack_Sharing_Module();
+		}
+
+		// Restaurant Menu Module
+		require_once 'bbvm-modules/restaurant-menu-items/bbvm-restaurant-menu-items.php';
+		new BBVapor_Restaurant_Menu_Item_Module();
+
+		// Restaurant Add Menu Item Module
+		require_once 'bbvm-modules/restaurant-menu-item/bbvm-restaurant-menu-item.php';
+		new BBVapor_Restaurant_Menu_Item_Add_Module();
+
+		// Restaurant Add Menu Item Category Module
+		require_once 'bbvm-modules/restaurant-menu-category/bbvm-restaurant-menu-category.php';
+		new BBVapor_Restaurant_Menu_Category();
+
+		// Spacers/Separators
+		require_once 'bbvm-modules/simple-spacer/bbvm-simple-spacer-module.php';
+		new BBVapor_Simple_Spacer_Module();
+		require_once 'bbvm-modules/simple-separator/bbvm-simple-separator.php';
+		new BBVapor_Simple_Separator_Module();
+		require_once 'bbvm-modules/intermediate-separator/bbvm-intermediate-separator.php';
+		new BBVapor_Intermediate_Separator_Module();
+		require_once 'bbvm-modules/advanced-separator/bbvm-advanced-separator-module.php';
+		new BBVapor_Advanced_Separator_Module();
+
+		// Vegas Slideshow
+		require_once 'bbvm-modules/vegas-slideshow/bbvm-vegas-slideshow-module.php';
+		new BBVapor_Vegas_Slideshow_Module();
+
+		// Restaurant Tabbed Module
+		require_once 'bbvm-modules/restaurant-menu-tabbed/bbvm-restaurant-menu-tabbed.php';
+		new BBVapor_Restaurant_Menu_Tabbed_Module();
+
+		// Gravity Forms
+		if ( class_exists( 'GFAPI' ) ) {
+			require_once 'bbvm-modules/gravityforms/bbvm-gravityforms-module.php';
+			new BBVapor_Gravityforms_Module();
+		}
+
+		// Soliloquy
+		if ( class_exists( 'Soliloquy' ) ) {
+			require_once 'bbvm-modules/soliloquy/bbvm-soliloquy-module.php';
+			new BBVapor_Soliloquy_Module();
+		}
+
+		// Instagram
+		require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
+		new BBVapor_Instagram_Module();
+
+		// Photoproof
+		if( class_exists( 'Apollo13Framework' ) ) {
+			require_once 'bbvm-modules/photoproof/bbvm-photoproof-module.php';
+			new BBVapor_Photoproof_Module();
+		}
+
+		// WooCommerce Modules
+		if ( class_exists( 'woocommerce' ) ) {
+			require_once 'bbvm-modules/woocommerce-add-to-cart/bbvm-woocommerce-add-to-cart.php';
+			new BBVapor_WooCommerce_Add_To_Cart_Module();
+			require_once 'bbvm-modules/woocommerce-featured-products/bbvm-woocommerce-featured-products.php';
+			new BBVapor_WooCommerce_Featured_Products_Module();
+			require_once 'bbvm-modules/woocommerce-featured-category/bbvm-woocommerce-featured-category.php';
+			new BBVapor_WooCommerce_Featured_Category_Module();
+		}
+
+		// Edd Modules
+		if( class_exists( 'Easy_Digital_Downloads' ) ) {
+			require_once 'bbvm-modules/edd-download-count/bbvm-edd-download-count-module.php';
+			new BBVapor_EDD_Download_Count_Module();
+		}
 
 			add_shortcode( 'bbvm_bb_copyright', array( $this, 'bbvm_beaver_builder_copyright' ) );
 		}
