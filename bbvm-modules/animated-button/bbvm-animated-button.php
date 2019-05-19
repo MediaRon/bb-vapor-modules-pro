@@ -7,8 +7,8 @@ class BBVapor_Animated_Button_Module extends FLBuilderModule {
 			'description'     => __( 'Add a Animated Button', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/animated-button/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/animated-button/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -16,7 +16,7 @@ class BBVapor_Animated_Button_Module extends FLBuilderModule {
 	}
 	public function enqueue_scripts() {
 		if( $this->settings ) {
-			$this->add_css('mrbb-hover', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/css/hover-min.css', array(), BBVAPOR_BEAVER_BUILDER_VERSION, 'all' );
+			$this->add_css('mrbb-hover', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/css/hover-min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		}
 	}
 }

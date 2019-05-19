@@ -7,8 +7,8 @@ class BBVapor_Photo_Overlay_Module extends FLBuilderModule {
 			'description'     => __( 'Add an overlay to a photo', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/photo-overlay/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/photo-overlay/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/photo-overlay/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/photo-overlay/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.

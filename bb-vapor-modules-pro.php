@@ -1,32 +1,31 @@
 <?php
 /**
- * Plugin Name: BB Vapor Modules
+ * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
- * Description: A selection of modules for Beaver Builder.
+ * Description: A growing selection of modules for Beaver Builder.
  * Version: 1.0.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
  * Contributors: ronalfy
- * Text Domain: bb-vapor-modules
+ * Text Domain: bb-vapor-modules-pro
  * Domain Path: /languages
  */
-define( 'BBVAPOR_PLUGIN_FREE', true );
-define( 'BBVAPOR_PLUGIN_NAME', 'BB Vapor Modules' );
-define( 'BBVAPOR_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
-define( 'BBVAPOR_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_BEAVER_BUILDER_VERSION', '1.0.0' );
-define( 'BBVAPOR_BEAVER_BUILDER_SLUG', plugin_basename(__FILE__) );
-define( 'BBVAPOR_INSTAGRAM_CLIENT_ID', '8dba23ca2c1c45509c32343db0d37a96' );
-define( 'BBVAPOR_INSTAGRAM_CLIENT_SECRET', '60a83038c1ff42deb69a47ccce7c5eb1' );
+define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.0.0' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename(__FILE__) );
+define( 'BBVAPOR_PRO_INSTAGRAM_CLIENT_ID', '8dba23ca2c1c45509c32343db0d37a96' );
+define( 'BBVAPOR_PRO_INSTAGRAM_CLIENT_SECRET', '60a83038c1ff42deb69a47ccce7c5eb1' );
 
-class BBVapor_Modules {
+class BBVapor_Modules_Pro {
 
 	public function __construct() {
-		add_action( 'plugin_loaded', array( $this, 'bbvm_beaver_builder_plugin_loaded' ) );
+		add_action( 'plugin_loaded', array( $this, 'bbvm_beaver_builder_plugin_loaded' ), 9 );
 
 		// Load text domain
-		load_plugin_textdomain( 'bb-vapor-modules', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'bb-vapor-modules-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 	public function bbvm_beaver_builder_module_init() {
 
@@ -116,10 +115,7 @@ class BBVapor_Modules {
 	<?php
 	}
 	public function bbvm_beaver_builder_plugin_loaded() {
-
-		if ( ! apply_filters( 'bbvapor_load', true ) ) {
-			return;
-		}
+		add_filter( 'bbvapor_load', '__return_false' );
 
 		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 20 );
 
@@ -149,7 +145,7 @@ class BBVapor_Modules {
 	}
 }
 
-function bbvm_instagram_get_sig( $instagramUserId, $instagramToken, $maxId, $feedCount ) {
+function bbvm_pro_instagram_get_sig( $instagramUserId, $instagramToken, $maxId, $feedCount ) {
 	$params = array(
 		'access_token' => $instagramToken,
 		'count' => $feedCount
@@ -158,10 +154,10 @@ function bbvm_instagram_get_sig( $instagramUserId, $instagramToken, $maxId, $fee
 		$params['max_id'] = $maxId;
 	}
 	$endpoint = sprintf( '/users/%d/media/recent', $instagramUserId );
-	$sig = bbvm_instagram_generage_sig( $endpoint, $params, BBVAPOR_INSTAGRAM_CLIENT_SECRET );
+	$sig = bbvm_pro_instagram_generage_sig( $endpoint, $params, BBVAPOR_PRO_INSTAGRAM_CLIENT_SECRET );
 	return $sig;
 }
-function bbvm_instagram_generage_sig($endpoint, $params, $secret) {
+function bbvm_pro_instagram_generage_sig($endpoint, $params, $secret) {
 	$sig = $endpoint;
 	ksort($params);
 	foreach ($params as $key => $val) {
@@ -170,4 +166,4 @@ function bbvm_instagram_generage_sig($endpoint, $params, $secret) {
 	return hash_hmac('sha256', $sig, $secret, false);
 }
 
-new BBVapor_Modules();
+new BBVapor_Modules_Pro();

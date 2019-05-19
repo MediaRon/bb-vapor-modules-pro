@@ -7,8 +7,8 @@ class BBVapor_Copyright_Module extends FLBuilderModule {
 			'description'     => __( 'Copyright for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/copyright/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/copyright/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/copyright/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/copyright/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -17,7 +17,7 @@ class BBVapor_Copyright_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if( $this->settings && ! empty( $this->settings->copyright_site_field ) ) {
-			$this->add_css('bbvm-copyright-for-beaver-builder', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/copyright/css/frontend.css' );
+			$this->add_css('bbvm-copyright-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/copyright/css/frontend.css' );
 		}
 	}
 }

@@ -7,8 +7,8 @@ class BBVapor_Card_Module extends FLBuilderModule {
 			'description'     => __( 'Add a card', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/card/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/card/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/card/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/card/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.

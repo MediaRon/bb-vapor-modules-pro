@@ -7,8 +7,8 @@ class BBVapor_Breadcrumbs_Module extends FLBuilderModule {
 			'description'     => __( 'Breadcrumbs for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/basic-breadcrumbs-module/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/basic-breadcrumbs-module/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/basic-breadcrumbs-module/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/basic-breadcrumbs-module/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -16,7 +16,7 @@ class BBVapor_Breadcrumbs_Module extends FLBuilderModule {
 	}
 	public function enqueue_scripts() {
 		if( $this->settings && 'none' !== $this->settings->breadcrumb_select_field ) {
-			$this->add_css('bbvm-breadcrumbs-for-beaver-builder', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/basic-breadcrumbs-module/css/frontend.css' );
+			$this->add_css('bbvm-breadcrumbs-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/basic-breadcrumbs-module/css/frontend.css' );
 		}
 	}
 }

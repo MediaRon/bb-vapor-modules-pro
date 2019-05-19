@@ -7,8 +7,8 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 			'description'     => __( 'GitHub Markdown for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/markdown/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/markdown/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -16,11 +16,11 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 	}
 	public function enqueue_scripts() {
 		if( $this->settings && 'default' === $this->settings->markdown_theme ) {
-			$this->add_css('mrbb-markdown-default', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/markdown-theme-default.css' );
+			$this->add_css('mrbb-markdown-default', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/markdown-theme-default.css' );
 		}
 		if( $this->settings && 'yes' === $this->settings->enable_syntax_highlighting ) {
-			$this->add_js('prism', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/js/prism.js' );
-			$this->add_css('prism-' . $this->settings->theme, BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/' . $this->settings->theme . '.css' );
+			$this->add_js('prism', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/js/prism.js' );
+			$this->add_css('prism-' . $this->settings->theme, BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/' . $this->settings->theme . '.css' );
 		}
 	}
 }

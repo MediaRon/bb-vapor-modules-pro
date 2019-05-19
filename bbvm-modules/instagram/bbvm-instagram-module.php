@@ -7,8 +7,8 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 			'description'     => __( 'Add an Instagram Feed', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/instagram/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/instagram/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -50,7 +50,7 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 
 		// Get pagination information
 		if( isset( $instagramJSON->pagination->next_max_id  ) ) {
-			$sig = bbvm_instagram_get_sig( $user_id, $token, $instagramJSON->pagination->next_max_id, $count );
+			$sig = bbvm_pro_instagram_get_sig( $user_id, $token, $instagramJSON->pagination->next_max_id, $count );
 			$return['pagination_url'] = sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d&max_id=%s', $user_id, $token, $sig, $count, $instagramJSON->pagination->next_max_id );
 		}
 		die( json_encode( $return ) );
@@ -58,8 +58,8 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if ( $this->settings && 'masonry' === $this->settings->layout ) {
-			$this->add_js('macy', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy.js', array('jquery'), '20190411', true );
-			$this->add_js('macy-init', BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy-init.js', array('jquery'), '20190411', true );
+			$this->add_js('macy', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy.js', array('jquery'), '20190411', true );
+			$this->add_js('macy-init', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy-init.js', array('jquery'), '20190411', true );
 		}
 	}
 }

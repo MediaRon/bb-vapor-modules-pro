@@ -7,8 +7,8 @@ class BBVapor_Advanced_Separator_Module extends FLBuilderModule {
 			'description'     => __( 'Advanced Separator for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Separators/Spacers', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/advanced-separator/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/advanced-separator/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/advanced-separator/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/advanced-separator/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.

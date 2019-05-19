@@ -7,8 +7,8 @@ class BBVapor_Simple_Spacer_Module extends FLBuilderModule {
 			'description'     => __( 'Simple Spacer for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Separators/Spacers', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/simple-spacer/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/simple-spacer/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/simple-spacer/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/simple-spacer/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.

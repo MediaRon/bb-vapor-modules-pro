@@ -37,9 +37,9 @@ function bbvapor_modules_enqueue_vegas( $row ) {
 			$javascript .= ']';
 			$javascript .= '});';
 			$javascript .= '} );';
-			wp_enqueue_script( 'vegas', BBVAPOR_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_BEAVER_BUILDER_VERSION, true );
+			wp_enqueue_script( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 			wp_add_inline_script( 'vegas', $javascript, 'after' );
-			wp_enqueue_style( 'vegas', BBVAPOR_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_BEAVER_BUILDER_VERSION, 'all' );
+			wp_enqueue_style( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		}
 	}
 }

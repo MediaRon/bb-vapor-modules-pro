@@ -14,7 +14,7 @@
 			$break_cache = true;
 		}
 		if ( empty( $instagram_json ) || $break_cache ) {
-			$sig = bbvm_instagram_get_sig( $instagram['user_id'], $instagram['token'], false, $settings->items_show );
+			$sig = bbvm_pro_instagram_get_sig( $instagram['user_id'], $instagram['token'], false, $settings->items_show );
 			$ch = curl_init();
 			curl_setopt( $ch, CURLOPT_URL, sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show ) );
 			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
@@ -76,7 +76,7 @@
 			<div class="instagram-buttons">
 			<?php
 			if( isset( $instagramJSON->pagination->next_url ) ) {
-				$sig = bbvm_instagram_get_sig( $instagram['user_id'], $instagram['token'], $instagramJSON->pagination->next_max_id, $settings->items_show );
+				$sig = bbvm_pro_instagram_get_sig( $instagram['user_id'], $instagram['token'], $instagramJSON->pagination->next_max_id, $settings->items_show );
 				$load_more_url = sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d&max_id=%s', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show, $instagramJSON->pagination->next_max_id );
 
 				?>

@@ -7,8 +7,8 @@ class BBVapor_Syntax_Highlighter_Module extends FLBuilderModule {
 			'description'     => __( 'Syntax Highlighter for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'External Plugins', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/syntax-highlighter/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/syntax-highlighter/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.

@@ -34,10 +34,10 @@ class BBVapor_BeaverBuilder_Admin {
 	public function init() {
 
 		// Add settings link
-		add_action( 'plugin_action_links_' . BBVAPOR_BEAVER_BUILDER_SLUG, array( $this, 'plugin_settings_link' ) );
+		add_action( 'plugin_action_links_' . BBVAPOR_PRO_BEAVER_BUILDER_SLUG, array( $this, 'plugin_settings_link' ) );
 		add_action( 'admin_menu', array( $this, 'register_sub_menu') );
 
-		add_action( 'after_plugin_row_' . BBVAPOR_BEAVER_BUILDER_SLUG, array( $this, 'after_plugin_row' ), 10, 3 );
+		add_action( 'after_plugin_row_' . BBVAPOR_PRO_BEAVER_BUILDER_SLUG, array( $this, 'after_plugin_row' ), 10, 3 );
 
 	}
 

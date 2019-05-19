@@ -7,8 +7,8 @@ class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
 			'description'     => __( 'Vegas Full-width Slideshow for Beaver Builder', 'bb-vapor-modules' ),
 			'category'        => __( 'Base', 'bb-vapor-modules' ),
 			'group'           => __( 'Vapor', 'mediarion-bb-modules' ),
-			'dir'             => BBVAPOR_BEAVER_BUILDER_DIR . 'bbvm-modules/vegas-slideshow/',
-			'url'             => BBVAPOR_BEAVER_BUILDER_URL . 'bbvm-modules/vegas-slideshow/',
+			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/vegas-slideshow/',
+			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/vegas-slideshow/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -17,8 +17,8 @@ class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
 
 	public function enqueue_scripts() {
 		if( $this->settings && ! empty( $this->settings->images ) ) {
-			wp_enqueue_script( 'vegas', BBVAPOR_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_BEAVER_BUILDER_VERSION, true );
-			wp_enqueue_style( 'vegas', BBVAPOR_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_BEAVER_BUILDER_VERSION, 'all' );
+			wp_enqueue_script( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+			wp_enqueue_style( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		}
 	}
 }
