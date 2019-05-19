@@ -12,7 +12,7 @@ jQuery( 'body' ).on('change', '.bbvm-post-select, .bbvm-taxonomy-select', functi
 		} else {
 			var term = jQuery( '.bbvm-term-select :selected' ).val()
 		}
-		jQuery.post( mediarion_beaver_builder_ajax_url, { action: 'bbvm_bb_get_data', post_type: jQuery( '.bbvm-post-select :selected' ).val(), taxonomy: taxonomy, term: term }, function( response ) {
+		jQuery.post( bbvm_beaver_builder_ajax_url, { action: 'bbvm_bb_get_data', post_type: jQuery( '.bbvm-post-select :selected' ).val(), taxonomy: taxonomy, term: term }, function( response ) {
 		jQuery( '.bbvm-taxonomy-select' ).html( response.taxonomies );
 		jQuery( '.bbvm-taxonomy-select option' ).each( function() {
 			if( $(this).val() == response.taxonomy ) {
@@ -20,7 +20,7 @@ jQuery( 'body' ).on('change', '.bbvm-post-select, .bbvm-taxonomy-select', functi
 				return;
 			}
 		} );
-		jQuery.post( mediarion_beaver_builder_ajax_url, { action: 'bbvm_bb_get_terms', post_type: jQuery( '.bbvm-post-select :selected' ).val(), taxonomy: response.taxonomy }, function( response ) {
+		jQuery.post( bbvm_beaver_builder_ajax_url, { action: 'bbvm_bb_get_terms', post_type: jQuery( '.bbvm-post-select :selected' ).val(), taxonomy: response.taxonomy }, function( response ) {
 			jQuery( '.bbvm-term-select' ).html( response );
 			jQuery( '.bbvm-term-select option' ).each( function() {
 				if( $(this).val() == term ) {
