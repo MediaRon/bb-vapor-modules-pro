@@ -3,10 +3,10 @@ class BBVapor_Card_Group_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Card Group', 'mediaron-bb-modules' ),
-			'description'     => __( 'Card Group', 'mediaron-bb-modules' ),
-			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'name'            => __( 'Card Group', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Card Group', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/card-group/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/card-group',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -17,17 +17,17 @@ class BBVapor_Card_Group_Module extends FLBuilderModule {
 }
 FLBuilder::register_settings_form(
 	'mrbb_card_group_icons', array(
-		'title' => __( 'Add Icons', 'mediaron-bb-modules' ),
+		'title' => __( 'Add Icons', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('General', 'mediaron-bb-modules'),
+				'title'         => __('General', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
 						'title'         => '',
 						'fields'        => array(
 							'icon_group'         => array(
 								'type'          => 'icon',
-								'label' => __( 'Select icon', 'mediaron-bb-modules' )
+								'label' => __( 'Select icon', 'bb-vapor-modules-pro' )
 
 							)
 						),
@@ -39,21 +39,21 @@ FLBuilder::register_settings_form(
 );
 FLBuilder::register_settings_form(
 	'mrbb_card_group', array(
-		'title' => __( 'Add a Card', 'mediaron-bb-modules' ),
+		'title' => __( 'Add a Card', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'       => array( // Tab
-				'title'         => __('Photo/Icon', 'mediaron-bb-modules'), // Tab title
+				'title'         => __('Photo/Icon', 'bb-vapor-modules-pro'), // Tab title
 				'sections'      => array( // Tab Sections
 					'general'       => array( // Section
-						'title'         => __('Card', 'mediaron-bb-modules'), // Section Title
+						'title'         => __('Card', 'bb-vapor-modules-pro'), // Section Title
 						'fields'        => array( // Section Fields
 							'photo_type' => array(
 								'type'          => 'select',
-								'label'         => __('Card photo type', 'mediaron-bb-modules'),
+								'label'         => __('Card photo type', 'bb-vapor-modules-pro'),
 								'options' => array(
-									'none' => __( 'None', 'mediaron-bb-modules' ),
-									'icon' => __( 'Icon', 'mediaron-bb-modules' ),
-									'photo' => __( 'Photo', 'mediaron-bb-modules' )
+									'none' => __( 'None', 'bb-vapor-modules-pro' ),
+									'icon' => __( 'Icon', 'bb-vapor-modules-pro' ),
+									'photo' => __( 'Photo', 'bb-vapor-modules-pro' )
 								),
 								'default' => 'icon',
 								'toggle' => array(
@@ -63,68 +63,68 @@ FLBuilder::register_settings_form(
 							),
 							'icon' => array(
 								'type'          => 'form',
-								'label'         => __('Icon', 'mediaron-bb-modules'),
+								'label'         => __('Icon', 'bb-vapor-modules-pro'),
 								'form' => 'mrbb_card_group_icons',
 								'multiple'     => true,
 								'preview_text'  => 'icon_group'
 							),
 							'icon_color' => array(
 								'type'          => 'color',
-								'label'         => __('Icon Color', 'mediaron-bb-modules'),
+								'label'         => __('Icon Color', 'bb-vapor-modules-pro'),
 								'default'       => '#000000',
 								'show_reset' => true
 							),
 							'icon_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __('Icon Color on Hover', 'mediaron-bb-modules'),
+								'label'         => __('Icon Color on Hover', 'bb-vapor-modules-pro'),
 								'default'       => '#000000',
 								'show_reset' => true
 							),
 							'icon_font_size' => array(
 								'type'          => 'unit',
-								'label'         => __('Icon Font Size', 'mediaron-bb-modules'),
+								'label'         => __('Icon Font Size', 'bb-vapor-modules-pro'),
 								'default'       => '14',
 								'description'   => 'px',
 							),
 							'icon_background' => array(
 								'type'          => 'color',
-								'label'         => __('Icon Background Color', 'mediaron-bb-modules'),
+								'label'         => __('Icon Background Color', 'bb-vapor-modules-pro'),
 								'default'       => '#FFFFFF',
 								'show_reset' => true
 							),
 							'icon_background_hover' => array(
 								'type'          => 'color',
-								'label'         => __('Icon Background Color on Hover', 'mediaron-bb-modules'),
+								'label'         => __('Icon Background Color on Hover', 'bb-vapor-modules-pro'),
 								'default'       => '#FFFFFF',
 								'show_reset' => true
 							),
 							'icon_padding' => array(
 								'type'          => 'dimension',
-								'label'         => __('Icon Padding', 'mediaron-bb-modules'),
+								'label'         => __('Icon Padding', 'bb-vapor-modules-pro'),
 							),
 							'icon_appearance' => array(
 								'type' => 'select',
-								'label' => __( 'Select an Icon Appearance', 'mediaron-bb-modules' ),
+								'label' => __( 'Select an Icon Appearance', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'none' => __( 'None', 'mediaron-bb-modules' ),
-									'rounded' => __( 'Rounded', 'mediaron-bb-modules' )
+									'none' => __( 'None', 'bb-vapor-modules-pro' ),
+									'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' )
 								)
 							),
 							'photo' => array(
 								'type' => 'photo',
-								'label' => __( 'Select a Photo', 'mediaron-bb-modules' )
+								'label' => __( 'Select a Photo', 'bb-vapor-modules-pro' )
 							),
 							'photo_size' => array(
 								'type' => 'unit',
-								'label' => __( 'Select a Photo Size (height/width)', 'mediaron-bb-modules' ),
+								'label' => __( 'Select a Photo Size (height/width)', 'bb-vapor-modules-pro' ),
 								'default' => '200'
 							),
 							'photo_appearance' => array(
 								'type' => 'select',
-								'label' => __( 'Select a Photo Appearance', 'mediaron-bb-modules' ),
+								'label' => __( 'Select a Photo Appearance', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'square' => __( 'Square', 'mediaron-bb-modules' ),
-									'rounded' => __( 'Rounded', 'mediaron-bb-modules' )
+									'square' => __( 'Square', 'bb-vapor-modules-pro' ),
+									'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' )
 								)
 							)
 						)
@@ -132,18 +132,18 @@ FLBuilder::register_settings_form(
 				)
 			),
 			'content'       => array( // Tab
-				'title'         => __('Content', 'mediaron-bb-modules'), // Tab title
+				'title'         => __('Content', 'bb-vapor-modules-pro'), // Tab title
 				'sections'      => array( // Tab Sections
 					'overlay'       => array( // Section
-						'title'         => __('Content', 'mediaron-bb-modules'), // Section Title
+						'title'         => __('Content', 'bb-vapor-modules-pro'), // Section Title
 						'fields'        => array( // Section Fields
 							'display_heading' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display a Heading', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Heading', 'bb-vapor-modules-pro' ),
 								'default'       => 'yes',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -153,25 +153,25 @@ FLBuilder::register_settings_form(
 							),
 							'heading' => array(
 								'type'  => 'text',
-								'label' => __( 'Enter a Heading', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter a Heading', 'bb-vapor-modules-pro' ),
 							),
 							'heading_typography' => array(
 								'type'  => 'typography',
-								'label' => __( 'Enter a Heading Typography', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter a Heading Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'heading_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Enter a Heading Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter a Heading Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'display_content' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display Content', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display Content', 'bb-vapor-modules-pro' ),
 								'default'       => 'yes',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -181,25 +181,25 @@ FLBuilder::register_settings_form(
 							),
 							'content' => array(
 								'type'  => 'textarea',
-								'label' => __( 'Enter Content', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Content', 'bb-vapor-modules-pro' ),
 							),
 							'content_typography' => array(
 								'type'  => 'typography',
-								'label' => __( 'Enter Content Typography', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Content Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'content_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Enter Content Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Content Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'display_subheading' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display Subheading', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display Subheading', 'bb-vapor-modules-pro' ),
 								'default'       => 'none',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -209,25 +209,25 @@ FLBuilder::register_settings_form(
 							),
 							'subheading' => array(
 								'type'  => 'text',
-								'label' => __( 'Enter Subheading', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading', 'bb-vapor-modules-pro' ),
 							),
 							'subheading_typography' => array(
 								'type'  => 'typography',
-								'label' => __( 'Enter Subheading Typography', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'subheading_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Enter Subheading Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'display_subheading_text' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display Subheading Text', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display Subheading Text', 'bb-vapor-modules-pro' ),
 								'default'       => 'none',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -237,25 +237,25 @@ FLBuilder::register_settings_form(
 							),
 							'subheading_text' => array(
 								'type'  => 'text',
-								'label' => __( 'Enter Subheading Text', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading Text', 'bb-vapor-modules-pro' ),
 							),
 							'subheading_text_typography' => array(
 								'type'  => 'typography',
-								'label' => __( 'Enter Subheading Text Typography', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading Text Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'subheading_text_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Enter Subheading Text Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Subheading Text Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'display_readmore_button' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display Read More Button', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display Read More Button', 'bb-vapor-modules-pro' ),
 								'default'       => 'none',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'yes' => __( 'Yes', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'yes' => array(
@@ -265,20 +265,20 @@ FLBuilder::register_settings_form(
 							),
 							'readmore_text' => array(
 								'type'  => 'text',
-								'label' => __( 'Enter Read More Text', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Read More Text', 'bb-vapor-modules-pro' ),
 							),
 							'readmore_link' => array(
 								'type'  => 'link',
-								'label' => __( 'Enter Read More Link', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Read More Link', 'bb-vapor-modules-pro' ),
 							),
 							'readmore_text_typography' => array(
 								'type'  => 'typography',
-								'label' => __( 'Enter Read More Typography', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Read More Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'readmore_text_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Enter Read More Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Enter Read More Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 						)
@@ -286,57 +286,57 @@ FLBuilder::register_settings_form(
 				)
 			),
 			'styles'       => array( // Tab
-				'title'         => __('Styles', 'mediaron-bb-modules'), // Tab title
+				'title'         => __('Styles', 'bb-vapor-modules-pro'), // Tab title
 				'sections'      => array( // Tab Sections
 					'overlay'       => array( // Section
-						'title'         => __('Styles', 'mediaron-bb-modules'), // Section Title
+						'title'         => __('Styles', 'bb-vapor-modules-pro'), // Section Title
 						'fields'        => array( // Section Fields
 							'padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'border' => array(
 								'type'          => 'unit',
-								'label'         => __( 'Border Width', 'mediaron-bb-modules' ),
+								'label'         => __( 'Border Width', 'bb-vapor-modules-pro' ),
 								'default' => '0',
 							),
 							'border_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Border Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Border Color', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset' => true
 							),
 							'border_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __( 'Border Color on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Border Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset' => true
 							),
 							'border_radius' => array(
 								'type'          => 'dimension',
-								'label'         => __( 'Button Border Radius', 'mediaron-bb-modules' ),
+								'label'         => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 							),
 							'text_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Text Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'default' => '#000000',
 								'show_reset' => true
 							),
 							'text_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __( 'Text Color on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Text Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '#000000',
 								'show_reset' => true
 							),
 							'background_type' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display a Background Type', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Type', 'bb-vapor-modules-pro' ),
 								'default'       => 'yes',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'color' => __( 'Color', 'mediaron-bb-modules' ),
-									'gradient' => __( 'Gradient', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'color' => __( 'Color', 'bb-vapor-modules-pro' ),
+									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'color' => array(
@@ -350,34 +350,34 @@ FLBuilder::register_settings_form(
 							),
 							'background_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Display a Background Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Color', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset'         => true
 							),
 							'background_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __( 'Display a Background Color on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset'         => true
 							),
 							'background_gradient' => array(
 								'type'          => 'gradient',
-								'label'         => __( 'Display a Gradient', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 								'show_reset'         => true
 							),
 							'background_gradient_hover' => array(
 								'type'          => 'gradient',
-								'label'         => __( 'Display a Gradient on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules-pro' ),
 								'show_reset'         => true
 							),
 							'text_shadow' => array(
 								'type' => 'shadow',
-								'label' => __( 'Text Shadow', 'mediaron-bb-modules' ),
+								'label' => __( 'Text Shadow', 'bb-vapor-modules-pro' ),
 								'show_spread' => true,
 							),
 							'text_shadow_hover' => array(
 								'type' => 'shadow',
-								'label' => __( 'Text Shadow on Hover', 'mediaron-bb-modules' ),
+								'label' => __( 'Text Shadow on Hover', 'bb-vapor-modules-pro' ),
 								'show_spread' => true,
 							)
 						)
@@ -385,55 +385,55 @@ FLBuilder::register_settings_form(
 				)
 			),
 			'button_styles'       => array( // Tab
-				'title'         => __('Button', 'mediaron-bb-modules'), // Tab title
+				'title'         => __('Button', 'bb-vapor-modules-pro'), // Tab title
 				'sections'      => array( // Tab Sections
 					'overlay'       => array( // Section
-						'title'         => __('Button', 'mediaron-bb-modules'), // Section Title
+						'title'         => __('Button', 'bb-vapor-modules-pro'), // Section Title
 						'fields'        => array( // Section Fields
 							'button_padding' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Padding', 'mediaron-bb-modules' ),
+								'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'button_margin' => array(
 								'type'  => 'dimension',
-								'label' => __( 'Margin', 'mediaron-bb-modules' ),
+								'label' => __( 'Margin', 'bb-vapor-modules-pro' ),
 								'responsive' => true
 							),
 							'button_icon' => array(
 								'type'  => 'icon',
-								'label' => __( 'Icon', 'mediaron-bb-modules' ),
+								'label' => __( 'Icon', 'bb-vapor-modules-pro' ),
 							),
 							'button_icon_display' => array(
 								'type'  => 'select',
-								'label' => __( 'Icon Position', 'mediaron-bb-modules' ),
+								'label' => __( 'Icon Position', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'none' => __( 'None', 'mediaron-bb-modules' ),
-									'before' => __( 'Before', 'mediaron-bb-modules' ),
+									'none' => __( 'None', 'bb-vapor-modules-pro' ),
+									'before' => __( 'Before', 'bb-vapor-modules-pro' ),
 									'after' => __( 'After', 'bb-vapor-modules-pro' )
 								),
 								'default' => 'none'
 							),
 							'button_text_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Text Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'default' => '#000000',
 								'show_reset' => true
 							),
 							'button_text_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __( 'Text Color on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Text Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '#000000',
 								'show_reset' => true
 							),
 							'button_background_type' => array(
 								'type'          => 'select',
-								'label'         => __( 'Display a Background Type', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Type', 'bb-vapor-modules-pro' ),
 								'default'       => 'yes',
 								'options'       => array(
-									'none'       => __( 'None', 'mediaron-bb-modules' ),
-									'color' => __( 'Color', 'mediaron-bb-modules' ),
-									'gradient' => __( 'Gradient', 'mediaron-bb-modules' ),
+									'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+									'color' => __( 'Color', 'bb-vapor-modules-pro' ),
+									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle' => array(
 									'color' => array(
@@ -447,40 +447,40 @@ FLBuilder::register_settings_form(
 							),
 							'button_background_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Display a Background Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Color', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset'         => true
 							),
 							'button_background_color_hover' => array(
 								'type'          => 'color',
-								'label'         => __( 'Display a Background Color on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset'         => true
 							),
 							'button_color_gradient' => array(
 								'type'          => 'gradient',
-								'label'         => __( 'Display a Gradient', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 								'show_reset'         => true
 							),
 							'button_color_gradient_hover' => array(
 								'type'          => 'gradient',
-								'label'         => __( 'Display a Gradient on Hover', 'mediaron-bb-modules' ),
+								'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules-pro' ),
 								'show_reset'         => true
 							),
 							'button_border' => array(
 								'type'          => 'unit',
-								'label'         => __( 'Button Border Width', 'mediaron-bb-modules' ),
+								'label'         => __( 'Button Border Width', 'bb-vapor-modules-pro' ),
 								'default' => '0',
 							),
 							'button_border_color' => array(
 								'type'          => 'color',
-								'label'         => __( 'Button Border Color', 'mediaron-bb-modules' ),
+								'label'         => __( 'Button Border Color', 'bb-vapor-modules-pro' ),
 								'default' => '#FFFFFF',
 								'show_reset' => true
 							),
 							'button_border_radius' => array(
 								'type'          => 'dimension',
-								'label'         => __( 'Button Border Radius', 'mediaron-bb-modules' ),
+								'label'         => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 							),
 						)
 					)
@@ -494,21 +494,21 @@ FLBuilder::register_settings_form(
  */
 FLBuilder::register_module('BBVapor_Card_Group_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Card', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Card', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'card' => array(
 						'type'          => 'form',
-						'label'         => __('Card', 'mediaron-bb-modules'),
+						'label'         => __('Card', 'bb-vapor-modules-pro'),
 						'form' => 'mrbb_card_group',
 						'multiple'     => true,
 						'preview_text'  => 'heading'
 					),
 					'columns' => array(
 						'type' => 'select',
-						'label' => __( 'Maximum Number of Columns', 'mediaron-bb-modules' ),
+						'label' => __( 'Maximum Number of Columns', 'bb-vapor-modules-pro' ),
 						'options' => array(
 							'1' => '1',
 							'2' => '2',
@@ -521,7 +521,7 @@ FLBuilder::register_module('BBVapor_Card_Group_Module', array(
 					),
 					'card_padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Card Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Card Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					)
 				)

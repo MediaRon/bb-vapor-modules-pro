@@ -1,5 +1,5 @@
-<div class="mediaron-restaurant-menu-tabs-wrapper">
-	<div class="mediaron-restaurant-menu-tabs">
+<div class="bbvm-restaurant-menu-tabs-wrapper">
+	<div class="bbvm-restaurant-menu-tabs">
 		<?php
 		echo '<ul>';
 		foreach( $settings->menu_item_form as $tab ) {
@@ -8,18 +8,18 @@
 		echo '</ul>';
 		?>
 	</div>
-	<div class="mediaron-restaurant-menu-tabs-items">
+	<div class="bbvm-restaurant-menu-tabs-items">
 		<?php
 		foreach( $settings->menu_item_form as $tab ) {
-			printf( '<div class="mediaron-restaurant-menu-items-wrapper" id="%s">', esc_html( sanitize_title( $tab->menu_tab_name ) ) );
+			printf( '<div class="bbvm-restaurant-menu-items-wrapper" id="%s">', esc_html( sanitize_title( $tab->menu_tab_name ) ) );
 			?>
-			<div class="mediaron-restaurant-heading">
-				<h2 class="mediaron-restaurant-menu-items-heading" id="<?php echo esc_attr( sanitize_title( $tab->menu_item_category ) ); ?>">
+			<div class="bbvm-restaurant-heading">
+				<h2 class="bbvm-restaurant-menu-items-heading" id="<?php echo esc_attr( sanitize_title( $tab->menu_item_category ) ); ?>">
 				<?php echo esc_html( $tab->menu_item_category ); ?>
 				</h2>
 				<?php
 				if( ! empty( $tab->menu_item_category_description ) ) {
-					printf( '<p class="mediaron-restaurant-menu-items-description">%s</p>', esc_html( $tab->menu_item_category_description ) );
+					printf( '<p class="bbvm-restaurant-menu-items-description">%s</p>', esc_html( $tab->menu_item_category_description ) );
 				}
 				if( 'line' === $settings->category_separator || 'image' === $settings->category_separator ) {
 					?>
@@ -28,13 +28,13 @@
 				}
 				?>
 			</div>
-			<div class="mediaron-restaurant-menu-items columns-1">
+			<div class="bbvm-restaurant-menu-items columns-1">
 			<?php
 			foreach( $tab->menu_item_form as $index => $menu_item ) {
 				$menu_item = json_decode( $menu_item );
 				$has_photo = false;
 				?>
-				<div class="mediaron-restaurant-menu-item">
+				<div class="bbvm-restaurant-menu-item">
 					<?php
 					if( ! empty( $menu_item->restaurant_menu_item_photo ) && 'yes' === $menu_item->restaurant_menu_item_has_photo && 'yes' === $settings->image_photo ) {
 						?>
@@ -43,7 +43,7 @@
 							$has_photo = true;
 							if( 'yes' === $settings->image_lightbox ) {
 								$attachment_image = wp_get_attachment_image_src( $menu_item->restaurant_menu_item_photo, 'full' );
-								printf( '<a class="mediaron-restaurant-item-photo-lightbox" href="%s">', esc_url( $attachment_image[0] ) );
+								printf( '<a class="bbvm-restaurant-item-photo-lightbox" href="%s">', esc_url( $attachment_image[0] ) );
 							}
 							echo wp_get_attachment_image( $menu_item->restaurant_menu_item_photo, $menu_item->restaurant_menu_item_photo_size );
 							if( 'yes' === $settings->image_lightbox ) {

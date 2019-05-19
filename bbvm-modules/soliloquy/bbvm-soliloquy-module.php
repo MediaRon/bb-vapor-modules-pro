@@ -3,10 +3,10 @@ class BBVapor_Soliloquy_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Soliloquy', 'mediaron-bb-modules' ),
-			'description'     => __( 'Soliloquy for Beaver Builder', 'mediaron-bb-modules' ),
-			'category'        => __( 'External Plugins', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'name'            => __( 'Soliloquy', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Soliloquy for Beaver Builder', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/soliloquy/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/soliloquy/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -19,7 +19,7 @@ class BBVapor_Soliloquy_Module extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-$sliders_array = array( '0' => __( 'Select a slider', 'mediaron-bb-modules' ) );
+$sliders_array = array( '0' => __( 'Select a slider', 'bb-vapor-modules-pro' ) );
 $sliders = Soliloquy::get_instance()->get_sliders();
 if( ! empty( $sliders ) ) {
 	foreach( $sliders as $slider ) {
@@ -28,14 +28,14 @@ if( ! empty( $sliders ) ) {
 }
 FLBuilder::register_module('BBVapor_Soliloquy_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Slider Select', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Slider Select', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'slider' => array(
 						'type'          => 'select',
-						'label'         => __( 'Select a slider', 'mediaron-bb-modules' ),
+						'label'         => __( 'Select a slider', 'bb-vapor-modules-pro' ),
 						'options'       => $sliders_array
 					),
 				)
@@ -43,67 +43,67 @@ FLBuilder::register_module('BBVapor_Soliloquy_Module', array(
 		)
 	),
 	'options'       => array( // Tab
-		'title'         => __('Options', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Options', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'options'       => array( // Section
-				'title'         => __('General Options', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('General Options', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'show_arrows' => array(
 						'type' => 'select',
-						'label' => __( 'Show arrows always', 'mediaron-bb-modules' ),
+						'label' => __( 'Show arrows always', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'no' => __( 'No', 'mediaron-bb-modules' ),
-							'yes' => __( 'Yes', 'mediaron-bb-modules' )
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'no'
 					),
 					'arrow_background' => array(
 						'type' => 'color',
-						'label' => __( 'Background color of the arrows', 'mediaron-bb-modules' ),
+						'label' => __( 'Background color of the arrows', 'bb-vapor-modules-pro' ),
 						'show_reset' => true,
 					),
 					'max_height' => array(
 						'type' => 'unit',
-						'label' => __( 'Max height of slider', 'mediaron-bb-modules' ),
+						'label' => __( 'Max height of slider', 'bb-vapor-modules-pro' ),
 						'description' => 'px'
 					),
 					'max_width' => array(
 						'type' => 'unit',
-						'label' => __( 'Max width of slider', 'mediaron-bb-modules' ),
+						'label' => __( 'Max width of slider', 'bb-vapor-modules-pro' ),
 						'description' => 'px'
 					),
 					'hide_pager' => array(
 						'type' => 'select',
-						'label' => __( 'Hide pager?', 'mediaron-bb-modules' ),
+						'label' => __( 'Hide pager?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'no' => __( 'No', 'mediaron-bb-modules' ),
-							'yes' => __( 'Yes', 'mediaron-bb-modules' )
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'no'
 					),
 					'hide_caption' => array(
 						'type' => 'select',
-						'label' => __( 'Hide caption?', 'mediaron-bb-modules' ),
+						'label' => __( 'Hide caption?', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'no' => __( 'No', 'mediaron-bb-modules' ),
-							'yes' => __( 'Yes', 'mediaron-bb-modules' )
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'no'
 					),
 					'caption_background' => array(
 						'type' => 'color',
-						'label' => __( 'Background color of the caption', 'mediaron-bb-modules' ),
+						'label' => __( 'Background color of the caption', 'bb-vapor-modules-pro' ),
 						'show_reset' => true,
 						'show_alpha' => true,
 					),
 					'caption_text_background' => array(
 						'type' => 'color',
-						'label' => __( 'Text color of the caption', 'mediaron-bb-modules' ),
+						'label' => __( 'Text color of the caption', 'bb-vapor-modules-pro' ),
 						'show_reset' => true,
 					),
 					'caption_typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Caption typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Caption typography', 'bb-vapor-modules-pro' ),
 					),
 				)
 			),

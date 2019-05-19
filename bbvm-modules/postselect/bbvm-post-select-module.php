@@ -6,7 +6,7 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 			'name'            => __( 'Post Select', 'bb-vapor-modules-pro' ),
 			'description'     => __( 'Post Select for Beaver Builder', 'bb-vapor-modules-pro' ),
 			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/postselect/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/postselect/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -14,9 +14,9 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 			'partial_refresh' => false, // Defaults to false and can be omitted.
 		));
 
-		add_action( 'wp_ajax_mediaron_bb_get_taxonomies', array( $this, 'get_taxonomies' ) );
-		add_action( 'wp_ajax_mediaron_bb_get_terms', array( $this, 'get_terms' ) );
-		add_action( 'wp_ajax_mediaron_bb_get_data', array( $this, 'get_ajax_data' ) );
+		add_action( 'wp_ajax_bbvm_bb_get_taxonomies', array( $this, 'get_taxonomies' ) );
+		add_action( 'wp_ajax_bbvm_bb_get_terms', array( $this, 'get_terms' ) );
+		add_action( 'wp_ajax_bbvm_bb_get_data', array( $this, 'get_ajax_data' ) );
 	}
 
 	public function get_taxonomies() {
@@ -33,13 +33,13 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 	public function get_terms() {
 		$taxonomy = $_POST['taxonomy'];
 		$post_type = $_POST['post_type'];
-		add_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
+		add_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
 		$terms = get_terms( array(
 			'taxonomy' => $taxonomy,
 			'hide_empty' => true,
 			'post_type' => $post_type,
 		) );
-		remove_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
+		remove_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
 		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
 		if( is_wp_error( $terms ) ) {
 			die( $return_html );
@@ -57,27 +57,27 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 		$selected_taxonomy = !empty( $_POST['taxonomy'] ) ? sanitize_text_field( $_POST['taxonomy'] ) : '0';
 		$selected_term = !empty( $_POST['term'] ) ? sanitize_text_field( $_POST['term'] ) : '0';
 
-		$mediaron_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
+		$bbvm_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
 		$oost_html = sprintf( '<option value="0">%s</option>', esc_html__( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
-		foreach( $mediaron_post_types as $post_type ) {
+		foreach( $bbvm_post_types as $post_type ) {
 			if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
 			$oost_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $post_type->name ), esc_html( $post_type->label ) );
 		}
 		$tax_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'bb-vapor-modules-pro' ) );
-		$mediaron_taxonomies = get_object_taxonomies( $selected_post, 'objects' );
-		foreach( $mediaron_taxonomies as $taxonomy ) {
+		$bbvm_taxonomies = get_object_taxonomies( $selected_post, 'objects' );
+		foreach( $bbvm_taxonomies as $taxonomy ) {
 			$tax_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $taxonomy->name ), esc_html( $taxonomy->label ) );
 		}
 		$term_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
-		add_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
-		$mediaron_terms = get_terms( array(
+		add_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		$bbvm_terms = get_terms( array(
 			'taxonomy' => $selected_taxonomy,
 			'hide_empty' => true,
 			'post_type' => $selected_post,
 		) );
-		remove_filter( 'terms_clauses', 'mediaron_bb_terms_clauses', 10, 3 );
-		if( ! is_wp_error( $mediaron_terms ) ) {
-			foreach( $mediaron_terms as $term ) {
+		remove_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		if( ! is_wp_error( $bbvm_terms ) ) {
+			foreach( $bbvm_terms as $term ) {
 				$term_html .= sprintf( '<option value="%d">%s</option>', $term->term_id, $term->name );
 			}
 		}
@@ -92,31 +92,31 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 	}
 }
 // Get Post Types
-$mediaron_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
-$mediaron_post_types_array = array( '0' => __( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
-foreach( $mediaron_post_types as $post_type ) {
+$bbvm_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
+$bbvm_post_types_array = array( '0' => __( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
+foreach( $bbvm_post_types as $post_type ) {
 	if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
-	$mediaron_post_types_array[$post_type->name] = $post_type->label;
+	$bbvm_post_types_array[$post_type->name] = $post_type->label;
 }
 
 // Get image sizes
 global $_wp_additional_image_sizes;
 
-$mediaron_default_image_sizes = get_intermediate_image_sizes();
-$mediaron_image_sizes = array();
+$bbvm_default_image_sizes = get_intermediate_image_sizes();
+$bbvm_image_sizes = array();
 
-foreach ( $mediaron_default_image_sizes as $size ) {
-	$mediaron_image_sizes[ $size ][ 'width' ] = intval( get_option( "{$size}_size_w" ) );
-	$mediaron_image_sizes[ $size ][ 'height' ] = intval( get_option( "{$size}_size_h" ) );
-	$mediaron_image_sizes[ $size ][ 'crop' ] = get_option( "{$size}_crop" ) ? get_option( "{$size}_crop" ) : false;
+foreach ( $bbvm_default_image_sizes as $size ) {
+	$bbvm_image_sizes[ $size ][ 'width' ] = intval( get_option( "{$size}_size_w" ) );
+	$bbvm_image_sizes[ $size ][ 'height' ] = intval( get_option( "{$size}_size_h" ) );
+	$bbvm_image_sizes[ $size ][ 'crop' ] = get_option( "{$size}_crop" ) ? get_option( "{$size}_crop" ) : false;
 }
 
 if ( isset( $_wp_additional_image_sizes ) && count( $_wp_additional_image_sizes ) ) {
-	$mediaron_image_sizes = array_merge( $mediaron_image_sizes, $_wp_additional_image_sizes );
+	$bbvm_image_sizes = array_merge( $bbvm_image_sizes, $_wp_additional_image_sizes );
 }
-$mediaron_thumbnail_sizes = array();
-foreach( $mediaron_image_sizes as $size => $image_size ) {
-	$mediaron_thumbnail_sizes[$size] = $size;
+$bbvm_thumbnail_sizes = array();
+foreach( $bbvm_image_sizes as $size => $image_size ) {
+	$bbvm_thumbnail_sizes[$size] = $size;
 }
 
 FLBuilder::register_module('BBVapor_PostSelect_Module', array(
@@ -129,21 +129,21 @@ FLBuilder::register_module('BBVapor_PostSelect_Module', array(
 					'post_type' => array(
 						'type'          => 'select',
 						'label'         => __( 'Select A Post Type', 'bb-vapor-modules-pro' ),
-						'options'       => $mediaron_post_types_array,
-						'class' => 'mediaron-post-select'
+						'options'       => $bbvm_post_types_array,
+						'class' => 'bbvm-post-select'
 					),
 					'taxonomy_select' => array(
 						'type'          => 'select',
 						'label'         => __( 'Select A Taxonomy', 'bb-vapor-modules-pro' ),
 						'options'       => array(),
-						'class' => 'mediaron-taxonomy-select',
+						'class' => 'bbvm-taxonomy-select',
 						'default' => '0',
 					),
 					'terms_select' => array(
 						'type'          => 'select',
 						'label'         => __( 'Select A Term', 'bb-vapor-modules-pro' ),
 						'options'       => array(),
-						'class' => 'mediaron-term-select',
+						'class' => 'bbvm-term-select',
 						'default' => '0'
 					),
 				)
@@ -252,7 +252,7 @@ FLBuilder::register_module('BBVapor_PostSelect_Module', array(
 					'featured_thumbnail_size' => array(
 						'type' => 'select',
 						'label' => __( 'Thumbnail Size', 'bb-vapor-modules-pro' ),
-						'options' => $mediaron_thumbnail_sizes
+						'options' => $bbvm_thumbnail_sizes
 					),
 					'featured_image_location' => array(
 						'type' => 'select',
@@ -451,7 +451,7 @@ FLBuilder::register_module('BBVapor_PostSelect_Module', array(
  * @param array $args
  * @return string
  */
-function mediaron_bb_terms_clauses( $clauses, $taxonomy, $args ) {
+function bbvm_bb_terms_clauses( $clauses, $taxonomy, $args ) {
 	if ( isset( $args['post_type'] ) && ! empty( $args['post_type'] ) && $args['fields'] !== 'count' ) {
 		global $wpdb;
 

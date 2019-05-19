@@ -1,4 +1,4 @@
-<div class="fl-mediaron-gravityforms-for-beaverbuilder">
+<div class="fl-bbvm-gravityforms-for-beaverbuilder">
 	<?php
 	$display_title = 'yes' == $settings->form_title ? true : false;
 	$display_description = 'yes' == $settings->form_description ? true : false;

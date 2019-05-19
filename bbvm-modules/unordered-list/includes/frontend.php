@@ -1,4 +1,4 @@
-<div class="fl-mediaron-unordered-list-for-beaverbuilder">
+<div class="fl-bbvm-unordered-list-for-beaverbuilder">
 <ul>
 <?php
 	if ( ! empty( $settings->list_entries ) ):

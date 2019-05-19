@@ -1,4 +1,4 @@
-<div class="fl-mediaron-testimonials-for-beaverbuilder">
+<div class="fl-bbvm-testimonials-for-beaverbuilder">
 <?php
 if( 'slider' === $settings->testimonial_type ) {
 	?>
@@ -6,8 +6,8 @@ if( 'slider' === $settings->testimonial_type ) {
 	<?php
 	foreach( $settings->testimonial_entries as $testimonial ) {
 		?>
-		<div class="fl-mediaron-testimonials-card">
-			<div class="fl-mediaron-testimonials-card-img">
+		<div class="fl-bbvm-testimonials-card">
+			<div class="fl-bbvm-testimonials-card-img">
 				<?php
 				if ( 'icon' === $testimonial->testimonial_image_type ) {
 					echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
@@ -19,7 +19,7 @@ if( 'slider' === $settings->testimonial_type ) {
 			<?php
 			if ( 'yes' === $settings->show_rating ) :
 			?>
-			<div class="fl-mediaron-testimonials-card-rating">
+			<div class="fl-bbvm-testimonials-card-rating">
 			<?php
 			for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
 				echo '<i class="fas fa-star"></i>';
@@ -29,12 +29,12 @@ if( 'slider' === $settings->testimonial_type ) {
 			<?php
 			endif;
 			?>
-			<div class="fl-mediaron-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
-			<div class="fl-mediaron-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
-			<div class="fl-mediaron-testimonials-card-content">
+			<div class="fl-bbvm-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
+			<div class="fl-bbvm-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
+			<div class="fl-bbvm-testimonials-card-content">
 				<?php echo $testimonial->testimonial_content; ?>
 			</div><!-- .content -->
-		</div><!-- fl-mediaron-testimonials-card -->
+		</div><!-- fl-bbvm-testimonials-card -->
 		<?php
 	}
 	?>
@@ -43,12 +43,12 @@ if( 'slider' === $settings->testimonial_type ) {
 }
 if ( 'card' === $settings->testimonial_type ) :
 ?>
-<div class="fl-mediaron-testimonials-cards">
+<div class="fl-bbvm-testimonials-cards">
 <?php
 foreach( $settings->testimonial_entries as $testimonial ) {
 	?>
-	<div class="fl-mediaron-testimonials-card">
-		<div class="fl-mediaron-testimonials-card-img">
+	<div class="fl-bbvm-testimonials-card">
+		<div class="fl-bbvm-testimonials-card-img">
 			<?php
 			if ( 'icon' === $testimonial->testimonial_image_type ) {
 				echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
@@ -60,7 +60,7 @@ foreach( $settings->testimonial_entries as $testimonial ) {
 		<?php
 		if ( 'yes' === $settings->show_rating ) :
 		?>
-		<div class="fl-mediaron-testimonials-card-rating">
+		<div class="fl-bbvm-testimonials-card-rating">
 		<?php
 		for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
 			echo '<i class="fas fa-star"></i>';
@@ -70,31 +70,31 @@ foreach( $settings->testimonial_entries as $testimonial ) {
 		<?php
 		endif;
 		?>
-		<div class="fl-mediaron-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
-		<div class="fl-mediaron-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
-		<div class="fl-mediaron-testimonials-card-content">
+		<div class="fl-bbvm-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
+		<div class="fl-bbvm-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
+		<div class="fl-bbvm-testimonials-card-content">
 			<?php echo $testimonial->testimonial_content; ?>
 		</div><!-- .content -->
-	</div><!-- fl-mediaron-testimonials-card -->
+	</div><!-- fl-bbvm-testimonials-card -->
 	<?php
 }
 ?>
-<div class="fl-mediaron-testimonials-card  is-placeholder"></div>
-<div class="fl-mediaron-testimonials-card  is-placeholder"></div>
-<div class="fl-mediaron-testimonials-card  is-placeholder"></div>
-<div class="fl-mediaron-testimonials-card  is-placeholder"></div>
+<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
 </div>
 <?php
 endif;
 if ( 'list' === $settings->testimonial_type ) :
 ?>
-<div class="fl-mediaron-testimonials-list">
+<div class="fl-bbvm-testimonials-list">
 <?php
 foreach( $settings->testimonial_entries as $testimonial ) {
 	?>
-	<div class="fl-mediaron-testimonials">
-		<div class="fl-mediaron-testimonials-list-left">
-			<div class="fl-mediaron-testimonials-list-img">
+	<div class="fl-bbvm-testimonials">
+		<div class="fl-bbvm-testimonials-list-left">
+			<div class="fl-bbvm-testimonials-list-img">
 				<?php
 				if ( 'icon' === $testimonial->testimonial_image_type ) {
 					echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
@@ -106,7 +106,7 @@ foreach( $settings->testimonial_entries as $testimonial ) {
 			<?php
 			if ( 'yes' === $settings->show_rating ) :
 			?>
-			<div class="fl-mediaron-testimonials-card-rating">
+			<div class="fl-bbvm-testimonials-card-rating">
 			<?php
 			for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
 				echo '<i class="fas fa-star"></i>';
@@ -116,15 +116,15 @@ foreach( $settings->testimonial_entries as $testimonial ) {
 			<?php
 			endif;
 			?>
-		</div><!-- .fl-mediaron-testimonials-list-left -->
-		<div class="fl-mediaron-testimonials-list-right">
-			<div class="fl-mediaron-testimonials-list-content">
+		</div><!-- .fl-bbvm-testimonials-list-left -->
+		<div class="fl-bbvm-testimonials-list-right">
+			<div class="fl-bbvm-testimonials-list-content">
 				<?php echo $testimonial->testimonial_content; ?>
 			</div><!-- .content -->
-			<div class="fl-mediaron-testimonials-list-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
-			<div class="fl-mediaron-testimonials-list-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
-		</div><!-- .fl-mediaron-testimonials-list-right -->
-	</div><!-- fl-mediaron-testimonials -->
+			<div class="fl-bbvm-testimonials-list-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
+			<div class="fl-bbvm-testimonials-list-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
+		</div><!-- .fl-bbvm-testimonials-list-right -->
+	</div><!-- fl-bbvm-testimonials -->
 	<?php
 }
 ?>

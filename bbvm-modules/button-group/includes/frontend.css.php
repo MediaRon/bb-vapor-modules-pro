@@ -1,15 +1,15 @@
-.fl-node-<?php echo $id; ?> .fl-mediaron-button-group-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-button-group-for-beaverbuilder {
 	text-align: <?php echo esc_html( $settings->button_alignment ); ?>;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-button-group-for-beaverbuilder .mediaron-button-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-button-group-for-beaverbuilder .bbvm-button-wrapper {
 	display: inline-block;
 }
 @media only screen and (max-width: 500px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-button-group-for-beaverbuilder .mediaron-button-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-button-group-for-beaverbuilder .bbvm-button-wrapper {
 		display: block;
 	}
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button {
+.fl-node-<?php echo $id; ?> .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button {
 	display: inline-block;
 	position: relative;
 	padding: 10px 20px;
@@ -808,7 +808,7 @@ foreach( $settings->button as $button ) :
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'button_padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'button_padding_top',
@@ -820,7 +820,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'button_margin',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'button_margin_top',
@@ -832,24 +832,24 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'button_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' => ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'min-width' => $settings->button_min_width . '%'
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' => ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'min-width' => $settings->button_min_width_medium . '%',
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' => ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'min-width' => $settings->button_min_width_responsive . '%',
@@ -858,7 +858,7 @@ FLBuilderCSS::rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'button_radius',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-button-group-for-beaverbuilder a.mediaron-button",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'border-top-left-radius' 	 => 'button_radius_top',

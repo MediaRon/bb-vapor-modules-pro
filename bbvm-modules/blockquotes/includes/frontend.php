@@ -1,4 +1,4 @@
-<div class="fl-mediaron-blockquotes-for-beaverbuilder">
+<div class="fl-bbvm-blockquotes-for-beaverbuilder">
 <?php
 if( 'none' === $settings->blockquote_style ) :
 	// credit: https://codepen.io/jupago/pen/VqxKqE?&page=1

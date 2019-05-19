@@ -6,44 +6,44 @@ if( 6 === strlen( $text_color ) ) {
 	$text_color = '#' . $text_color;
 }
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-woocommerce-featured-products-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-woocommerce-featured-products-for-beaverbuilder {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
 	width: 33.33%;
 	border: <?php echo $settings->border_width; ?>px solid #<?php echo $settings->border_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product div {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product div {
 	width: 100%;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details {
 	align-self: flex-end;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-image {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-image {
 	align-self: flex-start;
 	text-align: center;
 	border-bottom: <?php echo $settings->border_width; ?>px solid #<?php echo $settings->border_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-image img {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-image img {
 	padding-bottom: 20px;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button {
 	background: #<?php echo $settings->show_details_background_color; ?>;
 	color: #<?php echo $settings->show_details_color; ?>;
 	cursor: pointer;
 	border-top: <?php echo $settings->border_width; ?>px solid #<?php echo $settings->border_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button:hover,
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button:hover a {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button:hover,
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button:hover a {
 	background: #<?php echo $settings->show_details_background_color_hover; ?>;
 	color: #<?php echo $settings->show_details_color_hover; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button a {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button a {
 	display: block;
 	background: #<?php echo $settings->show_details_background_color; ?>;
 	color: #<?php echo $settings->show_details_color; ?>;
@@ -51,49 +51,49 @@ if( 6 === strlen( $text_color ) ) {
 	height: 100%;
 	text-decoration: none;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button a:hover {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button a:hover {
 	background: #<?php echo $settings->show_details_background_color_hover; ?>;
 	color: #<?php echo $settings->show_details_color_hover; ?>;
 	text-decoration: none;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button.active {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button.active {
 	border-bottom: <?php echo $settings->border_width; ?>px solid #<?php echo $settings->border_color; ?>;
 }
 
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button i {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button i {
 	background: #<?php echo $settings->show_details_icon_background_color ?>;
 	padding: 2px;
 	border-radius: <?php echo absint( $settings->show_details_icon_border_radius ); ?>px;
 	color: #<?php echo $settings->show_details_icon_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-button:hover i {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-button:hover i {
 	background: #<?php echo $settings->show_details_icon_background_color_hover ?>;
 	color: #<?php echo $settings->show_details_icon_color_hover; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-show-details-content {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-show-details-content {
 	display: none;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-title h2 {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-title h2 {
 	margin: 0;
 	color: #<?php echo $settings->title_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-short-description {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-short-description {
 	color: #<?php echo $settings->short_description_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-description {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-description {
 	color: #<?php echo $settings->description_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-price {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-price {
 	color: #<?php echo $settings->price_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-cart a.button,
-.mediaron-bb-woocommerce-featured-product-popup .mediaron-woocommerce-cart a.button {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-cart a.button,
+.bbvm-bb-woocommerce-featured-product-popup .bbvm-woocommerce-cart a.button {
 	background: #<?php echo $settings->cart_background_color; ?>;
 	color: #<?php echo $settings->cart_text_color; ?>;
 	margin-bottom: 15px;
 }
-.fl-node-<?php echo $id; ?> .mediaron-woocommerce-product .mediaron-woocommerce-cart a.button:hover,
-.mediaron-bb-woocommerce-featured-product-popup .mediaron-woocommerce-cart a.button:hover {
+.fl-node-<?php echo $id; ?> .bbvm-woocommerce-product .bbvm-woocommerce-cart a.button:hover,
+.bbvm-bb-woocommerce-featured-product-popup .bbvm-woocommerce-cart a.button:hover {
 	background: #<?php echo $settings->cart_background_color_hover; ?>;
 	color: #<?php echo $settings->cart_text_color_hover; ?>;
 }
@@ -101,49 +101,49 @@ if( 6 === strlen( $text_color ) ) {
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'title_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-title h2",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-title h2",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'short_description_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-short-description",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-short-description",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'description_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-description",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-description",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'price_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-price",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-price",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'show_details_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-show-details .mediaron-woocommerce-show-details-button",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-show-details .bbvm-woocommerce-show-details-button",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'card_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-cart a.button,
-	.mediaron-bb-woocommerce-featured-product-popup .mediaron-woocommere-cart a.button",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-cart a.button,
+	.bbvm-bb-woocommerce-featured-product-popup .bbvm-woocommere-cart a.button",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'show_details_content_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-show-details-content,
-	.mediaron-bb-woocommerce-featured-product-popup .swal2-content",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-show-details-content,
+	.bbvm-bb-woocommerce-featured-product-popup .swal2-content",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'show_details_content_heading_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-show-details-content h3,
-	.mediaron-bb-woocommerce-featured-product-popup h3",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-show-details-content h3,
+	.bbvm-bb-woocommerce-featured-product-popup h3",
 ) );
 // Max Width
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+	'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 	'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'width' => $settings->item_width . '%',
@@ -151,7 +151,7 @@ FLBuilderCSS::rule( array(
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+	'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 	'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'width' => $settings->item_width_medium . '%',
@@ -159,7 +159,7 @@ FLBuilderCSS::rule( array(
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+	'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 	'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'width' => $settings->item_width_responsive . '%',
@@ -168,21 +168,21 @@ FLBuilderCSS::rule( array(
 ) );
 if ( 0 != $settings->item_max_width ) {
 	FLBuilderCSS::rule( array(
-		'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+		'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 		'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 		'props' => array(
 			'max-width' => $settings->item_max_width . 'px',
 		),
 	) );
 	FLBuilderCSS::rule( array(
-		'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+		'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 		'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 		'props' => array(
 			'max-width' => $settings->item_max_width_medium . 'px',
 		),
 	) );
 	FLBuilderCSS::rule( array(
-		'selector' => ".fl-node-$id .mediaron-woocommerce-product",
+		'selector' => ".fl-node-$id .bbvm-woocommerce-product",
 		'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 		'props' => array(
 			'max-width' => $settings->item_max_width_responsive . 'px',
@@ -193,7 +193,7 @@ if ( 0 != $settings->item_max_width ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'item_margin',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'item_margin_top',
@@ -205,7 +205,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'title_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-title h2",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-title h2",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'title_padding_top',
@@ -217,7 +217,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'short_description_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-short-description",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-short-description",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'short_description_padding_top',
@@ -229,7 +229,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'description_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-description, .mediaron-bb-woocommerce-featured-product-popup .mediaron-woocommerce-description",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-description, .bbvm-bb-woocommerce-featured-product-popup .bbvm-woocommerce-description",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'description_padding_top',
@@ -241,7 +241,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'price_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-price",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-price",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'price_padding_top',
@@ -253,7 +253,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'show_details_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-show-details-button a",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-show-details-button a",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'show_details_padding_top',
@@ -265,7 +265,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'show_details_content_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-show-details-content",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-show-details-content",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'show_details_content_padding_top',
@@ -277,7 +277,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'item_margin',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'item_margin_top',
@@ -289,7 +289,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'cart_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-woocommerce-product .mediaron-woocommerce-cart a.button, .mediaron-bb-woocommerce-featured-product-popup .mediaron-woocommerce-cart a.button",
+	'selector' 	=> ".fl-node-$id .bbvm-woocommerce-product .bbvm-woocommerce-cart a.button, .bbvm-bb-woocommerce-featured-product-popup .bbvm-woocommerce-cart a.button",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'cart_padding_top',

@@ -6,7 +6,7 @@ class BBVapor_Restaurant_Menu_Category extends FLBuilderModule {
 			'name'            => __( 'Restaurant Category', 'bb-vapor-modules-pro' ),
 			'description'     => __( 'Add menu category for a restaurant', 'bb-vapor-modules-pro' ),
 			'category'        => __( 'Restaurant', 'bb-vapor-modules-pro' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-category/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-category/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -36,7 +36,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Category', array(
 		)
 	),
 	'typography' => array(
-		'title' => __( 'Typography', 'mediaron-bb-module' ),
+		'title' => __( 'Typography', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Typography', 'bb-vapor-modules-pro'), // Section Title
@@ -46,7 +46,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Category', array(
 						'label' => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
-							'selector'  => '.mediaron-restaurant-menu-items-heading',
+							'selector'  => '.bbvm-restaurant-menu-items-heading',
 						),
 					),
 					'category_description_typography' => array(
@@ -54,7 +54,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Category', array(
 						'label' => __( 'Category Description Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
-							'selector'  => '.mediaron-restaurant-menu-items-description',
+							'selector'  => '.bbvm-restaurant-menu-items-description',
 						),
 					),
 				)
@@ -62,7 +62,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Category', array(
 		)
 	),
 	'spacing' => array(
-		'title' => __( 'Spacing', 'mediaron-bb-module' ),
+		'title' => __( 'Spacing', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Spacing', 'bb-vapor-modules-pro'), // Section Title
@@ -82,7 +82,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Category', array(
 		)
 	),
 	'separators' => array(
-		'title' => __( 'Separators', 'mediaron-bb-module' ),
+		'title' => __( 'Separators', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Separators', 'bb-vapor-modules-pro'), // Section Title

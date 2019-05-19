@@ -89,7 +89,7 @@ if ( ! function_exists( 'mrbb_jetpack_sharing_classes' ) ) {
 	}
 }
 ?>
-<div class="fl-mediaron-jetpack-sharing-for-beaverbuilder">
+<div class="fl-bbvm-jetpack-sharing-for-beaverbuilder">
 	<?php
 	add_filter( 'jetpack_sharing_headline_html', 'mrbb_jetpack_sharing_headline', 20, 3 );
 	add_filter( 'sharing_show', 'mrbb_jetpack_sharing', 20, 2 );

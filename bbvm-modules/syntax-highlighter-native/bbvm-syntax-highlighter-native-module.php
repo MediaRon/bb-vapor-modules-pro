@@ -3,10 +3,10 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Syntax Highlighter', 'mediaron-bb-modules' ),
-			'description'     => __( 'Syntax Highlighter for Beaver Builder', 'mediaron-bb-modules' ),
-			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'name'            => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Syntax Highlighter for Beaver Builder', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/syntax-highlighter-native/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -28,16 +28,16 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
  */
 FLBuilder::register_module('BBVapor_Syntax_Highlighter_Native_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Syntax Highlighter', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Syntax Highlighter', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'code' => array(
 						'type'          => 'select',
-						'label'         => __( 'Enter Your Code Type', 'mediaron-bb-modules' ),
+						'label'         => __( 'Enter Your Code Type', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'none' => __( 'None', 'mediaron-bb-modules' ),
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
 							'1c' => '1C',
 							'abnf' => 'ABNF',
 							'accesslog' => 'Access logs',
@@ -192,14 +192,14 @@ FLBuilder::register_module('BBVapor_Syntax_Highlighter_Native_Module', array(
 							'xpath' => 'XQuery',
 							'zephir' => 'Zephir',
 						),
-						'description' => __( 'You will need to save the module and refresh Beaver Builder to see the changes', 'mediaron-bb-modules' )
+						'description' => __( 'You will need to save the module and refresh Beaver Builder to see the changes', 'bb-vapor-modules-pro' )
 					),
 					'theme' => array(
 						'type'          => 'select',
-						'label'         => __( 'Enter Your Theme Type', 'mediaron-bb-modules' ),
-						'description'   => __( 'You may need to save/publish and refresh to see the theme in action', 'mediaron-bb-modules' ),
+						'label'         => __( 'Enter Your Theme Type', 'bb-vapor-modules-pro' ),
+						'description'   => __( 'You may need to save/publish and refresh to see the theme in action', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'default' => __( 'Default', 'mediaron-bb-modules' ),
+							'default' => __( 'Default', 'bb-vapor-modules-pro' ),
 							'a11y-dark' => 'A 11 Y Dark',
 							'a11y-light' => 'A 11 Y Light',
 							'agate' => 'Agate',
@@ -290,11 +290,11 @@ FLBuilder::register_module('BBVapor_Syntax_Highlighter_Native_Module', array(
 							'xt256' => 'XT256',
 							'zenburn' => 'zenburn'
 						),
-						'description' => __( 'You will need to save the module and refresh Beaver Builder to see the changes. Only one theme can be used per page. Takes from the top-most module.', 'mediaron-bb-modules' )
+						'description' => __( 'You will need to save the module and refresh Beaver Builder to see the changes. Only one theme can be used per page. Takes from the top-most module.', 'bb-vapor-modules-pro' )
 					),
 					'raw' => array(
 						'type'          => 'code',
-						'label' => __( 'Enter your code here.', 'mediaron-bb-modules' ),
+						'label' => __( 'Enter your code here.', 'bb-vapor-modules-pro' ),
 						'rows'          => '18'
 					),
 				)

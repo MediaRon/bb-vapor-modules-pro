@@ -51,7 +51,7 @@ if( 6 === strlen( $background_color ) ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder, .fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder .gform_wrapper",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder, .fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder .gform_wrapper",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'padding_top',
@@ -63,7 +63,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'form_margin',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder, .fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder .gform_wrapper",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder, .fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder .gform_wrapper",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'form_margin_top',
@@ -198,7 +198,7 @@ endif;
 <?php
 // Max Width
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder",
+	'selector' => ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder",
 	'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'max-width' => $settings->max_width . '%',
@@ -206,7 +206,7 @@ FLBuilderCSS::rule( array(
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder",
+	'selector' => ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder",
 	'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'max-width' => $settings->max_width_medium . '%',
@@ -214,7 +214,7 @@ FLBuilderCSS::rule( array(
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder",
+	'selector' => ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder",
 	'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'max-width' => $settings->max_width_responsive . '%',
@@ -473,7 +473,7 @@ if( ! empty( $settings->form_background_color ) ) :
 		$background_color = '#' . $background_color;
 	}
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-gravityforms-for-beaverbuilder {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-gravityforms-for-beaverbuilder {
 		background-color: <?php echo $background_color; ?>;
 	}
 <?php
@@ -481,7 +481,7 @@ endif;
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'form_radius',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'border-top-left-radius' 	 => 'form_radius_top',
@@ -851,10 +851,10 @@ if( 6 === strlen( $textarea_background_color ) ) {
 	width: <?php echo $settings->list_size; ?>px;
 	height: <?php echo $settings->list_size; ?>px;
 }
-.fl-node-<?php echo $id; ?> #gform_<?php echo $settings->form; ?> .gform_title, .fl-node-<?php echo $id; ?> .fl-mediaron-gravityforms-for-beaverbuilder .form-heading {
+.fl-node-<?php echo $id; ?> #gform_<?php echo $settings->form; ?> .gform_title, .fl-node-<?php echo $id; ?> .fl-bbvm-gravityforms-for-beaverbuilder .form-heading {
 	color: #<?php echo $settings->form_title_color; ?>;
 }
-.fl-node-<?php echo $id; ?> #gform_<?php echo $settings->form; ?> .gform_description, .fl-node-<?php echo $id; ?> .fl-mediaron-gravityforms-for-beaverbuilder .form-description {
+.fl-node-<?php echo $id; ?> #gform_<?php echo $settings->form; ?> .gform_description, .fl-node-<?php echo $id; ?> .fl-bbvm-gravityforms-for-beaverbuilder .form-description {
 	color: #<?php echo $settings->form_description_color; ?>;
 }
 
@@ -863,12 +863,12 @@ if( 6 === strlen( $textarea_background_color ) ) {
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'form_title_typography',
-	'selector' 	=> ".fl-node-$id #gform_{$settings->form} .gform_title, .fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder .form-heading"
+	'selector' 	=> ".fl-node-$id #gform_{$settings->form} .gform_title, .fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder .form-heading"
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'form_description_typography',
-	'selector' 	=> ".fl-node-$id #gform_{$settings->form} .gform_description, .fl-node-$id .fl-mediaron-gravityforms-for-beaverbuilder .form-description"
+	'selector' 	=> ".fl-node-$id #gform_{$settings->form} .gform_description, .fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder .form-description"
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,

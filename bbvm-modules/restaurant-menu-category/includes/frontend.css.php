@@ -11,7 +11,7 @@
 if( 'line' === $settings->category_separator ) {
 	if( 'single' === $settings->category_separator_line ) {
 		?>
-		.fl-node-<?php echo $id; ?> .mediaron-restaurant-heading hr {
+		.fl-node-<?php echo $id; ?> .bbvm-restaurant-heading hr {
 			background-color: #<?php echo esc_html( $settings->category_separator_line_color ); ?>;
 			height: <?php echo absint( $settings->category_separator_line_height ); ?>px;
 			margin: 10px 0;
@@ -20,10 +20,10 @@ if( 'line' === $settings->category_separator ) {
 	}
 	if( 'double' === $settings->category_separator_line ) {
 		?>
-		.fl-node-<?php echo $id; ?> .mediaron-restaurant-heading hr {
+		.fl-node-<?php echo $id; ?> .bbvm-restaurant-heading hr {
 			height: 10px;
 		}
-		.fl-node-<?php echo $id; ?> .mediaron-restaurant-heading hr:before {
+		.fl-node-<?php echo $id; ?> .bbvm-restaurant-heading hr:before {
 			content: ' ';
 			background-color: #<?php echo esc_html( $settings->category_separator_line_color ); ?>;
 			width: 100%;
@@ -32,7 +32,7 @@ if( 'line' === $settings->category_separator ) {
 			position: absolute;
 			top: 0;
 		}
-		.fl-node-<?php echo $id; ?> .mediaron-restaurant-heading hr:after {
+		.fl-node-<?php echo $id; ?> .bbvm-restaurant-heading hr:after {
 			content: ' ';
 			background-color: #<?php echo esc_html( $settings->category_separator_line_color ); ?>;
 			height: 2px;
@@ -47,7 +47,7 @@ if( 'line' === $settings->category_separator ) {
 } else if ( 'image' === $settings->category_separator ) {
 	error_log( print_r( $settings, true ) );
 	?>
-	.fl-node-<?php echo $id; ?> .mediaron-restaurant-heading hr {
+	.fl-node-<?php echo $id; ?> .bbvm-restaurant-heading hr {
 		background: transparent url(<?php echo esc_url( $settings->category_separator_line_image_src ); ?>) top left repeat-x;
 		height: <?php echo absint( $settings->category_separator_line_height ); ?>px;
 		margin: 10px 0;
@@ -57,7 +57,7 @@ if( 'line' === $settings->category_separator ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'category_seperator_margin',
-	'selector' 	=> ".fl-node-$id .mediaron-restaurant-heading hr",
+	'selector' 	=> ".fl-node-$id .bbvm-restaurant-heading hr",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'category_seperator_margin_top',
@@ -69,17 +69,17 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'category_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-restaurant-menu-items-heading",
+	'selector' 	=> ".fl-node-$id .bbvm-restaurant-menu-items-heading",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'category_description_typography',
-	'selector' 	=> ".fl-node-$id .mediaron-restaurant-menu-items-description",
+	'selector' 	=> ".fl-node-$id .bbvm-restaurant-menu-items-description",
 ) );
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'category_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-restaurant-menu-items-heading",
+	'selector' 	=> ".fl-node-$id .bbvm-restaurant-menu-items-heading",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'category_padding_top',
@@ -91,7 +91,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'category_description_padding',
-	'selector' 	=> ".fl-node-$id .mediaron-restaurant-menu-items-description",
+	'selector' 	=> ".fl-node-$id .bbvm-restaurant-menu-items-description",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'category_description_padding_top',

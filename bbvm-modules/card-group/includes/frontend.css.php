@@ -2,7 +2,7 @@
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'card_padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-card-wrapper",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-card-wrapper",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'card_padding_top',
@@ -12,85 +12,85 @@ FLBuilderCSS::dimension_field_rule( array(
 	),
 ) );
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	flex-direction: row;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder .fl-mediaron-card-wrapper .fl-mediaron-card {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder .fl-bbvm-card-wrapper .fl-bbvm-card {
 	height: 100%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 	width: 16.66%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-5 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-5 .fl-bbvm-card-wrapper {
 	width: 20%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-4 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-4 .fl-bbvm-card-wrapper {
 	width: 25%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-3 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-3 .fl-bbvm-card-wrapper {
 	width: 33.33%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-2 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-2 .fl-bbvm-card-wrapper {
 	width: 50%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-1 .fl-mediaron-card-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-1 .fl-bbvm-card-wrapper {
 	width: 100%;
 }
 @media only screen and (max-width: 1200px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 		width: 20%;
 	}
 }
 @media only screen and (max-width: 1000px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 		width: 25%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-5 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-5 .fl-bbvm-card-wrapper {
 		width: 25%;
 	}
 }
 @media only screen and (max-width: 800px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 		width: 33.33%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-5 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-5 .fl-bbvm-card-wrapper {
 		width: 33.33%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-4 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-4 .fl-bbvm-card-wrapper {
 		width: 33.33%;
 	}
 }
 @media only screen and (max-width: 600px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 		width: 50%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-5 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-5 .fl-bbvm-card-wrapper {
 		width: 50%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-4 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-4 .fl-bbvm-card-wrapper {
 		width: 50%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-3 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-3 .fl-bbvm-card-wrapper {
 		width: 50%;
 	}
 }
 @media only screen and (max-width: 500px) {
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-6 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-6 .fl-bbvm-card-wrapper {
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-5 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-5 .fl-bbvm-card-wrapper {
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-4 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-4 .fl-bbvm-card-wrapper {
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-3 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-3 .fl-bbvm-card-wrapper {
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder.columns-2 .fl-mediaron-card-wrapper {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder.columns-2 .fl-bbvm-card-wrapper {
 		width: 100%;
 	}
 }
@@ -102,12 +102,12 @@ foreach( $settings->card as $card ) :
 	$card = json_encode( $card );
 	$card = json_decode( $card );
 ?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-icon-header {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-icon-header {
 		font-size: <?php echo absint( $card->icon_font_size ); ?>px;
 		color: #<?php echo $card->icon_color; ?>;
 		text-align: center;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-icon-header .mediaron-card-icon {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-icon-header .bbvm-card-icon {
 		display: inline-block;
 		background: #<?php echo $card->icon_background; ?>;
 		<?php
@@ -119,12 +119,12 @@ foreach( $settings->card as $card ) :
 		?>
 	}
 
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>  {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>  {
 		color: #<?php echo $card->text_color; ?>;
 		border: <?php echo $card->border; ?>px solid #<?php echo $card->border_color; ?>;
 		box-shadow: <?php echo FLBuilderColor::shadow( (array)$card->text_shadow ); ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>:hover {
 		color: #<?php echo $card->text_color_hover; ?>;
 		border: <?php echo $card->border; ?>px solid #<?php echo $card->border_color_hover; ?>;
 		box-shadow: <?php echo FLBuilderColor::shadow( (array)$card->text_shadow_hover ); ?>;
@@ -133,7 +133,7 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'border_radius',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-$count ",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-$count ",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'border-top-left-radius' 	 => 'border_radius_top',
@@ -144,20 +144,20 @@ foreach( $settings->card as $card ) :
 	) );
 	if( 'color' === $card->background_type ):
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>  {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>  {
 		background-color: #<?php echo $card->background_color; ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>:hover {
 		background-color: #<?php echo $card->background_color_hover; ?>;
 	}
 	<?php
 	endif;
 	if( 'gradient' === $card->background_type ):
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>  {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>  {
 		background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $card->background_gradient ), true ) ); ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>:hover {
 		background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $card->background_gradient_hover ), true ) ); ?>;
 	}
 	<?php
@@ -165,7 +165,7 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'padding',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-$count",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-$count",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'padding_top',
@@ -175,7 +175,7 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>:hover .fl-mediaron-card-icon-header .mediaron-card-icon {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>:hover .fl-bbvm-card-icon-header .bbvm-card-icon {
 		background: #<?php echo $card->icon_background_hover; ?>;
 		color: #<?php echo $card->icon_color_hover; ?>;
 	}
@@ -183,7 +183,7 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'icon_padding',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-$count .fl-mediaron-card-icon-header .mediaron-card-icon",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-$count .fl-bbvm-card-icon-header .bbvm-card-icon",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'icon_padding_top',
@@ -193,17 +193,17 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-photo-header {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-photo-header {
 		text-align: center;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-photo-header img.rounded {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-photo-header img.rounded {
 		border-radius: 100%;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-photo-header img {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-photo-header img {
 		width: <?php echo absint( $card->photo_size ); ?>px;
 		height: <?php echo absint( $card->photo_size ); ?>px;
 	}
-	.fl-node-<?php echo $id; ?> #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-heading {
+	.fl-node-<?php echo $id; ?> #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-heading {
 		font-size: 18px;
 		padding: 10px 20px;
 		font-weight: 700;
@@ -213,12 +213,12 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'heading_typography',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-heading"
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-heading"
 	) );
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'heading_padding',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-heading",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-heading",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'heading_padding_top',
@@ -228,7 +228,7 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-content {
+	.fl-node-<?php echo $id; ?> #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-content {
 		font-size: 18px;
 		padding: 10px 20px;
 		font-weight: 400;
@@ -238,12 +238,12 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'content_typography',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-content"
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-content"
 	) );
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'content_padding',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-content",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-content",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'content_padding_top',
@@ -253,7 +253,7 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-subheading {
+	.fl-node-<?php echo $id; ?> #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-subheading {
 		font-size: 18px;
 		padding: 10px 20px;
 		font-weight: 700;
@@ -263,12 +263,12 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'subheading_typography',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-subheading"
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-subheading"
 	) );
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'subheading_padding',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-subheading",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-subheading",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'subheading_padding_top',
@@ -278,7 +278,7 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-subheading-text {
+	.fl-node-<?php echo $id; ?> #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-subheading-text {
 		font-size: 18px;
 		padding: 10px 20px;
 		font-weight: 400;
@@ -288,12 +288,12 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'subheading_text_typography',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-subheading-text"
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-subheading-text"
 	) );
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'subheading_text_padding',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-subheading-text",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-subheading-text",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'subheading_text_padding_top',
@@ -303,7 +303,7 @@ foreach( $settings->card as $card ) :
 		),
 	) );
 	?>
-	.fl-node-<?php echo $id; ?> #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a  {
+	.fl-node-<?php echo $id; ?> #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a  {
 		display: inline-block;
 		font-size: 18px;
 		padding: 10px 20px;
@@ -311,32 +311,32 @@ foreach( $settings->card as $card ) :
 		margin: 0 auto;
 		border: <?php echo $card->button_border; ?>px solid #<?php echo $card->button_border_color; ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a,
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a:hover,
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a:visited {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a,
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a:hover,
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a:visited {
 		color: #<?php echo $card->button_text_color; ?>;
 		text-decoration: none;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?>  a:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?>  a:hover {
 		color: #<?php echo $card->button_text_color_hover; ?>;
 	}
 	<?php
 	if( 'color' === $card->button_background_type ):
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a {
 		background-color: #<?php echo $card->button_background_color; ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a:hover {
 		background-color: #<?php echo $card->button_background_color_hover; ?>;
 	}
 	<?php
 	endif;
 	if( 'gradient' === $card->button_background_type ):
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a {
 		background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode($card->button_color_gradient ), true ) ); ?>;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-<?php echo absint( $count ); ?> .fl-mediaron-card-readmore a:hover {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-<?php echo absint( $count ); ?> .fl-bbvm-card-readmore a:hover {
 		background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode($card->button_color_gradient_hover ), true ) ); ?>;
 	}
 	<?php
@@ -344,12 +344,12 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'readmore_text_typography',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-readmore"
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-readmore"
 	) );
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'button_padding',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-readmore a",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-readmore a",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'button_padding_top',
@@ -361,7 +361,7 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'button_border_radius',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-card-group-for-beaverbuilder #mediaron-card-$count .fl-mediaron-card-readmore a",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-card-group-for-beaverbuilder #bbvm-card-$count .fl-bbvm-card-readmore a",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'border-top-left-radius' 	 => 'button_border_radius_top',
@@ -373,7 +373,7 @@ foreach( $settings->card as $card ) :
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $card,
 		'setting_name' 	=> 'button_margin',
-		'selector' 	=> ".fl-node-$id #mediaron-card-$count .fl-mediaron-card-readmore a",
+		'selector' 	=> ".fl-node-$id #bbvm-card-$count .fl-bbvm-card-readmore a",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'margin-top' 	 => 'button_margin_top',

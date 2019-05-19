@@ -26,7 +26,7 @@ if( 6 === strlen( $button_background_color_hover ) ) {
 }
 if ( 'icon-text' === $settings->sharing_display ):
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
 	'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'font-size' => $settings->icon_size . 'px',
@@ -39,7 +39,7 @@ if ( empty( $settings->icon_size_medium ) ) {
 	$settings->icon_size_medium = $settings->icon_size;
 }
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
 	'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'font-size' => $settings->icon_size_medium . 'px',
@@ -52,7 +52,7 @@ if ( empty( $settings->icon_size_responsive ) ) {
 	$settings->icon_size_responsive = $settings->icon_size;
 }
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button::before",
 	'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'font-size' => $settings->icon_size_responsive . 'px',
@@ -62,21 +62,21 @@ FLBuilderCSS::rule( array(
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 	'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'color' => $icon_color_hover
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 	'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'color' => $icon_color_hover
 	),
 ) );
 FLBuilderCSS::rule( array(
-	'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
+	'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 	'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 	'props' => array(
 		'color' => $icon_color_hover
@@ -85,13 +85,13 @@ FLBuilderCSS::rule( array(
 endif;
 if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing_display ) :
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button span {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button span {
 		color: <?php echo $button_text_color; ?> !important;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover span {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover span {
 		color: <?php echo $button_text_color_hover; ?> !important;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
 		display: flex;
 		align-items: center;
 	}
@@ -99,29 +99,29 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	FLBuilderCSS::typography_field_rule( array(
 		'settings'	=> $settings,
 		'setting_name' 	=> 'button_typography',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
 	) );
 	FLBuilderCSS::border_field_rule( array(
 		'settings' 	=> $settings,
 		'setting_name' 	=> 'button_border',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
 	) );
 	if ( 'color' === $settings->button_maybe_gradient ) :
 		?>
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
 			background: <?php echo $button_background_color; ?>;
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
 			background: <?php echo $button_background_color_hover; ?>;
 		}
 		<?php
 	endif;
 	if ( 'gradient' === $settings->button_maybe_gradient ) :
 		?>
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
 			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient ); ?>
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
 			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient_hover ); ?>
 		}
 		<?php
@@ -129,7 +129,7 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $settings,
 		'setting_name' 	=> 'button_padding',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'padding-top' 	 => 'button_padding_top',
@@ -141,7 +141,7 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	FLBuilderCSS::dimension_field_rule( array(
 		'settings'	=> $settings,
 		'setting_name' 	=> 'button_margin',
-		'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
+		'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
 		'unit'		=> 'px',
 		'props'		=> array(
 			'margin-top' 	 => 'button_margin_top',
@@ -154,56 +154,56 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 		$num_columns = absint( $settings->flex_columns );
 		$column_width = floor( 100/$num_columns);
 		?>
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul {
 			display: flex;
 			flex-wrap: wrap;
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 			display: block;
 			width: <?php echo $column_width; ?>%;
 			box-sizing: border-box;
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button {
 			display: flex;
     	justify-content: <?php echo esc_html( $settings->flex_layout_align ); ?>;
 			height: 100%;
 			width: 100% !important;
 			box-sizing: border-box;
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button:before {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button:before {
 			height: 100%;
 		}
 		@media only screen and (max-width: 1200px) {
 			<?php if ( in_array( $num_columns, array( 6 ) ) ) : ?>
-			.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+			.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 				width: 20%;
 			}
 			<?php endif; ?>
 		}
 		@media only screen and (max-width: 1000px) {
 			<?php if ( in_array( $num_columns, array( 6, 5 ) ) ) : ?>
-			.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+			.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 				width: 25%;
 			}
 			<?php endif; ?>
 		}
 		@media only screen and (max-width: 800px) {
 			<?php if ( in_array( $num_columns, array( 6, 5, 4 ) ) ) : ?>
-			.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+			.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 				width: 33%;
 			}
 			<?php endif; ?>
 		}
 		@media only screen and (max-width: 600px) {
 			<?php if ( in_array( $num_columns, array( 6, 5, 4, 3 ) ) ) : ?>
-			.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+			.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 				width: 50%;
 			}
 			<?php endif; ?>
 		}
 		@media only screen and (max-width: 500px) {
 			<?php if ( in_array( $num_columns, array( 6, 5, 4, 3, 2 ) ) ) : ?>
-			.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+			.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 				width: 100%;
 			}
 			<?php endif; ?>
@@ -212,33 +212,33 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	}
 	if ( 'block' === $settings->button_layout_type ) {
 		FLBuilderCSS::rule( array(
-			'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
+			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
 			'media' => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props' => array(
 				'width' => $settings->block_width . '%',
 			),
 		) );
 		FLBuilderCSS::rule( array(
-			'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
+			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
 			'media' => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props' => array(
 				'width' => $settings->block_width_medium . 'px',
 			),
 		) );
 		FLBuilderCSS::rule( array(
-			'selector' => ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
+			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li",
 			'media' => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props' => array(
 				'width' => $settings->block_width_responsive . 'px',
 			),
 		) );
 		?>
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li {
 			display: block;
 			box-sizing: border-box;
 			margin: <?php echo esc_html( $settings->block_align ); ?> !important;
 		}
-		.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button {
+		.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content li a.sd-button {
 			width: 100% !important;
 			box-sizing: border-box;
 			display: flex;
@@ -257,23 +257,23 @@ if( 6 === strlen( $sharing_headline_color ) ) {
 	$sharing_headline_color = '#' . $sharing_headline_color;
 }
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
 		color: <?php echo $sharing_headline_color; ?>;
 }
 <?php
 if( 'no' === $settings->sharing_headline_show_top_border ) {
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
 		border: 0;
 	}
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title:before {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title:before {
 		display: none;
 	}
 	<?php
 }
 if( 'block' === $settings->sharing_headline_display ) {
 	?>
-	.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
+	.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title {
 		display: block;
 		text-align: <?php echo esc_html( $settings->sharing_headline_align ); ?>;
 	}
@@ -282,7 +282,7 @@ if( 'block' === $settings->sharing_headline_display ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'sharing_headline_padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'sharing_headline_padding_top',
@@ -294,7 +294,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'sharing_headline_margin',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'sharing_headline_margin_top',
@@ -306,5 +306,5 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'sharing_headline_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy h3.sd-title",
 ) );

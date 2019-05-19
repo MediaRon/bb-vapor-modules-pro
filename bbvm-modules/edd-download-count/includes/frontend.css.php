@@ -11,7 +11,7 @@ if( 6 === strlen( $text_color ) ) {
 	$text_color = '#' . $text_color;
 }
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-download-count-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-download-count-for-beaverbuilder {
 	background-color: <?php echo $background_color; ?>;
 	color: <?php echo $text_color; ?>;
 }
@@ -19,7 +19,7 @@ if( 6 === strlen( $text_color ) ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-download-count-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-download-count-for-beaverbuilder",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'padding_top',
@@ -31,5 +31,5 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-download-count-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-download-count-for-beaverbuilder",
 ) );

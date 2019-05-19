@@ -1,4 +1,4 @@
-<div class="fl-mediaron-download-count-for-beaverbuilder">
+<div class="fl-bbvm-download-count-for-beaverbuilder">
 	<?php
 	if ( ! empty( $settings->product ) ) {
 			global $edd_logs;

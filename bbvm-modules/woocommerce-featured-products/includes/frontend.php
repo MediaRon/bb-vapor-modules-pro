@@ -1,4 +1,4 @@
-<div class="fl-mediaron-woocommerce-featured-products-for-beaverbuilder">
+<div class="fl-bbvm-woocommerce-featured-products-for-beaverbuilder">
 	<?php if( ! empty( $settings->products ) ):?>
 	<?php
 	$woocommerce_product_ids = explode( ',', $settings->products );
@@ -7,9 +7,9 @@
 
 	foreach( $products as $product ) {
 		?>
-		<div class="mediaron-woocommerce-product" id="mediaron-woocommerce-product-<?php echo absint( $product->get_id() ); ?>">
-			<div class="mediaron-woocommerce-wrapper">
-				<div class="mediaron-woocommerce-image">
+		<div class="bbvm-woocommerce-product" id="bbvm-woocommerce-product-<?php echo absint( $product->get_id() ); ?>">
+			<div class="bbvm-woocommerce-wrapper">
+				<div class="bbvm-woocommerce-image">
 					<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 					<?php
 					$image_id = $product->get_image_id();
@@ -20,16 +20,16 @@
 					</a>
 				</div>
 				<?php if ( 'yes' === $settings->show_title ): ?>
-				<div class="mediaron-woocommerce-title">
+				<div class="bbvm-woocommerce-title">
 					<h2><?php echo esc_html( $product->get_title() ); ?></h2>
 				</div>
 				<?php endif; ?>
 				<?php if ( 'yes' === $settings->show_short_description ): ?>
-				<div class="mediaron-woocommerce-short-description">
+				<div class="bbvm-woocommerce-short-description">
 					<?php echo wp_trim_words( wp_strip_all_tags( $product->get_short_description(), true ), absint( $settings->short_description_trim_words ) ); ?>
 				</div>
 				<?php endif; ?>
-				<div class="mediaron-woocommerce-price">
+				<div class="bbvm-woocommerce-price">
 					<?php
 					$price = $product->get_price();
 					if( ! empty( $price ) ) {
@@ -39,8 +39,8 @@
 				</div>
 			</div>
 			<?php if( 'yes' === $settings->show_view_details ): ?>
-			<div class="mediaron-woocommerce-show-details">
-				<div class="mediaron-woocommerce-show-details-button">
+			<div class="bbvm-woocommerce-show-details">
+				<div class="bbvm-woocommerce-show-details-button">
 				<?php
 				ob_start();
 				?>
@@ -49,20 +49,20 @@
 				$show_details_text = ob_get_clean();
 				$on_click_text = '';
 				if( 'slidedown' === $settings->show_details_behavior ) {
-					$on_click_text = sprintf( 'onclick="event.preventDefault();mediaron_woocommerce_featured_products_show_details(%s)"', esc_js( $product->get_id() ) );
+					$on_click_text = sprintf( 'onclick="event.preventDefault();bbvm_woocommerce_featured_products_show_details(%s)"', esc_js( $product->get_id() ) );
 				}
 				if( 'lightbox' === $settings->show_details_behavior ) {
-					$on_click_text = sprintf( 'onclick="event.preventDefault();mediaron_woocommerce_featured_products_show_details_lightbox(%s)"', esc_js( $product->get_id() ) );
+					$on_click_text = sprintf( 'onclick="event.preventDefault();bbvm_woocommerce_featured_products_show_details_lightbox(%s)"', esc_js( $product->get_id() ) );
 				}
 				printf( '<a href="%s" %s>%s</a>', esc_url( $product->get_permalink() ), $on_click_text, $show_details_text );
 				?>
 				</div>
-				<div class="mediaron-woocommerce-show-details-content">
+				<div class="bbvm-woocommerce-show-details-content">
 					<?php
 					$description = $product->get_description();
 					if( ! empty( $description ) ) {
 						?>
-						<div class="mediaron-woocommerce-description">
+						<div class="bbvm-woocommerce-description">
 						<?php echo $description; ?>
 						</div>
 						<?php
@@ -72,8 +72,8 @@
 					$sku = $product->get_sku();
 					if( ! empty( $sku ) ) {
 						?>
-						<div class="mediaron-woocommerce-sku">
-						<h3><?php esc_html_e( 'SKU', 'mediaron-bb-modules' ); ?></h3>
+						<div class="bbvm-woocommerce-sku">
+						<h3><?php esc_html_e( 'SKU', 'bb-vapor-modules-pro' ); ?></h3>
 						<?php echo $sku; ?>
 						</div>
 						<?php
@@ -83,22 +83,22 @@
 					$stock = $product->get_stock_quantity();
 					if( $stock > 0 ) {
 						?>
-						<div class="mediaron-woocommerce-in-stock">
-						<h3><?php esc_html_e( 'Stock', 'mediaron-bb-modules' ); ?></h3>
-						<?php echo absint( $stock ); ?> <?php echo esc_html__( 'in stock', 'mediaron-bb-modules' ); ?>
+						<div class="bbvm-woocommerce-in-stock">
+						<h3><?php esc_html_e( 'Stock', 'bb-vapor-modules-pro' ); ?></h3>
+						<?php echo absint( $stock ); ?> <?php echo esc_html__( 'in stock', 'bb-vapor-modules-pro' ); ?>
 						</div>
 						<?php
 					} else {
 						?>
-						<div class="mediaron-woocommerce-in-stock">
-						<h3><?php esc_html_e( 'Stock', 'mediaron-bb-modules' ); ?></h3>
-						<?php echo esc_html__( 'Out of stock', 'mediaron-bb-modules' ); ?>
+						<div class="bbvm-woocommerce-in-stock">
+						<h3><?php esc_html_e( 'Stock', 'bb-vapor-modules-pro' ); ?></h3>
+						<?php echo esc_html__( 'Out of stock', 'bb-vapor-modules-pro' ); ?>
 						</div>
 						<?php
 					}
 					?>
-					<div class="mediaron-woocommerce-cart">
-						<h3><?php esc_html_e( 'Purchase', 'mediaron-bb-modules' ); ?></h3>
+					<div class="bbvm-woocommerce-cart">
+						<h3><?php esc_html_e( 'Purchase', 'bb-vapor-modules-pro' ); ?></h3>
 						<?php echo do_shortcode( sprintf( '[add_to_cart id="%s" style="" show_price="false" quantity=1]', $product->get_id() ) ); ?>
 					</div>
 				</div>

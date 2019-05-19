@@ -3,10 +3,10 @@ class BBVapor_Button_Group_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Button Group', 'mediaron-bb-modules' ),
-			'description'     => __( 'Add a Button Group', 'mediaron-bb-modules' ),
-			'category'        => __( 'Base', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'name'            => __( 'Button Group', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Add a Button Group', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/button-group/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/button-group/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -17,49 +17,49 @@ class BBVapor_Button_Group_Module extends FLBuilderModule {
 }
 FLBuilder::register_settings_form(
 	'mrbb_buttons', array(
-		'title' => __( 'Add Button', 'mediaron-bb-modules' ),
+		'title' => __( 'Add Button', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('Button', 'mediaron-bb-modules'),
+				'title'         => __('Button', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
 						'title'         => '',
 						'fields'        => array(
 							'button_id'         => array(
 								'type'          => 'text',
-								'label' => __( 'Unique Button ID for Styling', 'mediaron-bb-modules' ),
+								'label' => __( 'Unique Button ID for Styling', 'bb-vapor-modules-pro' ),
 								'default' => 'button_id_' . rand(0,10000),
 							),
 							'button_text'         => array(
 								'type'          => 'text',
-								'label' => __( 'Button Text', 'mediaron-bb-modules' )
+								'label' => __( 'Button Text', 'bb-vapor-modules-pro' )
 							),
 							'button_link'         => array(
 								'type'          => 'link',
-								'label' => __( 'Button Link', 'mediaron-bb-modules' )
+								'label' => __( 'Button Link', 'bb-vapor-modules-pro' )
 							),
 							'button_icon'         => array(
 								'type'          => 'icon',
-								'label' => __( 'Button Icon', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Icon', 'bb-vapor-modules-pro' ),
 								'show_remove'   => true
 							),
 							'button_text_color'         => array(
 								'type'          => 'color',
-								'label' => __( 'Button Text Color', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
 								'default' => '000000'
 							),
 							'button_text_color_hover'         => array(
 								'type'          => 'color',
-								'label' => __( 'Button Text Color on Hover', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
 								'default' => '000000'
 							),
 							'button_background_type'         => array(
 								'type'          => 'select',
-								'label' => __( 'Button Background Type', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Background Type', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'transparent' => __( 'Transparent', 'mediaron-bb-modules' ),
-									'color' => __( 'Color', 'mediaron-bb-modules' ),
-									'gradient' => __( 'Gradient', 'mediaron-bb-modules' )
+									'transparent' => __( 'Transparent', 'bb-vapor-modules-pro' ),
+									'color' => __( 'Color', 'bb-vapor-modules-pro' ),
+									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' )
 								),
 								'default' => 'transparent',
 								'toggle' => array(
@@ -70,64 +70,64 @@ FLBuilder::register_settings_form(
 							),
 							'button_background_color' => array(
 								'type' => 'color',
-								'label' => __( 'Button Background Color', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
 								'show_reset' => true,
 								'default' => 'FFFFFF'
 							),
 							'button_background_color_hover' => array(
 								'type' => 'color',
-								'label' => __( 'Button Background Hover Color', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Background Hover Color', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
 								'show_reset' => true,
 								'default' => 'FFFFFF'
 							),
 							'button_background_gradient' => array(
 								'type' => 'gradient',
-								'label' => __( 'Button Background Gradient', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Background Gradient', 'bb-vapor-modules-pro' ),
 							),
 							'button_background_gradient_hover' => array(
 								'type' => 'gradient',
-								'label' => __( 'Button Background Hover Gradient', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Background Hover Gradient', 'bb-vapor-modules-pro' ),
 							),
 							'button_style' => array(
 								'type' => 'select',
-								'label' => __( 'Button Style', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Style', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'none' => __( 'None', 'mediaron-bb-modules' ),
-									'iris' => __( 'Iris', 'mediaron-bb-modules' ),
-									'ferdinand' => __( 'Ferdinand', 'mediaron-bb-modules' ),
-									'francisco' => __( 'Francisco', 'mediaron-bb-modules' ),
-									'prospero' => __( 'Prospero', 'mediaron-bb-modules' ),
-									'sebastion' => __( 'Sebastian', 'mediaron-bb-modules' ),
-									'stephano' => __( 'Stephano', 'mediaron-bb-modules' ),
-									'trinculo' => __( 'Trinculo', 'mediaron-bb-modules' ),
-									'valentine' => __( 'Valentine', 'mediaron-bb-modules' ),
+									'none' => __( 'None', 'bb-vapor-modules-pro' ),
+									'iris' => __( 'Iris', 'bb-vapor-modules-pro' ),
+									'ferdinand' => __( 'Ferdinand', 'bb-vapor-modules-pro' ),
+									'francisco' => __( 'Francisco', 'bb-vapor-modules-pro' ),
+									'prospero' => __( 'Prospero', 'bb-vapor-modules-pro' ),
+									'sebastion' => __( 'Sebastian', 'bb-vapor-modules-pro' ),
+									'stephano' => __( 'Stephano', 'bb-vapor-modules-pro' ),
+									'trinculo' => __( 'Trinculo', 'bb-vapor-modules-pro' ),
+									'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
 								)
 							),
 							'button_style_hover' => array(
 								'type' => 'select',
-								'label' => __( 'Button Style Hover', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Style Hover', 'bb-vapor-modules-pro' ),
 								'options' => array(
-									'none' => __( 'None', 'mediaron-bb-modules' ),
-									'iris' => __( 'Iris', 'mediaron-bb-modules' ),
-									'ferdinand' => __( 'Ferdinand', 'mediaron-bb-modules' ),
-									'francisco' => __( 'Francisco', 'mediaron-bb-modules' ),
-									'prospero' => __( 'Prospero', 'mediaron-bb-modules' ),
-									'sebastion' => __( 'Sebastian', 'mediaron-bb-modules' ),
-									'stephano' => __( 'Stephano', 'mediaron-bb-modules' ),
-									'trinculo' => __( 'Trinculo', 'mediaron-bb-modules' ),
-									'valentine' => __( 'Valentine', 'mediaron-bb-modules' ),
+									'none' => __( 'None', 'bb-vapor-modules-pro' ),
+									'iris' => __( 'Iris', 'bb-vapor-modules-pro' ),
+									'ferdinand' => __( 'Ferdinand', 'bb-vapor-modules-pro' ),
+									'francisco' => __( 'Francisco', 'bb-vapor-modules-pro' ),
+									'prospero' => __( 'Prospero', 'bb-vapor-modules-pro' ),
+									'sebastion' => __( 'Sebastian', 'bb-vapor-modules-pro' ),
+									'stephano' => __( 'Stephano', 'bb-vapor-modules-pro' ),
+									'trinculo' => __( 'Trinculo', 'bb-vapor-modules-pro' ),
+									'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
 								)
 							),
 							'button_style_border_color' => array(
 								'type' => 'color',
-								'label' => __( 'Button Style Border Color', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Style Border Color', 'bb-vapor-modules-pro' ),
 								'default' => '000000'
 							),
 							'button_style_border_color_hover' => array(
 								'type' => 'color',
-								'label' => __( 'Button Style Border Color Hover', 'mediaron-bb-modules' ),
+								'label' => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
 								'default' => '000000'
 							)
 						),
@@ -142,14 +142,14 @@ FLBuilder::register_settings_form(
  */
 FLBuilder::register_module('BBVapor_Button_Group_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('General', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('General', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'button' => array(
 						'type'          => 'form',
-						'label'         => __('Button', 'mediaron-bb-modules'),
+						'label'         => __('Button', 'bb-vapor-modules-pro'),
 						'form' => 'mrbb_buttons',
 						'multiple'     => true,
 						'preview_text'  => 'button_text'
@@ -159,39 +159,39 @@ FLBuilder::register_module('BBVapor_Button_Group_Module', array(
 		)
 	),
 	'styles'       => array( // Tab
-		'title'         => __('Styles', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('Styles', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'styles'       => array( // Section
-				'title'         => __('Styles', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('Styles', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'button_alignment' => array(
 						'type'  => 'align',
-						'label' => __( 'Button Alignment', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
 						'default' => 'center'
 					),
 					'button_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Button Padding', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Button Typography', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_margin' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Button Margin', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_radius' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Button Radius', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Radius', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_min_width' => array(
 						'type'  => 'unit',
-						'label' => __( 'Button Min Width', 'mediaron-bb-modules' ),
+						'label' => __( 'Button Min Width', 'bb-vapor-modules-pro' ),
 						'default' => '0',
 						'responsive' => true
 					),

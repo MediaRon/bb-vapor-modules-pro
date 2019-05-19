@@ -1,4 +1,4 @@
-<div class="fl-mediaron-beforeafter-for-beaverbuilder">
+<div class="fl-bbvm-beforeafter-for-beaverbuilder">
 	<?php
 	if ( 'hover' === $settings->style ) {
 		?>
@@ -80,7 +80,7 @@
 				<div class="after">
 					<div class="text-after"><?php echo esc_html( $settings->after_text ); ?></div>
 				</div>
-				<div class="mediaron-horizontal-handle">
+				<div class="bbvm-horizontal-handle">
 					<span class="circle">
 						<span class="left-arrow"><i class="fas fa-arrow-left"></i></span><span class="right-arrow"><i class="fas fa-arrow-right"></i></span>
 					</span>
@@ -109,7 +109,7 @@
 				<div class="after">
 					<div class="text-after"><?php echo esc_html( $settings->after_text ); ?></div>
 				</div>
-				<div class="mediaron-vertical-handle">
+				<div class="bbvm-vertical-handle">
 					<span class="circle">
 						<span class="left-arrow"><i class="fas fa-arrow-up"></i></span><span class="right-arrow"><i class="fas fa-arrow-down"></i></span>
 					</span>

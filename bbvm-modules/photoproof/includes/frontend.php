@@ -1,4 +1,4 @@
-<div class="fl-mediaron-photoproof-for-beaverbuilder">
+<div class="fl-bbvm-photoproof-for-beaverbuilder">
 	<?php
 	if( 'slider' === $settings->album_type ) {
 		?>

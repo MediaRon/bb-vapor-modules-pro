@@ -6,7 +6,7 @@ class BBVapor_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
 			'name'            => __( 'Restaurant Tabbed Menu', 'bb-vapor-modules-pro' ),
 			'description'     => __( 'Add a tabbed menu for a restaurant', 'bb-vapor-modules-pro' ),
 			'category'        => __( 'Restaurant', 'bb-vapor-modules-pro' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-tabbed/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-tabbed/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -19,7 +19,7 @@ class BBVapor_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
 	public function enqueue_scripts() {
 		if ( $this->settings && !empty( $this->settings->menu_item_form ) ) {
 			$this->add_css( 'jquery-magnificpopup' );
-			$this->add_js('mediaron-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-tabbed/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION );
+			$this->add_js('bbvm-restaurant-items-for-beaver-builder', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-tabbed/js/frontend.js', array( 'jquery', 'jquery-magnificpopup' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION );
 		}
 	}
 }
@@ -208,7 +208,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 		)
 	),
 	'tabs' => array(
-		'title' => __( 'Tabs', 'mediaron-bb-module' ),
+		'title' => __( 'Tabs', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Tabs', 'bb-vapor-modules-pro'), // Section Title
@@ -269,7 +269,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 		)
 	),
 	'typography' => array(
-		'title' => __( 'Typography', 'mediaron-bb-module' ),
+		'title' => __( 'Typography', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Typography', 'bb-vapor-modules-pro'), // Section Title
@@ -283,7 +283,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 						'label' => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
-							'selector'  => '.mediaron-restaurant-menu-items-heading',
+							'selector'  => '.bbvm-restaurant-menu-items-heading',
 						),
 					),
 					'category_description_typography' => array(
@@ -291,7 +291,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 						'label' => __( 'Category Description Typography', 'bb-vapor-modules-pro' ),
 						'preview'    => array(
 							'type'	    => 'css',
-							'selector'  => '.mediaron-restaurant-menu-items-description',
+							'selector'  => '.bbvm-restaurant-menu-items-description',
 						),
 					),
 					'menu_item_typography' => array(
@@ -323,7 +323,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 		)
 	),
 	'spacing' => array(
-		'title' => __( 'Spacing', 'mediaron-bb-module' ),
+		'title' => __( 'Spacing', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Spacing', 'bb-vapor-modules-pro'), // Section Title
@@ -348,7 +348,7 @@ FLBuilder::register_module('BBVapor_Restaurant_Menu_Tabbed_Module', array(
 		)
 	),
 	'separators' => array(
-		'title' => __( 'Separators', 'mediaron-bb-module' ),
+		'title' => __( 'Separators', 'bbvm-bb-module' ),
 		'sections' => array(
 			'general' => array(
 				'title'         => __('Separators', 'bb-vapor-modules-pro'), // Section Title

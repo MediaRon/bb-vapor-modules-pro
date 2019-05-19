@@ -10,7 +10,7 @@ if( isset( $settings->overlay_photo ) && ! empty( $settings->overlay_photo ) ):
 	}
 	$has_link = isset( $settings->overlay_link ) ? $settings->overlay_link : false;
 ?>
-<div class="fl-mediaron-overlay-photo-for-beaverbuilder">
+<div class="fl-bbvm-overlay-photo-for-beaverbuilder">
 	<?php
 	if( ! empty( $has_link ) ):
 	?>
@@ -18,14 +18,14 @@ if( isset( $settings->overlay_photo ) && ! empty( $settings->overlay_photo ) ):
 	<?php
 	endif;
 	?>
-	<div class="fl-mediaron-overlay-photo <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?>">
+	<div class="fl-bbvm-overlay-photo <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?>">
 		<figure>
 			<?php
 			$alt = get_post_meta( $settings->overlay_photo, '_wp_attachment_image_alt', true);
 			?>
 			<img src="<?php echo esc_url( $settings->overlay_photo_src ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
-			<figcaption class="fl-mediaron-overlay-text <?php echo esc_attr( $fig_class ); ?> <?php echo 'hover' === $settings->overlay_behavior ? 'hover-only' : ''; ?>">
-			<span class="fl-mediaron-overlay-text-content">
+			<figcaption class="fl-bbvm-overlay-text <?php echo esc_attr( $fig_class ); ?> <?php echo 'hover' === $settings->overlay_behavior ? 'hover-only' : ''; ?>">
+			<span class="fl-bbvm-overlay-text-content">
 				<?php echo $settings->overlay_text; ?>
 			</span>
 			</figcaption>

@@ -1,4 +1,4 @@
-@keyframes mediaron-clockwise {
+@keyframes bbvm-clockwise {
   0% {
     transform:rotate(0);
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes mediaron-counter {
+@keyframes bbvm-counter {
   0% {
     transform:rotate(0);
   }
@@ -15,7 +15,7 @@
     transform:rotate(-360deg);
   }
 }
-@keyframes mediaron-shadows {
+@keyframes bbvm-shadows {
   0% {
     box-shadow:0 2px 4px -2px rgba(0,0,0,.25);
     transform:scale(.95);
@@ -56,7 +56,7 @@ if( 6 === strlen( $bold_background_color ) ) {
 	$bold_background_color = '#' . $bold_background_color;
 }
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	background: <?php echo $bold_background_color; ?>;
 }
@@ -134,7 +134,7 @@ if( 6 === strlen( $enhanced_border_color ) ) {
 	$enhanced_border_color = '#' . $enhanced_border_color;
 }
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	padding: 0 20px;
 	background-image: <?php echo FLBuilderColor::gradient( $settings->enhanced_gradient ); ?>;
@@ -192,7 +192,7 @@ if( 'left_border' === $settings->blockquote_style ):
 		$background_color = '#' . $background_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	padding: 0 20px;
 }
@@ -262,7 +262,7 @@ if( 'right_border' === $settings->blockquote_style ):
 		$background_color = '#' . $background_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	padding: 0 20px;
 }
@@ -340,7 +340,7 @@ if( 'top_bottom_border' === $settings->blockquote_style ):
 		$border_color_hover = '#' . $border_color_hover;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	padding: 0 20px;
 }
@@ -419,7 +419,7 @@ if( 'cite_border_effect' === $settings->blockquote_style ):
 		$border_color = '#' . $border_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: block;
 	overflow: hidden;
 }
@@ -483,7 +483,7 @@ if( 'cite' === $settings->blockquote_style ):
 		$border_color = '#' . $border_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: flex;
 	padding: 0 20px;
 }
@@ -542,7 +542,7 @@ if( 'cite_animated_border' === $settings->blockquote_style ):
 		$border_color_animated = '#' . $border_color_animated;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -562,7 +562,7 @@ if( 'cite_animated_border' === $settings->blockquote_style ):
 	background: <?php echo $background_color; ?>;
 }
 .fl-node-<?php echo $id; ?> blockquote:before {
-	animation: mediaron-clockwise 30s infinite linear;
+	animation: bbvm-clockwise 30s infinite linear;
 	background-color: <?php echo $background_color; ?>;
 	bottom:10%;
 	content: "";
@@ -573,7 +573,7 @@ if( 'cite_animated_border' === $settings->blockquote_style ):
 	top:10%;
 }
 .fl-node-<?php echo $id; ?> blockquote:after {
-	animation: mediaron-counter 30s infinite linear;
+	animation: bbvm-counter 30s infinite linear;
 	background-color: <?php echo $background_color; ?>;
 	bottom:10%;
 	content: "";
@@ -617,12 +617,12 @@ if( 'cite_scale' === $settings->blockquote_style ):
 		$background_color = '#' . $background_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	display: block;
 	overflow: hidden;
 }
 .fl-node-<?php echo $id; ?> blockquote {
-	animation: mediaron-shadows 2s linear infinite alternate;
+	animation: bbvm-shadows 2s linear infinite alternate;
 	position: relative;
 	box-sizing: border-box;
 	color: <?php echo $text_color; ?>;
@@ -670,7 +670,7 @@ if( 'cite_brackets' === $settings->blockquote_style ):
 		$border_color = '#' . $border_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	position: relative;
 	display: block;
 	overflow: hidden;
@@ -736,7 +736,7 @@ if( 'cite_icon' === $settings->blockquote_style ):
 		$border_color = '#' . $border_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	position: relative;
 	display: block;
 }
@@ -817,7 +817,7 @@ if( 'background_quotes' === $settings->blockquote_style ):
 		$background_quote_color = '#' . $background_quote_color;
 	}
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-blockquotes-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-blockquotes-for-beaverbuilder {
 	position: relative;
 	display: block;
 }

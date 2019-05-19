@@ -4,7 +4,7 @@
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'syntax_padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-syntax-highlighter-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-syntax-highlighter-for-beaverbuilder",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'syntax_padding_top',

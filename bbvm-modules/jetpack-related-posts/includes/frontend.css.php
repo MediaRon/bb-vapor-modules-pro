@@ -15,7 +15,7 @@ if( 6 === strlen( $title_color ) ) {
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'related_posts_padding',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'padding-top' 	 => 'related_posts_padding_top',
@@ -27,7 +27,7 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::dimension_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'related_posts_margin',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder",
 	'unit'		=> 'px',
 	'props'		=> array(
 		'margin-top' 	 => 'related_posts_margin_top',
@@ -134,30 +134,30 @@ FLBuilderCSS::dimension_field_rule( array(
     width: 100%;
   }
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder {
 	color: <?php echo $text_color; ?>;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder h3,
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder h4 {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder h3,
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder h4 {
 	margin: 0;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder h4.jp-relatedposts-post-title .jp-relatedposts-post-a {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder h4.jp-relatedposts-post-title .jp-relatedposts-post-a {
 	display: inline-block;
 	color: <?php echo $title_color; ?>;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-excerpt {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-excerpt {
 	margin-bottom: 10px;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-headline {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-headline {
 	color: <?php echo $heading_color; ?>;
 	padding-left: 10px;
-}.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder h3.jp-relatedposts-headline em {
+}.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder h3.jp-relatedposts-headline em {
 	font-style: normal;
 	display: inline-block;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder h3.jp-relatedposts-headline em:before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder h3.jp-relatedposts-headline em:before {
 	content: '';
 	display: inline-block;
 	border-top: 1px solid <?php echo $text_color; ?> !important;
@@ -165,12 +165,12 @@ FLBuilderCSS::dimension_field_rule( array(
 	height: 1px;
 	width: 100%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-date, .fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-context {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-date, .fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-context {
 	opacity: 0.3 !important;
 	margin-bottom: 0;
 }
 <?php if( 'list' === $settings->layout ): ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items {
+.fl-node-<?php echo $id; ?> .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items {
 	clear: left;
 	margin-bottom; 20px;
 }
@@ -190,26 +190,26 @@ FLBuilderCSS::dimension_field_rule( array(
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'heading_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder
  .jp-relatedposts-headline",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'link_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder h4.jp-relatedposts-post-title .jp-relatedposts-post-a",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder h4.jp-relatedposts-post-title .jp-relatedposts-post-a",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'excerpt_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-excerpt",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-excerpt",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'date_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-date",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-date",
 ) );
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'context_typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-context",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-jetpack-related-posts-for-beaverbuilder .jp-relatedposts-items p.jp-relatedposts-post-context",
 ) );

@@ -1,4 +1,4 @@
-<div class="fl-mediaron-soliloquy-for-beaverbuilder">
+<div class="fl-bbvm-soliloquy-for-beaverbuilder">
 	<?php
 	if ( '0' != $settings->slider && ! empty( $settings->slider ) ) {
 		soliloquy( $settings->slider );

@@ -1,8 +1,8 @@
-<div class="fl-mediaron-jetpack-related-posts-for-beaverbuilder">
+<div class="fl-bbvm-jetpack-related-posts-for-beaverbuilder">
 	<?php
 	global $related_posts;
 	$related_posts = $settings;
-	if( ! function_exists( 'mediaron_bb_jetpackme_get_related_terms' ) ) {
+	if( ! function_exists( 'bbvm_bb_jetpackme_get_related_terms' ) ) {
 		/**
 		 * Generates a context for the related content (second line in related post output).
 		 * Order of importance:
@@ -14,13 +14,13 @@
 		 * @uses get_the_category, get_the_terms, get_comments_number, number_format_i18n, __, _n
 		 * @return string
 		 */
-		function mediaron_bb_jetpackme_get_related_terms( $post_id ) {
+		function bbvm_bb_jetpackme_get_related_terms( $post_id ) {
 			$categories = get_the_category( $post_id );
 			if ( is_array( $categories ) ) {
 				foreach ( $categories as $category ) {
 					if ( 'uncategorized' != $category->slug && '' != trim( $category->name ) ) {
 						$post_cat_context = sprintf(
-							esc_html_x( 'In “%s”', 'in {category/tag name}', 'mediaron-bb-modules' ),
+							esc_html_x( 'In “%s”', 'in {category/tag name}', 'bb-vapor-modules-pro' ),
 							$category->name
 						);
 						/**
@@ -43,7 +43,7 @@
 				foreach ( $tags as $tag ) {
 					if ( '' != trim( $tag->name ) ) {
 						$post_tag_context = sprintf(
-							_x( 'In "%s"', 'in {category/tag name}', 'mediaron-bb-modules' ),
+							_x( 'In "%s"', 'in {category/tag name}', 'bb-vapor-modules-pro' ),
 							$tag->name
 						);
 						/**
@@ -64,16 +64,16 @@
 			$comment_count = get_comments_number( $post_id );
 			if ( $comment_count > 0 ) {
 				return sprintf(
-					_n( 'With 1 comment', 'With %s comments', $comment_count, 'mediaron-bb-modules' ),
+					_n( 'With 1 comment', 'With %s comments', $comment_count, 'bb-vapor-modules-pro' ),
 					number_format_i18n( $comment_count )
 				);
 			}
 
-			return __( 'Similar post', 'mediaron-bb-modules' );
+			return __( 'Similar post', 'bb-vapor-modules-pro' );
 		}
 	}
-	if( ! function_exists( 'mediaron_bb_jetpackme_more_related_posts' ) && ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) ) {
-		function mediaron_bb_jetpackme_more_related_posts( $options ) {
+	if( ! function_exists( 'bbvm_bb_jetpackme_more_related_posts' ) && ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) ) {
+		function bbvm_bb_jetpackme_more_related_posts( $options ) {
 			$related = Jetpack_RelatedPosts::init_raw()
 			->set_query_name( 'jp-related-posts' ) // Optional, name can be anything
 			->get_for_post_id(
@@ -129,7 +129,7 @@
 									<p class="jp-relatedposts-post-date" style="display: block;"><?php echo date( get_option('date_format'), strtotime( $post->post_date ) ); ?></p>
 									<?php endif; ?>
 									<?php if( '1' === $options['show_context'] ): ?>
-									<p class="jp-relatedposts-post-context"><?php echo mediaron_bb_jetpackme_get_related_terms( $related_post_id ); ?></p>
+									<p class="jp-relatedposts-post-context"><?php echo bbvm_bb_jetpackme_get_related_terms( $related_post_id ); ?></p>
 									<?php endif; ?>
 								</div><!-- .jp-relatedposts-post -->
 							</div><!-- .jp-repatedposts-items -->
@@ -176,7 +176,7 @@
 									<p class="jp-relatedposts-post-date" style="display: block;"><?php echo date( get_option('date_format'), strtotime( $post->post_date ) ); ?></p>
 									<?php endif; ?>
 									<?php if( '1' === $options['show_context'] ): ?>
-									<p class="jp-relatedposts-post-context"><?php echo mediaron_bb_jetpackme_get_related_terms( $related_post_id ); ?></p>
+									<p class="jp-relatedposts-post-context"><?php echo bbvm_bb_jetpackme_get_related_terms( $related_post_id ); ?></p>
 									<?php endif; ?>
 								</div><!-- .jp-relatedposts-post -->
 							</div><!-- .jp-repatedposts-items -->
@@ -190,17 +190,17 @@
 			return ob_get_clean();
 		}
 	}
-	if( function_exists( 'mediaron_bb_allow_pages_for_relatedposts' ) ) {
-		function mediaron_bb_allow_pages_for_relatedposts( $enabled ) {
+	if( function_exists( 'bbvm_bb_allow_pages_for_relatedposts' ) ) {
+		function bbvm_bb_allow_pages_for_relatedposts( $enabled ) {
 			if ( is_page() ) {
 				$enabled = true;
 			}
 			return $enabled;
 		}
 	}
-	add_filter( 'jetpack_relatedposts_filter_enabled_for_request', 'mediaron_bb_allow_pages_for_relatedposts' );
-	add_shortcode( 'mediaron_bb_jetpack_related_posts', 'mediaron_bb_jetpackme_more_related_posts' );
-	echo do_shortcode( sprintf( '[mediaron_bb_jetpack_related_posts size="%d" headline="%s" show_headline="%s" show_thumbnails="%s" show_date="%s" layout="%s" show_context="%s" fallback_image="%s"]', absint( $settings->items ), 'yes' === $settings->show_title ? esc_attr( $settings->title ) : '', 'yes' === $settings->show_title ? '1' : '0', 'yes' === $settings->show_thumbnails ? '1' : '0', 'yes' === $settings->show_date ? '1' : '0', esc_attr( $settings->layout ), 'yes' === $settings->show_context ? '1' : '0', $settings->fallback_image ) );
-	remove_filter( 'jetpack_relatedposts_filter_enabled_for_request', 'mediaron_bb_allow_pages_for_relatedposts' );
+	add_filter( 'jetpack_relatedposts_filter_enabled_for_request', 'bbvm_bb_allow_pages_for_relatedposts' );
+	add_shortcode( 'bbvm_bb_jetpack_related_posts', 'bbvm_bb_jetpackme_more_related_posts' );
+	echo do_shortcode( sprintf( '[bbvm_bb_jetpack_related_posts size="%d" headline="%s" show_headline="%s" show_thumbnails="%s" show_date="%s" layout="%s" show_context="%s" fallback_image="%s"]', absint( $settings->items ), 'yes' === $settings->show_title ? esc_attr( $settings->title ) : '', 'yes' === $settings->show_title ? '1' : '0', 'yes' === $settings->show_thumbnails ? '1' : '0', 'yes' === $settings->show_date ? '1' : '0', esc_attr( $settings->layout ), 'yes' === $settings->show_context ? '1' : '0', $settings->fallback_image ) );
+	remove_filter( 'jetpack_relatedposts_filter_enabled_for_request', 'bbvm_bb_allow_pages_for_relatedposts' );
 	?>
 </div>

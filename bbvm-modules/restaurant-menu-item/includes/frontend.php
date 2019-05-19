@@ -1,5 +1,5 @@
-<div class="mediaron-restaurant-menu-items-add-wrapper">
-	<div class="mediaron-restaurant-menu-item">
+<div class="bbvm-restaurant-menu-items-add-wrapper">
+	<div class="bbvm-restaurant-menu-item">
 		<div class="menu-item-text-wrapper no-photo">
 			<div class="menu-item-title">
 			<?php

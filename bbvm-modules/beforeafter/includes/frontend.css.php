@@ -10,11 +10,11 @@ if( 6 === strlen( $text_color ) ) {
 FLBuilderCSS::typography_field_rule( array(
 	'settings'	=> $settings,
 	'setting_name' 	=> 'typography',
-	'selector' 	=> ".fl-node-$id .fl-mediaron-beforeafter-for-beaverbuilder .text-before, .fl-node-$id .fl-mediaron-beforeafter-for-beaverbuilder .text-after",
+	'selector' 	=> ".fl-node-$id .fl-bbvm-beforeafter-for-beaverbuilder .text-before, .fl-node-$id .fl-bbvm-beforeafter-for-beaverbuilder .text-after",
 ) );
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	color: <?php echo $text_color; ?>;
 	background: <?php echo $background_color; ?>;
 	padding: 10px 20px;
@@ -23,30 +23,30 @@ FLBuilderCSS::typography_field_rule( array(
 <?php
 if ( 'no' === $settings->show_before_after_text ) :
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	display: none;
 }
 <?php
 endif;
 if ( 'hover' === $settings->style ):
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper {
 	text-align: center;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
 	position: relative;
 	display: inline-block;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .after {
 	visibility: hidden;
 	opacity: 0;
 	width: 0;
 	height: 0;
 	transition: visibility 0s, opacity <?php echo absint( $settings->transition_delay ); ?>s linear;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	position: absolute;
 	top: 20px;
 	left: 50%;
@@ -54,23 +54,23 @@ if ( 'hover' === $settings->style ):
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .before {
 	visibility: visible;
 	opacity: 1;
 	width: auto;
 	height: auto;
 	transition: visibility 0s, opacity <?php echo absint( $settings->transition_delay ); ?>s linear;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure:hover {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure:hover {
 	z-index: 1;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure:hover .before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure:hover .before {
 	visibility: hidden;
 	opacity: 0;
 	width: 0;
 	height: 0;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure:hover .after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure:hover .after {
 	visibility: visible;
 	opacity: 1;
 	width: auto;
@@ -80,22 +80,22 @@ if ( 'hover' === $settings->style ):
 endif;
 if ( 'fade' === $settings->style ):
 ?>
-@keyframes mediaron-before-after-fadeIn {
+@keyframes bbvm-before-after-fadeIn {
 	0% {opacity: 0}
    25% {opacity: 0.5;}
    50% { opacity: 1 }
    75% { opacity: 0.5 }
    100% {opacity: 0;}
 }
-@keyframes mediaron-before-after-fadeOut {
+@keyframes bbvm-before-after-fadeOut {
    0% {opacity: 1}
    25% {opacity: 0.5;}
    50% { opacity: 0 }
    75% { opacity: 0.5 }
    100% {opacity: 1;}
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	position: absolute;
 	top: 20px;
 	left: 50%;
@@ -103,13 +103,13 @@ if ( 'fade' === $settings->style ):
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
 	position: relative;
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .after {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -118,12 +118,12 @@ if ( 'fade' === $settings->style ):
 	top: 0;
 	left: 0;
 	z-index: 1;
-	-webkit-animation: mediaron-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	-moz-animation:    mediaron-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	-o-animation:      mediaron-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	animation: 		   mediaron-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-webkit-animation: bbvm-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-moz-animation:    bbvm-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-o-animation:      bbvm-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	animation: 		   bbvm-before-after-fadeIn <?php echo absint( $settings->transition_delay ); ?>s infinite;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .before {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -132,25 +132,25 @@ if ( 'fade' === $settings->style ):
 	top: 0;
 	left: 0;
 	z-index: 2;
-	-webkit-animation: mediaron-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	-moz-animation:    mediaron-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	-o-animation:      mediaron-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
-	animation: 		   mediaron-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-webkit-animation: bbvm-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-moz-animation:    bbvm-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	-o-animation:      bbvm-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
+	animation: 		   bbvm-before-after-fadeOut <?php echo absint( $settings->transition_delay ); ?>s infinite;
 }
 <?php
 endif;
 if ( 'side' === $settings->style ):
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
 	position: relative;
 	display: flex;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure > div {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure > div {
 	position: relative;
 	width: 50%;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	position: absolute;
 	bottom: 20px;
 	left: 50%;
@@ -174,8 +174,8 @@ if( 6 === strlen( $separator_arrow_color ) ) {
 }
 if ( 'separator_horizontal' === $settings->style ):
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	position: absolute;
 	left: 20px;
 	top: 50%;
@@ -183,17 +183,17 @@ if ( 'separator_horizontal' === $settings->style ):
 	-moz-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	left: auto;
 	right: 20px;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
 	position: relative;
 	display: block;
 	overflow: hidden;
 	margin: 0 auto;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .after {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -204,7 +204,7 @@ if ( 'separator_horizontal' === $settings->style ):
 	z-index: 1;
 	background-image: url(<?php echo esc_url( $settings->image_after_src ); ?>);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .before {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -215,7 +215,7 @@ if ( 'separator_horizontal' === $settings->style ):
 	z-index: 2;
 	background-image: url(<?php echo esc_url( $settings->image_before_src ); ?>);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle {
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -225,7 +225,7 @@ if ( 'separator_horizontal' === $settings->style ):
 	height: 100%;
 	z-index: 20;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle span.circle {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle span.circle {
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -248,7 +248,7 @@ if ( 'separator_horizontal' === $settings->style ):
 	z-index: 4;
 	cursor: pointer;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle span.circle .left-arrow {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle span.circle .left-arrow {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -258,7 +258,7 @@ if ( 'separator_horizontal' === $settings->style ):
 	font-weight: 900;
 	left: 10px;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle span.circle .right-arrow {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle span.circle .right-arrow {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -268,8 +268,8 @@ if ( 'separator_horizontal' === $settings->style ):
 	font-weight: 900;
 	right: 10px;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle:before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-horizontal-handle:after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle:before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-horizontal-handle:after {
 	content: '';
 	position: absolute;
 	width: 3px;
@@ -284,8 +284,8 @@ if ( 'separator_horizontal' === $settings->style ):
 endif;
 if ( 'separator_vertical' === $settings->style ):
 ?>
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	position: absolute;
 	top: 20px;
 	left: 50%;
@@ -293,7 +293,7 @@ if ( 'separator_vertical' === $settings->style ):
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .text-after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .text-after {
 	top: auto;
 	bottom: 20px;
 	left: 50%;
@@ -301,13 +301,13 @@ if ( 'separator_vertical' === $settings->style ):
 	-moz-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .beforeafter-wrapper figure {
 	position: relative;
 	display: block;
 	margin: 0 auto;
 	overflow: hidden;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .after {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -318,7 +318,7 @@ if ( 'separator_vertical' === $settings->style ):
 	z-index: 1;
 	background-image: url(<?php echo esc_url( $settings->image_after_src ); ?>);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder figure .before {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder figure .before {
 	position: absolute;
 	visibility: visible;
 	opacity: 1;
@@ -329,7 +329,7 @@ if ( 'separator_vertical' === $settings->style ):
 	z-index: 2;
 	background-image: url(<?php echo esc_url( $settings->image_before_src ); ?>);
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -339,7 +339,7 @@ if ( 'separator_vertical' === $settings->style ):
 	width: 100%;
 	z-index: 20;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle span.circle {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle span.circle {
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -360,7 +360,7 @@ if ( 'separator_vertical' === $settings->style ):
 	z-index: 4;
 	cursor: pointer;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle span.circle .left-arrow {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle span.circle .left-arrow {
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -370,7 +370,7 @@ if ( 'separator_vertical' === $settings->style ):
 	color: <?php echo $separator_arrow_color; ?>;;
 	font-weight: 900;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle span.circle .right-arrow {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle span.circle .right-arrow {
 	position: absolute;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
@@ -380,8 +380,8 @@ if ( 'separator_vertical' === $settings->style ):
 	color: <?php echo $separator_arrow_color; ?>;
 	font-weight: 900;
 }
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle:before,
-.fl-node-<?php echo $id; ?> .fl-mediaron-beforeafter-for-beaverbuilder .mediaron-vertical-handle:after {
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle:before,
+.fl-node-<?php echo $id; ?> .fl-bbvm-beforeafter-for-beaverbuilder .bbvm-vertical-handle:after {
 	content: '';
 	position: absolute;
 	height: 3px;

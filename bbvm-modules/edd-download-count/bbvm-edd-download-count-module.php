@@ -3,10 +3,10 @@ class BBVapor_EDD_Download_Count_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'EDD Download Count', 'mediaron-bb-modules' ),
-			'description'     => __( 'EDD Download Count', 'mediaron-bb-modules' ),
-			'category'        => __( 'EDD', 'mediaron-bb-modules' ),
-			'group'           => __( 'MediaRon Modules', 'bb-vapor-modules-pro' ),
+			'name'            => __( 'EDD Download Count', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'EDD Download Count', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'EDD', 'bb-vapor-modules-pro' ),
+			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/edd-download-count/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/edd-download-count/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
@@ -20,15 +20,15 @@ class BBVapor_EDD_Download_Count_Module extends FLBuilderModule {
  */
 FLBuilder::register_module('BBVapor_EDD_Download_Count_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'mediaron-bb-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('EDD Download Count', 'mediaron-bb-modules'), // Section Title
+				'title'         => __('EDD Download Count', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'download_text' => array(
 						'type'          => 'text',
-						'label'         => __( 'Enter Download Text', 'mediaron-bb-modules' ),
-						'default'       => __( 'Downloads', 'mediaron-bb-modules' ),
+						'label'         => __( 'Enter Download Text', 'bb-vapor-modules-pro' ),
+						'default'       => __( 'Downloads', 'bb-vapor-modules-pro' ),
 					),
 					'product' => array(
 						'type'          => 'suggest',
@@ -39,23 +39,23 @@ FLBuilder::register_module('BBVapor_EDD_Download_Count_Module', array(
 					),
 					'text_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color', 'mediaron-bb-modules' ),
+						'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 						'default'       => '000000',
 					),
 					'background_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Background Color', 'mediaron-bb-modules' ),
+						'label'         => __( 'Background Color', 'bb-vapor-modules-pro' ),
 						'default'       => 'FFFFFF',
 						'show_reset' => true,
 						'show_alpha' => true
 					),
 					'typography' => array(
 						'type' => 'typography',
-						'label' => __( 'Text Typography', 'mediaron-bb-modules' )
+						'label' => __( 'Text Typography', 'bb-vapor-modules-pro' )
 					),
 					'padding' => array(
 						'type' => 'dimension',
-						'label' => __( 'Padding', 'mediaron-bb-modules' )
+						'label' => __( 'Padding', 'bb-vapor-modules-pro' )
 					),
 				)
 			)

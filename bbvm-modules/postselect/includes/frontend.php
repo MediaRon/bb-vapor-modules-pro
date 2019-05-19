@@ -1,6 +1,6 @@
 <?php
-if( ! function_exists( 'mediaron_bb_get_profile_image' ) ):
-function mediaron_bb_get_profile_image( $settings, $post_thumb_id = 0, $post_author = 0, $post_id = 0 ) {
+if( ! function_exists( 'bbvm_bb_get_profile_image' ) ):
+function bbvm_bb_get_profile_image( $settings, $post_thumb_id = 0, $post_author = 0, $post_id = 0 ) {
 	ob_start();
 	// Get the featured image
 	$list_item_markup = '';
@@ -26,7 +26,7 @@ function mediaron_bb_get_profile_image( $settings, $post_thumb_id = 0, $post_aut
 }
 endif;
 ?>
-<div class="fl-mediaron-postselect-for-beaverbuilder">
+<div class="fl-bbvm-postselect-for-beaverbuilder">
 <?php
 if ( '0' != $settings->post_type ) {
 	$orderby = $order = '';
@@ -91,7 +91,7 @@ if ( '0' != $settings->post_type ) {
 				esc_attr( $post_thumb_class )
 			);
 			if ( 'regular' === $image_placememt_options ) {
-				$list_items_markup .= mediaron_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID );
+				$list_items_markup .= bbvm_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID );
 			}
 
 			// Wrap the text content
@@ -122,7 +122,7 @@ if ( '0' != $settings->post_type ) {
 						$list_items_markup .= sprintf(
 							'<div class="ptam-block-post-grid-image"><a href="%1$s" rel="bookmark">%2$s</a></div>',
 							esc_url( get_permalink( $post_id ) ),
-							mediaron_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID ) );
+							bbvm_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID ) );
 					}
 
 					// Get the post author
@@ -159,7 +159,7 @@ if ( '0' != $settings->post_type ) {
 						$list_items_markup .= sprintf(
 							'<div class="ptam-block-post-grid-image"><a href="%1$s" rel="bookmark">%2$s</a></div>',
 							esc_url( get_permalink( $post_id ) ),
-							mediaron_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID )
+							bbvm_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID )
 						);
 					}
 
@@ -208,7 +208,7 @@ if ( '0' != $settings->post_type ) {
 						$list_items_markup .= sprintf(
 							'<div class="ptam-block-post-grid-image"><a href="%1$s" rel="bookmark">%2$s</a></div>',
 							esc_url( get_permalink( $post_id ) ),
-							mediaron_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID )
+							bbvm_bb_get_profile_image( $settings, $post_thumb_id, $post->post_author, $post->ID )
 						);
 					}
 
@@ -254,8 +254,8 @@ if ( '0' != $settings->post_type ) {
 			'end_size'     => 1,
 			'mid_size'     => 2,
 			'prev_next'    => false,
-			'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Items', 'mediaron-bb-modules' ) ),
-			'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Items', 'mediaron-bb-modules' ) ),
+			'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Items', 'bb-vapor-modules-pro' ) ),
+			'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Items', 'bb-vapor-modules-pro' ) ),
 			'add_args'     => false,
 			'add_fragment' => '',
 		) );
