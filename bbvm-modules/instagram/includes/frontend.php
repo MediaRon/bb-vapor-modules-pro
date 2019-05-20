@@ -15,14 +15,12 @@
 		}
 		if ( empty( $instagram_json ) || $break_cache ) {
 			$sig = bbvm_pro_instagram_get_sig( $instagram['user_id'], $instagram['token'], false, $settings->items_show );
-			$ch = curl_init();
-			curl_setopt( $ch, CURLOPT_URL, sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show ) );
-			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-			$response = curl_exec($ch);
-			$instagram['json'] = $response;
+			$response = wp_remote_get( esc_url_raw( sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show ) ) );
+			$response_json = wp_remote_retrieve_body( $response );
+			$instagram['json'] = $response_json;
 			$instagram['last_cached'] = time();
 			update_option( 'bbvm-modules-instagram', $instagram );
-			$instagramJSON = json_decode( $response );
+			$instagramJSON = json_decode( $response_json );
 		} else {
 			$instagramJSON = json_decode( $instagram_json );
 		}
