@@ -22,11 +22,9 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 		$user_id = sanitize_text_field( $_POST['user_id'] );
 		$token = sanitize_text_field( $_POST['token'] );
 		$count = sanitize_text_field( $_POST['count'] );
-		$ch = curl_init();
-		curl_setopt( $ch, CURLOPT_URL, $instagram_api );
-		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-		$response = curl_exec($ch);
-		$instagramJSON = json_decode( $response );
+		$response = wp_remote_get( esc_url_raw( $instagram_api ) );
+		$response_json = wp_remote_retrieve_body( $response );
+		$instagramJSON = json_decode( $response_json );
 		ob_start();
 		foreach( $instagramJSON->data as $key => $user_data ) {
 			?>
@@ -50,7 +48,8 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 
 		// Get pagination information
 		if( isset( $instagramJSON->pagination->next_max_id  ) ) {
-			$sig = bbvm_pro_instagram_get_sig( $user_id, $token, $instagramJSON->pagination->next_max_id, $count );
+			$sig_response = wp_remote_get( esc_url_raw( sprintf( 'https://mediaron.com/instagram/getsig.php?user_id=%s&token=%s&max_id=%s&feed_count=%s', $user_id, $token, $instagramJSON->pagination->next_max_id, $count ) ) );
+			$sig = wp_remote_retrieve_body( $sig_response );
 			$return['pagination_url'] = sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d&max_id=%s', $user_id, $token, $sig, $count, $instagramJSON->pagination->next_max_id );
 		}
 		die( json_encode( $return ) );

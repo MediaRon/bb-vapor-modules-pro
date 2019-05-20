@@ -76,7 +76,8 @@
 			<div class="instagram-buttons">
 			<?php
 			if( isset( $instagramJSON->pagination->next_url ) ) {
-				$sig = bbvm_pro_instagram_get_sig( $instagram['user_id'], $instagram['token'], $instagramJSON->pagination->next_max_id, $settings->items_show );
+				$sig_response = wp_remote_get( esc_url_raw( sprintf( 'https://mediaron.com/instagram/getsig.php?user_id=%s&token=%s&max_id=%s&feed_count=%s', $instagram['user_id'], $instagram['token'], $instagramJSON->pagination->next_max_id, $settings->items_show ) ) );
+				$sig = wp_remote_retrieve_body( $sig_response );
 				$load_more_url = sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d&max_id=%s', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show, $instagramJSON->pagination->next_max_id );
 
 				?>
