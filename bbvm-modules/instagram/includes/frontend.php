@@ -14,7 +14,9 @@
 			$break_cache = true;
 		}
 		if ( empty( $instagram_json ) || $break_cache ) {
-			$sig = bbvm_pro_instagram_get_sig( $instagram['user_id'], $instagram['token'], false, $settings->items_show );
+			$sig_response = wp_remote_get( esc_url_raw( sprintf( 'https://mediaron.com/instagram/getsig.php?user_id=%s&token=%s&max_id=%s&feed_count=%s', $instagram['user_id'], $instagram['token'], false, $settings->items_show ) ) );
+			$sig = wp_remote_retrieve_body( $sig_response );
+
 			$response = wp_remote_get( esc_url_raw( sprintf( 'https://api.instagram.com/v1/users/%d/media/recent?access_token=%s&sig=%s&count=%d', $instagram['user_id'], $instagram['token'], $sig, $settings->items_show ) ) );
 			$response_json = wp_remote_retrieve_body( $response );
 			$instagram['json'] = $response_json;

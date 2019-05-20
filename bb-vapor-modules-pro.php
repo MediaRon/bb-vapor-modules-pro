@@ -16,8 +16,6 @@ define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.0.0' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename(__FILE__) );
-define( 'BBVAPOR_PRO_INSTAGRAM_CLIENT_ID', '8dba23ca2c1c45509c32343db0d37a96' );
-define( 'BBVAPOR_PRO_INSTAGRAM_CLIENT_SECRET', '60a83038c1ff42deb69a47ccce7c5eb1' );
 
 class BBVapor_Modules_Pro {
 
@@ -249,27 +247,6 @@ class BBVapor_Modules_Pro {
 		$copyright_html .= esc_html( $args['site'] );
 		return $copyright_html;
 	}
-}
-
-function bbvm_pro_instagram_get_sig( $instagramUserId, $instagramToken, $maxId, $feedCount ) {
-	$params = array(
-		'access_token' => $instagramToken,
-		'count' => $feedCount
-	);
-	if( false !== $maxId ) {
-		$params['max_id'] = $maxId;
-	}
-	$endpoint = sprintf( '/users/%d/media/recent', $instagramUserId );
-	$sig = bbvm_pro_instagram_generage_sig( $endpoint, $params, BBVAPOR_PRO_INSTAGRAM_CLIENT_SECRET );
-	return $sig;
-}
-function bbvm_pro_instagram_generage_sig($endpoint, $params, $secret) {
-	$sig = $endpoint;
-	ksort($params);
-	foreach ($params as $key => $val) {
-		$sig .= "|$key=$val";
-	}
-	return hash_hmac('sha256', $sig, $secret, false);
 }
 
 new BBVapor_Modules_Pro();
