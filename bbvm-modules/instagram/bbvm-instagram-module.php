@@ -60,6 +60,10 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 			$this->add_js('macy', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy.js', array('jquery'), '20190411', true );
 			$this->add_js('macy-init', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy-init.js', array('jquery'), '20190411', true );
 		}
+		if ( $this->settings && 'yes' === $this->settings->lightbox ) {
+			$this->add_css( 'jquery-magnificpopup' );
+			$this->add_js('bbvm-instagram-lightbox', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/lightbox.js', array( 'jquery', 'jquery-magnificpopup' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION  );
+		}
 	}
 }
 /**

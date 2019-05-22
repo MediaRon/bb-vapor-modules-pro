@@ -50,12 +50,29 @@
 						<?php
 						if ( 'yes' === $settings->load_images_background_image ) :
 							$instagram_background_image_css = sprintf( 'style="background-image: url(%s); background-size: cover; background-position: center center;"', esc_url( $user_data->images->standard_resolution->url ) );
+							if ( 'yes' === $settings->lightbox ) :
+							?>
+							<a class="bbvm-ig-bgimage bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" <?php echo $instagram_background_image_css; ?>></a>
+							<?php
+							else:
 							?>
 							<a class="bbvm-ig-bgimage" href="<?php echo esc_url( $user_data->link ); ?>" <?php echo $instagram_background_image_css; ?>></a>
 							<?php
+							endif; ?>
+							<?php
 						else:
 						?>
-						<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+							<?php
+							if ( 'yes' === $settings->lightbox ) :
+							?>
+							<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+							<?php
+							else:
+							?>
+							<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+							<?php
+							endif;
+							?>
 						<?php
 						endif;
 						?>

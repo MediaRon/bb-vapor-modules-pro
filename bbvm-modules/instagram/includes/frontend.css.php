@@ -1,4 +1,32 @@
 <?php
+/* Popup effect */
+?>
+.bbvm-mfp-fade.mfp-bg {
+	opacity: 0;
+
+	-webkit-transition: all 0.50s ease-out;
+	-moz-transition: all 0.50s ease-out;
+	transition: all 0.50s ease-out;
+}
+.bbvm-mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.bbvm-mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+.bbvm-mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.50s ease-out;
+	-moz-transition: all 0.50s ease-out;
+	transition: all 0.50s ease-out;
+}
+.bbvm-mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.bbvm-mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+<?php
 if ( 'card' === $settings->layout ):
 ?>
 .fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed {
