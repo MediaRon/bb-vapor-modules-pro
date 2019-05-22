@@ -47,7 +47,18 @@
 				?>
 				<div class="instagram-card">
 					<div class="instagram-image">
+						<?php
+						if ( 'yes' === $settings->load_images_background_image ) :
+							$instagram_background_image_css = sprintf( 'style="background-image: url(%s); background-size: cover; background-position: center center;"', esc_url( $user_data->images->standard_resolution->url ) );
+							?>
+							<a class="bbvm-ig-bgimage" href="<?php echo esc_url( $user_data->link ); ?>" <?php echo $instagram_background_image_css; ?>></a>
+							<?php
+						else:
+						?>
 						<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+						<?php
+						endif;
+						?>
 					</div>
 					<?php
 					if( 'yes' === $settings->show_likes_comments ):
@@ -84,7 +95,7 @@
 				<?php
 				if ( 'yes' === $settings->show_load_more_button ):
 				?>
-				<a class="load-more"  data-ajax-url="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" data-user-id="<?php echo esc_attr( $instagram['user_id'] ) ?>" data-access-token="<?php echo esc_attr( $instagram['token'] ); ?>" data-feed-count="<?php echo esc_attr( $settings->items_show ); ?>" class="btn btn-default" href="<?php echo $load_more_url ?>"><?php echo esc_html( $settings->load_more_text ); ?></a>
+				<a class="load-more"  data-ajax-url="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" data-user-id="<?php echo esc_attr( $instagram['user_id'] ) ?>" data-access-token="<?php echo esc_attr( $instagram['token'] ); ?>" data-feed-count="<?php echo esc_attr( $settings->items_show ); ?>" data-lightbox="<?php echo 'yes' === $settings->load_images_background_image ? 'on': 'off'; ?>" data-background="<?php echo 'yes' === $settings->lightbox ? 'on': 'off'; ?>" class="btn btn-default" href="<?php echo $load_more_url ?>"><?php echo esc_html( $settings->load_more_text ); ?></a>
 				<?php endif; ?>
 				<?php
 			}

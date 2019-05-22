@@ -90,6 +90,15 @@ FLBuilder::register_module('BBVapor_Instagram_Module', array(
 						),
 						'description' => __( 'You may need to save and refresh to see the new layout.', 'bb-vapor-modules' ),
 					),
+					'lightbox' => array(
+						'type' => 'select',
+						'label' => __( 'Pop Up Images in a Lightbox', 'bb-vapor-modules' ),
+						'options' => array(
+							'no' => __( 'No', 'bb-vapor-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+						),
+						'default' => 'no',
+					),
 					'card_columns' => array(
 						'type' => 'select',
 						'label' => __( 'Number of Card Columns', 'bb-vapor-modules' ),
@@ -100,6 +109,37 @@ FLBuilder::register_module('BBVapor_Instagram_Module', array(
 							'4' => '4',
 						),
 						'default' => '3'
+					),
+					'load_images_background_image' => array(
+						'type' => 'select',
+						'label' => __( 'Load Images as a Background Image', 'bb-vapor-modules' ),
+						'options' => array(
+							'no' => __( 'No', 'bb-vapor-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+						),
+						'default' => 'no',
+						'help' => __( 'This option is useful for Grid layouts', 'bb-vapor-modules' ),
+						'toggle' => array(
+							'yes' => array( 'fields' => array( 'background_min_height'))
+						)
+					),
+					'background_min_height_desktop' => array(
+						'type' => 'unit',
+						'label' => __( 'Background Image Minimum Height on Desktop', 'bb-vapor-modules' ),
+						'default' => '350',
+						'description' => 'px',
+					),
+					'background_min_height_tablet' => array(
+						'type' => 'unit',
+						'label' => __( 'Background Image Minimum Height on Tablet', 'bb-vapor-modules' ),
+						'default' => '300',
+						'description' => 'px',
+					),
+					'background_min_height_mobile' => array(
+						'type' => 'unit',
+						'label' => __( 'Background Image Minimum Height on Mobile', 'bb-vapor-modules' ),
+						'default' => '300',
+						'description' => 'px',
 					),
 					'show_likes_comments' => array(
 						'type' => 'select',

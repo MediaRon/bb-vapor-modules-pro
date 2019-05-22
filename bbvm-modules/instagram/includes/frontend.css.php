@@ -10,6 +10,12 @@ if ( 'card' === $settings->layout ):
 .fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 	box-sizing: border-box;
 }
+.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: <?php echo absint( $settings->background_min_height_desktop ); ?>px;
+}
 <?php
 if( '1' == $settings->card_columns ) :
 	?>
@@ -27,6 +33,9 @@ if( '2' == $settings->card_columns ) :
 		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 			width: 100%;
 		}
+		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+			min-height: <?php echo absint( $settings->background_min_height_mobile ); ?>px;
+		}
 	}
 	<?php
 endif;
@@ -39,10 +48,16 @@ if( '3' == $settings->card_columns ) :
 		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 			width: 50%;
 		}
+		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+			min-height: <?php echo absint( $settings->background_min_height_tablet ); ?>px;
+		}
 	}
 	@media only screen and (max-width: 500px) {
 		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 			width: 100%;
+		}
+		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+			min-height: <?php echo absint( $settings->background_min_height_mobile ); ?>px;
 		}
 	}
 	<?php
@@ -56,10 +71,16 @@ if( '4' == $settings->card_columns ) :
 		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 			width: 50%;
 		}
+		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+			min-height: <?php echo absint( $settings->background_min_height_tablet ); ?>px;
+		}
 	}
 	@media only screen and (max-width: 500px) {
 		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card {
 			width: 100%;
+		}
+		.fl-node-<?php echo $id; ?> .fl-bbvm-instagram-for-beaverbuilder .fl-node-instafeed .instagram-card a.bbvm-ig-bgimage {
+			min-height: <?php echo absint( $settings->background_min_height_mobile ); ?>px;
 		}
 	}
 	<?php
