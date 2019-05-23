@@ -22,6 +22,8 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 		$user_id = sanitize_text_field( $_POST['user_id'] );
 		$token = sanitize_text_field( $_POST['token'] );
 		$count = sanitize_text_field( $_POST['count'] );
+		$lightbox = sanitize_text_field( $_POST['lightbox'] );
+		$background_image = sanitize_text_field( $_POST['background_image'] );
 		$response = wp_remote_get( esc_url_raw( $instagram_api ) );
 		$response_json = wp_remote_retrieve_body( $response );
 		$instagramJSON = json_decode( $response_json );
@@ -30,7 +32,35 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 			?>
 			<div class="instagram-card">
 				<div class="instagram-image">
-					<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+				<?php
+					if ( 'on' === $background_image ) :
+						$instagram_background_image_css = sprintf( 'style="background-image: url(%s); background-size: cover; background-position: center center;"', esc_url( $user_data->images->standard_resolution->url ) );
+						if ( 'on' === $lightbox ) :
+						?>
+						<a class="bbvm-ig-bgimage bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" <?php echo $instagram_background_image_css; ?>></a>
+						<?php
+						else:
+						?>
+						<a class="bbvm-ig-bgimage" href="<?php echo esc_url( $user_data->link ); ?>" <?php echo $instagram_background_image_css; ?>></a>
+						<?php
+						endif; ?>
+						<?php
+					else:
+					?>
+						<?php
+						if ( 'on' === $lightbox ) :
+						?>
+						<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+						<?php
+						else:
+						?>
+						<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+						<?php
+						endif;
+						?>
+					<?php
+					endif;
+					?>
 				</div>
 				<div class="instagram-meta">
 					<span class="instagram-likes"><?php esc_html_e( 'Likes:', 'bb-vapor-modules' ); ?> <?php echo esc_html( $user_data->likes->count ); ?></span><span class="instagram-comments"><?php echo esc_html_e( 'Comments:', 'bb-vapor-modules' ); ?> <?php echo esc_html( $user_data->comments->count ); ?></span>
