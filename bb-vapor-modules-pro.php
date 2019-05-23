@@ -183,6 +183,10 @@ class BBVapor_Modules_Pro {
 		require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
 		new BBVapor_Instagram_Module();
 
+		// Featured Category
+		require_once 'bbvm-modules/featured-category/bbvm-featured-category.php';
+		new BBVapor_Featured_Category_Module();
+
 		// Photoproof
 		if( class_exists( 'Apollo13Framework' ) ) {
 			require_once 'bbvm-modules/photoproof/bbvm-photoproof-module.php';

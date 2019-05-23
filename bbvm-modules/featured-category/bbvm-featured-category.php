@@ -1,5 +1,5 @@
 <?php
-class BBVapor_WooCommerce_Featured_Category_Module extends FLBuilderModule {
+class BBVapor_Featured_Category_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
@@ -13,8 +13,93 @@ class BBVapor_WooCommerce_Featured_Category_Module extends FLBuilderModule {
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
 		));
+
+		add_action( 'wp_ajax_bbvm_featured_bb_get_taxonomies', array( $this, 'get_taxonomies' ) );
+		add_action( 'wp_ajax_bbvm_featured_bb_get_terms', array( $this, 'get_terms' ) );
+		add_action( 'wp_ajax_bbvm_featured_bb_get_data', array( $this, 'get_ajax_data' ) );
+	}
+
+	public function get_taxonomies() {
+		$post_type = $_POST['post_type'];
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+		$selected_taxonomy = $_POST['selected_taxonomy'];
+		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'bb-vapor-modules-pro' ) );
+		foreach( $taxonomies as $taxonomy ) {
+			$return_html .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $taxonomy->name ), selected( $taxnonomy->name, $selected_taxonomy, false ), esc_html( $taxonomy->label ) );
+		}
+		die( $return_html );
+	}
+
+	public function get_terms() {
+		$taxonomy = $_POST['taxonomy'];
+		$post_type = $_POST['post_type'];
+		add_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		$terms = get_terms( array(
+			'taxonomy' => $taxonomy,
+			'hide_empty' => true,
+			'post_type' => $post_type,
+		) );
+		remove_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		$return_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
+		if( is_wp_error( $terms ) ) {
+			die( $return_html );
+		} else {
+			foreach( $terms as $term ) {
+				$return_html .= sprintf( '<option value="%d">%s</option>', $term->term_id, $term->name );
+			}
+			die( $return_html );
+		}
+	}
+
+	public function get_ajax_data() {
+
+		$selected_post = sanitize_text_field( $_POST['post_type'] );
+		$selected_taxonomy = !empty( $_POST['taxonomy'] ) ? sanitize_text_field( $_POST['taxonomy'] ) : '0';
+		$selected_term = !empty( $_POST['term'] ) ? sanitize_text_field( $_POST['term'] ) : '0';
+
+		$bbvm_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
+		$oost_html = sprintf( '<option value="0">%s</option>', esc_html__( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
+		foreach( $bbvm_post_types as $post_type ) {
+			if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
+			$oost_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $post_type->name ), esc_html( $post_type->label ) );
+		}
+		$tax_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Taxonomies', 'bb-vapor-modules-pro' ) );
+		$bbvm_taxonomies = get_object_taxonomies( $selected_post, 'objects' );
+		foreach( $bbvm_taxonomies as $taxonomy ) {
+			$tax_html .= sprintf( '<option value="%s">%s</option>', esc_attr( $taxonomy->name ), esc_html( $taxonomy->label ) );
+		}
+		$term_html = sprintf( '<option value="0">%s</option>', esc_html__( 'All Terms', 'bb-vapor-modules-pro' ) );
+		add_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		$bbvm_terms = get_terms( array(
+			'taxonomy' => $selected_taxonomy,
+			'hide_empty' => true,
+			'post_type' => $selected_post,
+		) );
+		remove_filter( 'terms_clauses', 'bbvm_bb_terms_clauses', 10, 3 );
+		if( ! is_wp_error( $bbvm_terms ) ) {
+			foreach( $bbvm_terms as $term ) {
+				$term_html .= sprintf( '<option value="%d">%s</option>', $term->term_id, $term->name );
+			}
+		}
+		$return = array(
+			'post_types' => $oost_html,
+			'taxonomies' => $tax_html,
+			'terms' => $term_html,
+			'taxonomy' => $selected_taxonomy,
+			'term' => $selected_term
+		);
+		wp_send_json( $return );
 	}
 }
+
+// Get Post Types
+$bbvm_post_types = get_post_types( array( 'public' => true, 'show_ui' => true ), 'objects' );
+$bbvm_post_types_array = array( '0' => __( 'Select a Post Type', 'bb-vapor-modules-pro' ) );
+foreach( $bbvm_post_types as $post_type ) {
+	if( 'attachment' == $post_type->name || 'fl-builder-template' == $post_type->name ) continue;
+	$bbvm_post_types_array[$post_type->name] = $post_type->label;
+}
+
 /**
  * Register the module and its form settings.
  */
@@ -25,17 +110,30 @@ FLBuilder::register_module('BBVapor_Featured_Category_Module', array(
 			'general'       => array( // Section
 				'title'         => __('Featured Category', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
-					'category' => array(
-						'type' => 'suggest',
-						'label' => __( 'WooCommerce Category', 'bb-vapor-modules-pro' ),
-						'action'        => 'fl_as_terms',
-						'data'          => 'product_cat',
-						'limit'         => 1,
+					'post_type' => array(
+						'type'          => 'select',
+						'label'         => __( 'Select A Post Type', 'bb-vapor-modules-pro' ),
+						'options'       => $bbvm_post_types_array,
+						'class' => 'bbvm-post-select'
+					),
+					'taxonomy_select' => array(
+						'type'          => 'select',
+						'label'         => __( 'Select A Taxonomy', 'bb-vapor-modules-pro' ),
+						'options'       => array(),
+						'class' => 'bbvm-taxonomy-select',
+						'default' => '0',
+					),
+					'terms_select' => array(
+						'type'          => 'select',
+						'label'         => __( 'Select A Term', 'bb-vapor-modules-pro' ),
+						'options'       => array(),
+						'class' => 'bbvm-term-select',
+						'default' => '0'
 					),
 					'category_title' => array(
 						'type' => 'text',
-						'label' => __( 'WooCommerce Category Name', 'bb-vapor-modules-pro' ),
-						'help' => __( 'Leave blank to use the default WooCommerce category name', 'bb-vapor-modules-pro' ),
+						'label' => __( 'Category Name', 'bb-vapor-modules-pro' ),
+						'help' => __( 'Leave blank to use the default category name', 'bb-vapor-modules-pro' ),
 						'default' => ''
 					),
 					'category_width' => array(

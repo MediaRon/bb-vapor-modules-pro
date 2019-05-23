@@ -1,16 +1,16 @@
-<div class="fl-bbvm-woocommerce-featured-category-for-beaverbuilder">
-	<?php if ( ! empty( $settings->category ) ) : ?>
+<div class="fl-bbvm-featured-category-for-beaverbuilder">
+	<?php if ( ! empty( $settings->terms_select ) ) : ?>
 		<?php
-		$featured_category_term      = get_term( absint( $settings->category ), 'product_cat', OBJECT );
-		$featured_category_term_link = get_term_link( $featured_category_term, 'product_cat' );
+		$featured_category_term      = get_term( absint( $settings->terms_select ), $settings->taxonomy_select, OBJECT );
+		$featured_category_term_link = get_term_link( $featured_category_term, $settings->taxonomy_select );
 		if ( ! is_wp_error( $featured_category_term_link ) ) {
 			?>
-			<div class="fl-bbvm-woocommerce-featured-category">
+			<div class="fl-bbvm-featured-category">
 				<?php if ( 'yes' === $settings->link_category ) : ?>
-				<a href="<?php echo esc_url( $featured_category_term_link ); ?>" class="fl-bbvm-woocommerce-featured-category-link-wrapper"></a>
+				<a href="<?php echo esc_url( $featured_category_term_link ); ?>" class="fl-bbvm-featured-category-link-wrapper"></a>
 				<?php endif; ?>
-				<div class="fl-bbvm-woocommerce-featured-category-inner">
-					<div class="fl-bbvm-woocommerce-featured-category-category">
+				<div class="fl-bbvm-featured-category-inner">
+					<div class="fl-bbvm-featured-category-category">
 						<?php
 						if ( ! empty( $settings->category_title ) ) {
 							echo esc_html( $settings->category_title );
@@ -22,7 +22,7 @@
 					<?php
 					if ( 'yes' === $settings->show_button ) :
 						?>
-							<div class="fl-bbvm-woocommerce-featured-category-button">
+							<div class="fl-bbvm-featured-category-button">
 								<a href="<?php echo esc_url( $featured_category_term_link ); ?>">View</a>
 							</div>
 						<?php
