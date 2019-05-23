@@ -3,9 +3,9 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'GitHub Markdown', 'bb-vapor-modules' ),
-			'description'     => __( 'GitHub Markdown for Beaver Builder', 'bb-vapor-modules' ),
-			'category'        => __( 'Base', 'bb-vapor-modules' ),
+			'name'            => __( 'GitHub Markdown', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'GitHub Markdown for Beaver Builder', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/markdown/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/',
@@ -29,50 +29,50 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
  */
 FLBuilder::register_module('BBVapor_Markdown_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('General', 'bb-vapor-modules'), // Tab title
+		'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('GitHub Markdown', 'bb-vapor-modules'), // Section Title
+				'title'         => __('GitHub Markdown', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'markdown' => array(
 						'type'          => 'code',
-						'label'         => __( 'Enter Your GitHub Flavored Markdown', 'bb-vapor-modules' ),
-						'description'   => __( 'Supports GitHub flavored Markdown. Details here:', 'bb-vapor-modules' ) . ' <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" style="color: blue">' . __( 'GitHub Markdown Guide', 'bb-vapor-modules' ) . '</a>',
-						'help' => __( 'Supports GitHub flavored Markdown.', 'bb-vapor-modules' )
+						'label'         => __( 'Enter Your GitHub Flavored Markdown', 'bb-vapor-modules-pro' ),
+						'description'   => __( 'Supports GitHub flavored Markdown. Details here:', 'bb-vapor-modules-pro' ) . ' <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" style="color: blue">' . __( 'GitHub Markdown Guide', 'bb-vapor-modules-pro' ) . '</a>',
+						'help' => __( 'Supports GitHub flavored Markdown.', 'bb-vapor-modules-pro' )
 					),
 				)
 			)
 		)
 	),
 	'syntaxhighlighting'       => array( // Tab
-		'title'         => __('Syntax Highlighting', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Syntax Highlighting', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'syntaxhighlighting'       => array( // Section
-				'title'         => __('Syntax Highlighting', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Syntax Highlighting', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'enable_syntax_highlighting' => array(
 						'type' => 'select',
-						'label' => __( 'Enable Syntax Highlighting', 'bb-vapor-modules' ),
+						'label' => __( 'Enable Syntax Highlighting', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
-							'no' => __( 'No', 'bb-vapor-modules' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no' => __( 'No', 'bb-vapor-modules-pro' ),
 						),
 						'default' => 'no',
 						'toggle' => array( 'yes' => array( 'fields' => array( 'theme' ) ) )
 					),
 					'theme' => array(
 						'type' => 'select',
-						'label' => __( 'Theme', 'bb-vapor-modules' ),
+						'label' => __( 'Theme', 'bb-vapor-modules-pro' ),
 						'default' => 'default',
 						'options' => array(
-							'default' => __( 'Default', 'bb-vapor-modules' ),
-							'coy' => __( 'Coy', 'bb-vapor-modules' ),
-							'dark' => __( 'Dark', 'bb-vapor-modules' ),
-							'funky' => __( 'Funky', 'bb-vapor-modules' ),
-							'okaidia' => __( 'Okaidia', 'bb-vapor-modules' ),
-							'solarized' => __( 'Solarized', 'bb-vapor-modules' ),
-							'tomorrow-night' => __( 'Tomorrow Night', 'bb-vapor-modules' ),
-							'twilight' => __( 'Twilight', 'bb-vapor-modules' )
+							'default' => __( 'Default', 'bb-vapor-modules-pro' ),
+							'coy' => __( 'Coy', 'bb-vapor-modules-pro' ),
+							'dark' => __( 'Dark', 'bb-vapor-modules-pro' ),
+							'funky' => __( 'Funky', 'bb-vapor-modules-pro' ),
+							'okaidia' => __( 'Okaidia', 'bb-vapor-modules-pro' ),
+							'solarized' => __( 'Solarized', 'bb-vapor-modules-pro' ),
+							'tomorrow-night' => __( 'Tomorrow Night', 'bb-vapor-modules-pro' ),
+							'twilight' => __( 'Twilight', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'default'
 					),
@@ -81,19 +81,19 @@ FLBuilder::register_module('BBVapor_Markdown_Module', array(
 		)
 	),
 	'theme'       => array( // Tab
-		'title'         => __('Theme', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Theme', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'theme'       => array( // Section
-				'title'         => __('Theme', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Theme', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'markdown_theme' => array(
 						'type' => 'select',
-						'label' => __( 'Markdown Theme', 'bb-vapor-modules' ),
+						'label' => __( 'Markdown Theme', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'none' => __( 'None', 'bb-vapor-modules' ),
-							'default' => __( 'GitHub Inspired', 'bb-vapor-modules' )
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
+							'default' => __( 'GitHub Inspired', 'bb-vapor-modules-pro' )
 						),
-						'description' => __( 'More themes will be added if the popularity of this module grows.', 'bb-vapor-modules' ),
+						'description' => __( 'More themes will be added if the popularity of this module grows.', 'bb-vapor-modules-pro' ),
 						'default' => 'none',
 					),
 				)
