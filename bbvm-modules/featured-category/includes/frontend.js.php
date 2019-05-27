@@ -1,15 +1,15 @@
-var bbvm_tax_<?php echo absint( $id ); ?> = "<?php echo esc_js( $settings->taxonomy_select ); ?>";
-var bbvm_term_<?php echo absint( $id ); ?> = "<?php echo esc_js( $settings->terms_select ); ?>";
 jQuery( 'body' ).unbind( "change" );
 jQuery( 'body' ).on('change', '.bbvm-post-select, .bbvm-taxonomy-select', function( e ) {
+		var bbvm_tax = "<?php echo esc_js( $settings->taxonomy_select ); ?>";
+		var bbvm_term = "<?php echo esc_js( $settings->terms_select ); ?>";
 		if ( jQuery( '.bbvm-post-select' ).val() != '0' ) {
 			if( undefined === jQuery( '.bbvm-taxonomy-select:visible :selected' ).val() ) {
-				var taxonomy = bbvm_tax_<?php echo absint( $id ); ?>;
+				var taxonomy = bbvm_tax;
 			} else {
 				var taxonomy = jQuery( '.bbvm-taxonomy-select:visible :selected' ).val();
 			}
 			if( undefined === jQuery( '.bbvm-term-select:visible :selected' ).val() ) {
-				var term = bbvm_term_<?php echo absint( $id ); ?>;
+				var term = bbvm_term;
 			} else {
 				var term = jQuery( '.bbvm-term-select:visible :selected' ).val();
 			}
