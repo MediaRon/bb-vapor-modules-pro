@@ -2,8 +2,30 @@ jQuery( 'body' ).on('change', '.bbvm-post-select:visible, .bbvm-taxonomy-select:
 		if ( jQuery( '.fl-lightbox-content .fl-builder-settings' ).data('node') !== '<?php echo $id; ?>' ) {
 			return;
 		}
-		var taxonomy = e.data.tax;
-		var term = e.data.term;
+		var bbvm_taxonomy = e.data.tax;
+		var bbvm_term = e.data.term;
+
+		if ( jQuery( '.bbvm-post-select :selected' ).val() != '0' ) {
+			if( 'undefined' === jQuery( '.bbvm-taxonomy-select :selected' ).val() ) {
+				taxonomy = bbvm_taxonomy;
+			} else {
+				var taxonomy = jQuery( '.bbvm-taxonomy-select :selected' ).val();
+				if ( undefined == taxonomy ) {
+					taxonomy = bbvm_taxonomy;
+				}
+			}
+			if( undefined === jQuery( '.bbvm-term-select :selected' ).val() ) {
+				term = bbvm_term;
+			} else {
+				term = jQuery( '.bbvm-term-select :selected' ).val();
+				if ( undefined == term ) {
+					term = bbvm_term;
+				}
+			}
+		} else {
+			var taxonomy = e.data.tax;
+			var term = e.data.term;
+		}
 
 		jQuery.post( bbvm_beaver_builder_ajax_url, { action: 'bbvm_featured_bb_get_data', post_type: jQuery( '.bbvm-post-select:visible :selected' ).val(), taxonomy: taxonomy, term: term }, function( response ) {
 		jQuery( '.bbvm-taxonomy-select:first' ).html( response.taxonomies );

@@ -40,7 +40,7 @@ class BBVapor_BeaverBuilder_Admin {
 		if ( false !== $license ) {
 
 			// setup the updater
-			$edd_updater = new EDD_SL_Plugin_Updater( 'https://bbvapormodules.com', BBVAPOR_PRO_BEAVER_BUILDER_FILE,
+			$edd_updater = new BBVM_EDD_SL_Plugin_Updater( 'https://bbvapormodules.com', BBVAPOR_PRO_BEAVER_BUILDER_FILE,
 				array(
 					'version' => BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
 					'license' => $license,
