@@ -23,7 +23,7 @@
 					if ( 'yes' === $settings->show_button ) :
 						?>
 							<div class="fl-bbvm-featured-category-button">
-								<a href="<?php echo esc_url( $featured_category_term_link ); ?>">View</a>
+								<a href="<?php echo esc_url( $featured_category_term_link ); ?>"><?php echo esc_html( $settings->button_text ); ?></a>
 							</div>
 						<?php
 					endif;

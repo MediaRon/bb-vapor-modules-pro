@@ -265,6 +265,11 @@ FLBuilder::register_module('BBVapor_Featured_Category_Module', array(
 			'button'       => array( // Section
 				'title'         => __('Button', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
+					'button_text' => array(
+						'type' => 'text',
+						'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
+						'default' => __( 'View', 'bb-vapor-modules-pro' ),
+					),
 					'button_background' => array(
 						'type' => 'color',
 						'label' => __( 'Button Background', 'bb-vapor-modules-pro' ),
