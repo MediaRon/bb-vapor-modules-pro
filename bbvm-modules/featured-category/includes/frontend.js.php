@@ -1,5 +1,4 @@
-jQuery( 'body' ).addClass( 'fl-node-<?php echo $id; ?>' );
-jQuery( 'body.fl-node-<?php echo $id; ?>' ).on('change', '.bbvm-post-select:visible, .bbvm-taxonomy-select:visible', { tax: '<?php echo esc_js( $settings->taxonomy_select ); ?>', term: <?php echo esc_js( $settings->terms_select ); ?>}, function( e ) {
+jQuery( 'body' ).on('change', '.bbvm-post-select:visible, .bbvm-taxonomy-select:visible', { tax: '<?php echo esc_js( $settings->taxonomy_select ); ?>', term: <?php echo esc_js( $settings->terms_select ); ?>}, function( e ) {
 		if ( jQuery( '.fl-lightbox-content .fl-builder-settings' ).data('node') !== '<?php echo $id; ?>' ) {
 			return;
 		}
