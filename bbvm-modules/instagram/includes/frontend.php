@@ -4,7 +4,7 @@
 	$instagram = get_option( 'bbvm-modules-instagram', array() );
 	if( ! isset( $instagram['token'] ) ) {
 		?>
-		<p><?php _e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bbvm-for-beaver-builder' ), admin_url( 'options-general.php' ) ) ); ?>"><?php _e( 'Connect', 'bb-vapor-modules' ); ?></a>
+		<p><?php _e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bbvm-for-beaver-builder' ), admin_url( 'options-general.php' ) ) ); ?>"><?php _e( 'Connect', 'bb-vapor-modules-pro' ); ?></a>
 		<?php
 	} else{
 		$instagram_json = isset( $instagram['json'] ) ? $instagram['json'] : '';
@@ -81,7 +81,7 @@
 					if( 'yes' === $settings->show_likes_comments ):
 					?>
 					<div class="instagram-meta">
-						<span class="instagram-likes">Likes: <?php echo esc_html( number_format( $user_data->likes->count ) ); ?></span><span class="instagram-comments"><?php echo esc_html__( 'Comments:', 'bb-vapor-modules' ); ?> <?php echo esc_html( number_format( $user_data->comments->count ) ); ?></span>
+						<span class="instagram-likes">Likes: <?php echo esc_html( number_format( $user_data->likes->count ) ); ?></span><span class="instagram-comments"><?php echo esc_html__( 'Comments:', 'bb-vapor-modules-pro' ); ?> <?php echo esc_html( number_format( $user_data->comments->count ) ); ?></span>
 					</div>
 					<?php
 					endif;

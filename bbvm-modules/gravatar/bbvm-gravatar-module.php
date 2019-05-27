@@ -3,9 +3,9 @@ class BBVapor_Gravatar_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Gravatar', 'bb-vapor-modules' ),
-			'description'     => __( 'Add Gravatar', 'bb-vapor-modules' ),
-			'category'        => __( 'Base', 'bb-vapor-modules' ),
+			'name'            => __( 'Gravatar', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Add Gravatar', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/gravatar/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/gravatar/',
@@ -20,17 +20,17 @@ class BBVapor_Gravatar_Module extends FLBuilderModule {
  */
 FLBuilder::register_module('BBVapor_Gravatar_Module', array(
 		'general'       => array( // Tab
-			'title'         => __('Settings', 'bb-vapor-modules'), // Tab title
+			'title'         => __('Settings', 'bb-vapor-modules-pro'), // Tab title
 			'sections'      => array( // Tab Sections
 				'general'       => array( // Section
-					'title'         => __('Settings', 'bb-vapor-modules'), // Section Title
+					'title'         => __('Settings', 'bb-vapor-modules-pro'), // Section Title
 					'fields'        => array( // Section Fields
 						'gravatar_type' => array(
 							'type'          => 'select',
-							'label'         => __('Gravatar Type', 'bb-vapor-modules'),
+							'label'         => __('Gravatar Type', 'bb-vapor-modules-pro'),
 							'options' => array(
-								'user_id' => __( 'User ID', 'bb-vapor-modules' ),
-								'email' => __( 'Email Address', 'bb-vapor-modules' ),
+								'user_id' => __( 'User ID', 'bb-vapor-modules-pro' ),
+								'email' => __( 'Email Address', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'email',
 							'toggle' => array(
@@ -40,49 +40,49 @@ FLBuilder::register_module('BBVapor_Gravatar_Module', array(
 						),
 						'user_id' => array(
 							'type' => 'unit',
-							'label' => __( 'User ID', 'bb-vapor-modules' ),
+							'label' => __( 'User ID', 'bb-vapor-modules-pro' ),
 							'default' => '0',
 						),
 						'email_address' => array(
 							'type' => 'text',
-							'label' => __( 'Email Address', 'bb-vapor-modules' ),
+							'label' => __( 'Email Address', 'bb-vapor-modules-pro' ),
 							'default' => '',
 						),
 						'avatar_size' => array(
 							'type' => 'unit',
-							'label' => __( 'Avatar Size', 'bb-vapor-modules' ),
+							'label' => __( 'Avatar Size', 'bb-vapor-modules-pro' ),
 							'default' => '100',
 						),
 						'avatar_type' => array(
 							'type' => 'select',
-							'label' => __( 'Avatar Type', 'bb-vapor-modules' ),
+							'label' => __( 'Avatar Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'square' => __( 'Square', 'bb-vapor-modules' ),
-								'circular' => __( 'Circular', 'bb-vapor-modules' )
+								'square' => __( 'Square', 'bb-vapor-modules-pro' ),
+								'circular' => __( 'Circular', 'bb-vapor-modules-pro' )
 							),
 							'default' => 'square'
 						),
 						'avatar_title' => array(
 							'type' => 'text',
-							'label' => __( 'Avatar Title', 'bb-vapor-modules' ),
+							'label' => __( 'Avatar Title', 'bb-vapor-modules-pro' ),
 							'default' => '',
 						),
 						'avatar_typography' => array(
 							'type' => 'typography',
-							'label' => __( 'Avatar Title Typography', 'bb-vapor-modules' ),
+							'label' => __( 'Avatar Title Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'avatar_align' => array(
 							'type' => 'align',
-							'label' => __( 'Avatar Align', 'bb-vapor-modules' ),
+							'label' => __( 'Avatar Align', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
 						'avatar_link' => array(
 							'type' => 'select',
-							'label' => __( 'Link to Gravatar Profile', 'bb-vapor-modules' ),
+							'label' => __( 'Link to Gravatar Profile', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules' ),
-								'no' => __( 'No', 'bb-vapor-modules' )
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no' => __( 'No', 'bb-vapor-modules-pro' )
 							),
 							'default' => 'no'
 						),

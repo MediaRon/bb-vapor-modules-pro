@@ -3,9 +3,9 @@ class BBVapor_Card_Module extends FLBuilderModule {
 	public function __construct()
 	{
 		parent::__construct(array(
-			'name'            => __( 'Card', 'bb-vapor-modules' ),
-			'description'     => __( 'Add a card', 'bb-vapor-modules' ),
-			'category'        => __( 'Base', 'bb-vapor-modules' ),
+			'name'            => __( 'Card', 'bb-vapor-modules-pro' ),
+			'description'     => __( 'Add a card', 'bb-vapor-modules-pro' ),
+			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/card/',
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/card/',
@@ -17,17 +17,17 @@ class BBVapor_Card_Module extends FLBuilderModule {
 }
 FLBuilder::register_settings_form(
 	'bbvm_icons', array(
-		'title' => __( 'Add Icons', 'bb-vapor-modules' ),
+		'title' => __( 'Add Icons', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general'      => array(
-				'title'         => __('General', 'bb-vapor-modules'),
+				'title'         => __('General', 'bb-vapor-modules-pro'),
 				'sections'      => array(
 					'general'       => array(
 						'title'         => '',
 						'fields'        => array(
 							'icon_group'         => array(
 								'type'          => 'icon',
-								'label' => __( 'Select icon', 'bb-vapor-modules' )
+								'label' => __( 'Select icon', 'bb-vapor-modules-pro' )
 
 							)
 						),
@@ -42,18 +42,18 @@ FLBuilder::register_settings_form(
  */
 FLBuilder::register_module('BBVapor_Card_Module', array(
 	'general'       => array( // Tab
-		'title'         => __('Photo/Icon', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Photo/Icon', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'general'       => array( // Section
-				'title'         => __('Card', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Card', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'photo_type' => array(
 						'type'          => 'select',
-						'label'         => __('Card photo type', 'bb-vapor-modules'),
+						'label'         => __('Card photo type', 'bb-vapor-modules-pro'),
 						'options' => array(
-							'none' => __( 'None', 'bb-vapor-modules' ),
-							'icon' => __( 'Icon', 'bb-vapor-modules' ),
-							'photo' => __( 'Photo', 'bb-vapor-modules' )
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
+							'icon' => __( 'Icon', 'bb-vapor-modules-pro' ),
+							'photo' => __( 'Photo', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'icon',
 						'toggle' => array(
@@ -63,68 +63,68 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'icon' => array(
 						'type'          => 'form',
-						'label'         => __('Icon', 'bb-vapor-modules'),
+						'label'         => __('Icon', 'bb-vapor-modules-pro'),
 						'form' => 'bbvm_icons',
 						'multiple'     => true,
 						'preview_text'  => 'icon_group'
 					),
 					'icon_color' => array(
 						'type'          => 'color',
-						'label'         => __('Icon Color', 'bb-vapor-modules'),
+						'label'         => __('Icon Color', 'bb-vapor-modules-pro'),
 						'default'       => '#000000',
 						'show_reset' => true
 					),
 					'icon_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __('Icon Color on Hover', 'bb-vapor-modules'),
+						'label'         => __('Icon Color on Hover', 'bb-vapor-modules-pro'),
 						'default'       => '#000000',
 						'show_reset' => true
 					),
 					'icon_font_size' => array(
 						'type'          => 'unit',
-						'label'         => __('Icon Font Size', 'bb-vapor-modules'),
+						'label'         => __('Icon Font Size', 'bb-vapor-modules-pro'),
 						'default'       => '14',
 						'description'   => 'px',
 					),
 					'icon_background' => array(
 						'type'          => 'color',
-						'label'         => __('Icon Background Color', 'bb-vapor-modules'),
+						'label'         => __('Icon Background Color', 'bb-vapor-modules-pro'),
 						'default'       => '#FFFFFF',
 						'show_reset' => true
 					),
 					'icon_background_hover' => array(
 						'type'          => 'color',
-						'label'         => __('Icon Background Color on Hover', 'bb-vapor-modules'),
+						'label'         => __('Icon Background Color on Hover', 'bb-vapor-modules-pro'),
 						'default'       => '#FFFFFF',
 						'show_reset' => true
 					),
 					'icon_padding' => array(
 						'type'          => 'dimension',
-						'label'         => __('Icon Padding', 'bb-vapor-modules'),
+						'label'         => __('Icon Padding', 'bb-vapor-modules-pro'),
 					),
 					'icon_appearance' => array(
 						'type' => 'select',
-						'label' => __( 'Select an Icon Appearance', 'bb-vapor-modules' ),
+						'label' => __( 'Select an Icon Appearance', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'none' => __( 'None', 'bb-vapor-modules' ),
-							'rounded' => __( 'Rounded', 'bb-vapor-modules' )
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
+							'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' )
 						)
 					),
 					'photo' => array(
 						'type' => 'photo',
-						'label' => __( 'Select a Photo', 'bb-vapor-modules' )
+						'label' => __( 'Select a Photo', 'bb-vapor-modules-pro' )
 					),
 					'photo_size' => array(
 						'type' => 'unit',
-						'label' => __( 'Select a Photo Size (height/width)', 'bb-vapor-modules' ),
+						'label' => __( 'Select a Photo Size (height/width)', 'bb-vapor-modules-pro' ),
 						'default' => '200'
 					),
 					'photo_appearance' => array(
 						'type' => 'select',
-						'label' => __( 'Select a Photo Appearance', 'bb-vapor-modules' ),
+						'label' => __( 'Select a Photo Appearance', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'square' => __( 'Square', 'bb-vapor-modules' ),
-							'rounded' => __( 'Rounded', 'bb-vapor-modules' )
+							'square' => __( 'Square', 'bb-vapor-modules-pro' ),
+							'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' )
 						)
 					)
 				)
@@ -132,18 +132,18 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 		)
 	),
 	'content'       => array( // Tab
-		'title'         => __('Content', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Content', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'overlay'       => array( // Section
-				'title'         => __('Content', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Content', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'display_heading' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display a Heading', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Heading', 'bb-vapor-modules-pro' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'yes' => array(
@@ -153,25 +153,25 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'heading' => array(
 						'type'  => 'text',
-						'label' => __( 'Enter a Heading', 'bb-vapor-modules' ),
+						'label' => __( 'Enter a Heading', 'bb-vapor-modules-pro' ),
 					),
 					'heading_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Enter a Heading Typography', 'bb-vapor-modules' ),
+						'label' => __( 'Enter a Heading Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'heading_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Enter a Heading Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Enter a Heading Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'display_content' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Content', 'bb-vapor-modules' ),
+						'label'         => __( 'Display Content', 'bb-vapor-modules-pro' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'yes' => array(
@@ -181,25 +181,25 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'content' => array(
 						'type'  => 'textarea',
-						'label' => __( 'Enter Content', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Content', 'bb-vapor-modules-pro' ),
 					),
 					'content_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Enter Content Typography', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Content Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'content_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Enter Content Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Content Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'display_subheading' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Subheading', 'bb-vapor-modules' ),
+						'label'         => __( 'Display Subheading', 'bb-vapor-modules-pro' ),
 						'default'       => 'none',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'yes' => array(
@@ -209,25 +209,25 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'subheading' => array(
 						'type'  => 'text',
-						'label' => __( 'Enter Subheading', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading', 'bb-vapor-modules-pro' ),
 					),
 					'subheading_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Enter Subheading Typography', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'subheading_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Enter Subheading Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'display_subheading_text' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Subheading Text', 'bb-vapor-modules' ),
+						'label'         => __( 'Display Subheading Text', 'bb-vapor-modules-pro' ),
 						'default'       => 'none',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'yes' => array(
@@ -237,25 +237,25 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'subheading_text' => array(
 						'type'  => 'text',
-						'label' => __( 'Enter Subheading Text', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading Text', 'bb-vapor-modules-pro' ),
 					),
 					'subheading_text_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Enter Subheading Text Typography', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading Text Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'subheading_text_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Enter Subheading Text Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Subheading Text Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'display_readmore_button' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display Read More Button', 'bb-vapor-modules' ),
+						'label'         => __( 'Display Read More Button', 'bb-vapor-modules-pro' ),
 						'default'       => 'none',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'yes' => __( 'Yes', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'yes' => array(
@@ -265,20 +265,20 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'readmore_text' => array(
 						'type'  => 'text',
-						'label' => __( 'Enter Read More Text', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Read More Text', 'bb-vapor-modules-pro' ),
 					),
 					'readmore_link' => array(
 						'type'  => 'link',
-						'label' => __( 'Enter Read More Link', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Read More Link', 'bb-vapor-modules-pro' ),
 					),
 					'readmore_text_typography' => array(
 						'type'  => 'typography',
-						'label' => __( 'Enter Read More Typography', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Read More Typography', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'readmore_text_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Enter Read More Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Enter Read More Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 				)
@@ -286,57 +286,57 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 		)
 	),
 	'styles'       => array( // Tab
-		'title'         => __('Styles', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Styles', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'overlay'       => array( // Section
-				'title'         => __('Styles', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Styles', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'border' => array(
 						'type'          => 'unit',
-						'label'         => __( 'Border Width', 'bb-vapor-modules' ),
+						'label'         => __( 'Border Width', 'bb-vapor-modules-pro' ),
 						'default' => '0',
 					),
 					'border_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Border Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Border Color', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset' => true
 					),
 					'border_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Border Color on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Border Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset' => true
 					),
 					'border_radius' => array(
 						'type'          => 'dimension',
-						'label'         => __( 'Button Border Radius', 'bb-vapor-modules' ),
+						'label'         => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 					),
 					'text_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 						'default' => '#000000',
 						'show_reset' => true
 					),
 					'text_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Text Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => '#000000',
 						'show_reset' => true
 					),
 					'background_type' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display a Background Type', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Type', 'bb-vapor-modules-pro' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'color' => __( 'Color', 'bb-vapor-modules' ),
-							'gradient' => __( 'Gradient', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'color' => __( 'Color', 'bb-vapor-modules-pro' ),
+							'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'color' => array(
@@ -350,34 +350,34 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'background_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Display a Background Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Color', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset'         => true
 					),
 					'background_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset'         => true
 					),
 					'background_gradient' => array(
 						'type'          => 'gradient',
-						'label'         => __( 'Display a Gradient', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 						'show_reset'         => true
 					),
 					'background_gradient_hover' => array(
 						'type'          => 'gradient',
-						'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules-pro' ),
 						'show_reset'         => true
 					),
 					'text_shadow' => array(
 						'type' => 'shadow',
-						'label' => __( 'Text Shadow', 'bb-vapor-modules' ),
+						'label' => __( 'Text Shadow', 'bb-vapor-modules-pro' ),
 						'show_spread' => true,
 					),
 					'text_shadow_hover' => array(
 						'type' => 'shadow',
-						'label' => __( 'Text Shadow on Hover', 'bb-vapor-modules' ),
+						'label' => __( 'Text Shadow on Hover', 'bb-vapor-modules-pro' ),
 						'show_spread' => true,
 					)
 				)
@@ -385,55 +385,55 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 		)
 	),
 	'button_styles'       => array( // Tab
-		'title'         => __('Button', 'bb-vapor-modules'), // Tab title
+		'title'         => __('Button', 'bb-vapor-modules-pro'), // Tab title
 		'sections'      => array( // Tab Sections
 			'overlay'       => array( // Section
-				'title'         => __('Button', 'bb-vapor-modules'), // Section Title
+				'title'         => __('Button', 'bb-vapor-modules-pro'), // Section Title
 				'fields'        => array( // Section Fields
 					'button_padding' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Padding', 'bb-vapor-modules' ),
+						'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_margin' => array(
 						'type'  => 'dimension',
-						'label' => __( 'Margin', 'bb-vapor-modules' ),
+						'label' => __( 'Margin', 'bb-vapor-modules-pro' ),
 						'responsive' => true
 					),
 					'button_icon' => array(
 						'type'  => 'icon',
-						'label' => __( 'Icon', 'bb-vapor-modules' ),
+						'label' => __( 'Icon', 'bb-vapor-modules-pro' ),
 					),
 					'button_icon_display' => array(
 						'type'  => 'select',
-						'label' => __( 'Icon Position', 'bb-vapor-modules' ),
+						'label' => __( 'Icon Position', 'bb-vapor-modules-pro' ),
 						'options' => array(
-							'none' => __( 'None', 'bb-vapor-modules' ),
-							'before' => __( 'Before', 'bb-vapor-modules' ),
+							'none' => __( 'None', 'bb-vapor-modules-pro' ),
+							'before' => __( 'Before', 'bb-vapor-modules-pro' ),
 							'after' => __( 'After', 'bb-vapor-modules-pro' )
 						),
 						'default' => 'none'
 					),
 					'button_text_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
 						'default' => '#000000',
 						'show_reset' => true
 					),
 					'button_text_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Text Color on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Text Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => '#000000',
 						'show_reset' => true
 					),
 					'button_background_type' => array(
 						'type'          => 'select',
-						'label'         => __( 'Display a Background Type', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Type', 'bb-vapor-modules-pro' ),
 						'default'       => 'yes',
 						'options'       => array(
-							'none'       => __( 'None', 'bb-vapor-modules' ),
-							'color' => __( 'Color', 'bb-vapor-modules' ),
-							'gradient' => __( 'Gradient', 'bb-vapor-modules' ),
+							'none'       => __( 'None', 'bb-vapor-modules-pro' ),
+							'color' => __( 'Color', 'bb-vapor-modules-pro' ),
+							'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 						),
 						'toggle' => array(
 							'color' => array(
@@ -447,40 +447,40 @@ FLBuilder::register_module('BBVapor_Card_Module', array(
 					),
 					'button_background_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Display a Background Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Color', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset'         => true
 					),
 					'button_background_color_hover' => array(
 						'type'          => 'color',
-						'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset'         => true
 					),
 					'button_color_gradient' => array(
 						'type'          => 'gradient',
-						'label'         => __( 'Display a Gradient', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 						'show_reset'         => true
 					),
 					'button_color_gradient_hover' => array(
 						'type'          => 'gradient',
-						'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules' ),
+						'label'         => __( 'Display a Gradient on Hover', 'bb-vapor-modules-pro' ),
 						'show_reset'         => true
 					),
 					'button_border' => array(
 						'type'          => 'unit',
-						'label'         => __( 'Button Border Width', 'bb-vapor-modules' ),
+						'label'         => __( 'Button Border Width', 'bb-vapor-modules-pro' ),
 						'default' => '0',
 					),
 					'button_border_color' => array(
 						'type'          => 'color',
-						'label'         => __( 'Button Border Color', 'bb-vapor-modules' ),
+						'label'         => __( 'Button Border Color', 'bb-vapor-modules-pro' ),
 						'default' => '#FFFFFF',
 						'show_reset' => true
 					),
 					'button_border_radius' => array(
 						'type'          => 'dimension',
-						'label'         => __( 'Button Border Radius', 'bb-vapor-modules' ),
+						'label'         => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 					),
 				)
 			)
