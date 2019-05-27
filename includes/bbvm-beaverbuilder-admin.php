@@ -36,10 +36,11 @@ class BBVapor_BeaverBuilder_Admin {
 	public function init() {
 
 		require_once BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'includes/EDD_SL_Plugin_Updater.php';
-		$license = get_site_option( 'bb_vapor_modules_license', false );
+		$license = get_site_option( 'bbvm_for_beaver_builder_license', false );
 		if ( false !== $license ) {
+
 			// setup the updater
-			$edd_updater = new BBVM_EDD_SL_Plugin_Updater( 'https://bbvapormodules.com', __FILE__,
+			$edd_updater = new EDD_SL_Plugin_Updater( 'https://bbvapormodules.com', BBVAPOR_PRO_BEAVER_BUILDER_FILE,
 				array(
 					'version' => BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
 					'license' => $license,
