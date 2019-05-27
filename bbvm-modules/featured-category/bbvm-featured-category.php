@@ -11,7 +11,7 @@ class BBVapor_Featured_Category_Module extends FLBuilderModule {
 			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/featured-category/',
 			'editor_export'   => true, // Defaults to true and can be omitted.
 			'enabled'         => true, // Defaults to true and can be omitted.
-			'partial_refresh' => false, // Defaults to false and can be omitted.
+			'partial_refresh' => true, // Defaults to false and can be omitted.
 		));
 
 		add_action( 'wp_ajax_bbvm_featured_bb_get_taxonomies', array( $this, 'get_taxonomies' ) );
