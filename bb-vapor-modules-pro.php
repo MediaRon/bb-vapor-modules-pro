@@ -36,13 +36,17 @@ class BBVapor_Modules_Pro {
 
 			add_action( 'wp_head', array( $this, 'bbvm_beaver_builder_ajax_url' ) );
 
-			// Breadcrumb module
+		// Breadcrumb module
 		require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
 		new BBVapor_Breadcrumbs_Module();
 
 		// Markdown module
 		require_once 'bbvm-modules/markdown/bbvm-markdown.php';
 		new BBVapor_Markdown_Module();
+
+		// User Profile module
+		require_once 'bbvm-modules/user-profile/bbvm-user-profile.php';
+		new BBVapor_User_Profile_Module();
 
 		// Photo overlay module
 		require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
