@@ -179,6 +179,11 @@ class BBVapor_Modules_Pro {
 		if ( class_exists( 'Soliloquy' ) ) {
 			require_once 'bbvm-modules/soliloquy/bbvm-soliloquy-module.php';
 			new BBVapor_Soliloquy_Module();
+
+			if ( class_exists( 'Soliloquy_Dynamic' ) ) {
+				require_once 'bbvm-modules/soliloquy-dynamic/bbvm-soliloquy-dynamic.php';
+				new BBVapor_Soliloquy_Dynamic_Module();
+			}
 		}
 
 		// Instagram
