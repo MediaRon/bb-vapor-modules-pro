@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 1.0.7
+ * Version: 1.0.9
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
