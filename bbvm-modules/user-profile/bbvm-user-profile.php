@@ -13,31 +13,6 @@ class BBVapor_User_Profile_Module extends FLBuilderModule {
 			'enabled'         => true, // Defaults to true and can be omitted.
 			'partial_refresh' => false, // Defaults to false and can be omitted.
 		));
-		FLPageData::add_site_property( 'bbvm_user', array(
-			'bbvm_user' => array(
-				'type' => 'text',
-				'label' => __( 'User ID', 'bb-vapor-modules-pro' )
-			)
-		) );
-		add_action( 'fl_page_data_add_properties', function() {
-
-			FLPageData::add_post_property( 'bbvm_user', array(
-				'label'   => 'Author',
-				'group'   => 'user',
-				'type'    => 'int',
-				'getter'  => array( $this, 'profile_getter' ),
-				'form'    => 'user',
-			) );
-		} );
-	}
-
-	public function profile_getter() {
-		return __( 'User Profile', 'bb-vapor-modules-pro' );
-	}
-	public function enqueue_scripts() {
-		if ( $this->settings ) {
-
-		}
 	}
 }
 FLBuilder::register_module('BBVapor_User_Profile_Module', array(
