@@ -166,6 +166,13 @@ FLBuilder::register_module(
 							'type'  => 'editor',
 							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
 						),
+						'description_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Description Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
 						'description_typography' => array(
 							'type'  => 'typography',
 							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),

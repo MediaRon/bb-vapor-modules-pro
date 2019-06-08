@@ -20,6 +20,9 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 ?>
+.fl-node-<?php echo esc_html( $id ); ?> .description {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->description_color ) ); ?>
+}
 <?php
 if ( 'normal' === $settings->headline_select ) {
 	FLBuilderCSS::typography_field_rule(
