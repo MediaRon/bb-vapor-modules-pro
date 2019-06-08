@@ -203,13 +203,30 @@ FLBuilder::register_module(
 				'description' => array( // Section
 					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'description'            => array(
-							'type'  => 'editor',
-							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
+						'separator_type'         => array(
+							'type'    => 'select',
+							'label'   => __( 'Separator Type', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'line'         => __( 'Simple Line', 'bb-vapor-modules-pro' ),
+								'line_radius'  => __( 'Line With Radius' ),
+								'line_icon'    => __( 'Line With Icon', 'bb-vapor-modules-pro' ),
+								'line_photo'   => __( 'Line With Photo', 'bb-vapor-modules-pro' ),
+								'line_content' => __( 'Line With Content', 'bb-vapor-modules-pro' ),
+								'photo'        => __( 'Background Image', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'line' => array(
+									'fields' => array(
+										'line_type',
+										'line_color',
+									),
+								),
+							),
+							'default' => 'line',
 						),
-						'description_color'      => array(
+						'line_color'             => array(
 							'type'       => 'color',
-							'label'      => __( 'Description Text Color', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Line Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '000000',
