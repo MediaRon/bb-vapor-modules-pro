@@ -52,13 +52,13 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Advanced_Headings_Module',
 	array(
-		'general' => array( // Tab
+		'general'     => array( // Tab
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
 			'sections' => array( // Tab Sections
 				'general' => array( // Section
 					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'headline_tag'     => array(
+						'headline_tag'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -71,7 +71,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'h2',
 						),
-						'headline_select'  => array(
+						'headline_select'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Headline Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -88,12 +88,13 @@ FLBuilder::register_module(
 									'fields' => array(
 										'headline',
 										'headline_typography',
+										'headline_color',
 									),
 								),
 							),
 							'default' => 'normal',
 						),
-						'headline_description'  => array(
+						'headline_description' => array(
 							'type'    => 'select',
 							'label'   => __( 'Enable Headline Description', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -109,18 +110,18 @@ FLBuilder::register_module(
 							),
 							'default' => 'no',
 						),
-						'headline'         => array(
+						'headline'             => array(
 							'type'  => 'text',
 							'label' => __( 'Enter Your Headline', 'bb-vapor-modules-pro' ),
 						),
-						'headlines'        => array(
+						'headlines'            => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_variable_headlines',
 							'label'        => __( 'Heading', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'preview_text' => 'headline',
 						),
-						'headline_style'  => array(
+						'headline_style'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Headline Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -129,12 +130,19 @@ FLBuilder::register_module(
 							),
 							'default' => 'inline',
 						),
-						'headline_padding' => array(
+						'headline_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Headline Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
+						'headline_padding'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'headline_margin'  => array(
+						'headline_margin'      => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

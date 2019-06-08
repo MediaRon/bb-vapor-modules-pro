@@ -8,6 +8,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> h5,
 .fl-node-<?php echo esc_html( $id ); ?> h6 {
 	display: <?php echo 'inline' === $settings->headline_style ? 'inline-block' : 'block'; ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->headline_color ) ); ?>
 }
 <?php
 // Headline Description

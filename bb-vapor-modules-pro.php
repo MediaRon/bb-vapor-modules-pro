@@ -26,6 +26,15 @@ class BBVapor_Modules_Pro {
 		// Load text domain
 		load_plugin_textdomain( 'bb-vapor-modules-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
+
+	public static function get_color( $color ) {
+		if ( 6 === strlen( $color ) ) {
+			return '#' . $color;
+		} else {
+			return $color;
+		}
+		return $color;
+	}
 	public function bbvm_beaver_builder_module_init() {
 
 		// Register admin panel
