@@ -1,13 +1,24 @@
-<div class="fl-bbvm-variable-headings-for-beaverbuilder">
+<div class="fl-bbvm-advanced-headings-for-beaverbuilder">
 	<?php
-	$bbvm_count = 0;
-	echo sprintf( '<%s>', $settings->headline_tag );
-	foreach( $settings->headlines as $headline ) {
-		printf( '<span class="bbvm-variable-headline-%d">', $bbvm_count );
-		echo esc_html( $headline->headline ) . ' ';
-		echo '</span>';
-		$bbvm_count += 1;
+	echo sprintf( '<%s>', esc_html( $settings->headline_tag ) );
+	if ( 'normal' === $settings->headline_select ) {
+		echo sprintf( '<span class="headline-normal">%s</span>', esc_html( $settings->headline ) );
+	} else {
+		$bbvm_count = 0;
+		foreach ( $settings->headlines as $headline ) {
+			printf( '<span class="bbvm-variable-headline-%d">', absint( $bbvm_count ) );
+			echo esc_html( $headline->headline ) . ' ';
+			echo '</span>';
+			$bbvm_count++;
+		}
 	}
-	echo sprintf( '</%s>', $settings->headline_tag );
+	echo sprintf( '</%s>', esc_html( $settings->headline_tag ) );
+
+	// Description.
+	if ( 'yes' === $settings->headline_description ) {
+		echo '<div class="description">';
+		echo wp_kses_post( $settings->description );
+		echo '</div>';
+	}
 	?>
 </div>

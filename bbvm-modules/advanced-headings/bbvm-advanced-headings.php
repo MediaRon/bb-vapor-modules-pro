@@ -120,6 +120,15 @@ FLBuilder::register_module(
 							'multiple'     => true,
 							'preview_text' => 'headline',
 						),
+						'headline_style'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Headline Style', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'inline' => __( 'Inline Block', 'bb-vapor-modules-pro' ),
+								'block'  => __( 'Full Width', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'inline',
+						),
 						'headline_padding' => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
