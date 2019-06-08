@@ -87,10 +87,27 @@ FLBuilder::register_module(
 								'normal'   => array(
 									'fields' => array(
 										'headline',
+										'headline_typography',
 									),
 								),
 							),
 							'default' => 'normal',
+						),
+						'headline_description'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Enable Headline Description', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'tabs' => array(
+										'description',
+									),
+								),
+							),
+							'default' => 'no',
 						),
 						'headline'         => array(
 							'type'  => 'text',
@@ -112,6 +129,29 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+						),
+						'headline_typography'  => array(
+							'type'       => 'typography',
+							'label'      => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'description' => array( // Tab
+			'title'    => __( 'Description', 'bb-vapor-modules-pro' ), // Tab title
+			'sections' => array( // Tab Sections
+				'description' => array( // Section
+					'title'  => __( 'Description', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
+						'description'            => array(
+							'type'  => 'editor',
+							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
+						),
+						'description_typography' => array(
+							'type'  => 'typography',
+							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
