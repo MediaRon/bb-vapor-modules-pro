@@ -110,6 +110,22 @@ FLBuilder::register_module(
 							),
 							'default' => 'no',
 						),
+						'headline_separator'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Enable Headline Separators', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'tabs' => array(
+										'separator',
+									),
+								),
+							),
+							'default' => 'no',
+						),
 						'headline'             => array(
 							'type'  => 'text',
 							'label' => __( 'Enter Your Headline', 'bb-vapor-modules-pro' ),
@@ -161,6 +177,31 @@ FLBuilder::register_module(
 			'sections' => array( // Tab Sections
 				'description' => array( // Section
 					'title'  => __( 'Description', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
+						'description'            => array(
+							'type'  => 'editor',
+							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
+						),
+						'description_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Description Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
+						'description_typography' => array(
+							'type'  => 'typography',
+							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),
+						),
+					),
+				),
+			),
+		),
+		'separator'   => array( // Tab
+			'title'    => __( 'Separator', 'bb-vapor-modules-pro' ), // Tab title
+			'sections' => array( // Tab Sections
+				'description' => array( // Section
+					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
 						'description'            => array(
 							'type'  => 'editor',
