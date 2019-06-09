@@ -1,8 +1,8 @@
 <div class="fl-bbvm-advanced-headings-for-beaverbuilder">
 	<?php
-	echo sprintf( '<%s>', esc_html( $settings->headline_tag ) );
+	echo sprintf( '<%s class="headline-normal">', esc_html( $settings->headline_tag ) );
 	if ( 'normal' === $settings->headline_select ) {
-		echo sprintf( '<span class="headline-normal">%s</span>', esc_html( $settings->headline ) );
+		echo sprintf( '<span">%s</span>', esc_html( $settings->headline ) );
 	} else {
 		$bbvm_count = 0;
 		foreach ( $settings->headlines as $headline ) {
