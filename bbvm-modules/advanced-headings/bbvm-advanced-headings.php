@@ -240,6 +240,14 @@ FLBuilder::register_module(
 										'icon_background_color',
 									),
 								),
+								'line_photo'   => array(
+									'fields' => array(
+										'style_photo',
+										'line_height',
+										'photo_style',
+										'photo_size',
+									),
+								),
 								'line_content' => array(
 									'fields' => array(
 										'line_content',
@@ -250,6 +258,26 @@ FLBuilder::register_module(
 								),
 							),
 							'default' => 'line',
+						),
+						'style_photo'           => array(
+							'type'  => 'photo',
+							'label' => __( 'Select a photo', 'bb-vapor-modules-pro' ),
+						),
+						'photo_style'           => array(
+							'type'    => 'select',
+							'label'   => __( 'Select a photo style', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'simple'   => __( 'Simple', 'bb-vapor-modules-pro' ),
+								'square'   => __( 'Square', 'bb-vapor-modules-pro' ),
+								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'photo_size'            => array(
+							'type'        => 'unit',
+							'label'       => __( 'Enter a photo size', 'bb-vapor-modules-pro' ),
+							'responsive'  => true,
+							'description' => 'px',
+							'default'     => '50',
 						),
 						'line_height'           => array(
 							'type'        => 'unit',
