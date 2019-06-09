@@ -1,6 +1,6 @@
 <div class="fl-bbvm-advanced-headings-for-beaverbuilder">
 	<?php
-	echo sprintf( '<%s class="headline-normal">', esc_html( $settings->headline_tag ) );
+	echo sprintf( '<%s class="bbvm-advanced-headline">', esc_html( $settings->headline_tag ) );
 	if ( 'normal' === $settings->headline_select ) {
 		echo sprintf( '<span>%s</span>', esc_html( $settings->headline ) );
 	} else {

@@ -215,23 +215,35 @@ FLBuilder::register_module(
 								'photo'        => __( 'Background Image', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'line' => array(
+								'line'        => array(
 									'fields' => array(
 										'line_type',
 										'line_color',
 										'line_height',
 									),
 								),
+								'line_radius' => array(
+									'fields' => array(
+										'line_color',
+										'line_height',
+										'line_radius',
+									),
+								),
 							),
 							'default' => 'line',
 						),
-						'line_height'            => array(
+						'line_height'    => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height of Separator', 'bb-vapor-modules-pro' ),
 							'default'     => '2',
 							'description' => 'px',
 						),
-						'line_type'              => array(
+						'line_radius'    => array(
+							'type'    => 'unit',
+							'label'   => __( 'Radius of Separator', 'bb-vapor-modules-pro' ),
+							'default' => '5',
+						),
+						'line_type'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Line Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -242,7 +254,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'solid',
 						),
-						'line_color'             => array(
+						'line_color'     => array(
 							'type'       => 'color',
 							'label'      => __( 'Line Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
