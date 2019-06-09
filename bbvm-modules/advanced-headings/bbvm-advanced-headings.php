@@ -219,10 +219,27 @@ FLBuilder::register_module(
 									'fields' => array(
 										'line_type',
 										'line_color',
+										'line_height',
 									),
 								),
 							),
 							'default' => 'line',
+						),
+						'line_height'            => array(
+							'type'        => 'unit',
+							'label'       => __( 'Height of Separator', 'bb-vapor-modules-pro' ),
+							'default'     => '2',
+							'description' => 'px',
+						),
+						'line_type'              => array(
+							'type'    => 'select',
+							'label'   => __( 'Line Type', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
+								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
+								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'solid',
 						),
 						'line_color'             => array(
 							'type'       => 'color',
@@ -230,10 +247,6 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '000000',
-						),
-						'description_typography' => array(
-							'type'  => 'typography',
-							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),

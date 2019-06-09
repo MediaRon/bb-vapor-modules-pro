@@ -7,6 +7,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> h4,
 .fl-node-<?php echo esc_html( $id ); ?> h5,
 .fl-node-<?php echo esc_html( $id ); ?> h6 {
+	position: relative;
 	display: <?php echo 'inline' === $settings->headline_style ? 'inline-block' : 'block'; ?>;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->headline_color ) ); ?>
 }
@@ -78,3 +79,19 @@ if ( 'normal' === $settings->headline_select ) {
 		)
 	);
 }
+// Line Separator.
+if ( 'line' === $settings->separator_type ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h1:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h2:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h3:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h4:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h5:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h6:after {
+		content: '';
+		display: block;
+		width: 100%;
+		border-bottom: <?php echo absint( $settings->line_height ); ?>px <?php echo esc_html( $settings->line_type ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->line_color ) ); ?>;
+	}
+	<?php
+endif;
