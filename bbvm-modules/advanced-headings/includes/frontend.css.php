@@ -190,14 +190,25 @@ if ( 'line_icon' === $settings->separator_type || 'line_photo' === $settings->se
 		margin-left: 20px;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .line-content {
-		color: #<?php echo esc_html( $settings->content_color ); ?>;
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->line_content_color ) ); ?>;
 	}
 	<?php
 	FLBuilderCSS::typography_field_rule(
 		array(
 			'settings'     => $settings,
-			'setting_name' => 'content_typography',
+			'setting_name' => 'line_content_typography',
 			'selector'     => ".fl-node-$id .line-content",
 		)
 	);
+endif;
+if ( 'photo' === $settings->separator_type ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder .bbvm-advanced-headline:after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: <?php echo absint( $settings->line_height ); ?>px;
+		background: url(<?php echo esc_url( $settings->background_photo_src ); ?>) repeat-x;
+	}
+	<?php
 endif;

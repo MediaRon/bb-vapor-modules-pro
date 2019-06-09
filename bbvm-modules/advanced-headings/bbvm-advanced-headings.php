@@ -203,7 +203,7 @@ FLBuilder::register_module(
 				'description' => array( // Section
 					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'separator_type'        => array(
+						'separator_type'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Separator Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -246,24 +246,32 @@ FLBuilder::register_module(
 										'line_height',
 										'photo_style',
 										'photo_size',
+										'line_color',
 									),
 								),
 								'line_content' => array(
 									'fields' => array(
+										'line_color',
 										'line_content',
 										'line_content_typography',
 										'line_height',
 										'line_content_color',
 									),
 								),
+								'photo' => array(
+									'fields' => array(
+										'background_photo',
+										'line_height',
+									),
+								),
 							),
 							'default' => 'line',
 						),
-						'style_photo'           => array(
+						'style_photo'             => array(
 							'type'  => 'photo',
 							'label' => __( 'Select a photo', 'bb-vapor-modules-pro' ),
 						),
-						'photo_style'           => array(
+						'photo_style'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a photo style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -272,29 +280,50 @@ FLBuilder::register_module(
 								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'photo_size'            => array(
+						'photo_size'              => array(
 							'type'        => 'unit',
 							'label'       => __( 'Enter a photo size', 'bb-vapor-modules-pro' ),
 							'responsive'  => true,
 							'description' => 'px',
 							'default'     => '50',
 						),
-						'line_height'           => array(
+						'background_photo'        => array(
+							'type'  => 'photo',
+							'label' => __( 'Background Photo', 'bb-vapor-modules-pro' ),
+						),
+						'line_content' => array(
+							'type'    => 'text',
+							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
+							'default' => '***',
+						),
+						'line_content_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'line_content_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Separator Content Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'line_height'             => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height of Separator', 'bb-vapor-modules-pro' ),
 							'default'     => '2',
 							'description' => 'px',
 						),
-						'icon'                  => array(
+						'icon'                    => array(
 							'type'  => 'icon',
 							'label' => __( 'Enter an icon', 'bb-vapor-modules-pro' ),
 						),
-						'icon_size'             => array(
+						'icon_size'               => array(
 							'type'    => 'unit',
 							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
 							'default' => '24',
 						),
-						'icon_style'            => array(
+						'icon_style'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Select an icon style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -303,26 +332,26 @@ FLBuilder::register_module(
 								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'icon_color'            => array(
+						'icon_color'              => array(
 							'type'       => 'color',
 							'label'      => __( 'Enter an icon color', 'bb-vapor-modules-pro' ),
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'icon_background_color' => array(
+						'icon_background_color'   => array(
 							'type'       => 'color',
 							'label'      => __( 'Enter a background color', 'bb-vapor-modules-pro' ),
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'line_radius'           => array(
+						'line_radius'             => array(
 							'type'    => 'unit',
 							'label'   => __( 'Radius of Separator', 'bb-vapor-modules-pro' ),
 							'default' => '5',
 						),
-						'line_type'             => array(
+						'line_type'               => array(
 							'type'    => 'select',
 							'label'   => __( 'Line Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -333,7 +362,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'solid',
 						),
-						'line_color'            => array(
+						'line_color'              => array(
 							'type'       => 'color',
 							'label'      => __( 'Line Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,

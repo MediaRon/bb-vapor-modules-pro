@@ -49,8 +49,8 @@
 				$styles[] = 'border-radius: 100%';
 			}
 			printf( '<img src="%s" style="%s" />', esc_url( $settings->style_photo_src ), esc_attr( implode( ';', $styles ) ) );
-		} elseif ( 'line_content' === $settings->style ) {
-			printf( '<div class="line-content">%s</div>', wp_kses_post( $settings->content ) );
+		} elseif ( 'line_content' === $settings->separator_type ) {
+			printf( '<div class="line-content">%s</div>', wp_kses_post( $settings->line_content ) );
 		}
 		?>
 		</div>
