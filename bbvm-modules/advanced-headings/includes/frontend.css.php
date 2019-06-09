@@ -127,3 +127,77 @@ if ( 'line_radius' === $settings->separator_type ) :
 	}
 	<?php
 endif;
+
+// Icon/Photo/Content
+if ( 'photo' === $settings->separator_type ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-advanced-separator {
+		height: <?php echo absint( $settings->separator_height ); ?>px;
+		width: 100%;
+		background: url(<?php echo esc_url( $settings->photo_src ); ?>) <?php echo esc_html( $settings->repeat ); ?>;
+	}
+	<?php
+}
+if ( 'line_icon' === $settings->separator_type || 'line_photo' === $settings->separator_type || 'line_content' === $settings->separator_type ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator-wrapper {
+		display: flex;
+		align-items: center;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator-wrapper .fl-bbvm-advanced-separator-line {
+		flex-grow: 1;
+	}
+	<?php
+	FLBuilderCSS::rule(
+		array(
+			'selector' => ".fl-node-$id .fl-bbvm-advanced-separator-wrapper img",
+			'media'    => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+			'props'    => array(
+				'height' => $settings->photo_size . 'px',
+				'width'  => $settings->photo_size . 'px',
+			),
+		)
+	);
+	FLBuilderCSS::rule(
+		array(
+			'selector' => ".fl-node-$id .fl-bbvm-advanced-separator-wrapper img",
+			'media'    => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+			'props'    => array(
+				'height' => $settings->photo_size_medium . 'px',
+				'width'  => $settings->photo_size_medium . 'px',
+			),
+		)
+	);
+	FLBuilderCSS::rule(
+		array(
+			'selector' => ".fl-node-$id .fl-bbvm-advanced-separator-wrapper img",
+			'media'    => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+			'props'    => array(
+				'height' => $settings->photo_size_responsive . 'px',
+				'width'  => $settings->photo_size_responsive . 'px',
+			),
+		)
+	);
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator-wrapper img {
+		width: 50px;
+		height: 50px;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator-wrapper .fl-bbvm-advanced-separator-line:first-of-type {
+		margin-right: 20px;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator-wrapper .fl-bbvm-advanced-separator-line:last-of-type {
+		margin-left: 20px;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .line-content {
+		color: #<?php echo esc_html( $settings->content_color ); ?>;
+	}
+	<?php
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'content_typography',
+			'selector'     => ".fl-node-$id .line-content",
+		)
+	);
+endif;

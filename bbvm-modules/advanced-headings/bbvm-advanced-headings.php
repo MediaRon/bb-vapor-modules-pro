@@ -231,6 +231,7 @@ FLBuilder::register_module(
 								),
 								'line_icon'    => array(
 									'fields' => array(
+										'line_color',
 										'line_height',
 										'icon',
 										'icon_size',
