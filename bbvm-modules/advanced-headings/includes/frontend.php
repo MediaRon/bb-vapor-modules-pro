@@ -2,7 +2,7 @@
 	<?php
 	echo sprintf( '<%s class="headline-normal">', esc_html( $settings->headline_tag ) );
 	if ( 'normal' === $settings->headline_select ) {
-		echo sprintf( '<span">%s</span>', esc_html( $settings->headline ) );
+		echo sprintf( '<span>%s</span>', esc_html( $settings->headline ) );
 	} else {
 		$bbvm_count = 0;
 		foreach ( $settings->headlines as $headline ) {
