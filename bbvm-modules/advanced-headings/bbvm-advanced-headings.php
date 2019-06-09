@@ -238,6 +238,7 @@ FLBuilder::register_module(
 								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
 								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
+								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'solid',
 						),

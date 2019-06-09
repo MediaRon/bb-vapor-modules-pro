@@ -80,7 +80,7 @@ if ( 'normal' === $settings->headline_select ) {
 	);
 }
 // Line Separator.
-if ( 'line' === $settings->separator_type ) :
+if ( 'line' === $settings->separator_type && 'double' !== $settings->line_type ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h1:after,
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h2:after,
@@ -92,6 +92,44 @@ if ( 'line' === $settings->separator_type ) :
 		display: block;
 		width: 100%;
 		border-bottom: <?php echo absint( $settings->line_height ); ?>px <?php echo esc_html( $settings->line_type ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->line_color ) ); ?>;
+	}
+	<?php
+endif;
+if ( 'line' === $settings->separator_type && 'double' === $settings->line_type ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h1,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h2,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h3,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h4,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h5,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h6 {
+		padding-bottom: <?php echo absint( ( $settings->line_height * 2 ) ); ?>px;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h1:before,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h2:before,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h3:before,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h4:before,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h5:before,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h6:before {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		border-bottom: <?php echo absint( $settings->line_height ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->line_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h1:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h2:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h3:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h4:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h5:after,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder h6:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: -10px;
+		width: 100%;
+		border-bottom: <?php echo absint( $settings->line_height ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->line_color ) ); ?>;
 	}
 	<?php
 endif;
