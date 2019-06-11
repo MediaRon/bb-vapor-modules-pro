@@ -80,7 +80,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 // Line Separator.
-if ( 'line' === $settings->separator_type && 'double' !== $settings->line_type ) :
+if ( 'line' === $settings->separator_type && 'double' !== $settings->line_type && 'yes' === $settings->headline_separator ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder .bbvm-advanced-headline:after {
 		content: '';

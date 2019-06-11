@@ -71,6 +71,10 @@ FLBuilder::register_module(
 							),
 							'default' => 'h2',
 						),
+						'headline_link'        => array(
+							'type'  => 'link',
+							'label' => __( 'Headline Link', 'mediaron-bb-modules' ),
+						),
 						'headline_select'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Headline Style', 'bb-vapor-modules-pro' ),
