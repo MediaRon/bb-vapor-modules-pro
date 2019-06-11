@@ -50,8 +50,46 @@ FLBuilder::register_module('BBVapor_Soliloquy_Dynamic_Module', array(
 						'action' => 'fl_as_posts',
 						'data' => 'product',
 						'limit' => 1
-					)
-				)
+					),
+					'enable_thumbnails' => array(
+						'type'    => 'select',
+						'label'   => __( 'Enable Thumbnails', 'bb-vapor-modules-pro' ),
+						'options' => array(
+							'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+						),
+						'default' => 'no',
+						'toggle'  => array(
+							'yes' => array(
+								'fields' => array(
+									'thumb_width',
+									'thumb_height',
+									'thumb_margin',
+								),
+							),
+						),
+					),
+					'thumb_width' => array(
+						'type'    => 'unit',
+						'label'   => __( 'Thumbnail Width', 'bb-vapor-modules' ),
+						'default' => 140,
+					),
+					'thumb_height' => array(
+						'type'    => 'unit',
+						'label'   => __( 'Thumbnail Height', 'bb-vapor-modules' ),
+						'default' => 140,
+					),
+					'thumb_margin' => array(
+						'type'    => 'unit',
+						'label'   => __( 'Thumbnail Margin', 'bb-vapor-modules' ),
+						'default' => 20,
+					),
+					'thumb_num' => array(
+						'type'    => 'unit',
+						'label'   => __( 'Number of Thumbnails', 'bb-vapor-modules' ),
+						'default' => 4,
+					),
+				),
 			),
 		)
 	),

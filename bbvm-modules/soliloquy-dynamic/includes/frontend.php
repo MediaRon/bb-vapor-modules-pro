@@ -10,12 +10,25 @@
 					$image_ids[] = $image['id'];
 				}
 				$image_string = implode(',', $image_ids );
-				soliloquy_dynamic( array(
-					'preloader'           => 'true',
-					'animate'             => 'false',
-					'id'                  => 'acf-images',
-					'images'              => $image_string,
-				) );
+
+				$args = array(
+					'preloader' => 'true',
+					'animate'   => 'false',
+					'id'        => 'acf-images',
+					'images'    => $image_string,
+				);
+				if ( 'yes' === $settings->enable_thumbnails ) {
+					$args['thumbnails'] = true;
+					$args['thumbnails_width']  = $settings->thumb_width;
+					$args['thumbnails_height']  = $settings->thumb_height;
+					$args['thumbnails_margin'] = $settings->thumb_margin;
+					$args['thumbnails_min']    = $settings->thumb_num;
+				} else {
+					$args['thumbnails'] = false;
+				}
+				soliloquy_dynamic(
+					$args
+				);
 			} else {
 				echo '<p>' . __( 'No images found.', 'bb-vapor-modules-pro' ) . '</p>';
 			}
@@ -34,12 +47,25 @@
 					$image_ids[] = $attachment_id;
 				}
 				$image_string = implode(',', $image_ids );
-				soliloquy_dynamic( array(
-					'preloader'           => 'true',
-					'animate'             => 'false',
-					'id'                  => 'woocommerce-images',
-					'images'              => $image_string,
-				) );
+
+				$args = array(
+					'preloader' => 'true',
+					'animate'   => 'false',
+					'id'        => 'woocommerce-images',
+					'images'    => $image_string,
+				);
+				if ( 'yes' === $settings->enable_thumbnails ) {
+					$args['thumbnails']        = 'true';
+					$args['thumbnails_width']  = $settings->thumb_width;
+					$args['thumbnails_height']  = $settings->thumb_height;
+					$args['thumbnails_margin'] = $settings->thumb_margin;
+					$args['thumbnails_min']    = $settings->thumb_num;
+				} else {
+					$args['thumbnails'] = false;
+				}
+				soliloquy_dynamic(
+					$args
+				);
 			} else {
 				echo '<p>' . __( 'No images found.', 'bb-vapor-modules-pro' ) . '</p>';
 			}
