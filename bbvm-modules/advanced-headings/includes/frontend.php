@@ -1,6 +1,9 @@
 <div class="fl-bbvm-advanced-headings-for-beaverbuilder">
 	<?php
 	echo sprintf( '<%s class="bbvm-advanced-headline">', esc_html( $settings->headline_tag ) );
+	if ( ! empty( $settings->headline_link ) ) {
+		echo sprintf( '<a href="%s">', esc_url( $settings->headline_link ) );
+	}
 	if ( 'normal' === $settings->headline_select ) {
 		echo sprintf( '<span>%s</span>', esc_html( $settings->headline ) );
 	} else {
@@ -11,6 +14,9 @@
 			echo '</span>';
 			$bbvm_count++;
 		}
+	}
+	if ( ! empty( $settings->headline_link ) ) {
+		echo '</a>';
 	}
 	echo sprintf( '</%s>', esc_html( $settings->headline_tag ) );
 	if ( 'line_icon' === $settings->separator_type || 'line_photo' === $settings->separator_type || 'line_content' === $settings->separator_type ) :
