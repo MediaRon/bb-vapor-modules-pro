@@ -2,24 +2,21 @@
 class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
 	public function __construct()
 	{
-		parent::__construct(array(
-			'name'            => __( 'Vegas Full-width Slideshow', 'bb-vapor-modules-pro' ),
-			'description'     => __( 'Vegas Full-width Slideshow for Beaver Builder', 'bb-vapor-modules-pro' ),
-			'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-			'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
-			'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/vegas-slideshow/',
-			'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/vegas-slideshow/',
-			'editor_export'   => true, // Defaults to true and can be omitted.
-			'enabled'         => true, // Defaults to true and can be omitted.
-			'partial_refresh' => false, // Defaults to false and can be omitted.
-		));
-	}
-
-	public function enqueue_scripts() {
-		if( $this->settings && ! empty( $this->settings->images ) ) {
-			wp_enqueue_script( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
-			wp_enqueue_style( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-		}
+		parent::__construct(
+			array(
+				'name'            => __( 'Vegas Full-width Slideshow', 'bb-vapor-modules-pro' ),
+				'description'     => __( 'Vegas Full-width Slideshow for Beaver Builder', 'bb-vapor-modules-pro' ),
+				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/vegas-slideshow/',
+				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/vegas-slideshow/',
+				'editor_export'   => true, // Defaults to true and can be omitted.
+				'enabled'         => true, // Defaults to true and can be omitted.
+				'partial_refresh' => false, // Defaults to false and can be omitted.
+			)
+		);
+		$this->add_js( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+		$this->add_css( 'vegas', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/vegas/vegas.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 
