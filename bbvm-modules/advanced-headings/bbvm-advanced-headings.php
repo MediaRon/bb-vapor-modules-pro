@@ -157,6 +157,11 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '000000',
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline span',
+								'property' => 'color',
+							),
 						),
 						'headline_padding'     => array(
 							'type'       => 'dimension',

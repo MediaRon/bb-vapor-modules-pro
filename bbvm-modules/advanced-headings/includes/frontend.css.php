@@ -1,15 +1,12 @@
 <?php
 // Headline block or inline
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> h1,
-.fl-node-<?php echo esc_html( $id ); ?> h2,
-.fl-node-<?php echo esc_html( $id ); ?> h3,
-.fl-node-<?php echo esc_html( $id ); ?> h4,
-.fl-node-<?php echo esc_html( $id ); ?> h5,
-.fl-node-<?php echo esc_html( $id ); ?> h6 {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline {
 	position: relative;
 	display: <?php echo 'inline' === $settings->headline_style ? 'inline-block' : 'block'; ?>;
-	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->headline_color ) ); ?>
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline span {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->headline_color ) ); ?>;
 }
 <?php
 // Headline Description
