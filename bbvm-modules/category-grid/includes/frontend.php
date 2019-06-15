@@ -34,9 +34,14 @@
 	endif;
 	if ( ! empty( $terms ) ) {
 		echo '<ul>';
+		$bg_count = 0;
 		foreach ( $terms as $bbvm_term ) {
 			?>
-			<li>
+			<li
+				<?php
+				// test
+				?>
+			>
 				<?php
 				if ( 'yes' === $settings->link_category ) {
 					printf( '<a class="link-full" href="%s">', esc_url( get_term_link( $bbvm_term ) ) );
