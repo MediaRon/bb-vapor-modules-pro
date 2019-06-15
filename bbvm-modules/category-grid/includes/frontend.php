@@ -32,6 +32,27 @@
 			}
 		}
 	endif;
+	if ( ! empty( $terms ) ) {
+		echo '<ul>';
+		foreach ( $terms as $bbvm_term ) {
+			?>
+			<li>
+				<?php
+				if ( 'yes' === $settings->link_category ) {
+					printf( '<a class="link-full" href="%s">', esc_url( get_term_link( $bbvm_term ) ) );
+				}
+				?>
+				<?php echo esc_html( $bbvm_term->name ); ?>
+				<?php
+				if ( 'yes' === $settings->link_category ) {
+					echo '</a>';
+				}
+				?>
+			</li>
+			<?php
+		}
+		echo '</ul>';
+	}
 	echo '<pre>' . print_r( $terms, true ) . '</pre>';
 	?>
 	<?php
