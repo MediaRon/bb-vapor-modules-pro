@@ -9,8 +9,30 @@
 				'number'   => $settings->term_number,
 			)
 		);
-		echo '<pre>' . print_r( $terms, true ) . '</pre>';
+	else :
+		$terms = array();
+		foreach ( $settings as $key => $setting ) {
+			if ( 'custom' === substr( $key, 0, 6 ) ) {
+				preg_match( '/_tax_([-_A-Za-z]+)$/', $key, $bbvm_matches );
+				if ( isset( $bbvm_matches[1] ) ) {
+					$bbvm_taxonomy = $bbvm_matches[1];
+					$terms_array   = explode( ',', $setting );
+					if ( ! empty( $terms_array ) ) {
+						foreach ( $terms_array as $bbvm_term ) {
+							$bbvm_term_result = get_term_by( 'id', $bbvm_term, $bbvm_taxonomy );
+							if ( false === $bbvm_term_result ) {
+								continue;
+							}
+							if ( ! is_wp_error( $bbvm_term_result ) || ! empty( $bbvm_term_result ) ) {
+								$terms[] = $bbvm_term_result;
+							}
+						}
+					}
+				}
+			}
+		}
 	endif;
+	echo '<pre>' . print_r( $terms, true ) . '</pre>';
 	?>
 	<?php
 	echo '<pre>' . print_r( $settings, true ) . '</pre>';

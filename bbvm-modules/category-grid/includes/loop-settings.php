@@ -115,7 +115,7 @@ FLBuilderModel::default_settings(
 
 			foreach ( $taxonomies as $tax_slug => $bbvm_tax ) {
 				FLBuilder::render_settings_field(
-					'custom_tax_' . $slug . '_' . $tax_slug,
+					'custom_term_' . $slug . '_tax_' . $tax_slug,
 					array(
 						'type'   => 'suggest',
 						'action' => 'fl_as_terms',
