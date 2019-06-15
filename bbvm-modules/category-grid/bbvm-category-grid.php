@@ -110,12 +110,6 @@ FLBuilder::register_module(
 				'box' => array(
 					'title'  => __( 'Box Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'inner_margin'        => array(
-							'type'        => 'dimension',
-							'label'       => __( 'Inner Margin', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Recommended margin is 20', 'bb-vapor-modules-pro' ),
-							'responsive'  => true,
-						),
 						'link_category'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Link Entire Container to Category', 'bb-vapor-modules-pro' ),
@@ -139,27 +133,23 @@ FLBuilder::register_module(
 							'type'    => 'select',
 							'label'   => __( 'Select Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'inner_border' => __( 'Inner Border', 'bb-vapor-modules-pro' ),
+								'outer_border' => __( 'Outer Border', 'bb-vapor-modules-pro' ),
 								'no_border'    => __( 'No Border', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no_border',
 							'toggle'  => array(
-								'inner_border' => array(
+								'outer_border' => array(
 									'fields' => array(
-										'border_width',
-										'border_color',
-										'border_color_hover',
+										'outer_border',
 									),
 								),
 							),
 						),
-						'border_width'        => array(
-							'type'        => 'unit',
-							'label'       => __( 'Border Width', 'bb-vapor-modules-pro' ),
-							'description' => 'px',
-							'default'     => '2',
+						'outer_border'        => array(
+							'type'  => 'border',
+							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
 						),
-						'border_color'        => array(
+						/*'border_color'        => array(
 							'type'    => 'color',
 							'label'   => __( 'Border Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
@@ -168,7 +158,7 @@ FLBuilder::register_module(
 							'type'    => 'color',
 							'label'   => __( 'Border Hover Color', 'bb-vapor-modules-pro' ),
 							'default' => '333333',
-						),
+						),*/
 						'category_padding'    => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Category Padding', 'bb-vapor-modules-pro' ),
