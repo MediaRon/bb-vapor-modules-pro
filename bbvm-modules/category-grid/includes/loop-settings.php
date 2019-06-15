@@ -13,14 +13,15 @@ FLBuilderModel::default_settings(
 <div id="fl-builder-settings-section-source" class="fl-loop-data-source-select fl-builder-settings-section">
 	<table class="fl-form-table">
 	<?php
-	$tax_types = array();
+	$tax_types        = array();
+	$taxonomies_array = array();
 	foreach ( FLBuilderLoop::post_types() as $slug => $bbvm_post_type ) {
 		$taxonomies = FLBuilderLoop::taxonomies( $slug );
 		foreach ( $taxonomies as $tax_slug => $bbvm_tax ) {
-			$tax_types[] = 'custom_tax_' . $slug . '_' . $tax_slug;
+			$tax_types[]                   = 'custom_tax_' . $slug . '_' . $tax_slug;
+			$taxonomies_array[ $tax_slug ] = $bbvm_tax->label;
 		}
 	}
-
 	// Data Source.
 	FLBuilder::render_settings_field(
 		'category_options',
@@ -34,12 +35,26 @@ FLBuilderModel::default_settings(
 			),
 			'toggle'  => array(
 				'taxonomy' => array(
-					'fields' => array( 'taxonomy_select' ),
+					'fields' => array(
+						'taxonomy_select',
+					),
 				),
-				'custom' => array(
+				'custom'   => array(
 					'fields' => $tax_types,
 				),
 			),
+		),
+		$settings
+	);
+
+	// Data Source.
+	FLBuilder::render_settings_field(
+		'taxonomy_select',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'Select a Taxonomy', 'bb-vapor-modules-pro' ),
+			'default' => 'taxonomy',
+			'options' => $taxonomies_array,
 		),
 		$settings
 	);
