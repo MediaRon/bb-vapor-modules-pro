@@ -42,7 +42,9 @@
 					printf( '<a class="link-full" href="%s">', esc_url( get_term_link( $bbvm_term ) ) );
 				}
 				?>
-				<?php echo esc_html( $bbvm_term->name ); ?>
+				<?php
+				printf( '<div class="bbvm-category">%s</div>', esc_html( $bbvm_term->name ) );
+				?>
 				<?php
 				if ( 'yes' === $settings->link_category ) {
 					echo '</a>';
