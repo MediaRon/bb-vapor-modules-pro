@@ -69,6 +69,7 @@ FLBuilder::register_module(
 							'type'        => 'multiple-photos',
 							'label'       => __( 'Enter Your Gallery Images Here', 'bb-vapor-modules-pro' ),
 							'description' => __( 'Each category will be given a ascending gallery image, and loop back if there are not enough images', 'bb-vapor-modules-pro' ),
+							'show_remove' => true,
 						),
 					),
 				),

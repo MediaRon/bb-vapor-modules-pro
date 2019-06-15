@@ -35,7 +35,7 @@
 	if ( ! empty( $terms ) ) {
 		echo '<ul>';
 		$bg_count = 0;
-		$settings->category_gallery = array_values( $settings->category_gallery );
+		$settings->category_gallery = array_values( is_array( $settings->category_gallery ) ? $settings->category_gallery : array() );
 		foreach ( $terms as $bbvm_term ) {
 			?>
 			<li
@@ -54,16 +54,22 @@
 							$image_url = $image[0];
 							echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
 						}
+					} else {
+						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 					}
 				} elseif ( 'acf' === $settings->image_type ) {
-					$acf_field         = $settings->acf_field;
-					$background_array  = get_field(
+					$acf_field        = $settings->acf_field;
+					$background_array = get_field(
 						$acf_field,
 						$bbvm_term
 					);
-					$image             = wp_get_attachment_image_src( $background_array['id'], 'large', false );
-							$image_url = $image[0];
-							echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
+					if ( is_array( $background_array ) && ! empty( $background_array ) ) {
+						$image     = wp_get_attachment_image_src( $background_array['id'], 'large', false );
+						$image_url = $image[0];
+						echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
+					} else {
+						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
+					}
 				}
 				?>
 			>
