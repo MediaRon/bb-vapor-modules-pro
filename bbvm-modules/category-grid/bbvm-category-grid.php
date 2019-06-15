@@ -88,12 +88,6 @@ FLBuilder::register_module(
 								'6' => '6',
 							),
 						),
-						'min_width'    => array(
-							'type'       => 'unit',
-							'label'      => __( 'Minimum Width of the Category Box', 'bb-vapor-modules-pro' ),
-							'default'    => '300',
-							'responsive' => true,
-						),
 						'min_height'   => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Height of the Category Box', 'bb-vapor-modules-pro' ),
@@ -149,16 +143,6 @@ FLBuilder::register_module(
 							'type'  => 'border',
 							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
 						),
-						/*'border_color'        => array(
-							'type'    => 'color',
-							'label'   => __( 'Border Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-						),
-						'border_color_hover'  => array(
-							'type'    => 'color',
-							'label'   => __( 'Border Hover Color', 'bb-vapor-modules-pro' ),
-							'default' => '333333',
-						),*/
 						'category_padding'    => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Category Padding', 'bb-vapor-modules-pro' ),

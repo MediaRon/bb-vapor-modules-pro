@@ -1,3 +1,4 @@
+<?php /* Setup Container */ ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder ul {
 	display: flex;
 	flex-direction: row;
@@ -20,6 +21,34 @@
 
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li {
 	display: flex;
-	font-size: 18px;
 	justify-content: center;
 }
+<?php
+// Setup Min Height.
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li",
+		'media'    => 'default',
+		'props'    => array(
+			'min-height' => $settings->min_height . 'px',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li",
+		'media'    => 'medium',
+		'props'    => array(
+			'min-height' => $settings->min_height_medium . 'px',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li",
+		'media'    => 'responsive',
+		'props'    => array(
+			'min-height' => $settings->min_height_responsive . 'px',
+		),
+	)
+);
