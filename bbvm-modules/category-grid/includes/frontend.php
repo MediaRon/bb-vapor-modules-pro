@@ -33,13 +33,30 @@
 		}
 	endif;
 	if ( ! empty( $terms ) ) {
+		echo '<pre>' . print_r( $settings->category_gallery, true ) . '</pre>';
 		echo '<ul>';
 		$bg_count = 0;
+		$settings->category_gallery = array_values( $settings->category_gallery );
 		foreach ( $terms as $bbvm_term ) {
 			?>
 			<li
 				<?php
-				// test
+
+				if ( 'gallery' === $settings->image_type ) {
+					if ( ! empty( $settings->category_gallery ) ) {
+						$gallery_items = $settings->category_gallery;
+						if ( ! isset( $gallery_items[ $bg_count ] ) ) {
+							$bg_count = 0;
+						}
+						if ( isset( $gallery_items[ $bg_count ] ) ) {
+							$attachment_info = $gallery_items[ $bg_count ];
+							$bg_count++;
+							$image     = wp_get_attachment_image_src( $attachment_info, 'large', false );
+							$image_url = $image[0];
+							echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
+						}
+					}
+				}
 				?>
 			>
 				<?php
