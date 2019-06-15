@@ -28,11 +28,12 @@ FLBuilder::register_module(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
 			'sections' => array( // Tab Sections
 				'image' => array( // Section
-					'title'     => __( 'Image Selection', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Image Selection', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'image_type' => array(
-							'type'   => 'select',
+						'image_type'       => array(
+							'type'    => 'select',
 							'label'   => __( 'Where are your images coming from?', 'bb-vapor-modules-pro' ),
+							'default' => 'gallery',
 							'options' => array(
 								'acf'     => __( 'Advanced Custom Fields', 'bb-vapor-modules-pro' ),
 								'custom'  => __( 'Category Meta', 'bb-vapor-modules-pro' ),
@@ -56,26 +57,59 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'default'    => 'gallery',
+						'acf_field'        => array(
+							'type'  => 'text',
+							'label' => __( 'Enter Your ACF Custom Field Name Here', 'bb-vapor-modules-pro' ),
+						),
+						'meta_key'         => array(
+							'type'  => 'text',
+							'label' => __( 'Enter Your Custom Category Meta Name Here', 'bb-vapor-modules-pro' ),
+						),
+						'category_gallery' => array(
+							'type'        => 'multiple-photos',
+							'label'       => __( 'Enter Your Gallery Images Here', 'bb-vapor-modules-pro' ),
+							'description' => __( 'Each category will be given a ascending gallery image, and loop back if there are not enough images', 'bb-vapor-modules-pro' ),
+						),
 					),
-					'acf_field' => array(
-						'type'  => 'text',
-						'label' => __( 'Enter Your ACF Custom Field Name Here', 'bb-vapor-modules-pro' ),
-					),
-					'custom'    => array(
-						'type'  => 'text',
-						'label' => __( 'Enter Your Custom Category Meta Name Here', 'bb-vapor-modules-pro' ),
-					),
-					'gallery'   => array(
-						'type'        => 'gallery',
-						'label'       => __( 'Enter Your Gallery Images Here', 'bb-vapor-modules-pro' ),
-						'description' => __( 'Each category will be given a descending gallery image, and loop back if there are not enough images', 'bb-vapor-modules-pro' ),
-					),
-
 				),
-				'box'   => array( // Section
-					'title'  => __( 'Box Options', 'bb-vapor-modules-pro' ), // Section Title
+				'grid'  => array( // Section
+					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
+						'grid_columns' => array(
+							'type'    => 'select',
+							'label'   => __( 'Number of Columns?', 'bb-vapor-modules-pro' ),
+							'default' => '3',
+							'options' => array(
+								'1' => '1',
+								'2' => '2',
+								'3' => '3',
+								'4' => '4',
+								'5' => '5',
+								'6' => '6',
+							),
+						),
+						'min_width'    => array(
+							'type'       => 'unit',
+							'label'      => __( 'Minimum Width of the Category Box', 'bb-vapor-modules-pro' ),
+							'default'    => '300',
+							'responsive' => true,
+						),
+						'min_height'   => array(
+							'type'       => 'unit',
+							'label'      => __( 'Minimum Height of the Category Box', 'bb-vapor-modules-pro' ),
+							'default'    => '400',
+							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'box'      => array(
+			'title'    => __( 'Box Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'box' => array(
+					'title'  => __( 'Box Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'inner_margin'        => array(
 							'type'        => 'dimension',
 							'label'       => __( 'Inner Margin', 'bb-vapor-modules-pro' ),
@@ -94,7 +128,7 @@ FLBuilder::register_module(
 						'category_text_color' => array(
 							'type'    => 'color',
 							'label'   => __( 'Category Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
+							'default' => 'FFFFFF',
 						),
 						'category_typography' => array(
 							'type'       => 'typography',
@@ -195,7 +229,7 @@ FLBuilder::register_module(
 						'button_text'               => array(
 							'type'    => 'text',
 							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),
-							'default' => __( 'View', 'bb-vapor-modules-pro' ),
+							'default' => __( 'View Category', 'bb-vapor-modules-pro' ),
 						),
 						'button_background'         => array(
 							'type'       => 'color',

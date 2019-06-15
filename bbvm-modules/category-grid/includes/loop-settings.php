@@ -37,6 +37,9 @@ FLBuilderModel::default_settings(
 				'taxonomy' => array(
 					'fields' => array(
 						'taxonomy_select',
+						'term_orderby',
+						'term_order',
+						'term_number',
 					),
 				),
 				'custom'   => array(
@@ -55,6 +58,44 @@ FLBuilderModel::default_settings(
 			'label'   => __( 'Select a Taxonomy', 'bb-vapor-modules-pro' ),
 			'default' => 'taxonomy',
 			'options' => $taxonomies_array,
+		),
+		$settings
+	);
+
+	FLBuilder::render_settings_field(
+		'term_orderby',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'Order By', 'bb-vapor-modules-pro' ),
+			'default' => 'name',
+			'options' => array(
+				'name' => __( 'Term Name', 'bb-vapor-modules-pro' ),
+				'slug' => __( 'Term Slug', 'bb-vapor-modules-pro' ),
+			),
+		),
+		$settings
+	);
+
+	FLBuilder::render_settings_field(
+		'term_order',
+		array(
+			'type'    => 'select',
+			'label'   => __( 'Order', 'bb-vapor-modules-pro' ),
+			'default' => 'ASC',
+			'options' => array(
+				'ASC'  => __( 'A-Z', 'bb-vapor-modules-pro' ),
+				'DESC' => __( 'Z-A', 'bb-vapor-modules-pro' ),
+			),
+		),
+		$settings
+	);
+
+	FLBuilder::render_settings_field(
+		'term_number',
+		array(
+			'type'    => 'unit',
+			'label'   => __( 'Number of Terms to Retrieve', 'bb-vapor-modules-pro' ),
+			'default' => '3',
 		),
 		$settings
 	);
