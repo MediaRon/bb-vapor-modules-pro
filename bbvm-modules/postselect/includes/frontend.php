@@ -266,6 +266,6 @@ $block_content = sprintf(
 	$pagination
 );
 echo wp_kses_post( $block_content );
-wp_reset_query();
+wp_reset_postdata();
 ?>
 </div>
