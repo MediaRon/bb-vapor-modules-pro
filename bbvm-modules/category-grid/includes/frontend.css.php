@@ -41,6 +41,27 @@
 }
 <?php
 // Setup Category.
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'category_typography',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .bbvm-category",
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'category_padding',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .bbvm-category",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'category_padding_top',
+			'padding-right'  => 'category_padding_right',
+			'padding-bottom' => 'category_padding_bottom',
+			'padding-left'   => 'category_padding_left',
+		),
+	)
+);
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .bbvm-category {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->category_text_color ) ); ?>;
@@ -77,7 +98,7 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li",
 		'media'    => 'medium',
 		'props'    => array(
-			'min-height' => $settings->min_height_medium . 'px',
+			'min-height' => absint( $settings->min_height_medium ? $settings->min_height_medium : $settings->min_height ) . 'px',
 		),
 	)
 );
@@ -86,7 +107,7 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li",
 		'media'    => 'responsive',
 		'props'    => array(
-			'min-height' => $settings->min_height_responsive . 'px',
+			'min-height' => absint( $settings->min_height_responsive ? $settings->min_height_responsive : $settings->min_height ) . 'px',
 		),
 	)
 );
@@ -106,7 +127,7 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul",
 		'media'    => 'medium',
 		'props'    => array(
-			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_medium ) . 'px, 1fr))',
+			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_medium ? $settings->min_width_medium : $settings->min_width ) . 'px, 1fr))',
 		),
 	)
 );
@@ -115,7 +136,15 @@ FLBuilderCSS::rule(
 		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul",
 		'media'    => 'responsive',
 		'props'    => array(
-			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_responsive ) . 'px, 1fr))',
+			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_responsive ? $settings->min_width_responsive : $settings->min_width ) . 'px, 1fr))',
 		),
+	)
+);
+// Set up border
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'outer_border',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul li",
 	)
 );
