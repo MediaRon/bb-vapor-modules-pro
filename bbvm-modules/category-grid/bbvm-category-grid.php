@@ -89,6 +89,12 @@ FLBuilder::register_module(
 								'6' => '6',
 							),
 						),
+						'min_width'    => array(
+							'type'       => 'unit',
+							'label'      => __( 'Minimum Width of the Category Column', 'bb-vapor-modules-pro' ),
+							'default'    => '290',
+							'responsive' => true,
+						),
 						'min_height'   => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Height of the Category Box', 'bb-vapor-modules-pro' ),

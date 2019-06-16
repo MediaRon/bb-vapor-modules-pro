@@ -52,3 +52,32 @@ FLBuilderCSS::rule(
 		),
 	)
 );
+
+// Setup Min Width.
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul",
+		'media'    => 'default',
+		'props'    => array(
+			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width ) . 'px, 1fr))',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul",
+		'media'    => 'medium',
+		'props'    => array(
+			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_medium ) . 'px, 1fr))',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul",
+		'media'    => 'responsive',
+		'props'    => array(
+			'grid-template-columns' => 'repeat(auto-fill, minmax(' . absint( $settings->min_width_responsive ) . 'px, 1fr))',
+		),
+	)
+);
