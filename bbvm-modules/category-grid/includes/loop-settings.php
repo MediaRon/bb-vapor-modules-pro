@@ -18,7 +18,7 @@ FLBuilderModel::default_settings(
 	foreach ( FLBuilderLoop::post_types() as $slug => $bbvm_post_type ) {
 		$taxonomies = FLBuilderLoop::taxonomies( $slug );
 		foreach ( $taxonomies as $tax_slug => $bbvm_tax ) {
-			$tax_types[]                   = 'custom_tax_' . $slug . '_' . $tax_slug;
+			$tax_types[]                   = 'custom_term_' . $slug . '_tax_' . $tax_slug;
 			$taxonomies_array[ $tax_slug ] = $bbvm_tax->label;
 		}
 	}
