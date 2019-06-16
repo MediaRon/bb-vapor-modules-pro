@@ -69,6 +69,9 @@ FLBuilderCSS::dimension_field_rule(
 	position: relative;
 	z-index: 5;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover .bbvm-category {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->category_text_color_hover ) ); ?>;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:after {
 	position: absolute;
 	width: 100%;

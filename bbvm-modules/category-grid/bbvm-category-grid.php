@@ -108,9 +108,18 @@ FLBuilder::register_module(
 							'default' => 'no',
 						),
 						'category_text_color' => array(
-							'type'    => 'color',
-							'label'   => __( 'Category Color', 'bb-vapor-modules-pro' ),
-							'default' => 'FFFFFF',
+							'type'       => 'color',
+							'label'      => __( 'Category Color', 'bb-vapor-modules-pro' ),
+							'default'    => 'FFFFFF',
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'category_text_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Category Color on Hover', 'bb-vapor-modules-pro' ),
+							'default'    => 'FFFFFF',
+							'show_reset' => true,
+							'show_alpha' => true,
 						),
 						'category_typography' => array(
 							'type'       => 'typography',
