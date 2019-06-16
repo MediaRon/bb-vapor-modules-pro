@@ -76,26 +76,13 @@ FLBuilder::register_module(
 				'grid'  => array( // Section
 					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'grid_columns' => array(
-							'type'    => 'select',
-							'label'   => __( 'Number of Columns?', 'bb-vapor-modules-pro' ),
-							'default' => '3',
-							'options' => array(
-								'1' => '1',
-								'2' => '2',
-								'3' => '3',
-								'4' => '4',
-								'5' => '5',
-								'6' => '6',
-							),
-						),
-						'min_width'    => array(
+						'min_width'  => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Width of the Category Column', 'bb-vapor-modules-pro' ),
 							'default'    => '290',
 							'responsive' => true,
 						),
-						'min_height'   => array(
+						'min_height' => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Height of the Category Box', 'bb-vapor-modules-pro' ),
 							'default'    => '400',

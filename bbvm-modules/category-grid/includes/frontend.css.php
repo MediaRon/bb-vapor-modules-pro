@@ -22,6 +22,9 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li {
 	display: flex;
 	justify-content: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 <?php
 // Setup Min Height.
