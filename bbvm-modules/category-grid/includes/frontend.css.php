@@ -40,6 +40,28 @@
 	position: relative;
 }
 <?php
+// Setup Category.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .bbvm-category {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->category_text_color ) ); ?>;
+	margin-top: 50px;
+	position: relative;
+	z-index: 5;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:after {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	display: block;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_overlay ) ); ?>;
+	z-index: 1;
+	transition: background-color 0.5s ease;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover:after {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_overlay_hover ) ); ?>;
+}
+<?php
 // Setup Min Height.
 FLBuilderCSS::rule(
 	array(
