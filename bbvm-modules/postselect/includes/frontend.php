@@ -50,7 +50,7 @@ switch ( $settings->orderby ) {
 }
 $paged                   = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $settings->order         = $order;
-$settings->orderby       = $orderby;
+$settings->order_by      = $orderby;
 $settings->paged         = $paged;
 $image_placememt_options = $settings->featured_image_location;
 $image_size              = $settings->featured_thumbnail_size;
