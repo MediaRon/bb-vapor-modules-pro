@@ -3,6 +3,18 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	position: relative;
+}
+
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder ul .link-full {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: ' ';
+	z-index: 100;
 }
 @supports (display: grid) {
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder ul {
@@ -25,6 +37,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: relative;
 }
 <?php
 // Setup Min Height.

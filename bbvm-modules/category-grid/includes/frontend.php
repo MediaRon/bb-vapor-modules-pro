@@ -91,25 +91,16 @@
 			>
 				<?php
 				if ( 'yes' === $settings->link_category ) {
-					printf( '<a class="link-full" href="%s">', esc_url( get_term_link( $bbvm_term ) ) );
+					printf( '<a class="link-full" href="%s"></a>', esc_url( get_term_link( $bbvm_term ) ) );
 				}
 				?>
 				<?php
 				printf( '<div class="bbvm-category">%s</div>', esc_html( $bbvm_term->name ) );
-				?>
-				<?php
-				if ( 'yes' === $settings->link_category ) {
-					echo '</a>';
-				}
 				?>
 			</li>
 			<?php
 		}
 		echo '</ul>';
 	}
-	echo '<pre>' . print_r( $terms, true ) . '</pre>';
-	?>
-	<?php
-	echo '<pre>' . print_r( $settings, true ) . '</pre>';
 	?>
 </div>
