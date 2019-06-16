@@ -1,7 +1,20 @@
 <div class="fl-bbvm-category-grid-for-beaverbuilder">
 	<?php
-	if ( 'taxonomy' === $settings->category_options ) :
+	if ( isset( $settings->category_options ) && 'taxonomy' === $settings->category_options ) :
 		$terms = get_terms(
+			array(
+				'taxonomy' => $settings->taxonomy_select,
+				'orderby'  => $settings->term_orderby,
+				'order'    => $settings->term_order,
+				'number'   => $settings->term_number,
+			)
+		);
+	elseif ( ! isset( $settings->category_options ) ) :
+		$settings->taxonomy_select = 'category';
+		$settings->term_orderby    = 'name';
+		$settings->term_order      = 'ASC';
+		$settings->term_number     = '3';
+		$terms                     = get_terms(
 			array(
 				'taxonomy' => $settings->taxonomy_select,
 				'orderby'  => $settings->term_orderby,
@@ -77,10 +90,19 @@
 						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 					} else {
 						if ( filter_var( $category_meta, FILTER_VALIDATE_INT ) ) {
-							$image     = wp_get_attachment_image_src( $category_meta, 'large', false );
-							$image_url = $image[0];
+							$category_meta = filter_var( $category_meta, FILTER_VALIDATE_INT );
+							$image         = wp_get_attachment_image_src( $category_meta, 'large', false );
+							$image_url     = $image[0];
+						} elseif ( is_array( $category_meta ) ) {
+							if ( isset( $category_meta['ID'] ) ) {
+								$image     = wp_get_attachment_image_src( $category_meta['ID'], 'large', false );
+								$image_url = $image[0];
+							}
 						} else {
 							$image_url = $category_meta;
+						}
+						if ( isset( $image_url ) && empty( $image_url ) ) {
+							$image_url = BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg';
 						}
 						echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
 					}
