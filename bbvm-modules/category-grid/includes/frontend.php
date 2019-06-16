@@ -70,6 +70,22 @@
 					} else {
 						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 					}
+				} elseif ( 'custom' === $settings->image_type ) {
+					$custom        = $settings->meta_key;
+					$category_meta = get_term_meta( $bbvm_term->term_id, $custom, true );
+					if ( empty( $category_meta ) ) {
+						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
+					} else {
+						if ( filter_var( $category_meta, FILTER_VALIDATE_INT ) ) {
+							$image     = wp_get_attachment_image_src( $category_meta, 'large', false );
+							$image_url = $image[0];
+						} else {
+							$image_url = $category_meta;
+						}
+						echo sprintf( ' style="background-image: url(%s);"', esc_url( $image_url ) );
+					}
+				} else {
+					echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 				}
 				?>
 			>
