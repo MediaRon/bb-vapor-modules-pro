@@ -27,6 +27,11 @@ Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to s
 
 == Changelog ==
 
+= 1.1.6 =
+* Adding pods compatibility for custom field type for Category Grid.
+* Fixing PHP errors upon Category Grid module insertion and changing default category shown.
+* Fixing visibility issues with Category Grid module.
+
 = 1.1.5 =
 * Adding Category Grid module.
 * Fixing pagination in the Post Select module.
