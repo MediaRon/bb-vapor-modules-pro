@@ -1,3 +1,5 @@
-# bb-vapor-modules
+# BB Vapor Modules Pro
 
-Vapor Modules for Beaver Builder is a free WordPress add-on for Beaver Builder.
+## Purchase a License
+
+<a href="https://bbvapormodules.pro">Purchase a license for updates and support</a>.
