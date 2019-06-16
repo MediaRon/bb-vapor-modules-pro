@@ -2,4 +2,4 @@
 
 ## Purchase a License
 
-<a href="https://bbvapormodules.pro">Purchase a license for updates and support</a>.
+<a href="https://bbvapormodules.com">Purchase a license for updates and support</a>.
