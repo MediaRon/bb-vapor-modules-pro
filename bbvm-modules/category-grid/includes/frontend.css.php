@@ -33,11 +33,13 @@
 
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	text-align: center;
 }
 <?php
 // Setup Category.
@@ -64,6 +66,7 @@ FLBuilderCSS::dimension_field_rule(
 );
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .bbvm-category {
+	width: 100%;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->category_text_color ) ); ?>;
 	margin-top: 50px;
 	position: relative;
@@ -151,3 +154,27 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul li",
 	)
 );
+// Setup category button
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button {
+	display: block;
+	position: relative;
+	z-index: 5;
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: 30px;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background ) ); ?>;
+	border: <?php echo absint( $settings->button_border_width ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_border_color ) ); ?>;
+	padding: 10px 20px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a:hover, .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover .grid-category-button, .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button:hover {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background_hover ) ); ?>;
+	border: <?php echo absint( $settings->button_border_width ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_border_color_hover ) ); ?>;
+	padding: 10px 20px;
+}

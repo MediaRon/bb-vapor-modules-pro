@@ -97,6 +97,15 @@
 				<?php
 				printf( '<div class="bbvm-category">%s</div>', esc_html( $bbvm_term->name ) );
 				?>
+				<?php
+				if ( 'yes' === $settings->show_button ) {
+					?>
+					<div class="grid-category-button">
+						<a href="<?php echo esc_url( get_term_link( $bbvm_term ) ); ?>"><?php echo esc_html( $settings->button_text ); ?></a>
+					</div>
+					<?php
+				}
+				?>
 			</li>
 			<?php
 		}

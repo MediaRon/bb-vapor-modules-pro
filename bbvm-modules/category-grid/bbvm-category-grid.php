@@ -105,7 +105,7 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'no',
+							'default' => 'yes',
 						),
 						'category_text_color' => array(
 							'type'       => 'color',
@@ -213,20 +213,20 @@ FLBuilder::register_module(
 							'label'      => __( 'Button Background', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
-							'default'    => 'rgba(0,0,0,0)',
+							'default'    => 'FFFFFF',
 						),
 						'button_background_hover'   => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Hover', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
-							'default'    => 'rgba(255,255,255,1)',
+							'default'    => '000000',
 						),
 						'button_color'              => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
-							'default'    => 'FFFFFF',
+							'default'    => '000000',
 							'show_alpha' => true,
 						),
 						'button_color_hover'        => array(
@@ -234,7 +234,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Button Text Hover Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
-							'default'    => '000000',
+							'default'    => 'FFFFFF',
 						),
 						'button_border_color'       => array(
 							'type'       => 'color',
