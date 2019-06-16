@@ -27,7 +27,7 @@ if ( 'normal' === $settings->headline_select ) {
 		array(
 			'settings'     => $settings,
 			'setting_name' => 'headline_typography',
-			'selector'     => ".fl-node-$id .bbvm-advanced-headline",
+			'selector'     => ".fl-node-$id .bbvm-advanced-headline,.fl-node-$id .bbvm-advanced-headline a",
 		)
 	);
 } else {
@@ -42,7 +42,7 @@ if ( 'normal' === $settings->headline_select ) {
 			array(
 				'settings'     => $headline,
 				'setting_name' => 'headline_typography',
-				'selector'     => ".fl-node-$id .bbvm-variable-headline-$bbvm_count",
+				'selector'     => ".fl-node-$id .bbvm-variable-headline-$bbvm_count,.fl-node-$id .bbvm-variable-headline-$bbvm_count a",
 			)
 		);
 		$bbvm_count++;
