@@ -165,6 +165,9 @@ FLBuilderCSS::border_field_rule(
 	margin-bottom: 30px;
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background ) ); ?>;
 	border: <?php echo absint( $settings->button_border_width ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a {
+	display: block;
 	padding: 10px 20px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a {
@@ -175,6 +178,27 @@ FLBuilderCSS::border_field_rule(
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover .grid-category-button, .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button:hover {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background_hover ) ); ?>;
-	border: <?php echo absint( $settings->button_border_width ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_border_color_hover ) ); ?>;
-	padding: 10px 20px;
+	border: <?php echo absint( $settings->button_border_width_hover ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_border_color_hover ) ); ?>;
 }
+<?php
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_padding',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'button_padding_top',
+			'padding-right'  => 'button_padding_right',
+			'padding-bottom' => 'button_padding_bottom',
+			'padding-left'   => 'button_padding_left',
+		),
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_typography',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a",
+	)
+);
