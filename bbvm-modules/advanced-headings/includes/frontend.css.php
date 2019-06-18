@@ -52,7 +52,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'headline_margin',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
+		'selector'     => ".fl-node-$id .bbvm-advanced-headline",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'headline_margin_top',
@@ -66,7 +66,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'headline_padding',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
+		'selector'     => ".fl-node-$id .bbvm-advanced-headline",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'headline_padding_top',
