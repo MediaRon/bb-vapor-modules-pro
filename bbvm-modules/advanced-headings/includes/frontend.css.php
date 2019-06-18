@@ -34,7 +34,7 @@ if ( 'normal' === $settings->headline_select ) {
 	$bbvm_count = 0;
 	foreach ( $settings->headlines as $headline ) {
 		?>
-		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?>, .fl-node-<?php echo esc_html( $id ); ?>.bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> a {
 			color: #<?php echo esc_html( $headline->headline_color ); ?>;
 		}
 		<?php
