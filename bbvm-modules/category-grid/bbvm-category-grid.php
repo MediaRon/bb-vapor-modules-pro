@@ -1,4 +1,4 @@
-<?php
+<?php //phpcs:ignore
 class BBVapor_Category_Grid_Module extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
