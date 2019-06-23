@@ -34,7 +34,7 @@ if ( 'normal' === $settings->headline_select ) {
 	$bbvm_count = 0;
 	foreach ( $settings->headlines as $headline ) {
 		?>
-		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?>, .fl-node-<?php echo esc_html( $id ); ?>.bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> a {
 			color: #<?php echo esc_html( $headline->headline_color ); ?>;
 		}
 		<?php
@@ -52,7 +52,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'headline_margin',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
+		'selector'     => ".fl-node-$id .bbvm-advanced-headline",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'headline_margin_top',
@@ -66,7 +66,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'headline_padding',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
+		'selector'     => ".fl-node-$id .bbvm-advanced-headline",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'headline_padding_top',
