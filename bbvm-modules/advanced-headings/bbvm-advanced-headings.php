@@ -1,4 +1,4 @@
-<?php
+<?php //phpcs:ignore
 class BBVapor_Advanced_Headings_Module extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
