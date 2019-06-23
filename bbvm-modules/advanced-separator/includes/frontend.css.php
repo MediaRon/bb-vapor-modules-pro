@@ -36,7 +36,7 @@ if ( 'line_radius' === $settings->style ) {
 if ( 'double' === $settings->style ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-advanced-separator {
-		height: <?php echo absint( $settings->separator_height ); ?>px;
+		height: <?php echo absint( $settings->separator_height + ( $settings->double_margin * 2 ) ); ?>px;
 		width: 100%;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-advanced-separator::before {
