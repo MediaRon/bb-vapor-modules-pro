@@ -1,6 +1,6 @@
 <?php
 if ( isset( $settings->copyright_site_field ) ) :
-	$copyright_html = '';
+	$copyright_html  = '';
 	$copyright_html .= $settings->copyright_symbol . '&nbsp';
 	if ( ! empty( $settings->copyright_start_year ) ) {
 		$copyright_html .= esc_html( $settings->copyright_start_year ) . '&ndash;';
