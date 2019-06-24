@@ -21,7 +21,7 @@ FLBuilder::register_module(
 	'BBVapor_Category_Grid_Module',
 	array(
 		'category' => array(
-			'title' => __( 'Category Selection', 'fl-builder' ),
+			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
 		'options'  => array( // Tab
