@@ -1,6 +1,6 @@
 <div class="fl-bbvm-featured-category-for-beaverbuilder">
 	<?php
-	$selected_tax  = $settings->taxonomy_select;
+	$selected_tax  = isset( $settings->taxonomy_select ) ? $settings->taxonomy_select : '';
 	$selected_term = 'custom_term_tax_' . $selected_tax;
 	if ( isset( $settings->{$selected_term} ) ) {
 		$term_id                     = $settings->{$selected_term};
