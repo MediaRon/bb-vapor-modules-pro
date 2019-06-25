@@ -36,6 +36,7 @@ Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to s
 * Fixed fade effect on Before and After module for mobile users.
 * Fixed animated gradients on Animated Headlines module.
 * Fixed separator being shown in Advanced Headlines even when it's off.
+* Allow variable headlines to be centered in the Advanced Headlines module.
 
 = 1.1.8 =
 * Changing Post Select module to use Beaver Builder's built-in query system.
