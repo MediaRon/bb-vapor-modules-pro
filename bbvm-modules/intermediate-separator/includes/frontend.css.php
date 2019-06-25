@@ -1,4 +1,4 @@
-.fl-node-<?php echo $id; ?> .fl-bbvm-intermediate-separator {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-intermediate-separator {
 	clear: both;
 	margin: 0;
 	padding: 0;
@@ -6,9 +6,9 @@
 	background: transparent;
 }
 <?php
-if( 'content' == $settings->style ) {
+if ( 'content' === $settings->style ) {
 	?>
-	.fl-node-<?php echo $id; ?> .fl-bbvm-intermediate-separator {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-intermediate-separator {
 		background: none;
 		border: 0;
 		margin: 0 0 1.5em;
@@ -16,12 +16,12 @@ if( 'content' == $settings->style ) {
 		padding: 0;
 		position: relative;
 		width: 100%;
-		height: <?php echo isset( $settings->content_height ) ? $settings->content_height : 50; ?>px;
+		height: <?php echo isset( $settings->content_height ) ? absint( $settings->content_height ) : 50; ?>px;
 	}
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator::before {
-		content: '<?php echo $settings->content; ?>';
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator::before {
+		content: '<?php echo wp_kses_post( $settings->content ); ?>';
 		display: inline-block;
-		color: <?php echo (6 == strlen( $settings->color ) ) ? '#' . $settings->color : $settings->color; ?>;
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->color ) ); ?>;
 		font-size: 22px;
 		font-weight: 400;
 		left: 0;
@@ -35,75 +35,77 @@ if( 'content' == $settings->style ) {
 		top: calc(50%);
 	}
 	<?php
-	FLBuilderCSS::typography_field_rule( array(
-		'settings'	=> $settings,
-		'setting_name' 	=> 'content_typography',
-		'selector' 	=> ".fl-node-$id hr.fl-bbvm-intermediate-separator::before",
-	) );
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'content_typography',
+			'selector'     => ".fl-node-$id hr.fl-bbvm-intermediate-separator::before",
+		)
+	);
 }
-if( 'simple' == $settings->style ) {
+if ( 'simple' === $settings->style ) {
 	?>
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator {
-		height: <?php echo $settings->separator_height; ?>px;
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
+		height: <?php echo absint( $settings->separator_height ); ?>px;
 	}
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator::before {
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator::before {
 		content: "";
 		max-width: 260px;
-		height: <?php echo $settings->separator_height; ?>px;
+		height: <?php echo absint( $settings->separator_height ); ?>px;
 		display: block;
 		top: 50%;
 		margin: 0 auto;
-		background-color: <?php echo (6 == strlen( $settings->color ) ) ? '#' . $settings->color : $settings->color; ?>;
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->color ) ); ?>;
 	}
 	<?php
 }
-if( 'full_width' == $settings->style ) {
+if ( 'full_width' == $settings->style ) {
 	?>
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator {
-		height: <?php echo $settings->separator_height; ?>px;
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
+		height: <?php echo absint( $settings->separator_height ); ?>px;
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator::before {
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator::before {
 		content: "";
 		max-width: 100%;
-		height: <?php echo $settings->separator_height; ?>px;
+		height: <?php echo absint( $settings->separator_height ); ?>px;
 		display: block;
 		top: 50%;
 		margin: 0 auto;
-		background-color: <?php echo (6 == strlen( $settings->color ) ) ? '#' . $settings->color : $settings->color; ?>;
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->color ) ); ?>;
 	}
 	<?php
 }
-if( 'double' == $settings->style ) {
+if ( 'double' == $settings->style ) {
 	?>
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator {
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
 		height: auto;
 		width: 100%;
 	}
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator::before {
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator::before {
 		display: block;
 		content: "";
 		width: 100%;
-		height: <?php echo $settings->border_thickness; ?>px;
-		border: <?php echo $settings->border_thickness; ?>px solid <?php echo (6 == strlen( $settings->color ) ) ? '#' . $settings->color : $settings->color; ?>;
-		margin-bottom: <?php echo $settings->double_margin; ?>px;
+		height: <?php echo absint( $settings->border_thickness ); ?>px;
+		border: <?php echo absint( $settings->border_thickness ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->color ) ); ?>;
+		margin-bottom: <?php echo absint( $settings->double_margin ); ?>px;
 	}
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator::after {
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator::after {
 		display: block;
 		content: "";
 		width: 100%;
-		height: <?php echo $settings->border_thickness; ?>px;
-		border: <?php echo $settings->border_thickness; ?>px solid <?php echo (6 == strlen( $settings->color ) ) ? '#' . $settings->color : $settings->color; ?>;
-		margin-top: <?php echo $settings->double_margin; ?>px;
+		height: <?php echo absint( $settings->border_thickness ); ?>px;
+		border: <?php echo absint( $settings->border_thickness ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->color ) ); ?>;
+		margin-top: <?php echo absint( $settings->double_margin ); ?>px;
 	}
 	<?php
 }
-if( 'photo' == $settings->style ) {
+if ( 'photo' === $settings->style ) {
 	?>
-	.fl-node-<?php echo $id; ?> hr.fl-bbvm-intermediate-separator {
-		height: <?php echo $settings->separator_height; ?>px;
+	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
+		height: <?php echo absint( $settings->separator_height ); ?>px;
 		width: 100%;
-		background: url(<?php echo esc_url( $settings->photo_src ); ?>) <?php echo $settings->repeat; ?>;
+		background: url(<?php echo esc_url( $settings->photo_src ); ?>) <?php echo esc_html( $settings->repeat ); ?>;
 	}
 	<?php
 }

@@ -21,3 +21,4 @@ function bbvm_woocommerce_featured_products_show_details_lightbox(product_id) {
 		});
 	}
 }
+<?php

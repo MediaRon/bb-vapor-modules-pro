@@ -22,14 +22,15 @@
 		?>
 		<div class="beforeafter-wrapper">
 			<?php
-			$image = wp_get_attachment_image_src( $settings->image_before, 'large' );
-			$width = $height = 0;
+			$image  = wp_get_attachment_image_src( $settings->image_before, 'large' );
+			$width  = 0;
+			$height = 0;
 			if ( false !== $image ) {
-				$width = $image[1];
+				$width  = $image[1];
 				$height = $image[2];
 			}
 			?>
-			<figure style="width: <?php echo absint( $width ); ?>px; height: <?php echo absint( $height ); ?>px; max-width: 100%;">
+			<figure style="width: <?php echo absint( $width ); ?>px; height: <?php echo absint( $height ); ?>px; max-width: 100%;" class="before-and-after">
 				<div class="before">
 					<img src=<?php echo esc_url( $settings->image_before_src ); ?> />
 					<div class="text-before"><?php echo esc_html( $settings->before_text ); ?></div>
@@ -66,8 +67,9 @@
 		?>
 		<div class="beforeafter-wrapper">
 			<?php
-			$image = wp_get_attachment_image_src( $settings->image_before, 'large' );
-			$width = $height = 0;
+			$image  = wp_get_attachment_image_src( $settings->image_before, 'large' );
+			$width  = 0;
+			$height = 0;
 			if ( false !== $image ) {
 				$width = $image[1];
 				$height = $image[2];
@@ -95,10 +97,11 @@
 		?>
 		<div class="beforeafter-wrapper">
 			<?php
-			$image = wp_get_attachment_image_src( $settings->image_before, 'large' );
-			$width = $height = 0;
+			$image  = wp_get_attachment_image_src( $settings->image_before, 'large' );
+			$width  = 0;
+			$height = 0;
 			if ( false !== $image ) {
-				$width = $image[1];
+				$width  = $image[1];
 				$height = $image[2];
 			}
 			?>

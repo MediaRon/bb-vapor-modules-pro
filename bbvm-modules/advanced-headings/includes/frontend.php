@@ -19,7 +19,7 @@
 		echo '</a>';
 	}
 	echo sprintf( '</%s>', esc_html( $settings->headline_tag ) );
-	if ( 'line_icon' === $settings->separator_type || 'line_photo' === $settings->separator_type || 'line_content' === $settings->separator_type ) :
+	if ( ( 'line_icon' === $settings->separator_type || 'line_photo' === $settings->separator_type || 'line_content' === $settings->separator_type ) && 'yes' === $settings->headline_separator ) :
 		?>
 		<div class="fl-bbvm-advanced-separator-wrapper">
 		<?php

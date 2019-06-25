@@ -1,4 +1,4 @@
-<?php
+<?php //phpcs:ignore
 class BBVapor_Category_Grid_Module extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
@@ -21,7 +21,7 @@ FLBuilder::register_module(
 	'BBVapor_Category_Grid_Module',
 	array(
 		'category' => array(
-			'title' => __( 'Category Selection', 'fl-builder' ),
+			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
 		'options'  => array( // Tab

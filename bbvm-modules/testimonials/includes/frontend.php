@@ -1,38 +1,39 @@
 <div class="fl-bbvm-testimonials-for-beaverbuilder">
 <?php
-if( 'slider' === $settings->testimonial_type ) {
+if ( 'slider' === $settings->testimonial_type ) {
 	?>
 	<div class="owl-carousel owl-theme">
 	<?php
-	foreach( $settings->testimonial_entries as $testimonial ) {
+	foreach ( $settings->testimonial_entries as $testimonial ) {
 		?>
 		<div class="fl-bbvm-testimonials-card">
 			<div class="fl-bbvm-testimonials-card-img">
 				<?php
 				if ( 'icon' === $testimonial->testimonial_image_type ) {
-					echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
+					echo sprintf( '<i class="%s"></i>', esc_attr( $testimonial->testimonial_icon ) );
 				} else {
-					echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), $testimonial->testimonial_name );
+					echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), esc_html( $testimonial->testimonial_name ) );
 				}
 				?>
 			</div><!-- .img -->
 			<?php
 			if ( 'yes' === $settings->show_rating ) :
-			?>
-			<div class="fl-bbvm-testimonials-card-rating">
-			<?php
-			for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
-				echo '<i class="fas fa-star"></i>';
-			}
-			?>
-			</div><!-- .rating -->
-			<?php
+				?>
+				<div class="fl-bbvm-testimonials-card-rating">
+				<?php
+				$testimonial_rating = absint( $testimonial->testimonial_rating );
+				for ( $i = 0; $i < $testimonial_rating; $i++ ) {
+					echo '<i class="fas fa-star"></i>';
+				}
+				?>
+				</div><!-- .rating -->
+				<?php
 			endif;
 			?>
 			<div class="fl-bbvm-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
 			<div class="fl-bbvm-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
 			<div class="fl-bbvm-testimonials-card-content">
-				<?php echo $testimonial->testimonial_content; ?>
+				<?php echo wp_kses_post( $testimonial->testimonial_content ); ?>
 			</div><!-- .content -->
 		</div><!-- fl-bbvm-testimonials-card -->
 		<?php
@@ -42,94 +43,96 @@ if( 'slider' === $settings->testimonial_type ) {
 	<?php
 }
 if ( 'card' === $settings->testimonial_type ) :
-?>
-<div class="fl-bbvm-testimonials-cards">
-<?php
-foreach( $settings->testimonial_entries as $testimonial ) {
 	?>
-	<div class="fl-bbvm-testimonials-card">
-		<div class="fl-bbvm-testimonials-card-img">
-			<?php
-			if ( 'icon' === $testimonial->testimonial_image_type ) {
-				echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
-			} else {
-				echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), $testimonial->testimonial_name );
-			}
-			?>
-		</div><!-- .img -->
-		<?php
-		if ( 'yes' === $settings->show_rating ) :
-		?>
-		<div class="fl-bbvm-testimonials-card-rating">
-		<?php
-		for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
-			echo '<i class="fas fa-star"></i>';
-		}
-		?>
-		</div><!-- .rating -->
-		<?php
-		endif;
-		?>
-		<div class="fl-bbvm-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
-		<div class="fl-bbvm-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
-		<div class="fl-bbvm-testimonials-card-content">
-			<?php echo $testimonial->testimonial_content; ?>
-		</div><!-- .content -->
-	</div><!-- fl-bbvm-testimonials-card -->
+	<div class="fl-bbvm-testimonials-cards">
 	<?php
-}
-?>
-<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
-<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
-<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
-<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
-</div>
-<?php
-endif;
-if ( 'list' === $settings->testimonial_type ) :
-?>
-<div class="fl-bbvm-testimonials-list">
-<?php
-foreach( $settings->testimonial_entries as $testimonial ) {
-	?>
-	<div class="fl-bbvm-testimonials">
-		<div class="fl-bbvm-testimonials-list-left">
-			<div class="fl-bbvm-testimonials-list-img">
+	foreach ( $settings->testimonial_entries as $testimonial ) {
+		?>
+		<div class="fl-bbvm-testimonials-card">
+			<div class="fl-bbvm-testimonials-card-img">
 				<?php
 				if ( 'icon' === $testimonial->testimonial_image_type ) {
-					echo sprintf( '<i class="%s"></i>', $testimonial->testimonial_icon );
+					echo sprintf( '<i class="%s"></i>', esc_attr( $testimonial->testimonial_icon ) );
 				} else {
-					echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), $testimonial->testimonial_name );
+					echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), esc_attr( $testimonial->testimonial_name ) );
 				}
 				?>
 			</div><!-- .img -->
 			<?php
 			if ( 'yes' === $settings->show_rating ) :
-			?>
-			<div class="fl-bbvm-testimonials-card-rating">
-			<?php
-			for ( $i = 0; $i < absint( $testimonial->testimonial_rating ); $i++ ) {
-				echo '<i class="fas fa-star"></i>';
-			}
-			?>
-			</div><!-- .rating -->
-			<?php
+				?>
+				<div class="fl-bbvm-testimonials-card-rating">
+				<?php
+				$testimonial_rating = absint( $testimonial->testimonial_rating );
+				for ( $i = 0; $i < $testimonial_rating; $i++ ) {
+					echo '<i class="fas fa-star"></i>';
+				}
+				?>
+				</div><!-- .rating -->
+				<?php
 			endif;
 			?>
-		</div><!-- .fl-bbvm-testimonials-list-left -->
-		<div class="fl-bbvm-testimonials-list-right">
-			<div class="fl-bbvm-testimonials-list-content">
-				<?php echo $testimonial->testimonial_content; ?>
+			<div class="fl-bbvm-testimonials-card-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
+			<div class="fl-bbvm-testimonials-card-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
+			<div class="fl-bbvm-testimonials-card-content">
+				<?php echo wp_kses_post( $testimonial->testimonial_content ); ?>
 			</div><!-- .content -->
-			<div class="fl-bbvm-testimonials-list-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
-			<div class="fl-bbvm-testimonials-list-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
-		</div><!-- .fl-bbvm-testimonials-list-right -->
-	</div><!-- fl-bbvm-testimonials -->
+		</div><!-- fl-bbvm-testimonials-card -->
+		<?php
+	}
+	?>
+	<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+	<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+	<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+	<div class="fl-bbvm-testimonials-card  is-placeholder"></div>
+	</div>
 	<?php
-}
-?>
-</div>
-<?php
+endif;
+if ( 'list' === $settings->testimonial_type ) :
+	?>
+	<div class="fl-bbvm-testimonials-list">
+	<?php
+	foreach ( $settings->testimonial_entries as $testimonial ) {
+		?>
+		<div class="fl-bbvm-testimonials">
+			<div class="fl-bbvm-testimonials-list-left">
+				<div class="fl-bbvm-testimonials-list-img">
+					<?php
+					if ( 'icon' === $testimonial->testimonial_image_type ) {
+						echo sprintf( '<i class="%s"></i>', esc_attr( $testimonial->testimonial_icon ) );
+					} else {
+						echo sprintf( '<img src="%s" alt="%s" />', esc_url( $testimonial->testimonial_image_src ), esc_attr( $testimonial->testimonial_name ) );
+					}
+					?>
+				</div><!-- .img -->
+				<?php
+				if ( 'yes' === $settings->show_rating ) :
+					?>
+					<div class="fl-bbvm-testimonials-card-rating">
+					<?php
+					$testimonial_rating = absint( $testimonial->testimonial_rating );
+					for ( $i = 0; $i < $testimonial_rating; $i++ ) {
+						echo '<i class="fas fa-star"></i>';
+					}
+					?>
+					</div><!-- .rating -->
+					<?php
+				endif;
+				?>
+			</div><!-- .fl-bbvm-testimonials-list-left -->
+			<div class="fl-bbvm-testimonials-list-right">
+				<div class="fl-bbvm-testimonials-list-content">
+					<?php echo wp_kses_post( $testimonial->testimonial_content ); ?>
+				</div><!-- .content -->
+				<div class="fl-bbvm-testimonials-list-name"><?php echo esc_html( $testimonial->testimonial_name ); ?></div>
+				<div class="fl-bbvm-testimonials-list-title"><?php echo esc_html( $testimonial->testimonial_title ); ?></div>
+			</div><!-- .fl-bbvm-testimonials-list-right -->
+		</div><!-- fl-bbvm-testimonials -->
+		<?php
+	}
+	?>
+	</div>
+	<?php
 endif;
 ?>
 </div>

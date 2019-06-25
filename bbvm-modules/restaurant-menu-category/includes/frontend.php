@@ -4,10 +4,10 @@
 		<?php echo esc_html( $settings->menu_item_category ); ?>
 		</h2>
 		<?php
-		if( ! empty( $settings->menu_item_category_description ) ) {
+		if ( ! empty( $settings->menu_item_category_description ) ) {
 			printf( '<p class="bbvm-restaurant-menu-items-description">%s</p>', esc_html( $settings->menu_item_category_description ) );
 		}
-		if( 'line' === $settings->category_separator || 'image' === $settings->category_separator ) {
+		if ( 'line' === $settings->category_separator || 'image' === $settings->category_separator ) {
 			?>
 			<hr />
 			<?php

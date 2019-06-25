@@ -12,7 +12,7 @@ if ( typeof jQuery != 'undefined' ) {
 		e.preventDefault();
 		var instagram_api = $load_more.attr('href');
 		jQuery.post( ajax_url, {action: 'load_more_instagram', instagram_api: instagram_api, user_id: instagram_user_id, token: instagram_token, count: instagram_count, lightbox: instagram_lightbox, background_image: instagram_background }, function( response ) {
-			jQuery('.fl-node-<?php echo $id; ?> .fl-node-instafeed').append(response.html);
+			jQuery('.fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed').append(response.html);
 
 			// Init lightbox
 			if ( 'on' == instagram_lightbox && typeof jQuery.fn.magnificPopup != 'undefined'  ) {
@@ -31,6 +31,9 @@ if ( typeof jQuery != 'undefined' ) {
 				$load_more.remove();
 			} else {
 				$load_more.attr('href', response.pagination_url );
+			}
+			if ( typeof Macy != 'undefined' ) {
+				bbvm_instagram_init_macy();
 			}
 		}, 'json' );
 	});
