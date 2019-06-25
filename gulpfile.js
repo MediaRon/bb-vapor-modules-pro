@@ -1,6 +1,7 @@
 const gulp = require( 'gulp' );
 const del = require( 'del' );
 const run = require( 'gulp-run' );
+const zip = require( 'gulp-zip' );
 
 gulp.task( 'bundle', function() {
 	return gulp.src( [
@@ -24,9 +25,15 @@ gulp.task( 'wporg:prepare', function() {
 	return run( 'mkdir -p release' ).exec();
 } );
 
-gulp.task( 'release:zip', function() {
+gulp.task( 'release:copy-for-zip', function() {
 	return gulp.src('release/bb-vapor-modules-pro/**')
 		.pipe(gulp.dest('bb-vapor-modules-pro'));
+} );
+
+gulp.task( 'release:zip', function() {
+	return gulp.src('bb-vapor-modules-pro/**/*', { base: "." })
+	.pipe(zip('bb-vapor-modules-pro.zip'))
+	.pipe(gulp.dest('.'));
 } );
 
 gulp.task( 'clean:bundle', function() {
@@ -58,5 +65,6 @@ gulp.task( 'default', gulp.series(
 	'bundle',
 	'wporg:prepare',
 	'clean:bundle',
+	'release:copy-for-zip',
 	'release:zip'
 ) );
