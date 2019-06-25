@@ -87,6 +87,7 @@ FLBuilder::register_module(
 								'variable' => array(
 									'fields' => array(
 										'headlines',
+										'variable_align',
 									),
 								),
 								'normal'   => array(
@@ -150,6 +151,12 @@ FLBuilder::register_module(
 								'block'  => __( 'Full Width', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'inline',
+						),
+						'headline_align'       => array(
+							'type'    => 'align',
+							'label'   => __( 'Headline Alignment', 'bb-vapor-modules-pro' ),
+							'help'    => __( 'Headline style must be full width.', 'bb-vapor-modules-pro' ),
+							'default' => 'left',
 						),
 						'headline_color'       => array(
 							'type'       => 'color',
