@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.1.8
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,16 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.2.0 =
+* Significant code cleanup of modules.
+* Allow Social Icons module to be previewed in real time.
+* Instagram Module can now be previewed in real time.
+* Featured Category Module now uses a custom loop.
+* Button Max Width is now in pixels instead of percentages (confuses users).
+* Fixed fade effect on Before and After module for mobile users.
+* Fixed animated gradients on Animated Headlines module.
+* Fixed separator being shown in Advanced Headlines even when it's off.
 
 = 1.1.8 =
 * Changing Post Select module to use Beaver Builder's built-in query system.
