@@ -14,13 +14,21 @@ class BBVapor_Social_Media_Module extends FLBuilderModule {
 				'partial_refresh' => false, // Defaults to false and can be omitted.
 			)
 		);
-		add_action( 'fl_builder_editing_enabled', array( $this, 'bbvapor_modules_beaver_builder_social_include_svg' ) );
+		add_action( 'fl_builder_editing_enabled', array( $this, 'register_svg' ) );
 	}
 
 	/**
 	 * Includes the SVG for social media icons
 	 */
-	public function bbvapor_modules_beaver_builder_social_include_svg() {
+	public function register_svg() {
+		add_action( 'wp_footer', array( $this, 'output_svg' ) );
+	}
+
+	/**
+	 * Includes the SVG for social media icons
+	 */
+	public function output_svg() {
+
 		// Define SVG sprite file.
 		$path = BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/social-media-icons/includes/social-logos.svg';
 
