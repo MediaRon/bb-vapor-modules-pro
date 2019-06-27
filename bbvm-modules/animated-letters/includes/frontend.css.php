@@ -113,3 +113,40 @@ if ( 'love' === $settings->style ) :
 	}
 	<?php
 endif;
+if ( 'signal' === $settings->style ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters-left {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_left_color ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters-center {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_center_color ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters-right {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_right_color ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line {
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_border_color ) ); ?>
+	}
+	<?php
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'text_left_typography',
+			'selector'     => ".fl-node-$id .fl-bbvm-animated-letters-for-beaverbuilder .letters-left",
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'text_center_typography',
+			'selector'     => ".fl-node-$id .fl-bbvm-animated-letters-for-beaverbuilder .letters-center",
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'text_right_typography',
+			'selector'     => ".fl-node-$id .fl-bbvm-animated-letters-for-beaverbuilder .letters-right",
+		)
+	);
+endif;

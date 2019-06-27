@@ -5,7 +5,7 @@ class BBVapor_Animated_Letters_Module extends FLBuilderModule {
 			array(
 				'name'            => __( 'Animated Letters', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Animated Letters for Beaver Builder', 'bb-vapor-modules-pro' ),
-				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+				'category'        => __( 'Text Effects', 'bb-vapor-modules-pro' ),
 				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/animated-letters/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-letters/',
@@ -50,7 +50,7 @@ FLBuilder::register_module(
 				'general' => array( // Section
 					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'style'        => array(
+						'style'                  => array(
 							'type'    => 'select',
 							'label'   => __( 'Animation Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -80,32 +80,33 @@ FLBuilder::register_module(
 										'text_color',
 									),
 								),
-								'sunny' => array(
+								'sunny'    => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'go' => array(
+								'go'       => array(
 									'fields' => array(
 										'text_form',
 										'typography',
 										'text_color',
 									),
 								),
-								'great' => array(
+								'great'    => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'signal' => array(
+								'signal'   => array(
 									'fields' => array(
 										'text_left',
 										'text_center',
 										'text_right',
+										'text_border_color',
 										'text_left_color',
 										'text_right_color',
 										'text_center_color',
@@ -114,77 +115,77 @@ FLBuilder::register_module(
 										'text_right_typography',
 									),
 								),
-								'beauty' => array(
+								'beauty'   => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'reality' => array(
+								'reality'  => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'coffee' => array(
+								'coffee'   => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'domino' => array(
+								'domino'   => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'hello' => array(
+								'hello'    => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'bottom' => array(
+								'bottom'   => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'left' => array(
+								'left'     => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'rising' => array(
+								'rising'   => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'find' => array(
+								'find'     => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
 										'text_color',
 									),
 								),
-								'out' => array(
+								'out'      => array(
 									'fields' => array(
 										'text_form',
 										'typography',
 										'text_color',
 									),
 								),
-								'love' => array(
+								'love'     => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
@@ -193,31 +194,31 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'alignment'    => array(
+						'alignment'              => array(
 							'type'    => 'align',
 							'label'   => __( 'Text Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
-						'text_color' => array(
+						'text_color'             => array(
 							'type'       => 'color',
 							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => '000000',
 						),
-						'text_animate' => array(
+						'text_animate'           => array(
 							'type'    => 'text',
 							'label'   => __( 'Text to Animate', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Animated Text', 'bb-vapor-modules-pro' ),
 						),
-						'text_form'    => array(
+						'text_form'              => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_text_animate',
 							'label'        => __( 'Animated Text', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'preview_text' => 'text',
 						),
-						'loop'         => array(
+						'loop'                   => array(
 							'type'    => 'select',
 							'label'   => __( 'Loop', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -226,12 +227,12 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
-						'text_left' => array(
+						'text_left'              => array(
 							'type'    => 'text',
 							'label'   => __( 'Left Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Left', 'bb-vapor-modules-pro' ),
 						),
-						'text_center' => array(
+						'text_center'            => array(
 							'type'    => 'text',
 							'label'   => __( 'Center Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Center', 'bb-vapor-modules-pro' ),
@@ -241,7 +242,35 @@ FLBuilder::register_module(
 							'label'   => __( 'Right Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Right', 'bb-vapor-modules-pro' ),
 						),
-						'text_left_typography' => array(
+						'text_border_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Border Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'text_left_color'        => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Left Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'text_center_color'     => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Center Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'text_right_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Right Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'text_left_typography'   => array(
 							'type'       => 'typography',
 							'label'      => __( 'Left Text Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -251,17 +280,17 @@ FLBuilder::register_module(
 							'label'      => __( 'Center Text Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'text_right_typography' => array(
+						'text_right_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Right Text Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'delay'         => array(
+						'delay'                  => array(
 							'type'    => 'unit',
 							'label'   => __( 'Delay in Milliseconds', 'bb-vapor-modules-pro' ),
 							'default' => '100',
 						),
-						'typography'   => array(
+						'typography'             => array(
 							'type'       => 'typography',
 							'label'      => __( 'Letter Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
