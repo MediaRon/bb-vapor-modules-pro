@@ -359,6 +359,36 @@ if ( typeof anime !== 'undefined' ) {
 		});
 		<?php
 	endif;
+	if ( 'find' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: lineTarget,
+			scaleX: [0,1],
+			opacity: [0.5,1],
+			easing: "easeInOutExpo",
+			duration: 900
+		}).add({
+			targets: animeTarget,
+			opacity: [0,1],
+			translateX: [40,0],
+			translateZ: 0,
+			scaleX: [0.3, 1],
+			easing: "easeOutExpo",
+			duration: 800,
+			offset: '-=600',
+			delay: function(el, i) {
+				return 150 + 25 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
 	?>
 }
 <?php

@@ -88,3 +88,21 @@ if ( 'bottom' === $settings->style ) :
 	}
 	<?php
 endif;
+if ( 'find' === $settings->style ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line {
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		top: auto;
+		height: 2px;
+		width: 100%;
+		transform-origin: 100% 100%;
+		bottom: 0;
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter {
+		display: inline-block;
+	}
+	<?php
+endif;

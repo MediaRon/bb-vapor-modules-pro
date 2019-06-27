@@ -164,6 +164,13 @@ FLBuilder::register_module(
 										'text_color',
 									),
 								),
+								'find' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+										'text_color',
+									),
+								),
 							),
 						),
 						'alignment'    => array(
