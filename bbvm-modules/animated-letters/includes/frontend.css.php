@@ -106,3 +106,10 @@ if ( 'find' === $settings->style ) :
 	}
 	<?php
 endif;
+if ( 'love' === $settings->style ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder h2 {
+		overflow: hidden;
+	}
+	<?php
+endif;

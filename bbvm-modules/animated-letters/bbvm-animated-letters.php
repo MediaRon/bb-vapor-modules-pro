@@ -184,6 +184,13 @@ FLBuilder::register_module(
 										'text_color',
 									),
 								),
+								'love' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+										'text_color',
+									),
+								),
 							),
 						),
 						'alignment'    => array(

@@ -412,5 +412,25 @@ if ( typeof anime !== 'undefined' ) {
 		});
 		<?php
 	endif;
+	if ( 'love' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			translateY: [-100,0],
+			easing: "easeOutExpo",
+			duration: 1400,
+			delay: function(el, i) {
+				return 30 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+			});
+		<?php
+	endif;
 	?>
 }
