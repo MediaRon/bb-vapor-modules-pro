@@ -73,7 +73,6 @@ FLBuilder::register_module(
 								'signal'   => __( 'Signal', 'bb-vapor-modules-pro' ),
 								'beauty'   => __( 'Beauty', 'bb-vapor-modules-pro' ),
 								'reality'  => __( 'Reality', 'bb-vapor-modules-pro' ),
-								'alert'    => __( 'Alert', 'bb-vapor-modules-pro' ),
 								'coffee'   => __( 'Coffee', 'bb-vapor-modules-pro' ),
 								'domino'   => __( 'Domino', 'bb-vapor-modules-pro' ),
 								'hello'    => __( 'Hello', 'bb-vapor-modules-pro' ),
@@ -119,6 +118,18 @@ FLBuilder::register_module(
 									),
 								),
 								'beauty' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+									),
+								),
+								'reality' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+									),
+								),
+								'coffee' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',

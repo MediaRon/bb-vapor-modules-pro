@@ -171,7 +171,50 @@ if ( typeof anime !== 'undefined' ) {
 			translateZ: 0,
 			duration: 750,
 			delay: function(el, i) {
-			return 50 * i;
+				return 50 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'reality' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			translateY: ["1.1em", 0],
+			translateX: ["0.55em", 0],
+			translateZ: 0,
+			rotateZ: [180, 0],
+			duration: 750,
+			easing: "easeOutExpo",
+			delay: function(el, i) {
+				return 50 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'coffee' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			scale: [0, 1],
+			duration: 1500,
+			elasticity: 600,
+			delay: function(el, i) {
+				return 45 * (i+1)
 			}
 		}).add({
 			targets: animeHeadingTarget,

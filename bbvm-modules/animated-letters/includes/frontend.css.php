@@ -11,6 +11,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder span.text-wrapper {
 	position: relative;
 	display: inline-block;
+	overflow: hidden;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter {
 	display: inline-block;
