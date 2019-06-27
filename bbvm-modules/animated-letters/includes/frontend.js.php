@@ -1,7 +1,9 @@
 if ( typeof anime !== 'undefined' ) {
 	var animeLoop = <?php echo ( 'yes' === $settings->loop ) ? 'true' : 'false'; ?>;
 	var animeDelay = <?php echo absint( $settings->delay ); ?>;
-	var animeTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter';var animeTargetWrapper = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters';
+	var animeTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter';
+	var animeTargetWord = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .word';
+	var animeTargetWrapper = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters';
 	var animeHeadingTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder h2';
 	var lineTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line';
 	<?php
@@ -389,6 +391,26 @@ if ( typeof anime !== 'undefined' ) {
 		});
 		<?php
 	endif;
+	if ( 'out' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTargetWord,
+			scale: [14,1],
+			opacity: [0,1],
+			easing: "easeOutCirc",
+			duration: 800,
+			delay: function(el, i) {
+			return 800 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
 	?>
 }
-<?php

@@ -24,6 +24,10 @@
 		<span class="letter letters-center"><?php echo esc_html( $settings->text_center ); ?></span>
 		<span class="letter letters-right"><?php echo esc_html( $settings->text_right ); ?></span>
 		<?php
+	elseif ( 'out' === $settings->style ) :
+		foreach ( $settings->text_form as $text_form ) {
+			printf( '<span class="word">%s</span>&nbsp;', esc_html( $text_form->text ) );
+		}
 	else :
 		$letters = $settings->text_animate;
 		// Split into spans

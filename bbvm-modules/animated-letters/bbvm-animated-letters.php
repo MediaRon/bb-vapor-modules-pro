@@ -87,6 +87,13 @@ FLBuilder::register_module(
 										'text_color',
 									),
 								),
+								'go' => array(
+									'fields' => array(
+										'text_form',
+										'typography',
+										'text_color',
+									),
+								),
 								'great' => array(
 									'fields' => array(
 										'text_animate',
@@ -101,7 +108,6 @@ FLBuilder::register_module(
 										'text_right',
 										'text_left_color',
 										'text_right_color',
-										'text_form',
 										'text_center_color',
 										'text_left_typography',
 										'text_center_typography',
@@ -167,6 +173,13 @@ FLBuilder::register_module(
 								'find' => array(
 									'fields' => array(
 										'text_animate',
+										'typography',
+										'text_color',
+									),
+								),
+								'out' => array(
+									'fields' => array(
+										'text_form',
 										'typography',
 										'text_color',
 									),
