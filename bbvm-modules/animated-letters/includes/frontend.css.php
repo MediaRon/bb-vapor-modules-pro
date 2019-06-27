@@ -52,3 +52,39 @@ if ( 'go' === $settings->style ) {
 	}
 	<?php
 }
+if ( 'hello' === $settings->style ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line {
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_color ) ); ?>;
+		transform-origin: 0 50%;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line1 {
+		top: 0;
+		left: 0;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter {
+		display: inline-block;
+	}
+	<?php
+endif;
+if ( 'bottom' === $settings->style ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line {
+		opacity: 0;
+		position: absolute;
+		bottom: 0;
+		top: auto;
+		width: 100%;
+		height: 3px;
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter {
+		display: inline-block;
+	}
+	<?php
+endif;

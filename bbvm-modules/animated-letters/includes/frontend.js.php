@@ -1,7 +1,7 @@
 if ( typeof anime !== 'undefined' ) {
 	var animeLoop = <?php echo ( 'yes' === $settings->loop ) ? 'true' : 'false'; ?>;
 	var animeDelay = <?php echo absint( $settings->delay ); ?>;
-	var animeTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter';
+	var animeTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letter';var animeTargetWrapper = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .letters';
 	var animeHeadingTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder h2';
 	var lineTarget = '.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder .line';
 	<?php
@@ -28,7 +28,7 @@ if ( typeof anime !== 'undefined' ) {
 			duration: 700,
 			offset: '-=875',
 			delay: function(el, i, l) {
-				return 80 * (l - i);
+				return animeDelay * (l - i);
 			}
 		}
 		).add({
@@ -51,7 +51,7 @@ if ( typeof anime !== 'undefined' ) {
 			easing: "easeOutExpo",
 			duration: 950,
 			delay: function(el, i) {
-			return animeDelay*i;
+				return animeDelay*i;
 			}
 		}).add({
 			targets: animeHeadingTarget,
@@ -71,7 +71,7 @@ if ( typeof anime !== 'undefined' ) {
 			easing: "easeInOutQuad",
 			duration: 2250,
 			delay: function(el, i) {
-			return animeDelay * (i+1)
+				return animeDelay * (i+1)
 			}
 		}).add({
 			targets: animeHeadingTarget,
@@ -129,8 +129,8 @@ if ( typeof anime !== 'undefined' ) {
 			duration: 600,
 			easing: "easeOutExpo",
 			translateY: function(e, i, l) {
-			var offset = -0.625 + 0.625*2*i;
-			return offset + "em";
+				var offset = -0.625 + 0.625*2*i;
+				return offset + "em";
 			}
 		}).add({
 			targets: '' + animeHeadingTarget + ' .letters-center',
@@ -171,7 +171,7 @@ if ( typeof anime !== 'undefined' ) {
 			translateZ: 0,
 			duration: 750,
 			delay: function(el, i) {
-				return 50 * i;
+				return animeDelay * i;
 			}
 		}).add({
 			targets: animeHeadingTarget,
@@ -194,7 +194,7 @@ if ( typeof anime !== 'undefined' ) {
 			duration: 750,
 			easing: "easeOutExpo",
 			delay: function(el, i) {
-				return 50 * i;
+				return animeDelay * i;
 			}
 		}).add({
 			targets: animeHeadingTarget,
@@ -214,7 +214,91 @@ if ( typeof anime !== 'undefined' ) {
 			duration: 1500,
 			elasticity: 600,
 			delay: function(el, i) {
-				return 45 * (i+1)
+				return animeDelay * (i+1)
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'domino' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			rotateY: [-90, 0],
+			duration: 1300,
+			delay: function(el, i) {
+				return animeDelay * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'hello' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: lineTarget,
+			scaleY: [0,1],
+			opacity: [0.5,1],
+			easing: "easeOutExpo",
+			duration: 700
+		})
+		.add({
+			targets: lineTarget,
+			translateX: [0,jQuery(animeTargetWrapper).width()],
+			easing: "easeOutExpo",
+			duration: 1000,
+			delay: 100
+		}).add({
+			targets: animeTarget,
+			opacity: [0,1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=775',
+			delay: function(el, i) {
+				return 34 * (i+1)
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'bottom' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: lineTarget,
+			opacity: [0.5,1],
+			scaleX: [0, 1],
+			easing: "easeInOutExpo",
+			duration: 700
+		}).add({
+			targets: lineTarget,
+			duration: 600,
+			easing: "easeOutExpo"
+		}).add({
+			targets: animeTarget,
+			opacity: [0,1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=775',
+			delay: function(el, i) {
+				return 34 * (i+1)
 			}
 		}).add({
 			targets: animeHeadingTarget,

@@ -76,6 +76,7 @@ FLBuilder::register_module(
 								'coffee'   => __( 'Coffee', 'bb-vapor-modules-pro' ),
 								'domino'   => __( 'Domino', 'bb-vapor-modules-pro' ),
 								'hello'    => __( 'Hello', 'bb-vapor-modules-pro' ),
+								'bottom'   => __( 'Bottom', 'bb-vapor-modules-pro' ),
 								'rising'   => __( 'Rising', 'bb-vapor-modules-pro' ),
 								'find'     => __( 'Find', 'bb-vapor-modules-pro' ),
 								'out'      => __( 'Out', 'bb-vapor-modules-pro' ),
@@ -130,6 +131,18 @@ FLBuilder::register_module(
 									),
 								),
 								'coffee' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+									),
+								),
+								'domino' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+									),
+								),
+								'hello' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
