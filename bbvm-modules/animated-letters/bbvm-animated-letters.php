@@ -50,15 +50,6 @@ FLBuilder::register_module(
 				'general' => array( // Section
 					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'typography'   => array(
-							'type'       => 'typography',
-							'label'      => __( 'Letter Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-animated-letters-for-beaverbuilder .letters',
-							),
-						),
 						'alignment'    => array(
 							'type'    => 'align',
 							'label'   => __( 'Text Alignment', 'bb-vapor-modules-pro' ),
@@ -96,21 +87,41 @@ FLBuilder::register_module(
 								'thursday' => array(
 									'fields' => array(
 										'text_animate',
+										'typography',
 									),
 								),
 								'sunny' => array(
 									'fields' => array(
 										'text_animate',
+										'typography',
 									),
 								),
 								'great' => array(
 									'fields' => array(
 										'text_animate',
+										'typography',
 									),
 								),
 								'go' => array(
 									'fields' => array(
 										'text_form',
+										'typography',
+									),
+								),
+								'signal' => array(
+									'fields' => array(
+										'text_left',
+										'text_center',
+										'text_right',
+										'text_left_typography',
+										'text_center_typography',
+										'text_right_typography',
+									),
+								),
+								'beauty' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
 									),
 								),
 							),
@@ -136,10 +147,49 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
+						'text_left' => array(
+							'type'    => 'text',
+							'label'   => __( 'Left Text', 'bb-vapor-modules-pro' ),
+							'default' => __( 'Left', 'bb-vapor-modules-pro' ),
+						),
+						'text_center' => array(
+							'type'    => 'text',
+							'label'   => __( 'Center Text', 'bb-vapor-modules-pro' ),
+							'default' => __( 'Center', 'bb-vapor-modules-pro' ),
+						),
+						'text_right' => array(
+							'type'    => 'text',
+							'label'   => __( 'Right Text', 'bb-vapor-modules-pro' ),
+							'default' => __( 'Right', 'bb-vapor-modules-pro' ),
+						),
+						'text_left_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Left Text Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'text_center_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Center Text Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'text_right_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Right Text Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
 						'delay'         => array(
 							'type'    => 'unit',
 							'label'   => __( 'Delay in Milliseconds', 'bb-vapor-modules-pro' ),
 							'default' => '100',
+						),
+						'typography'   => array(
+							'type'       => 'typography',
+							'label'      => __( 'Letter Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-animated-letters-for-beaverbuilder .letters',
+							),
 						),
 					),
 				),

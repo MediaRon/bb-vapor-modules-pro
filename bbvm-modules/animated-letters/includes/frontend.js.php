@@ -115,6 +115,73 @@ if ( typeof anime !== 'undefined' ) {
 		?>
 		<?php
 	endif;
+	if ( 'signal' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: lineTarget,
+			opacity: [0.5,1],
+			scaleX: [0, 1],
+			easing: "easeInOutExpo",
+			duration: 700
+		}).add({
+			targets: lineTarget,
+			duration: 600,
+			easing: "easeOutExpo",
+			translateY: function(e, i, l) {
+			var offset = -0.625 + 0.625*2*i;
+			return offset + "em";
+			}
+		}).add({
+			targets: '' + animeHeadingTarget + ' .letters-center',
+			opacity: [0,1],
+			scaleY: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=600'
+		}).add({
+			targets: '' + animeHeadingTarget + ' .letters-left',
+			opacity: [0,1],
+			translateX: ["0.5em", 0],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=300'
+		}).add({
+			targets: '' + animeHeadingTarget + ' .letters-right',
+			opacity: [0,1],
+			translateX: ["-0.5em", 0],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=600'
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
+	if ( 'beauty' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			translateY: ["1.1em", 0],
+			translateZ: 0,
+			duration: 750,
+			delay: function(el, i) {
+			return 50 * i;
+			}
+		}).add({
+			targets: animeHeadingTarget,
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+		<?php
+	endif;
 	?>
 }
 <?php
