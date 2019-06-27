@@ -53,6 +53,10 @@ class BBVapor_Modules_Pro {
 			require_once 'bbvm-modules/markdown/bbvm-markdown.php';
 			new BBVapor_Markdown_Module();
 
+			// Animated Letters Module
+			require_once 'bbvm-modules/animated-letters/bbvm-animated-letters.php';
+			new BBVapor_Animated_Letters_Module();
+
 			// User Profile module
 			require_once 'bbvm-modules/user-profile/bbvm-user-profile.php';
 			new BBVapor_User_Profile_Module();
