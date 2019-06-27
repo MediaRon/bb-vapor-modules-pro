@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-	$('.fl-node-<?php echo $id; ?> .mpp-gutenberg-tab').on('click', function (e) {
+	$('.fl-node-<?php echo esc_html( $id ); ?> .mpp-gutenberg-tab').on('click', function (e) {
 		$('.mpp-author-tabs li').removeClass('active');
 		$(this).addClass('active');
 		var $tabs = $('.mpp-tab').removeClass('mpp-tab-active');

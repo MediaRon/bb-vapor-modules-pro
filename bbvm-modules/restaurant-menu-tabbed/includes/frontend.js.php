@@ -1,3 +1,6 @@
+<?php
+// phpcs:ignorefile
+?>
 jQuery( '.bbvm-restaurant-menu-tabs ul li a' ).each( function() {
 	if ( jQuery( this ).data('default') == 'yes' ) {
 		var item = jQuery( this ).data('item');

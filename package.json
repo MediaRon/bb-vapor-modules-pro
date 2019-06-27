@@ -1,0 +1,29 @@
+{
+  "name": "bb-vapor-modules-pro",
+  "version": "1.2.0",
+  "description": "BB Vapor Modules Pro is a growing collection of modules for Beaver Builder",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronalfy/bb-vapor-modules-pro.git"
+  },
+  "keywords": [
+    "beaver",
+    "builder"
+  ],
+  "author": "MediaRon LLC",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/ronalfy/bb-vapor-modules-pro/issues"
+  },
+  "homepage": "https://github.com/ronalfy/bb-vapor-modules-pro#readme",
+  "devDependencies": {
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-run": "^1.7.1",
+    "gulp-zip": "^5.0.0"
+  }
+}

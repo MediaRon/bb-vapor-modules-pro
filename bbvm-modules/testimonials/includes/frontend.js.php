@@ -1,5 +1,5 @@
 if( typeof jQuery.fn.owlCarousel !== 'undefined' ) {
-	jQuery(".fl-node-<?php echo $id; ?> .owl-carousel").owlCarousel( {
+	jQuery(".fl-node-<?php echo esc_html( $id ); ?> .owl-carousel").owlCarousel( {
 	loop:<?php echo 'yes' === $settings->slide_loop ? 'true' : 'false'; ?>,
 		margin:10,
 	nav:<?php echo 'yes' === $settings->show_nav_buttons ? 'true' : 'false'; ?>,

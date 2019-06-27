@@ -4,6 +4,6 @@
 		require_once 'Parsedown.php';
 	}
 	$bbvm_parsedown = new Parsedown();
-	echo $bbvm_parsedown->text( $settings->markdown );
+	echo $bbvm_parsedown->text( $settings->markdown ); // phpcs:ignore
 	?>
 </div>

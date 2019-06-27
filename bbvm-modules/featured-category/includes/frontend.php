@@ -1,7 +1,10 @@
 <div class="fl-bbvm-featured-category-for-beaverbuilder">
-	<?php if ( ! empty( $settings->terms_select ) ) : ?>
-		<?php
-		$featured_category_term      = get_term( absint( $settings->terms_select ), $settings->taxonomy_select, OBJECT );
+	<?php
+	$selected_tax  = isset( $settings->taxonomy_select ) ? $settings->taxonomy_select : '';
+	$selected_term = 'custom_term_tax_' . $selected_tax;
+	if ( isset( $settings->{$selected_term} ) ) {
+		$term_id                     = $settings->{$selected_term};
+		$featured_category_term      = get_term( absint( $term_id ), $selected_tax, OBJECT );
 		$featured_category_term_link = get_term_link( $featured_category_term, $settings->taxonomy_select );
 		if ( ! is_wp_error( $featured_category_term_link ) ) {
 			?>
@@ -32,6 +35,6 @@
 			</div>
 			<?php
 		}
-	endif;
+	}
 	?>
 </div>

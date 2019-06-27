@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 class BBVapor_PostSelect_Module extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
@@ -58,321 +58,296 @@ FLBuilder::register_module(
 			'title' => __( 'Post Select', 'bb-vapor-modules-pro' ),
 			'file'  => FL_BUILDER_DIR . 'includes/loop-settings.php',
 		),
-		/*'general'       => array( // Tab
-			'title'         => __('General', 'bb-vapor-modules-pro'), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'         => __('Post Select', 'bb-vapor-modules-pro'), // Section Title
-					'fields'        => array( // Section Fields
-						'post_type' => array(
-							'type'          => 'select',
-							'label'         => __( 'Select A Post Type', 'bb-vapor-modules-pro' ),
-							'options'       => $bbvm_post_types_array,
-							'class' => 'bbvm-post-select'
-						),
-						'taxonomy_select' => array(
-							'type'          => 'select',
-							'label'         => __( 'Select A Taxonomy', 'bb-vapor-modules-pro' ),
-							'options'       => array(),
-							'class' => 'bbvm-taxonomy-select',
-							'default' => '0',
-						),
-						'terms_select' => array(
-							'type'          => 'select',
-							'label'         => __( 'Select A Term', 'bb-vapor-modules-pro' ),
-							'options'       => array(),
-							'class' => 'bbvm-term-select',
-							'default' => '0'
-						),
-					)
-				)
-			)
-		),*/
-		'options'       => array( // Tab
-			'title'         => __('Options', 'bb-vapor-modules-pro'), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'         => __('Options', 'bb-vapor-modules-pro'), // Section Title
-					'fields'        => array( // Section Fields
+		'options'     => array( // Tab
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
+			'sections' => array( // Tab Sections
+				'general' => array( // Section
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
 						'posts_per_page' => array(
-							'type'          => 'unit',
-							'label'         => __( 'Select Number of Items to Retrieve', 'bb-vapor-modules-pro' ),
+							'type'    => 'unit',
+							'label'   => __( 'Select Number of Items to Retrieve', 'bb-vapor-modules-pro' ),
 							'default' => '6',
 						),
-						'post_display' => array(
-							'type'          => 'select',
-							'label'         => __( 'Post Display', 'bb-vapor-modules-pro' ),
-							'options'       => array(
+						'post_display'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Post Display', 'bb-vapor-modules-pro' ),
+							'options' => array(
 								'grid' => __( 'Grid', 'bb-vapor-modules-pro' ),
 								'list' => __( 'List', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'grid',
 						),
-						'columns' => array(
-							'type'          => 'unit',
-							'label'         => __( 'Select Number of Columns', 'bb-vapor-modules-pro' ),
+						'columns'        => array(
+							'type'    => 'unit',
+							'label'   => __( 'Select Number of Columns', 'bb-vapor-modules-pro' ),
 							'default' => '4',
-							'slider' => array(
-								'min'  	=> 1,
-								'max'  	=> 6,
-								'step' 	=> 1,
+							'slider'  => array(
+								'min'  => 1,
+								'max'  => 6,
+								'step' => 1,
 							),
 						),
-						'item_padding' => array(
-							'type'          => 'dimension',
-							'label'         => __( 'Select Padding For Post Items', 'bb-vapor-modules-pro' ),
-							'responsive'    => true,
+						'item_padding'   => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select Padding For Post Items', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
-						'orderby' => array(
-							'type'          => 'select',
-							'label'         => __( 'Order By', 'bb-vapor-modules-pro' ),
-							'options'       => array(
-								'DATEDESC' => __( 'Newest to Oldest', 'bb-vapor-modules-pro' ),
-								'DATEASC' => __( 'Oldest to Newest', 'bb-vapor-modules-pro' ),
-								'TITLEASC' => __( 'A - Z', 'bb-vapor-modules-pro' ),
-								'TITLEDESC' => __( 'Z-A', 'bb-vapor-modules-pro' )
+						'orderby'        => array(
+							'type'    => 'select',
+							'label'   => __( 'Order By', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'DATEDESC'  => __( 'Newest to Oldest', 'bb-vapor-modules-pro' ),
+								'DATEASC'   => __( 'Oldest to Newest', 'bb-vapor-modules-pro' ),
+								'TITLEASC'  => __( 'A - Z', 'bb-vapor-modules-pro' ),
+								'TITLEDESC' => __( 'Z-A', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'DATEASC',
 						),
-					)
-				)
-			)
+					),
+				),
+			),
 		),
-		'display'       => array( // Tab
-			'title'         => __('Display', 'bb-vapor-modules-pro'), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'         => __('Display', 'bb-vapor-modules-pro'), // Section Title
-					'fields'        => array( // Section Fields
-						'display_taxonomies' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Taxonomies?', 'bb-vapor-modules-pro' ),
+		'display'     => array( // Tab
+			'title'    => __( 'Display', 'bb-vapor-modules-pro' ), // Tab title
+			'sections' => array( // Tab Sections
+				'general' => array( // Section
+					'title'  => __( 'Display', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
+						'display_taxonomies'       => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Taxonomies?', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes'
-						),
-						'display_featured_image' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Featured Image?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
-							'toggle' => array(
-								'yes' => array( 'fields' => array( 'featured_image_type', 'featured_thumbnail_size', 'featured_image_location' ) )
-							)
 						),
-						'featured_image_type' => array(
-							'type' => 'select',
-							'label' => __( 'Featured Image Type', 'bb-vapor-modules-pro' ),
+						'display_featured_image'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Featured Image?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'featured_image_type',
+										'featured_thumbnail_size',
+										'featured_image_location',
+									),
+								),
+							),
+						),
+						'featured_image_type'      => array(
+							'type'    => 'select',
+							'label'   => __( 'Featured Image Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'featured' => __( 'Featured Image', 'bb-vapor-modules-pro' ),
 								'gravatar' => __( 'Gravatar', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'featured',
-							'toggle' => array(
-								'gravatar' => array( 'fields' => array( 'gravatar_size' ) )
-							)
+							'toggle'  => array(
+								'gravatar' => array( 'fields' => array( 'gravatar_size' ) ),
+							),
 						),
-						'gravatar_size' => array(
-							'type' => 'unit',
-							'label' => __( 'Gravatar Size', 'bb-vapor-modules-pro' ),
+						'gravatar_size'            => array(
+							'type'    => 'unit',
+							'label'   => __( 'Gravatar Size', 'bb-vapor-modules-pro' ),
 							'default' => '150',
-							'slider' => array(
-								'min'  	=> 100,
-								'max'  	=> 1000,
-								'step' 	=> 50,
+							'slider'  => array(
+								'min'  => 100,
+								'max'  => 1000,
+								'step' => 50,
 							),
 						),
-						'featured_thumbnail_size' => array(
-							'type' => 'select',
-							'label' => __( 'Thumbnail Size', 'bb-vapor-modules-pro' ),
-							'options' => $bbvm_thumbnail_sizes
+						'featured_thumbnail_size'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Thumbnail Size', 'bb-vapor-modules-pro' ),
+							'options' => $bbvm_thumbnail_sizes,
 						),
-						'featured_image_location' => array(
-							'type' => 'select',
-							'label' => __( 'Featured Image Location', 'bb-vapor-modules-pro' ),
+						'featured_image_location'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Featured Image Location', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'regular' => __( 'Regular Placement', 'bb-vapor-modules-pro' ),
-								'below_title' => __( 'Below Title', 'bb-vapor-modules-pro' ),
+								'regular'          => __( 'Regular Placement', 'bb-vapor-modules-pro' ),
+								'below_title'      => __( 'Below Title', 'bb-vapor-modules-pro' ),
 								'below_title_meta' => __( 'Below Title and Post Meta', 'bb-vapor-modules-pro' ),
-								'bottom' => __( 'Bottom', 'bb-vapor-modules-pro' ),
+								'bottom'           => __( 'Bottom', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'regular'
+							'default' => 'regular',
 						),
-						'display_post_author' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Post Author?', 'bb-vapor-modules-pro' ),
+						'display_post_author'      => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Post Author?', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes'
-						),
-						'display_post_date' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Post Date?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes'
-						),
-						'display_post_excerpt' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Post Excerpt?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes'
-						),
-						'display_pagination' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Pagination?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'no'
-						),
-						'change_capitalization' => array(
-							'type'          => 'select',
-							'label'         => __( 'Change Capitalization?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'no'
-						),
-						'center_text' => array(
-							'type'          => 'select',
-							'label'         => __( 'Center Text?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'no'
-						),
-						'display_continue_reading' => array(
-							'type'          => 'select',
-							'label'         => __( 'Display Continue Reading Link?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no' => __( 'No', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
-							'toggle' => array(
-								'yes' => array( 'fields' => array( 'continue_reading' ) )
-							)
 						),
-						'continue_reading' => array(
-							'type' => 'text',
-							'label' => __( 'Continue Reading Text', 'bb-vapor-modules-pro' ),
-							'default' => 'Continue Reading'
-						)
-
-					)
-				)
+						'display_post_date'        => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Post Date?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+						),
+						'display_post_excerpt'     => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Post Excerpt?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+						),
+						'display_pagination'       => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Pagination?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+						),
+						'change_capitalization'    => array(
+							'type'    => 'select',
+							'label'   => __( 'Change Capitalization?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+						),
+						'center_text'              => array(
+							'type'    => 'select',
+							'label'   => __( 'Center Text?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+						),
+						'display_continue_reading' => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Continue Reading Link?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+							'toggle'  => array(
+								'yes' => array( 'fields' => array( 'continue_reading' ) ),
+							),
+						),
+						'continue_reading'         => array(
+							'type'    => 'text',
+							'label'   => __( 'Continue Reading Text', 'bb-vapor-modules-pro' ),
+							'default' => 'Continue Reading',
+						),
+					),
+				),
 			),
 		),
 		'color'       => array( // Tab
-			'title'         => __('Color and Typography', 'bb-vapor-modules-pro'), // Tab title
+			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Tab title
 			'sections'      => array( // Tab Sections
 				'general'       => array( // Section
-					'title'         => __('Color and Typography', 'bb-vapor-modules-pro'), // Section Title
-					'fields'        => array( // Section Fields
-						'heading_typography' => array(
-							'type'          => 'typography',
-							'label'         => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true
+					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
+						'heading_typography'  => array(
+							'type'       => 'typography',
+							'label'      => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
-						'meta_typography' => array(
-							'type'          => 'typography',
-							'label'         => __( 'Meta Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true
+						'meta_typography'    => array(
+							'type'       => 'typography',
+							'label'      => __( 'Meta Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
-						'excerpt_typography' => array(
-							'type'          => 'typography',
-							'label'         => __( 'Excerpt Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true
+						'excerpt_typography'  => array(
+							'type'       => 'typography',
+							'label'      => __( 'Excerpt Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
 						'readmore_typography' => array(
-							'type'          => 'typography',
-							'label'         => __( 'Read More Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true
+							'type'       => 'typography',
+							'label'      => __( 'Read More Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
-						'background_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Background Color', 'bb-vapor-modules-pro' ),
-							'default' => 'FFFFFF'
-						),
-						'text_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Text Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000'
-						),
-						'link_color' => array(
-							'type'          => 'color',
-							'label'         => __( 'Link Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000'
-						),
-						'link_color_hover' => array(
-							'type'          => 'color',
-							'label'         => __( 'Link Color Hover', 'bb-vapor-modules-pro' ),
-							'default' => '000000'
-						),
-					)
-				)
-			),
-		),
-		'pagination'       => array( // Tab
-			'title'         => __('Pagination', 'bb-vapor-modules-pro'), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'         => __('Pagination', 'bb-vapor-modules-pro'), // Section Title
-					'fields'        => array( // Section Fields
-						'pagination_padding' => array(
-							'type'          => 'dimension',
-							'label'         => __( 'Select Padding for Pagination', 'bb-vapor-modules-pro' ),
-							'responsive'    => true,
-						),
-						'pagination_border_color' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Border Color', 'bb-vapor-modules-pro' ),
-							'default' => 'EEEEEE'
-						),
-						'pagination_background' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Item Background', 'bb-vapor-modules-pro' ),
-							'default' => 'FFFFFF'
-						),
-						'pagination_background_active' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Active Item Background', 'bb-vapor-modules-pro' ),
-							'default' => 'FFFFFF'
-						),
-						'pagination_background_hover' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Item Hover Background', 'bb-vapor-modules-pro' ),
-							'default' => 'FFFFFF'
-						),
-						'pagination_active_color' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Active Text Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-						),
-						'pagination_link_color' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Link Color', 'bb-vapor-modules-pro' ),
+						'background_color'    => array(
+							'type'    => 'color',
+							'label'   => __( 'Background Color', 'bb-vapor-modules-pro' ),
 							'default' => 'FFFFFF',
 						),
-						'pagination_link_color_hover' => array(
-							'type' => 'color',
-							'label' => __( 'Pagination Link Color Hover', 'bb-vapor-modules-pro' ),
+						'text_color'          => array(
+							'type'    => 'color',
+							'label'   => __( 'Text Color', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+						),
+						'link_color'          => array(
+							'type'    => 'color',
+							'label'   => __( 'Link Color', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+						),
+						'link_color_hover'    => array(
+							'type'    => 'color',
+							'label'   => __( 'Link Color Hover', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+						),
+					),
+				),
+			),
+		),
+		'pagination'  => array( // Tab
+			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ), // Tab title
+			'sections' => array( // Tab Sections
+				'general' => array( // Section
+					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ), // Section Title
+					'fields' => array( // Section Fields
+						'pagination_padding'           => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select Padding for Pagination', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'pagination_border_color'      => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Border Color', 'bb-vapor-modules-pro' ),
+							'default' => 'EEEEEE',
+						),
+						'pagination_background'        => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Item Background', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
+						),
+						'pagination_background_active' => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Active Item Background', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
+						),
+						'pagination_background_hover'  => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Item Hover Background', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
+						),
+						'pagination_active_color'      => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Active Text Color', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+						),
+						'pagination_link_color'        => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Link Color', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
+						),
+						'pagination_link_color_hover'  => array(
+							'type'    => 'color',
+							'label'   => __( 'Pagination Link Color Hover', 'bb-vapor-modules-pro' ),
 							'default' => 'FFFFFF',
 						),
 					),

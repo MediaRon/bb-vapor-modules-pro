@@ -19,3 +19,8 @@ wp-content/plugins/hello.php
 
 
 \.DS_Store
+
+node_modules
+release
+bb-vapor-modules-pro.zip
+bb-vapor-modules-pro
