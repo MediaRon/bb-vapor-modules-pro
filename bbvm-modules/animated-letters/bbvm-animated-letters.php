@@ -50,18 +50,6 @@ FLBuilder::register_module(
 				'general' => array( // Section
 					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ), // Section Title
 					'fields' => array( // Section Fields
-						'alignment'    => array(
-							'type'    => 'align',
-							'label'   => __( 'Text Alignment', 'bb-vapor-modules-pro' ),
-							'default' => 'center',
-						),
-						'text_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
-							'show_alpha' => true,
-							'show_reset' => true,
-							'default'    => '000000',
-						),
 						'style'        => array(
 							'type'    => 'select',
 							'label'   => __( 'Animation Style', 'bb-vapor-modules-pro' ),
@@ -77,6 +65,7 @@ FLBuilder::register_module(
 								'domino'   => __( 'Domino', 'bb-vapor-modules-pro' ),
 								'hello'    => __( 'Hello', 'bb-vapor-modules-pro' ),
 								'bottom'   => __( 'Bottom', 'bb-vapor-modules-pro' ),
+								'left'     => __( 'Left', 'bb-vapor-modules-pro' ),
 								'rising'   => __( 'Rising', 'bb-vapor-modules-pro' ),
 								'find'     => __( 'Find', 'bb-vapor-modules-pro' ),
 								'out'      => __( 'Out', 'bb-vapor-modules-pro' ),
@@ -88,24 +77,21 @@ FLBuilder::register_module(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'sunny' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'great' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
-									),
-								),
-								'go' => array(
-									'fields' => array(
-										'text_form',
-										'typography',
+										'text_color',
 									),
 								),
 								'signal' => array(
@@ -113,6 +99,10 @@ FLBuilder::register_module(
 										'text_left',
 										'text_center',
 										'text_right',
+										'text_left_color',
+										'text_right_color',
+										'text_form',
+										'text_center_color',
 										'text_left_typography',
 										'text_center_typography',
 										'text_right_typography',
@@ -122,33 +112,71 @@ FLBuilder::register_module(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'reality' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'coffee' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'domino' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
 									),
 								),
 								'hello' => array(
 									'fields' => array(
 										'text_animate',
 										'typography',
+										'text_color',
+									),
+								),
+								'bottom' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+										'text_color',
+									),
+								),
+								'left' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+										'text_color',
+									),
+								),
+								'rising' => array(
+									'fields' => array(
+										'text_animate',
+										'typography',
+										'text_color',
 									),
 								),
 							),
+						),
+						'alignment'    => array(
+							'type'    => 'align',
+							'label'   => __( 'Text Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
+						'text_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'default'    => '000000',
 						),
 						'text_animate' => array(
 							'type'    => 'text',

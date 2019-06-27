@@ -309,6 +309,56 @@ if ( typeof anime !== 'undefined' ) {
 		});
 		<?php
 	endif;
+	if ( 'left' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			translateX: [40,0],
+			translateZ: 0,
+			opacity: [0,1],
+			easing: "easeOutExpo",
+			duration: 1200,
+			delay: function(el, i) {
+				return 500 + 30 * i;
+			}
+		}).add({
+		targets: animeTarget,
+		translateX: [0,-30],
+		opacity: [1,0],
+		easing: "easeInExpo",
+		duration: 1100,
+		delay: function(el, i) {
+			return 100 + 30 * i;
+		}
+		});
+		<?php
+	endif;
+	if ( 'rising' === $settings->style ) :
+		?>
+		anime.timeline({loop: animeLoop})
+		.add({
+			targets: animeTarget,
+			translateY: [100,0],
+			translateZ: 0,
+			opacity: [0,1],
+			easing: "easeOutExpo",
+			duration: 1400,
+			delay: function(el, i) {
+			return 300 + 30 * i;
+			}
+		}).add({
+			targets: animeTarget,
+			translateY: [0,-100],
+			opacity: [1,0],
+			easing: "easeInExpo",
+			duration: 1200,
+			delay: function(el, i) {
+			return 100 + 30 * i;
+			}
+		});
+		<?php
+	endif;
 	?>
 }
 <?php
