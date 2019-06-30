@@ -12,7 +12,7 @@ if ( isset( $settings->copyright_site_field ) ) :
 	$copyright_html .= esc_html( $settings->copyright_site_field );
 	?>
 	<div class="fl-bbvm-copyright-for-beaverbuilder">
-		<p><?php echo wp_kses_post( $copyright_html ); ?></p>
+		<p><?php echo $copyright_html; // phpcs:ignore ?></p>
 	</div>
 	<?php
 endif;
