@@ -31,7 +31,7 @@
 	else :
 		$letters = $settings->text_animate;
 		// Split into spans
-		$letters = preg_replace( '/([a-zA-Z0-9\"\']|\w|\s)/i', '<span class="letter">$1</span>', $letters );
+		$letters = preg_replace( '/([a-zA-Z0-9\"\'!@\#\$%\^&*()\.]|\w|\s)/i', '<span class="letter">$1</span>', $letters );
 		echo wp_kses_post( '<span class="letters">' . str_replace( '<span class="letter"> </span>', '<span class="letter">&nbsp;</span>', $letters ) . '</span>' );
 	endif;
 	if ( 'beauty' === $settings->style || 'reality' === $settings->style || 'coffee' === $settings->style || 'domino' === $settings->style || 'hello' === $settings->style || 'bottom' === $settings->style || 'find' === $settings->style ) :
