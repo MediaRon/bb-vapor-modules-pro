@@ -1,3 +1,6 @@
+<?php
+$bbvm_loop = ( 'yes' === $settings->loop ) ? true : false;
+?>
 if ( typeof anime !== 'undefined' ) {
 	var animeLoop = <?php echo ( 'yes' === $settings->loop ) ? 'true' : 'false'; ?>;
 	var animeDelay = <?php echo absint( $settings->delay ); ?>;
@@ -33,13 +36,16 @@ if ( typeof anime !== 'undefined' ) {
 				return animeDelay * (l - i);
 			}
 		}
-		).add({
+		)
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'sunny' === $settings->style ) :
@@ -55,13 +61,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay*i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'great' === $settings->style ) :
@@ -75,13 +84,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay * (i+1)
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'go' === $settings->style ) :
@@ -155,13 +167,16 @@ if ( typeof anime !== 'undefined' ) {
 			easing: "easeOutExpo",
 			duration: 600,
 			offset: '-=600'
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'beauty' === $settings->style ) :
@@ -175,13 +190,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'reality' === $settings->style ) :
@@ -198,13 +216,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'coffee' === $settings->style ) :
@@ -218,13 +239,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay * (i+1)
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'domino' === $settings->style ) :
@@ -237,13 +261,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return animeDelay * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'hello' === $settings->style ) :
@@ -271,13 +298,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return 34 * (i+1)
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'bottom' === $settings->style ) :
@@ -302,13 +332,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return 34 * (i+1)
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'left' === $settings->style ) :
@@ -324,7 +357,9 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return 500 + 30 * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 		targets: animeTarget,
 		translateX: [0,-30],
 		opacity: [1,0],
@@ -334,6 +369,7 @@ if ( typeof anime !== 'undefined' ) {
 			return 100 + 30 * i;
 		}
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'rising' === $settings->style ) :
@@ -347,9 +383,11 @@ if ( typeof anime !== 'undefined' ) {
 			easing: "easeOutExpo",
 			duration: 1400,
 			delay: function(el, i) {
-			return 300 + 30 * i;
+				return 300 + 30 * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeTarget,
 			translateY: [0,-100],
 			opacity: [1,0],
@@ -359,6 +397,7 @@ if ( typeof anime !== 'undefined' ) {
 			return 100 + 30 * i;
 			}
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'find' === $settings->style ) :
@@ -382,13 +421,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return 150 + 25 * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'out' === $settings->style ) :
@@ -403,13 +445,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 			return 800 * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 		});
+		<?php endif; ?>
 		<?php
 	endif;
 	if ( 'love' === $settings->style ) :
@@ -423,13 +468,16 @@ if ( typeof anime !== 'undefined' ) {
 			delay: function(el, i) {
 				return 30 * i;
 			}
-		}).add({
+		})
+		<?php if ( $bbvm_loop ) : ?>
+		.add({
 			targets: animeHeadingTarget,
 			opacity: 0,
 			duration: 1000,
 			easing: "easeOutExpo",
 			delay: 1000
 			});
+		<?php endif; ?>
 		<?php
 	endif;
 	?>

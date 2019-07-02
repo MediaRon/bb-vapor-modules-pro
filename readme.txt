@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.2.3 =
+* Ensuring text does not disappear in the Animated Letters module when looping is disabled.
 
 = 1.2.2 =
 * Bug fix: Adding extra characters to the Animated Letters module.
