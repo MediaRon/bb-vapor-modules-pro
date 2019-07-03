@@ -61,6 +61,11 @@ class BBVapor_Modules_Pro {
 			require_once 'bbvm-modules/user-profile/bbvm-user-profile.php';
 			new BBVapor_User_Profile_Module();
 
+			// Twitter Embed
+			// User Profile module
+			require_once 'bbvm-modules/twitter-embed/bbvm-twitter-embed.php';
+			new BBVapor_Twitter_Embed();
+
 			// Photo overlay module
 			require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
 			new BBVapor_Photo_Overlay_Module();

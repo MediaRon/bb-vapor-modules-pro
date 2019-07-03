@@ -1,14 +1,14 @@
 <?php // phpcs:ignore
-class BBVapor_Gist_Module extends FLBuilderModule {
+class BBVapor_Twitter_Embed extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
 			array(
-				'name'            => __( 'Gist', 'bb-vapor-modules-pro' ),
-				'description'     => __( 'Gists for Beaver Builder', 'bb-vapor-modules-pro' ),
+				'name'            => __( 'Twitter Embed', 'bb-vapor-modules-pro' ),
+				'description'     => __( 'Twitter Embed for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/gist/',
-				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/gist/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/twitter-embed/',
+				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/twitter-embed/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.
 				'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -20,7 +20,7 @@ class BBVapor_Gist_Module extends FLBuilderModule {
  * Register the module and its form settings.
  */
 FLBuilder::register_module(
-	'BBVapor_Gist_Module',
+	'BBVapor_Twitter_Embed',
 	array(
 		'general' => array( // Tab
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
