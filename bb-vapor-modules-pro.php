@@ -56,6 +56,10 @@ class BBVapor_Modules_Pro {
 			require_once 'bbvm-modules/markdown/bbvm-markdown.php';
 			new BBVapor_Markdown_Module();
 
+			// Content scroller module
+			require_once 'bbvm-modules/content-scroller/bbvm-content-scroller.php';
+			new BBVapor_Content_Scroller();
+
 			// Animated Letters Module
 			require_once 'bbvm-modules/animated-letters/bbvm-animated-letters.php';
 			new BBVapor_Animated_Letters_Module();
