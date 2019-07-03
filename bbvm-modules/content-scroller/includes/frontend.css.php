@@ -1,4 +1,5 @@
 <?php
+/*
 $bbvm_count = 0;
 foreach ( $settings->headlines as $headline ) {
 	?>
@@ -43,3 +44,4 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+*/
