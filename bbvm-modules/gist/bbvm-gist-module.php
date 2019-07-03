@@ -22,7 +22,7 @@ class BBVapor_Gist_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Gist_Module',
 	array(
-		'general' > array( // Tab
+		'general' => array( // Tab
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
 			'sections' => array( // Tab Sections
 				'general' => array( // Section
