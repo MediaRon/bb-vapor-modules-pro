@@ -31,7 +31,7 @@ FLBuilder::register_module(
 						'tweet' => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter Your Tweet URL Here', 'bb-vapor-modules-pro' ),
-							'default' => '',
+							'default' => 'https://twitter.com/mediaronllc/status/1140182354855677955',
 						),
 						'size'  => array(
 							'type'    => 'unit',
