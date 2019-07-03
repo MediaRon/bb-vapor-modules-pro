@@ -41,6 +41,9 @@ class BBVapor_Modules_Pro {
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
 		new BBVapor_BeaverBuilder_Admin();
 
+		// Register Icons
+		require_once 'includes/icons/class-bbvm-icons.php';
+
 		if ( class_exists( 'FLBuilder' ) ) {
 
 			add_action( 'wp_head', array( $this, 'bbvm_beaver_builder_ajax_url' ) );
