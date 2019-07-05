@@ -12,13 +12,24 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item {
 	width: 100%;
-	height: 80vh;
+	height: 100vh;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper {
 	display: flex;
-	text-wrap: wrap;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content * {
+	width: 100%;
+	text-align: center;
 }
 <?php
 /*
