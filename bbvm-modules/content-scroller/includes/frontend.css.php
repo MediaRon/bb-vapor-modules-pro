@@ -1,3 +1,25 @@
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item .bbvm-content-scroller-item {
+	width: 50%;
+	height: 100vh;
+	float: right;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper {
+	position: fixed;
+	width: 50%;
+	height: 100vh;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item {
+	width: 100%;
+	height: 80vh;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper {
+	display: flex;
+	text-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
 <?php
 /*
 $bbvm_count = 0;
