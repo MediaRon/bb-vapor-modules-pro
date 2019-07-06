@@ -26,6 +26,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 100%;
+	padding: 50vh 20px 50vh 20px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content * {
 	width: 100%;

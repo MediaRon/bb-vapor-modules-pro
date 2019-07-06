@@ -1,0 +1,15 @@
+var elements = document.getElementsByClassName('bbvm-content-scroller-content');
+var arrayLength = elements.length;
+for (var i = 0; i < arrayLength; i++) {
+    var waypoint = new Waypoint({
+	element: elements[i],
+	handler: function(direction) {
+
+		var element = this.element;
+		var color = element.getAttribute( 'data-color' );
+		var background =  element.getAttribute( 'data-background' );
+		jQuery( '.bbvm-content-scroller-item-wrapper' ).css( 'backgroundColor', color );
+		jQuery( '.bbvm-content-scroller-bg' ).css( 'background-image',"url(" + background + ")" );
+	}
+	})
+}
