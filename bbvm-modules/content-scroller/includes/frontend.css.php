@@ -14,6 +14,8 @@
 	width: 100%;
 	height: 100vh;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item.bbvm-content-scroller-bg {
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper {
 	display: flex;
 	flex-wrap: wrap;

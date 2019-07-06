@@ -5,7 +5,7 @@
 		foreach ( $form_settings as $form_setting ) :
 			?>
 			<div class="fl-bbvm-content-scroller-item">
-				<div class="bbvm-content-scroller-item-wrapper" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_setting->background_color_left ) ); ?>; padding: 40px;">
+				<div class="bbvm-content-scroller-item-wrapper" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_setting->background_color_left ) ); ?>;">
 					<div class="bbvm-content-scroller-item bbvm-content-scroller-bg" style="background-image: url(<?php echo esc_url( $form_setting->background_photo_left_src ); ?>); background-size: cover"></div>
 				</div>
 				<div class="bbvm-content-scroller-item fl-bbvm-content-scroller-content-wrapper">
