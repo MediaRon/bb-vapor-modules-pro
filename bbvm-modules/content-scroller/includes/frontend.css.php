@@ -92,6 +92,7 @@
 	justify-content: center;
 	height: 100vh;
 	width: 100%;
+	padding: 25vh 20px 25vh 20px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content *,
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive * {
