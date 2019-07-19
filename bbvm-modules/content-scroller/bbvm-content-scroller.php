@@ -123,6 +123,12 @@ FLBuilder::register_settings_form(
 								'multiple'     => true,
 								'preview_text' => 'headline',
 							),
+							'content_color' => array(
+								'type'        => 'color',
+								'label'       => __( 'Content Color', 'bb-vapor-modules' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
 							'content' => array(
 								'type'        => 'editor',
 								'label'       => __( 'Content', 'bb-vapor-modules' ),
