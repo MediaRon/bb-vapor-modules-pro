@@ -1,4 +1,9 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
+	height: 100vh;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item .bbvm-content-scroller-item {
 	width: 50%;
@@ -6,9 +11,16 @@
 	float: right;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper {
-	position: fixed;
 	width: 50%;
 	height: 100vh;
+	top: 0;
+	float: left;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.stuck {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item {
 	width: 100%;
@@ -21,12 +33,15 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	top: 0;
+	right: 0;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
+	height: 100%;
 	width: 100%;
 	padding: 50vh 20px 50vh 20px;
 }
@@ -40,6 +55,14 @@
 	-o-transition: background 0.8s linear;
 	-ms-transition: background 0.8s linear;
 	transition: background 0.8s linear;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .sticky-wrapper .stuck .bbvm-content-scroller-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 50%;
+	float: left;
 }
 <?php
 /*

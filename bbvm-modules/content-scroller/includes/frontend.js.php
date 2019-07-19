@@ -1,5 +1,8 @@
 var elements = document.getElementsByClassName('bbvm-content-scroller-content');
 var arrayLength = elements.length;
+var sticky = new Waypoint.Sticky({
+  element: jQuery('.fl-bbvm-content-scroller-for-beaverbuilder')[0],
+})
 for (var i = 0; i < arrayLength; i++) {
     var waypoint = new Waypoint({
 	element: elements[i],
@@ -12,4 +15,5 @@ for (var i = 0; i < arrayLength; i++) {
 		jQuery( '.bbvm-content-scroller-bg' ).css( 'background-image',"url(" + background + ")" );
 	}
 	})
+
 }
