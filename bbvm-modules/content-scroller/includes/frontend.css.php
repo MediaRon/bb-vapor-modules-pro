@@ -34,6 +34,13 @@
 	width: 100%;
 	text-align: center;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-bg {
+	-webkit-transition: background 0.8s linear;
+	-moz-transition: background 0.8s linear;
+	-o-transition: background 0.8s linear;
+	-ms-transition: background 0.8s linear;
+	transition: background 0.8s linear;
+}
 <?php
 /*
 $bbvm_count = 0;
