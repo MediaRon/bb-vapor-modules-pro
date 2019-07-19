@@ -16,7 +16,7 @@
 	top: 0;
 	float: left;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.stuck {
+.fl-node-<?php echo esc_html( $id ); ?> #content-scroller.stuck {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -27,6 +27,13 @@
 	height: 100vh;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item.bbvm-content-scroller-bg {
+}
+.fl-node-<?php echo esc_html( $id ); ?>.stuck .bbvm-content-scroller-item-wrapper {
+	position: fixed;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .sticky-wrapper {
+	position: relative;
+	overflow-x: scroll;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper {
 	display: flex;
@@ -56,13 +63,25 @@
 	-ms-transition: background 0.8s linear;
 	transition: background 0.8s linear;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .sticky-wrapper .stuck .bbvm-content-scroller-bg {
+.stuck {
+	z-index: 1000000;
+}
+.stuck .bbvm-content-scroller-item-wrapper {
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	width: 50%;
 	float: left;
+	z-index: 1000;
+}
+.stuck .bbvm-content-scroller-item {
+	z-index: 1000000;
+}
+.sticky-wrapper {
+	height: 200vh !important;
+	z-index: 1000000;
+	position: relative;
 }
 <?php
 /*

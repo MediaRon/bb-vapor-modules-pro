@@ -1,7 +1,7 @@
 var elements = document.getElementsByClassName('bbvm-content-scroller-content');
 var arrayLength = elements.length;
 var sticky = new Waypoint.Sticky({
-  element: jQuery('.fl-bbvm-content-scroller-for-beaverbuilder')[0],
+  element: jQuery('#content-scroller')[0],
 })
 for (var i = 0; i < arrayLength; i++) {
     var waypoint = new Waypoint({
