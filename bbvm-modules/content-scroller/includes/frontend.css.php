@@ -63,6 +63,12 @@
 	-ms-transition: background 0.8s linear;
 	transition: background 0.8s linear;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder:after,
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-items:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 .stuck {
 	z-index: 1000000;
 }
@@ -79,7 +85,6 @@
 	z-index: 1000000;
 }
 .sticky-wrapper {
-	height: 200vh !important;
 	z-index: 1000000;
 	position: relative;
 }
