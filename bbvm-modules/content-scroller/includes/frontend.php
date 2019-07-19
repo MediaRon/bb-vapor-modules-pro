@@ -27,3 +27,27 @@
 		?>
 	</div><!-- .fl-bbvm-content-scroller-items -->
 </div><!-- .fl-bbvm-content-scroller-for-beaverbuilder -->
+<div class="fl-bbvm-content-scroller-responsive-for-beaverbuilder" style="display: none;">
+<?php
+$form_settings_content = $settings->scroller_content;
+foreach ( $form_settings_content as $form_content ) {
+	?>
+	<div class="fl-bbvm-content-scroller-item-responsive">
+		<div class="bbvm-content-scroller-item-responsive-wrapper" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>;">
+			<div class="bbvm-content-scroller-item-responsive bbvm-content-scroller-bg-responsive" style="background: url(<?php echo esc_url( $form_content->background_photo_left_src ); ?>); background-size: cover"></div>
+		</div>
+		<div class="bbvm-content-scroller-item-responsive fl-bbvm-content-scroller-content-responsive-wrapper">
+			<?php
+			$form_settings_content = $settings->scroller_content;
+			?>
+			<div class="bbvm-content-scroller-content-responsive" style="background-color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>;">
+			<?php
+			echo wp_kses_post( $form_content->content );
+			echo '</div>';
+		?>
+			</div>
+		</div>
+		<?php
+}
+?>
+</div>

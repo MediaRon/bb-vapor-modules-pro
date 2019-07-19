@@ -1,3 +1,31 @@
+@media only screen and (max-width: 600px) {
+	.fl-bbvm-content-scroller-content-responsive-wrapper {
+		width: 100%;
+		height: 100vh !important;
+	}
+	.fl-bbvm-content-scroller-content-responsive-wrapper {
+		float: unset;
+		position: relative;
+		width: auto;
+		height: auto;
+		clear: both;
+		display: block;
+		padding: 0;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100%;
+	}
+	.fl-bbvm-content-scroller-item {
+		width: 100%;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100%;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100% !important;
+	}
+}
+
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
 	height: 100vh;
 	top: 0;
@@ -10,7 +38,11 @@
 	height: 100vh;
 	float: right;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive .bbvm-content-scroller-content-responsive {
+	width: 100%;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper,
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-responsive-wrapper {
 	width: 50%;
 	height: 100vh;
 	top: 0;
@@ -35,7 +67,8 @@
 	position: relative;
 	overflow-x: scroll;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper,
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-responsive-wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -52,9 +85,21 @@
 	width: 100%;
 	padding: 50vh 20px 50vh 20px;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content * {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: 100vh;
+	width: 100%;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content *,
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive * {
 	width: 100%;
 	text-align: center;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-bg-responsive {
+	height: 100vh;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-bg {
 	-webkit-transition: background 0.8s linear;
@@ -64,7 +109,8 @@
 	transition: background 0.8s linear;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder:after,
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-items:after {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-items:after,
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-responsive-for-beaverbuilder:after {
 	content: "";
 	display: table;
 	clear: both;
@@ -87,6 +133,7 @@
 .sticky-wrapper {
 	z-index: 1000000;
 	position: relative;
+	height: auto !important;
 }
 <?php
 /*
