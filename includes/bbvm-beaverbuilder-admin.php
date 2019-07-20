@@ -90,7 +90,30 @@ class BBVapor_BeaverBuilder_Admin {
 		$hook = '';
 
 		$hook = add_submenu_page(
-			'options-general.php', __( 'Vapor Modules', 'bb-vapor-modules-pro' ), __( 'Vapor Modules', 'bb-vapor-modules-pro' ), 'manage_options', 'bb-vapor-modules-pro', array( $this, 'admin_page' )
+			'options-general.php',
+			__( 'Vapor Modules', 'bb-vapor-modules-pro' ),
+			__( 'Vapor Modules', 'bb-vapor-modules-pro' ),
+			'manage_options',
+			'bb-vapor-modules-pro',
+			array( $this, 'admin_page' )
+		);
+		add_action( 'load-' . $hook, array( $this, 'add_admin_scripts' ) );
+	}
+
+	public function add_admin_scripts() {
+		wp_enqueue_script(
+			'vapor-admin',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/admin-tabs.js',
+			array( 'jquery', 'wp-ajax-response' ),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			true
+		);
+		wp_enqueue_style(
+			'vapor-admin',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/admin.css',
+			array(),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			'all'
 		);
 	}
 
@@ -205,33 +228,44 @@ class BBVapor_BeaverBuilder_Admin {
 
 				<div id="prompt-tabs">
 					<h2 class="nav-tab-wrapper">
-						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" id="tab-welcome" class="nav-tab show nav-tab-active" data-tab-name="tab-welcome" style="">Welcome</a>
-						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" id="tab-license" class="nav-tab show" data-tab-name="tab-license" style="">License</a>
-						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" id="tab-instagram" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
-						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" id="tab-template-cloud" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show nav-tab-active" data-tab-name="tab-welcome" style="">Welcome</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show" data-tab-name="tab-license" style="">License</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
 					</h2>
 				</div>
-
-				<table class="form-table">
-					<tbody>
-					<tr>
-							<th scope="row"><label for="bbvm-license"><?php esc_html_e( 'Enter Your License', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td>
-								<input id="bbvm-license" class="regular-text" type="text" value="<?php echo esc_attr( $license ); ?>" name="options[license]" /><br />
-								<?php
-								if( false === $license || empty( $license ) ) {
-									printf('<p>%s</p>', esc_html__( 'Please enter your licence key.', 'bb-vapor-modules-pro' ) );
-								} else {
-									printf('<p>%s</p>', esc_html__( 'Your license is valid and you will now receive update notifications.', 'bb-vapor-modules-pro' ) );
-								}
-								?>
-								<?php
-								if( ! empty( $license_message ) ) {
-									printf( '<div class="updated error"><p><strong>%s</p></strong></div>', esc_html( $license_message ) );
-								}
-								?>
-							</td>
-						</tr>
+				<div id="tab-welcome" class="tab-content hide">
+					<div><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ); ?>" alt="BB Vapor Modules Pro" /></div>
+					<h3>Welcome to BB Vapor Modules for Beaver Builder</h3>
+				</div>
+				<div id="tab-license" class="tab-content hide">
+					<table class="form-table">
+						<tbody>
+						<tr>
+								<th scope="row"><label for="bbvm-license"><?php esc_html_e( 'Enter Your License', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td>
+									<input id="bbvm-license" class="regular-text" type="text" value="<?php echo esc_attr( $license ); ?>" name="options[license]" /><br />
+									<?php
+									if( false === $license || empty( $license ) ) {
+										printf('<p>%s</p>', esc_html__( 'Please enter your licence key.', 'bb-vapor-modules-pro' ) );
+									} else {
+										printf('<p>%s</p>', esc_html__( 'Your license is valid and you will now receive update notifications.', 'bb-vapor-modules-pro' ) );
+									}
+									?>
+									<?php
+									if( ! empty( $license_message ) ) {
+										printf( '<div class="updated error"><p><strong>%s</p></strong></div>', esc_html( $license_message ) );
+									}
+									?>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+				</div>
+				<div id="tab-instagram" class="tab-content hide">
+					<table class="form-table">
+						<tbody>
 						<tr>
 							<th scope="row"><label for="bbvm-instagram"><?php esc_html_e( 'Connect to Instagram', 'bb-vapor-modules-pro' ); ?></label>
 							</th>
@@ -275,7 +309,11 @@ class BBVapor_BeaverBuilder_Admin {
 					</tbody>
 				</table>
 				<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+				</div>
 			</form>
+			<div id="tab-template-cloud" class="tab-content hide">
+				<h2>Coming Soon</h2>
+			</div>
 		</div>
 		<?php
 	}
