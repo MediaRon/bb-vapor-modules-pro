@@ -15,7 +15,21 @@
 						?>
 						<div class="bbvm-content-scroller-content" data-background="<?php echo esc_url( $form_content->background_photo_left_src ); ?>" data-color="<?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>;">
 						<?php
-						echo wp_kses_post( $form_content->content );
+						$content = $form_content->content;
+						if ( isset( $form_content->headline ) && is_array( $form_content->headline ) ) {
+							ob_start();
+							echo '<h2>';
+							foreach ( $form_content->headline as $headline ) {
+								$variable_headline = json_decode( $headline );
+								?>
+								<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: px;"><?php echo esc_html( $variable_headline->headline ); ?></span>
+								<?php
+							}
+							echo '</h2>';
+							$headline_content = ob_get_clean();
+							$content          = str_replace( '{headline}', $headline_content, $content );
+						}
+						echo wp_kses_post( $content );
 						echo '</div>';
 					}
 					?>
