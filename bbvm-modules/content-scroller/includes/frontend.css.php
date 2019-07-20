@@ -94,7 +94,6 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content *,
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive * {
 	text-align: center;
-	filter: invert(1);
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-bg-responsive {
 	height: 100vh;
@@ -134,49 +133,13 @@
 	height: auto !important;
 }
 <?php
-/*
-$bbvm_count = 0;
-foreach ( $settings->headlines as $headline ) {
+$count         = 1;
+$form_settings = $settings->scroller_content;
+foreach ( $form_settings as $form_setting ) {
 	?>
-	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
-		color: #<?php echo esc_html( $headline->headline_color ); ?>;
+	.fl-node-<?php echo esc_html( $id ); ?> .count-<?php echo absint( $count ); ?> * {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_setting->content_color ) ); ?>;
 	}
 	<?php
-	FLBuilderCSS::typography_field_rule(
-		array(
-			'settings'     => $headline,
-			'setting_name' => 'headline_typography',
-			'selector'     => ".fl-node-$id .bbvm-variable-headline-$bbvm_count",
-		)
-	);
-	$bbvm_count++;
+	$count++;
 }
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'headline_margin',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
-		'unit'         => 'px',
-		'props'        => array(
-			'margin-top'    => 'headline_margin_top',
-			'margin-right'  => 'headline_margin_right',
-			'margin-bottom' => 'headline_margin_bottom',
-			'margin-left'   => 'headline_margin_left',
-		),
-	)
-);
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'headline_padding',
-		'selector'     => ".fl-node-$id .fl-bbvm-variable-headings-for-beaverbuilder {$settings->headline_tag}",
-		'unit'         => 'px',
-		'props'        => array(
-			'padding-top'    => 'headline_padding_top',
-			'padding-right'  => 'headline_padding_right',
-			'padding-bottom' => 'headline_padding_bottom',
-			'padding-left'   => 'headline_padding_left',
-		),
-	)
-);
-*/
