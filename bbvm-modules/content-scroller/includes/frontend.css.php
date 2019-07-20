@@ -1,7 +1,12 @@
-@media only screen and (max-width: 600px) {
-	.fl-bbvm-content-scroller-content-responsive-wrapper {
+@media only screen and (max-width: 800px) {
+	.fl-bbvm-content-scroller-responsive-for-beaverbuilder {
+		display: block !important;
 		width: 100%;
-		height: 100vh !important;
+		height: auto !important;
+		position: relative;
+	}
+	.fl-bbvm-content-scroller-for-beaverbuilder {
+		display: none;
 	}
 	.fl-bbvm-content-scroller-content-responsive-wrapper {
 		float: unset;

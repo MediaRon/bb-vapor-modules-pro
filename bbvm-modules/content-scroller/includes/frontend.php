@@ -20,7 +20,7 @@
 					}
 					?>
 				</div>
-			</div>
+				</div>
 			<?php
 			break;
 		endforeach;
@@ -44,9 +44,9 @@ foreach ( $form_settings_content as $form_content ) {
 			<?php
 			echo wp_kses_post( $form_content->content );
 			echo '</div>';
-		?>
+			?>
 			</div>
-		</div>
+	</div>
 		<?php
 }
 ?>
