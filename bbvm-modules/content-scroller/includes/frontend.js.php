@@ -17,6 +17,8 @@ for (var i = 0; i < arrayLength; i++) {
 			jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').hide();
 			jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').show();
 		} else {
+			jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').show();
+			jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').hide();
 		}
 	}
 	});

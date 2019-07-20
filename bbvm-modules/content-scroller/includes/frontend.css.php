@@ -114,7 +114,7 @@
 	clear: both;
 }
 .stuck {
-	z-index: 1000000;
+	z-index: 500;
 }
 .stuck .bbvm-content-scroller-item-wrapper {
 	position: fixed;
@@ -123,13 +123,13 @@
 	height: 100vh;
 	width: 50%;
 	float: left;
-	z-index: 1000;
+	z-index: 500;
 }
 .stuck .bbvm-content-scroller-item {
-	z-index: 1000000;
+	z-index: 500;
 }
 .sticky-wrapper {
-	z-index: 1000000;
+	z-index: 500;
 	position: relative;
 	height: auto !important;
 }
