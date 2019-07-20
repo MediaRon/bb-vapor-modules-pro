@@ -1,4 +1,7 @@
 @media only screen and (max-width: 800px) {
+	.fl-bbvm-content-scroller-for-beaverbuilder {
+		display: none !important;
+	}
 	.fl-bbvm-content-scroller-responsive-for-beaverbuilder {
 		display: block !important;
 		width: 100%;
@@ -84,12 +87,12 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content {
 	height: 100%;
 	width: 100%;
-	padding: 50vh 20px 50vh 20px;
+	padding: 50vh 40px 50vh 40px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive {
 	height: 100vh;
 	width: 100%;
-	padding: 25vh 20px 25vh 20px;
+	padding: 25vh 40px 25vh 40px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content *,
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive * {
