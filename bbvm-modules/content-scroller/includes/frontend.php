@@ -40,7 +40,7 @@ foreach ( $form_settings_content as $form_content ) {
 			<?php
 			$form_settings_content = $settings->scroller_content;
 			?>
-			<div class="bbvm-content-scroller-content-responsive" style="background-color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>">
+			<div class="bbvm-content-scroller-content-responsive" style="background-color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>;">
 			<?php
 			echo wp_kses_post( $form_content->content );
 			echo '</div>';
