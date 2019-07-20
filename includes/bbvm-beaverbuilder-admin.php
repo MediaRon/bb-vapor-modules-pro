@@ -222,7 +222,7 @@ class BBVapor_BeaverBuilder_Admin {
 		$license = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		?>
 		<div class="wrap">
-			<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+			<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-license' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
 				<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
 				<h2><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="75" width="75" alt="BB Vapor Modules Pro" /><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h2>
 
@@ -308,7 +308,6 @@ class BBVapor_BeaverBuilder_Admin {
 						</tr>
 					</tbody>
 				</table>
-				<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
 				</div>
 			</form>
 			<div id="tab-template-cloud" class="tab-content hide">
