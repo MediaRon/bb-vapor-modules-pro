@@ -200,8 +200,18 @@ class BBVapor_BeaverBuilder_Admin {
 		?>
 		<div class="wrap">
 			<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
-				<?php wp_nonce_field('save_bbvm_beaver_builder_options'); ?>
-				<h2><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h2>
+				<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
+				<h2><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="75" width="75" alt="BB Vapor Modules Pro" /><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h2>
+
+				<div id="prompt-tabs">
+					<h2 class="nav-tab-wrapper">
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" id="tab-welcome" class="nav-tab show nav-tab-active" data-tab-name="tab-welcome" style="">Welcome</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" id="tab-license" class="nav-tab show" data-tab-name="tab-license" style="">License</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" id="tab-instagram" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" id="tab-template-cloud" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
+					</h2>
+				</div>
+
 				<table class="form-table">
 					<tbody>
 					<tr>
