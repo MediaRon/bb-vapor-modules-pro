@@ -129,6 +129,11 @@ FLBuilder::register_settings_form(
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
+							'typography' => array(
+								'type'        => 'typography',
+								'label'       => __( 'Typography', 'bb-vapor-modules' ),
+								'description' => __( 'Typography for the content.', 'bb-vapor-modules-pro' ),
+							),
 							'content' => array(
 								'type'        => 'editor',
 								'label'       => __( 'Content', 'bb-vapor-modules' ),

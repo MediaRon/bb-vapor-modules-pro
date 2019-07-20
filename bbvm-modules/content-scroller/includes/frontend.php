@@ -13,7 +13,7 @@
 					$form_settings_content = $settings->scroller_content;
 					foreach ( $form_settings_content as $form_content ) {
 						?>
-						<div class="bbvm-content-scroller-content" data-background="<?php echo esc_url( $form_content->background_photo_left_src ); ?>" data-color="<?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>;">
+						<div class="bbvm-content-scroller-content" data-background="<?php echo esc_url( $form_content->background_photo_left_src ); ?>" data-color="<?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>; font-family: <?php echo esc_html( ( 'Default' == $form_content->typography->font_family  )? 'inherit' : $form_content->typography->font_family ); ?>; font-size: <?php echo esc_html( ( empty( $form_content->typography->font_size->length  ) ) ? '18' : $form_content->typography->font_size->length ); ?>px; line-height: <?php echo esc_html( ( empty( $form_content->typography->line_height->length  ) ) ? '1.1' : $form_content->typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $form_content->typography->text_transform  ) ) ? 'inherit' : $form_content->typography->text_transform ); ?>;">
 						<?php
 						$content = $form_content->content;
 						if ( isset( $form_content->headline ) && is_array( $form_content->headline ) ) {
@@ -22,7 +22,7 @@
 							foreach ( $form_content->headline as $headline ) {
 								$variable_headline = json_decode( $headline );
 								?>
-								<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: px;"><?php echo esc_html( $variable_headline->headline ); ?></span>
+								<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length  ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' == $variable_headline->headline_typography->font_family  ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length  ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform  ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
 								<?php
 							}
 							echo '</h2>';
@@ -54,7 +54,7 @@ foreach ( $form_settings_content as $form_content ) {
 			<?php
 			$form_settings_content = $settings->scroller_content;
 			?>
-			<div class="bbvm-content-scroller-content-responsive" style="background-color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>;">
+			<div class="bbvm-content-scroller-content-responsive" style="background-color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>; font-family: <?php echo esc_html( ( 'Default' == $form_content->typography->font_family  )? 'inherit' : $form_content->typography->font_family ); ?>; font-size: <?php echo esc_html( ( empty( $form_content->typography->font_size->length  ) ) ? '18' : $form_content->typography->font_size->length ); ?>px; line-height: <?php echo esc_html( ( empty( $form_content->typography->line_height->length  ) ) ? '1.1' : $form_content->typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $form_content->typography->text_transform  ) ) ? 'inherit' : $form_content->typography->text_transform ); ?>;"">
 			<?php
 			$content = $form_content->content;
 			if ( isset( $form_content->headline ) && is_array( $form_content->headline ) ) {
@@ -64,7 +64,7 @@ foreach ( $form_settings_content as $form_content ) {
 				foreach ( $form_content->headline as $headline ) {
 					$variable_headline = json_decode( $headline );
 					?>
-					<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: px;"><?php echo esc_html( $variable_headline->headline ); ?></span>
+					<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length  ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' == $variable_headline->headline_typography->font_family  ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length  ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform  ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
 					<?php
 				}
 				echo '</h2>';
