@@ -1,6 +1,5 @@
 jQuery( document ).ready( function( $ ) {
 
-		alert('hi');
 		$('.nav-tab-wrapper .nav-tab').on('click', function( e ) {
 			e.preventDefault();
 			$( '.nav-tab-wrapper .nav-tab' ).removeClass( 'nav-tab-active' );
