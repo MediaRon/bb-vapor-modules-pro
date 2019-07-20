@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.2.4
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.2.6 =
+* Released 2019-07-20
+* Adding Beta Content Scroller module.
+* Cleaning up the admin area
+* New icon set: Line Icons.
 
 = 1.2.4 =
 * Released 2019-07-03
