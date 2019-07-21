@@ -1,11 +1,11 @@
-var elements = document.getElementsByClassName('bbvm-content-scroller-content');
-var arrayLength = elements.length;
-var sticky = new Waypoint.Sticky({
+var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
+var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
+var bbvm_content_scroller_sticky = new Waypoint.Sticky({
   element: jQuery('#content-scroller')[0],
 })
-for (var i = 0; i < arrayLength; i++) {
-    var waypoint = new Waypoint({
-	element: elements[i],
+for (var i = 0; i < bbvm_content_scroller_arrayLength; i++) {
+    new Waypoint({
+	element: bbvm_content_scroller_elements[i],
 	handler: function(direction) {
 		jQuery( '.bbvm-content-scroller-bg video').remove();
 		var element = this.element;
