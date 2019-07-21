@@ -63,21 +63,21 @@ FLBuilder::register_settings_form(
 					'left_area' => array(
 						'title'  => __( 'Scroller Options - Left Area', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'unique_id_left' => array(
-								'type'  => 'text',
-								'label' => __( 'Unique ID for this area', 'bb-vapor-modules-pro' ),
-								'help'  => __( 'This is required for JavaScript targeting', 'bb-vapor-modules-pro' ),
-							),
-							'background_color_left'            => array(
+							'background_color_left' => array(
 								'type'       => 'color',
-								'label'      => __( 'Left Item Background Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Left Item Background Color', 'bb-vapor-modules-pro' ),
 								'default'    => 'FFFFFF',
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
-							'background_photo_left'      => array(
+							'background_photo_left' => array(
 								'type'       => 'photo',
-								'label'      => __( 'Left Item Background Photo', 'bb-vapor-modules' ),
+								'label'      => __( 'Left Item Background Photo', 'bb-vapor-modules-pro' ),
+								'show_reset' => true,
+							),
+							'video_left'            => array(
+								'type'       => 'video',
+								'label'      => __( 'Left Item Video File', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
 							),
 						),
@@ -90,19 +90,14 @@ FLBuilder::register_settings_form(
 					'right_area' => array(
 						'title'  => __( 'Scroller Options - Right Area', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'unique_id_right' => array(
-								'type'  => 'text',
-								'label' => __( 'Unique ID for this area', 'bb-vapor-modules-pro' ),
-								'help'  => __( 'This is required for JavaScript targeting', 'bb-vapor-modules-pro' ),
-							),
-							'background_color_right'            => array(
+							'background_color_right' => array(
 								'type'       => 'color',
-								'label'      => __( 'Right Item Background Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Right Item Background Color', 'bb-vapor-modules-pro' ),
 								'default'    => 'FFFFFF',
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
-							'headline_tag'     => array(
+							'headline_tag'           => array(
 								'type'    => 'select',
 								'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),
 								'options' => array(
@@ -115,28 +110,28 @@ FLBuilder::register_settings_form(
 								),
 								'default' => 'h2',
 							),
-							'headline' => array(
+							'headline'               => array(
 								'type'         => 'form',
-								'label'        => __( 'Headline for Right Item', 'bb-vapor-modules' ),
+								'label'        => __( 'Headline for Right Item', 'bb-vapor-modules-pro' ),
 								'form'         => 'bbvm_content_variable_headings',
 								'description'  => __( 'Place the headline in the content below with {headline}', 'bb-vapor-modules-pro' ),
 								'multiple'     => true,
 								'preview_text' => 'headline',
 							),
-							'content_color' => array(
-								'type'        => 'color',
-								'label'       => __( 'Content Color', 'bb-vapor-modules' ),
+							'content_color'          => array(
+								'type'       => 'color',
+								'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
-							'typography' => array(
+							'typography'             => array(
 								'type'        => 'typography',
-								'label'       => __( 'Typography', 'bb-vapor-modules' ),
+								'label'       => __( 'Typography', 'bb-vapor-modules-pro' ),
 								'description' => __( 'Typography for the content.', 'bb-vapor-modules-pro' ),
 							),
-							'content' => array(
+							'content'                => array(
 								'type'        => 'editor',
-								'label'       => __( 'Content', 'bb-vapor-modules' ),
+								'label'       => __( 'Content', 'bb-vapor-modules-pro' ),
 								'description' => __( 'Place the headline in the content with {headline}', 'bb-vapor-modules-pro' ),
 							),
 						),
@@ -157,7 +152,7 @@ FLBuilder::register_module(
 					'fields' => array( // Section Fields
 						'scroller_content' => array(
 							'type'     => 'form',
-							'label'    => __( 'Scroller Content' ),
+							'label'    => __( 'Scroller Content', 'bb-vapor-modules-pro' ),
 							'form'     => 'bbvm_content_scroller',
 							'multiple' => true,
 						),

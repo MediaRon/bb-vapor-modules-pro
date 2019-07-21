@@ -55,6 +55,13 @@
 	height: 100vh;
 	top: 0;
 	float: left;
+	position: relative;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 .fl-node-<?php echo esc_html( $id ); ?> #content-scroller.stuck {
 	position: fixed;
