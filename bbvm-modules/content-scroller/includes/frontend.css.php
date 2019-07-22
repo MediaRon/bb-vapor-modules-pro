@@ -27,7 +27,8 @@
 	float: left;
 	position: relative;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper video {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper video,
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-responsive-wrapper video {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -50,7 +51,6 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .sticky-wrapper {
 	position: relative;
-	overflow-x: scroll;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-responsive-wrapper {
@@ -67,6 +67,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 1000;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive {
 	height: 100vh;

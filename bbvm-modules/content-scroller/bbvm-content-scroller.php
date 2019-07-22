@@ -16,7 +16,8 @@ class BBVapor_Content_Scroller extends FLBuilderModule {
 		);
 
 		$this->add_js( 'waypoints', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/content-scroller/js/jquery.waypoints.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
-		$this->add_js( 'waypoints-sticky', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/content-scroller/js/sticky.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+		$this->add_js( 'waypoints-sticky', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/content-scroller/js/sticky.min.js', array( 'waypoints' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+		$this->add_js( 'waypoints-init', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/content-scroller/js/init.js', array( 'waypoints-sticky' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 	}
 }
 FLBuilder::register_settings_form(

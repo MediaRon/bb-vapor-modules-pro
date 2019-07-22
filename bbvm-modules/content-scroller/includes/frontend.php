@@ -55,7 +55,18 @@ foreach ( $form_settings_content as $form_content ) {
 	?>
 	<div class="fl-bbvm-content-scroller-item-responsive count-<?php echo absint( $count ); ?>">
 		<div class="bbvm-content-scroller-item-responsive-wrapper" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>;">
-			<div class="bbvm-content-scroller-item-responsive bbvm-content-scroller-bg-responsive" style="background: url(<?php echo esc_url( $form_content->background_photo_left_src ); ?>); background-size: cover"></div>
+			<div class="bbvm-content-scroller-item-responsive bbvm-content-scroller-bg-responsive" style="background: url(<?php echo esc_url( $form_content->background_photo_left_src ); ?>); background-size: cover">
+				<?php
+				$maybe_video = wp_get_attachment_url( $form_content->video_left );
+				if ( $maybe_video ) {
+					?>
+					<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+						<source src="<?php echo esc_url( $maybe_video ); ?>" type="video/mp4">
+					</video>
+					<?php
+				}
+				?>
+			</div>
 		</div>
 		<div class="bbvm-content-scroller-item fl-bbvm-content-scroller-content-responsive-wrapper">
 			<?php
@@ -90,5 +101,5 @@ foreach ( $form_settings_content as $form_content ) {
 		$count++;
 }
 ?>
+<div class="fl-bbvm-content-scroller-waypoint" style="clear: both; height: 10px;">&nbsp;</div>
 </div>
-<div class="fl-bbvm-content-scroller-waypoint" style="clear: both; height: 0px;">&nbsp;</div>
