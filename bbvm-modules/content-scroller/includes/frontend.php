@@ -101,5 +101,4 @@ foreach ( $form_settings_content as $form_content ) {
 		$count++;
 }
 ?>
-<div class="fl-bbvm-content-scroller-waypoint" style="clear: both; height: 10px;">&nbsp;</div>
 </div>
