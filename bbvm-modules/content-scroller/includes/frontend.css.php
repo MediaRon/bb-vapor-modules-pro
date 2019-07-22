@@ -4,6 +4,9 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder {
 	display: block;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.stuck {
+
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
 	height: 100vh;
 	top: 0;
