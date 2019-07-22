@@ -1,39 +1,9 @@
-@media only screen and (max-width: 800px) {
-	.fl-bbvm-content-scroller-for-beaverbuilder {
-		display: none !important;
-	}
-	.fl-bbvm-content-scroller-responsive-for-beaverbuilder {
-		display: block !important;
-		width: 100%;
-		height: auto !important;
-		position: relative;
-	}
-	.fl-bbvm-content-scroller-for-beaverbuilder {
-		display: none;
-	}
-	.fl-bbvm-content-scroller-content-responsive-wrapper {
-		float: unset;
-		position: relative;
-		width: auto;
-		height: auto;
-		clear: both;
-		display: block;
-		padding: 0;
-	}
-	.bbvm-content-scroller-item-responsive-wrapper {
-		width: 100%;
-	}
-	.fl-bbvm-content-scroller-item {
-		width: 100%;
-	}
-	.bbvm-content-scroller-item-responsive-wrapper {
-		width: 100%;
-	}
-	.bbvm-content-scroller-item-responsive-wrapper {
-		width: 100% !important;
-	}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-responsive-for-beaverbuilder {
+	display: none;
 }
-
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder {
+	display: block;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
 	height: 100vh;
 	top: 0;
@@ -156,4 +126,41 @@ foreach ( $form_settings as $form_setting ) {
 	}
 	<?php
 	$count++;
+}
+?>
+@media only screen and (max-width: 800px) {
+	.fl-bbvm-content-scroller-responsive-for-beaverbuilder:last-of-type {
+		display: block;
+		width: 100%;
+		height: auto !important;
+		position: relative;
+	}
+	.fl-bbvm-content-scroller-for-beaverbuilder,
+	.sticky-wrapper {
+		display: none !important;
+	}
+	.fl-bbvm-content-scroller-for-beaverbuilder {
+		display: none;
+	}
+	.fl-bbvm-content-scroller-content-responsive-wrapper {
+		float: unset;
+		position: relative;
+		width: auto;
+		height: auto;
+		clear: both;
+		display: block;
+		padding: 0;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100%;
+	}
+	.fl-bbvm-content-scroller-item {
+		width: 100%;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100%;
+	}
+	.bbvm-content-scroller-item-responsive-wrapper {
+		width: 100% !important;
+	}
 }

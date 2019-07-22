@@ -40,19 +40,16 @@ $count = 1;
 							echo '</div>';
 							$count++;
 					}
-					?>
-				</div>
-				</div>
-			<?php
-			break;
-		endforeach;
+					break;
+			endforeach;
 		?>
+		</div>
+		</div>
 	</div><!-- .fl-bbvm-content-scroller-items -->
 </div><!-- .fl-bbvm-content-scroller-for-beaverbuilder -->
-<div class="fl-bbvm-content-scroller-responsive-for-beaverbuilder" style="display: none;">
+<div class="fl-bbvm-content-scroller-responsive-for-beaverbuilder">
 <?php
 $form_settings_content = $settings->scroller_content;
-
 $count = 1;
 foreach ( $form_settings_content as $form_content ) {
 	?>
@@ -94,3 +91,4 @@ foreach ( $form_settings_content as $form_content ) {
 }
 ?>
 </div>
+<div class="fl-bbvm-content-scroller-waypoint" style="clear: both; height: 0px;">&nbsp;</div>
