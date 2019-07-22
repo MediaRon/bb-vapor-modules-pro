@@ -16,6 +16,9 @@
 	height: 100vh;
 	float: right;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive {
+	overflow: hidden;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive .bbvm-content-scroller-content-responsive {
 	width: 100%;
 }
