@@ -94,12 +94,16 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content {
 	height: 100%;
 	width: 100%;
-	padding: 50vh 40px 50vh 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive {
 	height: 100vh;
 	width: 100%;
-	padding: 25vh 40px 25vh 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content *,
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-content-responsive * {
