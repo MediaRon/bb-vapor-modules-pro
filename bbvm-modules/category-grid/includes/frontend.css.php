@@ -40,6 +40,7 @@
 	background-size: cover;
 	position: relative;
 	text-align: center;
+	overflow: hidden;
 }
 <?php
 // Setup Category.
