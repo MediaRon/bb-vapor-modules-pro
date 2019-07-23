@@ -1,8 +1,11 @@
 var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
 var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
-var bbvm_content_scroller_sticky = new Waypoint.Sticky({
-	element: jQuery('.fl-bbvm-content-scroller-for-beaverbuilder')[0],
-});
+var bbvm_content_scroller_sticky = jQuery('.fl-bbvm-content-scroller-for-beaverbuilder');
+if ( bbvm_content_scroller_sticky.length > 0 ) {
+	new Waypoint.Sticky({
+		element: bbvm_content_scroller_sticky[0],
+	});
+}
 
 for (var i = 0; i < bbvm_content_scroller_arrayLength; i++) {
 	new Waypoint({
