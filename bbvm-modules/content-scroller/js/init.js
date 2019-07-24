@@ -27,9 +27,12 @@ for (var i = 0; i < bbvm_content_scroller_arrayLength; i++) {
 			jQuery( '.bbvm-content-scroller-bg' ).css( 'background-image','none' );
 		}
 
-		if ( jQuery( element ).hasClass('count-' + jQuery('.fl-bbvm-content-scroller-for-beaverbuilder:first .bbvm-content-scroller-content').length ) ) {
+		if(jQuery(window).scrollTop() + jQuery(window).height() == jQuery(document).height()) {
 			jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').hide();
-			jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder:last').show();
+			jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').show();
+		} else {
+			jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').show();
+			jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').hide();
 		}
 
 	}
