@@ -1,8 +1,21 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-responsive-for-beaverbuilder {
 	display: none;
 }
+.ast-container {
+	margin: 0 !important;
+	padding: 0 !important;
+	width: 100% !important;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder {
 	display: block;
+	position: relative;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder-waypoint {
+	position: absolute;
+	height: 500px;
+	top: 0;
+	width: 100%;
+	z-index: 400;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.stuck {
 
@@ -52,11 +65,8 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item.bbvm-content-scroller-bg {
 }
-.fl-node-<?php echo esc_html( $id ); ?>.stuck .bbvm-content-scroller-item-wrapper {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper.stuck {
 	position: fixed;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .sticky-wrapper {
-	position: relative;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-wrapper,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-content-responsive-wrapper {
@@ -119,9 +129,7 @@
 	z-index: 500;
 }
 .sticky-wrapper {
-	z-index: 500;
-	position: relative;
-	height: auto !important;
+	z-index: 1000;
 }
 <?php
 $count         = 1;

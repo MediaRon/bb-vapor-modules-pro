@@ -2,6 +2,7 @@
 $count = 1;
 ?>
 <div class="fl-bbvm-content-scroller-for-beaverbuilder">
+	<div class="fl-bbvm-content-scroller-for-beaverbuilder-waypoint"></div>
 	<div class="fl-bbvm-content-scroller-items">
 		<?php
 		$form_settings = $settings->scroller_content;
@@ -46,7 +47,7 @@ $count = 1;
 		</div>
 		</div>
 	</div><!-- .fl-bbvm-content-scroller-items -->
-</div><!-- .fl-bbvm-content-scroller-for-beaverbuilder -->
+</div>
 <div class="fl-bbvm-content-scroller-responsive-for-beaverbuilder">
 <?php
 $form_settings_content = $settings->scroller_content;
