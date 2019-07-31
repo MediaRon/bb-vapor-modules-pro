@@ -2,11 +2,6 @@ jQuery( document ).ready( function( $ ) {
 	var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
 	var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
 	var bbvm_content_scroller_sticky = jQuery('.fl-bbvm-content-scroller-for-beaverbuilder');
-	if ( bbvm_content_scroller_sticky.length <= 1 && bbvm_content_scroller_sticky.length != 0 ) {
-		//new Waypoint.Sticky({
-		//	element: bbvm_content_scroller_sticky[0],
-		//});
-	}
 	var scroller_waypoint = new Waypoint( {
 		element: jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint' )[0],
 		handler: function( direction ) {

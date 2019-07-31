@@ -29,14 +29,14 @@ $count = 1;
 								foreach ( $form_content->headline as $headline ) {
 									$variable_headline = json_decode( $headline );
 									?>
-									<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' === $variable_headline->headline_typography->font_family ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
+									<span style="display: <?php echo ( isset( $variable_headline->headline_block ) && 'block' === $variable_headline->headline_block ) ? 'block' : 'inline-block'; ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' === $variable_headline->headline_typography->font_family ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
 									<?php
 								}
 								echo '</h2>';
 								$headline_content = ob_get_clean();
 								$content          = str_replace( '{headline}', $headline_content, $content );
 							}
-							echo wp_kses_post( $content );
+							echo $content; // phpcs:ignore
 							echo '</div>';
 							echo '</div>';
 							$count++;
@@ -84,7 +84,7 @@ foreach ( $form_settings_content as $form_content ) {
 				foreach ( $form_content->headline as $headline ) {
 					$variable_headline = json_decode( $headline );
 					?>
-					<span style="display: inline-block; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' === $variable_headline->headline_typography->font_family ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
+					<span style="display: <?php echo ( isset( $variable_headline->headline_block ) && 'block' === $variable_headline->headline_block ) ? 'block' : 'inline-block'; ?>; color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $variable_headline->headline_color ) ); ?>; font-size: <?php echo esc_html( ( empty( $variable_headline->headline_typography->font_size->length ) ) ? '32' : $variable_headline->headline_typography->font_size->length ); ?>px; font-family: <?php echo esc_html( ( 'Default' === $variable_headline->headline_typography->font_family ) ? 'inherit;' : $variable_headline->headline_typography->font_family ); ?>; line-height: <?php echo esc_html( ( empty( $variable_headline->headline_typography->line_height->length ) ) ? '1.1' : $variable_headline->headline_typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $variable_headline->headline_typography->text_transform ) ) ? 'inherit' : $variable_headline->headline_typography->text_transform ); ?>;"><?php echo esc_html( $variable_headline->headline ); ?></span>
 					<?php
 				}
 				echo '</h2>';
@@ -92,7 +92,7 @@ foreach ( $form_settings_content as $form_content ) {
 				$content          = str_replace( '{headline}', $headline_content, $content );
 			}
 
-			echo wp_kses_post( $content );
+			echo $content; // phpcs:ignore
 			echo '</div>';
 			echo '</div>';
 			?>

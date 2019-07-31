@@ -28,6 +28,9 @@ class BBVapor_Modules_Pro {
 	}
 
 	public static function get_color( $color ) {
+		if ( empty( $color ) ) {
+			return 'inherit';
+		}
 		if ( 6 === strlen( $color ) ) {
 			return '#' . $color;
 		} else {

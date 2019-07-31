@@ -142,6 +142,20 @@ foreach ( $form_settings as $form_setting ) {
 	<?php
 	$count++;
 }
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'padding',
+		'selector'     => ".fl-node-$id .bbvm-content-scroller-wrapper",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'padding_top',
+			'padding-right'  => 'padding_right',
+			'padding-bottom' => 'padding_bottom',
+			'padding-left'   => 'padding_left',
+		),
+	)
+);
 ?>
 @media only screen and (max-width: 800px) {
 	.fl-bbvm-content-scroller-responsive-for-beaverbuilder:last-of-type {

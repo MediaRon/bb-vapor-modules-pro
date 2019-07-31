@@ -33,18 +33,27 @@ FLBuilder::register_settings_form(
 						'fields' => array(
 							'headline'            => array(
 								'type'    => 'text',
-								'label'   => __( 'Headline Text', 'bb-vapor-modules' ),
+								'label'   => __( 'Headline Text', 'bb-vapor-modules-pro' ),
 								'default' => '',
 							),
 							'headline_color'      => array(
 								'type'       => 'color',
-								'label'      => __( 'Headline Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Headline Color', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
 							),
 							'headline_typography' => array(
 								'type'       => 'typography',
-								'label'      => __( 'Headline Typography', 'bb-vapor-modules' ),
+								'label'      => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
+							),
+							'headline_block'      => array(
+								'type'    => 'select',
+								'label'   => __( 'Block Style', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'inline' => __( 'Inline', 'bb-vapor-modules-pro' ),
+									'block'  => __( 'Block', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'inline',
 							),
 						),
 					),
@@ -156,6 +165,10 @@ FLBuilder::register_module(
 							'label'    => __( 'Scroller Content', 'bb-vapor-modules-pro' ),
 							'form'     => 'bbvm_content_scroller',
 							'multiple' => true,
+						),
+						'padding'          => array(
+							'type'  => 'dimension',
+							'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
