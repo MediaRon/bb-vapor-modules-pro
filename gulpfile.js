@@ -36,6 +36,13 @@ gulp.task( 'release:zip', function() {
 	.pipe(gulp.dest('.'));
 } );
 
+gulp.task( 'cleanup', function() {
+	return del( [
+		'release',
+		'bb-vapor-modules-pro'
+	] );
+} );
+
 gulp.task( 'clean:bundle', function() {
 	return del( [
 		'release/bb-vapor-modules-pro/bin',
@@ -66,5 +73,6 @@ gulp.task( 'default', gulp.series(
 	'wporg:prepare',
 	'clean:bundle',
 	'release:copy-for-zip',
-	'release:zip'
+	'release:zip',
+	'cleanup'
 ) );
