@@ -34,6 +34,7 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive {
 	overflow: hidden;
+	position: relative;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive .bbvm-content-scroller-content-responsive {
 	width: 100%;
@@ -158,6 +159,13 @@ FLBuilderCSS::dimension_field_rule(
 );
 ?>
 @media only screen and (max-width: 800px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item-responsive {
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap-reverse;
+		width: 100% !important;
+		position: relative;
+	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper.stuck {
 		position: relative;
 		display: none;
@@ -169,6 +177,9 @@ FLBuilderCSS::dimension_field_rule(
 	.fl-bbvm-content-scroller-for-beaverbuilder-waypoint {
 		display: none
 		height: 0;
+	}
+	.fl-bbvm-content-scroller-content-responsive-wrapper {
+		width: 100%;
 	}
 	.fl-bbvm-content-scroller-responsive-for-beaverbuilder:last-of-type {
 		display: block !important;
@@ -186,7 +197,7 @@ FLBuilderCSS::dimension_field_rule(
 	.fl-bbvm-content-scroller-content-responsive-wrapper {
 		float: unset;
 		position: relative;
-		width: auto;
+		width: 100%;
 		height: auto;
 		clear: both;
 		display: block;
