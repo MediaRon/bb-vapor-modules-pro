@@ -2,7 +2,9 @@ jQuery( document ).ready( function( $ ) {
 	var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
 	var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
 	var bbvm_content_scroller_sticky = jQuery('.fl-bbvm-content-scroller-for-beaverbuilder');
-	var scroller_waypoint = new Waypoint( {
+	var bbvm_content_scroller_waypoint = jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint:visible' );
+	if ( bbvm_content_scroller_waypoint.length > 0 ) {
+		var scroller_waypoint = new Waypoint( {
 		element: jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint' )[0],
 		handler: function( direction ) {
 			if ( 'down' === direction ) {
@@ -10,9 +12,10 @@ jQuery( document ).ready( function( $ ) {
 			} else {
 				bbvm_content_scroller_sticky.removeClass('stuck');
 			}
-		},
-		offset: '0'
+		}
 	})
+	}
+
 	var itemWaypoint = new Array();
 	for (var i = 0; i < bbvm_content_scroller_arrayLength; i++) {
 		itemWaypoint[i] = new Waypoint({

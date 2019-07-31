@@ -158,8 +158,20 @@ FLBuilderCSS::dimension_field_rule(
 );
 ?>
 @media only screen and (max-width: 800px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper.stuck {
+		position: relative;
+		display: none;
+	}
+	.stuck .bbvm-content-scroller-item-wrapper {
+		position: relative;
+		display: none;
+	}
+	.fl-bbvm-content-scroller-for-beaverbuilder-waypoint {
+		display: none
+		height: 0;
+	}
 	.fl-bbvm-content-scroller-responsive-for-beaverbuilder:last-of-type {
-		display: block;
+		display: block !important;
 		width: 100%;
 		height: auto !important;
 		position: relative;
