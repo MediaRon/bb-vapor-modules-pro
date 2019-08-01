@@ -52,7 +52,10 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
 }
 .fl-node-<?php echo esc_html( $id ); ?> #content-scroller.stuck {
 	position: fixed;
@@ -99,6 +102,8 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-bg-responsive {
 	height: 100vh;
+	overflow: hidden;
+	position: relative;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-bg {
 	-webkit-transition: background 0.8s linear;

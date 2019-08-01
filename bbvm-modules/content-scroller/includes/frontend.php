@@ -61,7 +61,7 @@ foreach ( $form_settings_content as $form_content ) {
 				$maybe_video = wp_get_attachment_url( $form_content->video_left );
 				if ( $maybe_video ) {
 					?>
-					<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+					<video autoplay="autoplay" muted="muted" loop="loop">
 						<source src="<?php echo esc_url( $maybe_video ); ?>" type="video/mp4">
 					</video>
 					<?php
