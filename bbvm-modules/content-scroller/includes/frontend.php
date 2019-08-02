@@ -19,7 +19,7 @@ $count = 1;
 						$maybe_video = wp_get_attachment_url( $form_content->video_left );
 						?>
 						<div class="bbvm-content-scroller-content count-<?php echo absint( $count ); ?>" data-background="<?php echo esc_url( $form_content->background_photo_left_src ); ?>"
-						data-video="<?php echo $maybe_video ? esc_url( $maybe_video ) : ''; ?>" data-color="<?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>; font-family: <?php echo esc_html( ( 'Default' === $form_content->typography->font_family ) ? 'inherit' : $form_content->typography->font_family ); ?>; font-size: <?php echo esc_html( ( empty( $form_content->typography->font_size->length ) ) ? '18' : $form_content->typography->font_size->length ); ?>px; line-height: <?php echo esc_html( ( empty( $form_content->typography->line_height->length ) ) ? '1.1' : $form_content->typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $form_content->typography->text_transform ) ) ? 'inherit' : $form_content->typography->text_transform ); ?>;">
+						data-video="<?php echo $maybe_video && 'yes' === $form_content->show_video ? esc_url( $maybe_video ) : ''; ?>" data-color="<?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->background_color_left ) ); ?>" style="background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $form_content->background_color_right ) ); ?>; color: <?php echo esc_attr( BBVapor_Modules_Pro::get_color( $form_content->content_color ) ); ?>; font-family: <?php echo esc_html( ( 'Default' === $form_content->typography->font_family ) ? 'inherit' : $form_content->typography->font_family ); ?>; font-size: <?php echo esc_html( ( empty( $form_content->typography->font_size->length ) ) ? '18' : $form_content->typography->font_size->length ); ?>px; line-height: <?php echo esc_html( ( empty( $form_content->typography->line_height->length ) ) ? '1.1' : $form_content->typography->line_height->length ); ?>; text-transform: <?php echo esc_html( ( empty( $form_content->typography->text_transform ) ) ? 'inherit' : $form_content->typography->text_transform ); ?>;">
 							<div class="bbvm-content-scroller-wrapper">
 							<?php
 							$content = $form_content->content;
@@ -59,7 +59,7 @@ foreach ( $form_settings_content as $form_content ) {
 			<div class="bbvm-content-scroller-item-responsive bbvm-content-scroller-bg-responsive" style="background-image: url(<?php echo esc_url( $form_content->background_photo_left_src ); ?>); background-size: cover; background-position: center;">
 				<?php
 				$maybe_video = wp_get_attachment_url( $form_content->video_left );
-				if ( $maybe_video ) {
+				if ( $maybe_video && 'yes' === $form_content->show_video ) {
 					?>
 					<video autoplay="autoplay" muted="muted" loop="loop">
 						<source src="<?php echo esc_url( $maybe_video ); ?>" type="video/mp4">

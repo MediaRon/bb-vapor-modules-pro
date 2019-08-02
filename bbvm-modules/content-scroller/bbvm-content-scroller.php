@@ -67,23 +67,6 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Scroller Content', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'height'     => array(
-				'title'    => __( 'Scroller Content Height', 'bb-vapor-modules-pro' ),
-				'sections' => array(
-					'height' => array(
-						'title'  => __( 'Content Height', 'bb-vapor-modules-pro' ),
-						'fields' => array(
-							'content_height' => array(
-								'type'         => 'unit',
-								'units'        => array( 'vh' ),
-								'default_unit' => 'vh',
-								'slider'       => true,
-								'default'      => '100',
-							),
-						),
-					),
-				),
-			),
 			'left_area'  => array(
 				'title'    => __( 'Left Area', 'bb-vapor-modules-pro' ),
 				'sections' => array(
