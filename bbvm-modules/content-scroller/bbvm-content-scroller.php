@@ -67,7 +67,24 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Scroller Content', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'left_area' => array(
+			'height'     => array(
+				'title'    => __( 'Scroller Content Height', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'height' => array(
+						'title'  => __( 'Content Height', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'content_height' => array(
+								'type'         => 'unit',
+								'units'        => array( 'vh' ),
+								'default_unit' => 'vh',
+								'slider'       => true,
+								'default'      => '100',
+							),
+						),
+					),
+				),
+			),
+			'left_area'  => array(
 				'title'    => __( 'Left Area', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'left_area' => array(
@@ -84,6 +101,22 @@ FLBuilder::register_settings_form(
 								'type'       => 'photo',
 								'label'      => __( 'Left Item Background Photo', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
+							),
+							'show_video'            => array(
+								'type'    => 'select',
+								'label'   => __( 'Show a Video?', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'no',
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'video_left',
+										),
+									),
+								),
 							),
 							'video_left'            => array(
 								'type'       => 'video',
