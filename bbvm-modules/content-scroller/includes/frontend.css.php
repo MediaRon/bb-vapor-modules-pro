@@ -21,6 +21,7 @@
 
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item {
+	height: 100%;
 	height: 100vh;
 	top: 0;
 	left: 0;
@@ -29,6 +30,7 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-item .bbvm-content-scroller-item {
 	width: 50%;
+	height: 100%;
 	height: 100vh;
 	float: right;
 }
@@ -42,6 +44,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper,
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-responsive-wrapper {
 	width: 50%;
+	height: 100%;
 	height: 100vh;
 	top: 0;
 	float: left;
@@ -57,14 +60,9 @@
 	min-width: 100%;
 	min-height: 100%;
 }
-.fl-node-<?php echo esc_html( $id ); ?> #content-scroller.stuck {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1000;
-}
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item {
 	width: 100%;
+	height: 100%;
 	height: 100vh;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-item.bbvm-content-scroller-bg {
