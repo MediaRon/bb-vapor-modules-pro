@@ -219,3 +219,11 @@ FLBuilderCSS::dimension_field_rule(
 		width: 100% !important;
 	}
 }
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder {
+		display: none !important;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-responsive-for-beaverbuilder {
+		display: block !important;
+	}
+}
