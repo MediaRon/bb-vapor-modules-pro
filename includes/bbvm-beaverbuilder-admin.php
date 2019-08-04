@@ -1,5 +1,16 @@
-<?php // phpcs:ignore
-if ( !defined( 'ABSPATH' ) ) {
+<?php // phpcs:ignoreline
+/**
+ * Admin settings.
+ *
+ * Admin settings for BB Vapor Modules Pro.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules Pro
+ * @since 1.3.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'No direct access.' );
 }
 /**
