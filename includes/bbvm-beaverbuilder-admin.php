@@ -125,6 +125,7 @@ class BBVapor_BeaverBuilder_Admin {
 	private function modules() {
 		return array(
 			'advanced-headings'             => 'Advanced Headings',
+			'animated-letters'              => 'Animated Letters',
 			'advanced-separator'            => 'Advanced Separator',
 			'alerts'                        => 'Alerts',
 			'animated-button'               => 'Animated Button',
@@ -158,6 +159,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'restaurant-menu-item'          => 'Restaurant Menu Item',
 			'restaurant-menu-items'         => 'Restaurant Menu Items',
 			'restaurant-menu-tabbed'        => 'Restaurant Tabbed Menu',
+			'simple-spacer'                 => 'Simple Spacer',
 			'simple-separator'              => 'Simple Separator',
 			'social-media-icons'            => 'Social Media Icons',
 			'soliloquy'                     => 'Soliloquy Slider',
@@ -319,7 +321,7 @@ class BBVapor_BeaverBuilder_Admin {
 						printf(
 							'<li><label><input type="hidden" name="modules[%1$s]" value="off" /><input type="checkbox" name="modules[%1$s]" %2$s value="on" />%3$s</label>',
 							esc_attr( $key ),
-							checked( 'on', $options ? esc_attr( $options[ $key ] ) : esc_attr( 'on' ), false ),
+							checked( 'on', $options && isset( $options[ $key ] ) ? esc_attr( $options[ $key ] ) : esc_attr( 'on' ), false ),
 							esc_attr( $module )
 						);
 					}
