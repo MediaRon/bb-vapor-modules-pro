@@ -6,7 +6,7 @@ class BBVapor_User_Profile_Module extends FLBuilderModule {
 				'name'            => __( 'User Profile', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add User Profile', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/user-profile/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/user-profile/',
 				'editor_export'   => true, // Defaults to true and can be omitted.

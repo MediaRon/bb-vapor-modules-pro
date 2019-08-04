@@ -6,7 +6,7 @@ class BBVapor_Restaurant_Menu_Item_Add_Module extends FLBuilderModule {
 				'name'            => __( 'Restaurant Menu Item', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add menu item for a restaurant', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Restaurant', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-item/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-item/',
 				'editor_export'   => true, // Defaults to true and can be omitted.

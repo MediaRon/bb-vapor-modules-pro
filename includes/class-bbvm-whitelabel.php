@@ -12,6 +12,7 @@ class BBVM_Whitelabel {
 		add_filter( 'bbvm_whitelabel_admin_welcome', array( $this, 'maybe_change_admin_welcome' ) );
 		add_filter( 'bbvm_whitelabel_menu_name', array( $this, 'maybe_change_menu_name' ) );
 		add_filter( 'all_plugins', array( $this, 'maybe_change_plugin_name' ) );
+		add_filter( 'bbvm_whitelabel_category', array( $this, 'maybe_change_bb_category_name' ) );
 	}
 
 	public function maybe_change_logo_small( $logo ) {
@@ -62,5 +63,12 @@ class BBVM_Whitelabel {
 			}
 		}
 		return $plugins;
+	}
+
+	public function maybe_change_bb_category_name( $category ) {
+		if ( isset( $this->options['plugin_bb_category'] ) ) {
+			return $this->options['plugin_bb_category'];
+		}
+		return $category;
 	}
 }

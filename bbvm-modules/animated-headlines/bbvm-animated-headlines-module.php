@@ -6,7 +6,7 @@ class BBVapor_Animated_Headlines_Module extends FLBuilderModule {
 				'name'            => __( 'Animated Headlines', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Animated Headlines for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Text Effects', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/animated-headlines/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-headlines/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
