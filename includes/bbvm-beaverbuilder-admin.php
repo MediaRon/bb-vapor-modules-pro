@@ -208,6 +208,9 @@ class BBVapor_BeaverBuilder_Admin {
 				$whitelabel[ $key ] = sanitize_text_field( $option );
 			}
 			update_site_option( 'bbvm_whitelabel', $whitelabel );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'White Label Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
 		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
@@ -216,6 +219,9 @@ class BBVapor_BeaverBuilder_Admin {
 				$module_options[ $key ] = $module;
 			}
 			update_option( 'bbvm_modules', $module_options );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
 		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['options'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
@@ -305,7 +311,9 @@ class BBVapor_BeaverBuilder_Admin {
 					<h2 class="nav-tab-wrapper">
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show nav-tab-active" data-tab-name="tab-welcome" style="">Welcome</a>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show" data-tab-name="tab-license" style="">License</a>
+						<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
+						<?php endif; ?>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
 					</h2>
@@ -366,6 +374,7 @@ class BBVapor_BeaverBuilder_Admin {
 					<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
 					</form>
 				</div>
+				<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
 				<div id="tab-whitelabel" class="tab-content hide">
 					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-whitelabel' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
 					<?php
@@ -423,8 +432,10 @@ class BBVapor_BeaverBuilder_Admin {
 					<?php
 					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) );
 					?>
+					<p class="description"><?php esc_html_e( 'Define the constant BBVM_HIDE_WHITELABEL in your wp-config.php or functions.php file to hide the Whitelabel settings from clients.', 'bb-vapor-modules-pro' ); ?></p>
 					</form>
 				</div>
+				<?php endif; ?>
 				<div id="tab-instagram" class="tab-content hide">
 					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-instagram' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
 					<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
