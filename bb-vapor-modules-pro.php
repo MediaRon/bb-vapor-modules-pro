@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 1.2.15
+ * Version: 1.3.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -87,7 +87,6 @@ class BBVapor_Modules_Pro {
 				require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
 				new BBVapor_Breadcrumbs_Module();
 			}
-
 
 			// Markdown module
 			if ( $this->is_module_enabled( $module_options, 'markdown' ) ) {
