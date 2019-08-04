@@ -129,7 +129,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'alerts'                        => 'Alerts',
 			'animated-button'               => 'Animated Button',
 			'animated-headlines'            => 'Animated Headlines',
-			'basic-breadcrumbs-modules'     => 'Breadcrumbs',
+			'basic-breadcrumbs-module'      => 'Breadcrumbs',
 			'beforeafter'                   => 'Before and After',
 			'blockquotes'                   => 'Blockquotes',
 			'button'                        => 'Button',
@@ -184,23 +184,31 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @see register_sub_menu
 	 */
 	public function admin_page() {
-		if( isset( $_POST['disconnect-instagram'] ) ) {
+		if ( isset( $_POST['disconnect-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			delete_option( 'bbvm-modules-instagram' );
 		}
-		if( isset( $_POST['clear-cache-instagram'] ) ) {
+		if ( isset( $_POST['clear-cache-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$options = get_option( 'bbvm-modules-instagram' );
-			if ( isset( $options[ 'last_cached' ] ) ) {
-				unset( $options[ 'last_cached' ] );
+			if ( isset( $options['last_cached'] ) ) {
+				unset( $options['last_cached'] );
 				update_option( 'bbvm-modules-instagram', $options );
 			}
 			?>
 			<div class="notice notice-success"><p><?php esc_html_e( 'Cache cleared!', 'bb-vapor-modules-pro' ); ?></p></div>
 			<?php
 		}
+		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			$module_options = array();
+			foreach ( $_POST['modules'] as $key => $module ) {
+				$module_options[ $key ] = $module;
+			}
+			update_option( 'bbvm_modules', $module_options );
+		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['options'] ) ) {
-
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 
 			// Check for valid license
 			$store_url = 'https://bbvapormodules.com';
@@ -281,7 +289,7 @@ class BBVapor_BeaverBuilder_Admin {
 		$license = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		?>
 		<div class="wrap">
-				<h1><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="75" width="75" alt="BB Vapor Modules Pro" /><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h1>
+				<h1><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="20" width="20" alt="BB Vapor Modules Pro" />&nbsp;<?php esc_html_e( 'Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ); ?></h1>
 
 				<div id="prompt-tabs">
 					<h2 class="nav-tab-wrapper">
@@ -294,20 +302,26 @@ class BBVapor_BeaverBuilder_Admin {
 				<div id="tab-welcome" class="tab-content hide">
 					<div><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ); ?>" alt="BB Vapor Modules Pro" /></div>
 					<h2>Welcome to BB Vapor Modules for Beaver Builder</h2>
-					<h3>Modules</h3>
+					<h3>Disable/Enable Modules</h3>
 					<?php
+					$options = get_option( 'bbvm_modules' );
 					$modules = $this->modules();
+					?>
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-welcome' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php
+					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
 					echo '<ul>';
 					foreach ( $modules as $key => $module ) {
 						printf(
-							'<li><label><input type="checkbox" name="modules[%s]" %s />%s</label>',
+							'<li><label><input type="hidden" name="modules[%1$s]" value="off" /><input type="checkbox" name="modules[%1$s]" %2$s value="on" />%3$s</label>',
 							esc_attr( $key ),
-							checked( true, true, false ),
+							checked( 'on', $options ? esc_attr( $options[ $key ] ) : esc_attr( 'on' ), false ),
 							esc_attr( $module )
 						);
 					}
 					echo '</ul>';
-					?>
+					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+					</form>
 				</div>
 				<div id="tab-license" class="tab-content hide">
 					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-license' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
