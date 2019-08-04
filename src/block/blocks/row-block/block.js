@@ -16,9 +16,9 @@ import edit from './edit';
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( 'bbvapor/row-block', {
-	title: __( 'BB Vapor Row Block', 'user-profile-picture-enhanced' ), // Block title.
+	title: __( 'BB Vapor Row Block', 'bb-vapor-modules-pro' ), // Block title.
 	icon: 'image-flip-horizontal',
-	category: 'widget',
+	category: 'widgets',
 	keywords: [
 		__( 'beaver builder', 'bb-vapor-modules-pro' ),
 		__( 'row block', 'bb-vapor-modules-pro' ),

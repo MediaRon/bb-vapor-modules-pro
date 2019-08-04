@@ -20,4 +20,45 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class BBVM_Row_Block {
 
+	/**
+	 * Class constructor
+	 */
+	public function __construct() {
+		$this->register_block();
+	}
+
+	/**
+	 * Register the block for rows.
+	 */
+	public function register_block() {
+		if ( ! function_exists( 'register_block_type' ) ) {
+			return;
+		}
+		wp_register_script(
+			'bbvapor-row-block',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'dist/blocks.build.js',
+			array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			true
+		);
+		wp_localize_script(
+			'bbvapor-row-block',
+			'bb_vapor',
+			array(
+				'rest_url'   => get_rest_url(),
+				'rest_nonce' => wp_create_nonce( 'wp_rest' ),
+			)
+		);
+		if ( function_exists( 'wp_set_script_translations' ) ) {
+			wp_set_script_translations( 'bbvapor-row-block', 'bb-vapor-modules-pro' );
+		}
+		register_block_type(
+			'bbvapor/row-block',
+			array(
+				'attributes'      => array(),
+				'render_callback' => array( $this, 'frontend' ),
+				'editor_script'   => 'bbvapor-row-block',
+			)
+		);
+	}
 }
