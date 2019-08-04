@@ -308,6 +308,10 @@ class BBVapor_BeaverBuilder_Admin {
 					$modules = $this->modules();
 					?>
 					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-welcome' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<p>
+						<input type="radio" name="bbvm-options-toggle" id="toggle-on" /> <label for="toggle-on"><?php esc_html_e( 'Toggle All On', 'bb-vapor-modules-pro' ); ?></label><br />
+						<input type="radio" name="bbvm-options-toggle" id="toggle-off" /> <label for="toggle-off"><?php esc_html_e( 'Toggle All Off', 'bb-vapor-modules-pro' ); ?></label>
+					</p>
 					<?php
 					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
 					echo '<ul>';
