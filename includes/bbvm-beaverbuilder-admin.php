@@ -212,6 +212,13 @@ class BBVapor_BeaverBuilder_Admin {
 			<div class="notice notice-success"><p><?php esc_html_e( 'White Label Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
 			<?php
 		}
+		if ( isset( $_POST['reset'] ) && isset( $_POST['whitelabel'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			delete_site_option( 'bbvm_whitelabel' );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'White Label Settings Have Been Reset!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
+		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$module_options = array();
@@ -429,9 +436,13 @@ class BBVapor_BeaverBuilder_Admin {
 							</tr>
 						</tbody>
 					</table>
+					<p>
 					<?php
-					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) );
+					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ), 'primary', 'submit', false );
+					echo '&nbsp;&nbsp;';
+					submit_button( __( 'Reset', 'bb-vapor-modules-pro' ), 'secondary', 'reset', false );
 					?>
+					</p>
 					<p class="description"><?php esc_html_e( 'Define the constant BBVM_HIDE_WHITELABEL in your wp-config.php or functions.php file to hide the Whitelabel settings from clients.', 'bb-vapor-modules-pro' ); ?></p>
 					</form>
 				</div>
