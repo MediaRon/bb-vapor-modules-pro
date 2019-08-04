@@ -125,6 +125,13 @@ class BBVM_Row_Block {
 		}
 	}
 
+	/**
+	 * Retrieves a post title for displaying.
+	 *
+	 * @param array $request The request for the REST API.
+	 *
+	 * @return string The post title.
+	 */
 	public function get_row_content( $request ) {
 		$row_id = absint( isset( $request['id'] ) ? $request['id'] : 0 );
 		$post   = get_post( $row_id );
