@@ -35,7 +35,15 @@ jQuery( document ).ready( function( $ ) {
 			}
 		}
 
-
 		$( '.wrap' ).show();
+
+		// Toggle options for main screen
+		$( '#toggle-on' ).on( 'click', function( e ) {
+			$( '#tab-welcome input[type="checkbox"' ).attr( 'checked', 'checked' );
+		} );
+		// Toggle options for main screen
+		$( '#toggle-off' ).on( 'click', function( e ) {
+			$( '#tab-welcome input[type="checkbox"' ).removeAttr( 'checked', 'checked' );
+		} );
 
 } );

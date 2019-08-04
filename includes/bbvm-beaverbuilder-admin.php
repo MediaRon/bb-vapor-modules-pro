@@ -118,6 +118,67 @@ class BBVapor_BeaverBuilder_Admin {
 	}
 
 	/**
+	 * Get a list of modules.
+	 *
+	 * @return array Array of modules.
+	 */
+	private function modules() {
+		return array(
+			'advanced-headings'             => 'Advanced Headings',
+			'animated-letters'              => 'Animated Letters',
+			'advanced-separator'            => 'Advanced Separator',
+			'alerts'                        => 'Alerts',
+			'animated-button'               => 'Animated Button',
+			'animated-headlines'            => 'Animated Headlines',
+			'basic-breadcrumbs-module'      => 'Breadcrumbs',
+			'beforeafter'                   => 'Before and After',
+			'blockquotes'                   => 'Blockquotes',
+			'button'                        => 'Button',
+			'button-group'                  => 'Button Group',
+			'card'                          => 'Card',
+			'card-group'                    => 'Card Group',
+			'category-grid'                 => 'Category Grid',
+			'content-scroller'              => 'Content Scroller',
+			'copyright'                     => 'Copyright',
+			'edd-download-count'            => 'EDD Download Count',
+			'faq'                           => 'FAQ',
+			'featured-category'             => 'Featured Category',
+			'gist'                          => 'Gists',
+			'gravatar'                      => 'Gravatar',
+			'gravityforms'                  => 'Gravity Forms',
+			'instagram'                     => 'Instagram',
+			'intermediate-separator'        => 'Intermediate Separator',
+			'jetpack-related-posts'         => 'Jetpack Related Posts',
+			'jetpack-sharing'               => 'Jetpack Sharing',
+			'markdown'                      => 'Markdown',
+			'photo-overlay'                 => 'Photo Overlay',
+			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
+			'photoproof'                    => 'Photoproof',
+			'postselect'                    => 'Post Select',
+			'restaurant-menu-category'      => 'Restaurant Menu Category',
+			'restaurant-menu-item'          => 'Restaurant Menu Item',
+			'restaurant-menu-items'         => 'Restaurant Menu Items',
+			'restaurant-menu-tabbed'        => 'Restaurant Tabbed Menu',
+			'simple-spacer'                 => 'Simple Spacer',
+			'simple-separator'              => 'Simple Separator',
+			'social-media-icons'            => 'Social Media Icons',
+			'soliloquy'                     => 'Soliloquy Slider',
+			'soliloquy-dynamic'             => 'Soliloquy Dynamic',
+			'syntax-highlighter'            => 'Syntax Highlighter Evolved',
+			'syntax-highlighter-native'     => 'Syntax Highlighter Native',
+			'testimonials'                  => 'Testimonials',
+			'twitter-embed'                 => 'Twitter Embed',
+			'unordered-list'                => 'Unordered List',
+			'user-profile'                  => 'User Profile',
+			'variable-headings'             => 'Variable Headings',
+			'vegas-slideshow'               => 'Vegas Background Slideshow',
+			'woocommerce-add-to-cart'       => 'WooCommerce Add to Cart',
+			'woocommerce-featured-category' => 'WooCommerce Featured Category',
+			'woocommerce-featured-products' => 'WooCommerce Featured Products',
+		);
+	}
+
+	/**
 	 * Output admin menu
 	 *
 	 * @since 1.0.0
@@ -125,23 +186,31 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @see register_sub_menu
 	 */
 	public function admin_page() {
-		if( isset( $_POST['disconnect-instagram'] ) ) {
+		if ( isset( $_POST['disconnect-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			delete_option( 'bbvm-modules-instagram' );
 		}
-		if( isset( $_POST['clear-cache-instagram'] ) ) {
+		if ( isset( $_POST['clear-cache-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$options = get_option( 'bbvm-modules-instagram' );
-			if ( isset( $options[ 'last_cached' ] ) ) {
-				unset( $options[ 'last_cached' ] );
+			if ( isset( $options['last_cached'] ) ) {
+				unset( $options['last_cached'] );
 				update_option( 'bbvm-modules-instagram', $options );
 			}
 			?>
 			<div class="notice notice-success"><p><?php esc_html_e( 'Cache cleared!', 'bb-vapor-modules-pro' ); ?></p></div>
 			<?php
 		}
+		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			$module_options = array();
+			foreach ( $_POST['modules'] as $key => $module ) {
+				$module_options[ $key ] = $module;
+			}
+			update_option( 'bbvm_modules', $module_options );
+		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['options'] ) ) {
-
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 
 			// Check for valid license
 			$store_url = 'https://bbvapormodules.com';
@@ -149,7 +218,7 @@ class BBVapor_BeaverBuilder_Admin {
 				'edd_action' => 'activate_license',
 				'license'    => $_POST['options']['license'],
 				'item_name'  => urlencode( 'BB Vapor Modules Pro' ),
-				'url'        => home_url()
+				'url'        => home_url(),
 			);
 			// Call the custom API.
 			$response = wp_remote_post( $store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
@@ -222,9 +291,7 @@ class BBVapor_BeaverBuilder_Admin {
 		$license = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		?>
 		<div class="wrap">
-			<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-license' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
-				<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
-				<h2><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="75" width="75" alt="BB Vapor Modules Pro" /><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h2>
+				<h1><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" height="20" width="20" alt="BB Vapor Modules Pro" />&nbsp;<?php esc_html_e( 'Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ); ?></h1>
 
 				<div id="prompt-tabs">
 					<h2 class="nav-tab-wrapper">
@@ -236,9 +303,35 @@ class BBVapor_BeaverBuilder_Admin {
 				</div>
 				<div id="tab-welcome" class="tab-content hide">
 					<div><img src="<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ); ?>" alt="BB Vapor Modules Pro" /></div>
-					<h3>Welcome to BB Vapor Modules for Beaver Builder</h3>
+					<h2>Welcome to BB Vapor Modules for Beaver Builder</h2>
+					<h3>Disable/Enable Modules</h3>
+					<?php
+					$options = get_option( 'bbvm_modules' );
+					$modules = $this->modules();
+					?>
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-welcome' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<p>
+						<input type="radio" name="bbvm-options-toggle" id="toggle-on" /> <label for="toggle-on"><?php esc_html_e( 'Toggle All On', 'bb-vapor-modules-pro' ); ?></label><br />
+						<input type="radio" name="bbvm-options-toggle" id="toggle-off" /> <label for="toggle-off"><?php esc_html_e( 'Toggle All Off', 'bb-vapor-modules-pro' ); ?></label>
+					</p>
+					<?php
+					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
+					echo '<ul>';
+					foreach ( $modules as $key => $module ) {
+						printf(
+							'<li><label><input type="hidden" name="modules[%1$s]" value="off" /><input type="checkbox" name="modules[%1$s]" %2$s value="on" />%3$s</label>',
+							esc_attr( $key ),
+							checked( 'on', $options && isset( $options[ $key ] ) ? esc_attr( $options[ $key ] ) : esc_attr( 'on' ), false ),
+							esc_attr( $module )
+						);
+					}
+					echo '</ul>';
+					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+					</form>
 				</div>
 				<div id="tab-license" class="tab-content hide">
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-license' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
 					<table class="form-table">
 						<tbody>
 						<tr>
@@ -262,8 +355,11 @@ class BBVapor_BeaverBuilder_Admin {
 						</tbody>
 					</table>
 					<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+					</form>
 				</div>
 				<div id="tab-instagram" class="tab-content hide">
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-instagram' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
 					<table class="form-table">
 						<tbody>
 						<tr>
@@ -308,8 +404,8 @@ class BBVapor_BeaverBuilder_Admin {
 						</tr>
 					</tbody>
 				</table>
+				</form>
 				</div>
-			</form>
 			<div id="tab-template-cloud" class="tab-content hide">
 				<h2>Coming Soon</h2>
 			</div>
