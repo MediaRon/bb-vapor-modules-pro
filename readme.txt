@@ -33,19 +33,19 @@ Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to s
 * Added options to disable modules.
 * Added Whitelabel settings to customize the plugin for clients.
 
-= 1.2.15
+= 1.2.15 =
 * Released 2019-08-02
 * Fixing content scroller on mobile (iPad specifically in Chrome and Safari).
 
-= 1.2.14
+= 1.2.14 =
 * Released 2019-07-31
 * Ensuring content comes first for Content Scroller module on mobile.
 
-= 1.2.13
+= 1.2.13 =
 * Released 2019-07-31
 * Fixing mobile view on Content Scroller module.
 
-= 1.2.12
+= 1.2.12 =
 * Released 2019-07-31
 * Adding padding and block capabilities to the Content Scroller module.
 
