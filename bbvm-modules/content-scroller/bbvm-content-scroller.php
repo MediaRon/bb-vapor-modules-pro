@@ -6,7 +6,7 @@ class BBVapor_Content_Scroller extends FLBuilderModule {
 				'name'            => __( 'Content Scroller', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Content Scroller for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/content-scroller/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/content-scroller/',
 				'editor_export'   => true, // Defaults to true and can be omitted.

@@ -67,6 +67,12 @@ class BBVapor_Modules_Pro {
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
 		new BBVapor_BeaverBuilder_Admin();
 
+		// Register White Label Settings
+		// Register admin panel
+		require_once 'includes/class-bbvm-whitelabel.php';
+		$whitelabel = new BBVM_Whitelabel();
+		$whitelabel->register_hooks();
+
 		// Register Icons
 		require_once 'includes/icons/class-bbvm-icons.php';
 

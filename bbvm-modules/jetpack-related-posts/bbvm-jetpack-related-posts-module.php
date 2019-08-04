@@ -6,7 +6,7 @@ class BBVapor_Jetpack_Related_Posts_Module extends FLBuilderModule {
 				'name'            => __( 'Jetpack Related Posts', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Jetpack Related Posts for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/jetpack-related-posts/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/jetpack-related-posts/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
