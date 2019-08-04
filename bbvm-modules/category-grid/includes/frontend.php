@@ -1,12 +1,18 @@
 <div class="fl-bbvm-category-grid-for-beaverbuilder">
 	<?php
 	if ( isset( $settings->category_options ) && 'taxonomy' === $settings->category_options ) :
+		$excluded_terms_option = 'exclude_term_tax_' . $settings->taxonomy_select;
+		$excluded_terms_array  = array();
+		if ( isset( $settings->{$excluded_terms_option} ) ) {
+			$excluded_terms_array = explode( ',', $settings->{$excluded_terms_option} );
+		}
 		$terms = get_terms(
 			array(
 				'taxonomy' => $settings->taxonomy_select,
 				'orderby'  => $settings->term_orderby,
 				'order'    => $settings->term_order,
 				'number'   => $settings->term_number,
+				'exclude'  => $excluded_terms_array,
 			)
 		);
 	elseif ( ! isset( $settings->category_options ) ) :

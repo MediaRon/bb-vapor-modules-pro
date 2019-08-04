@@ -6,7 +6,7 @@ class BBVapor_Animated_Button_Module extends FLBuilderModule {
 				'name'            => __( 'Animated Button', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add a Animated Button', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/animated-button/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/',
 				'editor_export'   => true, // Defaults to true and can be omitted.

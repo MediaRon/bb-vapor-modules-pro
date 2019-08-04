@@ -90,7 +90,91 @@ class BBVapor_BeaverBuilder_Admin {
 		$hook = '';
 
 		$hook = add_submenu_page(
-			'options-general.php', __( 'Vapor Modules', 'bb-vapor-modules-pro' ), __( 'Vapor Modules', 'bb-vapor-modules-pro' ), 'manage_options', 'bb-vapor-modules-pro', array( $this, 'admin_page' )
+			'options-general.php',
+			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
+			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
+			'manage_options',
+			'bb-vapor-modules-pro',
+			array( $this, 'admin_page' )
+		);
+		add_action( 'load-' . $hook, array( $this, 'add_admin_scripts' ) );
+	}
+
+	public function add_admin_scripts() {
+		wp_enqueue_script(
+			'vapor-admin',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/admin-tabs.js',
+			array( 'jquery', 'wp-ajax-response' ),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			true
+		);
+		wp_enqueue_style(
+			'vapor-admin',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/admin.css',
+			array(),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			'all'
+		);
+	}
+
+	/**
+	 * Get a list of modules.
+	 *
+	 * @return array Array of modules.
+	 */
+	private function modules() {
+		return array(
+			'advanced-headings'             => 'Advanced Headings',
+			'animated-letters'              => 'Animated Letters',
+			'advanced-separator'            => 'Advanced Separator',
+			'alerts'                        => 'Alerts',
+			'animated-button'               => 'Animated Button',
+			'animated-headlines'            => 'Animated Headlines',
+			'basic-breadcrumbs-module'      => 'Breadcrumbs',
+			'beforeafter'                   => 'Before and After',
+			'blockquotes'                   => 'Blockquotes',
+			'button'                        => 'Button',
+			'button-group'                  => 'Button Group',
+			'card'                          => 'Card',
+			'card-group'                    => 'Card Group',
+			'category-grid'                 => 'Category Grid',
+			'content-scroller'              => 'Content Scroller',
+			'copyright'                     => 'Copyright',
+			'edd-download-count'            => 'EDD Download Count',
+			'faq'                           => 'FAQ',
+			'featured-category'             => 'Featured Category',
+			'gist'                          => 'Gists',
+			'gravatar'                      => 'Gravatar',
+			'gravityforms'                  => 'Gravity Forms',
+			'instagram'                     => 'Instagram',
+			'intermediate-separator'        => 'Intermediate Separator',
+			'jetpack-related-posts'         => 'Jetpack Related Posts',
+			'jetpack-sharing'               => 'Jetpack Sharing',
+			'markdown'                      => 'Markdown',
+			'photo-overlay'                 => 'Photo Overlay',
+			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
+			'photoproof'                    => 'Photoproof',
+			'postselect'                    => 'Post Select',
+			'restaurant-menu-category'      => 'Restaurant Menu Category',
+			'restaurant-menu-item'          => 'Restaurant Menu Item',
+			'restaurant-menu-items'         => 'Restaurant Menu Items',
+			'restaurant-menu-tabbed'        => 'Restaurant Tabbed Menu',
+			'simple-spacer'                 => 'Simple Spacer',
+			'simple-separator'              => 'Simple Separator',
+			'social-media-icons'            => 'Social Media Icons',
+			'soliloquy'                     => 'Soliloquy Slider',
+			'soliloquy-dynamic'             => 'Soliloquy Dynamic',
+			'syntax-highlighter'            => 'Syntax Highlighter Evolved',
+			'syntax-highlighter-native'     => 'Syntax Highlighter Native',
+			'testimonials'                  => 'Testimonials',
+			'twitter-embed'                 => 'Twitter Embed',
+			'unordered-list'                => 'Unordered List',
+			'user-profile'                  => 'User Profile',
+			'variable-headings'             => 'Variable Headings',
+			'vegas-slideshow'               => 'Vegas Background Slideshow',
+			'woocommerce-add-to-cart'       => 'WooCommerce Add to Cart',
+			'woocommerce-featured-category' => 'WooCommerce Featured Category',
+			'woocommerce-featured-products' => 'WooCommerce Featured Products',
 		);
 	}
 
@@ -102,23 +186,52 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @see register_sub_menu
 	 */
 	public function admin_page() {
-		if( isset( $_POST['disconnect-instagram'] ) ) {
+		if ( isset( $_POST['disconnect-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			delete_option( 'bbvm-modules-instagram' );
 		}
-		if( isset( $_POST['clear-cache-instagram'] ) ) {
+		if ( isset( $_POST['clear-cache-instagram'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$options = get_option( 'bbvm-modules-instagram' );
-			if ( isset( $options[ 'last_cached' ] ) ) {
-				unset( $options[ 'last_cached' ] );
+			if ( isset( $options['last_cached'] ) ) {
+				unset( $options['last_cached'] );
 				update_option( 'bbvm-modules-instagram', $options );
 			}
 			?>
 			<div class="notice notice-success"><p><?php esc_html_e( 'Cache cleared!', 'bb-vapor-modules-pro' ); ?></p></div>
 			<?php
 		}
+		if ( isset( $_POST['submit'] ) && isset( $_POST['whitelabel'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			$whitelabel = array();
+			foreach ( $_POST['whitelabel'] as $key => $option ) {
+				$whitelabel[ $key ] = sanitize_text_field( $option );
+			}
+			update_site_option( 'bbvm_whitelabel', $whitelabel );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'White Label Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
+		}
+		if ( isset( $_POST['reset'] ) && isset( $_POST['whitelabel'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			delete_site_option( 'bbvm_whitelabel' );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'White Label Settings Have Been Reset!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
+		}
+		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			$module_options = array();
+			foreach ( $_POST['modules'] as $key => $module ) {
+				$module_options[ $key ] = $module;
+			}
+			update_option( 'bbvm_modules', $module_options );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
+		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['options'] ) ) {
-
+			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 
 			// Check for valid license
 			$store_url = 'https://bbvapormodules.com';
@@ -126,7 +239,7 @@ class BBVapor_BeaverBuilder_Admin {
 				'edd_action' => 'activate_license',
 				'license'    => $_POST['options']['license'],
 				'item_name'  => urlencode( 'BB Vapor Modules Pro' ),
-				'url'        => home_url()
+				'url'        => home_url(),
 			);
 			// Call the custom API.
 			$response = wp_remote_post( $store_url, array( 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ) );
@@ -196,32 +309,149 @@ class BBVapor_BeaverBuilder_Admin {
 			}
 		}
 		$license_status = get_site_option( 'bbvm_for_beaver_builder_license_status', false );
-		$license = get_site_option( 'bbvm_for_beaver_builder_license', '' );
+		$license        = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		?>
 		<div class="wrap">
-			<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
-				<?php wp_nonce_field('save_bbvm_beaver_builder_options'); ?>
-				<h2><?php esc_html_e( 'Vapor Modules for Beaver Builder', 'breadcrumbs-for-beaver-builder' ); ?></h2>
-				<table class="form-table">
-					<tbody>
-					<tr>
-							<th scope="row"><label for="bbvm-license"><?php esc_html_e( 'Enter Your License', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td>
-								<input id="bbvm-license" class="regular-text" type="text" value="<?php echo esc_attr( $license ); ?>" name="options[license]" /><br />
-								<?php
-								if( false === $license || empty( $license ) ) {
-									printf('<p>%s</p>', esc_html__( 'Please enter your licence key.', 'bb-vapor-modules-pro' ) );
-								} else {
-									printf('<p>%s</p>', esc_html__( 'Your license is valid and you will now receive update notifications.', 'bb-vapor-modules-pro' ) );
-								}
-								?>
-								<?php
-								if( ! empty( $license_message ) ) {
-									printf( '<div class="updated error"><p><strong>%s</p></strong></div>', esc_html( $license_message ) );
-								}
-								?>
-							</td>
-						</tr>
+				<h1><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo_small', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ) ); ?>" height="20" width="20" alt="BB Vapor Modules Pro" />&nbsp;<?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_label', __( 'Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h1>
+
+				<div id="prompt-tabs">
+					<h2 class="nav-tab-wrapper">
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show nav-tab-active" data-tab-name="tab-welcome" style="">Welcome</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show" data-tab-name="tab-license" style="">License</a>
+						<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
+						<?php endif; ?>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
+					</h2>
+				</div>
+				<div id="tab-welcome" class="tab-content hide">
+					<div><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" alt="BB Vapor Modules Pro" /></div>
+					<h2><?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_welcome', esc_html__( 'Welcome to BB Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h2>
+					<h3><?php esc_html_e( 'Disable/Enable Modules', 'bb-vapor-modules-pro' ); ?></h3>
+					<?php
+					$options = get_option( 'bbvm_modules' );
+					$modules = $this->modules();
+					?>
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-welcome' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<p>
+						<input type="radio" name="bbvm-options-toggle" id="toggle-on" /> <label for="toggle-on"><?php esc_html_e( 'Toggle All On', 'bb-vapor-modules-pro' ); ?></label><br />
+						<input type="radio" name="bbvm-options-toggle" id="toggle-off" /> <label for="toggle-off"><?php esc_html_e( 'Toggle All Off', 'bb-vapor-modules-pro' ); ?></label>
+					</p>
+					<?php
+					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
+					echo '<ul>';
+					foreach ( $modules as $key => $module ) {
+						printf(
+							'<li><label><input type="hidden" name="modules[%1$s]" value="off" /><input type="checkbox" name="modules[%1$s]" %2$s value="on" />%3$s</label>',
+							esc_attr( $key ),
+							checked( 'on', $options && isset( $options[ $key ] ) ? esc_attr( $options[ $key ] ) : esc_attr( 'on' ), false ),
+							esc_attr( $module )
+						);
+					}
+					echo '</ul>';
+					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+					</form>
+				</div>
+				<div id="tab-license" class="tab-content hide">
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-license' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
+					<table class="form-table">
+						<tbody>
+						<tr>
+								<th scope="row"><label for="bbvm-license"><?php esc_html_e( 'Enter Your License', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td>
+									<input id="bbvm-license" class="regular-text" type="text" value="<?php echo esc_attr( $license ); ?>" name="options[license]" /><br />
+									<?php
+									if( false === $license || empty( $license ) ) {
+										printf('<p>%s</p>', esc_html__( 'Please enter your licence key.', 'bb-vapor-modules-pro' ) );
+									} else {
+										printf('<p>%s</p>', esc_html__( 'Your license is valid and you will now receive update notifications.', 'bb-vapor-modules-pro' ) );
+									}
+									?>
+									<?php
+									if( ! empty( $license_message ) ) {
+										printf( '<div class="updated error"><p><strong>%s</p></strong></div>', esc_html( $license_message ) );
+									}
+									?>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
+					</form>
+				</div>
+				<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
+				<div id="tab-whitelabel" class="tab-content hide">
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-whitelabel' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php
+					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
+					$whitelabel = get_site_option( 'bbvm_whitelabel' );
+					?>
+					<table class="form-table">
+						<tbody>
+							<tr>
+								<th scope="row"><label for="bbvm-small-logo"><?php esc_html_e( 'Small Logo', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-small-logo" value="<?php echo esc_url( isset( $whitelabel['small_logo'] ) ? $whitelabel['small_logo'] : BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ); ?>" name="whitelabel[small_logo]" placeholder="https://" /><p class="description"><?php esc_html_e( 'Logo should be square.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-large-logo"><?php esc_html_e( 'Large Logo', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-large-logo" value="<?php echo esc_url( isset( $whitelabel['large_logo'] ) ? $whitelabel['large_logo'] : BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ); ?>" name="whitelabel[large_logo]" placeholder="https://" /><p class="description"><?php esc_html_e( 'This logo will show up on the Welcome tab.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-admin-label"><?php esc_html_e( 'Admin label', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-admin-label" value="<?php echo isset( $whitelabel['admin_label'] ) ? esc_attr( $whitelabel['admin_label'] ) : 'Vapor Modules for Beaver Builder'; ?>" name="whitelabel[admin_label]" placeholder="Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the admin label.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-admin-welcome"><?php esc_html_e( 'Welcome Label', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-admin-welcome" value="<?php echo isset( $whitelabel['welcome_label'] ) ? esc_attr( $whitelabel['welcome_label'] ) : 'Welcome to BB Vapor Modules for Beaver Builder'; ?>" name="whitelabel[welcome_label]" placeholder="Welcome to BB Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the welcome label on the Welcome tab.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-admin-menu-title"><?php esc_html_e( 'Menu Title', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-admin-menu-title" value="<?php echo isset( $whitelabel['menu_title'] ) ? esc_attr( $whitelabel['menu_title'] ) : 'Vapor Modules'; ?>" name="whitelabel[menu_title]" placeholder="Vapor Modules" /><p class="description"><?php esc_html_e( 'This will replace the menu label that shows up in the Settings section.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-name"><?php esc_html_e( 'Plugin Name', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-name" value="<?php echo isset( $whitelabel['plugin_name'] ) ? esc_attr( $whitelabel['plugin_name'] ) : 'BB Vapor Modules Pro'; ?>" name="whitelabel[plugin_name]" placeholder="BB Vapor Modules Pro" /><p class="description"><?php esc_html_e( 'This will replace the plugin name.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-author"><?php esc_html_e( 'Plugin Author', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-author" value="<?php echo isset( $whitelabel['plugin_author'] ) ? esc_attr( $whitelabel['plugin_author'] ) : 'Ronald Huereca'; ?>" name="whitelabel[plugin_author]" placeholder="Ronald Huereca" /><p class="description"><?php esc_html_e( 'This will replace the plugin author name.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-author-url"><?php esc_html_e( 'Plugin Author URL', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-author-url" value="<?php echo isset( $whitelabel['plugin_author_url'] ) ? esc_attr( $whitelabel['plugin_author_url'] ) : 'https://mediaron.com'; ?>" name="whitelabel[plugin_author_url]" placeholder="https://mediaron.com" /><p class="description"><?php esc_html_e( 'This will replace the plugin author name.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-description"><?php esc_html_e( 'Plugin Description', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-description" value="<?php echo isset( $whitelabel['plugin_author_description'] ) ? esc_attr( $whitelabel['plugin_author_description'] ) : 'A growing selection of modules for Beaver Builder.'; ?>" name="whitelabel[plugin_author_description]" placeholder="A growing selection of modules for Beaver Builder." /><p class="description"><?php esc_html_e( 'This will replace the plugin description.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-site"><?php esc_html_e( 'Plugin Site URL', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-site" value="<?php echo isset( $whitelabel['plugin_site'] ) ? esc_attr( $whitelabel['plugin_site'] ) : 'https://bbvapormodules.com'; ?>" name="whitelabel[plugin_site]" placeholder="https://bbvapormodules.com" /><p class="description"><?php esc_html_e( 'This will replace the plugin site URL.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="bbvm-plugin-category"><?php esc_html_e( 'Beaver Builder Category Name', 'bb-vapor-modules-pro' ); ?></label></th>
+								<td><input type="text" class="regular-text" id="bbvm-plugin-category" value="<?php echo isset( $whitelabel['plugin_bb_category'] ) ? esc_attr( $whitelabel['plugin_bb_category'] ) : 'Vapor'; ?>" name="whitelabel[plugin_bb_category]" placeholder="Vapor" /><p class="description"><?php esc_html_e( 'This will replace the Beaver Builder category name.', 'bb-vapor-modules-pro' ); ?></p></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>
+					<?php
+					submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ), 'primary', 'submit', false );
+					echo '&nbsp;&nbsp;';
+					submit_button( __( 'Reset', 'bb-vapor-modules-pro' ), 'secondary', 'reset', false );
+					?>
+					</p>
+					<p class="description"><?php esc_html_e( 'Define the constant BBVM_HIDE_WHITELABEL in your wp-config.php or functions.php file to hide the Whitelabel settings from clients.', 'bb-vapor-modules-pro' ); ?></p>
+					</form>
+				</div>
+				<?php endif; ?>
+				<div id="tab-instagram" class="tab-content hide">
+					<form action="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-instagram' ), admin_url( 'options-general.php' ) ) ); ?>" method="POST">
+					<?php wp_nonce_field( 'save_bbvm_beaver_builder_options' ); ?>
+					<table class="form-table">
+						<tbody>
 						<tr>
 							<th scope="row"><label for="bbvm-instagram"><?php esc_html_e( 'Connect to Instagram', 'bb-vapor-modules-pro' ); ?></label>
 							</th>
@@ -264,8 +494,11 @@ class BBVapor_BeaverBuilder_Admin {
 						</tr>
 					</tbody>
 				</table>
-				<?php submit_button( __( 'Save Options', 'bb-vapor-modules-pro' ) ); ?>
-			</form>
+				</form>
+				</div>
+			<div id="tab-template-cloud" class="tab-content hide">
+				<h2>Coming Soon</h2>
+			</div>
 		</div>
 		<?php
 	}

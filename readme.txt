@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.2.3
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,56 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.3.0 =
+* Released 2019-08-04
+* Fixing admin settings for Instagram connection/disconnect.
+* Added options to disable modules.
+* Added Whitelabel settings to customize the plugin for clients.
+
+= 1.2.15 =
+* Released 2019-08-02
+* Fixing content scroller on mobile (iPad specifically in Chrome and Safari).
+
+= 1.2.14 =
+* Released 2019-07-31
+* Ensuring content comes first for Content Scroller module on mobile.
+
+= 1.2.13 =
+* Released 2019-07-31
+* Fixing mobile view on Content Scroller module.
+
+= 1.2.12 =
+* Released 2019-07-31
+* Adding padding and block capabilities to the Content Scroller module.
+
+= 1.2.11 =
+* Released 2019-07-24
+* Offset adjustments to the Content Scroller module.
+
+= 1.2.10 =
+* Released 2019-07-23
+* Added exclusions to the Category Grid module.
+* Added overflow hidden to the Category Grid module so you can have rounded corners.
+
+= 1.2.9 =
+* Released 2019-07-22
+* Adjustments to the Content Scroller module.
+
+= 1.2.8 =
+* Released 2019-07-21
+* Adding video to Content Scroller module.
+
+= 1.2.6 =
+* Released 2019-07-20
+* Adding Beta Content Scroller module.
+* Cleaning up the admin area
+* New icon set: Line Icons.
+
+= 1.2.4 =
+* Released 2019-07-03
+* Fixing Gist module where main tab was not showing (minor PHP error).
+* New module: Twitter Status Embeds
 
 = 1.2.3 =
 * Ensuring text does not disappear in the Animated Letters module when looping is disabled.

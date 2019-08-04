@@ -6,7 +6,7 @@ class BBVapor_Advanced_Headings_Module extends FLBuilderModule {
 				'name'            => __( 'Advanced Headings', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Advanced Headings for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
-				'group'           => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/advanced-headings/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/advanced-headings/',
 				'editor_export'   => true, // Defaults to true and can be omitted.

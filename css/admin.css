@@ -1,0 +1,32 @@
+@-webkit-keyframes bbvm-tab-show {
+	0%   { opacity: 0; visibility: visible }
+	100% { opacity: 1; }
+  }
+  @-moz-keyframes bbvm-tab-show {
+	0%   { opacity: 0; visibility: visible }
+	100% { opacity: 1; }
+  }
+  @-o-keyframes bbvm-tab-show {
+	0%   { opacity: 0; visibility: visible }
+	100% { opacity: 1; }
+  }
+  @keyframes bbvm-tab-show {
+	0%   { opacity: 0; visibility: visible }
+	100% { opacity: 1; }
+  }
+body .wrap h2.nav-tab-wrapper {
+	margin-bottom: 20px;
+}
+.tab-content.hide {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+}
+.tab-content.show {
+	-webkit-animation: bbvm-tab-show 2s; /* Safari 4+ */
+	-moz-animation:    bbvm-tab-show 2s; /* Fx 5+ */
+	-o-animation:      bbvm-tab-show 2s; /* Opera 12+ */
+	animation:         bbvm-tab-show 2s; /* IE 10+, Fx 29+ */
+	visibility: visible;
+	opacity: 1;
+}
