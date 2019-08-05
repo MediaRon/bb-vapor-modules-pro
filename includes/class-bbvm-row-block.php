@@ -141,8 +141,6 @@ class BBVM_Row_Block {
 		ob_start();
 		add_filter( 'fl_builder_render_assets_inline', '__return_true' );
 		do_action( 'wp_head' );
-		wp_print_scripts();
-		wp_print_styles();
 		FLBuilder::render_query(
 			array(
 				'post_type' => 'fl-builder-template',
