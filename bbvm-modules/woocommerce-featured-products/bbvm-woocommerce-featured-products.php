@@ -28,12 +28,12 @@ class BBVapor_WooCommerce_Featured_Products_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_WooCommerce_Featured_Products_Module',
 	array(
-		'general'       => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Featured Products', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'       => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Featured Products', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'products'                     => array(
 							'type'   => 'suggest',
 							'label'  => __( 'WooCommerce Products', 'bb-vapor-modules-pro' ),
@@ -131,12 +131,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography'    => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'typography' => array( // Section
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography'    => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'typography' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'title_typography'                => array(
 							'type'       => 'typography',
 							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
@@ -176,12 +176,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'colorspadding'  => array( // Tab
-			'title'    => __( 'Colors and Padding', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'colors' => array( // Section
-					'title'  => __( 'Colors and Padding', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'colorspadding'  => array(
+			'title'    => __( 'Colors and Padding', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'colors' => array(
+					'title'  => __( 'Colors and Padding', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'item_margin'                  => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Item Margin', 'bb-vapor-modules-pro' ),
@@ -245,12 +245,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'details'       => array( // Tab
-			'title'    => __( 'Details', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'details' => array( // Section
-					'title'  => __( 'Details Button', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'details'       => array(
+			'title'    => __( 'Details', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'details' => array(
+					'title'  => __( 'Details Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_details_text'               => array(
 							'type'    => 'text',
 							'label'   => __( 'Show Details Text', 'bb-vapor-modules-pro' ),
@@ -329,12 +329,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'cart'          => array( // Tab
-			'title'    => __( 'Cart', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'cart' => array( // Section
-					'title'  => __( 'Add to Cart', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'cart'          => array(
+			'title'    => __( 'Cart', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'cart' => array(
+					'title'  => __( 'Add to Cart', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'cart_padding'                => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Cart Padding', 'bb-vapor-modules-pro' ),

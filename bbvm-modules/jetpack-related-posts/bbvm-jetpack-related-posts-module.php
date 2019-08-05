@@ -22,12 +22,12 @@ class BBVapor_Jetpack_Related_Posts_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Jetpack_Related_Posts_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Jetpack Related Posts', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Jetpack Related Posts', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'title'           => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter Related Post Title', 'bb-vapor-modules-pro' ),
@@ -103,12 +103,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'     => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'     => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'heading_color'         => array(
 							'type'    => 'color',
 							'label'   => __( 'Heading Color', 'bb-vapor-modules-pro' ),
@@ -138,12 +138,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'heading_typography' => array(
 							'type'  => 'typography',
 							'label' => __( 'Heading Typography', 'bb-vapor-modules-pro' ),

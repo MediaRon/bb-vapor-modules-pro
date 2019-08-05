@@ -23,12 +23,12 @@ class BBVapor_Copyright_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Copyright_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Copyright', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Copyright', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'copyright_site_field' => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter your site name', 'bb-vapor-modules-pro' ),
@@ -53,12 +53,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'  => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'  => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'copyright_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),

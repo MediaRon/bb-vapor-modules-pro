@@ -52,12 +52,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Variable_Headings_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'headline_tag'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),

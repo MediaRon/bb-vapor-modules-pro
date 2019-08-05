@@ -22,12 +22,12 @@ class BBVapor_Blockquotes_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Blockquotes_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'blockquote_text'        => array(
 							'type'  => 'textarea',
 							'label' => __( 'Blockquote Text', 'bb-vapor-modules-pro' ),
@@ -43,12 +43,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'style'   => array( // Tab
-			'title'    => __( 'Style', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'style' => array( // Section
-					'title'  => __( 'Style', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'style'   => array(
+			'title'    => __( 'Style', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'style' => array(
+					'title'  => __( 'Style', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'blockquote_style' => array(
 							'type'    => 'select',
 							'label'   => __( 'Blockquote Style Select', 'bb-vapor-modules-pro' ),

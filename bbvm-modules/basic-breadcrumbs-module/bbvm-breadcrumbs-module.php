@@ -23,12 +23,12 @@ class BBVapor_Breadcrumbs_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Breadcrumbs_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'         => __( 'Breadcrumbs', 'bb-vapor-modules-pro' ), // Section Title
-					'fields'        => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'         => __( 'Breadcrumbs', 'bb-vapor-modules-pro' ),
+					'fields'        => array(
 						'breadcrumb_select_field' => array(
 							'type'    => 'select',
 							'label'   => __( 'Select Breadcrumb Service', 'bb-vapor-modules-pro' ),
@@ -45,12 +45,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'       => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'       => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'breadcrumb_padding' => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),

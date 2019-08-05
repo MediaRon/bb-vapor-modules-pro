@@ -105,12 +105,12 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Instagram_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'items_show'                    => array(
 							'type'    => 'unit',
 							'label'   => __( 'Number of Instagram Photos to Show', 'bb-vapor-modules-pro' ),
@@ -234,12 +234,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'typography' => array( // Section
-					'title'  => __( 'Typography Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'typography' => array(
+					'title'  => __( 'Typography Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'likes_comments_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Likes and Comments Typography', 'bb-vapor-modules-pro' ),
@@ -254,12 +254,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'buttons'    => array( // Tab
-			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'buttons' => array( // Section
-					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'buttons'    => array(
+			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'buttons' => array(
+					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_load_more_button'      => array(
 							'type'        => 'select',
 							'label'       => __( 'Show Load More Button', 'bb-vapor-modules-pro' ),

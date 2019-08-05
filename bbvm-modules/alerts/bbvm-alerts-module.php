@@ -22,12 +22,12 @@ class BBVapor_Alerts_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Alerts_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general'       => array( // Section
-					'title'  => __( 'Alerts', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general'       => array(
+					'title'  => __( 'Alerts', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'alert_text'       => array(
 							'type'  => 'textarea',
 							'label' => __( 'Alert Text', 'bb-vapor-modules-pro' ),
@@ -86,12 +86,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles'       => array( // Section
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles'       => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'alert_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Select a Typography', 'bb-vapor-modules-pro' ),
@@ -106,12 +106,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'icon'       => array( // Tab
-			'title'    => __( 'Icon', 'bb-vapor-modules-pro' ), // Tab title
-			'sections'      => array( // Tab Sections
-				'styles'       => array( // Section
-					'title'  => __( 'Icon', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'icon'       => array(
+			'title'    => __( 'Icon', 'bb-vapor-modules-pro' ),
+			'sections'      => array(
+				'styles'       => array(
+					'title'  => __( 'Icon', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_icon' => array(
 							'type'    => 'select',
 							'label'   => __( 'Show an Icon?', 'bb-vapor-modules-pro' ),
@@ -143,12 +143,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button'     => array( // Tab
-			'title'    => __( 'Button', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles'       => array( // Section
-					'title'  => __( 'Button', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'button'     => array(
+			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles'       => array(
+					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_button'                   => array(
 							'type'    => 'select',
 							'label'   => __( 'Show a Button?', 'bb-vapor-modules-pro' ),

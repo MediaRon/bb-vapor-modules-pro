@@ -30,12 +30,12 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Syntax_Highlighter_Native_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'code' => array(
 							'type'        => 'select',
 							'label'       => __( 'Enter Your Code Type', 'bb-vapor-modules-pro' ),

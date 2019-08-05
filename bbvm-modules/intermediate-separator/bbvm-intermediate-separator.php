@@ -22,12 +22,12 @@ class BBVapor_Intermediate_Separator_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Intermediate_Separator_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'color'              => array(
 							'type'       => 'color',
 							'label'      => __( 'Color of Separator', 'bb-vapor-modules-pro' ),

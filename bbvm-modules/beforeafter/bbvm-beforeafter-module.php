@@ -24,12 +24,12 @@ class BBVapor_Before_After_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Before_After_Module',
 	array(
-		'general'         => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Before and After', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'         => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Before and After', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'image_before' => array(
 							'type'        => 'photo',
 							'label'       => __( 'Before Photo', 'bb-vapor-modules-pro' ),
@@ -96,12 +96,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'beforeaftertext' => array( // Tab
-			'title'    => __( 'Before & After Text', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'beforeaftertext' => array( // Section
-					'title'  => __( 'Before & After Text', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'beforeaftertext' => array(
+			'title'    => __( 'Before & After Text', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'beforeaftertext' => array(
+					'title'  => __( 'Before & After Text', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_before_after_text' => array(
 							'type' => 'select',
 							'label' => __( 'Show Before/After Text', 'bb-vapor-modules-pro' ),

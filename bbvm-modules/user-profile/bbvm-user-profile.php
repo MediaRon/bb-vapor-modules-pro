@@ -19,12 +19,12 @@ class BBVapor_User_Profile_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_User_Profile_Module',
 	array(
-		'general'      => array( // Tab
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'      => array(
+			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'post_author' => array(
 							'type'    => 'select',
 							'label'   => __( 'Use Post Author', 'mediaron-bb-modules' ),
@@ -236,12 +236,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'social_media' => array( // Tab
-			'title'    => __( 'Social Media', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'social_media' => array( // Section
-					'title'  => __( 'Social Media', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'social_media' => array(
+			'title'    => __( 'Social Media', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'social_media' => array(
+					'title'  => __( 'Social Media', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_brand_colors' => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Brand Colors', 'bb-vapor-modules-pro' ),
@@ -302,12 +302,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'tabs'         => array( // Tab
-			'title'    => __( 'Tabbed Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'tabs' => array( // Section
-					'title'  => __( 'Tabbed Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'tabs'         => array(
+			'title'    => __( 'Tabbed Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'tabs' => array(
+					'title'  => __( 'Tabbed Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'tabbed_profile_title'        => array(
 							'type'    => 'text',
 							'label'   => __( 'Tabbed Profile Title', 'bb-vapor-modules-pro' ),

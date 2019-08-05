@@ -22,12 +22,12 @@ class BBVapor_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_WooCommerce_Add_To_Cart_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Cart', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Cart', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'text'            => array(
 							'type'    => 'text',
 							'label'   => __( 'Add to Cart Text', 'bb-vapor-modules-pro' ),

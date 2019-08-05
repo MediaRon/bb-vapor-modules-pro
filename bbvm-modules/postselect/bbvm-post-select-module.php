@@ -58,12 +58,12 @@ FLBuilder::register_module(
 			'title' => __( 'Post Select', 'bb-vapor-modules-pro' ),
 			'file'  => FL_BUILDER_DIR . 'includes/loop-settings.php',
 		),
-		'options'     => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options'     => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'posts_per_page' => array(
 							'type'    => 'unit',
 							'label'   => __( 'Select Number of Items to Retrieve', 'bb-vapor-modules-pro' ),
@@ -108,12 +108,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'display'     => array( // Tab
-			'title'    => __( 'Display', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Display', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'display'     => array(
+			'title'    => __( 'Display', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Display', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'display_taxonomies'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Taxonomies?', 'bb-vapor-modules-pro' ),
@@ -254,12 +254,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'color'       => array( // Tab
-			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'color'       => array(
+			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
+			'sections'      => array(
+				'general'       => array(
+					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'heading_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
@@ -304,12 +304,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'pagination'  => array( // Tab
-			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'pagination'  => array(
+			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'pagination_padding'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select Padding for Pagination', 'bb-vapor-modules-pro' ),

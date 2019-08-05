@@ -24,12 +24,12 @@ FLBuilder::register_module(
 			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'options'  => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'image' => array( // Section
-					'title'  => __( 'Image Selection', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options'  => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'image' => array(
+					'title'  => __( 'Image Selection', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'image_type'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Where are your images coming from?', 'bb-vapor-modules-pro' ),
@@ -73,9 +73,9 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'grid'  => array( // Section
-					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+				'grid'  => array(
+					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'min_width'  => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Width of the Category Column', 'bb-vapor-modules-pro' ),
@@ -171,12 +171,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'overlay'  => array( // Tab
-			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'photo' => array( // Section
-					'title'  => __( 'Overlay Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'overlay'  => array(
+			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'photo' => array(
+					'title'  => __( 'Overlay Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'background_overlay'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Background Overlay', 'bb-vapor-modules-pro' ),
@@ -197,12 +197,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button'   => array( // Tab
-			'title'    => __( 'Button', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'button' => array( // Section
-					'title'  => __( 'Button', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'button'   => array(
+			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'button' => array(
+					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_text'               => array(
 							'type'    => 'text',
 							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),

@@ -81,13 +81,13 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Social_Media_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general'    => array( // Section
-					'title'  => __( 'Add Social Icons', 'bb-vapor-modules-pro' ), // Section Title
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general'    => array(
+					'title'  => __( 'Add Social Icons', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'social_form' => array( // Section Fields
+						'social_form' => array(
 							'type'         => 'form',
 							'label'        => __( 'Social Item', 'bb-vapor-modules-pro' ),
 							'form'         => 'bbvm_social_form',
@@ -102,7 +102,7 @@ FLBuilder::register_module(
 			'title'    => __( 'Styles', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Style', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Style', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'padding'             => array(
 							'type'        => 'dimension',
@@ -110,7 +110,7 @@ FLBuilder::register_module(
 							'description' => 'px',
 							'responsive'  => true,
 						),
-						'orientation'         => array( // Section Fields
+						'orientation'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Orientation', 'bb-vapor-modules-pro' ),
 							'default' => 'horizontal',
@@ -119,7 +119,7 @@ FLBuilder::register_module(
 								'vertical'   => __( 'Vertical', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'background_select'   => array( // Section Fields
+						'background_select'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Background Type', 'bb-vapor-modules-pro' ),
 							'default' => 'color',
@@ -160,7 +160,7 @@ FLBuilder::register_module(
 								'property' => 'background-image',
 							),
 						),
-						'fill'                => array( // Section Fields
+						'fill'                => array(
 							'type'    => 'select',
 							'label'   => __( 'Fill Color', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
@@ -177,7 +177,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'fill_custom'         => array( // Section Fields
+						'fill_custom'         => array(
 							'type'       => 'color',
 							'label'      => __( 'Custom Fill Color', 'bb-vapor-modules-pro' ),
 							'default'    => '333333',

@@ -22,12 +22,12 @@ class BBVapor_EDD_Download_Count_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_EDD_Download_Count_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'EDD Download Count', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'EDD Download Count', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'download_text'    => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter Download Text', 'bb-vapor-modules-pro' ),

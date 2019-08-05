@@ -52,12 +52,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Advanced_Headings_Module',
 	array(
-		'general'     => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'     => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'headline_tag'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),
@@ -189,12 +189,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'description' => array( // Tab
-			'title'    => __( 'Description', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'description' => array( // Section
-					'title'  => __( 'Description', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'description' => array(
+			'title'    => __( 'Description', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'description' => array(
+					'title'  => __( 'Description', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'description'            => array(
 							'type'  => 'editor',
 							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
@@ -214,12 +214,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'separator'   => array( // Tab
-			'title'    => __( 'Separator', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'description' => array( // Section
-					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'separator'   => array(
+			'title'    => __( 'Separator', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'description' => array(
+					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'separator_type'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Separator Type', 'bb-vapor-modules-pro' ),

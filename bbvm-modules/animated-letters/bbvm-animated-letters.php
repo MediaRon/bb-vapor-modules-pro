@@ -44,12 +44,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Animated_Letters_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'style'                  => array(
 							'type'    => 'select',
 							'label'   => __( 'Animation Style', 'bb-vapor-modules-pro' ),

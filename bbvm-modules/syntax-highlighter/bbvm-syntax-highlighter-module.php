@@ -23,12 +23,12 @@ global $SyntaxHighlighter; // phpcs:ignore
 FLBuilder::register_module(
 	'BBVapor_Syntax_Highlighter_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'code' => array(
 							'type'    => 'select',
 							'label'   => __( 'Enter your code type', 'bb-vapor-modules-pro' ),
@@ -43,12 +43,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'options' => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'options' => array( // Section
-					'title'  => __( 'Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options' => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'title'          => array(
 							'type'  => 'text',
 							'label' => __( 'Select a Title or Leave Blank', 'bb-vapor-modules-pro' ),

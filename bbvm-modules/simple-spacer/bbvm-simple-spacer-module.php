@@ -22,12 +22,12 @@ class BBVapor_Simple_Spacer_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Simple_Spacer_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general'       => array( // Section
-					'title'         => __( 'Spacer', 'bb-vapor-modules-pro' ), // Section Title
-					'fields'        => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general'       => array(
+					'title'         => __( 'Spacer', 'bb-vapor-modules-pro' ),
+					'fields'        => array(
 						'spacer' => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height of Spacer', 'bb-vapor-modules-pro' ),
