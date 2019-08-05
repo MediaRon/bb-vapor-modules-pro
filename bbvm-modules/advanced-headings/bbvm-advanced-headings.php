@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Advanced_Headings_Module extends FLBuilderModule {
+	/**
+	 * Initialize Advanced Headings.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -275,7 +278,7 @@ FLBuilder::register_module(
 										'line_content_color',
 									),
 								),
-								'photo' => array(
+								'photo'        => array(
 									'fields' => array(
 										'background_photo',
 										'line_height',
@@ -308,7 +311,7 @@ FLBuilder::register_module(
 							'type'  => 'photo',
 							'label' => __( 'Background Photo', 'bb-vapor-modules-pro' ),
 						),
-						'line_content' => array(
+						'line_content'            => array(
 							'type'    => 'text',
 							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
 							'default' => '***',
