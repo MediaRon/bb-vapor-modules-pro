@@ -86,9 +86,13 @@ class BBVM_Row_Block {
 						'type'    => 'string',
 						'default' => '',
 					),
-					'title' => array(
+					'html'  => array(
 						'type'    => 'string',
 						'default' => '',
+					),
+					'align' => array(
+						'type'    => 'string',
+						'default' => 'full',
 					),
 				),
 				'render_callback' => array( $this, 'frontend' ),
@@ -130,12 +134,23 @@ class BBVM_Row_Block {
 	 *
 	 * @param array $request The request for the REST API.
 	 *
-	 * @return string The post title.
+	 * @return string The HTML for the row template.
 	 */
 	public function get_row_content( $request ) {
 		$row_id = absint( isset( $request['id'] ) ? $request['id'] : 0 );
-		$post   = get_post( $row_id );
-		return $post->post_title;
+		ob_start();
+		add_filter( 'fl_builder_render_assets_inline', '__return_true' );
+		do_action( 'wp_head' );
+		wp_print_scripts();
+		wp_print_styles();
+		FLBuilder::render_query(
+			array(
+				'post_type' => 'fl-builder-template',
+				'p'         => $row_id,
+			)
+		);
+		do_action( 'wp_footer' );
+		return ob_get_clean();
 	}
 
 	/**

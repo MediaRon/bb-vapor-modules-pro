@@ -3,6 +3,7 @@ import axios from 'axios';
 const { Component, Fragment } = wp.element;
 const { withSelect } = wp.data;
 const { __, _x } = wp.i18n;
+const HtmlToReactParser = require('html-to-react').Parser;
 
 const {
 	PanelBody,
@@ -71,11 +72,11 @@ class BB_Vapor_Row_Block extends Component {
 		);
 		const refThis = this;
 		axios.post(bb_vapor.rest_url + `bbvapor/v1/get_row_content/`, { id: rowId }, { 'headers': { 'X-WP-Nonce': bb_vapor.rest_nonce } } ).then( (response) => {
-			refThis.props.attributes.title = response.data;
+			refThis.props.attributes.html = response.data;
 			refThis.setState(
 				{
 					loading: false,
-					title: response.data,
+					html: response.data,
 				}
 			);
 		})
@@ -94,7 +95,8 @@ class BB_Vapor_Row_Block extends Component {
 
 	render() {
 		const { post, setAttributes } = this.props;
-		const { row, title } = this.props.attributes;
+		const { row, html } = this.props.attributes;
+		const htmlToReactParser = new HtmlToReactParser();
 
 		let savedRows = this.state.posts;
 		let savedRowsArray = [ { value: 0, label: __('Select a Row', 'bb-vapor-modules-pro' )}];
@@ -138,7 +140,7 @@ class BB_Vapor_Row_Block extends Component {
 				{!this.state.loading && '' !== row &&
 					<Fragment>
 						{ inspectorControls }
-						{title + ' ' + __('Row Inserted. Preview the Post to See the Row.', 'bb-vapor-modules-pro')}
+						{htmlToReactParser.parse(html)}
 					</Fragment>
 				}
 			</Fragment>
