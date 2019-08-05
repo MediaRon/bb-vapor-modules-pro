@@ -148,8 +148,6 @@ class BBVM_Row_Block {
 			return;
 		}
 
-		ob_start();
-		echo do_shortcode( sprintf( '[fl_builder_insert_layout id="%d"]', $attributes['row'] ) );
-		return ob_get_clean();
+		return sprintf( '[fl_builder_insert_layout id="%d"]', $attributes['row'] );
 	}
 }
