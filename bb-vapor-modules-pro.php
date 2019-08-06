@@ -107,6 +107,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Timeline module.
+			if ( $this->is_module_enabled( $module_options, 'timeline' ) ) {
+				require_once 'bbvm-modules/timeline/bbvm-timeline.php';
+				new BBVapor_Timeline_Module();
+			}
+
 			// Markdown module.
 			if ( $this->is_module_enabled( $module_options, 'markdown' ) ) {
 				require_once 'bbvm-modules/markdown/bbvm-markdown.php';
