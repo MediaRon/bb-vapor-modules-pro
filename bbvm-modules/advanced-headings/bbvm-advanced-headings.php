@@ -1,4 +1,18 @@
 <?php //phpcs:ignore
+/**
+ * Advanced Headings Module
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+/**
+ * Advanced Heading module.
+ *
+ * @package BB Vapor Modules
+ */
 class BBVapor_Advanced_Headings_Module extends FLBuilderModule {
 	/**
 	 * Initialize Advanced Headings.

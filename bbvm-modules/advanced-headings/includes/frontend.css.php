@@ -1,5 +1,14 @@
 <?php
-// Headline block or inline
+/**
+ * Advanced Headings Module
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Headline block or inline.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline {
 	position: relative;
@@ -10,7 +19,7 @@
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->headline_color ) ); ?>;
 }
 <?php
-// Headline Description
+// Headline Description.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -112,7 +121,7 @@ if ( 'line' === $settings->separator_type && 'double' === $settings->line_type )
 	<?php
 endif;
 
-// Line Radius
+// Line Radius.
 if ( 'line_radius' === $settings->separator_type ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-headings-for-beaverbuilder .bbvm-advanced-headline:after {
@@ -126,7 +135,7 @@ if ( 'line_radius' === $settings->separator_type ) :
 	<?php
 endif;
 
-// Icon/Photo/Content
+// Icon/Photo/Content.
 if ( 'photo' === $settings->separator_type ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-advanced-separator {

@@ -1,3 +1,14 @@
+<?php
+/**
+ * Advanced Headings Module
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-advanced-headings-for-beaverbuilder">
 	<?php
 	echo sprintf( '<%s class="bbvm-advanced-headline">', esc_html( $settings->headline_tag ) );
