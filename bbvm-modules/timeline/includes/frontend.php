@@ -10,24 +10,27 @@
 
 ?>
 <div class="fl-bbvm-timeline-for-beaverbuilder">
-	<?php
-	foreach ( $settings->timeline as $timeline_item ) {
-		?>
-		<div class="timeline-item">
-			<div class="timeline-item-content">
-				<span class="tag">
-					<?php echo esc_html( $timeline_item->category ); ?>
-				</span>
-				<time><?php echo esc_html( date( 'M d Y', strtotime( $timeline_item->date ) ) ); ?></time>
-				<?php echo wp_kses_post( wpautop( $timeline_item->text ) ); ?>
-				<a href="<?php echo esc_url( $timeline_item->button_link ); ?>" target="_blank" rel="noopener noreferrer">
-					<?php echo esc_html( $timeline_item->button_text ); ?>
-				</a>
-				<span class="circle"></span>
-			</div>
-		</div>
+	<div class="timeline-container">
 		<?php
-	}
-
-	?>
+		$count = 1;
+		foreach ( $settings->timeline as $timeline_item ) {
+			?>
+			<div class="timeline-item">
+				<div class="timeline-item-content count-<?php echo absint( $count ); ?>" style="<?php echo 'background-color: ' . esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->background_color ) ) . '; '; ?>?>">
+					<span class="tag" style="<?php echo 'background-color: ' . esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->category_background_color ) ) . ';'; ?>">
+						<?php echo esc_html( $timeline_item->category ); ?>
+					</span>
+					<time style="<?php echo 'color: ' . esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->text_color ) ) . '; '; ?>?>"><?php echo esc_html( date( 'M d Y', strtotime( $timeline_item->date ) ) ); ?></time>
+					<div style="color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->text_color ) ); ?>;"><?php echo wp_kses_post( wpautop( $timeline_item->text ) ); ?></div>
+					<a href="<?php echo esc_url( $timeline_item->button_link ); ?>" target="_blank" rel="noopener noreferrer">
+						<?php echo esc_html( $timeline_item->button_text ); ?>
+					</a>
+					<span class="circle"></span>
+				</div>
+			</div>
+			<?php
+			$count++;
+		}
+		?>
+	</div>
 </div>

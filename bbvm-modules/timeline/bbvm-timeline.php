@@ -97,6 +97,24 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
+			'typography' => array(
+				'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'date_typography' => array(
+								'type'  => 'typography',
+								'label' => __( 'Date Typography', 'bb-vapor-modules-pro' ),
+							),
+							'content_typography' => array(
+								'type'  => 'typography',
+								'label' => __( 'Content Typography', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+				),
+			),
 		),
 	)
 );
