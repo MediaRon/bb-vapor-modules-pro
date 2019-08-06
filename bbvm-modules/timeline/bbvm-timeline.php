@@ -88,8 +88,10 @@ FLBuilder::register_settings_form(
 								'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
 							),
 							'button_link'               => array(
-								'type'  => 'link',
-								'label' => __( 'Button Link', 'bb-vapor-modules-pro' ),
+								'type'          => 'link',
+								'label'         => __( 'Button Link', 'bb-vapor-modules-pro' ),
+								'show_target'   => true,
+								'show_nofollow' => true,
 							),
 						),
 					),
