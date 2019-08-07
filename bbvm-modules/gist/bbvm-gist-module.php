@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Gist_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -57,7 +60,7 @@ FLBuilder::register_module(
 				'styles' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'gist_padding'         => array(
+						'gist_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 						),

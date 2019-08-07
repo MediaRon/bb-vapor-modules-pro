@@ -1,5 +1,14 @@
 <?php
-// Show hide meta
+/**
+ * Gist Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Show hide meta.
 if ( 'no' === $settings->show_meta ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-gist-for-beaverbuilder .gist-meta {
@@ -10,15 +19,15 @@ if ( 'no' === $settings->show_meta ) :
 	}
 	<?php
 endif;
-// Background Color
+// Background Color.
 $background_color = isset( $settings->gist_background_color ) ? esc_attr( $settings->gist_background_color ) : 'FFFFFF';
 $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 
-// Text Color
+// Text Color.
 $text_color = isset( $settings->gist_text_color ) ? esc_attr( $settings->gist_text_color ) : '000000';
 $text_color = BBVapor_Modules_Pro::get_color( $text_color );
 
-// Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
