@@ -193,6 +193,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'syntax-highlighter'            => 'Syntax Highlighter Evolved',
 			'syntax-highlighter-native'     => 'Syntax Highlighter Native',
 			'testimonials'                  => 'Testimonials',
+			'timeline'                      => 'Timeline',
 			'twitter-embed'                 => 'Twitter Embed',
 			'unordered-list'                => 'Unordered List',
 			'user-profile'                  => 'User Profile',
