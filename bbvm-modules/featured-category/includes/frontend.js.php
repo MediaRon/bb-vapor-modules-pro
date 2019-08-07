@@ -1,3 +1,14 @@
+<?php
+/**
+ * Featured Category Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 jQuery( 'body' ).on('change', '.bbvm-post-select:visible, .bbvm-taxonomy-select:visible', { tax: '<?php echo esc_js( isset( $settings->taxonomy_select ) ? $settings->taxonomy_select : 0 ); ?>', term: '<?php echo esc_js( isset( $settings->terms_select ) ? $settings->terms_select : 0 ); ?>'}, function( e ) {
 		if ( jQuery( '.fl-lightbox-content .fl-builder-settings' ).data('node') !== '<?php echo esc_html( $id ); ?>' ) {
 			return;

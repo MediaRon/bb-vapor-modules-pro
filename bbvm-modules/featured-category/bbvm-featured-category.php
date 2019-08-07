@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Featured_Category_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -131,7 +134,7 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'tabs' => array(
 										'button',

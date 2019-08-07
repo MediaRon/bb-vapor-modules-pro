@@ -1,8 +1,13 @@
 <?php
 /**
- * Render the Loop Settings for Category Grid Module.
+ * Featured Category Module.
  *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
  */
+
 FLBuilderModel::default_settings(
 	$settings,
 	array(
