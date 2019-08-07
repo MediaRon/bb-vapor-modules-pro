@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Blockquotes_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -49,7 +52,7 @@ FLBuilder::register_module(
 				'style' => array(
 					'title'  => __( 'Style', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'blockquote_style' => array(
+						'blockquote_style'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Blockquote Style Select', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -68,7 +71,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'none',
 							'toggle'  => array(
-								'bold' => array(
+								'bold'                 => array(
 									'fields' => array(
 										'bold_quote_color',
 										'bold_background_color',
@@ -253,7 +256,7 @@ FLBuilder::register_module(
 								'color'    => __( 'Color', 'bb-vapor-modules-pro' ),
 								'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'color'    => array(
 									'fields' => array(
 										'border_background_color',

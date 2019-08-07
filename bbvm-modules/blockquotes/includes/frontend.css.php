@@ -1,3 +1,14 @@
+<?php
+/**
+ * Blockquotes Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 @keyframes bbvm-clockwise {
 	0% {
 		transform:rotate(0);
