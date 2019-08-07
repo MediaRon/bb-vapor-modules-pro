@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_WooCommerce_Featured_Products_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -16,6 +19,9 @@ class BBVapor_WooCommerce_Featured_Products_Module extends FLBuilderModule {
 		);
 	}
 
+	/**
+	 * Enqueue the lightbox if the setting allow.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'lightbox' === $this->settings->show_details_behavior ) {
 			$this->add_js( 'swal', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/woocommerce-featured-products/js/sweetalert.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
@@ -176,7 +182,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'colorspadding'  => array(
+		'colorspadding' => array(
 			'title'    => __( 'Colors and Padding', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'colors' => array(

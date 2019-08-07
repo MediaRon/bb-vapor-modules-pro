@@ -1,6 +1,14 @@
 <?php
+/**
+ * WooCommerce Featured Products.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
 
-// Text Color
+// Text Color.
 $text_color = isset( $settings->text_color ) ? esc_attr( $settings->text_color ) : '000000';
 $text_color = BBVapor_Modules_Pro::get_color( $text_color )
 ?>
@@ -155,7 +163,7 @@ FLBuilderCSS::typography_field_rule(
 		.bbvm-bb-woocommerce-featured-product-popup h3",
 	)
 );
-// Max Width
+// Max Width.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .bbvm-woocommerce-product",
@@ -215,7 +223,7 @@ if ( 0 != $settings->item_max_width /* phpcs:ignore */ ) {
 		)
 	);
 }
-// Padding and Margin
+// Padding and Margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

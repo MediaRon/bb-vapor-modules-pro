@@ -1,3 +1,14 @@
+<?php
+/**
+ * WooCommerce Featured Products.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-woocommerce-featured-products-for-beaverbuilder">
 	<?php if ( ! empty( $settings->products ) ) : ?>
 		<?php
@@ -50,7 +61,7 @@
 					<?php echo esc_html( $settings->show_details_text ); ?>
 					<?php
 					$show_details_text = ob_get_clean();
-					$on_click_text = '';
+					$on_click_text     = '';
 					if ( 'slidedown' === $settings->show_details_behavior ) {
 						$on_click_text = sprintf( 'onclick="event.preventDefault();bbvm_woocommerce_featured_products_show_details(%s)"', esc_js( $product->get_id() ) );
 					}
