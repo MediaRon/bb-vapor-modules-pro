@@ -1,3 +1,14 @@
+<?php
+/**
+ * Button Group Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-button-group-for-beaverbuilder">
 	<?php
 	foreach ( $settings->button as $button ) {

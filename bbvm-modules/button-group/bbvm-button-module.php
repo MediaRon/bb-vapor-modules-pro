@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Button_Group_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -21,7 +24,7 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Add Button', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general'      => array(
+			'general' => array(
 				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'general' => array(
