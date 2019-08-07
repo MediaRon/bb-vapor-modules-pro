@@ -1,4 +1,13 @@
 <?php
+/**
+ * Unordered List Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( 'icon' === $settings->list_style ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-unordered-list-for-beaverbuilder ul {
@@ -149,7 +158,7 @@ if ( 'bar' === $settings->list_style ) :
 		)
 	);
 endif;
-// Credit https://codepen.io/the_dro/pen/pJrMZN
+// Credit https://codepen.io/the_dro/pen/pJrMZN.
 if ( 'hover' === $settings->list_style ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-unordered-list-for-beaverbuilder ul {

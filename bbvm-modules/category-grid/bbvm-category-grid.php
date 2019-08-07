@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Category_Grid_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -24,12 +27,12 @@ FLBuilder::register_module(
 			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'options'  => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'image' => array( // Section
-					'title'  => __( 'Image Selection', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options'  => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'image' => array(
+					'title'  => __( 'Image Selection', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'image_type'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Where are your images coming from?', 'bb-vapor-modules-pro' ),
@@ -61,7 +64,7 @@ FLBuilder::register_module(
 							'type'  => 'text',
 							'label' => __( 'Enter Your ACF Custom Field Name Here', 'bb-vapor-modules-pro' ),
 						),
-						'meta_key'         => array(
+						'meta_key'         => array( /* phpcs:ignore */
 							'type'  => 'text',
 							'label' => __( 'Enter Your Custom Category Meta Name Here', 'bb-vapor-modules-pro' ),
 						),
@@ -73,9 +76,9 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'grid'  => array( // Section
-					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+				'grid'  => array(
+					'title'  => __( 'Grid Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'min_width'  => array(
 							'type'       => 'unit',
 							'label'      => __( 'Minimum Width of the Category Column', 'bb-vapor-modules-pro' ),
@@ -98,7 +101,7 @@ FLBuilder::register_module(
 				'box' => array(
 					'title'  => __( 'Box Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'link_category'       => array(
+						'link_category'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Link Entire Container to Category', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -107,7 +110,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
-						'category_text_color' => array(
+						'category_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Category Color', 'bb-vapor-modules-pro' ),
 							'default'    => 'FFFFFF',
@@ -121,12 +124,12 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'category_typography' => array(
+						'category_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'border_style' => array(
+						'border_style'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Select Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -142,16 +145,16 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'outer_border'        => array(
+						'outer_border'              => array(
 							'type'  => 'border',
 							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
 						),
-						'category_padding'    => array(
+						'category_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Category Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'show_button'         => array(
+						'show_button'               => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Button', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -171,12 +174,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'overlay'  => array( // Tab
-			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'photo' => array( // Section
-					'title'  => __( 'Overlay Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'overlay'  => array(
+			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'photo' => array(
+					'title'  => __( 'Overlay Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'background_overlay'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Background Overlay', 'bb-vapor-modules-pro' ),
@@ -197,12 +200,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button'   => array( // Tab
-			'title'    => __( 'Button', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'button' => array( // Section
-					'title'  => __( 'Button', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'button'   => array(
+			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'button' => array(
+					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_text'               => array(
 							'type'    => 'text',
 							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),

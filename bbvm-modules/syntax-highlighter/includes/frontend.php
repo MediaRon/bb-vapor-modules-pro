@@ -1,4 +1,13 @@
 <?php
+/**
+ * Syntax Highlighter Evolved Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 global $SyntaxHighlighter; // phpcs:ignore
 $attributes = array(
 	'title' => $settings->title,

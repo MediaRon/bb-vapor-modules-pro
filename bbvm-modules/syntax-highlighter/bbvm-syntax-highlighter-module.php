@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Syntax_Highlighter_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -23,18 +26,18 @@ global $SyntaxHighlighter; // phpcs:ignore
 FLBuilder::register_module(
 	'BBVapor_Syntax_Highlighter_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'code' => array(
 							'type'    => 'select',
 							'label'   => __( 'Enter your code type', 'bb-vapor-modules-pro' ),
 							'options' => $SyntaxHighlighter->brush_names, // phpcs:ignore
 						),
-						'raw' => array(
+						'raw'  => array(
 							'type'  => 'code',
 							'label' => __( 'Enter your code here. For this to preview properly, enable loading all brushes in the Syntax Highlighting settings.', 'bb-vapor-modules-pro' ),
 							'rows'  => '18',
@@ -43,12 +46,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'options' => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'options' => array( // Section
-					'title'  => __( 'Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options' => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'title'          => array(
 							'type'  => 'text',
 							'label' => __( 'Select a Title or Leave Blank', 'bb-vapor-modules-pro' ),

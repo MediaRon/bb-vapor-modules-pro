@@ -1,9 +1,18 @@
 <?php
-// Background Color
+/**
+ * Gravity Forms Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Background Color.
 $background_color = isset( $settings->copyright_background_color ) ? esc_attr( $settings->copyright_background_color ) : 'FFFFFF';
 $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 
-// General Typography
+// General Typography.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> input[type=text],
 .fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> input[type=password],
@@ -45,7 +54,7 @@ $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 }
 <?php
 
-// Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -74,7 +83,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-// Full Width Centered
+// Full Width Centered.
 if ( 'full_width_centered' === $settings->layout ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> input[type=text],
@@ -124,7 +133,7 @@ if ( 'full_width_centered' === $settings->layout ) :
 		<?php
 	endif;
 
-	// Full Width Centered
+	// Full Width Centered.
 if ( 'full_width' === $settings->layout ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> input[type=text],
@@ -196,7 +205,7 @@ endif;
 	height: <?php echo absint( $settings->input_height ); ?>px;
 }
 <?php
-// Max Width
+// Max Width.
 FLBuilderCSS::rule(
 	array(
 		'selector' => ".fl-node-$id .fl-bbvm-gravityforms-for-beaverbuilder",
@@ -228,7 +237,7 @@ FLBuilderCSS::rule(
 	)
 );
 
-// Pagination Progress Title
+// Pagination Progress Title.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -251,7 +260,7 @@ if ( ! empty( $settings->progress_title_color ) ) :
 	<?php
 endif;
 
-// Pagination Progress Bar
+// Pagination Progress Bar.
 if ( isset( $settings->progress_bar_outer_border_radius ) ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .gf_progressbar_wrapper .gf_progressbar {
@@ -295,7 +304,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Progress Bar Color and Text
+// Progress Bar Color and Text.
 if ( ! empty( $settings->progress_bar_inner_color ) ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .gf_progressbar_wrapper .gf_progressbar_percentage {
@@ -348,7 +357,7 @@ FLBuilderCSS::typography_field_rule(
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->progress_bar_text_color ) ); ?>;
 }
 <?php
-// Pagination Steps Styles
+// Pagination Steps Styles.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -496,7 +505,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// General form styling
+// General form styling.
 if ( ! empty( $settings->form_background_color ) ) :
 	$background_color = isset( $settings->form_background_color ) ? esc_attr( $settings->form_background_color ) : 'FFFFFF';
 	$background_color = BBVapor_Modules_Pro::get_color( $background_color );
@@ -551,7 +560,7 @@ if ( ! empty( $settings->form_show_placeholders ) && 'no' === $settings->form_sh
 	<?php
 endif;
 
-// Inputs
+// Inputs.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -652,7 +661,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Selects
+// Selects.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -810,7 +819,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Textareas
+// Textareas.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -864,7 +873,7 @@ $textarea_background_color = BBVapor_Modules_Pro::get_color( $textarea_backgroun
 	text-align: <?php echo esc_html( $settings->textarea_align ); ?>;
 }
 <?php
-// List areas
+// List areas.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .gfield_radio label,
 .fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .gfield_checkbox label {
@@ -917,7 +926,7 @@ $textarea_background_color = BBVapor_Modules_Pro::get_color( $textarea_backgroun
 }
 
 <?php
-// Typography
+// Typography.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -975,7 +984,7 @@ FLBuilderCSS::typography_field_rule(
 	)
 );
 
-// Buttons
+// Buttons.
 $button_background_color = isset( $settings->button_background ) ? esc_attr( $settings->button_background ) : '000000';
 $button_background_color = BBVapor_Modules_Pro::get_color( $button_background_color );
 
@@ -1034,7 +1043,7 @@ $button_background_hover_color = BBVapor_Modules_Pro::get_color( $button_backgro
 	background: <?php echo esc_html( $button_background_hover_color ); ?>;
 }
 <?php
-// Error messages
+// Error messages.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -1055,7 +1064,7 @@ FLBuilderCSS::typography_field_rule(
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->error_label_color ) ); ?>;
 }
 <?php
-// Confirmation Message
+// Confirmation Message.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

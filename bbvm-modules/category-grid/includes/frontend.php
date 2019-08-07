@@ -1,3 +1,14 @@
+<?php
+/**
+ * Category Grid Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-category-grid-for-beaverbuilder">
 	<?php
 	if ( isset( $settings->category_options ) && 'taxonomy' === $settings->category_options ) :
@@ -53,7 +64,7 @@
 	endif;
 	if ( ! empty( $terms ) ) {
 		echo '<ul>';
-		$bg_count = 0;
+		$bg_count                   = 0;
 		$settings->category_gallery = array_values( is_array( $settings->category_gallery ) ? $settings->category_gallery : array() );
 		foreach ( $terms as $bbvm_term ) {
 			?>

@@ -1,3 +1,14 @@
+<?php
+/**
+ * Testimonials Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 if( typeof jQuery.fn.owlCarousel !== 'undefined' ) {
 	jQuery(".fl-node-<?php echo esc_html( $id ); ?> .owl-carousel").owlCarousel( {
 	loop:<?php echo 'yes' === $settings->slide_loop ? 'true' : 'false'; ?>,

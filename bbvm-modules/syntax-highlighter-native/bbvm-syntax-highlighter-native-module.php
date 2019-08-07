@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -16,6 +19,9 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 		);
 	}
 
+	/**
+	 * Enqueue the highlighter and theme.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'none' !== $this->settings->code ) {
 			$this->add_js( 'syntax-highlighter', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/syntax-highlighter-native/js/highlight.pack.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
@@ -30,13 +36,13 @@ class BBVapor_Syntax_Highlighter_Native_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Syntax_Highlighter_Native_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'code' => array(
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Syntax Highlighter', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'code'  => array(
 							'type'        => 'select',
 							'label'       => __( 'Enter Your Code Type', 'bb-vapor-modules-pro' ),
 							'options'     => array(

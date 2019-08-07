@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Restaurant_Menu_Tabbed_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -40,7 +43,7 @@ FLBuilder::register_settings_form(
 									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
-								'toggle' => array(
+								'toggle'  => array(
 									'yes' => array(
 										'fields' => array( 'restaurant_menu_item_photo', 'restaurant_menu_item_photo_size' ),
 									),
@@ -130,15 +133,15 @@ FLBuilder::register_settings_form(
 								),
 								'default' => 'no',
 							),
-							'menu_item_category'   => array( // Section Fields
+							'menu_item_category'   => array(
 								'type'  => 'text',
 								'label' => __( 'Category name', 'bb-vapor-modules-pro' ),
 							),
-							'menu_item_category_description' => array( // Section Fields
+							'menu_item_category_description' => array(
 								'type'  => 'text',
 								'label' => __( 'Category description or leave blank for no description', 'bb-vapor-modules-pro' ),
 							),
-							'menu_item_form'       => array( // Section Fields
+							'menu_item_form'       => array(
 								'type'         => 'form',
 								'label'        => __( 'Menu Item', 'bb-vapor-modules-pro' ),
 								'form'         => 'mrbb_restaurant_menu_item',
@@ -155,13 +158,13 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Restaurant_Menu_Tabbed_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Restaurant Menu', 'bb-vapor-modules-pro' ), // Section Title
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Restaurant Menu', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'menu_item_form' => array( // Section Fields
+						'menu_item_form' => array(
 							'type'         => 'form',
 							'label'        => __( 'Menu Tab', 'bb-vapor-modules-pro' ),
 							'form'         => 'mrbb_restaurant_menu_tab',
@@ -210,7 +213,7 @@ FLBuilder::register_module(
 			'title'    => __( 'Tabs', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Tabs', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Tabs', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'tab_min_width'                 => array(
 							'type'        => 'unit',
@@ -271,13 +274,13 @@ FLBuilder::register_module(
 			'title'    => __( 'Typography', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'tab_typography' => array(
+						'tab_typography'                   => array(
 							'type'  => 'typography',
 							'label' => __( 'Tab Typography', 'bb-vapor-modules-pro' ),
 						),
-						'category_typography' => array(
+						'category_typography'              => array(
 							'type'    => 'typography',
 							'label'   => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 							'preview' => array(
@@ -325,7 +328,7 @@ FLBuilder::register_module(
 			'title'    => __( 'Spacing', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Spacing', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Spacing', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'category_padding'             => array(
 							'type'       => 'dimension',
@@ -350,9 +353,9 @@ FLBuilder::register_module(
 			'title'    => __( 'Separators', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Separators', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Separators', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'category_separator'         => array(
+						'category_separator'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select category separator', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -362,7 +365,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'none',
 							'toggle'  => array(
-								'line' => array(
+								'line'  => array(
 									'fields' => array( 'category_separator_line', 'category_separator_line_height', 'category_separator_line_color', 'category_seperator_margin' ),
 								),
 								'image' => array(

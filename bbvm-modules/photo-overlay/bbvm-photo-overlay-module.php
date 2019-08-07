@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Photo_Overlay_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Photo_Overlay_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Photo_Overlay_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Overlay Photo', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Overlay Photo', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'overlay_photo'     => array(
 							'type'        => 'photo',
 							'label'       => __( 'Photo to be Overlayed', 'bb-vapor-modules-pro' ),
@@ -37,7 +40,7 @@ FLBuilder::register_module(
 							'type'  => 'link',
 							'label' => __( 'Overlay Link', 'bb-vapor-modules-pro' ),
 						),
-						'overlay_text' => array(
+						'overlay_text'      => array(
 							'type'        => 'text',
 							'label'       => __( 'Overlay Text', 'bb-vapor-modules-pro' ),
 							'placeholder' => __( 'Text to overlay photo', 'bb-vapor-modules-pro' ),
@@ -53,12 +56,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'overlay' => array( // Tab
-			'title'    => __( 'Overlay Style', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'overlay'       => array( // Section
-					'title'         => __( 'Overlay Style', 'bb-vapor-modules-pro' ), // Section Title
-					'fields'        => array( // Section Fields
+		'overlay' => array(
+			'title'    => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'overlay' => array(
+					'title'  => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'overlay_type'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select an Overlay Type', 'bb-vapor-modules-pro' ),
@@ -70,12 +73,12 @@ FLBuilder::register_module(
 							),
 							'toggle'  => array(
 								'horizontal' => array(
-									'fields'     => array(
+									'fields' => array(
 										'horizontal_overlay_type',
 										'animation',
 									),
 								),
-								'full' => array(
+								'full'       => array(
 									'fields' => array( 'animation' ),
 								),
 							),
@@ -115,7 +118,7 @@ FLBuilder::register_module(
 							'default'    => '#FFFFFF',
 							'show_reset' => true,
 						),
-						'overlay_typography' => array(
+						'overlay_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
 							'preview'    => array(

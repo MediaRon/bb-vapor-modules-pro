@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Animated_Button_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -23,12 +26,12 @@ class BBVapor_Animated_Button_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Animated_Button_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general'       => array( // Section
-					'title'  => __( 'General', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_id'                       => array(
 							'type'    => 'text',
 							'label'   => __( 'Unique Button ID for Styling', 'bb-vapor-modules-pro' ),
@@ -66,7 +69,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 						),
-						'button_background_color' => array(
+						'button_background_color'         => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
@@ -94,12 +97,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'animations' => array( // Tab
-			'title'    => __( 'Animations', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'animations'       => array( // Section
-					'title'  => __( 'Animations', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'animations' => array(
+			'title'    => __( 'Animations', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'animations' => array(
+					'title'  => __( 'Animations', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'icon_animation'                  => array(
 							'type'    => 'select',
 							'label'   => __( 'Allow Icon Hover Animations', 'bb-vapor-modules-pro' ),
@@ -108,7 +111,7 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'fields' => array(
 										'icon_animation_hover',
@@ -321,12 +324,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'     => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles'       => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'     => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_alignment'  => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
@@ -342,7 +345,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_margin'    => array(
+						'button_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

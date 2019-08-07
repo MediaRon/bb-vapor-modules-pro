@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Featured_Category_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -27,12 +30,12 @@ FLBuilder::register_module(
 			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'general'  => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Featured Category', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'  => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Featured Category', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'category_title'         => array(
 							'type'    => 'text',
 							'label'   => __( 'Category Name', 'bb-vapor-modules-pro' ),
@@ -131,7 +134,7 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'tabs' => array(
 										'button',
@@ -143,12 +146,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'photo'    => array( // Tab
-			'title'    => __( 'Background Photo', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'photo' => array( // Section
-					'title'  => __( 'Background Photo', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'photo'    => array(
+			'title'    => __( 'Background Photo', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'photo' => array(
+					'title'  => __( 'Background Photo', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'background_photo'         => array(
 							'type'        => 'photo',
 							'label'       => __( 'Background Photo', 'bb-vapor-modules-pro' ),
@@ -174,12 +177,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button'   => array( // Tab
-			'title'    => __( 'Button', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'button' => array( // Section
-					'title'  => __( 'Button', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'button'   => array(
+			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'button' => array(
+					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_text'               => array(
 							'type'    => 'text',
 							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),

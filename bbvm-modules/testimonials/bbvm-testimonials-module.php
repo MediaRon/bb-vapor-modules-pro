@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Testimonials_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -15,6 +18,10 @@ class BBVapor_Testimonials_Module extends FLBuilderModule {
 			)
 		);
 	}
+
+	/**
+	 * Loading in the CSS/JS needed for the module.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'slider' === $this->settings->testimonial_type ) {
 			$this->add_css( 'animate', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/testimonials/css/animate.css', array(), '3.7.0', 'all' );
@@ -48,7 +55,7 @@ FLBuilder::register_settings_form(
 								'default' => '5',
 							),
 							'testimonial_name'    => array(
-								'type'          => 'text',
+								'type'  => 'text',
 								'label' => __( 'Testimonial Name', 'bb-vapor-modules-pro' ),
 							),
 							'testimonial_title'   => array(
@@ -76,7 +83,7 @@ FLBuilder::register_settings_form(
 									'icon'  => __( 'Icon', 'bb-vapor-modules-pro' ),
 									'image' => __( 'Image', 'bb-vapor-modules-pro' ),
 								),
-								'toggle' => array(
+								'toggle'  => array(
 									'icon'  => array( 'fields' => array( 'testimonial_icon' ) ),
 									'image' => array( 'fields' => array( 'testimonial_image' ) ),
 								),
@@ -102,12 +109,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Testimonials_Module',
 	array(
-		'general'      => array( // Tab
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general'       => array( // Section
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'      => array(
+			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'testimonial_type'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Testimonial type', 'bb-vapor-modules-pro' ),
@@ -161,7 +168,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Left Area Background', 'bb-vapor-modules-pro' ),
 							'default' => 'FFFFFF',
 						),
-						'left_border' => array(
+						'left_border'              => array(
 							'type'    => 'unit',
 							'label'   => __( 'Left Border Separator Width', 'bb-vapor-modules-pro' ),
 							'default' => '0',
@@ -288,7 +295,7 @@ FLBuilder::register_module(
 							'default' => '5000',
 						),
 						'slide_loop'               => array(
-							'type'   => 'select',
+							'type'    => 'select',
 							'label'   => __( 'Loop', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
@@ -327,12 +334,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'testimonials' => array( // Tab
-			'title'    => __( 'Testimonials', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'testimonials' => array( // Section
-					'title'  => __( 'Testimonials', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'testimonials' => array(
+			'title'    => __( 'Testimonials', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'testimonials' => array(
+					'title'  => __( 'Testimonials', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'testimonial_entries' => array(
 							'type'         => 'form',
 							'form'         => 'mrbb_testimonials',
@@ -344,13 +351,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'appearance'   => array( // Tab
-			'title'    => __( 'Appearance', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'rating'   => array( // Section
-					'title'  => __( 'Rating', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'show_rating' => array(
+		'appearance'   => array(
+			'title'    => __( 'Appearance', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'rating' => array(
+					'title'  => __( 'Rating', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'show_rating'  => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Rating', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -412,12 +419,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography'   => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'overlay' => array( // Section
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography'   => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'overlay' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'testimonial_name_typography'    => array(
 							'type'       => 'typography',
 							'label'      => __( 'Name Typography', 'bb-vapor-modules-pro' ),

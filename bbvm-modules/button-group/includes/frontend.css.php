@@ -1,3 +1,14 @@
+<?php
+/**
+ * Button Group Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder {
 	text-align: <?php echo esc_html( $settings->button_alignment ); ?>;
 }
@@ -535,21 +546,21 @@ foreach ( $settings->button as $button ) :
 			<?php
 			endif;
 		if ( 'prospero' === $button->button_style_hover ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
-		}
+			?>
+			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+				moz-transition: all .4s ease-in-out;
+				-o-transition: all .4s ease-in-out;
+				-webkit-transition: all .4s ease-in-out;
+				transition: all .4s ease-in-out;
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
+			}
 			<?php
 		endif;
 		if ( 'trinculo' === $button->button_style_hover ) :

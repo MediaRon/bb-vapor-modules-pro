@@ -1,3 +1,14 @@
+<?php
+/**
+ * Vegas Slideshow Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-vegas-slideshow-for-beaverbuilder {
 	background: #<?php echo esc_html( $settings->slideshow_background_color ); ?>;
 	position: relative;
@@ -144,7 +155,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// CAPTIONS
+// CAPTIONS.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -193,7 +204,7 @@ $caption_background = BBVapor_Modules_Pro::get_color( $settings->caption_backgro
 	border-style: solid;
 }
 <?php
-// Sub-CAPTIONS
+// Sub-CAPTIONS.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
@@ -209,7 +220,7 @@ $subcaption_text_color = BBVapor_Modules_Pro::get_color( $settings->subcaption_t
 	color: <?php echo esc_html( $subcaption_text_color ); ?>;
 }
 <?php
-// Link
+// Link.
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,

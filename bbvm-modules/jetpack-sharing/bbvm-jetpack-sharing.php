@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Jetpack_Sharing_Module extends FLBuilderModule {
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Jetpack_Sharing_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Jetpack_Sharing_Module',
 	array(
-		'general'       => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Jetpack Sharing Icons', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'       => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Jetpack Sharing Icons', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_headline'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Sharing Headline', 'bb-vapor-modules-pro' ),
@@ -66,7 +69,7 @@ FLBuilder::register_module(
 							'default' => 'icon-text',
 							'toggle'  => array(
 								'icon-text' => array(
-									'tabs' => array(
+									'tabs'     => array(
 										'button_text',
 										'button_styles',
 									),
@@ -74,7 +77,7 @@ FLBuilder::register_module(
 										'icon_styles',
 									),
 								),
-								'text' => array(
+								'text'      => array(
 									'tabs' => array(
 										'button_text',
 										'button_styles',
@@ -87,12 +90,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'headline'      => array( // Tab
-			'title'    => __( 'Headline', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'headline' => array( // Section
-					'title'  => __( 'Headline', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'headline'      => array(
+			'title'    => __( 'Headline', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'headline' => array(
+					'title'  => __( 'Headline', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'sharing_headline'                 => array(
 							'type'    => 'text',
 							'label'   => __( 'Sharing Headline', 'bb-vapor-modules-pro' ),
@@ -147,12 +150,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button_text'   => array( // Tab
-			'title'    => __( 'Button Text', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'button_text' => array( // Section
-					'title'  => __( 'Button Text', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'button_text'   => array(
+			'title'    => __( 'Button Text', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'button_text' => array(
+					'title'  => __( 'Button Text', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'twitter'   => array(
 							'type'    => 'text',
 							'label'   => __( 'Twitter', 'bb-vapor-modules-pro' ),
@@ -217,13 +220,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button_styles' => array( // Tab
-			'title'    => __( 'Button Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'icon_styles'   => array( // Section
-					'title'  => __( 'Icon Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'icon_color' => array(
+		'button_styles' => array(
+			'title'    => __( 'Button Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'icon_styles'   => array(
+					'title'  => __( 'Icon Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'icon_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
@@ -242,9 +245,9 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'button_styles' => array( // Section
-					'title'  => __( 'Button Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+				'button_styles' => array(
+					'title'  => __( 'Button Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_typography'                => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
@@ -269,7 +272,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'color',
 							'toggle'  => array(
-								'color' => array(
+								'color'    => array(
 									'fields' => array(
 										'button_background_color',
 										'button_background_color_hover',
@@ -315,19 +318,19 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'button_layout' => array( // Section
-					'title'  => __( 'Button Layout', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+				'button_layout' => array(
+					'title'  => __( 'Button Layout', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_layout_type' => array(
-							'type'      => 'select',
-							'label'     => __( 'Button Layout Type', 'bb-vapor-modules-pro' ),
-							'options'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Button Layout Type', 'bb-vapor-modules-pro' ),
+							'options' => array(
 								'flex'   => __( 'Flex Layout', 'bb-vapor-modules-pro' ),
 								'block'  => __( 'Block Layout', 'bb-vapor-modules-pro' ),
 								'inline' => __( 'Inline Layout', 'bb-vapor-modules-pro' ),
 							),
-							'default'   => 'inline',
-							'toggle'    => array(
+							'default' => 'inline',
+							'toggle'  => array(
 								'flex'  => array(
 									'fields' => array(
 										'flex_columns',

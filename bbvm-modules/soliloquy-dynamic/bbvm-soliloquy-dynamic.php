@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Soliloquy_Dynamic_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -19,12 +22,12 @@ class BBVapor_Soliloquy_Dynamic_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Soliloquy_Dynamic_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Slider Select', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Slider Select', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'source'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a Source for Images', 'bb-vapor-modules-pro' ),
@@ -95,13 +98,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'options' => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'options' => array( // Section
-					'title'  => __( 'General Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'show_arrows' => array(
+		'options' => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'General Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'show_arrows'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Show arrows always', 'bb-vapor-modules-pro' ),
 							'options' => array(

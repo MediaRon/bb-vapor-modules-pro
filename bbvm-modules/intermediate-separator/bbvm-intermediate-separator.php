@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Intermediate_Separator_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Intermediate_Separator_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Intermediate_Separator_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'color'              => array(
 							'type'       => 'color',
 							'label'      => __( 'Color of Separator', 'bb-vapor-modules-pro' ),
@@ -47,14 +50,14 @@ FLBuilder::register_module(
 								'photo'      => __( 'Background Photo', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'content' => array(
+								'content'    => array(
 									'fields' => array(
 										'content',
 										'content_typography',
 										'content_height',
 									),
 								),
-								'simple' => array(
+								'simple'     => array(
 									'fields' => array(
 										'separator_height',
 									),
@@ -64,14 +67,14 @@ FLBuilder::register_module(
 										'separator_height',
 									),
 								),
-								'double' => array(
+								'double'     => array(
 									'fields' => array(
 										'separator_height',
 										'double_margin',
 										'border_thickness',
 									),
 								),
-								'photo' => array(
+								'photo'      => array(
 									'fields' => array(
 										'photo',
 										'repeat',
@@ -91,10 +94,10 @@ FLBuilder::register_module(
 							'label' => __( 'Background Photo', 'bb-vapor-modules-pro' ),
 						),
 						'repeat'             => array(
-							'type'          => 'select',
-							'label'         => __( 'Repeat Options', 'bb-vapor-modules-pro' ),
-							'default'       => 'repeat-x',
-							'options'       => array(
+							'type'    => 'select',
+							'label'   => __( 'Repeat Options', 'bb-vapor-modules-pro' ),
+							'default' => 'repeat-x',
+							'options' => array(
 								'repeat'    => 'repeat',
 								'repeat-y'  => 'repeat-y',
 								'repeat-x'  => 'repeat-x',

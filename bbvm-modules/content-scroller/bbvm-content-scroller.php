@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Content_Scroller extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -170,12 +173,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Content_Scroller',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'scroller_content' => array(
 							'type'     => 'form',
 							'label'    => __( 'Scroller Content', 'bb-vapor-modules-pro' ),

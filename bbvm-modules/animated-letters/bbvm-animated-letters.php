@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Animated_Letters_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -29,7 +32,7 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Add Text', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'text'            => array(
+							'text' => array(
 								'type'    => 'text',
 								'label'   => __( 'Text', 'bb-vapor-modules' ),
 								'default' => '',
@@ -44,12 +47,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Animated_Letters_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Animated Text', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'style'                  => array(
 							'type'    => 'select',
 							'label'   => __( 'Animation Style', 'bb-vapor-modules-pro' ),
@@ -237,7 +240,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Center Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Center', 'bb-vapor-modules-pro' ),
 						),
-						'text_right' => array(
+						'text_right'             => array(
 							'type'    => 'text',
 							'label'   => __( 'Right Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Right', 'bb-vapor-modules-pro' ),
@@ -256,7 +259,7 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'text_center_color'     => array(
+						'text_center_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Text Center Color', 'bb-vapor-modules-pro' ),
 							'default'    => '000000',

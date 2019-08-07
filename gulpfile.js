@@ -11,6 +11,8 @@ gulp.task( 'bundle', function() {
 		'!vendor/**/*',
 		'!composer.*',
 		'!release/**/*',
+		'!src/**/*',
+		'!src',
 	] )
 		.pipe( gulp.dest( 'release/bb-vapor-modules-pro' ) );
 } );

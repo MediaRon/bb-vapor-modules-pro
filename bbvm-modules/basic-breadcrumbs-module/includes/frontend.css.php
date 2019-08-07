@@ -1,21 +1,30 @@
 <?php
-// Background Color
+/**
+ * Breadcrumbs Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Background Color.
 $background_color = isset( $settings->breadcrumb_background_color ) ? esc_attr( $settings->breadcrumb_background_color ) : 'FFFFFF';
 $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 
-// Text Color
+// Text Color.
 $text_color = isset( $settings->breadcrumb_text_color ) ? esc_attr( $settings->breadcrumb_text_color ) : '000000';
 $text_color = BBVapor_Modules_Pro::get_color( $text_color );
 
-// Link Color
+// Link Color.
 $link_color = isset( $settings->breadcrumb_link_color ) ? esc_attr( $settings->breadcrumb_link_color ) : 'inherit';
 $link_color = BBVapor_Modules_Pro::get_color( $link_color );
 
-// Link Hover Color
+// Link Hover Color.
 $link_hover_color = isset( $settings->breadcrumb_link_hover_color ) ? esc_attr( $settings->breadcrumb_link_hover_color ) : 'inherit';
 $link_hover_color = BBVapor_Modules_Pro::get_color( $link_hover_color );
 
-// Font
+// Font.
 $font        = isset( $settings->breadcrumb_font ) ? $settings->breadcrumb_font : 'inherit';
 $font_family = 'inherit';
 $font_weight = 'inherit';
@@ -24,12 +33,12 @@ if ( is_array( $font ) ) {
 	$font_weight = $font['weight'];
 }
 
-// Align
+// Align.
 $align = isset( $settings->breadcrumb_text_align ) ? $settings->breadcrumb_text_align : 'left';
 
-// Padding
+// Padding.
 $padding_dimensions = isset( $settings->breadcrumb_padding_top ) ? $settings->breadcrumb_padding_top : false;
-$padding = 0;
+$padding            = 0;
 if ( false !== $padding_dimensions ) {
 	$padding = sprintf( '%dpx %dpx %dpx %dpx', $settings->breadcrumb_padding_top, $settings->breadcrumb_padding_right, $settings->breadcrumb_padding_bottom, $settings->breadcrumb_padding_left );
 }

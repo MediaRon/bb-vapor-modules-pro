@@ -1,3 +1,14 @@
+<?php
+/**
+ * Restaurant Menu Items Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="bbvm-restaurant-menu-items-wrapper">
 	<div class="bbvm-restaurant-heading">
 		<h2 class="bbvm-restaurant-menu-items-heading" id="<?php echo esc_attr( sanitize_title( $settings->menu_item_category ) ); ?>">

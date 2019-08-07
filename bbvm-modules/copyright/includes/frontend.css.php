@@ -1,13 +1,22 @@
 <?php
-// Background Color
+/**
+ * Copyright module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Background Color.
 $background_color = isset( $settings->copyright_background_color ) ? esc_attr( $settings->copyright_background_color ) : 'FFFFFF';
 $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 
-// Text Color
+// Text Color.
 $text_color = isset( $settings->copyright_text_color ) ? esc_attr( $settings->copyright_text_color ) : '000000';
 $text_color = BBVapor_Modules_Pro::get_color( $text_color );
 
-// Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

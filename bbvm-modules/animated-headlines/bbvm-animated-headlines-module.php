@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Animated_Headlines_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -23,12 +26,12 @@ class BBVapor_Animated_Headlines_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Animated_Headlines_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Headlines', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Headlines', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'headline_text'       => array(
 							'type'  => 'text',
 							'label' => __( 'Headline Text', 'bb-vapor-modules-pro' ),
@@ -70,12 +73,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'animations' => array( // Tab
-			'title'    => __( 'Animations', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles'       => array( // Section
-					'title'  => __( 'Animations', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'animations' => array(
+			'title'    => __( 'Animations', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Animations', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'animation_type'            => array(
 							'type'    => 'select',
 							'label'   => __( 'Headline Animation Type', 'bb-vapor-modules-pro' ),
@@ -96,7 +99,7 @@ FLBuilder::register_module(
 
 							),
 							'toggle'  => array(
-								'color' => array(
+								'color'    => array(
 									'fields' => array(
 										'original_color',
 										'animated_color',
@@ -116,7 +119,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Starting Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 						),
-						'animated_color' => array(
+						'animated_color'            => array(
 							'type'    => 'color',
 							'label'   => __( 'Ending Color', 'bb-vapor-modules-pro' ),
 							'default' => '333333',

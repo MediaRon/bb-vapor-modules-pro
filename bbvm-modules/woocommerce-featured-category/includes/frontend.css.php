@@ -1,6 +1,14 @@
 <?php
+/**
+ * WooCommerce Featured Category.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
 
-// Text Color
+// Text Color.
 $category_text_color = isset( $settings->category_text_color ) ? esc_attr( $settings->category_text_color ) : '000000';
 $category_text_color = BBVapor_Modules_Pro::get_color( $category_text_color );
 

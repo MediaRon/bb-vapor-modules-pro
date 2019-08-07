@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Breadcrumbs_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -23,12 +26,12 @@ class BBVapor_Breadcrumbs_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Breadcrumbs_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'         => __( 'Breadcrumbs', 'bb-vapor-modules-pro' ), // Section Title
-					'fields'        => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Breadcrumbs', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'breadcrumb_select_field' => array(
 							'type'    => 'select',
 							'label'   => __( 'Select Breadcrumb Service', 'bb-vapor-modules-pro' ),
@@ -45,13 +48,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'       => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'breadcrumb_padding' => array(
+		'styles'  => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'breadcrumb_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 						),
@@ -62,13 +65,13 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'breadcrumb_text_color' => array(
+						'breadcrumb_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
 							'default'    => '#000000',
 							'show_reset' => true,
 						),
-						'breadcrumb_link_color' => array(
+						'breadcrumb_link_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Select a Link Color', 'bb-vapor-modules-pro' ),
 							'default'    => '#000000',
@@ -81,7 +84,7 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'breadcrumb_typography' => array(
+						'breadcrumb_typography'       => array(
 							'type'    => 'typography',
 							'label'   => __( 'Typography', 'bb-vapor-modules-pro' ),
 							'preview' => array(

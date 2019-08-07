@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Card_Group_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -44,13 +47,13 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Add a Card', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general'       => array( // Tab
-				'title'    => __( 'Photo/Icon', 'bb-vapor-modules-pro' ), // Tab title
-				'sections' => array( // Tab Sections
-					'general' => array( // Section
-						'title'  => __( 'Card', 'bb-vapor-modules-pro' ), // Section Title
-						'fields' => array( // Section Fields
-							'photo_type' => array(
+			'general'       => array(
+				'title'    => __( 'Photo/Icon', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => __( 'Card', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'photo_type'            => array(
 								'type'    => 'select',
 								'label'   => __( 'Card photo type', 'bb-vapor-modules-pro' ),
 								'options' => array(
@@ -151,12 +154,12 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'content'       => array( // Tab
-				'title'    => __( 'Content', 'bb-vapor-modules-pro' ), // Tab title
-				'sections' => array( // Tab Sections
-					'overlay' => array( // Section
-						'title'  => __( 'Content', 'bb-vapor-modules-pro' ), // Section Title
-						'fields' => array( // Section Fields
+			'content'       => array(
+				'title'    => __( 'Content', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'overlay' => array(
+						'title'  => __( 'Content', 'bb-vapor-modules-pro' ),
+						'fields' => array(
 							'display_heading'            => array(
 								'type'    => 'select',
 								'label'   => __( 'Display a Heading', 'bb-vapor-modules-pro' ),
@@ -189,7 +192,7 @@ FLBuilder::register_settings_form(
 								'label'      => __( 'Enter a Heading Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
-							'display_content' => array(
+							'display_content'            => array(
 								'type'    => 'select',
 								'label'   => __( 'Display Content', 'bb-vapor-modules-pro' ),
 								'default' => 'yes',
@@ -326,12 +329,12 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'styles'        => array( // Tab
-				'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-				'sections' => array( // Tab Sections
-					'overlay'       => array( // Section
-						'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-						'fields' => array( // Section Fields
+			'styles'        => array(
+				'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'overlay' => array(
+						'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+						'fields' => array(
 							'padding'                   => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
@@ -358,7 +361,7 @@ FLBuilder::register_settings_form(
 								'type'  => 'dimension',
 								'label' => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 							),
-							'text_color' => array(
+							'text_color'                => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'default'    => '#000000',
@@ -380,7 +383,7 @@ FLBuilder::register_settings_form(
 									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle'  => array(
-									'color' => array(
+									'color'    => array(
 										'fields' => array(
 											'background_color',
 											'background_color_hover',
@@ -406,7 +409,7 @@ FLBuilder::register_settings_form(
 								'default'    => '#FFFFFF',
 								'show_reset' => true,
 							),
-							'background_gradient' => array(
+							'background_gradient'       => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
@@ -430,12 +433,12 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'button_styles' => array( // Tab
-				'title'    => __( 'Button', 'bb-vapor-modules-pro' ), // Tab title
-				'sections' => array( // Tab Sections
-					'overlay' => array( // Section
-						'title'  => __( 'Button', 'bb-vapor-modules-pro' ), // Section Title
-						'fields' => array( // Section Fields
+			'button_styles' => array(
+				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'overlay' => array(
+						'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+						'fields' => array(
 							'button_padding'              => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
@@ -482,7 +485,7 @@ FLBuilder::register_settings_form(
 									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle'  => array(
-									'color' => array(
+									'color'    => array(
 										'fields' => array(
 											'button_background_color',
 											'button_background_color_hover',
@@ -546,12 +549,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Card_Group_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Card', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Card', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'card'         => array(
 							'type'         => 'form',
 							'label'        => __( 'Card', 'bb-vapor-modules-pro' ),

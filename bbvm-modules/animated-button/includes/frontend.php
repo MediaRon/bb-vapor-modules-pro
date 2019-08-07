@@ -1,4 +1,13 @@
 <?php
+/**
+ * Animated Buttons Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 $classes = array();
 if ( 'yes' === $settings->icon_animation ) {
 	if ( 'none' !== $settings->icon_animation_hover ) {

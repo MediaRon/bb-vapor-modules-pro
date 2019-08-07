@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Gist_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Gist_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Gist_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Gist', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Gist', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'gist'         => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter Your Gist URL Here', 'bb-vapor-modules-pro' ),
@@ -51,13 +54,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'  => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'gist_padding'         => array(
+		'styles'  => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'gist_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 						),

@@ -1,3 +1,14 @@
+<?php
+/**
+ * Alerts module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-alerts-for-beaverbuilder">
 	<?php
 	if ( 'yes' === $settings->show_icon && ! empty( $settings->icon ) ) :

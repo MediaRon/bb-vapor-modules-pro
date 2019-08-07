@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Restaurant_Menu_Item_Add_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,11 +25,11 @@ class BBVapor_Restaurant_Menu_Item_Add_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Restaurant_Menu_Item_Add_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Add Restaurant Menu Item', 'bb-vapor-modules-pro' ), // Section Title
+		'general'    => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Add Restaurant Menu Item', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'restaurant_menu_item_title'       => array(
 							'type'  => 'text',
@@ -41,7 +44,7 @@ FLBuilder::register_module(
 								'photo' => __( 'Photo', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'icon' => array(
+								'icon'  => array(
 									'fields' => array(
 										'restaurant_menu_item_icon',
 										'restaurant_menu_item_icon_color',
@@ -80,7 +83,7 @@ FLBuilder::register_module(
 			'title'    => __( 'Typography', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'menu_item_typography'             => array(
 							'type'    => 'typography',
@@ -114,7 +117,7 @@ FLBuilder::register_module(
 			'title'    => __( 'Spacing', 'bbvm-bb-module' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Spacing', 'bb-vapor-modules-pro' ), // Section Title
+					'title'  => __( 'Spacing', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'menu_item_padding' => array(
 							'type'       => 'dimension',

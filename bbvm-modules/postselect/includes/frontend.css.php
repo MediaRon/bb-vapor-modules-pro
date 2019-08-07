@@ -1,3 +1,14 @@
+<?php
+/**
+ * Post Select Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .wp-block-image {
 	margin-bottom: 1.2em;
 }

@@ -1,3 +1,14 @@
+<?php
+/**
+ * WooCommerce Featured Products.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 function bbvm_woocommerce_featured_products_show_details(product_id) {
 	if ( jQuery( '.fl-bbvm-woocommerce-featured-products-for-beaverbuilder #bbvm-woocommerce-product-' + product_id + ' .bbvm-woocommerce-show-details-button' ).hasClass('active' ) ) {
 		jQuery( '.fl-bbvm-woocommerce-featured-products-for-beaverbuilder #bbvm-woocommerce-product-' + product_id + ' .bbvm-woocommerce-show-details-button' ).removeClass('active');

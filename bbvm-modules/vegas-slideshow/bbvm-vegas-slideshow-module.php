@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -67,12 +70,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Vegas_Slideshow_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'Images', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Simple Slideshow', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'Images', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Simple Slideshow', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'images' => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_slideshow_images',
@@ -84,12 +87,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'options'    => array( // Tab
-			'title'    => __( 'Slideshow Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'options' => array( // Section
-					'title'  => __( 'Slideshow Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options'    => array(
+			'title'    => __( 'Slideshow Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Slideshow Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'min_height'            => array(
 							'type'        => 'unit',
 							'label'       => __( 'Slider Min Height', 'bb-vapor-modules-pro' ),
@@ -230,12 +233,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'     => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'     => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'slideshow_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
@@ -284,7 +287,7 @@ FLBuilder::register_module(
 								'background' => __( 'Background Color', 'bb-vapor-modules-pro' ),
 								'gradient'   => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'background' => array( 'fields' => array( 'show_overlay_color' ) ),
 								'gradient'   => array( 'fields' => array( 'show_overlay_gradient' ) ),
 							),
@@ -306,12 +309,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'caption'    => array( // Tab
-			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'caption' => array( // Section
-					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'caption'    => array(
+			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'caption' => array(
+					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_caption'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Caption', 'bb-vapor-modules-pro' ),
@@ -357,12 +360,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'subcaption' => array( // Tab
-			'title'    => __( 'Subcaption', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'subcaption' => array( // Section
-					'title'  => __( 'Subcaption', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'subcaption' => array(
+			'title'    => __( 'Subcaption', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'subcaption' => array(
+					'title'  => __( 'Subcaption', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_subcaption'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Sub-Caption', 'bb-vapor-modules-pro' ),
@@ -386,12 +389,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'link'       => array( // Tab
-			'title'    => __( 'Link', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'link' => array( // Section
-					'title'  => __( 'Link', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'link'       => array(
+			'title'    => __( 'Link', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'link' => array(
+					'title'  => __( 'Link', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_link'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Link', 'bb-vapor-modules-pro' ),

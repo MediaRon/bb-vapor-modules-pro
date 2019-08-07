@@ -1,3 +1,14 @@
+<?php
+/**
+ * Intermediate Separator Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-intermediate-separator {
 	clear: both;
 	margin: 0;
@@ -59,7 +70,7 @@ if ( 'simple' === $settings->style ) {
 	}
 	<?php
 }
-if ( 'full_width' == $settings->style ) {
+if ( 'full_width' === $settings->style ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
 		height: <?php echo absint( $settings->separator_height ); ?>px;
@@ -76,7 +87,7 @@ if ( 'full_width' == $settings->style ) {
 	}
 	<?php
 }
-if ( 'double' == $settings->style ) {
+if ( 'double' === $settings->style ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> hr.fl-bbvm-intermediate-separator {
 		height: auto;

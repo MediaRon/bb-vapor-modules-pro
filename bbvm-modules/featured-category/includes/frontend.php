@@ -1,3 +1,14 @@
+<?php
+/**
+ * Featured Category Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-featured-category-for-beaverbuilder">
 	<?php
 	$selected_tax  = isset( $settings->taxonomy_select ) ? $settings->taxonomy_select : '';

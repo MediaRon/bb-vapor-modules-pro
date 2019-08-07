@@ -1,3 +1,14 @@
+<?php
+/**
+ * Card Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-card-for-beaverbuilder .fl-bbvm-card-icon-header {
 	font-size: <?php echo absint( $settings->icon_font_size ); ?>px;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->icon_color ) ); ?>;

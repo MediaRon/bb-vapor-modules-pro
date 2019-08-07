@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Unordered_List_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -44,12 +47,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Unordered_List_Module',
 	array(
-		'general'    => array( // Tab
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'list_entries' => array(
 							'type'         => 'form',
 							'form'         => 'mrbb_list',
@@ -61,12 +64,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'     => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'     => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'list_style'               => array(
 							'type'    => 'select',
 							'options' => array(
@@ -177,12 +180,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'list_typography' => array(
 							'type'  => 'typography',
 							'label' => __( 'List Typography', 'bb-vapor-modules-pro' ),

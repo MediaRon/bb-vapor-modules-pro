@@ -1,4 +1,13 @@
 <?php
+/**
+ * Animated Letters Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 $bbvm_loop = ( 'yes' === $settings->loop ) ? true : false;
 ?>
 if ( typeof anime !== 'undefined' ) {

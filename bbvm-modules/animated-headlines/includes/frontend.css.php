@@ -1,3 +1,14 @@
+<?php
+/**
+ * Animated Headlines Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-headlines-for-beaverbuilder h1,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-headlines-for-beaverbuilder h2,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-headlines-for-beaverbuilder h3,
@@ -89,7 +100,7 @@ if ( 'gradient' === $settings->animation_type ) :
 }
 	<?php
 endif;
-// Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -104,7 +115,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
-// Margin
+// Margin.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

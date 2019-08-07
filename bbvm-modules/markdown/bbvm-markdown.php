@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Markdown_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -15,6 +18,9 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 			)
 		);
 	}
+	/**
+	 * Enqueue the theme and syntax highlighting.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'default' === $this->settings->markdown_theme ) {
 			$this->add_css( 'mrbb-markdown-default', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/markdown-theme-default.css' );
@@ -31,12 +37,12 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Markdown_Module',
 	array(
-		'general'            => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'GitHub Markdown', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'            => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'GitHub Markdown', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'markdown' => array(
 							'type'        => 'code',
 							'label'       => __( 'Enter Your GitHub Flavored Markdown', 'bb-vapor-modules-pro' ),
@@ -47,12 +53,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'syntaxhighlighting' => array( // Tab
-			'title'    => __( 'Syntax Highlighting', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'syntaxhighlighting' => array( // Section
-					'title'  => __( 'Syntax Highlighting', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'syntaxhighlighting' => array(
+			'title'    => __( 'Syntax Highlighting', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'syntaxhighlighting' => array(
+					'title'  => __( 'Syntax Highlighting', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'enable_syntax_highlighting' => array(
 							'type'    => 'select',
 							'label'   => __( 'Enable Syntax Highlighting', 'bb-vapor-modules-pro' ),
@@ -63,7 +69,7 @@ FLBuilder::register_module(
 							'default' => 'no',
 							'toggle'  => array( 'yes' => array( 'fields' => array( 'theme' ) ) ),
 						),
-						'theme' => array(
+						'theme'                      => array(
 							'type'    => 'select',
 							'label'   => __( 'Theme', 'bb-vapor-modules-pro' ),
 							'default' => 'default',
@@ -83,12 +89,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'theme'              => array( // Tab
-			'title'    => __( 'Theme', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'theme' => array( // Section
-					'title'  => __( 'Theme', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'theme'              => array(
+			'title'    => __( 'Theme', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'theme' => array(
+					'title'  => __( 'Theme', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'markdown_theme' => array(
 							'type'        => 'select',
 							'label'       => __( 'Markdown Theme', 'bb-vapor-modules-pro' ),

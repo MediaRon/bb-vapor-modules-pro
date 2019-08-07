@@ -1,4 +1,13 @@
 <?php
+/**
+ * FAQ Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( 'yes' !== $settings->expanded ) :
 	?>
 	jQuery( document ).ready( function( $ ) {

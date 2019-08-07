@@ -1,3 +1,14 @@
+<?php
+/**
+ * User Profile Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-user-profile-for-beaverbuilder">
 	<?php
 	if ( 'yes' === $settings->post_author ) {
@@ -10,8 +21,8 @@
 	if ( false === $user ) {
 		return '';
 	}
-	$user_id  = $user->ID;
-	$defaults = array(
+	$user_id    = $user->ID;
+	$defaults   = array(
 		'theme'                           => $settings->theme,
 		'profileAvatarShape'              => $settings->avatar_shape,
 		'padding'                         => absint( $settings->padding ),
@@ -91,7 +102,7 @@
 						<?php if ( isset( $attributes['profileURL'] ) && strlen( $attributes['profileURL'] ) > 0 ) : ?>
 							<div class="mpp-gutenberg-view-posts">
 								<?php if ( $attributes['showViewPosts'] ) : ?>
-									<div class="mpp-profile-view-posts" style="background-color: <?php echo esc_attr( $attributes['profileViewPostsBackgroundColor'] ); ?>; color: <?php echo esc_attr( $attributes['profileViewPostsTextColor'] ); ?>; <?php ( '' != $attributes['website'] && $attributes['showWebsite'] ) ? '' : 'width:' . esc_attr( $attributes['showPostsWidth'] ) . ';'; ?> font-size: <?php echo esc_attr( $attributes['buttonFontSize'] ); ?>px;">
+									<div class="mpp-profile-view-posts" style="background-color: <?php echo esc_attr( $attributes['profileViewPostsBackgroundColor'] ); ?>; color: <?php echo esc_attr( $attributes['profileViewPostsTextColor'] ); ?>; <?php ( '' !== $attributes['website'] && $attributes['showWebsite'] ) ? '' : 'width:' . esc_attr( $attributes['showPostsWidth'] ) . ';'; ?> font-size: <?php echo esc_attr( $attributes['buttonFontSize'] ); ?>px;">
 										<a href="<?php echo esc_url( $attributes['profileURL'] ); ?>" style="background: <?php echo esc_attr( $attributes['profileViewPostsBackgroundColor'] ); ?>; color: <?php echo esc_attr( $attributes['profileViewPostsTextColor'] ); ?>">
 										<?php esc_html_e( 'View Posts', 'metronet-profile-picture' ); ?></a>
 									</div><!-- .mpp-profile-view-posts -->

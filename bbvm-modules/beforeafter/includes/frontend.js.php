@@ -1,3 +1,14 @@
+<?php
+/**
+ * Before and After Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <?php if ( 'separator_horizontal' === $settings->style ) : ?>
 	if( typeof move != undefined ) {
 		var $horizontalSlider = jQuery('.fl-node-<?php echo esc_html( $id ); ?> .bbvm-horizontal-handle');

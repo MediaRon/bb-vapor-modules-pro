@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Before_After_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -24,13 +27,13 @@ class BBVapor_Before_After_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Before_After_Module',
 	array(
-		'general'         => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Before and After', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'image_before' => array(
+		'general'         => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Before and After', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'image_before'               => array(
 							'type'        => 'photo',
 							'label'       => __( 'Before Photo', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
@@ -46,17 +49,17 @@ FLBuilder::register_module(
 							'type'    => 'select',
 							'label'   => __( 'Select a Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'side'  => __( 'Side to Side', 'bb-vapor-modules-pro' ),
-								'fade'  => __( 'Fade', 'bb-vapor-modules-pro' ),
-								'hover' => __( 'Hover', 'bb-vapor-modules-pro' ),
-								'separator_vertical' => __( 'Vertical Separator', 'bb-vapor-modules-pro' ),
+								'side'                 => __( 'Side to Side', 'bb-vapor-modules-pro' ),
+								'fade'                 => __( 'Fade', 'bb-vapor-modules-pro' ),
+								'hover'                => __( 'Hover', 'bb-vapor-modules-pro' ),
+								'separator_vertical'   => __( 'Vertical Separator', 'bb-vapor-modules-pro' ),
 								'separator_horizontal' => __( 'Horizontal Separator', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'hover' => array( 'fields' => array( 'transition_delay' ) ),
-								'fade' => array( 'fields' => array( 'transition_delay' ) ),
+								'hover'                => array( 'fields' => array( 'transition_delay' ) ),
+								'fade'                 => array( 'fields' => array( 'transition_delay' ) ),
 								'separator_horizontal' => array( 'fields' => array( 'separator_line_color', 'separator_background_color', 'separator_arrow_color', 'separator_style' ) ),
-								'separator_vertical' => array( 'fields' => array( 'separator_line_color', 'separator_background_color', 'separator_arrow_color', 'separator_style' ) ),
+								'separator_vertical'   => array( 'fields' => array( 'separator_line_color', 'separator_background_color', 'separator_arrow_color', 'separator_style' ) ),
 							),
 						),
 						'separator_line_color'       => array(
@@ -78,7 +81,7 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
 						),
-						'separator_style' => array(
+						'separator_style'            => array(
 							'type'    => 'select',
 							'label'   => __( 'Separator Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -96,15 +99,15 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'beforeaftertext' => array( // Tab
-			'title'    => __( 'Before & After Text', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'beforeaftertext' => array( // Section
-					'title'  => __( 'Before & After Text', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'beforeaftertext' => array(
+			'title'    => __( 'Before & After Text', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'beforeaftertext' => array(
+					'title'  => __( 'Before & After Text', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_before_after_text' => array(
-							'type' => 'select',
-							'label' => __( 'Show Before/After Text', 'bb-vapor-modules-pro' ),
+							'type'    => 'select',
+							'label'   => __( 'Show Before/After Text', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
@@ -116,7 +119,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Before Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Before', 'bb-vapor-modules-pro' ),
 						),
-						'after_text' => array(
+						'after_text'             => array(
 							'type'    => 'text',
 							'label'   => __( 'After Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'After', 'bb-vapor-modules-pro' ),

@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Photo_Overlay_Advanced_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Photo_Overlay_Advanced_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Photo_Overlay_Advanced_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Overlay Photo', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Overlay Photo', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'overlay_photo'    => array(
 							'type'        => 'photo',
 							'label'       => __( 'Photo to be Overlayed', 'bb-vapor-modules-pro' ),
@@ -57,12 +60,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'overlay' => array( // Tab
-			'title'    => __( 'Overlay Style', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'overlay' => array( // Section
-					'title'  => __( 'Overlay Style', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'overlay' => array(
+			'title'    => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'overlay' => array(
+					'title'  => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'overlay_type'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select an Overlay Type', 'bb-vapor-modules-pro' ),
@@ -79,7 +82,7 @@ FLBuilder::register_module(
 										'animation',
 									),
 								),
-								'full' => array(
+								'full'       => array(
 									'fields' => array(
 										'animation',
 									),
@@ -119,7 +122,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Animation duraction in seconds', 'bb-vapor-modules-pro' ),
 							'default' => '3',
 						),
-						'overlay_padding' => array(
+						'overlay_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

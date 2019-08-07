@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_PostSelect_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -33,7 +36,7 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 		return $settings;
 	}
 }
-// Get image sizes
+// Get image sizes.
 global $_wp_additional_image_sizes;
 $bbvm_default_image_sizes = get_intermediate_image_sizes();
 $bbvm_image_sizes         = array();
@@ -58,12 +61,12 @@ FLBuilder::register_module(
 			'title' => __( 'Post Select', 'bb-vapor-modules-pro' ),
 			'file'  => FL_BUILDER_DIR . 'includes/loop-settings.php',
 		),
-		'options'     => array( // Tab
-			'title'    => __( 'Options', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Options', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'options'     => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'posts_per_page' => array(
 							'type'    => 'unit',
 							'label'   => __( 'Select Number of Items to Retrieve', 'bb-vapor-modules-pro' ),
@@ -108,12 +111,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'display'     => array( // Tab
-			'title'    => __( 'Display', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Display', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'display'     => array(
+			'title'    => __( 'Display', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Display', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'display_taxonomies'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Taxonomies?', 'bb-vapor-modules-pro' ),
@@ -254,18 +257,18 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'color'       => array( // Tab
-			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections'      => array( // Tab Sections
-				'general'       => array( // Section
-					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'color'       => array(
+			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'heading_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'meta_typography'    => array(
+						'meta_typography'     => array(
 							'type'       => 'typography',
 							'label'      => __( 'Meta Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -304,12 +307,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'pagination'  => array( // Tab
-			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'pagination'  => array(
+			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'pagination_padding'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select Padding for Pagination', 'bb-vapor-modules-pro' ),

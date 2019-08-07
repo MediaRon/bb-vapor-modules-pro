@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Variable_Headings_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -52,12 +55,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Variable_Headings_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'headline_tag'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),
@@ -83,7 +86,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'headline_margin' => array(
+						'headline_margin'  => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

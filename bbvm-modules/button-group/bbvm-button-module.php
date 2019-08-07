@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Button_Group_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -21,7 +24,7 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Add Button', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general'      => array(
+			'general' => array(
 				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'general' => array(
@@ -162,12 +165,12 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Button_Group_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'General', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button' => array(
 							'type'         => 'form',
 							'label'        => __( 'Button', 'bb-vapor-modules-pro' ),
@@ -179,12 +182,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'  => array( // Tab
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'styles' => array( // Section
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'styles'  => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'button_alignment'  => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),

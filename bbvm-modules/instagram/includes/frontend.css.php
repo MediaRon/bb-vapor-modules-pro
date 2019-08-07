@@ -1,5 +1,13 @@
 <?php
-/* Popup effect */
+/**
+ * Instagram Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 ?>
 .bbvm-mfp-fade.mfp-bg {
 	opacity: 0;

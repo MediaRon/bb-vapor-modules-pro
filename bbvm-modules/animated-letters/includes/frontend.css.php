@@ -1,5 +1,14 @@
 <?php
-// Headline block or inline
+/**
+ * Animated Letters Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Headline block or inline.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-letters-for-beaverbuilder {
 	position: relative;

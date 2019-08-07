@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Blockquotes_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -22,12 +25,12 @@ class BBVapor_Blockquotes_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Blockquotes_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general' => array(
+			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'blockquote_text'        => array(
 							'type'  => 'textarea',
 							'label' => __( 'Blockquote Text', 'bb-vapor-modules-pro' ),
@@ -43,13 +46,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'style'   => array( // Tab
-			'title'    => __( 'Style', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'style' => array( // Section
-					'title'  => __( 'Style', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
-						'blockquote_style' => array(
+		'style'   => array(
+			'title'    => __( 'Style', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'style' => array(
+					'title'  => __( 'Style', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'blockquote_style'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Blockquote Style Select', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -68,7 +71,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'none',
 							'toggle'  => array(
-								'bold' => array(
+								'bold'                 => array(
 									'fields' => array(
 										'bold_quote_color',
 										'bold_background_color',
@@ -253,7 +256,7 @@ FLBuilder::register_module(
 								'color'    => __( 'Color', 'bb-vapor-modules-pro' ),
 								'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'color'    => array(
 									'fields' => array(
 										'border_background_color',

@@ -1,6 +1,12 @@
 <?php // phpcs:ignore
 class BBVapor_Instagram_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
+		/**
+		 * Class constructor.
+		 */
 		parent::__construct(
 			array(
 				'name'            => __( 'Instagram', 'bb-vapor-modules-pro' ),
@@ -18,6 +24,10 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 		add_action( 'wp_ajax_load_more_instagram', array( $this, 'ajax_load_more_instagram' ) );
 		add_action( 'wp_ajax_nopriv_load_more_instagram', array( $this, 'ajax_load_more_instagram' ) );
 	}
+
+	/**
+	 * Ajax call for loading more photos from Instagram.
+	 */
 	public function ajax_load_more_instagram() {
 		$instagram_api    = esc_url_raw( filter_input( INPUT_POST, 'instagram_api' ) );
 		$user_id          = sanitize_text_field( filter_input( INPUT_POST, 'user_id' ) );
@@ -78,7 +88,7 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 		$return['pagination_url'] = '';
 		$return['instagram_json'] = $instagram_json;
 
-		// Get pagination information
+		// Get pagination information.
 		if ( isset( $instagram_json->pagination->next_max_id ) ) {
 			$sig_response = wp_remote_get( esc_url_raw( sprintf( 'https://mediaron.com/instagram/getsig.php?user_id=%s&token=%s&max_id=%s&feed_count=%s', $user_id, $token, $instagram_json->pagination->next_max_id, $count ) ) );
 
@@ -88,6 +98,9 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 		die( wp_json_encode( $return ) );
 	}
 
+	/**
+	 * Enqueue Masonry and Popup scripts.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'masonry' === $this->settings->layout ) {
 			$this->add_js( 'macy', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram/js/macy.js', array( 'jquery' ), '20190411', true );
@@ -105,26 +118,26 @@ class BBVapor_Instagram_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Instagram_Module',
 	array(
-		'general' => array( // Tab
-			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'general' => array( // Section
-					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'general'    => array(
+			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'items_show'                    => array(
 							'type'    => 'unit',
 							'label'   => __( 'Number of Instagram Photos to Show', 'bb-vapor-modules-pro' ),
 							'default' => '10',
 						),
 						'layout'                        => array(
-							'type'    => 'select',
-							'label'   => __( 'Display Options', 'bb-vapor-modules-pro' ),
-							'options' => array(
+							'type'        => 'select',
+							'label'       => __( 'Display Options', 'bb-vapor-modules-pro' ),
+							'options'     => array(
 								'card'    => __( 'Card', 'bb-vapor-modules-pro' ),
 								'masonry' => __( 'Masonry', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'card',
-							'toggle' => array(
+							'default'     => 'card',
+							'toggle'      => array(
 								'card' => array(
 									'fields' => array(
 										'card_columns',
@@ -234,12 +247,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array( // Tab
-			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'typography' => array( // Section
-					'title'  => __( 'Typography Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'typography' => array(
+					'title'  => __( 'Typography Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'likes_comments_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Likes and Comments Typography', 'bb-vapor-modules-pro' ),
@@ -254,12 +267,12 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'buttons'    => array( // Tab
-			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ), // Tab title
-			'sections' => array( // Tab Sections
-				'buttons' => array( // Section
-					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ), // Section Title
-					'fields' => array( // Section Fields
+		'buttons'    => array(
+			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'buttons' => array(
+					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'show_load_more_button'      => array(
 							'type'        => 'select',
 							'label'       => __( 'Show Load More Button', 'bb-vapor-modules-pro' ),

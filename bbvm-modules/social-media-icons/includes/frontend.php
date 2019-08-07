@@ -1,14 +1,23 @@
 <?php
 /**
- * Get list of SVG icons available.
+ * Social Icons Module.
  *
- * Get list of SVG icons available.
+ * @link https://bbvapormodules.com
  *
- * @since 1.0.0
- *
- * Forked from twentyseventeen `twentyseventeen_social_links_icons`
+ * @package BB Vapor Modules
+ * @since 1.3.0
  */
+
 if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_icons' ) ) :
+	/**
+	 * Get list of SVG icons available.
+	 *
+	 * Get list of SVG icons available.
+	 *
+	 * @since 1.0.0
+	 *
+	 * Forked from twentyseventeen `twentyseventeen_social_links_icons`
+	 */
 	function bbvapor_modules_beaver_builder_social_get_icons() {
 		// Supported social links icons.
 		$social_links_icons = array(
@@ -57,27 +66,28 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_icons' ) ) :
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param array $social_links_icons
+		 * @param array $social_links_icons.
 		 */
 		return apply_filters( 'bbvm_beaver_builder_social_icons', $social_links_icons );
 	}
 endif;
 
-/**
- * Return SVG markup.
- *
- * Forked from twentyseventeen `twentyseventeen_get_svg`
- *
- * @param array $args {
- *     Parameters needed to display an SVG.
- *
- *     @type string $icon  Required SVG icon filename.
- *     @type string $title Optional SVG title.
- *     @type string $desc  Optional SVG description.
- * }
- * @return string SVG markup.
- */
 if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_svg' ) ) :
+	/**
+	 * Return SVG markup.
+	 *
+	 * Forked from twentyseventeen `twentyseventeen_get_svg`
+	 *
+	 * @param array  $args {
+	 *     Parameters needed to display an SVG.
+	 *
+	 *     @type string $icon  Required SVG icon filename.
+	 *     @type string $title Optional SVG title.
+	 *     @type string $desc  Optional SVG description.
+	 * }
+	 * @param object $settings Beaver Builder Settings.
+	 * @return string SVG markup.
+	 */
 	function bbvapor_modules_beaver_builder_social_get_svg( $args = array(), $settings ) {
 
 		// Make sure $args are an array.
@@ -139,6 +149,7 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_svg' ) ) :
 				$svg .= '<desc id="desc-' . $unique_id . '">' . esc_html( $args['desc'] ) . '</desc>';
 			}
 		}
+
 		/*
 		 * Display the icon.
 		 *
@@ -156,17 +167,18 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_svg' ) ) :
 	}
 endif;
 
-/**
- * Include SVG file in the footer.
- *
- * Include SVG file in the footer.
- *
- * @since 1.1.0
- *
- * Forked from twentyseventeen `twentyseventeen_include_svg_icons`
- */
+
 add_action( 'wp_footer', 'bbvapor_modules_beaver_builder_social_include_svg', 9999 );
 if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_include_svg' ) ) :
+	/**
+	 * Include SVG file in the footer.
+	 *
+	 * Include SVG file in the footer.
+	 *
+	 * @since 1.1.0
+	 *
+	 * Forked from twentyseventeen `twentyseventeen_include_svg_icons`
+	 */
 	function bbvapor_modules_beaver_builder_social_include_svg() {
 		// Define SVG sprite file.
 		$path = BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/social-media-icons/includes/social-logos.svg';
@@ -189,7 +201,7 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_include_svg' ) ) 
 	}
 endif;
 
-// Output Icons
+// Output Icons.
 $maybe_icons = bbvapor_modules_beaver_builder_social_get_icons();
 if ( isset( $settings->social_form ) ) {
 	$fill = '';
