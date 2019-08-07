@@ -1,4 +1,13 @@
 <?php
+/**
+ * Breadcrumbs Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( isset( $settings->breadcrumb_select_field ) && 'none' !== $settings->breadcrumb_select_field ) :
 	?>
 <div class="fl-bbvm-breadcrumbs-for-beaverbuilder">
