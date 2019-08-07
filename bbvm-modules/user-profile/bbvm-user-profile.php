@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_User_Profile_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -25,7 +28,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'post_author' => array(
+						'post_author'                 => array(
 							'type'    => 'select',
 							'label'   => __( 'Use Post Author', 'mediaron-bb-modules' ),
 							'options' => array(
@@ -53,7 +56,7 @@ FLBuilder::register_module(
 								'tabbed'  => __( 'Tabbed', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'regular',
-							'toggle' => array(
+							'toggle'  => array(
 								'compact' => array( 'fields' => array( 'compact_align' ) ),
 								'tabbed'  => array( 'tabs' => array( 'tabs' ) ),
 							),
@@ -345,7 +348,7 @@ FLBuilder::register_module(
 								'blue'    => __( 'Blue', 'bb-vapor-modules-pro' ),
 								'green'   => __( 'Green', 'bb-vapor-modules-pro' ),
 							),
-							'default'  => 'white',
+							'default' => 'white',
 						),
 						'tab_color'                   => array(
 							'type'    => 'color',

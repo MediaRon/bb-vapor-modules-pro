@@ -1,3 +1,14 @@
+<?php
+/**
+ * User Profile Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 jQuery(document).ready(function ($) {
 	$('.fl-node-<?php echo esc_html( $id ); ?> .mpp-gutenberg-tab').on('click', function (e) {
 		$('.mpp-author-tabs li').removeClass('active');
