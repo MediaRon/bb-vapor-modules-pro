@@ -1,3 +1,14 @@
+<?php
+/**
+ * Animated Letters Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-animated-letters-for-beaverbuilder <?php echo esc_attr( $settings->style ); ?>">
 	<h2>
 	<?php
@@ -30,7 +41,7 @@
 		}
 	else :
 		$letters = $settings->text_animate;
-		// Split into spans
+		// Split into spans.
 		$letters = preg_replace( '/([a-zA-Z0-9\"\'!@\#\$%\^&*()\.]|\w|\s)/i', '<span class="letter">$1</span>', $letters );
 		echo wp_kses_post( '<span class="letters">' . str_replace( '<span class="letter"> </span>', '<span class="letter">&nbsp;</span>', $letters ) . '</span>' );
 	endif;

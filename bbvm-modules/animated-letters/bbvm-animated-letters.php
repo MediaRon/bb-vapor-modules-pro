@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Animated_Letters_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -29,7 +32,7 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Add Text', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'text'            => array(
+							'text' => array(
 								'type'    => 'text',
 								'label'   => __( 'Text', 'bb-vapor-modules' ),
 								'default' => '',
@@ -237,7 +240,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Center Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Center', 'bb-vapor-modules-pro' ),
 						),
-						'text_right' => array(
+						'text_right'             => array(
 							'type'    => 'text',
 							'label'   => __( 'Right Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Right', 'bb-vapor-modules-pro' ),
@@ -256,7 +259,7 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'text_center_color'     => array(
+						'text_center_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Text Center Color', 'bb-vapor-modules-pro' ),
 							'default'    => '000000',
