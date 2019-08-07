@@ -1,4 +1,13 @@
 <?php
+/**
+ * Jetpack Related Posts module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 $text_color = isset( $settings->text_color ) ? esc_attr( $settings->text_color ) : 'FFFFFF';
 $text_color = BBVapor_Modules_Pro::get_color( $text_color );
 
@@ -8,7 +17,7 @@ $heading_color = BBVapor_Modules_Pro::get_color( $heading_color );
 $title_color = isset( $settings->title_color ) ? esc_attr( $settings->title_color ) : 'FFFFFF';
 $title_color = BBVapor_Modules_Pro::get_color( $title_color );
 
-// Padding
+// Padding.
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -51,7 +60,7 @@ FLBuilderCSS::dimension_field_rule(
 	width: 100%;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .jp-relatedposts-wrapper .columns-2 {
-  width: 50%;
+	width: 50%;
 }
 @media only screen and (max-width: 500px) {
 	.fl-node-<?php echo esc_html( $id ); ?> .jp-relatedposts-wrapper .columns-2 {
@@ -59,7 +68,7 @@ FLBuilderCSS::dimension_field_rule(
 	}
 }
 .fl-node-<?php echo esc_html( $id ); ?> .jp-relatedposts-wrapper .columns-3 {
-	 width: 33%;
+	width: 33%;
 }
 @media only screen and (max-width: 600px) {
 	.fl-node-<?php echo esc_html( $id ); ?> .jp-relatedposts-wrapper .columns-3 {

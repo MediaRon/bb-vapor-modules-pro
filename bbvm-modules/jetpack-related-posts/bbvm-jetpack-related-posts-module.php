@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Jetpack_Related_Posts_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(

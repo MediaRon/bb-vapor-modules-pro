@@ -1,3 +1,14 @@
+<?php
+/**
+ * Jetpack Related Posts Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-jetpack-related-posts-for-beaverbuilder">
 	<?php
 	global $related_posts;
@@ -10,7 +21,7 @@
 		 *   - First post tag
 		 *   - Number of comments
 		 *
-		 * @param int $post_id
+		 * @param int $post_id The Post ID.
 		 * @uses get_the_category, get_the_terms, get_comments_number, number_format_i18n, __, _n
 		 * @return string
 		 */
@@ -76,9 +87,14 @@
 		}
 	}
 	if ( ! function_exists( 'bbvm_bb_jetpackme_more_related_posts' ) && ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) ) {
+		/**
+		 * Show related posts from Jetpack.
+		 *
+		 * @param array $options Jetpack Related Post options.
+		 */
 		function bbvm_bb_jetpackme_more_related_posts( $options ) {
 			$related = Jetpack_RelatedPosts::init_raw()
-				->set_query_name( 'jp-related-posts' ) // Optional, name can be anything
+				->set_query_name( 'jp-related-posts' ) // Optional, name can be anything.
 				->get_for_post_id(
 					get_the_ID(),
 					array( 'size' => absint( $options['size'] ) )
@@ -236,6 +252,11 @@
 		}
 	}
 	if ( function_exists( 'bbvm_bb_allow_pages_for_relatedposts' ) ) {
+		/**
+		 * Allow related posts to show up for pages.
+		 *
+		 * @param bool $enabled Whether Related Posts is enabled or not.
+		 */
 		function bbvm_bb_allow_pages_for_relatedposts( $enabled ) {
 			if ( is_page() ) {
 				$enabled = true;
