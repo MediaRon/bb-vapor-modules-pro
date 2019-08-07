@@ -1,14 +1,20 @@
 <?php
 /**
- * Icon Fonts for BBVM using Line Icons
- * @package BB Vapor Modules Pro
- * Credit: UABB for registering icons
+ * Vapor Module Icons.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.2.6
  */
 
+/**
+ * Main plugin class for Adding Icons.
+ */
 class BBVM_Icons {
 
 	/**
-	 * Function that registers Line Icons
+	 * Function that registers Line Icons.
 	 *
 	 * @since 1.2.6
 	 */
@@ -54,8 +60,8 @@ class BBVM_Icons {
 			mkdir( $dst );
 		}
 
-		while ( false !== ( $file = readdir( $dir ) ) ) {
-			if ( ( '.' != $file ) && ( '..' != $file ) ) {
+		while ( false !== ( $file = readdir( $dir ) ) ) { // phpcs:ignore
+			if ( ( '.' !== $file ) && ( '..' !== $file ) ) {
 				if ( is_dir( $src . '/' . $file ) ) {
 					$this->recurse_copy( $src . '/' . $file, $dst . '/' . $file );
 				} else {
