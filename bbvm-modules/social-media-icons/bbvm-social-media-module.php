@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Social_Media_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -84,7 +87,7 @@ FLBuilder::register_module(
 		'general' => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'    => array(
+				'general' => array(
 					'title'  => __( 'Add Social Icons', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'social_form' => array(
@@ -189,7 +192,7 @@ FLBuilder::register_module(
 							'label'       => __( 'Icon Size', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '24',
-							'options' => array(
+							'options'     => array(
 								'12' => '12px',
 								'18' => '18px',
 								'24' => '24px',
