@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Restaurant_Menu_Item_Add_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -41,7 +44,7 @@ FLBuilder::register_module(
 								'photo' => __( 'Photo', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'icon' => array(
+								'icon'  => array(
 									'fields' => array(
 										'restaurant_menu_item_icon',
 										'restaurant_menu_item_icon_color',
