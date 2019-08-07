@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Variable_Headings_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -83,7 +86,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'headline_margin' => array(
+						'headline_margin'  => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
