@@ -1,3 +1,14 @@
+<?php
+/**
+ * Restaurant Menu Category Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> h2,
 .fl-node-<?php echo esc_html( $id ); ?> p,
 .fl-node-<?php echo esc_html( $id ); ?> hr {

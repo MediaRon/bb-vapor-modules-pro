@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Restaurant_Menu_Category extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -90,7 +93,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Separators', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'category_separator'         => array(
+						'category_separator'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select category separator', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -98,8 +101,8 @@ FLBuilder::register_module(
 								'line'  => __( 'line', 'bb-vapor-modules-pro' ),
 								'image' => __( 'image', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
-								'line' => array(
+							'toggle'  => array(
+								'line'  => array(
 									'fields' => array( 'category_separator_line', 'category_separator_line_height', 'category_separator_line_color', 'category_seperator_margin' ),
 								),
 								'image' => array(
