@@ -29,7 +29,7 @@ Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to s
 
 = 1.3.4 =
 * Released 2019-08-06
-* Introducing the <a href="https://bbvapormodules.com/modules/timeline/">Timeline Module</a>
+* Introducing the <a href="https://bbvapormodules.com/modules/timeline-module/">Timeline Module</a>
 
 = 1.3.3 =
 * Released 2019-08-06
