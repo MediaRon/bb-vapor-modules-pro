@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Soliloquy_Dynamic_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -101,7 +104,7 @@ FLBuilder::register_module(
 				'options' => array(
 					'title'  => __( 'General Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'show_arrows' => array(
+						'show_arrows'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Show arrows always', 'bb-vapor-modules-pro' ),
 							'options' => array(

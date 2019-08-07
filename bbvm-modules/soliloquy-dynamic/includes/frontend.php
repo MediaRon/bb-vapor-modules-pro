@@ -1,3 +1,14 @@
+<?php
+/**
+ * Soliloquy Dynamic Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-soliloquy-dynamic-for-beaverbuilder">
 	<?php
 	if ( 'acf' === $settings->source ) {
