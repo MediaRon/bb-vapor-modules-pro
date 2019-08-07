@@ -32,18 +32,18 @@ if ( ! empty( $forms ) ) {
 FLBuilder::register_module(
 	'BBVapor_Gravityforms_Module',
 	array(
-		'general'              => array(
+		'general'             => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general'  => array(
 					'title'  => __( 'Form Select', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'form'                    => array(
+						'form'                     => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a form', 'bb-vapor-modules-pro' ),
 							'options' => $forms_array,
 						),
-						'form_title'              => array(
+						'form_title'               => array(
 							'type'    => 'select',
 							'label'   => __( 'Show form title', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -577,7 +577,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Select a confirmation background color', 'bb-vapor-modules-pro' ),
 							'default' => 'FFFFFF',
 						),
-						'confirmation_padding'           => array(
+						'confirmation_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a confirmation padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

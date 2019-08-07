@@ -26,10 +26,10 @@ class BBVapor_Advanced_Separator_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Advanced_Separator_Module',
 	array(
-		'general'       => array(
+		'general' => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
-			'sections'      => array(
-				'general'       => array(
+			'sections' => array(
+				'general' => array(
 					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'color'              => array(

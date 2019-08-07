@@ -56,8 +56,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> #soliloquy-container-acf_images .soliloquy-prev,
 .fl-node-<?php echo esc_html( $id ); ?> #soliloquy-container-acf_images .soliloquy-next,
 .fl-node-<?php echo esc_html( $id ); ?> #soliloquy-container-woocommerce_images .soliloquy-prev,
-.fl-node-<?php echo esc_html( $id ); ?> #soliloquy-container-woocommerce_images .soliloquy-next
- {
+.fl-node-<?php echo esc_html( $id ); ?> #soliloquy-container-woocommerce_images .soliloquy-next {
 	background-color: #<?php echo esc_html( $settings->arrow_background ); ?>;
 }
 <?php endif; ?>

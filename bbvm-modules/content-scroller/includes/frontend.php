@@ -60,7 +60,7 @@ $count = 1;
 <div class="fl-bbvm-content-scroller-responsive-for-beaverbuilder">
 <?php
 $form_settings_content = $settings->scroller_content;
-$count = 1;
+$count                 = 1;
 foreach ( $form_settings_content as $form_content ) {
 	?>
 	<div class="fl-bbvm-content-scroller-item-responsive count-<?php echo absint( $count ); ?>">
