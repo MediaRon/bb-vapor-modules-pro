@@ -93,6 +93,12 @@ FLBuilder::register_settings_form(
 								'show_target'   => true,
 								'show_nofollow' => true,
 							),
+							'button_link_color'         => array(
+								'type'        => 'color',
+								'label'       => __( 'Button Link Color', 'bb-vapor-modules-pro' ),
+								'show_alpha ' => true,
+								'show_reset'  => true,
+							),
 						),
 					),
 				),
@@ -111,6 +117,14 @@ FLBuilder::register_settings_form(
 								'type'  => 'typography',
 								'label' => __( 'Content Typography', 'bb-vapor-modules-pro' ),
 							),
+							'category_typography' => array(
+								'type'  => 'typography',
+								'label' => __( 'Category Typography', 'bb-vapor-modules-pro' ),
+							),
+							'link_typography' => array(
+								'type'  => 'typography',
+								'label' => __( 'Link Typography', 'bb-vapor-modules-pro' ),
+							),
 						),
 					),
 				),
@@ -127,213 +141,45 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Timeline', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'timeline'            => array(
+						'timeline'       => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_timeline',
 							'label'        => __( 'Timeline', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'preview_text' => 'text',
 						),
-					),
-				),
-			),
-		),
-		'description' => array(
-			'title'    => __( 'Description', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'description' => array(
-					'title'  => __( 'Description', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'description'            => array(
-							'type'  => 'editor',
-							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
-						),
-						'description_color'      => array(
+						'timeline_color' => array(
 							'type'       => 'color',
-							'label'      => __( 'Description Text Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
+							'label'      => __( 'Timeline Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
-							'default'    => '000000',
+							'show_reset' => true,
 						),
-						'description_typography' => array(
-							'type'  => 'typography',
-							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),
-						),
-					),
-				),
-			),
-		),
-		'separator'   => array(
-			'title'    => __( 'Separator', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'description' => array(
-					'title'  => __( 'Separator', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'separator_type'          => array(
+						'hide_category'  => array(
+							'label'   => __( 'Hide Categories', 'bb-vapor-modules-pro' ),
 							'type'    => 'select',
-							'label'   => __( 'Separator Type', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
 							'options' => array(
-								'line'         => __( 'Simple Line', 'bb-vapor-modules-pro' ),
-								'line_radius'  => __( 'Line With Radius' ),
-								'line_icon'    => __( 'Line With Icon', 'bb-vapor-modules-pro' ),
-								'line_photo'   => __( 'Line With Photo', 'bb-vapor-modules-pro' ),
-								'line_content' => __( 'Line With Content', 'bb-vapor-modules-pro' ),
-								'photo'        => __( 'Background Image', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
-							'toggle'  => array(
-								'line'         => array(
-									'fields' => array(
-										'line_type',
-										'line_color',
-										'line_height',
-									),
-								),
-								'line_radius'  => array(
-									'fields' => array(
-										'line_color',
-										'line_height',
-										'line_radius',
-									),
-								),
-								'line_icon'    => array(
-									'fields' => array(
-										'line_color',
-										'line_height',
-										'icon',
-										'icon_size',
-										'icon_style',
-										'icon_color',
-										'icon_background_color',
-									),
-								),
-								'line_photo'   => array(
-									'fields' => array(
-										'style_photo',
-										'line_height',
-										'photo_style',
-										'photo_size',
-										'line_color',
-									),
-								),
-								'line_content' => array(
-									'fields' => array(
-										'line_color',
-										'line_content',
-										'line_content_typography',
-										'line_height',
-										'line_content_color',
-									),
-								),
-								'photo'        => array(
-									'fields' => array(
-										'background_photo',
-										'line_height',
-									),
-								),
-							),
-							'default' => 'line',
 						),
-						'style_photo'             => array(
-							'type'  => 'photo',
-							'label' => __( 'Select a photo', 'bb-vapor-modules-pro' ),
-						),
-						'photo_style'             => array(
+						'hide_date'      => array(
+							'label'   => __( 'Hide Date', 'bb-vapor-modules-pro' ),
 							'type'    => 'select',
-							'label'   => __( 'Select a photo style', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
 							'options' => array(
-								'simple'   => __( 'Simple', 'bb-vapor-modules-pro' ),
-								'square'   => __( 'Square', 'bb-vapor-modules-pro' ),
-								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'photo_size'              => array(
-							'type'        => 'unit',
-							'label'       => __( 'Enter a photo size', 'bb-vapor-modules-pro' ),
-							'responsive'  => true,
-							'description' => 'px',
-							'default'     => '50',
-						),
-						'background_photo'        => array(
-							'type'  => 'photo',
-							'label' => __( 'Background Photo', 'bb-vapor-modules-pro' ),
-						),
-						'line_content'            => array(
-							'type'    => 'text',
-							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
-							'default' => '***',
-						),
-						'line_content_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
-							'default'    => '000000',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'line_content_typography' => array(
-							'type'       => 'typography',
-							'label'      => __( 'Separator Content Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'line_height'             => array(
-							'type'        => 'unit',
-							'label'       => __( 'Height of Separator', 'bb-vapor-modules-pro' ),
-							'default'     => '2',
-							'description' => 'px',
-						),
-						'icon'                    => array(
-							'type'  => 'icon',
-							'label' => __( 'Enter an icon', 'bb-vapor-modules-pro' ),
-						),
-						'icon_size'               => array(
-							'type'    => 'unit',
-							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
-							'default' => '24',
-						),
-						'icon_style'              => array(
+						'hide_button'    => array(
+							'label'   => __( 'Hide Button', 'bb-vapor-modules-pro' ),
 							'type'    => 'select',
-							'label'   => __( 'Select an icon style', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
 							'options' => array(
-								'simple'   => __( 'Simple', 'bb-vapor-modules-pro' ),
-								'square'   => __( 'Square', 'bb-vapor-modules-pro' ),
-								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
-						),
-						'icon_color'              => array(
-							'type'       => 'color',
-							'label'      => __( 'Enter an icon color', 'bb-vapor-modules-pro' ),
-							'default'    => '000000',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'icon_background_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Enter a background color', 'bb-vapor-modules-pro' ),
-							'default'    => 'FFFFFF',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'line_radius'             => array(
-							'type'    => 'unit',
-							'label'   => __( 'Radius of Separator', 'bb-vapor-modules-pro' ),
-							'default' => '5',
-						),
-						'line_type'               => array(
-							'type'    => 'select',
-							'label'   => __( 'Line Type', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
-								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
-								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
-								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'solid',
-						),
-						'line_color'              => array(
-							'type'       => 'color',
-							'label'      => __( 'Line Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'default'    => '000000',
 						),
 					),
 				),

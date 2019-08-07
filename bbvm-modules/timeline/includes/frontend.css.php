@@ -14,6 +14,9 @@ foreach ( $settings->timeline as $timeline_item ) :
 	.timeline-item-content.count-<?php echo absint( $count ); ?>::after {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->background_color ) ); ?>;
 	}
+	.timeline-item-content.count-<?php echo absint( $count ); ?> a {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->button_link_color ) ); ?>;
+	}
 	<?php
 	FLBuilderCSS::typography_field_rule(
 		array(
@@ -27,6 +30,20 @@ foreach ( $settings->timeline as $timeline_item ) :
 			'settings'     => $timeline_item,
 			'setting_name' => 'content_typography',
 			'selector'     => ".fl-node-$id .timeline-item-content.count-$count p",
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $timeline_item,
+			'setting_name' => 'category_typography',
+			'selector'     => ".fl-node-$id .timeline-item-content.count-$count .tag",
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $timeline_item,
+			'setting_name' => 'link_typography',
+			'selector'     => ".fl-node-$id .timeline-item-content.count-$count a",
 		)
 	);
 
@@ -185,4 +202,10 @@ endforeach;
 	.timeline-item-content a::after {
 		display: none;
 	}
+}
+.fl-node-<?php echo esc_html( $id ); ?> .circle {
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->timeline_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .timeline-container::after {
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->timeline_color ) ); ?>;
 }
