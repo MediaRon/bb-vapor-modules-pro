@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Content_Scroller extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(

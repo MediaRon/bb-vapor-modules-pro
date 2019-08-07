@@ -1,6 +1,17 @@
+<?php
+/**
+ * Instagram Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-instagram-for-beaverbuilder">
 	<?php
-	// Get cache if possible
+	// Get cache if possible.
 	$instagram = get_option( 'bbvm-modules-instagram', array() );
 	if ( ! isset( $instagram['token'] ) ) {
 		?>
@@ -29,7 +40,7 @@
 		?>
 		<section class="fl-node-instagram">
 			<?php
-			// Get profile information
+			// Get profile information.
 			$author_avatar             = '';
 			$author_full_name          = '';
 			$author_instagram_feed_url = '';

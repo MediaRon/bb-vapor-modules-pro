@@ -1,3 +1,14 @@
+<?php
+/**
+ * Instagram Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 if ( typeof jQuery != 'undefined' ) {
 	var $load_more = jQuery('.load-more');
 	var ajax_url = $load_more.attr('data-ajax-url');
