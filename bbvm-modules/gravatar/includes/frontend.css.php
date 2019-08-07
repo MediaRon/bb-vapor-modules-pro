@@ -1,4 +1,13 @@
 <?php
+/**
+ * Gravatar Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( 'circular' === $settings->avatar_type ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-gravatar img {

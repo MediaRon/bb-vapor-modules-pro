@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Gravatar_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -28,7 +31,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'gravatar_type' => array(
+						'gravatar_type'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Gravatar Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -42,7 +45,7 @@ FLBuilder::register_module(
 										'user_id',
 									),
 								),
-								'email' => array(
+								'email'   => array(
 									'fields' => array(
 										'email_address',
 										'avatar_link',
