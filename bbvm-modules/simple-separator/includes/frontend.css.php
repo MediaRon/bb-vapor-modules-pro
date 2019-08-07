@@ -1,3 +1,14 @@
+<?php
+/**
+ * Simple Separator Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-simple-separator {
 	clear: both;
 	width: <?php echo absint( $settings->width ); ?>%;
