@@ -1,5 +1,9 @@
 <?php //phpcs:ignore
 class BBVapor_Advanced_Separator_Module extends FLBuilderModule {
+
+	/**
+	 * Module constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(

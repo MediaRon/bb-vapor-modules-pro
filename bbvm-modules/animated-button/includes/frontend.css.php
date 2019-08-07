@@ -1,3 +1,14 @@
+<?php
+/**
+ * Animated Buttons Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-animated-button-for-beaverbuilder-wrapper {
 	text-align: <?php echo esc_html( $settings->button_alignment ); ?>;
 }

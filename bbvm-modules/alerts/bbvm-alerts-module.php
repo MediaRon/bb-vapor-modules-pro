@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Alerts_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -25,7 +28,7 @@ FLBuilder::register_module(
 		'general'    => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'       => array(
+				'general' => array(
 					'title'  => __( 'Alerts', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'alert_text'       => array(
@@ -33,7 +36,7 @@ FLBuilder::register_module(
 							'label' => __( 'Alert Text', 'bb-vapor-modules-pro' ),
 							'rows'  => 5,
 						),
-						'alert_style' => array(
+						'alert_style'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Alert Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -89,7 +92,7 @@ FLBuilder::register_module(
 		'typography' => array(
 			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'styles'       => array(
+				'styles' => array(
 					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'alert_typography' => array(
@@ -97,7 +100,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Select a Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'alert_alignment' => array(
+						'alert_alignment'  => array(
 							'type'    => 'align',
 							'label'   => __( 'Alert Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
@@ -108,8 +111,8 @@ FLBuilder::register_module(
 		),
 		'icon'       => array(
 			'title'    => __( 'Icon', 'bb-vapor-modules-pro' ),
-			'sections'      => array(
-				'styles'       => array(
+			'sections' => array(
+				'styles' => array(
 					'title'  => __( 'Icon', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'show_icon' => array(
@@ -119,7 +122,7 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'fields' => array(
 										'icon',
@@ -146,7 +149,7 @@ FLBuilder::register_module(
 		'button'     => array(
 			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'styles'       => array(
+				'styles' => array(
 					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'show_button'                   => array(
@@ -229,7 +232,7 @@ FLBuilder::register_module(
 							'type'  => 'color',
 							'label' => __( 'Button Border Color', 'bb-vapor-modules-pro' ),
 						),
-						'button_location' => array(
+						'button_location'               => array(
 							'type'  => 'link',
 							'label' => __( 'Button Location', 'bb-vapor-modules-pro' ),
 						),

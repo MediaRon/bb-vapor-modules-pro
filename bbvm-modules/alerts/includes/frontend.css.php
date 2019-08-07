@@ -1,4 +1,13 @@
 <?php
+/**
+ * Alerts module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( 'primary' === $settings->alert_style ) :
 	?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-alerts-for-beaverbuilder .fl-bbvm-alert-text * {
@@ -265,7 +274,7 @@ if ( 'custom' === $settings->alert_style ) :
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background_color_hover ) ); ?>;
 	}
 	<?php
-	// Padding
+	// Padding.
 	FLBuilderCSS::dimension_field_rule(
 		array(
 			'settings'     => $settings,

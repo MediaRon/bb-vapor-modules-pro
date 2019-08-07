@@ -1,4 +1,13 @@
 <?php
+/**
+ * Advanced Separator module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( 'double' === $settings->style || 'photo' === $settings->style || 'line' === $settings->style ) :
 	?>
 <hr class="fl-bbvm-advanced-separator" />

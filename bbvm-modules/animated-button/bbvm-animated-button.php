@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Animated_Button_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -26,7 +29,7 @@ FLBuilder::register_module(
 		'general'    => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'       => array(
+				'general' => array(
 					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'button_id'                       => array(
@@ -66,7 +69,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 						),
-						'button_background_color' => array(
+						'button_background_color'         => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
@@ -97,7 +100,7 @@ FLBuilder::register_module(
 		'animations' => array(
 			'title'    => __( 'Animations', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'animations'       => array(
+				'animations' => array(
 					'title'  => __( 'Animations', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'icon_animation'                  => array(
@@ -108,7 +111,7 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'fields' => array(
 										'icon_animation_hover',
@@ -324,7 +327,7 @@ FLBuilder::register_module(
 		'styles'     => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'styles'       => array(
+				'styles' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'button_alignment'  => array(
@@ -342,7 +345,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_margin'    => array(
+						'button_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
