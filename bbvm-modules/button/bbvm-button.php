@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Button_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -140,12 +143,12 @@ FLBuilder::register_module(
 								'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'button_style_border_color' => array(
+						'button_style_border_color'        => array(
 							'type'    => 'color',
 							'label'   => __( 'Button Style Border Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 						),
-						'button_style_border_color_hover' => array(
+						'button_style_border_color_hover'  => array(
 							'type'    => 'color',
 							'label'   => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
