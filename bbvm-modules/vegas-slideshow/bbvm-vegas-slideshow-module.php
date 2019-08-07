@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Vegas_Slideshow_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -284,7 +287,7 @@ FLBuilder::register_module(
 								'background' => __( 'Background Color', 'bb-vapor-modules-pro' ),
 								'gradient'   => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'background' => array( 'fields' => array( 'show_overlay_color' ) ),
 								'gradient'   => array( 'fields' => array( 'show_overlay_gradient' ) ),
 							),

@@ -1,3 +1,14 @@
+<?php
+/**
+ * Vegas Slideshow Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-vegas-slideshow-for-beaverbuilder <?php echo 'yes' === $settings->show_bullets ? 'has-bullets' : ''; ?>">
 	<div class="slideshow-item">
 	</div>
