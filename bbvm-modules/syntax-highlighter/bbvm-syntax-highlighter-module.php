@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Syntax_Highlighter_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -34,7 +37,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Enter your code type', 'bb-vapor-modules-pro' ),
 							'options' => $SyntaxHighlighter->brush_names, // phpcs:ignore
 						),
-						'raw' => array(
+						'raw'  => array(
 							'type'  => 'code',
 							'label' => __( 'Enter your code here. For this to preview properly, enable loading all brushes in the Syntax Highlighting settings.', 'bb-vapor-modules-pro' ),
 							'rows'  => '18',
