@@ -1,5 +1,14 @@
 <?php
-// Button Styles
+/**
+ * Jetpack Sharing Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+// Button Styles.
 $icon_color = isset( $settings->icon_color ) ? esc_attr( $settings->icon_color ) : 'inherit';
 $icon_color = BBVapor_Modules_Pro::get_color( $icon_color );
 
@@ -271,7 +280,7 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	<?php
 endif;
 
-// Headline
+// Headline.
 $sharing_headline_color = isset( $settings->sharing_headline_color ) ? esc_attr( $settings->sharing_headline_color ) : 'inherit';
 $sharing_headline_color = BBVapor_Modules_Pro::get_color( $sharing_headline_color );
 ?>

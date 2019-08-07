@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Jetpack_Sharing_Module extends FLBuilderModule {
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -66,7 +69,7 @@ FLBuilder::register_module(
 							'default' => 'icon-text',
 							'toggle'  => array(
 								'icon-text' => array(
-									'tabs' => array(
+									'tabs'     => array(
 										'button_text',
 										'button_styles',
 									),
@@ -74,7 +77,7 @@ FLBuilder::register_module(
 										'icon_styles',
 									),
 								),
-								'text' => array(
+								'text'      => array(
 									'tabs' => array(
 										'button_text',
 										'button_styles',
@@ -223,7 +226,7 @@ FLBuilder::register_module(
 				'icon_styles'   => array(
 					'title'  => __( 'Icon Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'icon_color' => array(
+						'icon_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
@@ -269,7 +272,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'color',
 							'toggle'  => array(
-								'color' => array(
+								'color'    => array(
 									'fields' => array(
 										'button_background_color',
 										'button_background_color_hover',
@@ -319,15 +322,15 @@ FLBuilder::register_module(
 					'title'  => __( 'Button Layout', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'button_layout_type' => array(
-							'type'      => 'select',
-							'label'     => __( 'Button Layout Type', 'bb-vapor-modules-pro' ),
-							'options'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Button Layout Type', 'bb-vapor-modules-pro' ),
+							'options' => array(
 								'flex'   => __( 'Flex Layout', 'bb-vapor-modules-pro' ),
 								'block'  => __( 'Block Layout', 'bb-vapor-modules-pro' ),
 								'inline' => __( 'Inline Layout', 'bb-vapor-modules-pro' ),
 							),
-							'default'   => 'inline',
-							'toggle'    => array(
+							'default' => 'inline',
+							'toggle'  => array(
 								'flex'  => array(
 									'fields' => array(
 										'flex_columns',

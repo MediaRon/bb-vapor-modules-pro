@@ -1,4 +1,13 @@
 <?php
+/**
+ * Jetpack Sharing Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( defined( 'JETPACK__PLUGIN_DIR' ) ) {
 	include_once JETPACK__PLUGIN_DIR . '/modules/sharedaddy/sharing-sources.php';
 }
@@ -10,11 +19,28 @@ if ( defined( 'JETPACK__PLUGIN_DIR' ) ) {
 	?>
 	<?php
 	if ( ! function_exists( 'mrbb_jetpack_sharing' ) ) {
+		/**
+		 * Whether to show Jetpack Sharing or not.
+		 *
+		 * @param bool   $show Whether to show or not.
+		 * @param object $post Post to show.
+		 *
+		 * @return bool true or false
+		 */
 		function mrbb_jetpack_sharing( $show, $post ) {
 			return true;
 		}
 	}
 	if ( ! function_exists( 'mrbb_jetpack_sharing_headline' ) ) {
+		/**
+		 * Change the headline for Jetpack Sharing.
+		 *
+		 * @param string $label         The headline.
+		 * @param string $sharing       Jetpack sharing.
+		 * @param string $label_escaped The escaped headline.
+		 *
+		 * @return string New Label
+		 */
 		function mrbb_jetpack_sharing_headline( $label, $sharing, $label_escaped ) {
 			global $mrbb_jetpack_sharing_settings;
 			if ( 'yes' === $mrbb_jetpack_sharing_settings->show_headline ) {
@@ -26,6 +52,13 @@ if ( defined( 'JETPACK__PLUGIN_DIR' ) ) {
 		}
 	}
 	if ( ! function_exists( 'mrbb_jetpack_sharing_button_display' ) ) {
+		/**
+		 * Change button style for Jetpack Sharing.
+		 *
+		 * @param array $option Jetpack Sharing Options.
+		 *
+		 * @return array Modified options array.
+		 */
 		function mrbb_jetpack_sharing_button_display( $option ) {
 			global $mrbb_jetpack_sharing_settings;
 			if ( isset( $option['global']['button_style'] ) ) {
@@ -35,6 +68,16 @@ if ( defined( 'JETPACK__PLUGIN_DIR' ) ) {
 		}
 	}
 	if ( ! function_exists( 'mrbb_jetpack_sharing_titles' ) ) {
+		/**
+		 * Change the Jetpack Sharing titles
+		 *
+		 * @param string $title  The headline.
+		 * @param object $object Jetpack sharing Object.
+		 * @param int    $id     The Jetpack Sharing ID.
+		 * @param array  $args   The Jetpac Sharing Arguments.
+		 *
+		 * @return string New Icon Label
+		 */
 		function mrbb_jetpack_sharing_titles( $title, $object, $id, $args ) {
 			global $mrbb_jetpack_sharing_settings;
 			if ( 'icons' === $mrbb_jetpack_sharing_settings->sharing_display || 'official' === $mrbb_jetpack_sharing_settings->sharing_display ) {
@@ -83,9 +126,19 @@ if ( defined( 'JETPACK__PLUGIN_DIR' ) ) {
 		}
 	}
 	if ( ! function_exists( 'mrbb_jetpack_sharing_classes' ) ) {
+		/**
+		 * Change the Jetpack Sharing classes
+		 *
+		 * @param array  $classes  Jetpack Classes.
+		 * @param object $object Jetpack sharing Object.
+		 * @param int    $id     The Jetpack Sharing ID.
+		 * @param array  $args   The Jetpac Sharing Arguments.
+		 *
+		 * @return array Updated classes.
+		 */
 		function mrbb_jetpack_sharing_classes( $classes, $object, $id, $args ) {
 			$no_popups = array( 'print', 'email' );
-			if ( in_array( $object->shortname, $no_popups ) ) {
+			if ( in_array( $object->shortname, $no_popups, true ) ) {
 				return $classes;
 			}
 			$classes[] = 'share-press-this';
