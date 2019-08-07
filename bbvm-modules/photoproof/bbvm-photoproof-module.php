@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Photoproof_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -43,12 +46,12 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Album Select', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'album' => array(
-							'type'          => 'select',
-							'label'         => __( 'Select an album', 'bb-vapor-modules-pro' ),
-							'options'       => $albums_array,
+						'album'                  => array(
+							'type'    => 'select',
+							'label'   => __( 'Select an album', 'bb-vapor-modules-pro' ),
+							'options' => $albums_array,
 						),
-						'album_type' => array(
+						'album_type'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Album Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
