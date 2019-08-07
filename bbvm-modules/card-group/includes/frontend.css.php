@@ -1,4 +1,13 @@
 <?php
+/**
+ * Card Group Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

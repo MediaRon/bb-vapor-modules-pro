@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Card_Group_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -50,7 +53,7 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Card', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'photo_type' => array(
+							'photo_type'            => array(
 								'type'    => 'select',
 								'label'   => __( 'Card photo type', 'bb-vapor-modules-pro' ),
 								'options' => array(
@@ -189,7 +192,7 @@ FLBuilder::register_settings_form(
 								'label'      => __( 'Enter a Heading Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
-							'display_content' => array(
+							'display_content'            => array(
 								'type'    => 'select',
 								'label'   => __( 'Display Content', 'bb-vapor-modules-pro' ),
 								'default' => 'yes',
@@ -329,7 +332,7 @@ FLBuilder::register_settings_form(
 			'styles'        => array(
 				'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 				'sections' => array(
-					'overlay'       => array(
+					'overlay' => array(
 						'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 						'fields' => array(
 							'padding'                   => array(
@@ -358,7 +361,7 @@ FLBuilder::register_settings_form(
 								'type'  => 'dimension',
 								'label' => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 							),
-							'text_color' => array(
+							'text_color'                => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'default'    => '#000000',
@@ -380,7 +383,7 @@ FLBuilder::register_settings_form(
 									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle'  => array(
-									'color' => array(
+									'color'    => array(
 										'fields' => array(
 											'background_color',
 											'background_color_hover',
@@ -406,7 +409,7 @@ FLBuilder::register_settings_form(
 								'default'    => '#FFFFFF',
 								'show_reset' => true,
 							),
-							'background_gradient' => array(
+							'background_gradient'       => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Display a Gradient', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
@@ -482,7 +485,7 @@ FLBuilder::register_settings_form(
 									'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 								),
 								'toggle'  => array(
-									'color' => array(
+									'color'    => array(
 										'fields' => array(
 											'button_background_color',
 											'button_background_color_hover',
