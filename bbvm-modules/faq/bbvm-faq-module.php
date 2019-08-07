@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_FAQ_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -54,7 +57,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'faq' => array(
+						'faq'      => array(
 							'type'         => 'form',
 							'label'        => __( 'FAQ', 'bb-vapor-modules-pro' ),
 							'form'         => 'mrbb_faq',
@@ -89,7 +92,7 @@ FLBuilder::register_module(
 				'styles' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'toc_typography' => array(
+						'toc_typography'            => array(
 							'type'       => 'typography',
 							'label'      => __( 'Table of Contents Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -153,7 +156,7 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
 						),
-						'answer_padding' => array(
+						'answer_padding'            => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Answer Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
