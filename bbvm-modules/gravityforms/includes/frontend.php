@@ -1,3 +1,14 @@
+<?php
+/**
+ * Gravity Forms Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-gravityforms-for-beaverbuilder">
 	<?php
 	$display_title = 'yes' == $settings->form_title ? true : false;

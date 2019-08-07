@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Gravityforms_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -14,18 +17,13 @@ class BBVapor_Gravityforms_Module extends FLBuilderModule {
 				'partial_refresh' => true, // Defaults to false and can be omitted.
 			)
 		);
-
-	}
-
-	public function filter_settings( $settings, $helper ) {
-		return $settings;
 	}
 }
 /**
  * Register the module and its form settings.
  */
 $forms_array = array( '0' => __( 'Select a form', 'bb-vapor-modules-pro' ) );
-$forms = GFAPI::get_forms();
+$forms       = GFAPI::get_forms();
 if ( ! empty( $forms ) ) {
 	foreach ( $forms as $form ) {
 		$forms_array[ $form['id'] ] = $form['title'];
@@ -34,13 +32,13 @@ if ( ! empty( $forms ) ) {
 FLBuilder::register_module(
 	'BBVapor_Gravityforms_Module',
 	array(
-		'general'                   => array(
+		'general'              => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general' => array(
+				'general'  => array(
 					'title'  => __( 'Form Select', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'form' => array(
+						'form'                    => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a form', 'bb-vapor-modules-pro' ),
 							'options' => $forms_array,
@@ -54,7 +52,7 @@ FLBuilder::register_module(
 								'custom' => __( 'Custom', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'custom' => array( 'fields' => array( 'custom_title' ) ),
 							),
 						),
@@ -83,7 +81,7 @@ FLBuilder::register_module(
 								'custom' => __( 'Custom', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
-							'toggle' => array(
+							'toggle'  => array(
 								'custom' => array( 'fields' => array( 'custom_description' ) ),
 							),
 						),
@@ -151,7 +149,7 @@ FLBuilder::register_module(
 		'styles'              => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'styles' => array(
+				'styles'       => array(
 					'title'  => __( 'General Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'padding'               => array(
@@ -241,7 +239,7 @@ FLBuilder::register_module(
 				'inputs'       => array(
 					'title'  => __( 'Input styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'input_height' => array(
+						'input_height'           => array(
 							'type'        => 'unit',
 							'label'       => __( 'Input Height', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
@@ -312,7 +310,7 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'textarea'       => array(
+				'textarea'     => array(
 					'title'  => __( 'Textarea styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'textarea_background_color' => array(
@@ -531,7 +529,7 @@ FLBuilder::register_module(
 		'errorsconfirmations' => array(
 			'title'    => __( 'Errors/Confirmations', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'errors' => array(
+				'errors'        => array(
 					'title'  => __( 'Errors', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'error_message_color'          => array(
@@ -566,10 +564,10 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'confirmations'       => array(
+				'confirmations' => array(
 					'title'  => __( 'Confirmations', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'confirmation_color' => array(
+						'confirmation_color'            => array(
 							'type'    => 'color',
 							'label'   => __( 'Select a confirmation color', 'bb-vapor-modules-pro' ),
 							'default' => '3c763d',
@@ -579,7 +577,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Select a confirmation background color', 'bb-vapor-modules-pro' ),
 							'default' => 'FFFFFF',
 						),
-						'confirmation_padding' => array(
+						'confirmation_padding'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a confirmation padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -596,7 +594,7 @@ FLBuilder::register_module(
 		'pagination'          => array(
 			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'progress_bar' => array(
+				'progress_bar'   => array(
 					'title'  => __( 'Progress Bar', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'progress_title_show'              => array(
