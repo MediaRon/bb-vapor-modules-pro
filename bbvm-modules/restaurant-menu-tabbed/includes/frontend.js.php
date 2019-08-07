@@ -1,5 +1,13 @@
 <?php
 // phpcs:ignorefile
+/**
+ * Restaurant Menu Tabbed Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
 ?>
 jQuery( '.bbvm-restaurant-menu-tabs ul li a' ).each( function() {
 	if ( jQuery( this ).data('default') == 'yes' ) {
