@@ -1,3 +1,14 @@
+<?php
+/**
+ * Before and After Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-beforeafter-for-beaverbuilder">
 	<?php
 	if ( 'hover' === $settings->style ) {
@@ -71,7 +82,7 @@
 			$width  = 0;
 			$height = 0;
 			if ( false !== $image ) {
-				$width = $image[1];
+				$width  = $image[1];
 				$height = $image[2];
 			}
 			?>

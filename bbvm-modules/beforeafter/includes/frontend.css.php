@@ -1,4 +1,13 @@
 <?php
+/**
+ * Before & After Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 $background_color = isset( $settings->background_color ) ? esc_attr( $settings->background_color ) : 'FFFFFF';
 $background_color = BBVapor_Modules_Pro::get_color( $background_color );
 
