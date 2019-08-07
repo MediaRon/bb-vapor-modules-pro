@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Simple_Spacer_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -25,9 +28,9 @@ FLBuilder::register_module(
 		'general' => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'       => array(
-					'title'         => __( 'Spacer', 'bb-vapor-modules-pro' ),
-					'fields'        => array(
+				'general' => array(
+					'title'  => __( 'Spacer', 'bb-vapor-modules-pro' ),
+					'fields' => array(
 						'spacer' => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height of Spacer', 'bb-vapor-modules-pro' ),
