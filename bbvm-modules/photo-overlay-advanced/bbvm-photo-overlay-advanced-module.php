@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Photo_Overlay_Advanced_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -79,7 +82,7 @@ FLBuilder::register_module(
 										'animation',
 									),
 								),
-								'full' => array(
+								'full'       => array(
 									'fields' => array(
 										'animation',
 									),
@@ -119,7 +122,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Animation duraction in seconds', 'bb-vapor-modules-pro' ),
 							'default' => '3',
 						),
-						'overlay_padding' => array(
+						'overlay_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,

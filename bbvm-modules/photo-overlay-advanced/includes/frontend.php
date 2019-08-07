@@ -1,4 +1,13 @@
 <?php
+/**
+ * Advanced Photo Overlay Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( isset( $settings->overlay_photo ) && ! empty( $settings->overlay_photo ) ) :
 	$overlay_type   = isset( $settings->overlay_type ) ? $settings->overlay_type : 'horizontal';
 	$animation_type = isset( $settings->animation ) ? $settings->animation : 'regular';
