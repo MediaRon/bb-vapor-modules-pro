@@ -1,8 +1,13 @@
 <?php
 /**
- * Render the Loop Settings for Category Grid Module.
+ * Render the Loop Settings for Category Grid Module..
  *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
  */
+
 FLBuilderModel::default_settings(
 	$settings,
 	array(
@@ -21,7 +26,7 @@ FLBuilderModel::default_settings(
 		foreach ( $taxonomies as $tax_slug => $bbvm_tax ) {
 			$tax_types[]                   = 'custom_term_' . $slug . '_tax_' . $tax_slug;
 			$taxonomies_array[ $tax_slug ] = $bbvm_tax->label;
-			$toggle_types[ $tax_slug ] = array(
+			$toggle_types[ $tax_slug ]     = array(
 				'fields' => array(
 					'exclude_term_tax_' . $tax_slug,
 				),

@@ -1,5 +1,8 @@
 <?php //phpcs:ignore
 class BBVapor_Category_Grid_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -61,7 +64,7 @@ FLBuilder::register_module(
 							'type'  => 'text',
 							'label' => __( 'Enter Your ACF Custom Field Name Here', 'bb-vapor-modules-pro' ),
 						),
-						'meta_key'         => array(
+						'meta_key'         => array( /* phpcs:ignore */
 							'type'  => 'text',
 							'label' => __( 'Enter Your Custom Category Meta Name Here', 'bb-vapor-modules-pro' ),
 						),
@@ -98,7 +101,7 @@ FLBuilder::register_module(
 				'box' => array(
 					'title'  => __( 'Box Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'link_category'       => array(
+						'link_category'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Link Entire Container to Category', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -107,7 +110,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
-						'category_text_color' => array(
+						'category_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Category Color', 'bb-vapor-modules-pro' ),
 							'default'    => 'FFFFFF',
@@ -121,12 +124,12 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'category_typography' => array(
+						'category_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'border_style' => array(
+						'border_style'              => array(
 							'type'    => 'select',
 							'label'   => __( 'Select Style', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -142,16 +145,16 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'outer_border'        => array(
+						'outer_border'              => array(
 							'type'  => 'border',
 							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
 						),
-						'category_padding'    => array(
+						'category_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Category Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'show_button'         => array(
+						'show_button'               => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Button', 'bb-vapor-modules-pro' ),
 							'options' => array(

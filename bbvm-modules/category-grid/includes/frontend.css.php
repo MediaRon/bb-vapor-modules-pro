@@ -1,4 +1,14 @@
-<?php /* Setup Container */ ?>
+<?php
+/**
+ * Category Grid Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder ul {
 	display: flex;
 	flex-direction: row;
@@ -147,7 +157,7 @@ FLBuilderCSS::rule(
 		),
 	)
 );
-// Set up border
+// Set up border.
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
@@ -155,7 +165,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder ul li",
 	)
 );
-// Setup category button
+// Setup category button.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button {
 	display: block;
