@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Markdown_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -15,6 +18,9 @@ class BBVapor_Markdown_Module extends FLBuilderModule {
 			)
 		);
 	}
+	/**
+	 * Enqueue the theme and syntax highlighting.
+	 */
 	public function enqueue_scripts() {
 		if ( $this->settings && 'default' === $this->settings->markdown_theme ) {
 			$this->add_css( 'mrbb-markdown-default', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/markdown/css/markdown-theme-default.css' );
@@ -63,7 +69,7 @@ FLBuilder::register_module(
 							'default' => 'no',
 							'toggle'  => array( 'yes' => array( 'fields' => array( 'theme' ) ) ),
 						),
-						'theme' => array(
+						'theme'                      => array(
 							'type'    => 'select',
 							'label'   => __( 'Theme', 'bb-vapor-modules-pro' ),
 							'default' => 'default',
