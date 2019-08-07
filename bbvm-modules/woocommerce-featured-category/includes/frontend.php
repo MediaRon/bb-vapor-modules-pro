@@ -1,3 +1,14 @@
+<?php
+/**
+ * WooCommerce Featured Category.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-woocommerce-featured-category-for-beaverbuilder">
 	<?php if ( ! empty( $settings->category ) ) : ?>
 		<?php
