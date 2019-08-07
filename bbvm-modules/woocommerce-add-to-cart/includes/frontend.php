@@ -1,12 +1,24 @@
 <?php
+/**
+ * WooCommerce Add to Cart Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 global $bbvm_bb_woocommerce_add_to_cart;
 $bbvm_bb_woocommerce_add_to_cart = $settings;
 if ( ! function_exists( 'bbvm_bb_woocommerce_add_to_cart' ) ) {
+	/**
+	 * Return cart HTML.
+	 */
 	function bbvm_bb_woocommerce_add_to_cart() {
 		global $bbvm_bb_woocommerce_add_to_cart, $woocommerce;
 		ob_start();
-		$cart_count = $woocommerce->cart->cart_contents_count; // Set variable for cart item count
-		$cart_url   = wc_get_cart_url();  // Set Cart URL
+		$cart_count = $woocommerce->cart->cart_contents_count; // Set variable for cart item count.
+		$cart_url   = wc_get_cart_url();  // Set Cart URL.
 		?>
 		<div class="bbvm-bb-woocommerce-add-to-cart">
 			<a class="bbvm-cart-contents" href="<?php echo esc_url( $cart_url ); ?>">
@@ -29,6 +41,13 @@ if ( ! function_exists( 'bbvm_bb_woocommerce_add_to_cart' ) ) {
 	}
 }
 if ( ! function_exists( 'bbvm_bb_woocommerce_add_to_cart_count' ) ) {
+	/**
+	 * Return cart count.
+	 *
+	 * @param array $fragments Cart Fragments.
+	 *
+	 * @return array Updated fragments.
+	 */
 	function bbvm_bb_woocommerce_add_to_cart_count( $fragments ) {
 		global $bbvm_bb_woocommerce_add_to_cart, $woocommerce;
 

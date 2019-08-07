@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(

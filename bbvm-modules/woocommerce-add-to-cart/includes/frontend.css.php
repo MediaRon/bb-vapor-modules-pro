@@ -1,6 +1,14 @@
 <?php
+/**
+ * WooCommerce Add to Cart Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
 
-// Text Color
+// Text Color.
 $text_color = isset( $settings->text_color ) ? esc_attr( $settings->text_color ) : '000000';
 if ( 6 === strlen( $text_color ) ) {
 	$text_color = '#' . $text_color;
