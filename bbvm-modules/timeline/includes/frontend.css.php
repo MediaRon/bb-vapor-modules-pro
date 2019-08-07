@@ -204,7 +204,7 @@ endforeach;
 	}
 }
 .fl-node-<?php echo esc_html( $id ); ?> .circle {
-	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->timeline_color ) ); ?>;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->timeline_color ) ); ?> !important;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .timeline-container::after {
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->timeline_color ) ); ?>;
