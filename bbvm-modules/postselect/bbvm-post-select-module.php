@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_PostSelect_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -33,7 +36,7 @@ class BBVapor_PostSelect_Module extends FLBuilderModule {
 		return $settings;
 	}
 }
-// Get image sizes
+// Get image sizes.
 global $_wp_additional_image_sizes;
 $bbvm_default_image_sizes = get_intermediate_image_sizes();
 $bbvm_image_sizes         = array();
@@ -256,8 +259,8 @@ FLBuilder::register_module(
 		),
 		'color'       => array(
 			'title'    => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
-			'sections'      => array(
-				'general'       => array(
+			'sections' => array(
+				'general' => array(
 					'title'  => __( 'Color and Typography', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'heading_typography'  => array(
@@ -265,7 +268,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'meta_typography'    => array(
+						'meta_typography'     => array(
 							'type'       => 'typography',
 							'label'      => __( 'Meta Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
