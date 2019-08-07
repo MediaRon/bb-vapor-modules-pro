@@ -16,7 +16,7 @@
  */
 class BBVapor_Timeline_Module extends FLBuilderModule {
 	/**
-	 * Initialize Advanced Headings.
+	 * Initialize Timeline.
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -39,7 +39,7 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Timeline', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general' => array(
+			'general'    => array(
 				'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'general' => array(
@@ -109,11 +109,11 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'date_typography' => array(
+							'date_typography'     => array(
 								'type'  => 'typography',
 								'label' => __( 'Date Typography', 'bb-vapor-modules-pro' ),
 							),
-							'content_typography' => array(
+							'content_typography'  => array(
 								'type'  => 'typography',
 								'label' => __( 'Content Typography', 'bb-vapor-modules-pro' ),
 							),
@@ -121,7 +121,7 @@ FLBuilder::register_settings_form(
 								'type'  => 'typography',
 								'label' => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 							),
-							'link_typography' => array(
+							'link_typography'     => array(
 								'type'  => 'typography',
 								'label' => __( 'Link Typography', 'bb-vapor-modules-pro' ),
 							),
@@ -135,7 +135,7 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_Timeline_Module',
 	array(
-		'general'     => array(
+		'general' => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general' => array(
