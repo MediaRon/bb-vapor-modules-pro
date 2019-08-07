@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Card_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -50,7 +53,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Card', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'photo_type' => array(
+						'photo_type'            => array(
 							'type'    => 'select',
 							'label'   => __( 'Card photo type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -60,7 +63,7 @@ FLBuilder::register_module(
 							),
 							'default' => 'icon',
 							'toggle'  => array(
-								'icon' => array(
+								'icon'  => array(
 									'fields' => array(
 										'icon',
 										'icon_color',
@@ -118,7 +121,7 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 						),
-						'icon_padding' => array(
+						'icon_padding'          => array(
 							'type'  => 'dimension',
 							'label' => __( 'Icon Padding', 'bb-vapor-modules-pro' ),
 						),
@@ -165,9 +168,9 @@ FLBuilder::register_module(
 								'none' => __( 'None', 'bb-vapor-modules-pro' ),
 								'yes'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
-									'fields'     => array(
+									'fields' => array(
 										'heading',
 										'heading_typography',
 										'heading_padding',
@@ -261,7 +264,7 @@ FLBuilder::register_module(
 								'none' => __( 'None', 'bb-vapor-modules-pro' ),
 								'yes'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
 									'fields' => array(
 										'subheading_text',
@@ -293,9 +296,9 @@ FLBuilder::register_module(
 								'none' => __( 'None', 'bb-vapor-modules-pro' ),
 								'yes'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'yes' => array(
-									'fields'     => array(
+									'fields' => array(
 										'readmore_text',
 										'readmore_text_typography',
 										'readmore_text_padding',
@@ -309,8 +312,8 @@ FLBuilder::register_module(
 							'label' => __( 'Enter Read More Text', 'bb-vapor-modules-pro' ),
 						),
 						'readmore_link'              => array(
-							'type'       => 'link',
-							'label'      => __( 'Enter Read More Link', 'bb-vapor-modules-pro' ),
+							'type'  => 'link',
+							'label' => __( 'Enter Read More Link', 'bb-vapor-modules-pro' ),
 						),
 						'readmore_text_typography'   => array(
 							'type'       => 'typography',
@@ -326,10 +329,10 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles' => array(
+		'styles'        => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'overlay'       => array(
+				'overlay' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'padding'                   => array(
@@ -354,7 +357,7 @@ FLBuilder::register_module(
 							'default'    => '#FFFFFF',
 							'show_reset' => true,
 						),
-						'border_radius' => array(
+						'border_radius'             => array(
 							'type'  => 'dimension',
 							'label' => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 						),
@@ -379,7 +382,7 @@ FLBuilder::register_module(
 								'color'    => __( 'Color', 'bb-vapor-modules-pro' ),
 								'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'color'    => array(
 									'fields' => array(
 										'background_color',
@@ -395,17 +398,17 @@ FLBuilder::register_module(
 
 							),
 						),
-						'background_color' => array(
+						'background_color'          => array(
 							'type'       => 'color',
 							'label'      => __( 'Display a Background Color', 'bb-vapor-modules-pro' ),
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 						),
-						'background_color_hover' => array(
-							'type'        => 'color',
-							'label'       => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
-							'default'     => 'FFFFFF',
-							'show_reset'  => true,
+						'background_color_hover'    => array(
+							'type'       => 'color',
+							'label'      => __( 'Display a Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'default'    => 'FFFFFF',
+							'show_reset' => true,
 						),
 						'background_gradient'       => array(
 							'type'       => 'gradient',
@@ -437,7 +440,7 @@ FLBuilder::register_module(
 				'overlay' => array(
 					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'button_padding'               => array(
+						'button_padding'                => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -483,7 +486,7 @@ FLBuilder::register_module(
 								'gradient' => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'color' => array(
+								'color'    => array(
 									'fields' => array(
 										'button_background_color',
 										'button_background_color_hover',

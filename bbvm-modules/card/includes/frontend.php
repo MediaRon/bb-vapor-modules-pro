@@ -1,3 +1,14 @@
+<?php
+/**
+ * Card Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-card-for-beaverbuilder">
 	<?php
 	if ( 'icon' === $settings->photo_type ) {
