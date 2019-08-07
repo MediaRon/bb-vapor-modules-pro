@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_Restaurant_Menu_Item_Module extends FLBuilderModule {
+	/**
+	 * Class Constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
@@ -41,7 +44,7 @@ FLBuilder::register_settings_form(
 									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
-								'toggle' => array(
+								'toggle'  => array(
 									'yes' => array(
 										'fields' => array( 'restaurant_menu_item_photo', 'restaurant_menu_item_photo_size' ),
 									),
@@ -68,8 +71,8 @@ FLBuilder::register_settings_form(
 									'icon'  => __( 'Icon', 'bb-vapor-modules-pro' ),
 									'photo' => __( 'Photo', 'bb-vapor-modules-pro' ),
 								),
-								'toggle' => array(
-									'icon' => array(
+								'toggle'  => array(
+									'icon'  => array(
 										'fields' => array( 'restaurant_menu_item_icon', 'restaurant_menu_item_icon_color' ),
 									),
 									'photo' => array(
@@ -109,8 +112,8 @@ FLBuilder::register_module(
 	array(
 		'general'    => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
-			'sections'      => array(
-				'general'       => array(
+			'sections' => array(
+				'general' => array(
 					'title'  => __( 'Restaurant Menu', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'menu_item_category'             => array(
@@ -221,7 +224,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Spacing', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'category_padding' => array(
+						'category_padding'             => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Category Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -246,7 +249,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Separators', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'category_separator'         => array(
+						'category_separator'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Select category separator', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -289,7 +292,7 @@ FLBuilder::register_module(
 							'type'  => 'dimension',
 							'label' => __( 'Margin', 'bb-vapor-modules-pro' ),
 						),
-						'item_separator'         => array(
+						'item_separator'                 => array(
 							'type'    => 'select',
 							'label'   => __( 'Select item separator', 'bb-vapor-modules-pro' ),
 							'default' => 'line',
