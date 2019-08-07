@@ -1,4 +1,13 @@
 <?php
+/**
+ * Copyright Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
 if ( isset( $settings->copyright_site_field ) ) :
 	$copyright_html  = '';
 	$copyright_html .= $settings->copyright_symbol . '&nbsp';
