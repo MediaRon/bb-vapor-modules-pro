@@ -1,3 +1,14 @@
+<?php
+/**
+ * Testimonials Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-testimonials-cards {
 	display: flex;
 	justify-content: space-between;
@@ -193,7 +204,7 @@ FLBuilderCSS::dimension_field_rule(
 	color: #<?php echo esc_html( $settings->testimonial_title_color ); ?>;
 }
 <?php
-// List Content
+// List Content.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-testimonials {
 	overflow: hidden;
@@ -281,7 +292,7 @@ FLBuilderCSS::dimension_field_rule(
 	)
 );
 
-// Carousel
+// Carousel.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .owl-carousel .fl-bbvm-testimonials-card {
 	width: 100%;

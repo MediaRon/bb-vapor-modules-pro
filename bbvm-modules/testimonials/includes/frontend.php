@@ -1,3 +1,14 @@
+<?php
+/**
+ * Testimonials Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-testimonials-for-beaverbuilder">
 <?php
 if ( 'slider' === $settings->testimonial_type ) {
