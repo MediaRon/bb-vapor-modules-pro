@@ -1,3 +1,14 @@
+<?php
+/**
+ * EDD Download Count Module.
+ *
+ * @link https://bbvapormodules.com
+ *
+ * @package BB Vapor Modules
+ * @since 1.3.0
+ */
+
+?>
 <div class="fl-bbvm-download-count-for-beaverbuilder">
 	<?php
 	if ( ! empty( $settings->product ) ) {

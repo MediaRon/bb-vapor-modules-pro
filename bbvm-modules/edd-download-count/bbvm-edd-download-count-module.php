@@ -1,5 +1,8 @@
 <?php // phpcs:ignore
 class BBVapor_EDD_Download_Count_Module extends FLBuilderModule {
+	/**
+	 * Class constructor.
+	 */
 	public function __construct() {
 		parent::__construct(
 			array(
