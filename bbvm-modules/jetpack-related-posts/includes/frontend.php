@@ -145,7 +145,7 @@
 														array(
 															'class' => 'jp-relatedposts-post-img',
 															'alt' => $post->post_title,
-														),
+														)
 													);
 												}
 											}
