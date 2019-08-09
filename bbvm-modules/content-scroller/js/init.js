@@ -2,6 +2,9 @@ jQuery( document ).ready( function( $ ) {
 	var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
 	var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
 	var bbvm_content_scroller_sticky = jQuery('.fl-bbvm-content-scroller-for-beaverbuilder');
+	var bbvm_content_scroller_elements_responsive = document.getElementsByClassName('bbvm-content-scroller-bg-responsive');
+	var bbvm_content_scroller_responsive = jQuery( '.fl-bbvm-content-scroller-responsive-for-beaverbuilder' );
+	var bbvm_content_scroller_responsive_arrayLength = bbvm_content_scroller_responsive.find( '.bbvm-content-scroller-bg-responsive' ).length;
 	bbvm_content_scroller_sticky.addClass('bbvm-fade-in');
 	var bbvm_content_scroller_waypoint = jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint:visible' );
 	if ( bbvm_content_scroller_waypoint.length > 0 ) {
@@ -17,6 +20,22 @@ jQuery( document ).ready( function( $ ) {
 	})
 	}
 
+	var resposiveWaypoint = new Array();
+	for ( var i = 0; i < bbvm_content_scroller_responsive_arrayLength; i++) {
+		resposiveWaypoint[i] = new Waypoint({
+			element: bbvm_content_scroller_elements_responsive[i],
+			handler: function( direction) {
+				var element = jQuery( this.element );
+				for( var i = 1; i < ( bbvm_content_scroller_responsive_arrayLength + 1); i++ ) {
+					if ( element.hasClass( 'count-' + i ) ) {
+						var background =  element.data( 'background' );
+						element.animate({opacity: 0}, 0).css( 'background-image',"url(" + background + ")" ).animate({opacity: 1}, 1500 );
+					}
+				}
+			}
+		})
+	}
+
 	var itemWaypoint = new Array();
 	for (var i = 0; i < bbvm_content_scroller_arrayLength; i++) {
 		itemWaypoint[i] = new Waypoint({
@@ -28,7 +47,7 @@ jQuery( document ).ready( function( $ ) {
 			var background =  element.getAttribute( 'data-background' );
 			var video = jQuery.trim(element.getAttribute('data-video'));
 			jQuery( '.bbvm-content-scroller-item-wrapper' ).css( 'backgroundColor', color );
-			if ( jQuery( '.bbvm-content-scroller-bg').css('background-image' ) !== 'url(" + background + ")' ) {
+			if ( jQuery( '.bbvm-content-scroller-bg').css('background-image' ) !== 'url("' + background + '")' ) {
 				jQuery( '.bbvm-content-scroller-bg' ).animate({opacity: 0}, 0).css( 'background-image',"url(" + background + ")" ).animate({opacity: 1}, 1500 );
 			}
 
@@ -44,6 +63,7 @@ jQuery( document ).ready( function( $ ) {
 				if ( 'down' == direction ) {
 					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').hide();
 					jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').show();
+
 				} else {
 					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').show();
 					jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').hide();
