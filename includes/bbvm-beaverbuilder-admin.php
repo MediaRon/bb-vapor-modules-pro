@@ -231,7 +231,7 @@ class BBVapor_BeaverBuilder_Admin {
 		if ( isset( $_POST['submit'] ) && isset( $_POST['whitelabel'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$whitelabel = array();
-			foreach ( filter_input( INPUT_POST, 'whitelabel' ) as $key => $option ) {
+			foreach ( filter_input( INPUT_POST, 'whitelabel', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY ) as $key => $option ) {
 				$whitelabel[ $key ] = sanitize_text_field( $option );
 			}
 			update_site_option( 'bbvm_whitelabel', $whitelabel );
@@ -249,7 +249,7 @@ class BBVapor_BeaverBuilder_Admin {
 		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 			$module_options = array();
-			foreach ( filter_input( INPUT_POST, 'modules' ) as $key => $module ) {
+			foreach ( filter_input( INPUT_POST, 'modules', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY ) as $key => $module ) {
 				$module_options[ $key ] = $module;
 			}
 			update_option( 'bbvm_modules', $module_options );
@@ -433,7 +433,7 @@ class BBVapor_BeaverBuilder_Admin {
 				</div>
 				<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
 				<div id="tab-whitelabel" class="tab-content hide">
-					<form action="
+					<form method="POST" action="
 					<?php
 					echo esc_url(
 						add_query_arg(
@@ -445,7 +445,7 @@ class BBVapor_BeaverBuilder_Admin {
 						)
 					);
 					?>
-					" method="POST">
+					">
 					<?php
 					wp_nonce_field( 'save_bbvm_beaver_builder_options' );
 					$whitelabel = get_site_option( 'bbvm_whitelabel' );
