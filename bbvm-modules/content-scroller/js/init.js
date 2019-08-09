@@ -48,7 +48,7 @@ jQuery( document ).ready( function( $ ) {
 			var video = jQuery.trim(element.getAttribute('data-video'));
 			jQuery( '.bbvm-content-scroller-item-wrapper' ).css( 'backgroundColor', color );
 			if ( jQuery( '.bbvm-content-scroller-bg').css('background-image' ) !== 'url("' + background + '")' ) {
-				jQuery( '.bbvm-content-scroller-bg' ).animate({opacity: 0}, 0).css( 'background-image',"url(" + background + ")" ).animate({opacity: 1}, 1500 );
+				jQuery( '.bbvm-content-scroller-bg' ).animate({opacity: 0}, 0).css( 'background-image',"url(" + background + ")" ).animate({opacity: 1}, 500 );
 			}
 
 			if ( '' !== video ) {
