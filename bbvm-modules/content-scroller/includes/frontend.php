@@ -10,7 +10,7 @@
 
 $count = 1;
 ?>
-<div class="fl-bbvm-content-scroller-for-beaverbuilder">
+<div class="fl-bbvm-content-scroller-for-beaverbuilder" style="opacity: 0;">
 	<div class="fl-bbvm-content-scroller-for-beaverbuilder-waypoint"></div>
 	<div class="fl-bbvm-content-scroller-items">
 		<?php
