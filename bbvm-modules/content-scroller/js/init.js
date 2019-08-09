@@ -27,7 +27,7 @@ jQuery( document ).ready( function( $ ) {
 			var background =  element.getAttribute( 'data-background' );
 			var video = jQuery.trim(element.getAttribute('data-video'));
 			jQuery( '.bbvm-content-scroller-item-wrapper' ).css( 'backgroundColor', color );
-			jQuery( '.bbvm-content-scroller-bg' ).css( 'background-image',"url(" + background + ")" );
+			jQuery( '.bbvm-content-scroller-bg' ).animate({opacity: 0}, 0).css( 'background-image',"url(" + background + ")" ).animate({opacity: 1}, 1500 );
 
 			if ( '' !== video ) {
 				var video = '<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">';

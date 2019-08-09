@@ -9,8 +9,23 @@
  */
 
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-responsive-for-beaverbuilder {
-	display: none;
+@keyframes bbvm-content-scroller-fade-in {
+	0% { opacity: 0; }
+
+	50% { opacity: 0.5;}
+	100% {opacity: 1;}
+}
+@-webkit-keyframes bbvm-content-scroller-fade-in {
+	0% { opacity: 0; }
+	25% { opacity: 0.25 }
+	50% { opacity: 0.5;}
+	100% {opacity: 1;}
+}
+
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.bbvm-fade-in {
+	animation: bbvm-content-scroller-fade-in 1s forwards;
+	-moz-animation: bbvm-content-scroller-fade-in 1s forwards;
+	-webkit-animation: bbvm-content-scroller-fade-in 1s forwards;
 }
 .ast-container {
 	margin: 0 !important;
@@ -113,13 +128,6 @@
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-content-scroller-item-wrapper .bbvm-content-scroller-bg {
-	-webkit-transition: background 0.8s linear;
-	-moz-transition: background 0.8s linear;
-	-o-transition: background 0.8s linear;
-	-ms-transition: background 0.8s linear;
-	transition: background 0.8s linear;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder:after,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-items:after,
