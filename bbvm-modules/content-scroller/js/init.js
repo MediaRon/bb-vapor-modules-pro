@@ -85,7 +85,8 @@ jQuery( document ).ready( function( $ ) {
 
 
 			}
-		}
+		},
+		offset: 0 == i ? -20 : 200,
 		});
 
 	}
