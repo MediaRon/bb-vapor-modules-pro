@@ -1,14 +1,10 @@
 <?php
 /**
- * Advanced Headings Module
+ * Headline block or inline.
  *
- * @link https://bbvapormodules.com
- *
- * @package BB Vapor Modules
- * @since 1.3.0
+ * @package BB Vapor Modules Pro.
  */
 
-// Headline block or inline.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline {
 	position: relative;
@@ -45,7 +41,7 @@ if ( 'normal' === $settings->headline_select ) {
 	foreach ( $settings->headlines as $headline ) {
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?>, .fl-node-<?php echo esc_html( $id ); ?>.bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> a {
-			color: #<?php echo esc_html( $headline->headline_color ); ?>;
+			color: <?php echo esc_html( isset( $headline->headline_color ) ? '#' . $headline->headline_color : 'inherit' ); ?> !important;
 		}
 		<?php
 		FLBuilderCSS::typography_field_rule(
