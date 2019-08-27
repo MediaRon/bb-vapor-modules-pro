@@ -12,7 +12,7 @@ $bbvm_count = 0;
 foreach ( $settings->headlines as $headline ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
-		color: #<?php echo esc_html( $headline->headline_color ); ?>;
+		color: <?php echo esc_html( isset( $headline->headline_color ) ? '#' . $headline->headline_color : 'inherit' ); ?> !important;
 	}
 	<?php
 	FLBuilderCSS::typography_field_rule(
