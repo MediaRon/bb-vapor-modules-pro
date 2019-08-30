@@ -23,11 +23,11 @@ class BBVapor_Category_Grid_Module extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Category_Grid_Module',
 	array(
-		'category' => array(
+		'category'   => array(
 			'title' => __( 'Category Selection', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'options'  => array(
+		'options'    => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'image' => array(
@@ -95,7 +95,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'box'      => array(
+		'box'        => array(
 			'title'    => __( 'Box Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'box' => array(
@@ -170,11 +170,27 @@ FLBuilder::register_module(
 								),
 							),
 						),
+						'show_term_count'           => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Term Count', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+							'toggle'  => array(
+								'yes' => array(
+									'tabs' => array(
+										'term-count',
+									),
+								),
+							),
+						),
 					),
 				),
 			),
 		),
-		'overlay'  => array(
+		'overlay'    => array(
 			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'photo' => array(
@@ -200,7 +216,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'button'   => array(
+		'button'     => array(
 			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'button' => array(
@@ -272,6 +288,84 @@ FLBuilder::register_module(
 						'button_typography'         => array(
 							'type'  => 'typography',
 							'label' => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+						),
+					),
+				),
+			),
+		),
+		'term-count' => array(
+			'title'    => __( 'Term Count', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'term-count' => array(
+					'title'  => __( 'Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'term_count_text'               => array(
+							'type'    => 'text',
+							'label'   => __( 'Term Count Text', 'bb-vapor-modules-pro' ),
+							/** Translators: %d is How many items are in a category or term */
+							'default' => __( '%d Items', 'bb-vapor-modules-pro' ), // phpcs:ignore
+						),
+						'term_count_background'         => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Background Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => 'FFFFFF',
+						),
+						'term_count_background_hover'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
+						'term_count_color'              => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'default'    => '000000',
+							'show_alpha' => true,
+						),
+						'term_count_color_hover'        => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Text Hover Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => 'FFFFFF',
+						),
+						'term_count_border_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Border Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
+						'term_count_border_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Term Count Border Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+							'default'    => '000000',
+						),
+						'term_count_border_width'       => array(
+							'type'        => 'unit',
+							'label'       => __( 'Term Count Border Width', 'bb-vapor-modules-pro' ),
+							'default'     => '2',
+							'description' => 'px',
+						),
+						'term_count_border_width_hover' => array(
+							'type'        => 'unit',
+							'label'       => __( 'Term Count Border Width on Hover', 'bb-vapor-modules-pro' ),
+							'default'     => '0',
+							'description' => 'px',
+						),
+						'term_count_padding'            => array(
+							'type'  => 'dimension',
+							'label' => __( 'Term Count Padding', 'bb-vapor-modules-pro' ),
+						),
+						'term_count_typography'         => array(
+							'type'  => 'typography',
+							'label' => __( 'Term Count Typography', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
