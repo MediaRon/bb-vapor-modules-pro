@@ -137,6 +137,15 @@
 				printf( '<div class="bbvm-category">%s</div>', esc_html( $bbvm_term->name ) );
 				?>
 				<?php
+				if ( 'yes' === $settings->show_term_count ) {
+					?>
+					<div class="grid-category-button grid-category-count">
+						<a href="<?php echo esc_url( get_term_link( $bbvm_term ) ); ?>"><?php echo esc_html( sprintf( $settings->term_count_text, $bbvm_term->count ) ); ?></a>
+					</div>
+					<?php
+				}
+				?>
+				<?php
 				if ( 'yes' === $settings->show_button ) {
 					?>
 					<div class="grid-category-button">

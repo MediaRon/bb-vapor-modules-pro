@@ -213,3 +213,52 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button a",
 	)
 );
+// Setup term count button.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count {
+	display: block;
+	position: relative;
+	z-index: 5;
+	text-align: center;
+	margin-top: auto;
+	margin-bottom: 30px;
+	min-width: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_background ) ); ?>;
+	border: <?php echo absint( $settings->term_count_border_width ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count a {
+	display: block;
+	padding: 10px 20px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count a:hover, .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li:hover .grid-category-button.grid-category-count, .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button:hover {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_background_hover ) ); ?>;
+	border: <?php echo absint( $settings->term_count_border_width_hover ); ?>px solid <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->term_count_border_color_hover ) ); ?>;
+}
+<?php
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'term_count_padding',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count a",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'term_count_padding_top',
+			'padding-right'  => 'term_count_padding_right',
+			'padding-bottom' => 'term_count_padding_bottom',
+			'padding-left'   => 'term_count_padding_left',
+		),
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'term_count_typography',
+		'selector'     => ".fl-node-$id .fl-bbvm-category-grid-for-beaverbuilder li .grid-category-button.grid-category-count a",
+	)
+);
