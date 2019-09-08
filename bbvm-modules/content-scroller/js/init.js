@@ -74,19 +74,18 @@ jQuery( document ).ready( function( $ ) {
 					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').removeClass('bbvm-fade-in' ).show().css( 'opacity', 1 );
 					jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').hide();
 				}
-				if ( jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').is(':hidden' ) ) {
-					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').addClass('stuck');
-					if ( ! bbvm_content_scroller_refresh ) {
-						bbvm_content_scroller_refresh = true;
-						setTimeout( function() { Waypoint.refreshAll() }, 500 );
+				if ( 'up' == direction ) {
+					if ( jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').is(':hidden' ) ) {
+						jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').addClass('stuck');
+						if ( ! bbvm_content_scroller_refresh ) {
+							bbvm_content_scroller_refresh = true;
+							setTimeout( function() { Waypoint.refreshAll() }, 500 );
+						}
 					}
 				}
-
-
-
 			}
 		},
-		offset: 0 == i ? -20 : 100,
+		offset: 0 == i ? -40 : 0,
 		});
 
 	}
