@@ -87,7 +87,7 @@
 					} else {
 						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 					}
-				} elseif ( 'acf' === $settings->image_type ) {
+				} elseif ( 'acf' === $settings->image_type && function_exists( 'get_field' ) ) {
 					$acf_field        = $settings->acf_field;
 					$background_array = get_field(
 						$acf_field,
@@ -103,7 +103,7 @@
 				} elseif ( 'custom' === $settings->image_type ) {
 					$custom        = $settings->meta_key;
 					$category_meta = get_term_meta( $bbvm_term->term_id, $custom, true );
-					if ( empty( $category_meta ) ) {
+					if ( false === $category_meta ) {
 						echo sprintf( ' style="background-image: url(%s);"', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' ) );
 					} else {
 						if ( filter_var( $category_meta, FILTER_VALIDATE_INT ) ) {
@@ -114,6 +114,8 @@
 							if ( isset( $category_meta['ID'] ) ) {
 								$image     = wp_get_attachment_image_src( $category_meta['ID'], 'large', false );
 								$image_url = $image[0];
+							} else {
+								$image_url = esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/includes/default-alex-knight-1438228-unsplash.jpg' );
 							}
 						} else {
 							$image_url = $category_meta;
