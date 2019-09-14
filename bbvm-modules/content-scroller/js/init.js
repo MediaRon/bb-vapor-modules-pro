@@ -1,4 +1,5 @@
 jQuery( document ).ready( function( $ ) {
+	var $window = $(window);
 	var bbvm_content_scroller_elements = document.getElementsByClassName('bbvm-content-scroller-content');
 	var bbvm_content_scroller_arrayLength = bbvm_content_scroller_elements.length;
 	var bbvm_content_scroller_sticky = jQuery('.fl-bbvm-content-scroller-for-beaverbuilder');
@@ -9,15 +10,15 @@ jQuery( document ).ready( function( $ ) {
 	var bbvm_content_scroller_waypoint = jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint:visible' );
 	if ( bbvm_content_scroller_waypoint.length > 0 ) {
 		var scroller_waypoint = new Waypoint( {
-		element: jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint' )[0],
-		handler: function( direction ) {
-			if ( 'down' === direction ) {
-				bbvm_content_scroller_sticky.addClass('stuck');
-			} else {
-				bbvm_content_scroller_sticky.removeClass('stuck');
+			element: jQuery( '.fl-bbvm-content-scroller-for-beaverbuilder-waypoint' )[0],
+			handler: function( direction ) {
+				if ( 'down' === direction ) {
+					bbvm_content_scroller_sticky.addClass('stuck');
+				} else {
+					bbvm_content_scroller_sticky.removeClass('stuck');
+				}
 			}
-		}
-	})
+		});
 	}
 
 	var resposiveWaypoint = new Array();
@@ -35,6 +36,14 @@ jQuery( document ).ready( function( $ ) {
 			}
 		})
 	}
+
+	$window.scroll(function() {
+		if ( $window.scrollTop() == 0 ) {
+			var element = jQuery( bbvm_content_scroller_elements[0] );
+			var background = element.data('background');
+			jQuery( '.bbvm-content-scroller-bg' ).css( 'background-image',"url(" + background + ")" );
+		}
+	});
 
 	var bbvm_content_scroller_refresh = false;
 	var bbvm_content_scroller_bg_refresh = false;
@@ -74,18 +83,19 @@ jQuery( document ).ready( function( $ ) {
 					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').removeClass('bbvm-fade-in' ).show().css( 'opacity', 1 );
 					jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').hide();
 				}
-				if ( 'up' == direction ) {
-					if ( jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').is(':hidden' ) ) {
-						jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').addClass('stuck');
-						if ( ! bbvm_content_scroller_refresh ) {
-							bbvm_content_scroller_refresh = true;
-							setTimeout( function() { Waypoint.refreshAll() }, 500 );
-						}
+				if ( jQuery('.fl-bbvm-content-scroller-responsive-for-beaverbuilder').is(':hidden' ) ) {
+					jQuery('.fl-bbvm-content-scroller-for-beaverbuilder').addClass('stuck');
+					if ( ! bbvm_content_scroller_refresh ) {
+						bbvm_content_scroller_refresh = true;
+						setTimeout( function() { Waypoint.refreshAll() }, 500 );
 					}
 				}
+
+
+
 			}
 		},
-		offset: 0 == i ? -40 : 0,
+		offset: 0 == i ? -100 : 100,
 		});
 
 	}
