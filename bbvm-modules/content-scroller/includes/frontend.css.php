@@ -23,9 +23,7 @@
 }
 
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-content-scroller-for-beaverbuilder.bbvm-fade-in {
-	animation: bbvm-content-scroller-fade-in 1s forwards;
-	-moz-animation: bbvm-content-scroller-fade-in 1s forwards;
-	-webkit-animation: bbvm-content-scroller-fade-in 1s forwards;
+
 }
 .ast-container {
 	margin: 0 !important;
