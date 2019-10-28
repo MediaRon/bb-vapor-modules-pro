@@ -58,6 +58,10 @@ FLBuilder::register_settings_form(
 								),
 								'default' => 'inline',
 							),
+							'headline_class'      => array(
+								'type'  => 'text',
+								'label' => __( 'Headline CSS Class', 'bb-vapor-modules-pro' ),
+							),
 						),
 					),
 				),
