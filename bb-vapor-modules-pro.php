@@ -119,6 +119,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Credit_Cards_Module();
 			}
 
+			// Calendly module.
+			if ( $this->is_module_enabled( $module_options, 'calendly' ) ) {
+				require_once 'bbvm-modules/calendly/bbvm-calendly-module.php';
+				new BBVapor_Calendly_Module();
+			}
+
 			// Markdown module.
 			if ( $this->is_module_enabled( $module_options, 'markdown' ) ) {
 				require_once 'bbvm-modules/markdown/bbvm-markdown.php';

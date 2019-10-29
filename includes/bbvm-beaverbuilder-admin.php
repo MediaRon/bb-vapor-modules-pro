@@ -161,6 +161,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'blockquotes'                   => 'Blockquotes',
 			'button'                        => 'Button',
 			'button-group'                  => 'Button Group',
+			'calendly'                      => 'Calendly',
 			'card'                          => 'Card',
 			'card-group'                    => 'Card Group',
 			'category-grid'                 => 'Category Grid',
