@@ -1,6 +1,6 @@
 <?php
 /**
- * Breadcrumbs Module.
+ * Credit Cards Module.
  *
  * @link https://bbvapormodules.com
  *
@@ -8,40 +8,51 @@
  * @since 1.3.0
  */
 
-if ( isset( $settings->breadcrumb_select_field ) && 'none' !== $settings->breadcrumb_select_field ) :
-	?>
-<div class="fl-bbvm-breadcrumbs-for-beaverbuilder">
-	<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+?>
+<div class="fl-bbvm-credit-cards-for-beaverbuilder">
 	<?php
-	switch ( $settings->breadcrumb_select_field ) {
-		case 'none':
-			echo '';
-			break;
-		case 'yoast':
-			if ( function_exists( 'yoast_breadcrumb' ) ) {
-				echo wp_kses_post( yoast_breadcrumb( '<p id="breadcrumbs">', '</p>', true ) );
-			}
-			break;
-		case 'breadcrumb_navxt':
-			if ( function_exists( 'bcn_display' ) ) {
-				echo wp_kses_post( bcn_display( true ) );
-			}
-			break;
-		case 'seopress':
-			if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
-				seopress_display_breadcrumbs();
-			}
-			break;
-		case 'rankmath':
-			if ( function_exists( 'rank_math_get_breadcrumbs' ) ) {
-				echo wp_kses_post( rank_math_get_breadcrumbs() );
-			}
-			break;
-		default:
-			break;
+	foreach ( $settings->creditcard as $card ) {
+		switch ( $card->credit_cards ) {
+			case 'amex':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/amex.png' ) );
+				break;
+			case 'cirrus':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/cirrus.png' ) );
+				break;
+			case 'dc':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/diners-club.png' ) );
+				break;
+			case 'discover':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/discover.png' ) );
+				break;
+			case 'maestro':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/maestro.png' ) );
+				break;
+			case 'mastercard':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/mastercard.png' ) );
+				break;
+			case 'paypal':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/paypal.png' ) );
+				break;
+			case 'sage':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/sage.png' ) );
+				break;
+			case 'shopify':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/shopify.png' ) );
+				break;
+			case 'skrill':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/skrill.png' ) );
+				break;
+			case 'visa':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/visa.png' ) );
+				break;
+			case 'wu':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/western-union.png' ) );
+				break;
+			case 'worldpay':
+				echo sprintf( '<img src="%s" />', esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . '/bbvm-modules/credit-cards/logos/worldpay.png' ) );
+				break;
+		}
 	}
 	?>
-	</div>
 </div>
-	<?php
-endif;
