@@ -77,7 +77,7 @@ FLBuilder::register_module(
 						'appearance' => array(
 							'type'    => 'select',
 							'label'   => __( 'Appearance', 'bb-vapor-modules-pro' ),
-							'options'  => array(
+							'options' => array(
 								'stacked' => __( 'Stacked', 'bb-vapor-modules-pro' ),
 								'inline'  => __( 'Inline', 'bb-vapor-modules-pro' ),
 							),
