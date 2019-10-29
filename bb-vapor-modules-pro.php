@@ -113,6 +113,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Timeline_Module();
 			}
 
+			// Credit Card module.
+			if ( $this->is_module_enabled( $module_options, 'credit-cards' ) ) {
+				require_once 'bbvm-modules/credit-cards/bbvm-credit-cards.php';
+				new BBVapor_Credit_Cards_Module();
+			}
+
 			// Markdown module.
 			if ( $this->is_module_enabled( $module_options, 'markdown' ) ) {
 				require_once 'bbvm-modules/markdown/bbvm-markdown.php';

@@ -68,10 +68,11 @@ FLBuilder::register_module(
 					'title'  => __( 'Credit Cards', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'creditcard' => array(
-							'type'     => 'form',
-							'label'    => __( 'Credit Card', 'bb-vapor-modules-pro' ),
-							'form'     => 'bbvm_credit_cards',
-							'multiple' => true,
+							'type'         => 'form',
+							'label'        => __( 'Credit Card', 'bb-vapor-modules-pro' ),
+							'form'         => 'bbvm_credit_cards',
+							'multiple'     => true,
+							'preview_text' => 'credit_cards',
 						),
 					),
 				),
