@@ -31,11 +31,11 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Calendly', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'calendar_name' => array(
+						'calendar_name'     => array(
 							'type'  => 'text',
 							'label' => __( 'Calendly Calendar Name', 'bb-vapor-modules-pro' ),
 						),
-						'calendar_type' => array(
+						'calendar_type'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Embed Type', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -43,6 +43,30 @@ FLBuilder::register_module(
 								'popup'     => __( 'Popup Widget', 'bb-vapor-modules-pro' ),
 								'popuptext' => __( 'Popup Text Link', 'bb-vapor-modules-pro' ),
 							),
+						),
+						'hide_page_details' => array(
+							'type'    => 'select',
+							'label'   => __( 'Hide Page Details', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+						),
+						'background_color'  => array(
+							'type'    => 'color',
+							'label'   => __( 'Background Color', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
+						),
+						'text_color'        => array(
+							'type'    => 'color',
+							'label'   => __( 'Text Color', 'bb-vapor-modules-pro' ),
+							'default' => '4D5055',
+						),
+						'button_color'      => array(
+							'type'    => 'color',
+							'label'   => __( 'Button and Link Color', 'bb-vapor-modules-pro' ),
+							'default' => '00A2FF',
 						),
 					),
 				),
