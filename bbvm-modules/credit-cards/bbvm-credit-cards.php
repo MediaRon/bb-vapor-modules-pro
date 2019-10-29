@@ -83,7 +83,17 @@ FLBuilder::register_module(
 							),
 							'default' => 'inline',
 						),
-						'align' => array(
+						'size'       => array(
+							'type'    => 'select',
+							'label'   => __( 'Size', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'small'  => __( 'Small', 'bb-vapor-modules-pro' ),
+								'medium' => __( 'Medium', 'bb-vapor-modules-pro' ),
+								'large'  => __( 'Large', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'medium',
+						),
+						'align'      => array(
 							'type'    => 'align',
 							'label'   => __( 'Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
