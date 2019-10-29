@@ -74,53 +74,19 @@ FLBuilder::register_module(
 							'multiple'     => true,
 							'preview_text' => 'credit_cards',
 						),
-					),
-				),
-			),
-		),
-		'styles'  => array(
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'styles' => array(
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'breadcrumb_padding'          => array(
-							'type'  => 'dimension',
-							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
-						),
-						'breadcrumb_background_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Background Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#FFFFFF',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'breadcrumb_text_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#000000',
-							'show_reset' => true,
-						),
-						'breadcrumb_link_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Link Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#000000',
-							'show_reset' => true,
-						),
-						'breadcrumb_link_hover_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Link Hover Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#000000',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'breadcrumb_typography'       => array(
-							'type'    => 'typography',
-							'label'   => __( 'Typography', 'bb-vapor-modules-pro' ),
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-breadcrumbs-for-beaverbuilder',
+						'appearance' => array(
+							'type'    => 'select',
+							'label'   => __( 'Appearance', 'bb-vapor-modules-pro' ),
+							'options'  => array(
+								'stacked' => __( 'Stacked', 'bb-vapor-modules-pro' ),
+								'inline'  => __( 'Inline', 'bb-vapor-modules-pro' ),
 							),
+							'default' => 'inline',
+						),
+						'align' => array(
+							'type'    => 'align',
+							'label'   => __( 'Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
 						),
 					),
 				),
