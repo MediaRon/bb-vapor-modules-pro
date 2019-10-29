@@ -166,6 +166,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'category-grid'                 => 'Category Grid',
 			'content-scroller'              => 'Content Scroller',
 			'copyright'                     => 'Copyright',
+			'credit-cards'                  => 'Credit Cards',
 			'edd-download-count'            => 'EDD Download Count',
 			'faq'                           => 'FAQ',
 			'featured-category'             => 'Featured Category',
@@ -347,7 +348,6 @@ class BBVapor_BeaverBuilder_Admin {
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
 						<?php endif; ?>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
-						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-template-cloud' ) ); ?>" class="nav-tab show" data-tab-name="tab-template-cloud" style="">Template Cloud</a>
 					</h2>
 				</div>
 				<div id="tab-welcome" class="tab-content hide">
@@ -573,9 +573,6 @@ class BBVapor_BeaverBuilder_Admin {
 				</table>
 				</form>
 				</div>
-			<div id="tab-template-cloud" class="tab-content hide">
-				<h2>Coming Soon</h2>
-			</div>
 		</div>
 		<?php
 	}
