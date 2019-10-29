@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.3.11
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,11 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.4.0 =
+* Released 2019-10-29
+* Added class to content scroller variable headlines for CSS targeting.
+* New credit card module for displaying payment types.
 
 = 1.3.11 =
 * Released 2019-09-14
