@@ -43,6 +43,30 @@ FLBuilder::register_module(
 								'popup'     => __( 'Popup Widget', 'bb-vapor-modules-pro' ),
 								'popuptext' => __( 'Popup Text Link', 'bb-vapor-modules-pro' ),
 							),
+							'toggle'  => array(
+								'fields' => array(
+									'popup' => array(
+										'popup_button_text',
+										'popup_button_background_color',
+										'popup_button_text_color',
+									),
+								),
+							),
+						),
+						'popup_button_text' => array(
+							'type'    => 'text',
+							'label'   => __( 'Popup Button Text', 'bb-vapor-modules-pro' ),
+							'default' => __( 'Schedule time with me', 'bb-vapor-modules-pro' ),
+						),
+						'popup_button_background_color' => array(
+							'type'    => 'color',
+							'label'   => __( 'Popup Button Background Color', 'bb-vapor-modules-pro' ),
+							'default' => '00A2FF',
+						),
+						'popup_button_text_color' => array(
+							'type'    => 'color',
+							'label'   => __( 'Popup Button Text Color', 'bb-vapor-modules-pro' ),
+							'default' => 'FFFFFF',
 						),
 						'hide_page_details' => array(
 							'type'    => 'select',
@@ -51,7 +75,7 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'yes',
+							'default' => 'no',
 						),
 						'background_color'  => array(
 							'type'    => 'color',
