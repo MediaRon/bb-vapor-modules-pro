@@ -123,6 +123,8 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'calendly' ) ) {
 				require_once 'bbvm-modules/calendly/bbvm-calendly-module.php';
 				new BBVapor_Calendly_Module();
+				// Customizer.
+				add_action( 'customize_register', array( $this, 'calendly_customizer' ) );
 			}
 
 			// Markdown module.
@@ -434,6 +436,231 @@ class BBVapor_Modules_Pro {
 	}
 
 	/**
+	 * Add Calendly to the WordPress Customizer.
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param  WP_Customize_Manager $customizer Customizer object.
+	 */
+	public function calendly_customizer( $customizer ) {
+		$customizer->add_section(
+			'Vapor Calendly',
+			array(
+				'title'      => __( 'Calendly', 'bb-vapor-modules-pro' ),
+				'priority'   => 120,
+				'capability' => 'edit_theme_options',
+			)
+		);
+
+		// Calendly Enable.
+		$customizer->add_setting(
+			'bb-vapor-modules-pro-calendly[calendly-enable]',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => array( $this, 'customizer_sanitize_checkbox' ),
+				'type'              => 'option',
+			)
+		);
+
+		$customizer->add_control(
+			'bb-vapor-modules-pro-calendly[calendly-enable]',
+			array(
+				'type'        => 'checkbox',
+				'label'       => __( 'Popup Enabled?', 'bb-vapor-modules-pro' ),
+				'section'     => 'Vapor Calendly',
+				'settings'    => 'bb-vapor-modules-pro-calendly[calendly-enable]',
+				'priority'    => 10,
+				'description' => __( 'Enable Calendly Popup', 'bb-vapor-modules-pro' ),
+			)
+		);
+
+		$customizer->add_setting(
+			'bb-vapor-modules-pro-calendly[bbvm_calendly_account]',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'sanitize_text_field',
+				'type'              => 'option',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Control(
+				$customizer,
+				'bb-vapor-modules-pro-calendly[bbvm_calendly_account]',
+				array(
+					'type'     => 'text',
+					'label'    => __( 'Calendly Account Name', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bb-vapor-modules-pro-calendly[bbvm_calendly_account]',
+					'priority' => 10,
+				)
+			)
+		);
+
+		$customizer->add_setting(
+			'bb-vapor-modules-pro-calendly[bbvm_calendly_button_text]',
+			array(
+				'capability'        => 'edit_theme_options',
+				'default'           => __( 'Schedule time with me', 'bb-vapor-modules-pro' ),
+				'sanitize_callback' => 'sanitize_text_field',
+				'type'              => 'option',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Control(
+				$customizer,
+				'bb-vapor-modules-pro-calendly[bbvm_calendly_button_text]',
+				array(
+					'type'     => 'text',
+					'label'    => __( 'Calendly Button Text', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bb-vapor-modules-pro-calendly[bbvm_calendly_button_text]',
+					'priority' => 10,
+				)
+			)
+		);
+
+		$customizer->add_setting(
+			'bbvm_calendly_button_background_color',
+			array(
+				'capability' => 'edit_theme_options',
+				'default'    => '#00A2FF',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Color_Control(
+				$customizer,
+				'bbvm_calendly_button_background_color',
+				array(
+					'label'    => __( 'Calendly Button Background Color', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bbvm_calendly_button_background_color',
+					'priority' => 12,
+				)
+			)
+		);
+
+		$customizer->add_setting(
+			'bbvm_calendly_button_text_color',
+			array(
+				'capability' => 'edit_theme_options',
+				'default'    => '#FFFFFF',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Color_Control(
+				$customizer,
+				'bbvm_calendly_button_text_color',
+				array(
+					'label'    => __( 'Calendly Button Text Color', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bbvm_calendly_button_text_color',
+					'priority' => 12,
+				)
+			)
+		);
+
+		// Calendly Enable.
+		$customizer->add_setting(
+			'bb-vapor-modules-pro-calendly[page-settings-enable]',
+			array(
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => array( $this, 'customizer_sanitize_checkbox' ),
+				'type'              => 'option',
+			)
+		);
+
+		$customizer->add_control(
+			'bb-vapor-modules-pro-calendly[page-settings-enable]',
+			array(
+				'type'        => 'checkbox',
+				'label'       => __( 'Page Settings Enabled?', 'bb-vapor-modules-pro' ),
+				'section'     => 'Vapor Calendly',
+				'settings'    => 'bb-vapor-modules-pro-calendly[page-settings-enable]',
+				'priority'    => 14,
+				'description' => __( 'Customize the look of your booking page to fit seamlessly into your website.', 'bb-vapor-modules-pro' ),
+				'default'     => true,
+			)
+		);
+
+		$customizer->add_setting(
+			'bbvm_calendly_background_color',
+			array(
+				'capability' => 'edit_theme_options',
+				'default'    => '#FFFFFF',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Color_Control(
+				$customizer,
+				'bbvm_calendly_background_color',
+				array(
+					'label'    => __( 'Background Color', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bbvm_calendly_background_color',
+					'priority' => 15,
+				)
+			)
+		);
+
+		$customizer->add_setting(
+			'bbvm_calendly_text_color',
+			array(
+				'capability' => 'edit_theme_options',
+				'default'    => '#4D5055',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Color_Control(
+				$customizer,
+				'bbvm_calendly_text_color',
+				array(
+					'label'    => __( 'Text Color', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bbvm_calendly_text_color',
+					'priority' => 16,
+				)
+			)
+		);
+
+		$customizer->add_setting(
+			'bbvm_calendly_button_link_color',
+			array(
+				'capability' => 'edit_theme_options',
+				'default'    => '#00A2FF',
+			)
+		);
+		$customizer->add_control(
+			new WP_Customize_Color_Control(
+				$customizer,
+				'bbvm_calendly_button_link_color',
+				array(
+					'label'    => __( 'Button and Link Color', 'bb-vapor-modules-pro' ),
+					'section'  => 'Vapor Calendly',
+					'settings' => 'bbvm_calendly_button_link_color',
+					'priority' => 17,
+				)
+			)
+		);
+	}
+
+	/**
+	 * Sanitizes an input variable
+	 *
+	 * Sanitizes an input variable
+	 *
+	 * @since 1.4.0
+	 * @access public
+	 *
+	 * @param bool $input Whether the input is checked or not.
+	 *
+	 * @return bool Whether the input is checked or not
+	 */
+	public function customizer_sanitize_checkbox( $input ) {
+		// returns true if checkbox is checked.
+		return ( $input ) ? true : false;
+	}
+
+	/**
 	 * Output the Ajax URL for the front-end.
 	 */
 	public function bbvm_beaver_builder_ajax_url() {
@@ -452,9 +679,28 @@ class BBVapor_Modules_Pro {
 
 		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 20 );
 
+		add_action( 'wp_head', array( $this, 'maybe_include_calendly' ) );
+
 		// Vegas.
 		require_once 'includes/vegas-row-settings.php';
 		bbvapor_modules_row_register_settings();
+	}
+
+	/**
+	 * Include calendrly scripts.
+	 */
+	public function maybe_include_calendly() {
+		$options = get_option( 'bb-vapor-modules-pro-calendly', false );
+		if ( false === $options ) {
+			return;
+		}
+		if ( true === $options['calendly-enable'] ) {
+			?>
+			<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"><?php // phpcs:ignore ?>
+			<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script><?php // phpcs:ignore ?>
+			<script type="text/javascript">Calendly.initBadgeWidget({ url: 'https://calendly.com/<?php echo esc_js( $options['bbvm_calendly_account'] ); ?>?hide_landing_page_details=<?php echo true === $options['page-settings-enable'] ? 1 : 0; ?>&background_color=<?php echo str_replace( '#', '', esc_js( get_theme_mod( 'bbvm_calendly_background_color' ) ) ); ?>&text_color=<?php echo str_replace( '#', '', esc_js( get_theme_mod( 'bbvm_calendly_button_text_color' ) ) ); ?>&primary_color=<?php echo str_replace( '#', '', esc_js( get_theme_mod( 'bbvm_calendly_button_link_color' ) ) ); ?>', text: '<?php echo esc_js( $options['bbvm_calendly_button_text'] ); ?>', color: '<?php echo esc_js( get_theme_mod( 'bbvm_calendly_button_background_color' ) ); ?>', textColor: '<?php echo esc_js( get_theme_mod( 'bbvm_calendly_button_text_color' ) ); ?>', branding: false });</script> <?php // phpcs:ignore ?>
+			<?php
+		}
 	}
 
 	/**
@@ -469,7 +715,7 @@ class BBVapor_Modules_Pro {
 			array(
 				'site'           => get_bloginfo( 'sitename' ),
 				'start'          => false,
-				'end'            => date( 'Y' ),
+				'end'            => date( 'Y' ), // phpcs:ignore
 				'copyright_text' => __( 'Copyright', 'bb-vapor-modules-pro' ),
 				'symbol'         => '&copy;',
 			),
