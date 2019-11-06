@@ -259,6 +259,14 @@ class BBVapor_BeaverBuilder_Admin {
 			<div class="notice notice-success"><p><?php esc_html_e( 'Settings Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
 			<?php
 		}
+		if ( isset( $_POST['submit'] ) && isset( $_POST['facebook-app-id'] ) ) {
+			check_admin_referer( 'save_bbvm_beaver_builder_facebook' );
+			$facebook_app_id = filter_input( INPUT_POST, 'facebook-app-id', FILTER_DEFAULT );
+			update_site_option( 'bbvm_facebook_app_id', $facebook_app_id );
+			?>
+			<div class="notice notice-success"><p><?php esc_html_e( 'Facebook APP ID Saved!', 'bb-vapor-modules-pro' ); ?></p></div>
+			<?php
+		}
 		if ( isset( $_POST['submit'] ) && isset( $_POST['options'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
 
@@ -349,10 +357,11 @@ class BBVapor_BeaverBuilder_Admin {
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
 						<?php endif; ?>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show" data-tab-name="tab-instagram" style="">Instagram</a>
+						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-facebook' ) ); ?>" class="nav-tab show" data-tab-name="tab-facebook" style="">Facebook</a>
 					</h2>
 				</div>
 				<div id="tab-welcome" class="tab-content hide">
-					<div><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" alt="BB Vapor Modules Pro" /></div>
+					<div><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" alt="BB Vapor Modules Pro" style="max-width: 200px;" /></div>
 					<h2><?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_welcome', esc_html__( 'Welcome to BB Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h2>
 					<h3><?php esc_html_e( 'Disable/Enable Modules', 'bb-vapor-modules-pro' ); ?></h3>
 					<?php
@@ -573,7 +582,42 @@ class BBVapor_BeaverBuilder_Admin {
 					</tbody>
 				</table>
 				</form>
-				</div>
+			</div>
+			<div id="tab-facebook" class="tab-content hide">
+				<form action="
+					<?php
+					echo esc_url(
+						add_query_arg(
+							array(
+								'page' => 'bb-vapor-modules-pro',
+								'tab'  => 'tab-facebook',
+							),
+							admin_url( 'options-general.php' )
+						)
+					);
+					?>
+				" method="POST">
+				<?php
+				wp_nonce_field( 'save_bbvm_beaver_builder_facebook' );
+				?>
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<?php
+							$facebook_app_id = get_site_option( 'bbvm_facebook_app_id', '' );
+							?>
+							<th scope="row"><label for="bbvm-facebook-app-id"><?php esc_html_e( 'Facebook APP ID', 'bb-vapor-modules-pro' ); ?></label></th>
+							<td><input type="text" class="regular-text" id="bbvm-facebook-app-id" value="<?php echo esc_attr( $facebook_app_id ); ?>" name="facebook-app-id" /><p class="description"><?php esc_html_e( 'Enter a Facebook APP ID to allow for Facebook related modules.', 'bb-vapor-modules-pro' ); ?></p></td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+				<?php
+				submit_button( __( 'Save Facebook APP ID', 'bb-vapor-modules-pro' ), 'primary', 'submit', false );
+				?>
+				</p>
+				</form>
+			</div>
 		</div>
 		<?php
 	}
