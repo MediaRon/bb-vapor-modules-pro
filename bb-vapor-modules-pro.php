@@ -109,7 +109,7 @@ class BBVapor_Modules_Pro {
 
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
-				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table';
+				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
 				new BBVapor_Pricing_Table();
 			}
 

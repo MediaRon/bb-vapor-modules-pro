@@ -26,21 +26,55 @@ FLBuilder::register_module(
 	'BBVapor_Pricing_Table',
 	array(
 		'general' => array(
-			'title'    => __( 'Settings', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'blockquote_text'        => array(
-							'type'  => 'textarea',
-							'label' => __( 'Blockquote Text', 'bb-vapor-modules-pro' ),
-							'rows'  => '6',
+						'pricing_title_enable'           => array(
+							'type'    => 'select',
+							'label'   => __( 'Enable a Pricing Table Title', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+							'toggle'  => array(
+								'fields' => array(
+									'yes' => array(
+										'pricing_table_title',
+										'pricing_table_title_color',
+										'pricing_table_title_background',
+										'pricing_table_title_border',
+										'pricing_table_title_padding',
+									),
+								),
+							),
 						),
-						'blockquote_attribution' => array(
-							'type'        => 'textarea',
-							'label'       => __( 'Blockquote Attribution', 'bb-vapor-modules-pro' ),
-							'description' => __( 'May or may not be used depending on Blockquote style', 'bb-vapor-modules-pro' ),
-							'rows'        => '6',
+						'pricing_table_title'            => array(
+							'type'  => 'text',
+							'label' => __( 'Pricing Table Title', 'bb-vapor-modules-pro' ),
+						),
+						'pricing_table_title_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Pricing Table Title Text Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#000000',
+							'show_reset' => true,
+						),
+						'pricing_table_title_background' => array(
+							'label'      => __( 'Title Background Color', 'bb-vapor-modules-pro' ),
+							'type'       => 'color',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'default'    => '#17283d',
+						),
+						'pricing_table_title_border'     => array(
+							'type'  => 'border',
+							'label' => __( 'Title Border', 'bb-vapor-modules-pro' ),
+						),
+						'pricing_table_title_padding'    => array(
+							'type'  => 'dimension',
+							'label' => __( 'Title Padding', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
