@@ -40,13 +40,14 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 							'toggle'  => array(
-								'fields' => array(
-									'yes' => array(
+								'yes' => array(
+									'fields' => array(
 										'pricing_table_title',
 										'pricing_table_title_color',
 										'pricing_table_title_background',
 										'pricing_table_title_border',
 										'pricing_table_title_padding',
+										'pricing_table_title_typography',
 									),
 								),
 							),
@@ -58,7 +59,7 @@ FLBuilder::register_module(
 						'pricing_table_title_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Pricing Table Title Text Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#000000',
+							'default'    => '#FFFFFF',
 							'show_reset' => true,
 						),
 						'pricing_table_title_background' => array(
@@ -75,6 +76,15 @@ FLBuilder::register_module(
 						'pricing_table_title_padding'    => array(
 							'type'  => 'dimension',
 							'label' => __( 'Title Padding', 'bb-vapor-modules-pro' ),
+						),
+						'pricing_table_title_align'      => array(
+							'type'    => 'align',
+							'label'   => __( 'Title Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
+						'pricing_table_title_typography' => array(
+							'type'  => 'typography',
+							'label' => __( 'Title Typography', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
