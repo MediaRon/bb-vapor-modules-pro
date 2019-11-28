@@ -58,21 +58,55 @@ FLBuilder::register_module(
 				'style' => array(
 					'title'  => __( 'Style', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'background_color' => array(
+						'background_color'    => array(
 							'type'       => 'color',
 							'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'text_color'       => array(
+						'text_color'          => array(
 							'type'       => 'color',
 							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 						),
-						'padding'          => array(
+						'padding'             => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+						),
+						'typography'          => array(
+							'type'       => 'typography',
+							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'column_gap'          => array(
+							'type'        => 'unit',
+							'label'       => __( 'Column Gap', 'bb-vapor-modules-pro' ),
+							'description' => 'px',
+							'default'     => 25,
+							'slider'      => array(
+								'min'  => 0,
+								'max'  => 300,
+								'step' => 5,
+							),
+						),
+						'column_border_width' => array(
+							'type'        => 'unit',
+							'label'       => __( 'Border Width', 'bb-vapor-modules-pro' ),
+							'description' => 'px',
+							'default'     => 0,
+							'slider'      => array(
+								'min'  => 0,
+								'max'  => 20,
+								'step' => 1,
+							),
+						),
+						'column_border_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Border Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'default'    => 'rgba(0,0,0,0)',
 						),
 					),
 				),
