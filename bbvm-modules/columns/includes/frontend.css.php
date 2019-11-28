@@ -7,6 +7,7 @@
  * @package BB Vapor Modules
  * @since 1.4.5
  */
+
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-columns {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_color ) ); ?>;
