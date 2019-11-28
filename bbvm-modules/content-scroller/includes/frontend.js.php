@@ -122,4 +122,4 @@ var lastWaypointItem = new Waypoint({
 		}
 	},
 	offset: 'bottom-in-view',
-})
+});

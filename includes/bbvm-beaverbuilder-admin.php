@@ -166,6 +166,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'card-group'                    => 'Card Group',
 			'category-grid'                 => 'Category Grid',
 			'content-scroller'              => 'Content Scroller',
+			'columns'                       => 'Columns',
 			'copyright'                     => 'Copyright',
 			'credit-cards'                  => 'Credit Cards',
 			'edd-download-count'            => 'EDD Download Count',
