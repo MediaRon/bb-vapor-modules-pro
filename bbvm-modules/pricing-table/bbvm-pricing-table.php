@@ -28,7 +28,7 @@ FLBuilder::register_settings_form(
 		'title' => __( 'Add Item', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general' => array(
-				'general'  => __( 'General', 'bb-vapor-modules-pro' ),
+				'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'featured'   => array(
 						'title'  => __( 'Featured Title', 'bb-vapor-modules-pro' ),
@@ -44,6 +44,9 @@ FLBuilder::register_settings_form(
 									'yes' => array(
 										'fields' => array(
 											'featured_title',
+										),
+										'tabs' => array(
+											'featured_tab',
 										),
 									),
 								),
@@ -80,6 +83,37 @@ FLBuilder::register_settings_form(
 								'connections' => array( 'string', 'html' ),
 								'placeholder' => __( 'Per month, Lifetime, Per year...', 'bb-vapor-modules-pro' ),
 								'label'       => __( 'Duration', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+				),
+			),
+			'featured_tab' => array(
+				'title' => __( 'Featured Styles', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'featured_styles' => array(
+						'title'  => __( 'Featured Styles', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'featured_background_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'featured_text_color'       => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+								'show_reset' => true,
+							),
+							'featured_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'featured_typography'       => array(
+								'type'       => 'typography',
+								'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
 							),
 						),
 					),
