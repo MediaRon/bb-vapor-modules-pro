@@ -216,7 +216,7 @@ FLBuilder::register_settings_form(
 								'type'  => 'gradient',
 								'label' => __( 'Button Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'button_gradient_hover'     => array(
+							'button_gradient_hover'    => array(
 								'type'  => 'gradient',
 								'label' => __( 'Button Gradient on Hover', 'bb-vapor-modules-pro' ),
 							),
@@ -226,7 +226,7 @@ FLBuilder::register_settings_form(
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
-							'button_background_hover'   => array(
+							'button_background_hover'  => array(
 								'type'       => 'color',
 								'label'      => __( 'Button Background on Hover', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
@@ -238,7 +238,7 @@ FLBuilder::register_settings_form(
 								'show_alpha' => true,
 								'show_reset' => true,
 							),
-							'button_text_color_hover'   => array(
+							'button_text_color_hover'  => array(
 								'type'       => 'color',
 								'label'      => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
@@ -247,6 +247,26 @@ FLBuilder::register_settings_form(
 							'button_typography'        => array(
 								'type'       => 'typography',
 								'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+						),
+					),
+					'button_options'    => array(
+						'title'  => __( 'Button Options', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'button_padding' => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'button_margin'  => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'button_border'  => array(
+								'type'       => 'border',
+								'label'      => __( 'Button Border', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
 						),
