@@ -166,6 +166,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'card-group'                    => 'Card Group',
 			'category-grid'                 => 'Category Grid',
 			'content-scroller'              => 'Content Scroller',
+			'columns'                       => 'Columns',
 			'copyright'                     => 'Copyright',
 			'credit-cards'                  => 'Credit Cards',
 			'edd-download-count'            => 'EDD Download Count',
@@ -300,7 +301,7 @@ class BBVapor_BeaverBuilder_Admin {
 							$license_message = sprintf(
 								/* Translators: %s is a date format placeholder */
 								__( 'Your license key expired on %s.', 'bb-vapor-modules-pro' ),
-								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
+								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) ) // phpcs:ignore
 							);
 							break;
 
