@@ -22,6 +22,44 @@ class BBVapor_Pricing_Table extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
+FLBuilder::register_settings_form(
+	'bbvm_pricing_table_item',
+	array(
+		'title' => __( 'Add Item', 'bb-vapor-modules-pro' ),
+		'tabs'  => array(
+			'general' => array(
+				'general'  => __( 'General', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'featured'   => array(
+						'title'  => __( 'Featured Title', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'featured_title' => array(
+								'type'        => 'text',
+								'connections' => array( 'string', 'html', 'url' ),
+								'label'       => __( 'Enter a Title', 'bb-vapor-modules-pro' ),
+								'description' => __( 'Featured, Best Value, Discounted, etc.', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+					'item_title' => array(
+						'title'  => __( 'Item Title', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'item_title' => array(
+								'type'        => 'text',
+								'connections' => array( 'string', 'html', 'url' ),
+								'label'       => __( 'Enter an Item Title', 'bb-vapor-modules-pro' ),
+								'description' => __( 'Basic, Pro, Premium, Lifetime, etc.', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+				),
+			),
+		),
+	)
+);
+/**
+ * Register the module and its form settings.
+ */
 FLBuilder::register_module(
 	'BBVapor_Pricing_Table',
 	array(
@@ -53,8 +91,9 @@ FLBuilder::register_module(
 							),
 						),
 						'pricing_table_title'            => array(
-							'type'  => 'text',
-							'label' => __( 'Pricing Table Title', 'bb-vapor-modules-pro' ),
+							'type'        => 'text',
+							'label'       => __( 'Pricing Table Title', 'bb-vapor-modules-pro' ),
+							'connections' => array( 'string', 'html' ),
 						),
 						'pricing_table_title_color'      => array(
 							'type'       => 'color',
@@ -89,6 +128,23 @@ FLBuilder::register_module(
 							'type'       => 'typography',
 							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'items'   => array(
+			'title'    => __( 'Items', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'style' => array(
+					'title'  => __( 'Items', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'items' => array(
+							'type'         => 'form',
+							'form'         => 'bbvm_pricing_table_item',
+							'preview_text' => 'title',
+							'label'        => __( 'Add an Item', 'bb-vapor-modules-pro' ),
+							'multiple'     => true,
 						),
 					),
 				),
