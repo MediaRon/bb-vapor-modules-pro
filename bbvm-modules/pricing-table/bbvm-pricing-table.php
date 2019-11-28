@@ -20,15 +20,15 @@ class BBVapor_Pricing_Table extends FLBuilderModule {
 	}
 }
 /**
- * Register the module and its form settings.
+ * Register the item addition form settings.
  */
 FLBuilder::register_settings_form(
 	'bbvm_pricing_table_item',
 	array(
 		'title' => __( 'Add Item', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general' => array(
-				'title'  => __( 'General', 'bb-vapor-modules-pro' ),
+			'general'      => array(
+				'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'featured'   => array(
 						'title'  => __( 'Featured Title', 'bb-vapor-modules-pro' ),
@@ -39,13 +39,14 @@ FLBuilder::register_settings_form(
 									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								),
+								'label'   => __( 'Show a Featured Title?', 'bb-vapor-modules-pro' ),
 								'default' => 'no',
 								'toggle'  => array(
 									'yes' => array(
 										'fields' => array(
 											'featured_title',
 										),
-										'tabs' => array(
+										'tabs'   => array(
 											'featured_tab',
 										),
 									),
@@ -73,7 +74,7 @@ FLBuilder::register_settings_form(
 					'price'      => array(
 						'title'  => __( 'Price', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'item_price' => array(
+							'item_price'    => array(
 								'type'        => 'text',
 								'connections' => array( 'string', 'html' ),
 								'label'       => __( 'Price', 'bb-vapor-modules-pro' ),
@@ -89,7 +90,7 @@ FLBuilder::register_settings_form(
 				),
 			),
 			'featured_tab' => array(
-				'title' => __( 'Featured Styles', 'bb-vapor-modules-pro' ),
+				'title'    => __( 'Featured Title', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'featured_styles' => array(
 						'title'  => __( 'Featured Styles', 'bb-vapor-modules-pro' ),
@@ -114,6 +115,126 @@ FLBuilder::register_settings_form(
 								'type'       => 'typography',
 								'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+			'features'     => array(
+				'title'    => __( 'Features', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'features' => array(
+						'title'  => __( 'Features', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'features' => array(
+								'type'        => 'text',
+								'label'       => __( 'Feature', 'bb-vapor-modules-pro' ),
+								'description' => __( 'Enter one feature.', 'bb-vapor-modules-pro' ),
+								'multiple'    => true,
+							),
+						),
+					),
+				),
+			),
+			'button'     => array(
+				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'button' => array(
+						'title'  => __( 'Button Attributes', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'button_text' => array(
+								'type'        => 'text',
+								'label'       => __( 'Button Text', 'bb-vapor-modules-pro' ),
+								'connections' => array( 'string', 'html' ),
+							),
+							'button_url' => array(
+								'type'        => 'link',
+								'label'       => __( 'Button URL', 'bb-vapor-modules-pro' ),
+								'connections' => array( 'string', 'html', 'url' ),
+							),
+							'show_icon' => array(
+								'type'    => 'select',
+								'label'   => __( 'Show an Icon?', 'bb-vapor-modules-pro' ),
+								'default' => 'no',
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'toggle' => array(
+									'yes' => array(
+										'fields' => array(
+											'button_icon',
+											'icon_position',
+										),
+									),
+								),
+							),
+							'button_icon' => array(
+								'type'    => 'icon',
+								'label'   => __( 'Choose an Icon', 'bb-vapor-modules-pro' ),
+							),
+							'icon_position' => array(
+								'type'    => 'select',
+								'label'   => __( 'Choose an Icon Location', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'before' => __( 'Before Text', 'bb-vapor-modules-pro' ),
+									'after'  => __( 'After Text', 'bb-vapor-modules-pro' ),
+								),
+							),
+						),
+					),
+					'button_appearance' => array(
+						'title'  => __( 'Button Appearance', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'button_background_select' => array(
+								'type'    => 'select',
+								'label'   => __( 'Button Appearance', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'flat'        => __( 'Flat', 'bb-vapor-modules-pro' ),
+									'gradient'    => __( 'Gradient', 'bb-vapor-modules-pro' ),
+									'transparent' => __( 'Transparent', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'flat',
+								'toggle'  => array(
+									'gradient' => array(
+										'fields' => array(
+											'button_gradient',
+										),
+									),
+								),
+							),
+							'button_gradient' => array(
+								'type'        => 'gradient',
+								'label'       => __( 'Button Gradient', 'bb-vapor-modules-pro' ),
+							),
+							'show_icon' => array(
+								'type'    => 'select',
+								'label'   => __( 'Show an Icon?', 'bb-vapor-modules-pro' ),
+								'default' => 'no',
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'toggle' => array(
+									'yes' => array(
+										'fields' => array(
+											'button_icon',
+											'icon_position',
+										),
+									),
+								),
+							),
+							'button_icon' => array(
+								'type'    => 'icon',
+								'label'   => __( 'Choose an Icon', 'bb-vapor-modules-pro' ),
+							),
+							'icon_position' => array(
+								'type'    => 'select',
+								'label'   => __( 'Choose an Icon Location', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'before' => __( 'Before Text', 'bb-vapor-modules-pro' ),
+									'after'  => __( 'After Text', 'bb-vapor-modules-pro' ),
+								),
 							),
 						),
 					),
@@ -208,7 +329,7 @@ FLBuilder::register_module(
 							'type'         => 'form',
 							'form'         => 'bbvm_pricing_table_item',
 							'preview_text' => 'title',
-							'label'        => __( 'Add an Item', 'bb-vapor-modules-pro' ),
+							'label'        => __( 'Item', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 						),
 					),
