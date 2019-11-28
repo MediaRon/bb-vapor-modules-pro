@@ -300,7 +300,7 @@ class BBVapor_BeaverBuilder_Admin {
 							$license_message = sprintf(
 								/* Translators: %s is a date format placeholder */
 								__( 'Your license key expired on %s.', 'bb-vapor-modules-pro' ),
-								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
+								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) ) // phpcs:ignore
 							);
 							break;
 
