@@ -27,7 +27,7 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Add Item', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
-			'general'      => array(
+			'general'        => array(
 				'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'featured'   => array(
@@ -63,7 +63,26 @@ FLBuilder::register_settings_form(
 					'item_title' => array(
 						'title'  => __( 'Item Title', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'item_title' => array(
+							'display_title' => array(
+								'type'    => 'select',
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'label'   => __( 'Show an Item Title?', 'bb-vapor-modules-pro' ),
+								'default' => 'yes',
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'item_title',
+										),
+										'tabs'   => array(
+											'item_title_tab',
+										),
+									),
+								),
+							),
+							'item_title'    => array(
 								'type'        => 'text',
 								'connections' => array( 'string', 'html', 'url' ),
 								'label'       => __( 'Enter an Item Title', 'bb-vapor-modules-pro' ),
@@ -74,6 +93,26 @@ FLBuilder::register_settings_form(
 					'price'      => array(
 						'title'  => __( 'Price', 'bb-vapor-modules-pro' ),
 						'fields' => array(
+							'display_price' => array(
+								'type'    => 'select',
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'label'   => __( 'Show Price?', 'bb-vapor-modules-pro' ),
+								'default' => 'yes',
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'item_price',
+											'item_duration',
+										),
+										'tabs'   => array(
+											'item_price_tab',
+										),
+									),
+								),
+							),
 							'item_price'    => array(
 								'type'        => 'text',
 								'connections' => array( 'string', 'html' ),
@@ -89,7 +128,7 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'featured_tab' => array(
+			'featured_tab'   => array(
 				'title'    => __( 'Featured Title', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'featured_styles' => array(
@@ -120,7 +159,69 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'features'     => array(
+			'item_title_tab' => array(
+				'title'    => __( 'Item Title', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'item_title' => array(
+						'title'  => __( 'Item Title', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'item_background_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'item_text_color'       => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+								'show_reset' => true,
+							),
+							'item_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'item_typography'       => array(
+								'type'       => 'typography',
+								'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+			'item_price_tab' => array(
+				'title'    => __( 'Item Price', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'item_price' => array(
+						'title'  => __( 'Item Price', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'price_background_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'price_text_color'       => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+								'show_reset' => true,
+							),
+							'price_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'price_typography'       => array(
+								'type'       => 'typography',
+								'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+			'features'       => array(
 				'title'    => __( 'Features', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'features' => array(
@@ -136,7 +237,7 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'button'       => array(
+			'button'         => array(
 				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'button'            => array(
@@ -273,7 +374,7 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'styles'       => array(
+			'styles'         => array(
 				'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'styles' => array(
