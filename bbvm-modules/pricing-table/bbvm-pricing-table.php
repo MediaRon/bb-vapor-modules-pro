@@ -136,23 +136,25 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'button'     => array(
+			'button'       => array(
 				'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
 				'sections' => array(
-					'button' => array(
+					'button'            => array(
 						'title'  => __( 'Button Attributes', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'button_text' => array(
+							'button_text'   => array(
 								'type'        => 'text',
 								'label'       => __( 'Button Text', 'bb-vapor-modules-pro' ),
 								'connections' => array( 'string', 'html' ),
 							),
-							'button_url' => array(
-								'type'        => 'link',
-								'label'       => __( 'Button URL', 'bb-vapor-modules-pro' ),
-								'connections' => array( 'string', 'html', 'url' ),
+							'button_url'    => array(
+								'type'          => 'link',
+								'label'         => __( 'Button URL', 'bb-vapor-modules-pro' ),
+								'connections'   => array( 'string', 'html', 'url' ),
+								'show_target'   => true,
+								'show_nofollow' => true,
 							),
-							'show_icon' => array(
+							'show_icon'     => array(
 								'type'    => 'select',
 								'label'   => __( 'Show an Icon?', 'bb-vapor-modules-pro' ),
 								'default' => 'no',
@@ -160,7 +162,7 @@ FLBuilder::register_settings_form(
 									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								),
-								'toggle' => array(
+								'toggle'  => array(
 									'yes' => array(
 										'fields' => array(
 											'button_icon',
@@ -169,9 +171,9 @@ FLBuilder::register_settings_form(
 									),
 								),
 							),
-							'button_icon' => array(
-								'type'    => 'icon',
-								'label'   => __( 'Choose an Icon', 'bb-vapor-modules-pro' ),
+							'button_icon'   => array(
+								'type'  => 'icon',
+								'label' => __( 'Choose an Icon', 'bb-vapor-modules-pro' ),
 							),
 							'icon_position' => array(
 								'type'    => 'select',
@@ -199,42 +201,53 @@ FLBuilder::register_settings_form(
 									'gradient' => array(
 										'fields' => array(
 											'button_gradient',
+											'button_gradient_hover',
 										),
 									),
-								),
-							),
-							'button_gradient' => array(
-								'type'        => 'gradient',
-								'label'       => __( 'Button Gradient', 'bb-vapor-modules-pro' ),
-							),
-							'show_icon' => array(
-								'type'    => 'select',
-								'label'   => __( 'Show an Icon?', 'bb-vapor-modules-pro' ),
-								'default' => 'no',
-								'options' => array(
-									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								),
-								'toggle' => array(
-									'yes' => array(
+									'flat'     => array(
 										'fields' => array(
-											'button_icon',
-											'icon_position',
+											'button_background',
+											'button_background_hover',
 										),
 									),
 								),
 							),
-							'button_icon' => array(
-								'type'    => 'icon',
-								'label'   => __( 'Choose an Icon', 'bb-vapor-modules-pro' ),
+							'button_gradient'          => array(
+								'type'  => 'gradient',
+								'label' => __( 'Button Gradient', 'bb-vapor-modules-pro' ),
 							),
-							'icon_position' => array(
-								'type'    => 'select',
-								'label'   => __( 'Choose an Icon Location', 'bb-vapor-modules-pro' ),
-								'options' => array(
-									'before' => __( 'Before Text', 'bb-vapor-modules-pro' ),
-									'after'  => __( 'After Text', 'bb-vapor-modules-pro' ),
-								),
+							'button_gradient_hover'     => array(
+								'type'  => 'gradient',
+								'label' => __( 'Button Gradient on Hover', 'bb-vapor-modules-pro' ),
+							),
+							'button_background'        => array(
+								'type'       => 'color',
+								'label'      => __( 'Button Background', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'button_background_hover'   => array(
+								'type'       => 'color',
+								'label'      => __( 'Button Background on Hover', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'button_text_color'        => array(
+								'type'       => 'color',
+								'label'      => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'button_text_color_hover'   => array(
+								'type'       => 'color',
+								'label'      => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+							'button_typography'        => array(
+								'type'       => 'typography',
+								'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
 							),
 						),
 					),
