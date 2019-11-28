@@ -1,9 +1,9 @@
 === Vapor Modules for Beaver Builder ===
 Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.4.3
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.4.5 =
+* Released 2019-11-27
+* Added CSS Columns module.
 
 = 1.4.3 =
 * Released 2019-11-14
