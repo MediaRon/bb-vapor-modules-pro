@@ -273,6 +273,27 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
+			'styles'       => array(
+				'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'styles' => array(
+						'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'item_padding'          => array(
+								'type'       => 'dimension',
+								'label'      => __( 'Item Overall Padding', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'item_background_color' => array(
+								'type'       => 'color',
+								'label'      => __( 'Item Background Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
+						),
+					),
+				),
+			),
 		),
 	)
 );
