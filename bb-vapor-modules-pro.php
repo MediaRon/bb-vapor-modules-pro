@@ -107,6 +107,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Columns module.
+			if ( $this->is_module_enabled( $module_options, 'columns' ) ) {
+				require_once 'bbvm-modules/columns/bbvm-columns.php';
+				new BBVapor_Columns();
+			}
+
 			// Timeline module.
 			if ( $this->is_module_enabled( $module_options, 'timeline' ) ) {
 				require_once 'bbvm-modules/timeline/bbvm-timeline.php';
