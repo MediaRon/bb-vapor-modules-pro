@@ -33,7 +33,22 @@ FLBuilder::register_settings_form(
 					'featured'   => array(
 						'title'  => __( 'Featured Title', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'featured_title' => array(
+							'display_featured' => array(
+								'type'    => 'select',
+								'options' => array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'no',
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'featured_title',
+										),
+									),
+								),
+							),
+							'featured_title'   => array(
 								'type'        => 'text',
 								'connections' => array( 'string', 'html', 'url' ),
 								'label'       => __( 'Enter a Title', 'bb-vapor-modules-pro' ),
@@ -49,6 +64,22 @@ FLBuilder::register_settings_form(
 								'connections' => array( 'string', 'html', 'url' ),
 								'label'       => __( 'Enter an Item Title', 'bb-vapor-modules-pro' ),
 								'description' => __( 'Basic, Pro, Premium, Lifetime, etc.', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+					'price'      => array(
+						'title'  => __( 'Price', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'item_price' => array(
+								'type'        => 'text',
+								'connections' => array( 'string', 'html' ),
+								'label'       => __( 'Price', 'bb-vapor-modules-pro' ),
+							),
+							'item_duration' => array(
+								'type'        => 'text',
+								'connections' => array( 'string', 'html' ),
+								'placeholder' => __( 'Per month, Lifetime, Per year...', 'bb-vapor-modules-pro' ),
+								'label'       => __( 'Duration', 'bb-vapor-modules-pro' ),
 							),
 						),
 					),
