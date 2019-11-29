@@ -176,7 +176,7 @@ FLBuilder::register_settings_form(
 								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
 							),
-							'item_box_padding'          => array(
+							'item_box_padding'      => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
