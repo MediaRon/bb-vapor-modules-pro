@@ -37,12 +37,22 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-1 .bbvm-pricing-table-column {
 	width: 100%;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-card {
+	overflow: hidden;
+}
 <?php
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'pricing_table_title_border',
 		'selector'     => ".fl-node-$id .bbvm-pricing-table-title",
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'feature_border',
+		'selector'     => ".fl-node-$id .bbvm-pricing-table-card",
 	)
 );
 FLBuilderCSS::dimension_field_rule(
