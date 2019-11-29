@@ -21,20 +21,28 @@
 	align-items: flex-end;
 	text-align: center;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-flex-filler {
+	display: none;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column {
 	width: 15%;
+	margin-bottom: 10px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-5 .bbvm-pricing-table-column {
 	width: 18%;
+	margin-bottom: 10px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-4 .bbvm-pricing-table-column {
 	width: 22%;
+	margin-bottom: 10px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-3 .bbvm-pricing-table-column {
 	width: 30%;
+	margin-bottom: 10px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-2 .bbvm-pricing-table-column {
 	width: 48%;
+	margin-bottom: 10px;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-1 .bbvm-pricing-table-column {
 	width: 100%;
@@ -42,7 +50,48 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-card {
 	overflow: hidden;
 }
+
 <?php
+$bbvm_column_count = count( $settings->items );
+if ( 6 === $bbvm_column_count ) :
+	?>
+	@media only screen and (max-width: 1200px) {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column,
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-flex-filler {
+			width: 18%;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-flex-filler {
+			display: block;
+		}
+	}
+	@media only screen and (max-width: 1000px) {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column,
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-flex-filler {
+			width: 22%;
+		}
+	}
+	@media only screen and (max-width: 768px) {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column,
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-flex-filler {
+			width: 30%;
+		}
+	}
+	@media only screen and (max-width: 600px) {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column,
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-flex-filler {
+			width: 48%;
+		}
+	}
+	@media only screen and (max-width: 500px) {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column {
+			width: 100%;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-flex-filler {
+			display: none;
+		}
+	}
+	<?php
+endif;
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,

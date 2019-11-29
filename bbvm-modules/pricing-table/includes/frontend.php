@@ -92,5 +92,11 @@
 		$count++;
 		endforeach;
 	?>
+		<div class="bbvm-pricing-table-flex-filler"></div>
+		<div class="bbvm-pricing-table-flex-filler"></div>
+		<div class="bbvm-pricing-table-flex-filler"></div>
+		<div class="bbvm-pricing-table-flex-filler"></div>
+		<div class="bbvm-pricing-table-flex-filler"></div>
+		<div class="bbvm-pricing-table-flex-filler"></div>
 	</div><!-- .bbvm-pricing-container -->
 </div>
