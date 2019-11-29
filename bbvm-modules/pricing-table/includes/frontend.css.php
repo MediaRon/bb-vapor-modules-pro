@@ -270,6 +270,7 @@ foreach ( $settings->items as $item ) :
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
 		display: inline-block;
 		text-decoration: none;
+		transition: all 0.2s ease;
 	}
 	<?php
 	if ( 'flat' === $item->button_background_select ) :
