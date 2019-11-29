@@ -107,6 +107,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Pricing table module.
+			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
+				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
+				new BBVapor_Pricing_Table();
+			}
+
 			// Columns module.
 			if ( $this->is_module_enabled( $module_options, 'columns' ) ) {
 				require_once 'bbvm-modules/columns/bbvm-columns.php';
