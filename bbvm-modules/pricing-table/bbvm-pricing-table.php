@@ -459,12 +459,6 @@ FLBuilder::register_module(
 							'label'      => __( 'Title Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'pricing_table_title_align'      => array(
-							'type'       => 'align',
-							'label'      => __( 'Title Alignment', 'bb-vapor-modules-pro' ),
-							'default'    => 'center',
-							'responsive' => true,
-						),
 						'pricing_table_title_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
@@ -486,6 +480,7 @@ FLBuilder::register_module(
 							'preview_text' => 'title',
 							'label'        => __( 'Item', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
+							'limit'        => 6,
 						),
 					),
 				),
