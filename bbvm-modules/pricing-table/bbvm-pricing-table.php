@@ -376,6 +376,15 @@ FLBuilder::register_settings_form(
 					'button_options'    => array(
 						'title'  => __( 'Button Options', 'bb-vapor-modules-pro' ),
 						'fields' => array(
+							'button_width'   => array(
+								'type'    => 'select',
+								'label'   => __( 'Button Width', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'inline' => __( 'Inline', 'bb-vapor-modules-pro' ),
+									'block'  => __( 'Full Width', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'inline',
+							),
 							'button_padding' => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),

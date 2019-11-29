@@ -265,7 +265,7 @@ foreach ( $settings->items as $item ) :
 	);
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button {
-		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_row_background ) ); ?>
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_row_background ) ); ?>;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
 		display: inline-block;
@@ -273,6 +273,13 @@ foreach ( $settings->items as $item ) :
 		transition: all 0.2s ease;
 	}
 	<?php
+	if ( 'block' === $item->button_width ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
+			width: 80%;
+		}
+		<?php
+	endif;
 	if ( 'flat' === $item->button_background_select ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
