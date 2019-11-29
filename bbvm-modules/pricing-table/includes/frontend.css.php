@@ -17,6 +17,7 @@
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-end;
 	text-align: center;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-container.bbvm-cols-6 .bbvm-pricing-table-column {
