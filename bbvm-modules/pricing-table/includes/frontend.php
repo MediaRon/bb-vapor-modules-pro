@@ -37,6 +37,37 @@
 					</div>
 					<?php
 				endif;
+				if ( 'yes' === $item->display_title ) :
+					?>
+					<div class="bbvm-pricing-table-title">
+						<?php
+						echo wp_kses_post( $item->item_title );
+						?>
+					</div>
+					<?php
+				endif;
+				if ( 'yes' === $item->display_price ) :
+					?>
+					<div class="bbvm-pricing-table-price">
+						<span class="bbvm-pricing-table-price-amount">
+							<?php echo wp_kses_post( $item->item_price ); ?>
+						</span>
+						<span class="bbvm-pricing-table-price-duration">
+							<?php echo wp_kses_post( $item->item_duration ); ?>
+						</span>
+					</div>
+					<?php
+				endif;
+				if ( count( $item->features > 0 ) ) :
+					echo '<ul class="bbvm-pricing-table-features">';
+					$feature_count = 1;
+					foreach ( $item->features as $feature ) :
+						$odd = ( $feature_count % 2 === 0 ) ? false : true; // phpcs:ignore
+						printf( '<li class="%s">%s</li>', ( $odd ) ? esc_attr( 'odd' ) : esc_attr( 'even' ), wp_kses_post( $feature ) );
+						$feature_count++;
+					endforeach;
+					echo '</ul>';
+				endif;
 				?>
 			</div><!-- .bbvm-pricing-table-card -->
 		</div><!-- .bbvm-pricing-table-column -->

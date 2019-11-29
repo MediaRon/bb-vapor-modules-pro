@@ -204,7 +204,12 @@ FLBuilder::register_settings_form(
 							),
 							'price_text_color'       => array(
 								'type'       => 'color',
-								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+								'label'      => __( 'Price Text Color', 'bb-vapor-modules-pro' ),
+								'show_reset' => true,
+							),
+							'duration_text_color'    => array(
+								'type'       => 'color',
+								'label'      => __( 'Duration Text Color', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
 							),
 							'price_padding'          => array(
@@ -214,7 +219,12 @@ FLBuilder::register_settings_form(
 							),
 							'price_typography'       => array(
 								'type'       => 'typography',
-								'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+								'label'      => __( 'Price Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
+							),
+							'duration_typography'    => array(
+								'type'       => 'typography',
+								'label'      => __( 'Duration Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
 						),
@@ -227,11 +237,16 @@ FLBuilder::register_settings_form(
 					'features' => array(
 						'title'  => __( 'Features', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'features' => array(
+							'features'           => array(
 								'type'        => 'text',
 								'label'       => __( 'Feature', 'bb-vapor-modules-pro' ),
 								'description' => __( 'Enter one feature.', 'bb-vapor-modules-pro' ),
 								'multiple'    => true,
+							),
+							'feature_typography' => array(
+								'type'       => 'typography',
+								'label'      => __( 'Feature Typography', 'bb-vapor-modules-pro' ),
+								'responsive' => true,
 							),
 						),
 					),
@@ -380,12 +395,12 @@ FLBuilder::register_settings_form(
 					'styles' => array(
 						'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'item_padding'          => array(
+							'item_padding'  => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Item Overall Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
-							'item_background_color' => array(
+							'item_bg_color' => array(
 								'type'       => 'color',
 								'label'      => __( 'Item Background Color', 'bb-vapor-modules-pro' ),
 								'show_alpha' => true,
