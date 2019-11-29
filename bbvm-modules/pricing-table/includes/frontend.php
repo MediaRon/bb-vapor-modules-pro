@@ -69,6 +69,23 @@
 					echo '</ul>';
 				endif;
 				?>
+				<div class="bbvm-pricing-table-button">
+					<a href="<?php echo esc_url( $item->button_url ); ?>">
+					<?php
+					if ( 'yes' === $item->show_icon && 'before' === $item->icon_position ) :
+						?>
+						<span class="<?php echo esc_attr( $item->button_icon ); ?>"></span>&nbsp;
+						<?php
+					endif;
+					echo '<span class="button-text">' . wp_kses_post( $item->button_text ) . '</span>';
+					if ( 'yes' === $item->show_icon && 'after' === $item->icon_position ) :
+						?>
+						&nbsp;<span class="<?php echo esc_attr( $item->button_icon ); ?>"></span>
+						<?php
+					endif;
+					?>
+					</a>
+				</div>
 			</div><!-- .bbvm-pricing-table-card -->
 		</div><!-- .bbvm-pricing-table-column -->
 		<?php

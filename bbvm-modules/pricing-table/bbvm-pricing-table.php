@@ -304,6 +304,12 @@ FLBuilder::register_settings_form(
 					'button_appearance' => array(
 						'title'  => __( 'Button Appearance', 'bb-vapor-modules-pro' ),
 						'fields' => array(
+							'button_row_background'    => array(
+								'type'       => 'color',
+								'label'      => __( 'Row Background Color', 'bb-vapor-modules-pro' ),
+								'show_alpha' => true,
+								'show_reset' => true,
+							),
 							'button_background_select' => array(
 								'type'    => 'select',
 								'label'   => __( 'Button Appearance', 'bb-vapor-modules-pro' ),

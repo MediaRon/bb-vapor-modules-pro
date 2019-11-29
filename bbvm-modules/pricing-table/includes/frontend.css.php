@@ -220,5 +220,91 @@ foreach ( $settings->items as $item ) :
 			),
 		)
 	);
+	// Pricing button.
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $item,
+			'setting_name' => 'button_typography',
+			'selector'     => ".fl-node-$id .bbvm-pricing-table-column.bbvm-col-$count .bbvm-pricing-table-button a .button-text",
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $item,
+			'setting_name' => 'button_padding',
+			'selector'     => ".fl-node-$id .bbvm-pricing-table-column.bbvm-col-$count .bbvm-pricing-table-button a",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'button_padding_top',
+				'padding-right'  => 'button_padding_right',
+				'padding-bottom' => 'button_padding_bottom',
+				'padding-left'   => 'button_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $item,
+			'setting_name' => 'button_margin',
+			'selector'     => ".fl-node-$id .bbvm-pricing-table-column.bbvm-col-$count .bbvm-pricing-table-button a",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'button_margin_top',
+				'margin-right'  => 'button_margin_right',
+				'margin-bottom' => 'button_margin_bottom',
+				'margin-left'   => 'button_margin_left',
+			),
+		)
+	);
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $item,
+			'setting_name' => 'button_border',
+			'selector'     => ".fl-node-$id .bbvm-pricing-table-column.bbvm-col-$count .bbvm-pricing-table-button a",
+		)
+	);
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button {
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_row_background ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
+		display: inline-block;
+		text-decoration: none;
+	}
+	<?php
+	if ( 'flat' === $item->button_background_select ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
+			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_background ) ); ?>;
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color ) ); ?>;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a:hover {
+			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_background_hover ) ); ?>;
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color_hover ) ); ?>;
+		}
+		<?php
+	endif;
+	if ( 'transparent' === $item->button_background_select ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color ) ); ?>;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a:hover {
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color_hover ) ); ?>;
+		}
+		<?php
+	endif;
+	if ( 'gradient' === $item->button_background_select ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a {
+			background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $item->button_gradient ), true ) ); // phpcs:ignore ?>;
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color ) ); ?>;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-column.bbvm-col-<?php echo absint( $count ); ?> .bbvm-pricing-table-button a:hover {
+			background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $item->button_gradient_hover ), true ) ); // phpcs:ignore ?>;
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $item->button_text_color_hover ) ); ?>;
+		}
+		<?php
+	endif;
 	$count++;
 endforeach;
