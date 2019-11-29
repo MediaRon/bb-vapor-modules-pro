@@ -534,11 +534,6 @@ FLBuilder::register_module(
 							'label'      => __( 'Feature Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'feature_border'  => array(
-							'type'       => 'border',
-							'label'      => __( 'Feature Border', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
 					),
 				),
 			),
