@@ -184,6 +184,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
 			'photoproof'                    => 'Photoproof',
 			'postselect'                    => 'Post Select',
+			'pricing-table'                 => 'Pricing Table',
 			'restaurant-menu-category'      => 'Restaurant Menu Category',
 			'restaurant-menu-item'          => 'Restaurant Menu Item',
 			'restaurant-menu-items'         => 'Restaurant Menu Items',
