@@ -13,7 +13,7 @@
 	<?php
 	if ( 'yes' === $settings->pricing_title_enable ) :
 		?>
-		<div class="bbvm-pricing-table-title">
+		<div class="bbvm-pricing-table-featured-title">
 			<?php echo esc_html( $settings->pricing_table_title ); ?>
 		</div>
 		<?php

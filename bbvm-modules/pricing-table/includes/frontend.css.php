@@ -9,7 +9,7 @@
  */
 
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-title {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-pricing-table-featured-title {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->pricing_table_title_color ) ); ?>;
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->pricing_table_title_background ) ); ?>;
 	text-align: <?php echo esc_html( $settings->pricing_table_title_align ); ?>;
@@ -47,7 +47,7 @@ FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'pricing_table_title_border',
-		'selector'     => ".fl-node-$id .bbvm-pricing-table-title",
+		'selector'     => ".fl-node-$id .bbbvm-pricing-table-featured-title",
 	)
 );
 FLBuilderCSS::border_field_rule(
@@ -61,7 +61,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'pricing_table_title_padding',
-		'selector'     => ".fl-node-$id .bbvm-pricing-table-title",
+		'selector'     => ".fl-node-$id .bbvm-pricing-table-featured-title",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'pricing_table_title_padding_top',
@@ -71,11 +71,25 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'pricing_table_title_margin',
+		'selector'     => ".fl-node-$id .bbvm-pricing-table-featured-title",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'pricing_table_title_margin_top',
+			'margin-right'  => 'pricing_table_title_margin_right',
+			'margin-bottom' => 'pricing_table_title_margin_bottom',
+			'margin-left'   => 'pricing_table_title_margin_left',
+		),
+	)
+);
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'pricing_table_title_typography',
-		'selector'     => ".fl-node-$id .bbvm-pricing-table-title",
+		'selector'     => ".fl-node-$id .bbvm-pricing-table-featured-title",
 	)
 );
 
@@ -124,14 +138,14 @@ foreach ( $settings->items as $item ) :
 		FLBuilderCSS::dimension_field_rule(
 			array(
 				'settings'     => $item,
-				'setting_name' => 'item_padding',
+				'setting_name' => 'item_box_padding',
 				'selector'     => ".fl-node-$id .bbvm-pricing-table-column.bbvm-col-$count .bbvm-pricing-table-title",
 				'unit'         => 'px',
 				'props'        => array(
-					'padding-top'    => 'item_padding_top',
-					'padding-right'  => 'item_padding_right',
-					'padding-bottom' => 'item_padding_bottom',
-					'padding-left'   => 'item_padding_left',
+					'padding-top'    => 'item_box_padding_top',
+					'padding-right'  => 'item_box_padding_right',
+					'padding-bottom' => 'item_box_padding_bottom',
+					'padding-left'   => 'item_box_padding_left',
 				),
 			)
 		);

@@ -176,7 +176,7 @@ FLBuilder::register_settings_form(
 								'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
 							),
-							'item_padding'          => array(
+							'item_box_padding'          => array(
 								'type'       => 'dimension',
 								'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
@@ -457,6 +457,7 @@ FLBuilder::register_module(
 										'pricing_table_title_border',
 										'pricing_table_title_padding',
 										'pricing_table_title_typography',
+										'pricing_table_title_margin',
 									),
 								),
 							),
@@ -489,6 +490,11 @@ FLBuilder::register_module(
 							'label'      => __( 'Title Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
+						'pricing_table_title_margin'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Title Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
 						'pricing_table_title_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
@@ -507,7 +513,7 @@ FLBuilder::register_module(
 						'items' => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_pricing_table_item',
-							'preview_text' => 'title',
+							'preview_text' => 'item_title',
 							'label'        => __( 'Item', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'limit'        => 6,
