@@ -52,9 +52,15 @@ FLBuilder::register_module(
 								),
 							),
 						),
+						'coupon_bg_color'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Coupon Background Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+						),
 						'coupon_text_color' => array(
-							'type'  => 'color',
-							'label' => __( 'Coupon Text Color', 'bb-vapor-modules-pro' ),
+							'type'       => 'color',
+							'label'      => __( 'Coupon Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
 						),
 						'coupon_border'     => array(
 							'type'  => 'border',
