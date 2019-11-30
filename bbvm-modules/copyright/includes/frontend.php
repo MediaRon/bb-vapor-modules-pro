@@ -14,7 +14,7 @@ if ( isset( $settings->copyright_site_field ) ) :
 	if ( ! empty( $settings->copyright_start_year ) ) {
 		$copyright_html .= esc_html( $settings->copyright_start_year ) . '&ndash;';
 	}
-	$copyright_html .= esc_html( date( 'Y' ) ) . '&nbsp;';
+	$copyright_html .= esc_html( date( 'Y' ) ) . '&nbsp;'; // phpcs:ignore
 	if ( ! empty( $settings->copyright_text_field ) ) {
 		$copyright_html .= esc_html( $settings->copyright_text_field ) . '&nbsp';
 	}
