@@ -8,6 +8,38 @@
  * @since 1.5.5
  */
 
+// Coupon Box Styles.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text {
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->box_background_color ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->sales_text_color ) ); ?>
+}
+<?php
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'box_padding',
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'box_padding_top',
+			'padding-right'  => 'box_padding_right',
+			'padding-bottom' => 'box_padding_bottom',
+			'padding-left'   => 'box_padding_left',
+		),
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'box_border',
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text",
+	)
+);
+
+// Coupon text styles.
+
+
 if ( 'primary' === $settings->alert_style ) :
 	?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-alerts-for-beaverbuilder .fl-bbvm-alert-text * {

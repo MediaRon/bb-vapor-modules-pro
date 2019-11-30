@@ -62,6 +62,10 @@ FLBuilder::register_module(
 							'label'      => __( 'Coupon Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 						),
+						'coupon_padding'    => array(
+							'type'  => 'dimension',
+							'label' => __( 'Coupon Padding', 'bb-vapor-modules-pro' ),
+						),
 						'coupon_border'     => array(
 							'type'  => 'border',
 							'label' => __( 'Coupon Border', 'bb-vapor-modules-pro' ),
@@ -80,6 +84,7 @@ FLBuilder::register_module(
 							'type'        => 'text',
 							'label'       => __( 'Sales Text', 'bb-vapor-modules-pro' ),
 							'description' => __( 'Enter {bbvm_simple_coupon} into the text area below', 'bb-vapor-modules-pro' ),
+							'default'     => '{bbvm_simple_coupon}',
 						),
 						'sales_typography' => array(
 							'type'       => 'typography',
@@ -96,6 +101,11 @@ FLBuilder::register_module(
 				'boxoptions' => array(
 					'title'  => __( 'Coupon Box Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
+						'box_padding'         => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
 						'box_background_color' => array(
 							'type'       => 'color',
 							'label'      => __( 'Coupon Box Background Color', 'bb-vapor-modules-pro' ),
