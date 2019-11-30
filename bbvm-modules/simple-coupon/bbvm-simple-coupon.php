@@ -101,7 +101,7 @@ FLBuilder::register_module(
 				'boxoptions' => array(
 					'title'  => __( 'Coupon Box Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'box_padding'         => array(
+						'box_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
