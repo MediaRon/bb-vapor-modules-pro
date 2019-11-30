@@ -167,7 +167,7 @@
 										<?php echo wp_kses_post( $excerpt ); ?>
 									</p>
 									<?php if ( '1' === $options['show_date'] ) : ?>
-										<p class="jp-relatedposts-post-date" style="display: block;"><?php echo esc_html( date( get_option( 'date_format' ) ), strtotime( $post->post_date ) ); ?></p>
+										<p class="jp-relatedposts-post-date" style="display: block;"><?php echo esc_html( date( get_option( 'date_format' ), strtotime( $post->post_date ) ) ); // phpcs:ignore?></p>
 									<?php endif; ?>
 									<?php if ( '1' === $options['show_context'] ) : ?>
 										<p class="jp-relatedposts-post-context"><?php echo wp_kses_post( bbvm_bb_jetpackme_get_related_terms( $related_post_id ) ); ?></p>
@@ -234,7 +234,7 @@
 										<?php echo wp_kses_post( $excerpt ); ?>
 									</p>
 									<?php if ( '1' === $options['show_date'] ) : ?>
-										<p class="jp-relatedposts-post-date" style="display: block;"><?php echo esc_html( date( get_option( 'date_format' ), strtotime( $post->post_date ) ) ); ?></p>
+										<p class="jp-relatedposts-post-date" style="display: block;"><?php echo esc_html( date( get_option( 'date_format' ), strtotime( $post->post_date ) ) ); // phpcs:ignore ?></p>
 									<?php endif; ?>
 									<?php if ( '1' === $options['show_context'] ) : ?>
 									<p class="jp-relatedposts-post-context"><?php echo wp_kses_post( bbvm_bb_jetpackme_get_related_terms( $related_post_id ) ); ?></p>

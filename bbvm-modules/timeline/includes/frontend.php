@@ -29,7 +29,7 @@
 					<?php
 					if ( 'no' === $settings->hide_date ) :
 						?>
-					<time style="<?php echo 'color: ' . esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->text_color ) ) . '; '; ?>?>"><?php echo esc_html( date( 'M d Y', strtotime( $timeline_item->date ) ) ); ?></time>
+					<time style="<?php echo 'color: ' . esc_html( BBVapor_Modules_Pro::get_color( $timeline_item->text_color ) ) . '; '; ?>?>"><?php echo esc_html( date( 'M d Y', strtotime( $timeline_item->date ) ) ); // phpcs:ignore ?></time>
 						<?php
 					endif;
 					?>

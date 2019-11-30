@@ -45,7 +45,7 @@ FLBuilder::register_module(
 						'copyright_start_year' => array(
 							'type'    => 'text',
 							'label'   => __( 'Enter your start year (Leave blank for no start year)', 'bb-vapor-modules-pro' ),
-							'default' => date( 'Y' ),
+							'default' => date( 'Y' ), // phpcs:ignore
 						),
 						'copyright_symbol'     => array(
 							'type'    => 'text',

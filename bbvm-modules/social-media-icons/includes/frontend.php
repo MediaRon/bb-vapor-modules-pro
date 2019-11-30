@@ -219,7 +219,7 @@ if ( isset( $settings->social_form ) ) {
 		$orientation = $settings->orientation;
 	}
 
-	$background_styles = [];
+	$background_styles = array();
 	$background_color  = 'FFFFFF';
 	if ( 'color' === $settings->background_select ) {
 		$background_color = $settings->background_color;
