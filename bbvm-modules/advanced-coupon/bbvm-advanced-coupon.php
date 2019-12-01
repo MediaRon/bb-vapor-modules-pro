@@ -25,29 +25,30 @@ class BBVapor_Advanced_Coupon extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Advanced_Coupon',
 	array(
-		'container'    => array(
+		'container'  => array(
 			'title'    => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'headline'    => array(
+				'headline' => array(
 					'title'  => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'background_photo'       => array(
+						'background_photo'        => array(
 							'type'        => 'photo',
 							'label'       => __( 'Background Photo', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
 						),
-						'background_overlay'   => array(
+						'background_overlay'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Background Overlay', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
+							'default'    => '4f4f4f',
 						),
-						'outer_border' => array(
+						'outer_border'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Outer Border Width', 'bb-vapor-modules-pro' ),
-							'default' => 2,
+							'default' => 8,
 						),
-						'outer_border_color' => array(
+						'outer_border_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Outer Border Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
@@ -66,12 +67,12 @@ FLBuilder::register_module(
 							),
 							'default' => 'solid',
 						),
-						'inner_border' => array(
+						'inner_border'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Inner Border Width', 'bb-vapor-modules-pro' ),
-							'default' => 4,
+							'default' => 10,
 						),
-						'inner_border_color' => array(
+						'inner_border_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Inner Border Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
@@ -89,6 +90,11 @@ FLBuilder::register_module(
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
+						),
+						'coupon_box_padding'      => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
 					),
 				),
