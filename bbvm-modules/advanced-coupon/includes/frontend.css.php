@@ -45,35 +45,17 @@ if ( ! empty( $settings->background_photo_src ) ) {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->sales_text_color ) ); ?>;
 }
 <?php
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'coupon_box_padding',
-		'selector'     => ".fl-node-$id .bbvm-advanced-coupon",
-		'unit'         => 'px',
-		'props'        => array(
-			'padding-top'    => 'coupon_box_padding_top',
-			'padding-right'  => 'coupon_box_padding_right',
-			'padding-bottom' => 'coupon_box_padding_bottom',
-			'padding-left'   => 'coupon_box_padding_left',
-		),
-	)
-);
-
 // Coupon Headline.
-
-FLBuilderCSS::border_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'box_border',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text",
-	)
-);
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-headline {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->coupon_headline_color ) ); ?>;
+}
+<?php
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
-		'setting_name' => 'sales_typography',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-headline",
+		'setting_name' => 'coupon_headline_typography',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-headline",
 	)
 );
 FLBuilderCSS::dimension_field_rule(

@@ -11,6 +11,6 @@
 ?>
 <div class="fl-bbvm-advanced-coupon-wrapper">
 	<div class="bbvm-advanced-coupon">
-		<h2 style="color: #FFF">This is a test</h2>
+		<h2 class="bbvm-advanced-coupon-headline"><?php echo wp_kses_post( $settings->coupon_headline ); ?></h2>
 	</div>
 </div>

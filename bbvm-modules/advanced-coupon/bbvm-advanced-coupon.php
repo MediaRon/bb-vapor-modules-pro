@@ -107,8 +107,9 @@ FLBuilder::register_module(
 					'title'  => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'coupon_headline'            => array(
-							'type'  => 'text',
-							'label' => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+							'type'    => 'text',
+							'label'   => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+							'default' => __( 'Huge Discount on All Our Products', 'bb-vapor-modules-pro' ),
 						),
 						'coupon_headline_color'      => array(
 							'type'       => 'color',
