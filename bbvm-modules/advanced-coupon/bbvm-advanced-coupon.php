@@ -25,94 +25,70 @@ class BBVapor_Advanced_Coupon extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Advanced_Coupon',
 	array(
-		'general'    => array(
-			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+		'container'    => array(
+			'title'    => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'    => array(
-					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
+				'headline'    => array(
+					'title'  => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'coupon_code'       => array(
-							'type'        => 'text',
-							'label'       => __( 'Coupon Code', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Enter {bbvm_simple_coupon} into the text area below', 'bb-vapor-modules-pro' ),
+						'background_photo'       => array(
+							'type'        => 'photo',
+							'label'       => __( 'Background Photo', 'bb-vapor-modules-pro' ),
+							'show_remove' => true,
 						),
-						'coupon_bg_color'   => array(
+						'background_overlay'   => array(
 							'type'       => 'color',
-							'label'      => __( 'Coupon Background Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-						),
-						'coupon_text_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Coupon Text Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-						),
-						'coupon_padding'    => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Coupon Padding', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'coupon_margin'     => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Coupon Margin', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'coupon_border'     => array(
-							'type'  => 'border',
-							'label' => __( 'Coupon Border', 'bb-vapor-modules-pro' ),
-						),
-						'coupon_typography' => array(
-							'type'       => 'typography',
-							'label'      => __( 'Coupon Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-					),
-				),
-				'sales'      => array(
-					'title'  => __( 'Sales Text', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'sales_text'         => array(
-							'type'  => 'text',
-							'label' => __( 'Sales Headline', 'bb-vapor-modules-pro' ),
-						),
-						'sales_typography'   => array(
-							'type'       => 'typography',
-							'label'      => __( 'Sales Headline Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'sales_text_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Sales Headline Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-						),
-						'sales_text_margin'  => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Sales Headline Margin', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'sales_text_padding' => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Sales Headline Padding', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-					),
-				),
-				'boxoptions' => array(
-					'title'  => __( 'Coupon Box Options', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'box_padding'          => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-						'box_background_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Coupon Box Background Color', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Background Overlay', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
 						),
-						'box_border'           => array(
-							'type'  => 'border',
-							'label' => __( 'Coupon Box Border', 'bb-vapor-modules-pro' ),
+						'outer_border' => array(
+							'type'    => 'unit',
+							'label'   => __( 'Outer Border Width', 'bb-vapor-modules-pro' ),
+							'default' => 2,
+						),
+						'outer_border_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Outer Border Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'default'    => 'db7367',
+						),
+						'outer_border_appearance' => array(
+							'type'    => 'select',
+							'label'   => __( 'Outer Border Appearance', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'none'   => __( 'None', 'bb-vapor-modules-pro' ),
+								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
+								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
+								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
+								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'solid',
+						),
+						'inner_border' => array(
+							'type'    => 'unit',
+							'label'   => __( 'Inner Border Width', 'bb-vapor-modules-pro' ),
+							'default' => 4,
+						),
+						'inner_border_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Inner Border Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'default'    => '32383e',
+						),
+						'inner_border_appearance' => array(
+							'type'    => 'select',
+							'label'   => __( 'Inner Border Appearance', 'bb-vapor-modules-pro' ),
+							'default' => 'dashed',
+							'options' => array(
+								'none'   => __( 'None', 'bb-vapor-modules-pro' ),
+								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
+								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
+								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
+								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
+							),
 						),
 					),
 				),

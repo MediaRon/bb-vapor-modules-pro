@@ -121,7 +121,7 @@ class BBVapor_Modules_Pro {
 
 			// Advanced Coupon module.
 			if ( $this->is_module_enabled( $module_options, 'advanced-coupon' ) ) {
-				require_once 'bbvm-modules/simple-coupon/bbvm-advanced-coupon.php';
+				require_once 'bbvm-modules/advanced-coupon/bbvm-advanced-coupon.php';
 				new BBVapor_Advanced_Coupon();
 			}
 
