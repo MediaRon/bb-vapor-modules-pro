@@ -31,6 +31,16 @@
 			</div>
 			<?php
 		}
+		// Show Disclaimer.
+		if ( 'yes' === $settings->show_disclaimer ) :
+			?>
+			<div class="bbvm-simple-coupon-disclaimer">
+				<?php
+					echo wp_kses_post( $settings->disclaimer_text );
+				?>
+			</div>
+			<?php
+		endif;
 		?>
 	</div>
 </div>
