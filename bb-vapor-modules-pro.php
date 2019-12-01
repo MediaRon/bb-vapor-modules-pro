@@ -119,6 +119,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Simple_Coupon();
 			}
 
+			// Advanced Coupon module.
+			if ( $this->is_module_enabled( $module_options, 'advanced-coupon' ) ) {
+				require_once 'bbvm-modules/simple-coupon/bbvm-advanced-coupon.php';
+				new BBVapor_Advanced_Coupon();
+			}
+
 			// Columns module.
 			if ( $this->is_module_enabled( $module_options, 'columns' ) ) {
 				require_once 'bbvm-modules/columns/bbvm-columns.php';
