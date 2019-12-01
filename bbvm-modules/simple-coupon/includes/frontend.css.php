@@ -140,14 +140,20 @@ FLBuilderCSS::typography_field_rule(
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
 }
 <?php
-if ( 'block' === $settings->button_width ) :
+if ( 'block' === $settings->button_width ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text .bbvm-simple-coupon-button a,
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text .bbvm-simple-coupon-button a:hover {
 		display: block;
 	}
 	<?php
-endif;
+} else {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text .bbvm-simple-coupon-button {
+		text-align: center;
+	}
+	<?php
+}
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
