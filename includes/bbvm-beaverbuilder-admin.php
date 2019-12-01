@@ -150,6 +150,7 @@ class BBVapor_BeaverBuilder_Admin {
 	 */
 	private function modules() {
 		return array(
+			'advanced-coupon'               => 'Advanced Coupon',
 			'advanced-headings'             => 'Advanced Headings',
 			'animated-letters'              => 'Animated Letters',
 			'advanced-separator'            => 'Advanced Separator',
@@ -189,6 +190,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'restaurant-menu-item'          => 'Restaurant Menu Item',
 			'restaurant-menu-items'         => 'Restaurant Menu Items',
 			'restaurant-menu-tabbed'        => 'Restaurant Tabbed Menu',
+			'simple-coupon'                 => 'Simple Coupon',
 			'simple-spacer'                 => 'Simple Spacer',
 			'simple-separator'              => 'Simple Separator',
 			'social-media-icons'            => 'Social Media Icons',

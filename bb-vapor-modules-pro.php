@@ -113,6 +113,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Pricing_Table();
 			}
 
+			// Simple Coupon module.
+			if ( $this->is_module_enabled( $module_options, 'simple-coupon' ) ) {
+				require_once 'bbvm-modules/simple-coupon/bbvm-simple-coupon.php';
+				new BBVapor_Simple_Coupon();
+			}
+
 			// Columns module.
 			if ( $this->is_module_enabled( $module_options, 'columns' ) ) {
 				require_once 'bbvm-modules/columns/bbvm-columns.php';
