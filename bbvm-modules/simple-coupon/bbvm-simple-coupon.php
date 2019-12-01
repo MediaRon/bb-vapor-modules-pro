@@ -25,7 +25,7 @@ class BBVapor_Simple_Coupon extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Simple_Coupon',
 	array(
-		'general'   => array(
+		'general'    => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general'    => array(
@@ -35,22 +35,6 @@ FLBuilder::register_module(
 							'type'        => 'text',
 							'label'       => __( 'Coupon Code', 'bb-vapor-modules-pro' ),
 							'description' => __( 'Enter {bbvm_simple_coupon} into the text area below', 'bb-vapor-modules-pro' ),
-						),
-						'select_countdown'  => array(
-							'type'    => 'select',
-							'label'   => __( 'Show a Countdown?', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'no',
-							'toggle'  => array(
-								'yes' => array(
-									'tabs' => array(
-										'countdown',
-									),
-								),
-							),
 						),
 						'coupon_bg_color'   => array(
 							'type'       => 'color',
@@ -63,8 +47,14 @@ FLBuilder::register_module(
 							'show_reset' => true,
 						),
 						'coupon_padding'    => array(
-							'type'  => 'dimension',
-							'label' => __( 'Coupon Padding', 'bb-vapor-modules-pro' ),
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'coupon_margin'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
 						'coupon_border'     => array(
 							'type'  => 'border',
@@ -120,21 +110,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'countdown' => array(
-			'title'    => __( 'Countdown', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'styles' => array(
-					'title'  => __( 'Countdown', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'coupon_expires' => array(
-							'type'  => 'date',
-							'label' => __( 'Select an Expiration Date', 'bb-vapor-modules-pro' ),
-						),
-					),
-				),
-			),
-		),
-		'cta'       => array(
+		'cta'        => array(
 			'title'    => __( 'Call to Action', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'styles' => array(
@@ -142,7 +118,7 @@ FLBuilder::register_module(
 					'fields' => array(
 						'show_cta'                      => array(
 							'type'    => 'select',
-							'label'   => __( 'Show an Call to Action Button?', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Show a Call to Action Button?', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
@@ -161,6 +137,7 @@ FLBuilder::register_module(
 										'button_padding',
 										'button_margin',
 										'button_typography',
+										'button_border',
 									),
 								),
 							),
@@ -225,6 +202,59 @@ FLBuilder::register_module(
 						'button_typography'             => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'button_border'                 => array(
+							'type'  => 'border',
+							'label' => __( 'Button Border', 'bb-vapor-modules-pro' ),
+						),
+					),
+				),
+			),
+		),
+		'disclaimer' => array(
+			'title'    => __( 'Disclaimer', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Disclaimer', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'show_disclaimer'       => array(
+							'type'    => 'select',
+							'label'   => __( 'Show a Disclaimer?', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
+							'options' => array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'disclaimer_text',
+										'disclaimer_typography',
+										'disclaimer_color',
+										'disclaimer_margin',
+									),
+								),
+							),
+						),
+						'disclaimer_text'       => array(
+							'type'        => 'text',
+							'label'       => __( 'Enter Disclaimer Text', 'bb-vapor-modules-pro' ),
+							'description' => __( 'HTML allowed', 'bb-vapor-modules-pro' ),
+						),
+						'disclaimer_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Disclaimer Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'disclaimer_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Disclaimer Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+						),
+						'disclaimer_margin'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Disclaimer Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 					),
