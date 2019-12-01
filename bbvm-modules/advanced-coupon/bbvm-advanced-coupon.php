@@ -126,6 +126,11 @@ FLBuilder::register_module(
 							'label'     => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'resonsive' => true,
 						),
+						'coupon_headline_margin'     => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
 					),
 				),
 			),
