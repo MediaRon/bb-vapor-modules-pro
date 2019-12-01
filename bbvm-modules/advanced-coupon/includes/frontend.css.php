@@ -15,11 +15,30 @@
 	position: relative;
 	border: <?php echo absint( $settings->outer_border ); ?>px <?php echo esc_html( $settings->outer_border_appearance ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->outer_border_color ) ); ?>;
 }
+<?php
+if ( ! empty( $settings->background_photo_src ) ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper {
+		background: url('<?php echo esc_url( $settings->background_photo_src ); ?>') no-repeat center;
+		background-size: cover;
+	}
+	<?php
+}
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: ' ';
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_overlay ) ); ?>;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_overlay ) ); ?>;
 	border: <?php echo absint( $settings->inner_border ); ?>px <?php echo esc_html( $settings->inner_border_appearance ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->inner_border_color ) ); ?>;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-headline {

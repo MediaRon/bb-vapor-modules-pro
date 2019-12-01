@@ -11,6 +11,6 @@
 ?>
 <div class="fl-bbvm-advanced-coupon-wrapper">
 	<div class="bbvm-advanced-coupon">
-
+		<h2 style="color: #FFF">This is a test</h2>
 	</div>
 </div>
