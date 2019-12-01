@@ -3,11 +3,11 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A growing list of Beaver Builder modules. WordPress 5.2 compatible.
+A growing list of Beaver Builder modules. WordPress 5.3 compatible.
 
 == Description ==
 
@@ -26,6 +26,10 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.5.5 =
+* Released 2019-11-30
+* Adding Simple Coupon Module.
 
 = 1.5.0 =
 * Released 2019-11-29
