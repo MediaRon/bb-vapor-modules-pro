@@ -59,6 +59,9 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+
+// Coupon Headline.
+
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
