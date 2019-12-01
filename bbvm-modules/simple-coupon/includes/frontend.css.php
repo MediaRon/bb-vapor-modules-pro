@@ -45,6 +45,34 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-simple-coupon-headline",
 	)
 );
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'sales_text_margin',
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-headline",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'sales_text_margin_top',
+			'margin-right'  => 'sales_text_margin_right',
+			'margin-bottom' => 'sales_text_margin_bottom',
+			'margin-left'   => 'sales_text_margin_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'sales_text_padding',
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-headline",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'sales_text_padding_top',
+			'padding-right'  => 'sales_text_padding_right',
+			'padding-bottom' => 'sales_text_padding_bottom',
+			'padding-left'   => 'sales_text_padding_left',
+		),
+	)
+);
 
 // Coupon text styles.
 ?>

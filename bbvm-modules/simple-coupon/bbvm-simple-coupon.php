@@ -70,19 +70,29 @@ FLBuilder::register_module(
 				'sales'      => array(
 					'title'  => __( 'Sales Text', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'sales_text'       => array(
+						'sales_text'         => array(
 							'type'  => 'text',
 							'label' => __( 'Sales Headline', 'bb-vapor-modules-pro' ),
 						),
-						'sales_typography' => array(
+						'sales_typography'   => array(
 							'type'       => 'typography',
 							'label'      => __( 'Sales Headline Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'sales_text_color' => array(
+						'sales_text_color'   => array(
 							'type'       => 'color',
 							'label'      => __( 'Sales Headline Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
+						),
+						'sales_text_margin'  => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Sales Headline Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'sales_text_padding' => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Sales Headline Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
 					),
 				),
