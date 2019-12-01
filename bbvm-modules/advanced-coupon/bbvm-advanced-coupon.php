@@ -28,7 +28,7 @@ FLBuilder::register_module(
 		'container'  => array(
 			'title'    => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'headline' => array(
+				'container' => array(
 					'title'  => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'background_photo'        => array(
@@ -95,6 +95,36 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'headline'   => array(
+			'title'    => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'headline' => array(
+					'title'  => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'coupon_headline'            => array(
+							'type'  => 'text',
+							'label' => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+						),
+						'coupon_headline_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Headline Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'default'    => 'FFFFFF',
+						),
+						'coupon_headline_typography' => array(
+							'type'      => 'typography',
+							'label'     => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'coupon_headline_padding'    => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
 						),
 					),
 				),
