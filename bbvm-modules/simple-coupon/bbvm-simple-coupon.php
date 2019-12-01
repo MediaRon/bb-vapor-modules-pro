@@ -71,19 +71,17 @@ FLBuilder::register_module(
 					'title'  => __( 'Sales Text', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'sales_text'       => array(
-							'type'        => 'text',
-							'label'       => __( 'Sales Text', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Enter {bbvm_simple_coupon} into the text area below', 'bb-vapor-modules-pro' ),
-							'default'     => '{bbvm_simple_coupon}',
+							'type'  => 'text',
+							'label' => __( 'Sales Headline', 'bb-vapor-modules-pro' ),
 						),
 						'sales_typography' => array(
 							'type'       => 'typography',
-							'label'      => __( 'Sales Text Typography', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Sales Headline Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'sales_text_color' => array(
 							'type'       => 'color',
-							'label'      => __( 'Sales Text Color', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Sales Headline Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 						),
 					),

@@ -12,6 +12,8 @@
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text {
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->box_background_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-headline {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->sales_text_color ) ); ?>;
 }
 <?php
@@ -40,13 +42,13 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'sales_typography',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text",
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-headline",
 	)
 );
 
 // Coupon text styles.
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text .bbvm-simple-coupon {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-text .bbvm-simple-coupon-wrapper span {
 	display: inline-block;
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->coupon_bg_color ) ); ?>;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->coupon_text_color ) ); ?>;
@@ -56,7 +58,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'coupon_padding',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon",
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon-wrapper span",
 		'unit'         => 'px',
 		'props'        => array(
 			'padding-top'    => 'coupon_padding_top',
@@ -70,7 +72,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'coupon_margin',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon",
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon-wrapper span",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'coupon_margin_top',
@@ -84,14 +86,14 @@ FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'coupon_border',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon",
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon-wrapper span",
 	)
 );
 FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'coupon_typography',
-		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon",
+		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon-wrapper",
 	)
 );
 

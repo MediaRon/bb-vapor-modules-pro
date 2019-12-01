@@ -12,9 +12,8 @@
 <div class="fl-bbvm-simple-coupon">
 	<div class="bbvm-simple-coupon-text">
 		<?php
-		$sales_text = $settings->sales_text;
-		$sales_text = str_replace( '{bbvm_simple_coupon}', sprintf( '<span class="bbvm-simple-coupon">%s</span>', $settings->coupon_code ), $sales_text );
-		echo wp_kses_post( $sales_text );
+		echo sprintf( '<h2 class="bbvm-simple-coupon-headline">%s</h2>', wp_kses_post( $settings->sales_text ) );
+		echo sprintf( '<div class="bbvm-simple-coupon-wrapper"><span class="bbvm-simple-coupon">%s</span></div>', wp_kses_post( $settings->coupon_code ) );
 
 		// Show button.
 		if ( 'yes' === $settings->show_cta ) {
