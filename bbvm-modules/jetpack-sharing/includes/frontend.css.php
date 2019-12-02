@@ -10,10 +10,8 @@
 
 // Button Styles.
 $icon_color = isset( $settings->icon_color ) ? esc_attr( $settings->icon_color ) : 'inherit';
-$icon_color = BBVapor_Modules_Pro::get_color( $icon_color );
 
 $icon_color_hover = isset( $settings->icon_color_hover ) ? esc_attr( $settings->icon_color_hover ) : 'inherit';
-$icon_color_hover = BBVapor_Modules_Pro::get_color( $icon_color_hover );
 
 $button_text_color = isset( $settings->button_text_color ) ? esc_attr( $settings->button_text_color ) : 'inherit';
 $button_text_color = BBVapor_Modules_Pro::get_color( $button_text_color );
@@ -65,7 +63,7 @@ if ( 'icon-text' === $settings->sharing_display ) :
 			'props'    => array(
 				'font-size' => $settings->icon_size_responsive . 'px',
 				'top'       => 'calc(50% - ' . round( $settings->icon_size_responsive / 2 ) . 'px)',
-				'color'     => $icon_color,
+				'color'     => $icon_color . ' !important',
 				'height'    => '100%',
 			),
 		)
@@ -75,7 +73,7 @@ if ( 'icon-text' === $settings->sharing_display ) :
 			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 			'media'    => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props'    => array(
-				'color' => $icon_color_hover,
+				'color' => $icon_color_hover . ' !important',
 			),
 		)
 	);
@@ -84,7 +82,7 @@ if ( 'icon-text' === $settings->sharing_display ) :
 			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 			'media'    => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props'    => array(
-				'color' => $icon_color_hover,
+				'color' => $icon_color_hover . ' !important',
 			),
 		)
 	);
@@ -93,7 +91,7 @@ if ( 'icon-text' === $settings->sharing_display ) :
 			'selector' => ".fl-node-$id .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover:before",
 			'media'    => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 			'props'    => array(
-				'color' => $icon_color_hover,
+				'color' => $icon_color_hover . ' !important',
 			),
 		)
 	);
@@ -101,10 +99,10 @@ endif;
 if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing_display ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button span {
-		color: <?php echo esc_html( $button_text_color ); ?> !important;
+		color: <?php echo esc_html( $button_text_color ); ?>;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover span {
-		color: <?php echo esc_html( $button_text_color_hover ); ?> !important;
+		color: <?php echo esc_html( $button_text_color_hover ); ?>;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
 		display: flex;
@@ -128,7 +126,7 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	if ( 'color' === $settings->button_maybe_gradient ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
-			background: <?php echo esc_html( $button_background_color ); ?>;
+			background: #<?php echo esc_html( $button_background_color ); ?>;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
 			background: <?php echo esc_html( $button_background_color_hover ); ?>;
@@ -138,10 +136,10 @@ if ( 'icon-text' === $settings->sharing_display || 'text' === $settings->sharing
 	if ( 'gradient' === $settings->button_maybe_gradient ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button {
-			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient ); // phpcs:ignore ?>
+			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient ); // phpcs:ignore ?> !important;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-jetpack-sharing-for-beaverbuilder div.sharedaddy .sd-content ul li a.sd-button:hover {
-			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient_hover ); // phpcs:ignore  ?>
+			background-image: <?php echo FLBuilderColor::gradient( $settings->button_background_gradient_hover ); // phpcs:ignore  ?> !important;
 		}
 		<?php
 	endif;
