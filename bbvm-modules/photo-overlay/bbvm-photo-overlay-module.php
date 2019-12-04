@@ -126,10 +126,6 @@ FLBuilder::register_module(
 						'overlay_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-overlay-text',
-							),
 							'responsive' => true,
 						),
 					),

@@ -189,6 +189,6 @@ FLBuilderCSS::typography_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'overlay_typography',
-		'selector'     => ".fl-node-$id .fl-bbvm-overlay-text",
+		'selector'     => ".fl-node-$id .fl-bbvm-overlay-text .fl-bbvm-overlay-text-content *",
 	)
 );
