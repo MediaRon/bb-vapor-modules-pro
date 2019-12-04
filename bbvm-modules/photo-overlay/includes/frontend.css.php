@@ -35,7 +35,7 @@ if ( false !== $padding_dimensions ) {
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figure {
 	position: relative;
 	display: inline-block;
-	padding; 0;
+	padding: 0;
 	margin: 0;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figcaption {

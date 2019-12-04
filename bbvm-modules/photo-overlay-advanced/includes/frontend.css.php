@@ -74,9 +74,16 @@ if ( false !== $padding_dimensions ) {
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo * {
 	color: <?php echo esc_html( $text_color ); ?> !important;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figure {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figure,
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo img {
 	position: relative;
 	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figcaption {
+	padding; 0;
+	margin: 0;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo.horizontal {
 	position: relative;
