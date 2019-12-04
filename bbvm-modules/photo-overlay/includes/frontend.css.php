@@ -31,9 +31,16 @@ if ( false !== $padding_dimensions ) {
 	position: relative;
 	overflow: hidden;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figure,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figure {
 	position: relative;
 	display: inline-block;
+	padding; 0;
+	margin: 0;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo figcaption {
+	padding; 0;
+	margin: 0;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-overlay-photo.horizontal {
 	position: relative;
@@ -150,6 +157,20 @@ if ( false !== $padding_dimensions ) {
 }
 
 <?php
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'image_padding',
+		'selector'     => ".fl-node-$id .fl-bbvm-overlay-photo, .fl-node-$id .fl-bbvm-overlay-photo img",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'image_padding_top',
+			'padding-right'  => 'image_padding_right',
+			'padding-bottom' => 'image_padding_bottom',
+			'padding-left'   => 'image_padding_left',
+		),
+	)
+);
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,

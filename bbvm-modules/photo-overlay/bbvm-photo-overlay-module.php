@@ -52,6 +52,11 @@ FLBuilder::register_module(
 							'label'       => __( 'Icon', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
 						),
+						'image_padding'     => array(
+							'type'        => 'dimension',
+							'label'       => __( 'Image Padding', 'bb-vapor-modules-pro' ),
+							'description' => __( 'A padding of zero is recommended', 'bb-vapor-modules-pro' ),
+						),
 					),
 				),
 			),
