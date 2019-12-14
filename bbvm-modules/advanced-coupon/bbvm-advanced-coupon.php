@@ -53,7 +53,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Outer Border Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
-							'default'    => 'db7367',
+							'default'    => '000000',
 						),
 						'outer_border_appearance' => array(
 							'type'    => 'select',
@@ -65,7 +65,7 @@ FLBuilder::register_module(
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'solid',
+							'default' => 'dashed',
 						),
 						'inner_border'            => array(
 							'type'    => 'unit',
@@ -77,12 +77,12 @@ FLBuilder::register_module(
 							'label'      => __( 'Inner Border Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
-							'default'    => '32383e',
+							'default'    => 'FFFFFF',
 						),
 						'inner_border_appearance' => array(
 							'type'    => 'select',
 							'label'   => __( 'Inner Border Appearance', 'bb-vapor-modules-pro' ),
-							'default' => 'dashed',
+							'default' => 'solid',
 							'options' => array(
 								'none'   => __( 'None', 'bb-vapor-modules-pro' ),
 								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
