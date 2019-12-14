@@ -19,6 +19,7 @@
 if ( ! empty( $settings->background_photo_src ) ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper {
+		z-index: 1;
 		background: url('<?php echo esc_url( $settings->background_photo_src ); ?>') no-repeat center;
 		background-size: cover;
 	}
@@ -33,13 +34,18 @@ if ( ! empty( $settings->background_photo_src ) ) {
 	width: 100%;
 	height: 100%;
 	content: ' ';
+	z-index: 2;
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->background_overlay ) ); ?>;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
-	position: absolute;
-	width: 100%;
-	height: 100%;
 	border: <?php echo absint( $settings->inner_border ); ?>px <?php echo esc_html( $settings->inner_border_appearance ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->inner_border_color ) ); ?>;
+}
+<?php if ( ! empty( $settings->inner_border ) ) : ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
+	padding: <?php echo absint( $settings->inner_border ); ?>px;
+}
+<?php endif; ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
+	position: relative;
+	z-index: 1000;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-simple-coupon-headline {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->sales_text_color ) ); ?>;
@@ -83,6 +89,54 @@ FLBuilderCSS::dimension_field_rule(
 			'margin-right'  => 'coupon_headline_margin_right',
 			'margin-bottom' => 'coupon_headline_margin_bottom',
 			'margin-left'   => 'coupon_headline_margin_left',
+		),
+	)
+);
+
+// Top icon if available.
+if ( 'icon' === $settings->photo_icon ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-icon span:before {
+		display: inline-block;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-icon span:before {
+		font-size: <?php echo absint( $settings->icon_size ); ?>px;
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->icon_color ) ); ?>;
+		<?php if ( 'rounded' === $settings->icon_display ) : ?>
+		overflow: hidden;
+		border-radius: 50%;
+		<?php endif; ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-icon {
+		text-align: <?php echo esc_html( $settings->icon_align ); ?>;
+	}
+	<?php
+endif;
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'icon_padding',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'icon_padding_top',
+			'padding-right'  => 'icon_padding_right',
+			'padding-bottom' => 'icon_padding_bottom',
+			'padding-left'   => 'icon_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'icon_margin',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'icon_margin_top',
+			'margin-right'  => 'icon_margin_right',
+			'margin-bottom' => 'icon_margin_bottom',
+			'margin-left'   => 'icon_margin_left',
 		),
 	)
 );

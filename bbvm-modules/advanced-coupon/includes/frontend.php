@@ -7,14 +7,20 @@
  * @package BB Vapor Modules
  * @since 1.5.6
  */
-
 ?>
 <div class="fl-bbvm-advanced-coupon-wrapper">
 	<div class="bbvm-advanced-coupon">
 		<?php
-		if ( 'yes' === $settings->show_icon && ! empty( $settings->icon ) ):
+		if ( 'icon' === $settings->photo_icon && ! empty( $settings->icon ) ) :
 			?>
 			<div class="bbvm-advanced-coupon-icon"><span class="<?php echo esc_attr( $settings->icon ); ?>"></span></div>
+			<?php
+		endif;
+		if ( 'photo' === $settings->photo_icon && ! empty( $settings->top_photo ) ) :
+			?>
+			<div class="bbvm-advanced-coupon-photo">
+				<?php echo sprintf( '<img src="%s" />', esc_url( $settings->top_photo_src ) ); ?>
+			</div>
 			<?php
 		endif;
 		?>

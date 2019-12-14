@@ -101,21 +101,32 @@ FLBuilder::register_module(
 			),
 		),
 		'icon'       => array(
-			'title'    => __( 'Coupon Icon', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Coupon Photo/Icon', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'icon' => array(
-					'title'  => __( 'Coupon Icon', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Coupon Photo/Icon', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'show_icon'    => array(
+						'photo_icon'        => array(
 							'type'    => 'select',
-							'default' => 'no',
-							'label'   => __( 'Show a Coupon Icon', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'label'   => __( 'Show a Coupon Icon/Photo', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'photo' => __( 'Photo', 'bb-vapor-modules-pro' ),
+								'icon'  => __( 'Icon', 'bb-vapor-modules-pro' ),
+								'none'  => __( 'None', 'bb-vapor-modules-pro' ),
 							),
 							'toggle'  => array(
-								'yes' => array(
+								'photo' => array(
+									'fields' => array(
+										'top_photo',
+										'top_photo_align',
+										'top_photo_display',
+										'top_photo_padding',
+										'top_photo_margin',
+										'top_photo_border',
+									),
+								),
+								'icon'  => array(
 									'fields' => array(
 										'icon_size',
 										'icon',
@@ -128,40 +139,75 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'icon_size'    => array(
-							'type'    => 'unit',
-							'label'   => __( 'Icon Size', 'bb-vapor-modules-pro' ),
-							'default' => 40,
+						'top_photo'         => array(
+							'type'        => 'photo',
+							'label'       => __( 'Photo', 'bb-vapor-modules-pro' ),
+							'show_remove' => true,
 						),
-						'icon'         => array(
-							'type'       => 'icon',
-							'label'      => __( 'Select an Icon', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
+						'top_photo_align'   => array(
+							'type'    => 'align',
+							'label'   => __( 'Photo Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
 						),
-						'icon_align'   => array(
-							'type'  => 'align',
-							'label' => __( 'Icon Alignment', 'bb-vapor-modules-pro' ),
-						),
-						'icon_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'icon_display' => array(
+						'top_photo_display' => array(
 							'type'    => 'select',
 							'default' => 'square',
+							'label'   => __( 'Photo Display', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'square'  => __( 'Square/Rectangular', 'bb-vapor-modules-pro' ),
 								'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'icon_padding' => array(
+						'top_photo_padding' => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Photo Padding', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'top_photo_margin'  => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Photo Margin', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'top_photo_border'  => array(
+							'type'      => 'border',
+							'label'     => __( 'Photo Border', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'icon_size'         => array(
+							'type'    => 'unit',
+							'label'   => __( 'Icon Size', 'bb-vapor-modules-pro' ),
+							'default' => 40,
+						),
+						'icon'              => array(
+							'type'        => 'icon',
+							'label'       => __( 'Select an Icon', 'bb-vapor-modules-pro' ),
+							'show_remove' => true,
+						),
+						'icon_align'        => array(
+							'type'  => 'align',
+							'label' => __( 'Icon Alignment', 'bb-vapor-modules-pro' ),
+						),
+						'icon_color'        => array(
+							'type'       => 'color',
+							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'icon_display'      => array(
+							'type'    => 'select',
+							'default' => 'square',
+							'label'   => __( 'Icon Appearance', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'square'  => __( 'Square/Rectangular', 'bb-vapor-modules-pro' ),
+								'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'icon_padding'      => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Icon Padding', 'bb-vapor-modules-pro' ),
 							'resonsive' => true,
 						),
-						'icon_margin'  => array(
+						'icon_margin'       => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Icon Margin', 'bb-vapor-modules-pro' ),
 							'resonsive' => true,
