@@ -111,32 +111,75 @@ if ( 'icon' === $settings->photo_icon ) :
 		text-align: <?php echo esc_html( $settings->icon_align ); ?>;
 	}
 	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'icon_padding',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'icon_padding_top',
+				'padding-right'  => 'icon_padding_right',
+				'padding-bottom' => 'icon_padding_bottom',
+				'padding-left'   => 'icon_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'icon_margin',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'icon_margin_top',
+				'margin-right'  => 'icon_margin_right',
+				'margin-bottom' => 'icon_margin_bottom',
+				'margin-left'   => 'icon_margin_left',
+			),
+		)
+	);
 endif;
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'icon_padding',
-		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
-		'unit'         => 'px',
-		'props'        => array(
-			'padding-top'    => 'icon_padding_top',
-			'padding-right'  => 'icon_padding_right',
-			'padding-bottom' => 'icon_padding_bottom',
-			'padding-left'   => 'icon_padding_left',
-		),
-	)
-);
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'icon_margin',
-		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-icon span:before",
-		'unit'         => 'px',
-		'props'        => array(
-			'margin-top'    => 'icon_margin_top',
-			'margin-right'  => 'icon_margin_right',
-			'margin-bottom' => 'icon_margin_bottom',
-			'margin-left'   => 'icon_margin_left',
-		),
-	)
-);
+
+// Top Photo if Available.
+if ( 'photo' === $settings->photo_icon ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-top-photo {
+		text-align: <?php echo esc_html( $settings->top_photo_align ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-top-photo img {
+		<?php if ( 'rounded' === $settings->top_photo_display ) : ?>
+		overflow: hidden;
+		border-radius: 50%;
+		<?php endif; ?>
+	}
+	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'top_photo_padding',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-top-photo",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'top_photo_padding_top',
+				'padding-right'  => 'top_photo_padding_right',
+				'padding-bottom' => 'top_photo_padding_bottom',
+				'padding-left'   => 'top_photo_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'top_photo_margin',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-top-photo",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'top_photo_margin_top',
+				'margin-right'  => 'top_photo_margin_right',
+				'margin-bottom' => 'top_photo_margin_bottom',
+				'margin-left'   => 'top_photo_margin_left',
+			),
+		)
+	);
+endif;
