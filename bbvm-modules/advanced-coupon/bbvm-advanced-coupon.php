@@ -120,6 +120,7 @@ FLBuilder::register_module(
 									'fields' => array(
 										'top_photo',
 										'top_photo_align',
+										'top_photo_link',
 										'top_photo_display',
 										'top_photo_padding',
 										'top_photo_margin',
@@ -143,6 +144,13 @@ FLBuilder::register_module(
 							'type'        => 'photo',
 							'label'       => __( 'Photo', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
+						),
+						'top_photo_link'    => array(
+							'type'          => 'link',
+							'label'         => __( 'Photo Link', 'bb-vapor-modules-pro' ),
+							'resonsive'     => true,
+							'show_target'   => true,
+							'show_nofollow' => true,
 						),
 						'top_photo_align'   => array(
 							'type'    => 'align',

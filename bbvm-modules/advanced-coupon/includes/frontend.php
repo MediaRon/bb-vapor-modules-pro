@@ -20,7 +20,15 @@
 		if ( 'photo' === $settings->photo_icon && ! empty( $settings->top_photo ) ) :
 			?>
 			<div class="bbvm-advanced-coupon-top-photo">
-				<?php echo sprintf( '<img src="%s" />', esc_url( $settings->top_photo_src ) ); ?>
+				<?php
+				if ( ! empty( $settings->top_photo_link ) ) {
+					echo wp_kses_post( BBVapor_Modules_Pro::get_starting_anchor( $settings, 'top_photo_link' ) );
+				}
+				echo sprintf( '<img src="%s" />', esc_url( $settings->top_photo_src ) );
+				if ( ! empty( $settings->top_photo_link ) ) {
+					echo '</a>';
+				}
+				?>
 			</div>
 			<?php
 		endif;

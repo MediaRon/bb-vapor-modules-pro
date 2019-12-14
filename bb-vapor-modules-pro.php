@@ -53,6 +53,31 @@ class BBVapor_Modules_Pro {
 	}
 
 	/**
+	 * Get an opening anchor based on link settings
+	 *
+	 * @param object $settings The Beaver Builder module settings object.
+	 * @param string $name     The setting name to check for.
+	 *
+	 * @return string Anchor HTML markup
+	 */
+	public static function get_starting_anchor( $settings, $name ) {
+		$return = sprintf( '<a href="%s"', esc_url( $settings->{$name} ) );
+
+		$no_follow = $name . '_nofollow';
+		if ( isset( $settings->{$no_follow} ) && 'yes' === $settings->{$no_follow} ) {
+			$return .= ' rel="nofollow"';
+		}
+
+		// Target.
+		$target = $name . '_target';
+		if ( isset( $settings->{$target} ) && ! empty( $settings->{$target} ) ) {
+			$return .= sprintf( ' target="%s"', esc_attr( $settings->{$target} ) );
+		}
+		$return .= '>';
+		return $return;
+	}
+
+	/**
 	 * Checks to see if a module is enabled.
 	 *
 	 * @param array  $options Options to check.
