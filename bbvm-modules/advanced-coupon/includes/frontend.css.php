@@ -154,6 +154,13 @@ if ( 'photo' === $settings->photo_icon ) :
 		<?php endif; ?>
 	}
 	<?php
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'top_photo_border',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-top-photo img",
+		)
+	);
 	FLBuilderCSS::dimension_field_rule(
 		array(
 			'settings'     => $settings,
