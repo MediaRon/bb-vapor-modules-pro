@@ -100,6 +100,76 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'icon'       => array(
+			'title'    => __( 'Coupon Icon', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'icon' => array(
+					'title'  => __( 'Coupon Icon', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'show_icon'    => array(
+							'type'    => 'select',
+							'default' => 'no',
+							'label'   => __( 'Show a Coupon Icon', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'icon_size',
+										'icon',
+										'icon_align',
+										'icon_color',
+										'icon_display',
+										'icon_padding',
+										'icon_margin',
+									),
+								),
+							),
+						),
+						'icon_size'    => array(
+							'type'    => 'unit',
+							'label'   => __( 'Icon Size', 'bb-vapor-modules-pro' ),
+							'default' => 40,
+						),
+						'icon'         => array(
+							'type'       => 'icon',
+							'label'      => __( 'Select an Icon', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+						),
+						'icon_align'   => array(
+							'type'  => 'align',
+							'label' => __( 'Icon Alignment', 'bb-vapor-modules-pro' ),
+						),
+						'icon_color'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'icon_display' => array(
+							'type'    => 'select',
+							'default' => 'square',
+							'options' => array(
+								'square'  => __( 'Square/Rectangular', 'bb-vapor-modules-pro' ),
+								'rounded' => __( 'Rounded', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'icon_padding' => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Icon Padding', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'icon_margin'  => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Icon Margin', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+					),
+				),
+			),
+		),
 		'headline'   => array(
 			'title'    => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
 			'sections' => array(
