@@ -32,9 +32,8 @@ FLBuilder::register_module(
 					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'coupon_code'       => array(
-							'type'        => 'text',
-							'label'       => __( 'Coupon Code', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Enter {bbvm_simple_coupon} into the text area below', 'bb-vapor-modules-pro' ),
+							'type'  => 'text',
+							'label' => __( 'Coupon Code', 'bb-vapor-modules-pro' ),
 						),
 						'coupon_bg_color'   => array(
 							'type'       => 'color',
