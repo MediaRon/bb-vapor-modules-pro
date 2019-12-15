@@ -194,7 +194,7 @@ FLBuilder::register_module(
 					'fields' => array(
 						'form_title_typography'       => array(
 							'type'       => 'typography',
-							'label'      => __( 'Select an form title typography', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Select a form title typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'form_description_typography' => array(
@@ -204,7 +204,7 @@ FLBuilder::register_module(
 						),
 						'label_typography'            => array(
 							'type'       => 'typography',
-							'label'      => __( 'Select an label typography', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Select a label typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'input_typography'            => array(

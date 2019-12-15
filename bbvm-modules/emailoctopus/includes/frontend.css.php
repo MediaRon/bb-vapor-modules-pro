@@ -207,6 +207,36 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+
+// Typography settings.
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'form_title_typography',
+		'selector'     => ".fl-node-$id .emailoctopus-form-wrapper .emailoctopus-heading",
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'form_description_typography',
+		'selector'     => ".fl-node-$id .emailoctopus-form-wrapper p",
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'label_typography',
+		'selector'     => ".fl-node-$id .emailoctopus-form-wrapper .emailoctopus-form-copy-wrapper label",
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'input_typography',
+		'selector'     => ".fl-node-$id .emailoctopus-form-wrapper .emailoctopus-form-copy-wrapper label input[type=text], .fl-node-$id .emailoctopus-form-wrapper .emailoctopus-form-copy-wrapper label input[type=email]",
+	)
+);
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
