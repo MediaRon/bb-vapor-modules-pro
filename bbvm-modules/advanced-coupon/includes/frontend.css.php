@@ -304,3 +304,117 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-code-wrapper",
 	)
 );
+
+// CTA Styles.
+// Button CTA.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-button a {
+	display: inline-block;
+	text-decoration: none;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background_color ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-button a:hover {
+	display: inline-block;
+	text-decoration: none;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_background_color_hover ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
+}
+<?php
+if ( 'block' === $settings->button_width ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-button a,
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-button a:hover {
+		display: block;
+	}
+	<?php
+} else {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-button {
+		text-align: center;
+	}
+	<?php
+}
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_padding',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-button a",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'button_padding_top',
+			'padding-right'  => 'button_padding_right',
+			'padding-bottom' => 'button_padding_bottom',
+			'padding-left'   => 'button_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_margin',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-button a",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'button_margin_top',
+			'margin-right'  => 'button_margin_right',
+			'margin-bottom' => 'button_margin_bottom',
+			'margin-left'   => 'button_margin_left',
+		),
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_typography',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-button a, .fl-node-$id .bbvm-advanced-coupon-button a:hover",
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'button_border',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-button a, .fl-node-$id .bbvm-advanced-coupon-button a:hover",
+	)
+);
+
+// Disclaimer styles.
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'disclaimer_padding',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-disclaimer",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'disclaimer_padding_top',
+			'margin-right'  => 'disclaimer_padding_right',
+			'margin-bottom' => 'disclaimer_padding_bottom',
+			'margin-left'   => 'disclaimer_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'disclaimer_margin',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-disclaimer",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'disclaimer_margin_top',
+			'margin-right'  => 'disclaimer_margin_right',
+			'margin-bottom' => 'disclaimer_margin_bottom',
+			'margin-left'   => 'disclaimer_margin_left',
+		),
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'disclaimer_typography',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-disclaimer",
+	)
+);
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-disclaimer {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->disclaimer_color ) ); ?>;
+}

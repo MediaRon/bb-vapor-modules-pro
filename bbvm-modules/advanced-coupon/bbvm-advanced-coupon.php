@@ -526,12 +526,13 @@ FLBuilder::register_module(
 										'disclaimer_typography',
 										'disclaimer_color',
 										'disclaimer_margin',
+										'disclaimer_padding',
 									),
 								),
 							),
 						),
 						'disclaimer_text'       => array(
-							'type'        => 'text',
+							'type'        => 'textarea',
 							'label'       => __( 'Enter Disclaimer Text', 'bb-vapor-modules-pro' ),
 							'description' => __( 'HTML allowed', 'bb-vapor-modules-pro' ),
 						),
@@ -544,6 +545,11 @@ FLBuilder::register_module(
 							'type'       => 'color',
 							'label'      => __( 'Disclaimer Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
+						),
+						'disclaimer_padding'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Disclaimer Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
 						),
 						'disclaimer_margin'     => array(
 							'type'       => 'dimension',

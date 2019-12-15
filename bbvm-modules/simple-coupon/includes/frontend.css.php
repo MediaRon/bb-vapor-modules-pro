@@ -205,10 +205,10 @@ FLBuilderCSS::dimension_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-simple-coupon-text .bbvm-simple-coupon-disclaimer",
 		'unit'         => 'px',
 		'props'        => array(
-			'margin-top'    => 'button_margin_top',
-			'margin-right'  => 'button_margin_right',
-			'margin-bottom' => 'button_margin_bottom',
-			'margin-left'   => 'button_margin_left',
+			'margin-top'    => 'disclaimer_margin_top',
+			'margin-right'  => 'disclaimer_margin_right',
+			'margin-bottom' => 'disclaimer_margin_bottom',
+			'margin-left'   => 'disclaimer_margin_left',
 		),
 	)
 );

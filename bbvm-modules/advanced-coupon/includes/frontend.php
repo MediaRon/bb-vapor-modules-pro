@@ -51,6 +51,31 @@
 			</div>
 			<?php
 		endif;
+		// Show button.
+		if ( 'yes' === $settings->show_cta ) {
+			?>
+			<div class="bbvm-advanced-coupon-button">
+				<a href="<?php echo esc_url( $settings->button_link ); ?>">
+				<?php
+				if ( ! empty( $settings->button_icon ) ) {
+					echo sprintf( '<span class="%s"></span>', esc_attr( $settings->button_icon ) );
+				}
+				?>
+				<?php echo esc_html( $settings->button_text ); ?>
+			</a>
+			</div>
+			<?php
+		}
+		// Show Disclaimer.
+		if ( 'yes' === $settings->show_disclaimer ) :
+			?>
+			<div class="bbvm-advanced-coupon-disclaimer">
+				<?php
+					echo wp_kses_post( $settings->disclaimer_text );
+				?>
+			</div>
+			<?php
+		endif;
 		?>
 	</div>
 </div>
