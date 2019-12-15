@@ -92,6 +92,20 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'coupon_box_padding',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'coupon_box_padding_top',
+			'padding-right'  => 'coupon_box_padding_right',
+			'padding-bottom' => 'coupon_box_padding_bottom',
+			'padding-left'   => 'coupon_box_padding_left',
+		),
+	)
+);
 
 // Top icon if available.
 if ( 'icon' === $settings->photo_icon ) :

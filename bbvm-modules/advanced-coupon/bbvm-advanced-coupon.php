@@ -25,7 +25,7 @@ class BBVapor_Advanced_Coupon extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Advanced_Coupon',
 	array(
-		'container'  => array(
+		'container'   => array(
 			'title'    => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
@@ -100,7 +100,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'icon'       => array(
+		'icon'        => array(
 			'title'    => __( 'Coupon Photo/Icon', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'icon' => array(
@@ -224,7 +224,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'headline'   => array(
+		'headline'    => array(
 			'title'    => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'headline' => array(
@@ -260,7 +260,62 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'cta'        => array(
+		'description' => array(
+			'title'    => __( 'Description', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'headline' => array(
+					'title'  => __( 'Coupon Description', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'enable_description'     => array(
+							'type'    => 'select',
+							'default' => 'no',
+							'label'   => __( 'Display a Coupon Description', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'description',
+										'description_color',
+										'description_typography',
+										'description_padding',
+										'description_margin',
+									),
+								),
+							),
+						),
+						'description'            => array(
+							'type'  => 'editor',
+							'label' => __( 'Coupon Description', 'bb-vapor-modules-pro' ),
+						),
+						'description_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Description Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'default'    => 'FFFFFF',
+						),
+						'description_typography' => array(
+							'type'      => 'typography',
+							'label'     => __( 'Description Typography', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'description_padding'    => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Description Padding', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'description_margin'     => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Description Margin', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'cta'         => array(
 			'title'    => __( 'Call to Action', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'styles' => array(
@@ -362,7 +417,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'disclaimer' => array(
+		'disclaimer'  => array(
 			'title'    => __( 'Disclaimer', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'styles' => array(
