@@ -132,6 +132,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Emailoctopus module.
+			if ( $this->is_module_enabled( $module_options, 'emailoctopus' ) && class_exists( 'EmailOctopus' ) ) {
+				require_once 'bbvm-modules/emailoctopus/bbvm-emailoctopus.php';
+				new BBVapor_EmailOctopus();
+			}
+
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
