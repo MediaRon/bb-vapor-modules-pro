@@ -11,11 +11,40 @@
 // Coupon Box Styles.
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper {
-	min-height: 400px;
 	position: relative;
 	border: <?php echo absint( $settings->outer_border ); ?>px <?php echo esc_html( $settings->outer_border_appearance ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->outer_border_color ) ); ?>;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
+	min-height: 400px;
+}
 <?php
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .bbvm-advanced-coupon",
+		'media'    => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+		'props'    => array(
+			'min-height' => $settings->min_height . 'px',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .bbvm-advanced-coupon",
+		'media'    => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+		'props'    => array(
+			'min-height' => $settings->min_height_medium . 'px',
+		),
+	)
+);
+FLBuilderCSS::rule(
+	array(
+		'selector' => ".fl-node-$id .bbvm-advanced-coupon",
+		'media'    => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
+		'props'    => array(
+			'height' => $settings->min_height_responsive . 'px',
+		),
+	)
+);
 if ( ! empty( $settings->background_photo_src ) ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper {

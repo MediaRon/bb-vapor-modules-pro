@@ -31,6 +31,12 @@ FLBuilder::register_module(
 				'container' => array(
 					'title'  => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
 					'fields' => array(
+						'min_height'              => array(
+							'type'       => 'unit',
+							'label'      => __( 'Minimum Height', 'bb-vapor-modules-pro' ),
+							'default'    => 400,
+							'responsive' => true,
+						),
 						'background_photo'        => array(
 							'type'        => 'photo',
 							'label'       => __( 'Background Photo', 'bb-vapor-modules-pro' ),
@@ -546,7 +552,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Disclaimer Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 						),
-						'disclaimer_padding'     => array(
+						'disclaimer_padding'    => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Disclaimer Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
