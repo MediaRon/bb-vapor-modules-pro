@@ -171,6 +171,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'copyright'                     => 'Copyright',
 			'credit-cards'                  => 'Credit Cards',
 			'edd-download-count'            => 'EDD Download Count',
+			'emailoctopus'                  => 'EmailOctopus',
 			'faq'                           => 'FAQ',
 			'featured-category'             => 'Featured Category',
 			'gist'                          => 'Gists',

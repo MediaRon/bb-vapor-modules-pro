@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 1.5.6
+ * Version: 1.6.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.5.6' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.6.0' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -50,6 +50,31 @@ class BBVapor_Modules_Pro {
 			return $color;
 		}
 		return $color;
+	}
+
+	/**
+	 * Get an opening anchor based on link settings
+	 *
+	 * @param object $settings The Beaver Builder module settings object.
+	 * @param string $name     The setting name to check for.
+	 *
+	 * @return string Anchor HTML markup
+	 */
+	public static function get_starting_anchor( $settings, $name ) {
+		$return = sprintf( '<a href="%s"', esc_url( $settings->{$name} ) );
+
+		$no_follow = $name . '_nofollow';
+		if ( isset( $settings->{$no_follow} ) && 'yes' === $settings->{$no_follow} ) {
+			$return .= ' rel="nofollow"';
+		}
+
+		// Target.
+		$target = $name . '_target';
+		if ( isset( $settings->{$target} ) && ! empty( $settings->{$target} ) ) {
+			$return .= sprintf( ' target="%s"', esc_attr( $settings->{$target} ) );
+		}
+		$return .= '>';
+		return $return;
 	}
 
 	/**
@@ -107,6 +132,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Emailoctopus module.
+			if ( $this->is_module_enabled( $module_options, 'emailoctopus' ) && class_exists( 'EmailOctopus' ) ) {
+				require_once 'bbvm-modules/emailoctopus/bbvm-emailoctopus.php';
+				new BBVapor_EmailOctopus();
+			}
+
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
@@ -117,6 +148,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'simple-coupon' ) ) {
 				require_once 'bbvm-modules/simple-coupon/bbvm-simple-coupon.php';
 				new BBVapor_Simple_Coupon();
+			}
+
+			// Advanced Coupon module.
+			if ( $this->is_module_enabled( $module_options, 'advanced-coupon' ) ) {
+				require_once 'bbvm-modules/advanced-coupon/bbvm-advanced-coupon.php';
+				new BBVapor_Advanced_Coupon();
 			}
 
 			// Columns module.
