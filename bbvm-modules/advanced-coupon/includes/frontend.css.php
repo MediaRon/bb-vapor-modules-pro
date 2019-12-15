@@ -248,3 +248,59 @@ if ( 'yes' === $settings->enable_description ) :
 		)
 	);
 endif;
+
+// Coupon Code Styles.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-code-wrapper {
+	text-align: center;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-code-wrapper .bbvm-advanced-coupon-code {
+	display: inline-block;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->coupon_bg_color ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->coupon_text_color ) ); ?>;
+	padding: 10px 20px;
+	border: 2px dashed #FF0000;
+}
+<?php
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'coupon_padding',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-code-wrapper .bbvm-advanced-coupon-code",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'coupon_padding_top',
+			'padding-right'  => 'coupon_padding_right',
+			'padding-bottom' => 'coupon_padding_bottom',
+			'padding-left'   => 'coupon_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'coupon_margin',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-code-wrapper",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'coupon_margin_top',
+			'margin-right'  => 'coupon_margin_right',
+			'margin-bottom' => 'coupon_margin_bottom',
+			'margin-left'   => 'coupon_margin_left',
+		),
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'coupon_border',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-code-wrapper .bbvm-advanced-coupon-code",
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'coupon_typography',
+		'selector'     => ".fl-node-$id .bbvm-advanced-coupon-code-wrapper",
+	)
+);

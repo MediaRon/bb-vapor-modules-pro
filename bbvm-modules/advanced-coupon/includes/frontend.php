@@ -42,6 +42,15 @@
 			<div class="bbvm-advanced-coupon-description"><?php echo wp_kses_post( $settings->description ); ?></div>
 			<?php
 		endif;
+		if ( 'yes' === $settings->enable_coupon ) :
+			?>
+			<div class="bbvm-advanced-coupon-code-wrapper">
+				<span class="bbvm-advanced-coupon-code">
+				<?php echo esc_html( $settings->coupon_code ); ?>
+				</span>
+			</div>
+			<?php
+		endif;
 		?>
 	</div>
 </div>

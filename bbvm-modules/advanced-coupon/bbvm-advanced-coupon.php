@@ -233,7 +233,7 @@ FLBuilder::register_module(
 						'enable_headline'            => array(
 							'type'    => 'select',
 							'default' => 'yes',
-							'label'   => __( 'Display a Coupon Headlie', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Display a Coupon Headline', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
@@ -329,6 +329,74 @@ FLBuilder::register_module(
 						'description_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Description Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
+		'coupon'      => array(
+			'title'    => __( 'Coupon', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'headline' => array(
+					'title'  => __( 'Coupon', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'enable_coupon'     => array(
+							'type'    => 'select',
+							'default' => 'yes',
+							'label'   => __( 'Display a Coupon', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'coupon_code',
+										'coupon_bg_color',
+										'coupon_text_color',
+										'coupon_padding',
+										'coupon_margin',
+										'coupon_border',
+										'coupon_typography',
+									),
+								),
+							),
+						),
+						'coupon_code'       => array(
+							'type'    => 'text',
+							'label'   => __( 'Coupon Code', 'bb-vapor-modules-pro' ),
+							'default' => 'XJTXU',
+						),
+						'coupon_bg_color'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Coupon Background Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'default'    => 'FFFFFF',
+						),
+						'coupon_text_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Coupon Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'default'    => '000000',
+						),
+						'coupon_padding'    => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'coupon_margin'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Coupon Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'coupon_border'     => array(
+							'type'  => 'border',
+							'label' => __( 'Coupon Border', 'bb-vapor-modules-pro' ),
+						),
+						'coupon_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Coupon Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 					),
