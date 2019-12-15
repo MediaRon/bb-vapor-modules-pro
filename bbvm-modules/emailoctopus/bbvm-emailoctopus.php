@@ -34,10 +34,10 @@ foreach ( $emailoctopus_form_results as $form_result ) {
 FLBuilder::register_module(
 	'BBVapor_EmailOctopus',
 	array(
-		'general'             => array(
+		'general'    => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general'  => array(
+				'general' => array(
 					'title'  => __( 'Form Select', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'form'        => array(
@@ -56,7 +56,7 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'layout'   => array(
+				'layout'  => array(
 					'title'  => __( 'Layout', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'layout'    => array(
@@ -80,10 +80,10 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'              => array(
+		'styles'     => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'styles'       => array(
+				'styles' => array(
 					'title'  => __( 'General Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'overall_color'         => array(
@@ -114,25 +114,25 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'labels'       => array(
+				'labels' => array(
 					'title'  => __( 'Labels', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'form_label_color'     => array(
+						'form_label_color' => array(
 							'type'    => 'color',
 							'label'   => __( 'Label Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 						),
-						'label_padding'        => array(
+						'label_padding'    => array(
 							'type'  => 'dimension',
 							'label' => __( 'Label Padding', 'bb-vapor-modules-pro' ),
 						),
-						'label_margin'         => array(
+						'label_margin'     => array(
 							'type'  => 'dimension',
 							'label' => __( 'Label Margin', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
-				'inputs'       => array(
+				'inputs' => array(
 					'title'  => __( 'Input styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'input_height'           => array(
@@ -186,7 +186,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography'          => array(
+		'typography' => array(
 			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'inputs' => array(
@@ -216,7 +216,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'buttons'             => array(
+		'buttons'    => array(
 			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'inputs' => array(
