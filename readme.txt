@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.5.8
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.6.0 =
+* Released 2019-12-15
+* Fixing Gravity Forms styler when it comes to password inputs that have Reveal set.
+* Added Advanced Coupon module.
+* Added EmailOctopus module.
 
 = 1.5.8 =
 * Released 2019-12-04
