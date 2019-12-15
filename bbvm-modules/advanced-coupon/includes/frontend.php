@@ -11,6 +11,8 @@
 ?>
 <div class="fl-bbvm-advanced-coupon-wrapper">
 	<div class="bbvm-advanced-coupon">
+		<div class="bbvm-advanced-coupon-overlay"></div>
+		<div class="bbvm-advanced-coupon-content">
 		<?php
 		if ( 'icon' === $settings->photo_icon && ! empty( $settings->icon ) ) :
 			?>
@@ -77,5 +79,6 @@
 			<?php
 		endif;
 		?>
+		</div>
 	</div>
 </div>

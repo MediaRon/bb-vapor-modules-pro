@@ -47,7 +47,7 @@ FLBuilderCSS::rule(
 );
 if ( ! empty( $settings->background_photo_src ) ) {
 	?>
-	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper {
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
 		z-index: 1;
 		background: url('<?php echo esc_url( $settings->background_photo_src ); ?>') no-repeat center;
 		background-size: cover;
@@ -55,7 +55,7 @@ if ( ! empty( $settings->background_photo_src ) ) {
 	<?php
 }
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-coupon-wrapper:before {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-overlay {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -72,7 +72,7 @@ if ( ! empty( $settings->background_photo_src ) ) {
 	padding: <?php echo absint( $settings->inner_border ); ?>px;
 }
 <?php endif; ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-content {
 	position: relative;
 	z-index: 1000;
 }
