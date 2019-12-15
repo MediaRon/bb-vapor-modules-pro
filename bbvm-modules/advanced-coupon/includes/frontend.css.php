@@ -204,3 +204,47 @@ if ( 'photo' === $settings->photo_icon ) :
 		)
 	);
 endif;
+
+// Coupon description.
+if ( 'yes' === $settings->enable_description ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-coupon-description {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->description_color ) ); ?>;
+	}
+	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'description_padding',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-description",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'description_padding_top',
+				'padding-right'  => 'description_padding_right',
+				'padding-bottom' => 'description_padding_bottom',
+				'padding-left'   => 'description_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'description_margin',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-description",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'description_margin_top',
+				'margin-right'  => 'description_margin_right',
+				'margin-bottom' => 'description_margin_bottom',
+				'margin-left'   => 'description_margin_left',
+			),
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'description_typography',
+			'selector'     => ".fl-node-$id .bbvm-advanced-coupon-description",
+		)
+	);
+endif;

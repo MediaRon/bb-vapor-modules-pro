@@ -32,7 +32,16 @@
 			</div>
 			<?php
 		endif;
+		if ( 'yes' === $settings->enable_headline ) :
+			?>
+			<h2 class="bbvm-advanced-coupon-headline"><?php echo wp_kses_post( $settings->coupon_headline ); ?></h2>
+			<?php
+		endif;
+		if ( 'yes' === $settings->enable_description ) :
+			?>
+			<div class="bbvm-advanced-coupon-description"><?php echo wp_kses_post( $settings->description ); ?></div>
+			<?php
+		endif;
 		?>
-		<h2 class="bbvm-advanced-coupon-headline"><?php echo wp_kses_post( $settings->coupon_headline ); ?></h2>
 	</div>
 </div>

@@ -26,7 +26,7 @@ FLBuilder::register_module(
 	'BBVapor_Advanced_Coupon',
 	array(
 		'container'   => array(
-			'title'    => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Container', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
 					'title'  => __( 'Coupon Container', 'bb-vapor-modules-pro' ),
@@ -101,7 +101,7 @@ FLBuilder::register_module(
 			),
 		),
 		'icon'        => array(
-			'title'    => __( 'Coupon Photo/Icon', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Photo/Icon', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'icon' => array(
 					'title'  => __( 'Coupon Photo/Icon', 'bb-vapor-modules-pro' ),
@@ -148,7 +148,7 @@ FLBuilder::register_module(
 						'top_photo_link'    => array(
 							'type'          => 'link',
 							'label'         => __( 'Photo Link', 'bb-vapor-modules-pro' ),
-							'resonsive'     => true,
+							'responsive'     => true,
 							'show_target'   => true,
 							'show_nofollow' => true,
 						),
@@ -169,17 +169,17 @@ FLBuilder::register_module(
 						'top_photo_padding' => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Photo Padding', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'top_photo_margin'  => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Photo Margin', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'top_photo_border'  => array(
 							'type'      => 'border',
 							'label'     => __( 'Photo Border', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'icon_size'         => array(
 							'type'    => 'unit',
@@ -213,23 +213,43 @@ FLBuilder::register_module(
 						'icon_padding'      => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Icon Padding', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'icon_margin'       => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Icon Margin', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 					),
 				),
 			),
 		),
 		'headline'    => array(
-			'title'    => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Headline', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'headline' => array(
 					'title'  => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
 					'fields' => array(
+						'enable_headline'            => array(
+							'type'    => 'select',
+							'default' => 'yes',
+							'label'   => __( 'Display a Coupon Headlie', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'coupon_headline',
+										'coupon_headline_color',
+										'coupon_headline_typography',
+										'coupon_headline_padding',
+										'coupon_headline_margin',
+									),
+								),
+							),
+						),
 						'coupon_headline'            => array(
 							'type'    => 'text',
 							'label'   => __( 'Coupon Headline', 'bb-vapor-modules-pro' ),
@@ -244,17 +264,17 @@ FLBuilder::register_module(
 						'coupon_headline_typography' => array(
 							'type'      => 'typography',
 							'label'     => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'coupon_headline_padding'    => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'coupon_headline_margin'     => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 					),
 				),
@@ -299,17 +319,17 @@ FLBuilder::register_module(
 						'description_typography' => array(
 							'type'      => 'typography',
 							'label'     => __( 'Description Typography', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'description_padding'    => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Description Padding', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 						'description_margin'     => array(
 							'type'      => 'dimension',
 							'label'     => __( 'Description Margin', 'bb-vapor-modules-pro' ),
-							'resonsive' => true,
+							'responsive' => true,
 						),
 					),
 				),
