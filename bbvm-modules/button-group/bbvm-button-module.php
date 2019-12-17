@@ -188,32 +188,42 @@ FLBuilder::register_module(
 				'styles' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'button_alignment'  => array(
+						'button_alignment'        => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
-						'button_padding'    => array(
+						'button_alignment_tablet' => array(
+							'type'    => 'align',
+							'label'   => __( 'Button Alignment Tablet', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
+						'button_alignment_mobile' => array(
+							'type'    => 'align',
+							'label'   => __( 'Button Alignment on Mobile', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
+						'button_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_typography' => array(
+						'button_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_margin'     => array(
+						'button_margin'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_radius'     => array(
+						'button_radius'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Radius', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'button_min_width'  => array(
+						'button_min_width'        => array(
 							'type'        => 'unit',
 							'label'       => __( 'Button Min Width', 'bb-vapor-modules-pro' ),
 							'default'     => '0',
