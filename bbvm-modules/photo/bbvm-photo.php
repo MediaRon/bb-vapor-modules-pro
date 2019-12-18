@@ -14,7 +14,7 @@ class BBVapor_Photo extends FLBuilderModule {
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/photo/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.
-				'partial_refresh' => false, // Defaults to false and can be omitted.
+				'partial_refresh' => true, // Defaults to false and can be omitted.
 			)
 		);
 	}
@@ -122,6 +122,10 @@ FLBuilder::register_module(
 							'type'        => 'text',
 							'label'       => __( 'Caption Text', 'bb-vapor-modules-pro' ),
 							'placeholder' => __( 'Please enter a caption', 'bb-vapor-modules-pro' ),
+							'preview'     => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-photo-caption',
+							),
 						),
 						'caption_display' => array(
 							'type'    => 'select',
