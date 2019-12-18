@@ -442,6 +442,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Instagram_Module();
 			}
 
+			// Instagram Slideshow.
+			if ( $this->is_module_enabled( $module_options, 'instagram-slideshow' ) ) {
+				require_once 'bbvm-modules/instagram-slideshow/bbvm-instagram-slideshow.php';
+				new BBVapor_Instagram_Slideshow();
+			}
+
 			// Featured Category.
 			if ( $this->is_module_enabled( $module_options, 'featured-category' ) ) {
 				require_once 'bbvm-modules/featured-category/bbvm-featured-category.php';

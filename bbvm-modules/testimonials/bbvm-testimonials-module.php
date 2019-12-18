@@ -28,6 +28,7 @@ class BBVapor_Testimonials_Module extends FLBuilderModule {
 			$this->add_css( 'owl-carousel', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/testimonials/js/assets/owl.carousel.min.css', array(), '2.3.4', 'all' );
 			$this->add_css( 'owl-carousel-default', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/testimonials/js/assets/owl.theme.default.min.css', array( 'owl-carousel' ), '2.3.4', 'all' );
 			$this->add_js( 'owl-carousel', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/testimonials/js/owl.carousel.min.js', array( 'jquery' ), '2.3.4', true );
+			$this->add_css( 'jquery-magnificpopup' );
 		}
 	}
 }
