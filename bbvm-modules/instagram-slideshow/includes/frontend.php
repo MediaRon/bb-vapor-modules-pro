@@ -54,11 +54,11 @@
 			<div class="instagram-author">
 				<a href="<?php echo esc_url( $author_instagram_feed_url ); ?>"><img src="<?php echo esc_url( $author_avatar ); ?>" alt="<?php echo esc_attr( $author_full_name ); ?>" />&nbsp;<?php echo esc_html( $author_full_name ); ?></a>
 			</div>
-			<div class="fl-node-instafeed-slideshow">
+			<div class="fl-node-instafeed-slideshow owl-carousel owl-theme">
 			<?php
 			foreach ( $instagram_json->data as $key => $user_data ) {
 				?>
-					<div class="instagram-image">
+					<div class="instagram-image-slide">
 						<?php
 						if ( 'yes' === $settings->lightbox ) :
 							?>

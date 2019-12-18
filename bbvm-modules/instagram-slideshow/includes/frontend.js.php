@@ -11,7 +11,7 @@
 ?>
 if ( typeof jQuery != 'undefined' ) {
 
-	jQuery( '.fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed-slideshow' ).slick(
+	jQuery( '.fl-node-<?php echo esc_html( $id ); ?> .owl-carousel' ).owlCarousel(
 		{	
 		}
 	);

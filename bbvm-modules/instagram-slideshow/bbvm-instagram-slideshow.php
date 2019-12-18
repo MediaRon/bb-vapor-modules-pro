@@ -21,9 +21,13 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 			)
 		);
 
-		$this->add_js( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
-		$this->add_css( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-		$this->add_css( 'slick-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick-theme.css', array( 'slick' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		//$this->add_js( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+		//$this->add_css( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		//$this->add_css( 'slick-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick-theme.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+
+		$this->add_js( 'owl-carousel', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/owl.carousel.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
+		$this->add_css( 'owl-carousel-css', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.carousel.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'owl-carousel-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.theme.default.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 /**
