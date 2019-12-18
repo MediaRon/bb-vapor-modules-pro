@@ -22,8 +22,8 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 		);
 
 		$this->add_js( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
-		$this->add_css( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/slick/slick.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-		$this->add_css( 'slick-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/slick/slick-theme.css', array( 'slick' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'slick-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick-theme.css', array( 'slick' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 /**
