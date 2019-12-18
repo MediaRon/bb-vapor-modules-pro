@@ -22,38 +22,121 @@ class BBVapor_Photo extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module( 	
+FLBuilder::register_module(
 	'BBVapor_Photo',
 	array(
 		'general' => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Overlay Photo', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Photo', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'overlay_photo'    => array(
+						'image'    => array(
 							'type'        => 'photo',
-							'label'       => __( 'Photo to be Overlayed', 'bb-vapor-modules-pro' ),
-							'show_remove' => false,
+							'label'       => __( 'Photo to display.', 'bb-vapor-modules-pro' ),
+							'show_remove' => true,
 						),
-						'overlay_link'     => array(
-							'type'  => 'link',
-							'label' => __( 'Overlay Link', 'bb-vapor-modules-pro' ),
-						),
-						'overlay_text'     => array(
-							'type'        => 'editor',
-							'label'       => __( 'Overlay Text', 'bb-vapor-modules-pro' ),
-							'placeholder' => __( 'Text to overlay photo', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Text to overlay the photo.', 'bb-vapor-modules-pro' ),
-							'help'        => __( 'Text to overlay the photo.', 'bb-vapor-modules-pro' ),
-							'wpautop'     => true,
-						),
-						'overlay_behavior' => array(
+						'display_caption'     => array(
 							'type'    => 'select',
-							'label'   => __( 'Overlay behavior', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Display Caption?', 'bb-vapor-modules-pro' ),
+							'default' => 'yes',
 							'options' => array(
-								'default' => __( 'Overlay on initial display', 'bb-vapor-modules-pro' ),
-								'hover'   => __( 'Overlay on hover', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'display_title'     => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Title?', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'display_image_effects' => array(
+							'type'    => 'select',
+							'label'   => __( 'Display Image Effects?', 'bb-vapor-modules-pro' ),
+							'default' => 'yes',
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'background_image'     => array(
+							'type'    => 'select',
+							'label'   => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle' => array(
+								'yes' => array(
+									'fields' => array(
+										'photo_min_height',
+									),
+								),
+							),
+						),
+						'photo_min_height' => array(
+							'type'         => 'unit',
+							'label'        => __( 'Minimum Height of Photo', 'bb-vapor-modules-pro' ),
+							'default'      => 500,
+							'preview'      => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo',
+								'property' => 'text-align',
+							),
+							'units'        => array( 'px', 'vh', '%' ),
+							'default_unit' => 'px',
+						),
+					),
+				),
+			),
+		),
+		'caption' => array(
+			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'caption_type'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Caption Type', 'bb-vapor-modules-pro' ),
+							'default' => 'caption',
+							'options' => array(
+								'alt'     => __( 'Alt Text', 'bb-vapor-modules-pro' ),
+								'caption' => __( 'Image Caption', 'bb-vapor-modules-pro' ),
+								'custom'  => __( 'Custom Caption', 'bb-vapor-modules-pro' ),
+							),
+							'toggle' => array(
+								'custom' => array(
+									'fields' => array(
+										'caption_custom',
+									),
+								),
+							),
+						),
+						'caption_custom' => array(
+							'type'        => 'text',
+							'label'       => __( 'Caption Text', 'bb-vapor-modules-pro' ),
+							'placeholder' => __( 'Please enter a caption', 'bb-vapor-modules-pro' ),
+						),
+						'caption_display' => array(
+							'type'    => 'select',
+							'label'   => __( 'Caption Display', 'bb-vapor-modules-pro' ),
+							'default' => 'below',
+							'options' => array(
+								'below'   => __( 'Below Image', 'bb-vapor-modules-pro' ),
+								'overlay' => __( 'Overlay Image', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'overlay' => array(
+									'sections' => array(
+										'overlay',
+									),
+								),
 							),
 						),
 					),

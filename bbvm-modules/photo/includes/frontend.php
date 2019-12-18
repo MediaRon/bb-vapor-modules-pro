@@ -5,48 +5,18 @@
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.3.0
+ * @since 1.6.8
  */
 
-if ( isset( $settings->overlay_photo ) && ! empty( $settings->overlay_photo ) ) :
-	$overlay_type   = isset( $settings->overlay_type ) ? $settings->overlay_type : 'horizontal';
-	$animation_type = isset( $settings->animation ) ? $settings->animation : 'regular';
-	$fig_class      = '';
-	if ( 'horizontal' === $overlay_type ) {
-		$fig_class = isset( $settings->horizontal_overlay_type ) ? $settings->horizontal_overlay_type : 'top';
-	} elseif ( 'full' === $overlay_type ) {
-		$fig_class = '';
-	}
-	$has_link = isset( $settings->overlay_link ) ? $settings->overlay_link : false;
+if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
+	var_dump( $settings->image );
 	?>
-	<div class="fl-bbvm-overlay-photo-for-beaverbuilder">
-		<?php
-		if ( ! empty( $has_link ) ) :
-			?>
-			<a href="<?php echo esc_url( $has_link ); ?>">
-			<?php
-		endif;
-		?>
-		<div class="fl-bbvm-overlay-photo <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?>">
-			<figure>
-				<?php
-				$alt = get_post_meta( $settings->overlay_photo, '_wp_attachment_image_alt', true );
-				?>
-				<img src="<?php echo esc_url( $settings->overlay_photo_src ); ?>" alt="<?php echo esc_attr( $alt ); ?>" />
-				<figcaption class="fl-bbvm-overlay-text <?php echo esc_attr( $fig_class ); ?> <?php echo 'hover' === $settings->overlay_behavior ? 'hover-only' : ''; ?>">
-				<span class="fl-bbvm-overlay-text-content">
-					<?php echo wp_kses_post( $settings->overlay_text ); ?>
-				</span>
-				</figcaption>
-			</figure>
+	<div class="bbvm-photo-wrapper">
+		<h2>Title</h2>
+		<div class="bbvm-photo">
+
 		</div>
-		<?php
-		if ( ! empty( $has_link ) ) :
-			?>
-			</a>
-			<?php
-		endif;
-		?>
+		<figcaption>Caption</figcaption>
 	</div>
 	<?php
 endif;
