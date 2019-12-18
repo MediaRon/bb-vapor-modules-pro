@@ -12,10 +12,10 @@
 <div class="fl-bbvm-instagram-for-beaverbuilder">
 	<?php
 	// Get cache if possible.
-	$instagram = get_option( 'bbvm-modules-instagram', array() );
-	if ( ! isset( $instagram['token'] ) ) {
+	$instagram = get_option( 'bbvm-modules-instagram-slideshow', array() );
+	if ( ! isset( $instagram['token'] ) && is_user_logged_in() ) {
 		?>
-		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bbvm-for-beaver-builder' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); ?></a>
+		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'instagram' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); // phpcs:ignore ?></a>
 		<?php
 	} else {
 		$instagram_json = isset( $instagram['json'] ) ? $instagram['json'] : '';
@@ -32,7 +32,7 @@
 			$response_json            = wp_remote_retrieve_body( $response );
 			$instagram['json']        = $response_json;
 			$instagram['last_cached'] = time();
-			update_option( 'bbvm-modules-instagram', $instagram );
+			update_option( 'bbvm-modules-instagram-slideshow', $instagram );
 			$instagram_json = json_decode( $response_json );
 		} else {
 			$instagram_json = json_decode( $instagram_json );
