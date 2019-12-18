@@ -212,7 +212,11 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Twitter_Embed();
 			}
 
-			// Photo overlay module.
+			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
+				require_once 'bbvm-modules/photo/bbvm-photo.php';
+				new BBVapor_Photo();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo-overlay' ) ) {
 				require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
 				new BBVapor_Photo_Overlay_Module();
