@@ -137,7 +137,7 @@ FLBuilder::register_module(
 							),
 							'toggle'  => array(
 								'overlay' => array(
-									'sections' => array(
+									'tabs' => array(
 										'overlay',
 									),
 								),
@@ -148,10 +148,10 @@ FLBuilder::register_module(
 			),
 		),
 		'overlay' => array(
-			'title'    => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'overlay' => array(
-					'title'  => __( 'Overlay Style', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Overlay', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'overlay_type'             => array(
 							'type'    => 'select',
