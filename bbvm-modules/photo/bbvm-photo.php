@@ -6,7 +6,7 @@ class BBVapor_Photo extends FLBuilderModule {
 	public function __construct() {
 		parent::__construct(
 			array(
-				'name'            => __( 'Vapor Photo', 'bb-vapor-modules-pro' ),
+				'name'            => __( 'Photo', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add a photo to your site', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
@@ -22,7 +22,7 @@ class BBVapor_Photo extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module(
+FLBuilder::register_module( 	
 	'BBVapor_Photo',
 	array(
 		'general' => array(
