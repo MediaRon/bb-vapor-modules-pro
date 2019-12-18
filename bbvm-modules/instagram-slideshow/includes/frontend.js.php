@@ -34,7 +34,7 @@ if ( typeof jQuery != 'undefined' ) {
 					nav: <?php echo 'yes' === $settings->show_nav_buttons ? 'true' : 'false'; ?>
 				},
 				600:{
-					items: <?php echo $settings->items > 1 ? absint( $settings->items -1 ) : absint( $settings->items ); ?>,
+					items: <?php echo $settings->items > 1 ? absint( $settings->items -1 ) : absint( $settings->items ); // phpcs:ignore ?>,
 					nav: <?php echo 'yes' === $settings->show_nav_buttons ? 'true' : 'false'; ?>
 				},
 				1000:{

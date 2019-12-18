@@ -21,14 +21,12 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 			)
 		);
 
-		//$this->add_js( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
-		//$this->add_css( 'slick', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-		//$this->add_css( 'slick-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/slick/slick-theme.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-
 		$this->add_js( 'owl-carousel', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/owl.carousel.min.js', array( 'jquery' ), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, true );
 		$this->add_css( 'owl-carousel-css', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.carousel.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		$this->add_css( 'owl-carousel-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.theme.default.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		$this->add_css( 'animate', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/animate.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'jquery-magnificpopup' );
+		$this->add_js( 'jquery-magnificpopup' );
 	}
 }
 /**
@@ -37,18 +35,18 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Instagram_Slideshow',
 	array(
-		'general'    => array(
+		'general' => array(
 			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general' => array(
 					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'items_show'                    => array(
+						'items_show'               => array(
 							'type'    => 'unit',
 							'label'   => __( 'Number of Instagram Photos to Show', 'bb-vapor-modules-pro' ),
 							'default' => '10',
 						),
-						'items' => array(
+						'items'                    => array(
 							'type'    => 'unit',
 							'label'   => __( 'Number of Items in the Carousel', 'bb-vapor-modules-pro' ),
 							'default' => 1,
@@ -58,7 +56,7 @@ FLBuilder::register_module(
 								'step' => 1,
 							),
 						),
-						'image_width' => array(
+						'image_width'              => array(
 							'type'        => 'unit',
 							'label'       => __( 'Image Max Width', 'bb-vapor-modules-pro' ),
 							'description' => __( 'This only applies if you have selected one item in the carousel', 'bb-vapor-modules-pro' ),
@@ -70,7 +68,7 @@ FLBuilder::register_module(
 							),
 
 						),
-						'lightbox'                      => array(
+						'lightbox'                 => array(
 							'type'    => 'select',
 							'label'   => __( 'Pop Up Images in a Lightbox', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -222,7 +220,7 @@ FLBuilder::register_module(
 				'buttons' => array(
 					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'show_follow_us_button'      => array(
+						'show_follow_us_button'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Follow Us Button', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -231,24 +229,24 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
-						'follow_background_color'    => array(
+						'follow_background_color' => array(
 							'type'       => 'color',
 							'label'      => __( 'Follow Background Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'default'    => '408bd1',
 						),
-						'follow_text_color'          => array(
+						'follow_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Show More Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
 						),
-						'follow_text'                => array(
+						'follow_text'             => array(
 							'type'    => 'text',
 							'label'   => __( 'Follow Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Follow on Instagram', 'bb-vapor-modules-pro' ),
 						),
-						'follow_icon'                => array(
+						'follow_icon'             => array(
 							'type'        => 'icon',
 							'label'       => __( 'Follow Icon', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
