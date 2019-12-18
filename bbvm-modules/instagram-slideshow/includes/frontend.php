@@ -1,11 +1,11 @@
 <?php
 /**
- * Instagram Module.
+ * Instagram Slideshow Module.
  *
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.3.0
+ * @since 1.6.5
  */
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Instagram Module.
+ * Instagram Slideshow Module.
  *
  * @link https://bbvapormodules.com
  *
