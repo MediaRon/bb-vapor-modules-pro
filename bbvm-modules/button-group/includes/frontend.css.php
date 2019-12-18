@@ -12,6 +12,16 @@
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder {
 	text-align: <?php echo esc_html( $settings->button_alignment ); ?>;
 }
+@media only screen and (max-width: 992px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder {
+		text-align: <?php echo esc_html( $settings->button_alignment_tablet ); ?>;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder {
+		text-align: <?php echo esc_html( $settings->button_alignment_mobile ); ?>;
+	}
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder .bbvm-button-wrapper {
 	display: inline-block;
 }

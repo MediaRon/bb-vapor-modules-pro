@@ -178,6 +178,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'gravatar'                      => 'Gravatar',
 			'gravityforms'                  => 'Gravity Forms',
 			'instagram'                     => 'Instagram',
+			'instagram-slideshow'           => 'Instagram Slideshow',
 			'intermediate-separator'        => 'Intermediate Separator',
 			'jetpack-related-posts'         => 'Jetpack Related Posts',
 			'jetpack-sharing'               => 'Jetpack Sharing',
