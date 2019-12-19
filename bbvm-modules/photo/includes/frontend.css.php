@@ -581,12 +581,19 @@ if ( 'yes' === $settings->background_image ) {
 	);
 endif;
 
-// Cropping Options.
-if ( 'crop-circular' === $settings->image_crop ) {
+// Image Appearance Options.
+if ( 'appearance-circular' === $settings->image_appearance ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
 		border-radius: 100%;
 		overflow: hidden;
+	}
+	<?php
+}
+if ( 'appearance-mirror' === $settings->image_appearance ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img {
+		-webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent) , to(rgba(250, 250, 250, 0.3)));
 	}
 	<?php
 }

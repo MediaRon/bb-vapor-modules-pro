@@ -7,6 +7,7 @@
  * @package BB Vapor Modules
  * @since 1.6.8
  */
+
 bbvm_debug( $settings, 'image_src' );
 if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	$attachment_id  = absint( $settings->image );
@@ -23,7 +24,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	$overlay_type   = isset( $settings->overlay_type ) ? $settings->overlay_type : 'horizontal';
 	$animation_type = isset( $settings->animation ) ? $settings->animation : 'regular';
 	$fig_class      = '';
-	$crop_type      = isset( $setting->image_crop ) ? $settings->image_crop : 'crop-none';
+	$crop_type      = isset( $setting->image_appearance ) ? $settings->image_appearance : 'appearance-none';
 	if ( 'horizontal' === $overlay_type ) {
 		$fig_class = isset( $settings->horizontal_overlay_type ) ? $settings->horizontal_overlay_type : 'top';
 	} elseif ( 'full' === $overlay_type ) {
@@ -52,8 +53,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 					<?php echo wp_kses_post( $caption_output ); ?>
 				</figcaption>
 			<?php endif; ?>
-		</div>
-		
+		</div>	
 	</div>
 	<?php
 endif;

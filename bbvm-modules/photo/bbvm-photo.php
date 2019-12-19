@@ -35,12 +35,12 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Photo', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'image'    => array(
+						'image'            => array(
 							'type'        => 'photo',
 							'label'       => __( 'Photo to display.', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
 						),
-						'display_caption'     => array(
+						'display_caption'  => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Caption?', 'bb-vapor-modules-pro' ),
 							'default' => 'yes',
@@ -49,7 +49,7 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'display_title'     => array(
+						'display_title'    => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Title?', 'bb-vapor-modules-pro' ),
 							'default' => 'no',
@@ -57,34 +57,6 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-						),
-						'background_image'      => array(
-							'type'    => 'select',
-							'label'   => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
-							'default' => 'no',
-							'options' => array(
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-							),
-							'toggle' => array(
-								'yes' => array(
-									'fields' => array(
-										'photo_min_height',
-									),
-								),
-							),
-						),
-						'photo_min_height'      => array(
-							'type'         => 'unit',
-							'label'        => __( 'Minimum Height of Photo', 'bb-vapor-modules-pro' ),
-							'default'      => 500,
-							'preview'      => array(
-								'type'     => 'css',
-								'selector' => '.bbvm-photo figure',
-								'property' => 'min-height',
-							),
-							'units'        => array( 'px', 'vh', '%' ),
-							'default_unit' => 'px',
 						),
 					),
 				),
@@ -96,7 +68,7 @@ FLBuilder::register_module(
 				'caption' => array(
 					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'caption_type'   => array(
+						'caption_type'    => array(
 							'type'    => 'select',
 							'label'   => __( 'Caption Type', 'bb-vapor-modules-pro' ),
 							'default' => 'caption',
@@ -105,7 +77,7 @@ FLBuilder::register_module(
 								'caption' => __( 'Image Caption', 'bb-vapor-modules-pro' ),
 								'custom'  => __( 'Custom Caption', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
+							'toggle'  => array(
 								'custom' => array(
 									'fields' => array(
 										'caption_custom',
@@ -113,7 +85,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'caption_custom' => array(
+						'caption_custom'  => array(
 							'type'        => 'text',
 							'label'       => __( 'Caption Text', 'bb-vapor-modules-pro' ),
 							'placeholder' => __( 'Please enter a caption', 'bb-vapor-modules-pro' ),
@@ -166,7 +138,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'overlay_behavior'   => array(
+						'overlay_behavior'         => array(
 							'type'    => 'select',
 							'label'   => __( 'Overlay behavior', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -205,7 +177,7 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
-							'preview'     => array(
+							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.bbvm-photo figcaption',
 								'property' => 'padding',
@@ -243,7 +215,7 @@ FLBuilder::register_module(
 				'overlay' => array(
 					'title'  => __( 'Image Effects', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'filter_type' => array(
+						'filter_type'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a Filter', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
@@ -276,19 +248,45 @@ FLBuilder::register_module(
 								'xpro2'     => __( 'X-pro II', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'image_crop'  => array(
+						'background_image' => array(
 							'type'    => 'select',
-							'label'   => __( 'Image Crop', 'bb-vapor-modules-pro' ),
-							'default' => 'none',
+							'label'   => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
 							'options' => array(
-								'crop-none'      => __( 'None', 'bb-vapor-modules-pro' ),
-								'crop-circular'  => __( 'Circular', 'bb-vapor-modules-pro' ),
-								'crop-landscape' => __( 'Landscape', 'bb-vapor-modules-pro' ),
-								'crop-panorama'  => __( 'Panorama', 'bb-vapor-modules-pro' ),
-								'crop-square'    => __( 'Square', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'photo_min_height',
+									),
+								),
 							),
 						),
-						'image_align'  => array(
+						'photo_min_height' => array(
+							'type'         => 'unit',
+							'label'        => __( 'Minimum Height of Photo', 'bb-vapor-modules-pro' ),
+							'default'      => 500,
+							'preview'      => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figure',
+								'property' => 'min-height',
+							),
+							'units'        => array( 'px', 'vh', '%' ),
+							'default_unit' => 'px',
+						),
+						'image_appearance' => array(
+							'type'    => 'select',
+							'label'   => __( 'Image Appearance', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'options' => array(
+								'appearance-none'     => __( 'None', 'bb-vapor-modules-pro' ),
+								'appearance-circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'appearance-mirror'   => __( 'Mirror', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'image_align'      => array(
 							'type'    => 'align',
 							'label'   => __( 'Image Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
