@@ -582,11 +582,18 @@ if ( 'yes' === $settings->background_image ) {
 endif;
 
 // Image styles.
+$image_justify = 'center';
+if ( 'left' === $settings->image_align ) {
+	$image_justify = 'flex-start';
+}
+if ( 'right' === $settings->image_align ) {
+	$image_justify = 'flex-end';
+}
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: <?php echo esc_html( $image_justify ); ?>;
 	text-align: center;
 	object-fit: cover;
 	width: 100%;
