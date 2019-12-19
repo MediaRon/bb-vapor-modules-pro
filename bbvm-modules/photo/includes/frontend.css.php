@@ -589,8 +589,15 @@ if ( 'left' === $settings->image_align ) {
 if ( 'right' === $settings->image_align ) {
 	$image_justify = 'flex-end';
 }
+$container_justify = 'center';
+if ( 'left' === $settings->container_alignment ) {
+	$container_justify = 'flex-start';
+}
+if ( 'right' === $settings->container_alignment ) {
+	$container_justify = 'flex-end';
+}
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo {
 	display: flex;
 	align-items: center;
 	justify-content: <?php echo esc_html( $image_justify ); ?>;
@@ -692,7 +699,6 @@ if ( 'below' === $settings->caption_display ) :
 endif;
 
 // Title styles.
-// Caption Below Image styles.
 if ( 'yes' === $settings->display_title ) :
 	$image_justify = 'center';
 	if ( 'left' === $settings->title_typography['text_align'] ) {
@@ -804,7 +810,25 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-photo-wrapper",
 	)
 );
+if ( 'full_width' === $settings->container_width ):
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?>.fl-module-bbvm-photo .fl-module-content {
+		width: 100%;
+	}
+	<?php
+endif;
 ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
+	display: block;
+	width: auto;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo {
+	display: flex;
+}
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-wrapper {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->container_background_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?>.fl-module-bbvm-photo {
+	display: flex;
+	justify-content: <?php echo esc_html( $container_justify ); ?>;
 }

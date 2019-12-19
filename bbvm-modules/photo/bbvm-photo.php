@@ -118,6 +118,20 @@ FLBuilder::register_module(
 								'property' => 'border',
 							),
 						),
+						'container_width' => array(
+							'type' => 'select',
+							'label' => __( 'Container Width', 'bb-vapor-modules-pro' ),
+							'default' => 'fit',
+							'options' => array(
+								'fit' => __( 'Fit Content', 'bb-vapor-modules-pro' ),
+								'full_width' => __( 'Full Width', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'container_alignment' => array(
+							'type' => 'align',
+							'label' => __( 'Container Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
 					),
 				),
 			),
@@ -486,6 +500,7 @@ FLBuilder::register_module(
 									),
 								),
 							),
+							'description' => __( 'It is not recommended to do a circular appearance with a background image', 'bb-vapor-modules-pro' ),
 						),
 						'photo_min_height' => array(
 							'type'         => 'unit',

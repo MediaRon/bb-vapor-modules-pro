@@ -65,7 +65,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 				endif;
 				?>
 			</figure>
-			<?php if ( ! empty( $caption_output && 'below' === $settings->caption_display ) ) : ?>
+			<?php if ( ! empty( $caption_output ) && 'below' === $settings->caption_display && 'yes' === $settings->display_caption ) : ?>
 				<figcaption class="bbvm-photo-caption bbvm-caption-below">
 					<span class="bbvm-photo-caption-content">
 						<?php echo wp_kses_post( $caption_output ); ?>
