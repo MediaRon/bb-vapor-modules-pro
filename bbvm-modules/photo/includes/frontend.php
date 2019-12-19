@@ -36,6 +36,20 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 		<?php endif; ?>
 		<div class="bbvm-photo">
 			<figure class="<?php echo esc_attr( $settings->filter_type ); ?> <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?> <?php echo esc_attr( $crop_type ); ?>">
+				<?php
+				if ( 'regular' === $settings->photo_link_select && 'yes' === $settings->link_option && ! empty( $settings->photo_url ) ) :
+					echo wp_kses_post( BBVapor_Modules_Pro::get_starting_anchor( $settings, 'photo_url', 'bbvm-photo-link bbvm-photo-link-regular' ) );
+					echo '</a>';
+				endif;
+				if ( 'lightbox' === $settings->photo_link_select && 'yes' === $settings->link_option && ! empty( $settings->photo_url ) ) :
+					$lightbox_url = wp_get_attachment_url( $attachment_id, $settings->photo_lightbox_size );
+					printf(
+						'<a href="%s" title="%s" class="bbvm-photo-link bbvm-photo-link-lightbox"></a>',
+						esc_url( $lightbox_url ),
+						esc_attr( $caption_output )
+					);
+				endif;
+				?>
 				<?php if ( 'no' === $settings->background_image ) : ?>
 					<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
 				<?php endif; ?>

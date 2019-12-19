@@ -753,3 +753,21 @@ if ( 'yes' === $settings->display_title ) :
 		)
 	);
 endif;
+
+// Link settings.
+?>
+.fl-node-<?php echo esc_attr( $id ); ?> .bbvm-photo-link {
+	position: absolute;
+	z-index: 2000;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.bbvm-mfp-fade .mfp-title p {
+	padding: 10px 20px 10px 20px;
+	font-weight: 700;
+	font-size: 16px;
+	text-align: center;
+	color: #FFF;
+}

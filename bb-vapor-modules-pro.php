@@ -57,11 +57,16 @@ class BBVapor_Modules_Pro {
 	 *
 	 * @param object $settings The Beaver Builder module settings object.
 	 * @param string $name     The setting name to check for.
+	 * @param string $class    The class to insert into an anchor.
 	 *
 	 * @return string Anchor HTML markup
 	 */
-	public static function get_starting_anchor( $settings, $name ) {
-		$return = sprintf( '<a href="%s"', esc_url( $settings->{$name} ) );
+	public static function get_starting_anchor( $settings, $name, $class = '' ) {
+		$return = sprintf(
+			'<a href="%s" class="%s"',
+			esc_url( $settings->{$name} ),
+			esc_attr( $class )
+		);
 
 		$no_follow = $name . '_nofollow';
 		if ( isset( $settings->{$no_follow} ) && 'yes' === $settings->{$no_follow} ) {
