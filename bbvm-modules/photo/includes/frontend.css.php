@@ -683,3 +683,73 @@ if ( 'below' === $settings->caption_display ) :
 		)
 	);
 endif;
+
+// Title styles.
+// Caption Below Image styles.
+if ( 'yes' === $settings->display_title ) :
+	$image_justify = 'center';
+	if ( 'left' === $settings->title_typography['text_align'] ) {
+		$image_justify = 'flex-start';
+	}
+	if ( 'right' === $settings->title_typography['text_align'] ) {
+		$image_justify = 'flex-end';
+	}
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-title {
+		display: flex;
+		align-items: center;
+		justify-content: <?php echo esc_html( $image_justify ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-title p {
+		margin: 0;
+		padding: 0;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-title,
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-title * {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->title_text_color ) ); ?>;
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->title_background_color ) ); ?>;
+	}
+	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'title_padding',
+			'selector'     => ".fl-node-$id .bbvm-photo-title",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'title_padding_top',
+				'padding-right'  => 'title_padding_right',
+				'padding-bottom' => 'title_padding_bottom',
+				'padding-left'   => 'title_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'title_margin',
+			'selector'     => ".fl-node-$id .bbvm-photo-title",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'title_margin_top',
+				'margin-right'  => 'title_margin_right',
+				'margin-bottom' => 'title_margin_bottom',
+				'margin-left'   => 'title_margin_left',
+			),
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'title_typography',
+			'selector'     => ".fl-node-$id .bbvm-photo-title, .fl-node-$id .bbvm-photo-title *",
+		)
+	);
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'title_border',
+			'selector'     => ".fl-node-$id .bbvm-photo-title",
+		)
+	);
+endif;

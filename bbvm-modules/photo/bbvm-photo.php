@@ -64,6 +64,78 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
+							'toggle'  => array(
+								'yes' => array(
+									'sections' => array(
+										'image_title',
+									),
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+		'image_title' => array(
+			'title'    => __( 'Title', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'caption' => array(
+					'title'  => __( 'Title', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'title_custom'  => array(
+							'type'        => 'text',
+							'label'       => __( 'Title Text', 'bb-vapor-modules-pro' ),
+							'placeholder' => __( 'Please enter a title', 'bb-vapor-modules-pro' ),
+							'preview'     => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-photo-title',
+							),
+						),
+						'title_padding'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo-title',
+								'property' => 'padding',
+							),
+						),
+						'title_margin'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select a Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo-title',
+								'property' => 'margin',
+							),
+						),
+						'title_background_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Select a Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => 'FFFFFF',
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'title_text_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_reset' => true,
+						),
+						'title_typography'       => array(
+							'type'       => 'typography',
+							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'title_border'          => array(
+							'type'    => 'border',
+							'label'   => __( 'Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo-title',
+							),
 						),
 					),
 				),

@@ -31,7 +31,9 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	}
 	?>
 	<div class="bbvm-photo-wrapper">
-		<h2>Title</h2>
+		<?php if ( 'yes' === $settings->display_title ) : ?>
+			<h2 class="bbvm-photo-title"><?php echo wp_kses_post( $settings->title_custom ); ?></h2>
+		<?php endif; ?>
 		<div class="bbvm-photo">
 			<figure class="<?php echo esc_attr( $settings->filter_type ); ?> <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?> <?php echo esc_attr( $crop_type ); ?>">
 				<?php if ( 'no' === $settings->background_image ) : ?>
