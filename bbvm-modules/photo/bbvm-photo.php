@@ -520,7 +520,7 @@ FLBuilder::register_module(
 							'default'     => 'none',
 							'options'     => array(
 								'appearance-none'     => __( 'None', 'bb-vapor-modules-pro' ),
-								'appearance-circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'appearance-circular' => __( 'Circular (in beta)', 'bb-vapor-modules-pro' ),
 							),
 							'description' => __( 'More effects will be added over time', 'bb-vapor-modules-pro' ),
 						),
@@ -532,6 +532,7 @@ FLBuilder::register_module(
 						'image_border' => array(
 							'type' => 'border',
 							'label' => __( 'Image Border', 'bb-vapor-modules-pro' ),
+							'description' => __( 'Clear out the border radius for circular images', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
