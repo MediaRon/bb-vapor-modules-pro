@@ -636,7 +636,7 @@ if ( 'appearance-mirror' === $settings->image_appearance ) {
 if ( 'none' !== $settings->image_border_type ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img {
-		border: <?php echo absint( $settings->image_border_width ); ?>px <?php echo esc_html( $settings->image_border_type ); ?> <?php echo BBVapor_Modules_Pro::get_color( $settings->image_border_color ); ?>; 
+		border: <?php echo absint( $settings->image_border_width ); ?>px <?php echo esc_html( $settings->image_border_type ); ?> <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->image_border_color ) ); ?>; 
 	}
 	<?php
 endif;

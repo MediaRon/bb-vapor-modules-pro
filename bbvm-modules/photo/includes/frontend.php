@@ -41,7 +41,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 					echo wp_kses_post( BBVapor_Modules_Pro::get_starting_anchor( $settings, 'photo_url', 'bbvm-photo-link bbvm-photo-link-regular' ) );
 					echo '</a>';
 				endif;
-				if ( 'lightbox' === $settings->photo_link_select && 'yes' === $settings->link_option && ! empty( $settings->photo_url ) ) :
+				if ( 'lightbox' === $settings->photo_link_select && 'yes' === $settings->link_option ) :
 					$lightbox_url = wp_get_attachment_url( $attachment_id, $settings->photo_lightbox_size );
 					printf(
 						'<a href="%s" title="%s" class="bbvm-photo-link bbvm-photo-link-lightbox"></a>',

@@ -29,18 +29,18 @@ class BBVapor_Photo extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_Photo',
 	array(
-		'general' => array(
+		'general'     => array(
 			'title'    => __( 'General', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general' => array(
+				'general'   => array(
 					'title'  => __( 'Photo', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'image'            => array(
+						'image'           => array(
 							'type'        => 'photo',
 							'label'       => __( 'Photo to display.', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
 						),
-						'display_caption'  => array(
+						'display_caption' => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Caption?', 'bb-vapor-modules-pro' ),
 							'default' => 'yes',
@@ -56,7 +56,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'display_title'    => array(
+						'display_title'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Display Title?', 'bb-vapor-modules-pro' ),
 							'default' => 'no',
@@ -72,7 +72,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'link_option'    => array(
+						'link_option'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Enable a Photo Link?', 'bb-vapor-modules-pro' ),
 							'default' => 'no',
@@ -94,42 +94,42 @@ FLBuilder::register_module(
 					'title'  => __( 'Container Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'container_background_color' => array(
-							'type' => 'color',
-							'label' => __( 'Background Color', 'bb-vapor-modules-pro' ),
+							'type'       => 'color',
+							'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => ".bbvm-photo-wrapper",
+								'selector' => '.bbvm-photo-wrapper',
 								'property' => 'background-color',
 							),
 						),
-						'container_padding' => array(
+						'container_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Container Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'container_border' => array(
-							'type'  => 'border',
-							'label' => __( 'Container Border', 'bb-vapor-modules-pro' ),
-							'preview'    => array(
-								'type' => 'css',
-								'selector' => ".bbvm-photo-wrapper",
+						'container_border'           => array(
+							'type'    => 'border',
+							'label'   => __( 'Container Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo-wrapper',
 								'property' => 'border',
 							),
 						),
-						'container_width' => array(
-							'type' => 'select',
-							'label' => __( 'Container Width', 'bb-vapor-modules-pro' ),
+						'container_width'            => array(
+							'type'    => 'select',
+							'label'   => __( 'Container Width', 'bb-vapor-modules-pro' ),
 							'default' => 'fit',
 							'options' => array(
-								'fit' => __( 'Fit Content', 'bb-vapor-modules-pro' ),
+								'fit'        => __( 'Fit Content', 'bb-vapor-modules-pro' ),
 								'full_width' => __( 'Full Width', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'container_alignment' => array(
-							'type' => 'align',
-							'label' => __( 'Container Alignment', 'bb-vapor-modules-pro' ),
+						'container_alignment'        => array(
+							'type'    => 'align',
+							'label'   => __( 'Container Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
 					),
@@ -142,7 +142,7 @@ FLBuilder::register_module(
 				'caption' => array(
 					'title'  => __( 'Title', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'title_custom'  => array(
+						'title_custom'           => array(
 							'type'        => 'text',
 							'label'       => __( 'Title Text', 'bb-vapor-modules-pro' ),
 							'placeholder' => __( 'Please enter a title', 'bb-vapor-modules-pro' ),
@@ -161,7 +161,7 @@ FLBuilder::register_module(
 								'property' => 'padding',
 							),
 						),
-						'title_margin'          => array(
+						'title_margin'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -189,7 +189,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'title_border'          => array(
+						'title_border'           => array(
 							'type'    => 'border',
 							'label'   => __( 'Border', 'bb-vapor-modules-pro' ),
 							'preview' => array(
@@ -201,10 +201,10 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'caption' => array(
+		'caption'     => array(
 			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'caption' => array(
+				'caption'            => array(
 					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'caption_type'    => array(
@@ -247,7 +247,7 @@ FLBuilder::register_module(
 										'overlay',
 									),
 								),
-								'below' => array(
+								'below'   => array(
 									'sections' => array(
 										'caption_appearance',
 									),
@@ -269,7 +269,7 @@ FLBuilder::register_module(
 								'property' => 'padding',
 							),
 						),
-						'caption_margin'          => array(
+						'caption_margin'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
@@ -297,7 +297,7 @@ FLBuilder::register_module(
 							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'caption_border'          => array(
+						'caption_border'           => array(
 							'type'    => 'border',
 							'label'   => __( 'Border', 'bb-vapor-modules-pro' ),
 							'preview' => array(
@@ -307,7 +307,7 @@ FLBuilder::register_module(
 						),
 					),
 				),
-				'overlay' => array(
+				'overlay'            => array(
 					'title'  => __( 'Overlay', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'overlay_type'             => array(
@@ -404,13 +404,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'photo_link' => array(
-			'title' => __( 'Photo Link', 'bb-vapor-modules-pro' ),
+		'photo_link'  => array(
+			'title'    => __( 'Photo Link', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'photo_link' => array(
-					'title' => __( 'Photo Link', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Photo Link', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'photo_link_select' => array(
+						'photo_link_select'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Link Type', 'bb-vapor-modules-pro' ),
 							'default' => 'regular',
@@ -418,8 +418,8 @@ FLBuilder::register_module(
 								'lightbox' => __( 'Lightbox', 'bb-vapor-modules-pro' ),
 								'regular'  => __( 'Regular Link', 'bb-vapor-modules-pro' ),
 							),
-							'toggle' => array(
-								'regular' => array(
+							'toggle'  => array(
+								'regular'  => array(
 									'fields' => array(
 										'photo_url',
 									),
@@ -436,23 +436,23 @@ FLBuilder::register_module(
 							'label'   => __( 'Photo Size For Lightbox', 'bb-vapor-modules-pro' ),
 							'default' => 'large',
 						),
-						'photo_url' => array(
+						'photo_url'           => array(
 							'type'          => 'link',
 							'label'         => __( 'Photo Link', 'bb-vapor-modules-pro' ),
 							'show_target'   => true,
-							'show_nofollow'	=> true,
+							'show_nofollow' => true,
 						),
 					),
 				),
 			),
 		),
-		'effects' => array(
+		'effects'     => array(
 			'title'    => __( 'Effects', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'overlay' => array(
 					'title'  => __( 'Image Effects', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'filter_type'      => array(
+						'filter_type'        => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a Filter', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
@@ -485,15 +485,15 @@ FLBuilder::register_module(
 								'xpro2'     => __( 'X-pro II', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'background_image' => array(
-							'type'    => 'select',
-							'label'   => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
-							'default' => 'no',
-							'options' => array(
+						'background_image'   => array(
+							'type'        => 'select',
+							'label'       => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
+							'default'     => 'no',
+							'options'     => array(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'toggle'  => array(
+							'toggle'      => array(
 								'yes' => array(
 									'fields' => array(
 										'photo_min_height',
@@ -502,7 +502,7 @@ FLBuilder::register_module(
 							),
 							'description' => __( 'It is not recommended to do a circular appearance with a background image', 'bb-vapor-modules-pro' ),
 						),
-						'photo_min_height' => array(
+						'photo_min_height'   => array(
 							'type'         => 'unit',
 							'label'        => __( 'Minimum Height of Photo', 'bb-vapor-modules-pro' ),
 							'default'      => 500,
@@ -514,7 +514,7 @@ FLBuilder::register_module(
 							'units'        => array( 'px', 'vh', '%' ),
 							'default_unit' => 'px',
 						),
-						'image_appearance' => array(
+						'image_appearance'   => array(
 							'type'        => 'select',
 							'label'       => __( 'Image Appearance', 'bb-vapor-modules-pro' ),
 							'default'     => 'none',
@@ -524,30 +524,30 @@ FLBuilder::register_module(
 							),
 							'description' => __( 'More effects will be added over time', 'bb-vapor-modules-pro' ),
 						),
-						'image_align'      => array(
+						'image_align'        => array(
 							'type'    => 'align',
 							'label'   => __( 'Image Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
 						'image_border_color' => array(
-							'type' => 'color',
+							'type'  => 'color',
 							'label' => __( 'Image Border Color', 'bb-vapor-modules-pro' ),
 						),
-						'image_border_type' => array(
-							'type' => 'select',
-							'label' => __( 'Image Border Type', 'bb-vapor-modules-pro' ),
+						'image_border_type'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Image Border Type', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
 							'options' => array(
-								'none' => __( 'None', 'bb-vapor-modules-pro' ),
-								'solid' => __( 'Solid', 'bb-vapor-modules-pro' ),
+								'none'   => __( 'None', 'bb-vapor-modules-pro' ),
+								'solid'  => __( 'Solid', 'bb-vapor-modules-pro' ),
 								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
 						),
 						'image_border_width' => array(
-							'type' => 'unit',
-							'label' => __( 'Image Border Width', 'bb-vapor-modules-pro' ),
+							'type'    => 'unit',
+							'label'   => __( 'Image Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 0,
 						),
 					),
