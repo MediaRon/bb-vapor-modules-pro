@@ -581,6 +581,22 @@ if ( 'yes' === $settings->background_image ) {
 	);
 endif;
 
+// Image styles.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	flex-wrap: wrap;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure figcaption {
+	width: 100%;
+}
+<?php
 // Image Appearance Options.
 if ( 'appearance-circular' === $settings->image_appearance ) {
 	?>
@@ -598,3 +614,72 @@ if ( 'appearance-mirror' === $settings->image_appearance ) {
 	}
 	<?php
 }
+
+// Caption Below Image styles.
+if ( 'below' === $settings->caption_display ) :
+	$image_justify = 'center';
+	if ( 'left' === $settings->caption_typography['text_align'] ) {
+		$image_justify = 'flex-start';
+	}
+	if ( 'right' === $settings->caption_typography['text_align'] ) {
+		$image_justify = 'flex-end';
+	}
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption {
+		display: flex;
+		align-items: center;
+		justify-content: <?php echo esc_html( $image_justify ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption p {
+		margin: 0;
+		padding: 0;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption,
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption * {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->caption_text_color ) ); ?>;
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->caption_background_color ) ); ?>;
+	}
+	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'caption_padding',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'caption_padding_top',
+				'padding-right'  => 'caption_padding_right',
+				'padding-bottom' => 'caption_padding_bottom',
+				'padding-left'   => 'caption_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'caption_margin',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption",
+			'unit'         => 'px',
+			'props'        => array(
+				'margin-top'    => 'caption_margin_top',
+				'margin-right'  => 'caption_margin_right',
+				'margin-bottom' => 'caption_margin_bottom',
+				'margin-left'   => 'caption_margin_left',
+			),
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'caption_typography',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption, .fl-node-$id .bbvm-photo figcaption *",
+		)
+	);
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'caption_border',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption",
+		)
+	);
+endif;

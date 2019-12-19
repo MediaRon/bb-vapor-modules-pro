@@ -48,6 +48,13 @@ FLBuilder::register_module(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
+							'toggle'  => array(
+								'yes' => array(
+									'tabs' => array(
+										'caption',
+									),
+								),
+							),
 						),
 						'display_title'    => array(
 							'type'    => 'select',
@@ -108,6 +115,62 @@ FLBuilder::register_module(
 										'overlay',
 									),
 								),
+								'below' => array(
+									'sections' => array(
+										'caption_appearance',
+									),
+								),
+							),
+						),
+					),
+				),
+				'caption_appearance' => array(
+					'title'  => __( 'Appearance', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'caption_padding'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figcaption',
+								'property' => 'padding',
+							),
+						),
+						'caption_margin'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Select a Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figcaption',
+								'property' => 'margin',
+							),
+						),
+						'caption_background_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Select a Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => 'FFFFFF',
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'caption_text_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
+							'default'    => '000000',
+							'show_reset' => true,
+						),
+						'caption_typography'       => array(
+							'type'       => 'typography',
+							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'caption_border'          => array(
+							'type'    => 'border',
+							'label'   => __( 'Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figcaption',
 							),
 						),
 					),

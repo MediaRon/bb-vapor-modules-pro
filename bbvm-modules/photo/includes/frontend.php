@@ -8,7 +8,6 @@
  * @since 1.6.8
  */
 
-bbvm_debug( $settings, 'image_src' );
 if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	$attachment_id  = absint( $settings->image );
 	$alt_text       = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
@@ -39,10 +38,12 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 					<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
 				<?php endif; ?>
 				<?php
-				if ( ! empty( $caption_output && 'overlay' === $settings->caption_display ) ) :
+				if ( ! empty( $caption_output && 'overlay' === $settings->caption_display && 'yes' === $settings->display_caption ) ) :
 					?>
 					<figcaption class="bbvm-photo-caption <?php echo esc_attr( $fig_class ); ?> <?php echo 'hover' === $settings->overlay_behavior ? 'hover-only' : ''; ?>">
-						<?php echo wp_kses_post( $caption_output ); ?>
+						<span class="bbvm-photo-caption-content">
+							<?php echo wp_kses_post( $caption_output ); ?>
+						</span>
 					</figcaption>
 					<?php
 				endif;
@@ -50,7 +51,9 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 			</figure>
 			<?php if ( ! empty( $caption_output && 'below' === $settings->caption_display ) ) : ?>
 				<figcaption class="bbvm-photo-caption bbvm-caption-below">
-					<?php echo wp_kses_post( $caption_output ); ?>
+					<span class="bbvm-photo-caption-content">
+						<?php echo wp_kses_post( $caption_output ); ?>
+					</span>
 				</figcaption>
 			<?php endif; ?>
 		</div>	
