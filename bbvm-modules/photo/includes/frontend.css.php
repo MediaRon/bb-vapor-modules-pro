@@ -771,3 +771,30 @@ endif;
 	text-align: center;
 	color: #FFF;
 }
+<?php
+// Container settings.
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'container_padding',
+		'selector'     => ".fl-node-$id .bbvm-photo-wrapper",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'container_padding_top',
+			'padding-right'  => 'container_padding_right',
+			'padding-bottom' => 'container_padding_bottom',
+			'padding-left'   => 'container_padding_left',
+		),
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'container_border',
+		'selector'     => ".fl-node-$id .bbvm-photo-wrapper",
+	)
+);
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-wrapper {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->container_background_color ) ); ?>;
+}
