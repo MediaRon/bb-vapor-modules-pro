@@ -72,6 +72,47 @@ FLBuilder::register_module(
 								),
 							),
 						),
+						'link_option'    => array(
+							'type'    => 'select',
+							'label'   => __( 'Use Photo Link?', 'bb-vapor-modules-pro' ),
+							'default' => 'no',
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'photo_link',
+										'photo_link_select',
+										'photo_link',
+									),
+								),
+							),
+						),
+						'photo_link_select' => array(
+							'type'    => 'select',
+							'label'   => __( 'Link Type', 'bb-vapor-modules-pro' ),
+							'default' => 'regular',
+							'options' => array(
+								'lightbox' => __( 'Lightbox', 'bb-vapor-modules-pro' ),
+								'regular'  => __( 'Regular Link', 'bb-vapor-modules-pro' ),
+							),
+							'toggle' => array(
+								'regular' => array(
+									'fields' => array(
+										'photo_link',
+									),
+								),
+							),
+						),
+						'photo_link' => array(
+							'type'          => 'link',
+							'label'         => __( 'Photo Link', 'bb-vapor-modules-pro' ),
+							'show_target'   => true,
+							'show_nofollow'	=> true,
+
+						)
 					),
 				),
 			),
