@@ -641,16 +641,17 @@ FLBuilderCSS::border_field_rule(
 // Caption Below Image styles.
 if ( 'below' === $settings->caption_display ) :
 	$image_justify = 'center';
-	if ( 'left' === $settings->caption_typography['text_align'] ) {
+	if ( 'left' === isset( $settings->caption_typography['text_align'] ) ? $settings->caption_typography['text_align'] : '' ) {
 		$image_justify = 'flex-start';
 	}
-	if ( 'right' === $settings->caption_typography['text_align'] ) {
+	if ( 'right' === isset( $settings->caption_typography['text_align'] ) ? $settings->caption_typography['text_align'] : '' ) {
 		$image_justify = 'flex-end';
 	}
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption {
 		display: flex;
 		align-items: center;
+		width: 100%;
 		justify-content: <?php echo esc_html( $image_justify ); ?>;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figcaption p {
