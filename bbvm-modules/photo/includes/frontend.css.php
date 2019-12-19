@@ -756,7 +756,10 @@ endif;
 
 // Link settings.
 ?>
-.fl-node-<?php echo esc_attr( $id ); ?> .bbvm-photo-link {
+.fl-node-<?php echo esc_html( $id ); ?> figure {
+	position: relative;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-link {
 	position: absolute;
 	z-index: 2000;
 	width: 100%;
