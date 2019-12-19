@@ -23,6 +23,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	$overlay_type   = isset( $settings->overlay_type ) ? $settings->overlay_type : 'horizontal';
 	$animation_type = isset( $settings->animation ) ? $settings->animation : 'regular';
 	$fig_class      = '';
+	$crop_type      = isset( $setting->image_crop ) ? $settings->image_crop : 'crop-none';
 	if ( 'horizontal' === $overlay_type ) {
 		$fig_class = isset( $settings->horizontal_overlay_type ) ? $settings->horizontal_overlay_type : 'top';
 	} elseif ( 'full' === $overlay_type ) {
@@ -32,7 +33,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	<div class="bbvm-photo-wrapper">
 		<h2>Title</h2>
 		<div class="bbvm-photo">
-			<figure class="<?php echo esc_attr( $settings->filter_type ); ?> <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?>">
+			<figure class="<?php echo esc_attr( $settings->filter_type ); ?> <?php echo esc_attr( $overlay_type ); ?> <?php echo esc_attr( $fig_class ); ?> <?php echo esc_attr( $animation_type ); ?> <?php echo esc_attr( $crop_type ); ?>">
 				<?php if ( 'no' === $settings->background_image ) : ?>
 					<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
 				<?php endif; ?>

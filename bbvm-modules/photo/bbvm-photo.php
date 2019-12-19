@@ -243,7 +243,7 @@ FLBuilder::register_module(
 				'overlay' => array(
 					'title'  => __( 'Image Effects', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'filter_type'             => array(
+						'filter_type' => array(
 							'type'    => 'select',
 							'label'   => __( 'Select a Filter', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
@@ -275,6 +275,23 @@ FLBuilder::register_module(
 								'Willow'    => __( 'Willow', 'bb-vapor-modules-pro' ),
 								'xpro2'     => __( 'X-pro II', 'bb-vapor-modules-pro' ),
 							),
+						),
+						'image_crop'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Image Crop', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'options' => array(
+								'crop-none'      => __( 'None', 'bb-vapor-modules-pro' ),
+								'crop-circular'  => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'crop-landscape' => __( 'Landscape', 'bb-vapor-modules-pro' ),
+								'crop-panorama'  => __( 'Panorama', 'bb-vapor-modules-pro' ),
+								'crop-square'    => __( 'Square', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'image_align'  => array(
+							'type'    => 'align',
+							'label'   => __( 'Image Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
 						),
 					),
 				),

@@ -8,7 +8,7 @@
  * @since 1.7.0
  */
 
- // Background Image.
+// Background Image.
 if ( 'yes' === $settings->background_image ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> figure {
@@ -22,6 +22,7 @@ if ( 'yes' === $settings->background_image ) {
 	}
 	<?php
 }
+// Overlays.
 ?>
 @keyframes bbvm-fadein {
 	from { opacity: 0; }
@@ -501,7 +502,7 @@ if ( 'yes' === $settings->background_image ) {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_text_color ) ); ?>;
 		width: 100%;
 		height: 100%;
@@ -556,26 +557,36 @@ if ( 'yes' === $settings->background_image ) {
 		opacity: 1;
 		z-index: 20;
 	}
-<?php
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'overlay_padding',
-		'selector'     => ".fl-node-$id .bbvm-photo figcaption",
-		'unit'         => 'px',
-		'props'        => array(
-			'padding-top'    => 'overlay_padding_top',
-			'padding-right'  => 'overlay_padding_right',
-			'padding-bottom' => 'overlay_padding_bottom',
-			'padding-left'   => 'overlay_padding_left',
-		),
-	)
-);
-FLBuilderCSS::typography_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'overlay_typography',
-		'selector'     => ".fl-node-$id .bbvm-photo figcaption, .fl-node-$id .bbvm-photo figcaption *",
-	)
-);
+	<?php
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'overlay_padding',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption",
+			'unit'         => 'px',
+			'props'        => array(
+				'padding-top'    => 'overlay_padding_top',
+				'padding-right'  => 'overlay_padding_right',
+				'padding-bottom' => 'overlay_padding_bottom',
+				'padding-left'   => 'overlay_padding_left',
+			),
+		)
+	);
+	FLBuilderCSS::typography_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'overlay_typography',
+			'selector'     => ".fl-node-$id .bbvm-photo figcaption, .fl-node-$id .bbvm-photo figcaption *",
+		)
+	);
 endif;
+
+// Cropping Options.
+if ( 'crop-circular' === $settings->image_crop ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
+		border-radius: 100%;
+		overflow: hidden;
+	}
+	<?php
+}
