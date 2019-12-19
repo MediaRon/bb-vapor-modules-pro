@@ -16,7 +16,11 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 	<div class="bbvm-photo-wrapper">
 		<h2>Title</h2>
 		<div class="bbvm-photo">
-
+			<?php if ( 'no' === $settings->background_image ) : ?>
+			<figure>
+				<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
+			</figure>
+			<?php endif; ?>
 		</div>
 		<?php
 		$caption_output = '';
