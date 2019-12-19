@@ -584,6 +584,7 @@ endif;
 // Image Appearance Options.
 if ( 'appearance-circular' === $settings->image_appearance ) {
 	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img,
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
 		border-radius: 100%;
 		overflow: hidden;
