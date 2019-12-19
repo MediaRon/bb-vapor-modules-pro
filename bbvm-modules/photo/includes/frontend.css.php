@@ -628,6 +628,15 @@ if ( 'appearance-mirror' === $settings->image_appearance ) {
 	}
 	<?php
 }
+?>
+<?php
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'image_border',
+		'selector'     => ".fl-node-$id .bbvm-photo figure img",
+	)
+);
 
 // Caption Below Image styles.
 if ( 'below' === $settings->caption_display ) :
@@ -810,7 +819,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-photo-wrapper",
 	)
 );
-if ( 'full_width' === $settings->container_width ):
+if ( 'full_width' === $settings->container_width ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?>.fl-module-bbvm-photo .fl-module-content {
 		width: 100%;

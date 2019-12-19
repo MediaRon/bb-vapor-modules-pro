@@ -529,6 +529,10 @@ FLBuilder::register_module(
 							'label'   => __( 'Image Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
+						'image_border' => array(
+							'type' => 'border',
+							'label' => __( 'Image Border', 'bb-vapor-modules-pro' ),
+						),
 					),
 				),
 			),
