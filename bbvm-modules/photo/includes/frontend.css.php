@@ -629,15 +629,17 @@ if ( 'appearance-mirror' === $settings->image_appearance ) {
 	<?php
 }
 ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img {
+	overflow: hidden;
+}
 <?php
-FLBuilderCSS::border_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'image_border',
-		'selector'     => ".fl-node-$id .bbvm-photo figure img",
-	)
-);
-
+if ( 'none' !== $settings->image_border_type ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img {
+		border: <?php echo absint( $settings->image_border_width ); ?>px <?php echo esc_html( $settings->image_border_type ); ?> <?php echo BBVapor_Modules_Pro::get_color( $settings->image_border_color ); ?>; 
+	}
+	<?php
+endif;
 // Caption Below Image styles.
 if ( 'below' === $settings->caption_display ) :
 	$image_justify = 'center';

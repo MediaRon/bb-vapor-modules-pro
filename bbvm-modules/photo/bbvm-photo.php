@@ -529,10 +529,26 @@ FLBuilder::register_module(
 							'label'   => __( 'Image Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
 						),
-						'image_border' => array(
-							'type' => 'border',
-							'label' => __( 'Image Border', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Clear out the border radius for circular images', 'bb-vapor-modules-pro' ),
+						'image_border_color' => array(
+							'type' => 'color',
+							'label' => __( 'Image Border Color', 'bb-vapor-modules-pro' ),
+						),
+						'image_border_type' => array(
+							'type' => 'select',
+							'label' => __( 'Image Border Type', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'options' => array(
+								'none' => __( 'None', 'bb-vapor-modules-pro' ),
+								'solid' => __( 'Solid', 'bb-vapor-modules-pro' ),
+								'dashed' => __( 'Dashed', 'bb-vapor-modules-pro' ),
+								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
+								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'image_border_width' => array(
+							'type' => 'unit',
+							'label' => __( 'Image Border Width', 'bb-vapor-modules-pro' ),
+							'default' => 0,
 						),
 					),
 				),
