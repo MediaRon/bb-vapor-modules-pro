@@ -17,6 +17,10 @@ class BBVapor_Photo extends FLBuilderModule {
 				'partial_refresh' => true, // Defaults to false and can be omitted.
 			)
 		);
+
+		$this->add_css( 'cssgram', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/cssgram/cssgram.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'jquery-magnificpopup' );
+		$this->add_js( 'jquery-magnificpopup' );
 	}
 }
 /**
@@ -227,39 +231,6 @@ FLBuilder::register_module(
 				),
 			),
 		),
-
-						'background_image'      => array(
-							'type'    => 'select',
-							'label'   => __( 'Make Photo a Background Image?', 'bb-vapor-modules-pro' ),
-							'default' => 'no',
-							'options' => array(
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-							),
-							'toggle' => array(
-								'yes' => array(
-									'fields' => array(
-										'photo_min_height',
-									),
-								),
-							),
-						),
-						'photo_min_height'      => array(
-							'type'         => 'unit',
-							'label'        => __( 'Minimum Height of Photo', 'bb-vapor-modules-pro' ),
-							'default'      => 500,
-							'preview'      => array(
-								'type'     => 'css',
-								'selector' => '.bbvm-photo',
-								'property' => 'text-align',
-							),
-							'units'        => array( 'px', 'vh', '%' ),
-							'default_unit' => 'px',
-						),
-					),
-				),
-			),
-		),
 		'caption' => array(
 			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
 			'sections' => array(
@@ -434,13 +405,12 @@ FLBuilder::register_module(
 								'slumber'   => __( 'Slumber', 'bb-vapor-modules-pro' ),
 								'stinson'   => __( 'Stinson', 'bb-vapor-modules-pro' ),
 								'Toaster'   => __( 'Toaster', 'bb-vapor-modules-pro' ),
-								'valencia'  => __( 'Balencia', 'bb-vapor-modules-pro' ),
+								'valencia'  => __( 'Valencia', 'bb-vapor-modules-pro' ),
 								'walden'    => __( 'Walden', 'bb-vapor-modules-pro' ),
 								'Willow'    => __( 'Willow', 'bb-vapor-modules-pro' ),
 								'xpro2'     => __( 'X-pro II', 'bb-vapor-modules-pro' ),
 							),
 						),
-						
 					),
 				),
 			),

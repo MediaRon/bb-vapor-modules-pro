@@ -17,7 +17,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 		<h2>Title</h2>
 		<div class="bbvm-photo">
 			<?php if ( 'no' === $settings->background_image ) : ?>
-			<figure>
+			<figure class="<?php echo esc_attr( $settings->filter_type ); ?>">
 				<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
 			</figure>
 			<?php endif; ?>
