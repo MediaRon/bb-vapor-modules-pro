@@ -183,6 +183,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'jetpack-related-posts'         => 'Jetpack Related Posts',
 			'jetpack-sharing'               => 'Jetpack Sharing',
 			'markdown'                      => 'Markdown',
+			'photo'                         => 'Photo',
 			'photo-overlay'                 => 'Photo Overlay',
 			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
 			'photoproof'                    => 'Photoproof',

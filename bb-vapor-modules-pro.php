@@ -57,11 +57,16 @@ class BBVapor_Modules_Pro {
 	 *
 	 * @param object $settings The Beaver Builder module settings object.
 	 * @param string $name     The setting name to check for.
+	 * @param string $class    The class to insert into an anchor.
 	 *
 	 * @return string Anchor HTML markup
 	 */
-	public static function get_starting_anchor( $settings, $name ) {
-		$return = sprintf( '<a href="%s"', esc_url( $settings->{$name} ) );
+	public static function get_starting_anchor( $settings, $name, $class = '' ) {
+		$return = sprintf(
+			'<a href="%s" class="%s"',
+			esc_url( $settings->{$name} ),
+			esc_attr( $class )
+		);
 
 		$no_follow = $name . '_nofollow';
 		if ( isset( $settings->{$no_follow} ) && 'yes' === $settings->{$no_follow} ) {
@@ -212,7 +217,11 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Twitter_Embed();
 			}
 
-			// Photo overlay module.
+			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
+				require_once 'bbvm-modules/photo/bbvm-photo.php';
+				new BBVapor_Photo();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo-overlay' ) ) {
 				require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
 				new BBVapor_Photo_Overlay_Module();
@@ -831,3 +840,35 @@ if ( ! function_exists( 'bbvm_edd_download_count' ) ) {
 	}
 }
 add_action( 'edd_sl_before_package_download', 'bbvm_edd_download_count', 10, 4 );
+
+if ( ! function_exists( 'bbvm_debug' ) ) {
+	/**
+	 * Debug the settings object.
+	 *
+	 * @param object $settings  The settings object.
+	 * @param string $key       The key to retrieve (optional: default return all keys).
+	 * @param bool   $error_log Whether to output to the error log or not (optional: default is print_r).
+	 * @param bool   $echo       Whether to echo the output or not (optional; default is echo).
+	 * @param bool   $die        Whether to die instead of returning.
+	 *
+	 * @return string Object data.
+	 */
+	function bbvm_debug( $settings, $key = '', $error_log = false, $echo = true, $die = false ) {
+		$return = '';
+		if ( isset( $settings->{$key} ) ) {
+			$return .= '<pre>' . print_r( $settings->{$key}, true ) . '</pre>'; // phpcs:ignore
+		} else {
+			$return .= '<pre>' . print_r( $settings, true ) . '</pre>'; // phpcs:ignore
+		}
+		if ( $error_log ) {
+			error_log( $return ); // phpcs:ignore
+		}
+		if ( $echo ) {
+			echo $return; // phpcs:ignore
+		}
+		if ( $die ) {
+			die( '' );
+		}
+		return $return;
+	}
+}
