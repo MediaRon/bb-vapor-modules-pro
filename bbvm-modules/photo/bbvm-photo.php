@@ -80,8 +80,8 @@ FLBuilder::register_module(
 							'default'      => 500,
 							'preview'      => array(
 								'type'     => 'css',
-								'selector' => '.bbvm-photo',
-								'property' => 'text-align',
+								'selector' => '.bbvm-photo figure',
+								'property' => 'min-height',
 							),
 							'units'        => array( 'px', 'vh', '%' ),
 							'default_unit' => 'px',
@@ -93,7 +93,7 @@ FLBuilder::register_module(
 		'caption' => array(
 			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'general' => array(
+				'caption' => array(
 					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'caption_type'   => array(
@@ -132,7 +132,7 @@ FLBuilder::register_module(
 							),
 							'toggle'  => array(
 								'overlay' => array(
-									'tabs' => array(
+									'sections' => array(
 										'overlay',
 									),
 								),
@@ -140,11 +140,6 @@ FLBuilder::register_module(
 						),
 					),
 				),
-			),
-		),
-		'overlay' => array(
-			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
-			'sections' => array(
 				'overlay' => array(
 					'title'  => __( 'Overlay', 'bb-vapor-modules-pro' ),
 					'fields' => array(
@@ -171,6 +166,14 @@ FLBuilder::register_module(
 								),
 							),
 						),
+						'overlay_behavior'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Overlay behavior', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'default' => __( 'Overlay on initial display', 'bb-vapor-modules-pro' ),
+								'hover'   => __( 'Overlay on hover', 'bb-vapor-modules-pro' ),
+							),
+						),
 						'horizontal_overlay_type'  => array(
 							'type'    => 'select',
 							'label'   => 'Select an overlay position',
@@ -179,12 +182,6 @@ FLBuilder::register_module(
 								'middle' => __( 'Middle', 'bb-vapor-modules-pro' ),
 								'bottom' => __( 'Bottom', 'bb-vapor-modules-pro' ),
 							),
-						),
-						'max_width'                => array(
-							'type'        => 'unit',
-							'label'       => __( 'Select a max width for the image', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Select a max width if using the overlay or middle positions.', 'bb-vapor-modules-pro' ),
-							'default'     => 400,
 						),
 						'animation'                => array(
 							'type'        => 'select',
@@ -208,147 +205,11 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
-						),
-						'overlay_background_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Background Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#FF0000',
-							'show_reset' => true,
-							'show_alpha' => true,
-						),
-						'overlay_text_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
-							'default'    => '#FFFFFF',
-							'show_reset' => true,
-						),
-						'overlay_typography'       => array(
-							'type'       => 'typography',
-							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-						),
-					),
-				),
-			),
-		),
-		'caption' => array(
-			'title'    => __( 'Caption', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'general' => array(
-					'title'  => __( 'Caption', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'caption_type'   => array(
-							'type'    => 'select',
-							'label'   => __( 'Caption Type', 'bb-vapor-modules-pro' ),
-							'default' => 'caption',
-							'options' => array(
-								'alt'     => __( 'Alt Text', 'bb-vapor-modules-pro' ),
-								'caption' => __( 'Image Caption', 'bb-vapor-modules-pro' ),
-								'custom'  => __( 'Custom Caption', 'bb-vapor-modules-pro' ),
-							),
-							'toggle' => array(
-								'custom' => array(
-									'fields' => array(
-										'caption_custom',
-									),
-								),
-							),
-						),
-						'caption_custom' => array(
-							'type'        => 'text',
-							'label'       => __( 'Caption Text', 'bb-vapor-modules-pro' ),
-							'placeholder' => __( 'Please enter a caption', 'bb-vapor-modules-pro' ),
 							'preview'     => array(
-								'type'     => 'text',
-								'selector' => '.bbvm-photo-caption',
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figcaption',
+								'property' => 'padding',
 							),
-						),
-						'caption_display' => array(
-							'type'    => 'select',
-							'label'   => __( 'Caption Display', 'bb-vapor-modules-pro' ),
-							'default' => 'below',
-							'options' => array(
-								'below'   => __( 'Below Image', 'bb-vapor-modules-pro' ),
-								'overlay' => __( 'Overlay Image', 'bb-vapor-modules-pro' ),
-							),
-							'toggle'  => array(
-								'overlay' => array(
-									'tabs' => array(
-										'overlay',
-									),
-								),
-							),
-						),
-					),
-				),
-			),
-		),
-		'overlay' => array(
-			'title'    => __( 'Overlay', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'overlay' => array(
-					'title'  => __( 'Overlay', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'overlay_type'             => array(
-							'type'    => 'select',
-							'label'   => __( 'Select an Overlay Type', 'bb-vapor-modules-pro' ),
-							'default' => 'horizontal',
-							'options' => array(
-								'none'       => __( 'Select an overlay type', 'bb-vapor-modules-pro' ),
-								'horizontal' => __( 'Horizontal', 'bb-vapor-modules-pro' ),
-								'full'       => __( 'Full Overlay', 'bb-vapor-modules-pro' ),
-							),
-							'toggle'  => array(
-								'horizontal' => array(
-									'fields' => array(
-										'horizontal_overlay_type',
-										'animation',
-									),
-								),
-								'full'       => array(
-									'fields' => array(
-										'animation',
-									),
-								),
-							),
-						),
-						'horizontal_overlay_type'  => array(
-							'type'    => 'select',
-							'label'   => 'Select an overlay position',
-							'options' => array(
-								'top'    => __( 'Top', 'bb-vapor-modules-pro' ),
-								'middle' => __( 'Middle', 'bb-vapor-modules-pro' ),
-								'bottom' => __( 'Bottom', 'bb-vapor-modules-pro' ),
-							),
-						),
-						'max_width'                => array(
-							'type'        => 'unit',
-							'label'       => __( 'Select a max width for the image', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Select a max width if using the overlay or middle positions.', 'bb-vapor-modules-pro' ),
-							'default'     => 400,
-						),
-						'animation'                => array(
-							'type'        => 'select',
-							'label'       => __( 'Select an animation', 'bb-vapor-modules-pro' ),
-							'options'     => array(
-								'regular'    => __( 'No animation', 'bb-vapor-modules-pro' ),
-								'fade'       => __( 'Fade in', 'bb-vapor-modules-pro' ),
-								'slideup'    => __( 'Slide up', 'bb-vapor-modules-pro' ),
-								'slidedown'  => __( 'Slide down', 'bb-vapor-modules-pro' ),
-								'slideleft'  => __( 'Slide left', 'bb-vapor-modules-pro' ),
-								'slideright' => __( 'Slide right', 'bb-vapor-modules-pro' ),
-							),
-							'description' => __( 'For middle and full overlays, only fade will be able to be applied.', 'bb-vapor-modules-pro' ),
-						),
-						'animation_duration'       => array(
-							'type'    => 'unit',
-							'label'   => __( 'Animation duraction in seconds', 'bb-vapor-modules-pro' ),
-							'default' => '3',
-						),
-						'overlay_padding'          => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
 						),
 						'overlay_background_color' => array(
 							'type'       => 'color',
@@ -367,6 +228,10 @@ FLBuilder::register_module(
 							'type'       => 'typography',
 							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-photo figcaption, .bbvm-photo figcaption *',
+							),
 						),
 					),
 				),
@@ -383,7 +248,7 @@ FLBuilder::register_module(
 							'label'   => __( 'Select a Filter', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
 							'options' => array(
-								'none'       => __( 'No Filter', 'bb-vapor-modules-pro' ),
+								'none'      => __( 'No Filter', 'bb-vapor-modules-pro' ),
 								'_1977'     => __( '1977', 'bb-vapor-modules-pro' ),
 								'aden'      => __( 'Aden', 'bb-vapor-modules-pro' ),
 								'brannan'   => __( 'Brannan', 'bb-vapor-modules-pro' ),

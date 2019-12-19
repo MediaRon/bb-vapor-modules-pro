@@ -51,6 +51,7 @@ FLBuilder::register_module(
 						'overlay_behavior' => array(
 							'type'    => 'select',
 							'label'   => __( 'Overlay behavior', 'bb-vapor-modules-pro' ),
+							'default' => 'default',
 							'options' => array(
 								'default' => __( 'Overlay on initial display', 'bb-vapor-modules-pro' ),
 								'hover'   => __( 'Overlay on hover', 'bb-vapor-modules-pro' ),
@@ -97,12 +98,6 @@ FLBuilder::register_module(
 								'middle' => __( 'Middle', 'bb-vapor-modules-pro' ),
 								'bottom' => __( 'Bottom', 'bb-vapor-modules-pro' ),
 							),
-						),
-						'max_width'                => array(
-							'type'        => 'unit',
-							'label'       => __( 'Select a max width for the image', 'bb-vapor-modules-pro' ),
-							'description' => __( 'Select a max width if using the overlay or middle positions.', 'bb-vapor-modules-pro' ),
-							'default'     => 400,
 						),
 						'animation'                => array(
 							'type'        => 'select',
