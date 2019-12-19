@@ -115,6 +115,7 @@ if ( 'yes' === $settings->background_image ) {
 		width: 100%;
 		top: 0;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal:hover figcaption.top {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -123,6 +124,7 @@ if ( 'yes' === $settings->background_image ) {
 		width: 100%;
 		top: 0;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideleft figcaption.top:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -138,6 +140,7 @@ if ( 'yes' === $settings->background_image ) {
 		animation: bbvm-slide-left <?php echo absint( $settings->animation_duration ); ?>s;
 		top: 0;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideleft:hover figcaption.top {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -153,6 +156,7 @@ if ( 'yes' === $settings->background_image ) {
 		animation: bbvm-slide-left <?php echo absint( $settings->animation_duration ); ?>s;
 		top: 0;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideright figcaption.top:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -170,6 +174,7 @@ if ( 'yes' === $settings->background_image ) {
 		animation: bbvm-slide-right-top <?php echo absint( $settings->animation_duration ); ?>s;
 		left: 0;
 		top: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideright:hover figcaption.top {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -202,6 +207,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.middle {
 		position: relative;
@@ -212,6 +218,7 @@ if ( 'yes' === $settings->background_image ) {
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.middle img {
 		width: 100%;
@@ -222,12 +229,14 @@ if ( 'yes' === $settings->background_image ) {
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_text_color ) ); ?>;
 		position: absolute;
 		width: 100%;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.middle:hover figcaption {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_text_color ) ); ?>;
 		position: absolute;
 		width: 100%;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.middle.fade figcaption:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -241,6 +250,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.middle.slideup:hover figcaption {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -254,6 +264,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom figcaption.bottom {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -277,6 +288,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideup figcaption.bottom:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -291,6 +303,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-slide-up-horizontal-bottom <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-slide-up-horizontal-bottom <?php echo absint( $settings->animation_duration ); ?>s;
 		bottom: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.slideup:hover figcaption.bottom {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -305,6 +318,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-slide-up-horizontal-bottom <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-slide-up-horizontal-bottom <?php echo absint( $settings->animation_duration ); ?>s;
 		bottom: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slidedown figcaption.bottom:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -322,6 +336,7 @@ if ( 'yes' === $settings->background_image ) {
 		opacity: 1;
 		top: inherit;
 		bottom: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slidedown:hover figcaption.bottom {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -339,6 +354,7 @@ if ( 'yes' === $settings->background_image ) {
 		opacity: 1;
 		top: inherit;
 		bottom: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slideleft figcaption.bottom:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -354,6 +370,7 @@ if ( 'yes' === $settings->background_image ) {
 		animation: bbvm-slide-left <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slideleft:hover figcaption.bottom {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -369,6 +386,7 @@ if ( 'yes' === $settings->background_image ) {
 		animation: bbvm-slide-left <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slideright figcaption.bottom:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -385,6 +403,7 @@ if ( 'yes' === $settings->background_image ) {
 		opacity: 1;
 		right: inherit;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.bottom.slideright:hover figcaption.bottom {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -401,6 +420,7 @@ if ( 'yes' === $settings->background_image ) {
 		opacity: 1;
 		right: inherit;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.top.slideup figcaption.top:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -419,6 +439,7 @@ if ( 'yes' === $settings->background_image ) {
 		bottom: inherit;
 		opacity: 1;
 		top: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.top.slideup:hover figcaption.top {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -437,6 +458,7 @@ if ( 'yes' === $settings->background_image ) {
 		bottom: inherit;
 		opacity: 1;
 		top: 0;
+		z-index: 20;
 	}
 	fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.top.slidedown figcaption.top:not(.hover-only) {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -454,6 +476,7 @@ if ( 'yes' === $settings->background_image ) {
 		bottom: inherit;
 		opacity: 1;
 		top: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.horizontal.top.slidedown:hover figcaption.top {
 		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_background_color ) ); ?>;
@@ -471,6 +494,7 @@ if ( 'yes' === $settings->background_image ) {
 		bottom: inherit;
 		opacity: 1;
 		top: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.full figcaption {
 		display: flex;
@@ -481,8 +505,10 @@ if ( 'yes' === $settings->background_image ) {
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->overlay_text_color ) ); ?>;
 		width: 100%;
 		height: 100%;
+		z-index: 20;
 		top: 0;
 		left: 0;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.full .hover-only {
 		opacity: 0;
@@ -508,6 +534,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure.full.fade:hover .hover-only {
 		display: flex;
@@ -527,6 +554,7 @@ if ( 'yes' === $settings->background_image ) {
 		-o-animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		animation: bbvm-fadein <?php echo absint( $settings->animation_duration ); ?>s;
 		opacity: 1;
+		z-index: 20;
 	}
 <?php
 FLBuilderCSS::dimension_field_rule(
