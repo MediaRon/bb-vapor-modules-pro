@@ -1,11 +1,11 @@
 <?php
 /**
- * Advanced Photo Overlay Module.
+ * Photo Module
  *
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.6.8
+ * @since 1.7.0
  */
 
 if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
