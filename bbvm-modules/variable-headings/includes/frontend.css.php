@@ -13,6 +13,7 @@ foreach ( $settings->headlines as $headline ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
 		color: <?php echo esc_html( isset( $headline->headline_color ) ? '#' . $headline->headline_color : 'inherit' ); ?> !important;
+		display: <?php echo isset( $headline->headline_display ) ? esc_html( $headline->headline_display ) : 'inline'; ?>;
 	}
 	<?php
 	FLBuilderCSS::typography_field_rule(
@@ -52,3 +53,7 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-variable-headings-for-beaverbuilder <?php echo esc_html( $settings->headline_tag ); ?> {
+	text-align: <?php echo isset( $settings->headline_alignment ) ? esc_html( $settings->headline_alignment ) : 'left'; ?>;
+}
