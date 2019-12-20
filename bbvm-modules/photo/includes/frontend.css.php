@@ -11,7 +11,7 @@
 // Background Image.
 if ( 'yes' === $settings->background_image ) {
 	?>
-	.fl-node-<?php echo esc_html( $id ); ?> figure {
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-wrapper .bbvm-photo figure {
 		min-height: <?php echo absint( $settings->photo_min_height ); ?><?php echo esc_html( $settings->photo_min_height_unit ); ?>;
 		background-image: url('<?php echo esc_url( $settings->image_src ); ?>');
 		background-repeat: no-repeat;
