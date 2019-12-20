@@ -24,3 +24,9 @@ if ( typeof jQuery != 'undefined' ) {
 		});
 	<?php endif; ?>
 }
+function bbvm_photo_module_image_crop( args ) {
+	var node = args.nodeID;
+	var ratio = args.getValue();
+	console.log( ratio );
+	console.log( node );
+}
