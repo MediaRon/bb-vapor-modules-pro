@@ -22,6 +22,54 @@ class BBVapor_Photo extends FLBuilderModule {
 		$this->add_css( 'jquery-magnificpopup' );
 		$this->add_js( 'jquery-magnificpopup' );
 	}
+
+	/**
+	 * Crop a photo when necessary.
+	 *
+	 * @param object $settings Settings object.
+	 */
+	public function update( $settings ) {
+		if ( ! empty( $settings->image ) && 'none' !== $settings->crop_type ) {
+			$data = FLBuilderPhoto::get_attachment_data( $settings->image );
+
+			if ( $data ) {
+				$settings->data = $data;
+			}
+			$this->maybe_crop_image();
+		}
+		return $settings;
+	}
+
+	/**
+	 * Crop an image if necessary.
+	 *
+	 * @return mixed false if no crop, image url if cropped
+	 */
+	private function maybe_crop_image() {
+		$this->maybe_delete_crops();
+
+		if ( 'none' !== $this->settings->crop_type ) {
+			$src = $this->get_original_image();
+		}
+		return false;
+	}
+
+	private function get_original_image() {
+		$url = '';
+		if ( ! empty( $this->settings->image_src ) ) {
+			$url = $this->settings->image_src;
+		}
+		return $url;
+	}
+
+	private function maybe_delete_crops() {
+
+	}
+
+	public function get_image_src() {
+		$src = $this->get_original_image();
+		return $src;
+	}
 }
 /**
  * Register the module and its form settings.
@@ -572,17 +620,13 @@ FLBuilder::register_module(
 							'default' => 'none',
 							'options' => array(
 								'none' => __( 'No Crop', 'bb-vapor-modules-pro' ),
-								'11'   => __( '1:1', 'bb-vapor-modules-pro' ),
-								'169'  => __( '16:9', 'bb-vapor-modules-pro' ),
-								'32'   => __( '3:2', 'bb-vapor-modules-pro' ),
-								'43'   => __( '4:3', 'bb-vapor-modules-pro' ),
-								'916'  => __( '9:16', 'bb-vapor-modules-pro' ),
-								'23'   => __( '2:3', 'bb-vapor-modules-pro' ),
-								'34'   => __( '3:4', 'bb-vapor-modules-pro' ),
-							),
-							'preview' => array(
-								'type'     => 'callback',
-								'callback' => 'bbvm_photo_module_image_crop',
+								'1:1'  => __( '1:1', 'bb-vapor-modules-pro' ),
+								'16:9' => __( '16:9', 'bb-vapor-modules-pro' ),
+								'3:2'  => __( '3:2', 'bb-vapor-modules-pro' ),
+								'4:3'  => __( '4:3', 'bb-vapor-modules-pro' ),
+								'9:16' => __( '9:16', 'bb-vapor-modules-pro' ),
+								'2:3'  => __( '2:3', 'bb-vapor-modules-pro' ),
+								'3:4'  => __( '3:4', 'bb-vapor-modules-pro' ),
 							),
 						),
 						'crop_position' => array(

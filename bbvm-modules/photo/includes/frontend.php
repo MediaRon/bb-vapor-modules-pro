@@ -51,7 +51,7 @@ if ( isset( $settings->image ) && ! empty( $settings->image ) ) :
 				endif;
 				?>
 				<?php if ( 'no' === $settings->background_image ) : ?>
-					<img src="<?php echo esc_url( $settings->image_src ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
+					<img src="<?php echo esc_url( $module->get_image_src() ); ?>" alt="<?php echo esc_attr( $alt_text ); ?>" />
 				<?php endif; ?>
 				<?php
 				if ( ! empty( $caption_output && 'overlay' === $settings->caption_display && 'yes' === $settings->display_caption ) ) :
