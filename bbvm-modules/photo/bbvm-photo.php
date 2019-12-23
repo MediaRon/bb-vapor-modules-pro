@@ -1,7 +1,17 @@
 <?php // phpcs:ignore
 class BBVapor_Photo extends FLBuilderModule {
+
+	/**
+	 * Editor for cropping images.
+	 *
+	 * @param object $editor The WordPress editor instance.
+	 */
+	private $editor = null;
+
 	/**
 	 * Class Constructor.
+	 *
+	 * @credit PowerPack for inspiration.
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -41,6 +51,25 @@ class BBVapor_Photo extends FLBuilderModule {
 	}
 
 	/**
+	 * Retrieve WordPress' built-in editor.
+	 *
+	 * @return object Image Editor.
+	 */
+	private function get_editor() {
+		if ( $this->editor === null ) {
+			$url_path  = $this->get_original_image();
+			$file_path = str_ireplace( home_url(), ABSPATH, $url_path );
+
+			if ( file_exists( $file_path ) ) {
+				$this->editor = wp_get_image_editor( $file_path );
+			} else {
+				$this->editor = wp_get_image_editor( $url_path );
+			}
+		}
+		return $this->editor;
+	}
+
+	/**
 	 * Crop an image if necessary.
 	 *
 	 * @return mixed false if no crop, image url if cropped
@@ -49,11 +78,49 @@ class BBVapor_Photo extends FLBuilderModule {
 		$this->maybe_delete_crops();
 
 		if ( 'none' !== $this->settings->crop_type ) {
-			$src = $this->get_original_image();
+			$src    = $this->get_original_image();
+			$editor = $this->get_editor();
+
+			if( ! $editor || is_wp_error( $editor ) ) {
+				return false;
+			}
+
+			$cropped_path = $this->get_cropped_path();
+			$size         = $editor->get_size();
+			$new_width    = $size['width'];
+			$new_height   = $size['height'];
+
+			// Get the crop ratios.
+			//if ( 'cicular' === $this->settings->crop_type ) {
+				$ratio_1 = 1.43;
+				$ratio_2 = .7;
+			//}
+
+			// Get the new width or height.
+			if ( $size['width'] / $size['height'] < $ratio_1) {
+				$new_height = $size['width'] * $ratio_2;
+			} else {
+				$new_width = $size['height'] * $ratio_1;
+			}
+
+			// Make sure we have enough memory to crop.
+			@ini_set('memory_limit', '300M');
+
+			// Crop the photo.
+			$editor->resize( $new_width, $new_height, true );
+
+			// Save the photo.
+			$editor->save( $cropped_path['path'] );
+
+			// Return the new url.
+			return $cropped_path['url'];
 		}
 		return false;
 	}
 
+	/**
+	 * Get the original uncropped image src.
+	 */
 	private function get_original_image() {
 		$url = '';
 		if ( ! empty( $this->settings->image_src ) ) {
@@ -66,8 +133,59 @@ class BBVapor_Photo extends FLBuilderModule {
 
 	}
 
+	/**
+	 * Get a cropped image's path based on the original image.
+	 */
+	private function get_cropped_path() {
+		$crop        = $this->settings->crop_type;
+		$url         = $this->get_original_image();
+		$cache_dir   = FLBuilderModel::get_cache_dir();
+
+		if ( empty( $url ) ) {
+			$filename = uniqid(); // Return a uniqie file.
+		} else {
+
+			if ( stristr( $url, '?' ) ) {
+				$parts = explode( '?', $url );
+				$url   = $parts[0];
+			}
+			$pathinfo = pathinfo( $url );
+			$dir      = $pathinfo['dirname'];
+			$ext      = $pathinfo['extension'];
+			$name     = wp_basename( $url, ".$ext" );
+			$new_ext  = strtolower( $ext );
+			$filename = "{$name}-{$crop}.{$new_ext}";
+		}
+
+		return array(
+			'filename' => $filename,
+			'path'     => $cache_dir['path'] . $filename,
+			'url'      => $cache_dir['url'] . $filename,
+		);
+	}
+
+	/**
+	 * Return an image path to the frontend.
+	 */
 	public function get_image_src() {
-		$src = $this->get_original_image();
+		$src     = $this->get_original_image();
+		$new_src = false;
+
+		// Return a cropped photo.
+		if ( 'none' !== $this->settings->crop_type ) {
+
+			$cropped_path = $this->get_cropped_path();
+
+			// See if the cropped photo already exists.
+			if ( file_exists( $cropped_path['path'] ) ) {
+				$new_src = $cropped_path['url'];
+			} else {
+				$new_src = $this->maybe_crop_image();
+			}
+		}
+		if ( $new_src ) {
+			return $new_src;
+		}
 		return $src;
 	}
 }
@@ -620,13 +738,13 @@ FLBuilder::register_module(
 							'default' => 'none',
 							'options' => array(
 								'none' => __( 'No Crop', 'bb-vapor-modules-pro' ),
-								'1:1'  => __( '1:1', 'bb-vapor-modules-pro' ),
-								'16:9' => __( '16:9', 'bb-vapor-modules-pro' ),
-								'3:2'  => __( '3:2', 'bb-vapor-modules-pro' ),
-								'4:3'  => __( '4:3', 'bb-vapor-modules-pro' ),
-								'9:16' => __( '9:16', 'bb-vapor-modules-pro' ),
-								'2:3'  => __( '2:3', 'bb-vapor-modules-pro' ),
-								'3:4'  => __( '3:4', 'bb-vapor-modules-pro' ),
+								'1x1'  => __( '1:1', 'bb-vapor-modules-pro' ),
+								'16x9' => __( '16:9', 'bb-vapor-modules-pro' ),
+								'3x2'  => __( '3:2', 'bb-vapor-modules-pro' ),
+								'4x3'  => __( '4:3', 'bb-vapor-modules-pro' ),
+								'9x16' => __( '9:16', 'bb-vapor-modules-pro' ),
+								'2x3'  => __( '2:3', 'bb-vapor-modules-pro' ),
+								'3x4'  => __( '3:4', 'bb-vapor-modules-pro' ),
 							),
 						),
 						'crop_position' => array(
