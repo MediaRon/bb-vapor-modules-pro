@@ -117,7 +117,7 @@ class BBVapor_Photo extends FLBuilderModule {
 			}
 
 			// Get the new width or height.
-			if ( $size['width'] / $size['height'] < $ratio_1) {
+			if ( $size['width'] / $size['height'] < $ratio_1 ) {
 				$new_height = $size['width'] * $ratio_2;
 			} else {
 				$new_width = $size['height'] * $ratio_1;
@@ -164,9 +164,9 @@ class BBVapor_Photo extends FLBuilderModule {
 	 * Get a cropped image's path based on the original image.
 	 */
 	private function get_cropped_path() {
-		$crop        = $this->settings->crop_type;
-		$url         = $this->get_original_image();
-		$cache_dir   = FLBuilderModel::get_cache_dir();
+		$crop      = $this->settings->crop_type;
+		$url       = $this->get_original_image();
+		$cache_dir = FLBuilderModel::get_cache_dir();
 
 		if ( empty( $url ) ) {
 			$filename = uniqid(); // Return a uniqie file.
