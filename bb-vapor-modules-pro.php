@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 1.4.3
+ * Version: 1.7.4
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.4.3' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.7.4' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -50,6 +50,36 @@ class BBVapor_Modules_Pro {
 			return $color;
 		}
 		return $color;
+	}
+
+	/**
+	 * Get an opening anchor based on link settings
+	 *
+	 * @param object $settings The Beaver Builder module settings object.
+	 * @param string $name     The setting name to check for.
+	 * @param string $class    The class to insert into an anchor.
+	 *
+	 * @return string Anchor HTML markup
+	 */
+	public static function get_starting_anchor( $settings, $name, $class = '' ) {
+		$return = sprintf(
+			'<a href="%s" class="%s"',
+			esc_url( $settings->{$name} ),
+			esc_attr( $class )
+		);
+
+		$no_follow = $name . '_nofollow';
+		if ( isset( $settings->{$no_follow} ) && 'yes' === $settings->{$no_follow} ) {
+			$return .= ' rel="nofollow"';
+		}
+
+		// Target.
+		$target = $name . '_target';
+		if ( isset( $settings->{$target} ) && ! empty( $settings->{$target} ) ) {
+			$return .= sprintf( ' target="%s"', esc_attr( $settings->{$target} ) );
+		}
+		$return .= '>';
+		return $return;
 	}
 
 	/**
@@ -107,6 +137,36 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// Emailoctopus module.
+			if ( $this->is_module_enabled( $module_options, 'emailoctopus' ) && class_exists( 'EmailOctopus' ) ) {
+				require_once 'bbvm-modules/emailoctopus/bbvm-emailoctopus.php';
+				new BBVapor_EmailOctopus();
+			}
+
+			// Pricing table module.
+			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
+				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
+				new BBVapor_Pricing_Table();
+			}
+
+			// Simple Coupon module.
+			if ( $this->is_module_enabled( $module_options, 'simple-coupon' ) ) {
+				require_once 'bbvm-modules/simple-coupon/bbvm-simple-coupon.php';
+				new BBVapor_Simple_Coupon();
+			}
+
+			// Advanced Coupon module.
+			if ( $this->is_module_enabled( $module_options, 'advanced-coupon' ) ) {
+				require_once 'bbvm-modules/advanced-coupon/bbvm-advanced-coupon.php';
+				new BBVapor_Advanced_Coupon();
+			}
+
+			// Columns module.
+			if ( $this->is_module_enabled( $module_options, 'columns' ) ) {
+				require_once 'bbvm-modules/columns/bbvm-columns.php';
+				new BBVapor_Columns();
+			}
+
 			// Timeline module.
 			if ( $this->is_module_enabled( $module_options, 'timeline' ) ) {
 				require_once 'bbvm-modules/timeline/bbvm-timeline.php';
@@ -157,7 +217,11 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Twitter_Embed();
 			}
 
-			// Photo overlay module.
+			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
+				require_once 'bbvm-modules/photo/bbvm-photo.php';
+				new BBVapor_Photo();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo-overlay' ) ) {
 				require_once 'bbvm-modules/photo-overlay/bbvm-photo-overlay-module.php';
 				new BBVapor_Photo_Overlay_Module();
@@ -385,6 +449,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'instagram' ) ) {
 				require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
 				new BBVapor_Instagram_Module();
+			}
+
+			// Instagram Slideshow.
+			if ( $this->is_module_enabled( $module_options, 'instagram-slideshow' ) ) {
+				require_once 'bbvm-modules/instagram-slideshow/bbvm-instagram-slideshow.php';
+				new BBVapor_Instagram_Slideshow();
 			}
 
 			// Featured Category.
@@ -770,3 +840,35 @@ if ( ! function_exists( 'bbvm_edd_download_count' ) ) {
 	}
 }
 add_action( 'edd_sl_before_package_download', 'bbvm_edd_download_count', 10, 4 );
+
+if ( ! function_exists( 'bbvm_debug' ) ) {
+	/**
+	 * Debug the settings object.
+	 *
+	 * @param object $settings  The settings object.
+	 * @param string $key       The key to retrieve (optional: default return all keys).
+	 * @param bool   $error_log Whether to output to the error log or not (optional: default is print_r).
+	 * @param bool   $echo       Whether to echo the output or not (optional; default is echo).
+	 * @param bool   $die        Whether to die instead of returning.
+	 *
+	 * @return string Object data.
+	 */
+	function bbvm_debug( $settings, $key = '', $error_log = false, $echo = true, $die = false ) {
+		$return = '';
+		if ( isset( $settings->{$key} ) ) {
+			$return .= '<pre>' . print_r( $settings->{$key}, true ) . '</pre>'; // phpcs:ignore
+		} else {
+			$return .= '<pre>' . print_r( $settings, true ) . '</pre>'; // phpcs:ignore
+		}
+		if ( $error_log ) {
+			error_log( $return ); // phpcs:ignore
+		}
+		if ( $echo ) {
+			echo $return; // phpcs:ignore
+		}
+		if ( $die ) {
+			die( '' );
+		}
+		return $return;
+	}
+}

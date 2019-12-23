@@ -22,6 +22,37 @@ if ( 'yes' === $settings->toc && count( $settings->faq ) > 0 ) :
 	</ul>
 	<?php
 endif;
+// Output Schema Markup if enabled.
+if ( 'yes' === $settings->schema ) :
+	?>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			<?php
+			$faq_count = 1;
+			foreach ( $settings->faq as $faq ) {
+				?>
+				{
+					"@type": "Question",
+					"name": "<?php echo esc_attr( wp_strip_all_tags( $faq->faq ) ); ?>",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "<?php echo esc_attr( wp_strip_all_tags( $faq->faq_text, true ) ); ?>"
+					}
+				}<?php echo $faq_count < count( $settings->faq ) ? ',' : ''; ?>
+				<?php
+				++$faq_count;
+			}
+			?>
+		]
+	}
+	</script>
+	<?php
+endif;
+
+// Output FAQ items.
 foreach ( $settings->faq as $faq ) :
 	?>
 	<div class="bbvm-faq-item">

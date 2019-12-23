@@ -1042,6 +1042,19 @@ $button_background_hover_color = BBVapor_Modules_Pro::get_color( $button_backgro
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_color_hover ) ); ?>;
 	background: <?php echo esc_html( $button_background_hover_color ); ?>;
 }
+.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .ginput_container_password button {
+	color: inherit;
+	background: inherit;
+	border-width: inherit;
+	border-color: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	border-radius: 0;
+}
+.fl-node-<?php echo esc_html( $id ); ?> #gform_<?php echo esc_html( $settings->form ); ?> .ginput_container_password button span {
+	text-align: inherit;
+	position: absolute;
+}
 <?php
 // Error messages.
 FLBuilderCSS::typography_field_rule(

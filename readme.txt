@@ -1,13 +1,13 @@
 === Vapor Modules for Beaver Builder ===
 Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
-Tested up to: 5.2
+Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 1.4.3
+Stable tag: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A growing list of Beaver Builder modules. WordPress 5.2 compatible.
+A growing list of Beaver Builder modules. WordPress 5.3 compatible.
 
 == Description ==
 
@@ -26,6 +26,59 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 1.7.4 =
+* Releassed 2019-12-22
+* Feature: New Photo module can now crop photos.
+* Bug fix: Background image in photo module would not show.
+
+= 1.7.1 =
+* Releassed 2019-12-19
+* Customer request: Adjusting variable headlines so they can be assigned as inline or blocks, plus overall alignment.
+
+= 1.7.0 =
+* Released 2019-12-19
+* New module: Photo Module
+* Tweaking FAQ module to output schema markup for SEO.
+
+= 1.6.5 =
+* Released 2019-12-18
+* New module: Instagram Slideshow.
+
+= 1.6.1 =
+* Released 2019-12-17
+* Added tablet and mobile alignment for the Button Group module.
+
+= 1.6.0 =
+* Released 2019-12-15
+* Fixing Gravity Forms styler when it comes to password inputs that have Reveal set.
+* Added Advanced Coupon module.
+* Added EmailOctopus module.
+
+= 1.5.8 =
+* Released 2019-12-04
+* Fixing typography issues with the Photo Overlay and Advanced Photo Overlay modules.
+
+= 1.5.7 =
+* Released 2019-12-04
+* Fixing image padding issue with the overlay in the Photo Overlay and Advanced Photo Overlay modules.
+
+= 1.5.6 =
+* Released 2019-12-01
+* Fixing alignment bug in Simple Coupon module.
+* Fixing style error for icons and button in Jetpack Sharing module.
+
+= 1.5.5 =
+* Released 2019-11-30
+* Adding Simple Coupon Module.
+
+= 1.5.0 =
+* Released 2019-11-29
+* Adding Pricing Table module (I consider this module in beta awaiting user feedback).
+
+= 1.4.5 =
+* Released 2019-11-27
+* Added CSS Columns module.
 
 = 1.4.3 =
 * Released 2019-11-14

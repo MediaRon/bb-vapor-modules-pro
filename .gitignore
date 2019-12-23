@@ -24,3 +24,5 @@ node_modules
 release
 bb-vapor-modules-pro.zip
 bb-vapor-modules-pro
+
+.vscode/launch.json

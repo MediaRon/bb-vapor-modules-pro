@@ -32,17 +32,26 @@ FLBuilder::register_settings_form(
 						'fields' => array(
 							'headline'            => array(
 								'type'    => 'text',
-								'label'   => __( 'Headline Text', 'bb-vapor-modules' ),
+								'label'   => __( 'Headline Text', 'bb-vapor-modules-pro' ),
 								'default' => '',
 							),
 							'headline_color'      => array(
 								'type'       => 'color',
-								'label'      => __( 'Headline Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Headline Color', 'bb-vapor-modules-pro' ),
 								'show_reset' => true,
+							),
+							'headline_display'    => array(
+								'type'    => 'select',
+								'label'   => __( 'Headline Display', 'bb-vapor-modules-pro' ),
+								'default' => 'inline',
+								'options' => array(
+									'inline' => __( 'Inline', 'bb-vapor-modules-pro' ),
+									'block'  => __( 'Block', 'bb-vapor-modules-pro' ),
+								),
 							),
 							'headline_typography' => array(
 								'type'       => 'typography',
-								'label'      => __( 'Headline Typography', 'bb-vapor-modules' ),
+								'label'      => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
 								'responsive' => true,
 							),
 						),
@@ -61,7 +70,7 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'Headings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'headline_tag'     => array(
+						'headline_tag'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Heading Tag', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -74,22 +83,27 @@ FLBuilder::register_module(
 							),
 							'default' => 'h2',
 						),
-						'headlines'        => array(
+						'headlines'          => array(
 							'type'         => 'form',
 							'form'         => 'bbvm_variable_headlines',
 							'label'        => __( 'Heading', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'preview_text' => 'headline',
 						),
-						'headline_padding' => array(
+						'headline_padding'   => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
-						'headline_margin'  => array(
+						'headline_margin'    => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+						),
+						'headline_alignment' => array(
+							'type'    => 'align',
+							'label'   => 'Headline Alignment',
+							'default' => 'left',
 						),
 					),
 				),

@@ -150,6 +150,7 @@ class BBVapor_BeaverBuilder_Admin {
 	 */
 	private function modules() {
 		return array(
+			'advanced-coupon'               => 'Advanced Coupon',
 			'advanced-headings'             => 'Advanced Headings',
 			'animated-letters'              => 'Animated Letters',
 			'advanced-separator'            => 'Advanced Separator',
@@ -166,27 +167,33 @@ class BBVapor_BeaverBuilder_Admin {
 			'card-group'                    => 'Card Group',
 			'category-grid'                 => 'Category Grid',
 			'content-scroller'              => 'Content Scroller',
+			'columns'                       => 'Columns',
 			'copyright'                     => 'Copyright',
 			'credit-cards'                  => 'Credit Cards',
 			'edd-download-count'            => 'EDD Download Count',
+			'emailoctopus'                  => 'EmailOctopus',
 			'faq'                           => 'FAQ',
 			'featured-category'             => 'Featured Category',
 			'gist'                          => 'Gists',
 			'gravatar'                      => 'Gravatar',
 			'gravityforms'                  => 'Gravity Forms',
 			'instagram'                     => 'Instagram',
+			'instagram-slideshow'           => 'Instagram Slideshow',
 			'intermediate-separator'        => 'Intermediate Separator',
 			'jetpack-related-posts'         => 'Jetpack Related Posts',
 			'jetpack-sharing'               => 'Jetpack Sharing',
 			'markdown'                      => 'Markdown',
+			'photo'                         => 'Photo',
 			'photo-overlay'                 => 'Photo Overlay',
 			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
 			'photoproof'                    => 'Photoproof',
 			'postselect'                    => 'Post Select',
+			'pricing-table'                 => 'Pricing Table',
 			'restaurant-menu-category'      => 'Restaurant Menu Category',
 			'restaurant-menu-item'          => 'Restaurant Menu Item',
 			'restaurant-menu-items'         => 'Restaurant Menu Items',
 			'restaurant-menu-tabbed'        => 'Restaurant Tabbed Menu',
+			'simple-coupon'                 => 'Simple Coupon',
 			'simple-spacer'                 => 'Simple Spacer',
 			'simple-separator'              => 'Simple Separator',
 			'social-media-icons'            => 'Social Media Icons',
@@ -307,7 +314,7 @@ class BBVapor_BeaverBuilder_Admin {
 							$license_message = sprintf(
 								/* Translators: %s is a date format placeholder */
 								__( 'Your license key expired on %s.', 'bb-vapor-modules-pro' ),
-								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) )
+								date_i18n( get_option( 'date_format' ), strtotime( $license_data->expires, current_time( 'timestamp' ) ) ) // phpcs:ignore
 							);
 							break;
 

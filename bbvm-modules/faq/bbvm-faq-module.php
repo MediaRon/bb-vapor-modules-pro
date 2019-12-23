@@ -64,6 +64,15 @@ FLBuilder::register_module(
 							'multiple'     => true,
 							'preview_text' => 'faq',
 						),
+						'schema'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Output Schema Markup?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+						),
 						'toc'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Display a Table of Contents', 'bb-vapor-modules-pro' ),
