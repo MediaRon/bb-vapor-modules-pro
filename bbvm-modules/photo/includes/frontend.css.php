@@ -612,7 +612,7 @@ if ( 'right' === $settings->container_alignment ) {
 }
 <?php
 // Image Appearance Options.
-if ( 'appearance-circular' === $settings->image_appearance ) {
+if ( '1x1_circular' === $settings->crop_type ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img,
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {

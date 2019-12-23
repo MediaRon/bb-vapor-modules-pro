@@ -4,7 +4,7 @@ class BBVapor_Photo extends FLBuilderModule {
 	/**
 	 * Editor for cropping images.
 	 *
-	 * @param object $editor The WordPress editor instance.
+	 * @var object $editor The WordPress editor instance.
 	 */
 	private $editor = null;
 
@@ -56,7 +56,7 @@ class BBVapor_Photo extends FLBuilderModule {
 	 * @return object Image Editor.
 	 */
 	private function get_editor() {
-		if ( $this->editor === null ) {
+		if ( null === $this->editor ) {
 			$url_path  = $this->get_original_image();
 			$file_path = str_ireplace( home_url(), ABSPATH, $url_path );
 
@@ -81,7 +81,7 @@ class BBVapor_Photo extends FLBuilderModule {
 			$src    = $this->get_original_image();
 			$editor = $this->get_editor();
 
-			if( ! $editor || is_wp_error( $editor ) ) {
+			if ( ! $editor || is_wp_error( $editor ) ) {
 				return false;
 			}
 
@@ -91,10 +91,30 @@ class BBVapor_Photo extends FLBuilderModule {
 			$new_height   = $size['height'];
 
 			// Get the crop ratios.
-			//if ( 'cicular' === $this->settings->crop_type ) {
-				$ratio_1 = 1.43;
-				$ratio_2 = .7;
-			//}
+			if ( '1x1' === $this->settings->crop_type ) {
+				$ratio_1 = 1;
+				$ratio_2 = 1;
+			} elseif ( '16x9' === $this->settings->crop_type ) {
+				$ratio_1 = 1.77;
+				$ratio_2 = .56;
+			} elseif ( '3x2' === $this->settings->crop_type ) {
+				$ratio_1 = 1.5;
+				$ratio_2 = .66;
+			} elseif ( '4x3' === $this->settings->crop_type ) {
+				$ratio_1 = 1.33;
+				$ratio_2 = .75;
+			} elseif ( '9x16' === $this->settings->crop_type ) {
+				$ratio_1 = .56;
+				$ratio_2 = 1.77;
+			} elseif ( '2x3' === $this->settings->crop_type ) {
+				$ratio_1 = .66;
+				$ratio_2 = 1.5;
+			} elseif ( '3x4' === $this->settings->crop_type ) {
+				$ratio_1 = .75;
+				$ratio_2 = 1.33;
+			} else {
+				return $src;
+			}
 
 			// Get the new width or height.
 			if ( $size['width'] / $size['height'] < $ratio_1) {
@@ -104,7 +124,7 @@ class BBVapor_Photo extends FLBuilderModule {
 			}
 
 			// Make sure we have enough memory to crop.
-			@ini_set('memory_limit', '300M');
+			@ini_set('memory_limit', '300M'); // phpcs:ignore
 
 			// Crop the photo.
 			$editor->resize( $new_width, $new_height, true );
@@ -129,8 +149,15 @@ class BBVapor_Photo extends FLBuilderModule {
 		return $url;
 	}
 
+	/**
+	 * Delete previously cropped image.
+	 */
 	private function maybe_delete_crops() {
+		$cropped_path = $this->get_cropped_path();
 
+		if ( file_exists( $cropped_path['path'] ) ) {
+			unlink( $cropped_path['path'] );
+		}
 	}
 
 	/**
@@ -681,19 +708,35 @@ FLBuilder::register_module(
 							'default_unit' => 'px',
 						),
 						'image_appearance'   => array(
-							'type'        => 'select',
-							'label'       => __( 'Image Appearance', 'bb-vapor-modules-pro' ),
-							'default'     => 'none',
-							'options'     => array(
-								'appearance-none'     => __( 'None', 'bb-vapor-modules-pro' ),
-								'cropped'             => __( 'Crop Image', 'bb-vapor-modulee-pro' ),
-								'appearance-circular' => __( 'Circular (in beta)', 'bb-vapor-modules-pro' ),
+							'type'    => 'select',
+							'label'   => __( 'Image Appearance', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'options' => array(
+								'appearance-none' => __( 'None', 'bb-vapor-modules-pro' ),
+								'cropped'         => __( 'Crop Image', 'bb-vapor-modulee-pro' ),
 							),
-							'description' => __( 'More effects will be added over time', 'bb-vapor-modules-pro' ),
-							'toggle'      => array(
+							'toggle'  => array(
 								'cropped' => array(
-									'tabs' => 'crop',
+									'fields' => array(
+										'crop_type',
+									),
 								),
+							),
+						),
+						'crop_type' => array(
+							'type'    => 'select',
+							'label'   => __( 'Crop Ratio', 'bb-vapor-modules-pro' ),
+							'default' => 'none',
+							'options' => array(
+								'none'         => __( 'No Crop', 'bb-vapor-modules-pro' ),
+								'1x1_circular' => __( '1:1 (Circular)', 'bb-vapor-modules-pro' ),
+								'1x1'          => __( '1:1 (Square)', 'bb-vapor-modules-pro' ),
+								'16x9'         => __( '16:9', 'bb-vapor-modules-pro' ),
+								'3x2'          => __( '3:2', 'bb-vapor-modules-pro' ),
+								'4x3'          => __( '4:3', 'bb-vapor-modules-pro' ),
+								'9x16'         => __( '9:16', 'bb-vapor-modules-pro' ),
+								'2x3'          => __( '2:3', 'bb-vapor-modules-pro' ),
+								'3x4'          => __( '3:4', 'bb-vapor-modules-pro' ),
 							),
 						),
 						'image_align'        => array(
@@ -721,50 +764,6 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Image Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 0,
-						),
-					),
-				),
-			),
-		),
-		'crop'        => array(
-			'title'    => __( 'Crop', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'overlay' => array(
-					'title'  => __( 'Crop', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'crop_type' => array(
-							'type'    => 'select',
-							'label'   => __( 'Crop Type', 'bb-vapor-modules-pro' ),
-							'default' => 'none',
-							'options' => array(
-								'none' => __( 'No Crop', 'bb-vapor-modules-pro' ),
-								'1x1'  => __( '1:1', 'bb-vapor-modules-pro' ),
-								'16x9' => __( '16:9', 'bb-vapor-modules-pro' ),
-								'3x2'  => __( '3:2', 'bb-vapor-modules-pro' ),
-								'4x3'  => __( '4:3', 'bb-vapor-modules-pro' ),
-								'9x16' => __( '9:16', 'bb-vapor-modules-pro' ),
-								'2x3'  => __( '2:3', 'bb-vapor-modules-pro' ),
-								'3x4'  => __( '3:4', 'bb-vapor-modules-pro' ),
-							),
-						),
-						'crop_position' => array(
-							'type'    => 'select',
-							'label'   => __( 'Crop Position', 'bb-vapor-modules-pro' ),
-							'default' => 'none',
-							'options' => array(
-								'none' => __( 'No Crop', 'bb-vapor-modules-pro' ),
-								'11'   => __( '1:1', 'bb-vapor-modules-pro' ),
-								'169'  => __( '16:9', 'bb-vapor-modules-pro' ),
-								'32'   => __( '3:2', 'bb-vapor-modules-pro' ),
-								'43'   => __( '4:3', 'bb-vapor-modules-pro' ),
-								'916'  => __( '9:16', 'bb-vapor-modules-pro' ),
-								'23'   => __( '2:3', 'bb-vapor-modules-pro' ),
-								'34'   => __( '3:4', 'bb-vapor-modules-pro' ),
-							),
-							'preview' => array(
-								'type'     => 'callback',
-								'callback' => 'bbvm_photo_module_image_crop',
-							),
 						),
 					),
 				),
