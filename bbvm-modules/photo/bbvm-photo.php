@@ -723,7 +723,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'crop_type' => array(
+						'crop_type'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Crop Ratio', 'bb-vapor-modules-pro' ),
 							'default' => 'none',
