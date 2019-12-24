@@ -74,7 +74,7 @@ FLBuilder::register_module(
 						),
 						'anchor_color_hover'     => array(
 							'type'        => 'color',
-							'label'       => __( 'Lesson Link Color', 'bb-vapor-modules-pro' ),
+							'label'       => __( 'Lesson Link Color on Hover', 'bb-vapor-modules-pro' ),
 							'show_alpha'  => true,
 							'show_remove' => true,
 						),

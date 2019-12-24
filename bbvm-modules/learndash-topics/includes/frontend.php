@@ -1,6 +1,6 @@
 <?php
 /**
- * LearnDash Lessons
+ * LearnDash Topics
  *
  * @link https://bbvapormodules.com
  *
@@ -9,28 +9,28 @@
  */
 
 ?>
-<div class="bbvm-learndash-lessons-wrapper">
+<div class="bbvm-learndash-topics-wrapper">
 	<?php
 	$terms_categories = '';
 	$terms_tags       = '';
-	$taxonomies       = get_object_taxonomies( 'sfwd-lessons', 'objects' );
+	$taxonomies       = get_object_taxonomies( 'sfwd-topic', 'objects' );
 	foreach ( $taxonomies as $bbvm_tax ) {
 		$key = 'include_term_tax_' . $bbvm_tax->name;
 		if ( isset( $settings->{$key} ) ) {
-			if ( 'ld_lesson_category' === $bbvm_tax->name ) {
+			if ( 'ld_topic_category' === $bbvm_tax->name ) {
 				$terms_categories = $settings->{$key};
-			} elseif ( 'ld_lesson_tag' === $bbvm_tax->name ) {
+			} elseif ( 'ld_topic_tag' === $bbvm_tax->name ) {
 				$terms_tags = $settings->{$key};
 			}
 		}
 	}
 	echo do_shortcode(
 		sprintf(
-			'[ld_lesson_list %s %s %s %s %s %s]',
-			! empty( $term_tags ) ? 'lesson_tag_id="' . $terms_tags . '"' : '',
-			! empty( $term_categories ) ? 'lesson_cat="' . $terms_categories . '"' : '',
+			'[ld_topic_list %s %s %s %s %s %s]',
+			! empty( $term_tags ) ? 'topic_tag_id="' . $terms_tags . '"' : '',
+			! empty( $term_categories ) ? 'topic_cat="' . $terms_categories . '"' : '',
 			'num="' . $settings->num_courses . '"',
-			'lesson_categoryselector="' . $settings->category_selector . '"',
+			'topic_categoryselector="' . $settings->category_selector . '"',
 			'order="' . $settings->term_order . '"',
 			'orderby="' . $settings->term_orderby . '"'
 		)
