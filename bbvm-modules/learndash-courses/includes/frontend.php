@@ -26,7 +26,7 @@
 	}
 	echo do_shortcode(
 		sprintf(
-			'[ld_course_list %s %s %s %s %s %s %s %s]',
+			'[ld_course_list %s %s %s %s %s %s %s %s %s %s %s]',
 			( ! empty( $terms_tags ) ) ? 'course_tag_id="' . $terms_tags . '"' : '',
 			( ! empty( $terms_categories ) ) ? 'course_cat="' . $terms_categories . '"' : '',
 			'num="' . $settings->num_courses . '"',
@@ -34,7 +34,10 @@
 			'col="' . $settings->col . '"',
 			'course_categoryselector="' . $settings->category_selector . '"',
 			'order="' . $settings->term_order . '"',
-			'orderby="' . $settings->term_orderby . '"'
+			'orderby="' . $settings->term_orderby . '"',
+			'progress_bar="' . $settings->progress_bar . '"',
+			'show_thumbnail="' . $settings->show_thumbnail . '"',
+			'show_content="' . $settings->show_content . '"'
 		)
 	);
 	?>

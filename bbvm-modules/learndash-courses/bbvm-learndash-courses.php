@@ -25,11 +25,11 @@ class BBVapor_LearnDash_Courses extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_LearnDash_Courses',
 	array(
-		'learndash'  => array(
+		'learndash'    => array(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'options'    => array(
+		'options'      => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
@@ -44,12 +44,6 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'col'               => array(
-							'type'        => 'unit',
-							'label'       => __( 'Number of Columns', 'bb-vapor-modules-pro' ),
-							'default'     => 1,
-							'description' => __( 'Requires the LearnDash grid add-on', 'bb-vapor-modules-pro' ),
-						),
 						'category_selector' => array(
 							'type'    => 'select',
 							'label'   => __( 'Display a Category Dropdown', 'bb-vapor-modules-pro' ),
@@ -63,10 +57,59 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'     => array(
+		'grid_options' => array(
+			'title'    => __( 'Grid Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'container' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'col'            => array(
+							'type'    => 'unit',
+							'label'   => __( 'Number of Columns', 'bb-vapor-modules-pro' ),
+							'default' => 1,
+							'help'    => __( 'Requires the LearnDash grid add-on', 'bb-vapor-modules-pro' ),
+							'slider'  => array(
+								'min'  => 1,
+								'max'  => 7,
+								'step' => 1,
+							),
+						),
+						'progress_bar'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Progress Bar', 'bb-vapor-modules-pro' ),
+							'default' => 'false',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'help'    => __( 'Requires the LearnDash grid add-on', 'bb-vapor-modules-pro' ),
+						),
+						'show_content'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Content', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'show_thumbnail' => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Thumbnail', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+				),
+			),
+		),
+		'styles'       => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'icon' => array(
+				'styles' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'course_background_color'       => array(
@@ -101,7 +144,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'typography' => array(
+		'typography'   => array(
 			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'icon' => array(
