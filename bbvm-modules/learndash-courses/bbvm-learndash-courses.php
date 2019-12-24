@@ -25,17 +25,17 @@ class BBVapor_LearnDash_Courses extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_LearnDash_Courses',
 	array(
-		'learndash'   => array(
+		'learndash'  => array(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'options'     => array(
+		'options'    => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
 					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'user_courses'              => array(
+						'user_courses'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Show User Courses Only', 'bb-vapor-modules-pro' ),
 							'default' => 'false',
@@ -44,7 +44,7 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'col'        => array(
+						'col'               => array(
 							'type'        => 'unit',
 							'label'       => __( 'Number of Columns', 'bb-vapor-modules-pro' ),
 							'default'     => 1,
@@ -63,13 +63,13 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'        => array(
+		'styles'     => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'icon' => array(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'course_background_color' => array(
+						'course_background_color'       => array(
 							'type'        => 'color',
 							'label'       => __( 'Course Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha'  => true,
@@ -81,19 +81,19 @@ FLBuilder::register_module(
 							'show_alpha'  => true,
 							'show_remove' => true,
 						),
-						'course_anchor_color' => array(
+						'course_anchor_color'           => array(
 							'type'        => 'color',
 							'label'       => __( 'Course Link Color', 'bb-vapor-modules-pro' ),
 							'show_alpha'  => true,
 							'show_remove' => true,
 						),
-						'course_anchor_color_hover' => array(
+						'course_anchor_color_hover'     => array(
 							'type'        => 'color',
 							'label'       => __( 'Course Link Color', 'bb-vapor-modules-pro' ),
 							'show_alpha'  => true,
 							'show_remove' => true,
 						),
-						'border'         => array(
+						'border'                        => array(
 							'type'  => 'border',
 							'label' => __( 'Course Item Border', 'bb-vapor-modules-pro' ),
 						),
