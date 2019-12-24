@@ -107,34 +107,34 @@ FLBuilder::register_module(
 			),
 		),
 		'styles'       => array(
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Default Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'styles' => array(
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Default Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'course_background_color'       => array(
-							'type'        => 'color',
-							'label'       => __( 'Course Background Color', 'bb-vapor-modules-pro' ),
-							'show_alpha'  => true,
-							'show_remove' => true,
+							'type'       => 'color',
+							'label'      => __( 'Course Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
 						),
 						'course_background_color_hover' => array(
-							'type'        => 'color',
-							'label'       => __( 'Course Background Color on Hover', 'bb-vapor-modules-pro' ),
-							'show_alpha'  => true,
-							'show_remove' => true,
+							'type'       => 'color',
+							'label'      => __( 'Course Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
 						),
 						'course_anchor_color'           => array(
-							'type'        => 'color',
-							'label'       => __( 'Course Link Color', 'bb-vapor-modules-pro' ),
-							'show_alpha'  => true,
-							'show_remove' => true,
+							'type'       => 'color',
+							'label'      => __( 'Course Link Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
 						),
 						'course_anchor_color_hover'     => array(
-							'type'        => 'color',
-							'label'       => __( 'Course Link Color on Hover', 'bb-vapor-modules-pro' ),
-							'show_alpha'  => true,
-							'show_remove' => true,
+							'type'       => 'color',
+							'label'      => __( 'Course Link Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
 						),
 						'border'                        => array(
 							'type'  => 'border',
@@ -144,15 +144,119 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'grid_styles'  => array(
+			'title'    => __( 'Grid Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'styles' => array(
+					'title'  => __( 'Grid Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'grid_alignment'                => array(
+							'type'    => 'align',
+							'label'   => __( 'Grid Item Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'center',
+						),
+						'grid_padding'                  => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Grid Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'grid_background_color'         => array(
+							'type'       => 'color',
+							'label'      => __( 'Grid Item Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'grid_progress_inactive'        => array(
+							'type'       => 'color',
+							'label'      => __( 'Progress Bar Inactive Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'grid_progress_active'          => array(
+							'type'       => 'color',
+							'label'      => __( 'Progress Bar Active Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'button_background_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'button_background_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Button Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'button_text_color'             => array(
+							'type'       => 'color',
+							'label'      => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'button_text_color_hover'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'button_border'                 => array(
+							'type'  => 'border',
+							'label' => __( 'Button Border', 'bb-vapor-modules-pro' ),
+						),
+						'percentage_text_color'         => array(
+							'type'       => 'color',
+							'label'      => __( 'Percentage Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'progress_text_color'           => array(
+							'type'       => 'color',
+							'label'      => __( 'Progress Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'course_price_heading'          => array(
+							'type'       => 'color',
+							'label'      => __( 'Course Heading Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+					),
+				),
+			),
+		),
 		'typography'   => array(
 			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
 			'sections' => array(
-				'icon' => array(
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+				'typography' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'course_typography' => array(
+						'course_typography'     => array(
 							'type'       => 'typography',
 							'label'      => __( 'Course Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'price_typography'      => array(
+							'type'       => 'typography',
+							'label'      => __( 'Course Heading Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'button_typography'     => array(
+							'type'       => 'typography',
+							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'percentage_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Percentage Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'progress_typography'   => array(
+							'type'       => 'typography',
+							'label'      => __( 'Progress Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 					),
