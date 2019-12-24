@@ -137,6 +137,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Breadcrumbs_Module();
 			}
 
+			// LearnDash modules.
+			if ( $this->is_module_enabled( $module_options, 'learndash-courses' ) ) {
+				require_once 'bbvm-modules/learndash-courses/bbvm-learndash-courses.php';
+				new BBVapor_LearnDash_Courses();
+			}
+
 			// Emailoctopus module.
 			if ( $this->is_module_enabled( $module_options, 'emailoctopus' ) && class_exists( 'EmailOctopus' ) ) {
 				require_once 'bbvm-modules/emailoctopus/bbvm-emailoctopus.php';
