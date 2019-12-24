@@ -138,6 +138,10 @@ class BBVapor_Modules_Pro {
 			}
 
 			// LearnDash modules.
+			if ( $this->is_module_enabled( $module_options, 'learndash-profile' ) ) {
+				require_once 'bbvm-modules/learndash-profile/bbvm-learndash-profile.php';
+				new BBVapor_LearnDash_Profile();
+			}
 			if ( $this->is_module_enabled( $module_options, 'learndash-courses' ) ) {
 				require_once 'bbvm-modules/learndash-courses/bbvm-learndash-courses.php';
 				new BBVapor_LearnDash_Courses();
