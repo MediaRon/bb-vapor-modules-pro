@@ -27,8 +27,8 @@
 	echo do_shortcode(
 		sprintf(
 			'[ld_course_list %s %s %s %s %s %s %s %s]',
-			! empty( $term_tags ) ? 'course_tag_id="' . $terms_tags . '"' : '',
-			! empty( $term_categories ) ? 'course_cat="' . $terms_categories . '"' : '',
+			( ! empty( $terms_tags ) ) ? 'course_tag_id="' . $terms_tags . '"' : '',
+			( ! empty( $terms_categories ) ) ? 'course_cat="' . $terms_categories . '"' : '',
 			'num="' . $settings->num_courses . '"',
 			'mycourses="' . $settings->user_courses . '"',
 			'col="' . $settings->col . '"',
