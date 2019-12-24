@@ -31,3 +31,10 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item",
 	)
 );
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'course_typography',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name",
+	)
+);

@@ -101,5 +101,20 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'icon' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'course_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Course Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
 	)
 );
