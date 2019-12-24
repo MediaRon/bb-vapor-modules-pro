@@ -160,6 +160,10 @@ FLBuilder::register_module(
 							'label'      => __( 'Grid Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
+						'grid_border'                   => array(
+							'type'  => 'border',
+							'label' => __( 'Grid Border', 'bb-vapor-modules-pro' ),
+						),
 						'grid_background_color'         => array(
 							'type'       => 'color',
 							'label'      => __( 'Grid Item Background Color', 'bb-vapor-modules-pro' ),
@@ -177,6 +181,10 @@ FLBuilder::register_module(
 							'label'      => __( 'Progress Bar Active Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+						),
+						'image_border'                  => array(
+							'type'  => 'border',
+							'label' => __( 'Image Border', 'bb-vapor-modules-pro' ),
 						),
 						'button_background_color'       => array(
 							'type'       => 'color',

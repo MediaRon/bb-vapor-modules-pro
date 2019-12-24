@@ -96,14 +96,26 @@ FLBuilderCSS::typography_field_rule(
 	padding: 15px 0;
 }
 <?php endif; ?>
-
-
 <?php
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
-		'setting_name' => 'border',
+		'setting_name' => 'button_border',
 		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .ld_course_grid article .ld_course_grid_button .btn",
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'grid_border',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .ld_course_grid article",
+	)
+);
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'image_border',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .ld_course_grid article a img",
 	)
 );
 FLBuilderCSS::dimension_field_rule(
