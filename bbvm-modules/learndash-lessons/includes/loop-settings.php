@@ -1,6 +1,6 @@
 <?php
 /**
- * Render the Loop Settings for the LearnDash courses module.
+ * Render the Loop Settings for LearnDash LessonsModule..
  *
  * @link https://bbvapormodules.com
  *
@@ -11,19 +11,19 @@
 FLBuilderModel::default_settings(
 	$settings,
 	array(
-		'post_type' => 'sfwd-courses',
+		'post_type' => 'sfwd-lessons',
 	)
 );
 ?>
 <div id="fl-builder-settings-section-source" class="fl-loop-data-source-select fl-builder-settings-section">
 	<table class="fl-form-table">
 	<?php
-	$taxonomies = get_object_taxonomies( 'sfwd-courses', 'objects' );
+	$taxonomies = get_object_taxonomies( 'sfwd-lessons', 'objects' );
 	FLBuilder::render_settings_field(
 		'num_courses',
 		array(
 			'type'    => 'unit',
-			'label'   => __( 'Number of Courses to Display', 'bb-vapor-modules-pro' ),
+			'label'   => __( 'Number of Lessons to Display', 'bb-vapor-modules-pro' ),
 			'default' => 10,
 		),
 		$settings
