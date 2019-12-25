@@ -1,6 +1,6 @@
 <?php
 /**
- * Render the Loop Settings for LearnDash LessonsModule..
+ * Render the Loop Settings for LearnDash Quizzes Module.
  *
  * @link https://bbvapormodules.com
  *
@@ -11,14 +11,24 @@
 FLBuilderModel::default_settings(
 	$settings,
 	array(
-		'post_type' => 'sfwd-lessons',
+		'post_type' => 'sfwd-quiz',
 	)
 );
 ?>
 <div id="fl-builder-settings-section-source" class="fl-loop-data-source-select fl-builder-settings-section">
 	<table class="fl-form-table">
 	<?php
-	$taxonomies = get_object_taxonomies( 'sfwd-lessons', 'objects' );
+	FLBuilder::render_settings_field(
+		'quiz_id',
+		array(
+			'type'   => 'suggest',
+			'label'  => __( 'Course', 'bb-vapor-modules-pro' ),
+			'action' => 'fl_as_posts', // Search posts.
+			'data'   => 'sfwd-quiz', // Slug of the post type to search.
+			'limit'  => 1,
+		),
+		$settings
+	);
 	FLBuilder::render_settings_field(
 		'course_id',
 		array(
@@ -31,10 +41,10 @@ FLBuilderModel::default_settings(
 		$settings
 	);
 	FLBuilder::render_settings_field(
-		'num_courses',
+		'num_quizzes',
 		array(
 			'type'    => 'unit',
-			'label'   => __( 'Number of Lessons to Display', 'bb-vapor-modules-pro' ),
+			'label'   => __( 'Number of Quizzes to Display', 'bb-vapor-modules-pro' ),
 			'default' => 10,
 		),
 		$settings
@@ -72,19 +82,6 @@ FLBuilderModel::default_settings(
 		),
 		$settings
 	);
-	foreach ( $taxonomies as $bbvm_tax ) {
-		FLBuilder::render_settings_field(
-			'include_term_tax_' . $bbvm_tax->name,
-			array(
-				'type'   => 'suggest',
-				'action' => 'fl_as_terms',
-				'data'   => $bbvm_tax->name,
-				'label'  => __( 'Select a term to include:', 'bb-vapor-modules-pro' ) . ' ' . $bbvm_tax->label,
-				'limit'  => 1,
-			),
-			$settings
-		);
-	}
 	?>
 	</table>
 </div>

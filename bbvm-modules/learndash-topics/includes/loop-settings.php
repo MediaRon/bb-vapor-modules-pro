@@ -20,6 +20,17 @@ FLBuilderModel::default_settings(
 	<?php
 	$taxonomies = get_object_taxonomies( 'sfwd-topic', 'objects' );
 	FLBuilder::render_settings_field(
+		'course_id',
+		array(
+			'type'   => 'suggest',
+			'label'  => __( 'Course', 'bb-vapor-modules-pro' ),
+			'action' => 'fl_as_posts', // Search posts.
+			'data'   => 'sfwd-courses', // Slug of the post type to search.
+			'limit'  => 1,
+		),
+		$settings
+	);
+	FLBuilder::render_settings_field(
 		'num_courses',
 		array(
 			'type'    => 'unit',

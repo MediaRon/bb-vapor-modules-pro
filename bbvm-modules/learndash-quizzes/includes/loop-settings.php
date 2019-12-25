@@ -19,6 +19,17 @@ FLBuilderModel::default_settings(
 	<table class="fl-form-table">
 	<?php
 	FLBuilder::render_settings_field(
+		'course_id',
+		array(
+			'type'   => 'suggest',
+			'label'  => __( 'Course', 'bb-vapor-modules-pro' ),
+			'action' => 'fl_as_posts', // Search posts.
+			'data'   => 'sfwd-courses', // Slug of the post type to search.
+			'limit'  => 1,
+		),
+		$settings
+	);
+	FLBuilder::render_settings_field(
 		'num_quizzes',
 		array(
 			'type'    => 'unit',
