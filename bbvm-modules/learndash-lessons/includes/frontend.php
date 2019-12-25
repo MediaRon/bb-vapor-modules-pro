@@ -26,13 +26,18 @@
 	}
 	echo do_shortcode(
 		sprintf(
-			'[ld_lesson_list %s %s %s %s %s %s]',
-			! empty( $term_tags ) ? 'lesson_tag_id="' . $terms_tags . '"' : '',
-			! empty( $term_categories ) ? 'lesson_cat="' . $terms_categories . '"' : '',
+			'[ld_lesson_list %s %s %s %s %s %s %s %s %s %s %s]',
+			! empty( $terms_tags ) ? 'lesson_tag_id="' . $terms_tags . '"' : '',
+			! empty( $terms_categories ) ? 'lesson_cat="' . $terms_categories . '"' : '',
 			'num="' . $settings->num_courses . '"',
+			'mycourses="' . $settings->user_courses . '"',
+			'col="' . $settings->col . '"',
 			'lesson_categoryselector="' . $settings->category_selector . '"',
 			'order="' . $settings->term_order . '"',
-			'orderby="' . $settings->term_orderby . '"'
+			'orderby="' . $settings->term_orderby . '"',
+			'progress_bar="' . $settings->progress_bar . '"',
+			'show_thumbnail="' . $settings->show_thumbnail . '"',
+			'show_content="' . $settings->show_content . '"'
 		)
 	);
 	?>
