@@ -31,7 +31,7 @@ FLBuilder::register_module(
 				'container' => array(
 					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'orderby' => array(
+						'orderby'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Order By', 'bb-vapor-modules-pro' ),
 							'default' => 'name',
@@ -45,7 +45,7 @@ FLBuilder::register_module(
 								'modified' => __( 'Modified', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'order'   => array(
+						'order'        => array(
 							'type'    => 'select',
 							'label'   => __( 'Order', 'bb-vapor-modules-pro' ),
 							'default' => 'ASC',
@@ -54,7 +54,7 @@ FLBuilder::register_module(
 								'DESC' => __( 'Z-A', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'expand'   => array(
+						'expand'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Expand All', 'bb-vapor-modules-pro' ),
 							'default' => 'false',
@@ -63,7 +63,7 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'profile_link'   => array(
+						'profile_link' => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Profile Link', 'bb-vapor-modules-pro' ),
 							'default' => 'true',
@@ -72,7 +72,7 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'show_header'   => array(
+						'show_header'  => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Header', 'bb-vapor-modules-pro' ),
 							'default' => 'true',
@@ -81,7 +81,7 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'show_quizzes'   => array(
+						'show_quizzes' => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Quizzes', 'bb-vapor-modules-pro' ),
 							'default' => 'true',
@@ -90,7 +90,7 @@ FLBuilder::register_module(
 								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 						),
-						'show_search'   => array(
+						'show_search'  => array(
 							'type'    => 'select',
 							'label'   => __( 'Show Search', 'bb-vapor-modules-pro' ),
 							'default' => 'true',
