@@ -1,6 +1,6 @@
 <?php
 /**
- * LearnDash Quiz Module
+ * LearnDash Course Content
  *
  * @link https://bbvapormodules.com
  *
@@ -9,12 +9,11 @@
  */
 
 ?>
-<div class="bbvm-learndash-quiz-wrapper">
+<div class="bbvm-learndash-course-content-wrapper">
 	<?php
 	echo do_shortcode(
 		sprintf(
-			'[ld_quiz %s %s]',
-			! empty( $settings->quiz_id ) ? 'quiz_id="' . $settings->quiz_id . '"' : '',
+			'[course_content %s num="true"]',
 			! empty( $settings->course_id ) ? 'course_id="' . $settings->course_id . '"' : ''
 		)
 	);
