@@ -34,7 +34,7 @@ class BBVapor_Advanced_Headings_Module extends FLBuilderModule {
 	}
 }
 FLBuilder::register_settings_form(
-	'bbvm_variable_headlines',
+	'bbvm_variable_headlines_advanced',
 	array(
 		'title' => __( 'Add Headline Text', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
@@ -155,7 +155,7 @@ FLBuilder::register_module(
 						),
 						'headlines'            => array(
 							'type'         => 'form',
-							'form'         => 'bbvm_variable_headlines',
+							'form'         => 'bbvm_variable_headlines_advanced',
 							'label'        => __( 'Heading', 'bb-vapor-modules-pro' ),
 							'multiple'     => true,
 							'preview_text' => 'headline',

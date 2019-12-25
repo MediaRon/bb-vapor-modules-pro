@@ -36,10 +36,10 @@ if ( 'yes' === $settings->schema ) :
 				?>
 				{
 					"@type": "Question",
-					"name": "<?php echo wp_kses_post( wp_strip_all_tags( $faq->faq ) ); ?>",
+					"name": "<?php echo esc_attr( wp_strip_all_tags( $faq->faq ) ); ?>",
 					"acceptedAnswer": {
 						"@type": "Answer",
-						"text": "<?php echo wp_kses_post( wp_strip_all_tags( $faq->faq_text, true ) ); ?>"
+						"text": "<?php echo esc_attr( wp_strip_all_tags( $faq->faq_text, true ) ); ?>"
 					}
 				}<?php echo $faq_count < count( $settings->faq ) ? ',' : ''; ?>
 				<?php

@@ -11,7 +11,7 @@
 // Background Image.
 if ( 'yes' === $settings->background_image ) {
 	?>
-	.fl-node-<?php echo esc_html( $id ); ?> figure {
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo-wrapper .bbvm-photo figure {
 		min-height: <?php echo absint( $settings->photo_min_height ); ?><?php echo esc_html( $settings->photo_min_height_unit ); ?>;
 		background-image: url('<?php echo esc_url( $settings->image_src ); ?>');
 		background-repeat: no-repeat;
@@ -612,7 +612,7 @@ if ( 'right' === $settings->container_alignment ) {
 }
 <?php
 // Image Appearance Options.
-if ( 'appearance-circular' === $settings->image_appearance ) {
+if ( '1x1_circular' === $settings->crop_type ) {
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure img,
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-photo figure {
@@ -822,7 +822,7 @@ FLBuilderCSS::border_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-photo-wrapper",
 	)
 );
-if ( 'full_width' === $settings->container_width ) :
+if ( 'full_width' === $settings->container_width || 'yes' === $settings->background_image ) :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?>.fl-module-bbvm-photo .fl-module-content {
 		width: 100%;
