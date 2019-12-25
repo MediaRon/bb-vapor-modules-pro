@@ -25,7 +25,7 @@ class BBVapor_LearnDash_Lessons extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_LearnDash_Lessons',
 	array(
-		'learndash'  => array(
+		'learndash'    => array(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
