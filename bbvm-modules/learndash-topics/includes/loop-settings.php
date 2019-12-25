@@ -69,6 +69,7 @@ FLBuilderModel::default_settings(
 				'action' => 'fl_as_terms',
 				'data'   => $bbvm_tax->name,
 				'label'  => __( 'Select a term to include:', 'bb-vapor-modules-pro' ) . ' ' . $bbvm_tax->label,
+				'limit'  => 1,
 			),
 			$settings
 		);

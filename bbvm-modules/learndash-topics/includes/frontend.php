@@ -26,13 +26,18 @@
 	}
 	echo do_shortcode(
 		sprintf(
-			'[ld_topic_list %s %s %s %s %s %s]',
-			! empty( $term_tags ) ? 'topic_tag_id="' . $terms_tags . '"' : '',
-			! empty( $term_categories ) ? 'topic_cat="' . $terms_categories . '"' : '',
+			'[ld_topic_list %s %s %s %s %s %s %s %s %s %s %s]',
+			! empty( $terms_tags ) ? 'topic_tag_id="' . $terms_tags . '"' : '',
+			! empty( $terms_categories ) ? 'topic_cat="' . $terms_categories . '"' : '',
 			'num="' . $settings->num_courses . '"',
 			'topic_categoryselector="' . $settings->category_selector . '"',
 			'order="' . $settings->term_order . '"',
-			'orderby="' . $settings->term_orderby . '"'
+			'orderby="' . $settings->term_orderby . '"',
+			'order="' . $settings->term_order . '"',
+			'orderby="' . $settings->term_orderby . '"',
+			'progress_bar="' . $settings->progress_bar . '"',
+			'show_thumbnail="' . $settings->show_thumbnail . '"',
+			'show_content="' . $settings->show_content . '"'
 		)
 	);
 	?>

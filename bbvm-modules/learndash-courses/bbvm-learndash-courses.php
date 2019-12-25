@@ -182,6 +182,27 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
+						'title_color'           => array(
+							'type'       => 'color',
+							'label'      => __( 'Title Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'title_typography'      => array(
+							'type'       => 'typography',
+							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'title_padding'         => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Title Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'title_margin'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Title Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
 					),
 				),
 				'image'  => array(
