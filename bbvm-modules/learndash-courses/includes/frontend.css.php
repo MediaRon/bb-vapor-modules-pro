@@ -72,12 +72,14 @@ FLBuilderCSS::typography_field_rule(
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .ld_course_grid article .ld_course_grid_button .btn {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color ) ); ?>;
 	padding: 10px 20px;
+	text-decoration: none;
 }
 <?php endif; ?>
 <?php if ( ! empty( $settings->button_text_color_hover ) ) : ?>
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .ld_course_grid article .ld_course_grid_button .btn:hover {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
 	padding: 10px 20px;
+	text-decoration: none;
 }
 <?php endif; ?>
 <?php if ( ! empty( $settings->percentage_text_color ) ) : ?>
@@ -129,6 +131,20 @@ FLBuilderCSS::dimension_field_rule(
 			'padding-right'  => 'grid_padding_right',
 			'padding-bottom' => 'grid_padding_bottom',
 			'padding-left'   => 'grid_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'category_selector_padding',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper #ld_course_categorydropdown",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'category_selector_padding_top',
+			'padding-right'  => 'category_selector_padding_right',
+			'padding-bottom' => 'category_selector_padding_bottom',
+			'padding-left'   => 'category_selector_padding_left',
 		),
 	)
 );
