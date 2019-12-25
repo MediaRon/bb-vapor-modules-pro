@@ -199,6 +199,10 @@ class BBVapor_Modules_Pro {
 					require_once 'bbvm-modules/learndash-payments/bbvm-learndash-payments.php';
 					new BBVapor_LearnDash_Payments();
 				}
+				if ( $this->is_module_enabled( $module_options, 'learndash-certificates' ) ) {
+					require_once 'bbvm-modules/learndash-certificates/bbvm-learndash-certificates.php';
+					new BBVapor_LearnDash_Certificates();
+				}
 			}
 
 			// Emailoctopus module.
