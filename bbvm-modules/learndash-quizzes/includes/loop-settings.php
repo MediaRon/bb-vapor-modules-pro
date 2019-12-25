@@ -1,6 +1,6 @@
 <?php
 /**
- * Render the Loop Settings for LearnDash Quizes Module.
+ * Render the Loop Settings for LearnDash Quizzes Module.
  *
  * @link https://bbvapormodules.com
  *
@@ -19,10 +19,10 @@ FLBuilderModel::default_settings(
 	<table class="fl-form-table">
 	<?php
 	FLBuilder::render_settings_field(
-		'num_courses',
+		'num_quizzes',
 		array(
 			'type'    => 'unit',
-			'label'   => __( 'Number of Quizes to Display', 'bb-vapor-modules-pro' ),
+			'label'   => __( 'Number of Quizzes to Display', 'bb-vapor-modules-pro' ),
 			'default' => 10,
 		),
 		$settings
