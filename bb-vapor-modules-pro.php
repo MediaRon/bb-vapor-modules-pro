@@ -187,6 +187,14 @@ class BBVapor_Modules_Pro {
 					require_once 'bbvm-modules/learndash-login/bbvm-learndash-login.php';
 					new BBVapor_LearnDash_Login();
 				}
+				if ( $this->is_module_enabled( $module_options, 'learndash-user-status' ) ) {
+					require_once 'bbvm-modules/learndash-user-status/bbvm-learndash-user-status.php';
+					new BBVapor_LearnDash_User_Status();
+				}
+				if ( $this->is_module_enabled( $module_options, 'learndash-user-points' ) ) {
+					require_once 'bbvm-modules/learndash-user-points/bbvm-learndash-user-points.php';
+					new BBVapor_LearnDash_User_Points();
+				}
 			}
 
 			// Emailoctopus module.
