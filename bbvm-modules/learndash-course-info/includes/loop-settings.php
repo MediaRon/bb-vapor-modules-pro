@@ -1,6 +1,6 @@
 <?php
 /**
- * Render the Loop Settings for LearnDash Course Content Module.
+ * Render the Loop Settings for LearnDash Course Info Module.
  *
  * @link https://bbvapormodules.com
  *
@@ -19,12 +19,11 @@ FLBuilderModel::default_settings(
 	<table class="fl-form-table">
 	<?php
 	FLBuilder::render_settings_field(
-		'course_id',
+		'user_id',
 		array(
 			'type'   => 'suggest',
-			'label'  => __( 'Course', 'bb-vapor-modules-pro' ),
-			'action' => 'fl_as_posts', // Search posts.
-			'data'   => 'sfwd-courses', // Slug of the post type to search.
+			'label'  => __( 'User', 'bb-vapor-modules-pro' ),
+			'action' => 'fl_as_users', // Search posts.
 			'limit'  => 1,
 		),
 		$settings
