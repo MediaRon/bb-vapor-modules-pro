@@ -179,6 +179,10 @@ class BBVapor_Modules_Pro {
 					require_once 'bbvm-modules/learndash-course-status/bbvm-learndash-course-status.php';
 					new BBVapor_LearnDash_Course_Status();
 				}
+				if ( $this->is_module_enabled( $module_options, 'learndash-messages' ) ) {
+					require_once 'bbvm-modules/learndash-messages/bbvm-learndash-messages.php';
+					new BBVapor_LearnDash_Messages();
+				}
 			}
 
 			// Emailoctopus module.
