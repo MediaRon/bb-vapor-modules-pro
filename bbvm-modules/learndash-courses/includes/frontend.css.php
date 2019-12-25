@@ -176,3 +176,59 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .ld_course_grid article .ld-progress-steps",
 	)
 );
+// Pagination Styles.
+?>
+<?php if ( ! empty( $settings->pager_background ) ) : ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .learndash-pager {
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->pager_background ) ); ?>;
+}
+<?php endif; ?>
+<?php if ( ! empty( $settings->pager_color ) ) : ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .learndash-pager,
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .learndash-pager a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->pager_color ) ); ?>;
+}
+<?php endif; ?>
+<?php
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'pager_border',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-pager",
+	)
+);
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'pager_typography',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-pager",
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'pager_padding',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-pager",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'pager_padding_top',
+			'padding-right'  => 'pager_padding_right',
+			'padding-bottom' => 'pager_padding_bottom',
+			'padding-left'   => 'pager_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'pager_margin',
+		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-pager",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'pager_margin_top',
+			'margin-right'  => 'pager_margin_right',
+			'margin-bottom' => 'pager_margin_bottom',
+			'margin-left'   => 'pager_margin_left',
+		),
+	)
+);

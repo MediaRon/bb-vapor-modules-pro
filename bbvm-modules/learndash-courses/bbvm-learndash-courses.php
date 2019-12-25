@@ -281,6 +281,47 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'pagination'   => array(
+			'title'    => __( 'Pagination', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'container' => array(
+					'title'  => __( 'Pagination', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'pager_background' => array(
+							'type'       => 'color',
+							'label'      => __( 'Pager Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'pager_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Pager Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'pager_border'     => array(
+							'type'  => 'border',
+							'label' => __( 'Pager Border', 'bb-vapor-modules-pro' ),
+						),
+						'pager_typography' => array(
+							'type'      => 'typography',
+							'label'     => __( 'Pager Typography', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'pager_padding'    => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Pager Padding', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+						'pager_margin'     => array(
+							'type'      => 'dimension',
+							'label'     => __( 'Pager Margin', 'bb-vapor-modules-pro' ),
+							'resonsive' => true,
+						),
+					),
+				),
+			),
+		),
 		'typography'   => array(
 			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
 			'sections' => array(
