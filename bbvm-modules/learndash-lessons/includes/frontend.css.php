@@ -232,3 +232,46 @@ FLBuilderCSS::dimension_field_rule(
 		),
 	)
 );
+// Title styles.
+?>
+<?php if ( ! empty( $settings->title_color ) ) : ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-lessons-wrapper article .entry-title {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->title_color ) ); ?>;
+}
+<?php endif; ?>
+<?php
+FLBuilderCSS::typography_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'title_typography',
+		'selector'     => ".fl-node-$id .bbvm-learndash-lessons-wrapper article .entry-title",
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'title_padding',
+		'selector'     => ".fl-node-$id .bbvm-learndash-lessons-wrapper article .entry-title",
+		'unit'         => 'px',
+		'props'        => array(
+			'padding-top'    => 'title_padding_top',
+			'padding-right'  => 'title_padding_right',
+			'padding-bottom' => 'title_padding_bottom',
+			'padding-left'   => 'title_padding_left',
+		),
+	)
+);
+FLBuilderCSS::dimension_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'title_margin',
+		'selector'     => ".fl-node-$id .bbvm-learndash-lessons-wrapper article .entry-title",
+		'unit'         => 'px',
+		'props'        => array(
+			'margin-top'    => 'title_margin_top',
+			'margin-right'  => 'title_margin_right',
+			'margin-bottom' => 'title_margin_bottom',
+			'margin-left'   => 'title_margin_left',
+		),
+	)
+);
