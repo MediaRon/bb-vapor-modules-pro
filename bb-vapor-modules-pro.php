@@ -211,6 +211,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_EmailOctopus();
 			}
 
+			// Emailoctopus module.
+			if ( $this->is_module_enabled( $module_options, 'marquee' ) ) {
+				require_once 'bbvm-modules/marquee/bbvm-marquee.php';
+				new BBVapor_Marquee();
+			}
+
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
