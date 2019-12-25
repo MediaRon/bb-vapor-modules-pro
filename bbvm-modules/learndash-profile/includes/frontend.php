@@ -13,9 +13,14 @@
 	<?php
 	echo do_shortcode(
 		sprintf(
-			'[ld_profile %s %s]',
+			'[ld_profile %s %s %s %s %s %s %s]',
 			'order="' . $settings->order . '"',
-			'orderby="' . $settings->orderby . '"'
+			'orderby="' . $settings->orderby . '"',
+			'expand_all="' . $settings->expand . '"',
+			'profile_link="' . $settings->profile_link . '"',
+			'show_header="' . $settings->show_header . '"',
+			'show_quizzes="' . $settings->show_quizzes . '"',
+			'show_search="' . $settings->show_search . '"'
 		)
 	);
 	?>

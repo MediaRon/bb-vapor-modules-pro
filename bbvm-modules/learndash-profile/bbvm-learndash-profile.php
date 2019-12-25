@@ -54,6 +54,84 @@ FLBuilder::register_module(
 								'DESC' => __( 'Z-A', 'bb-vapor-modules-pro' ),
 							),
 						),
+						'expand'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Expand All', 'bb-vapor-modules-pro' ),
+							'default' => 'false',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'profile_link'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Profile Link', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'show_header'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Header', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'show_quizzes'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Quizzes', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'show_search'   => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Search', 'bb-vapor-modules-pro' ),
+							'default' => 'true',
+							'options' => array(
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+						),
+					),
+				),
+			),
+		),
+		'image'   => array(
+			'title'    => __( 'Profile Image', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'container' => array(
+					'title'  => __( 'Profile Image', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'profile_appearance' => array(
+							'type'    => 'select',
+							'label'   => __( 'Appearance', 'bb-vapor-modules-pro' ),
+							'default' => 'circular',
+							'options' => array(
+								'circular' => __( 'Circular', 'bb-vapor-modules-pro' ),
+								'square'   => __( 'Square', 'bb-vapor-modules-pro' ),
+							),
+						),
+						'profile_border'     => array(
+							'type'  => 'border',
+							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
+						),
+						'profile_width'      => array(
+							'type'    => 'unit',
+							'label'   => __( 'Image Width', 'bb-vapor-modules-pro' ),
+							'default' => 150,
+							'slider'  => array(
+								'min'  => 25,
+								'max'  => 150,
+								'step' => 5,
+							),
+						),
 					),
 				),
 			),

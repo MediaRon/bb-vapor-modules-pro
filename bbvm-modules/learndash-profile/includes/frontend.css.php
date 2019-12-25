@@ -1,6 +1,6 @@
 <?php
 /**
- * LearnDash Courses
+ * LearnDash Profile
  *
  * @link https://bbvapormodules.com
  *
@@ -8,33 +8,22 @@
  * @since 2.0.0
  */
 
-// Course List Styles.
+// Image Styles.
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .ld-item-list-item-preview {
-	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->course_background_color ) ); ?>;
-	overflow: hidden;
+<?php if ( 'square' === $settings->profile_appearance ) : ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-profile-wrapper .learndash-wrapper .ld-profile-avatar {
+	border-radius: 0;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .ld-item-list-item-preview:hover {
-	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->course_background_color_hover ) ); ?>;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name {
-	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->course_anchor_color_hover ) ); ?>;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name:hover {
-	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->course_anchor_color_hover ) ); ?>;
+<?php endif; ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-learndash-profile-wrapper .learndash-wrapper .ld-profile-summary .ld-profile-card .ld-profile-avatar {
+	width: <?php echo absint( $settings->profile_width ); ?>px;
+	height: <?php echo absint( $settings->profile_width ); ?>px;
 }
 <?php
 FLBuilderCSS::border_field_rule(
 	array(
 		'settings'     => $settings,
-		'setting_name' => 'border',
-		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item",
-	)
-);
-FLBuilderCSS::typography_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'course_typography',
-		'selector'     => ".fl-node-$id .bbvm-learndash-courses-wrapper .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name",
+		'setting_name' => 'profile_border',
+		'selector'     => ".fl-node-$id .bbvm-learndash-profile-wrapper .learndash-wrapper .ld-profile-summary .ld-profile-card .ld-profile-avatar",
 	)
 );
