@@ -9,34 +9,8 @@
  */
 
 ?>
-.bbvm-mfp-fade.mfp-bg {
-	opacity: 0;
-
-	-webkit-transition: all 0.50s ease-out;
-	-moz-transition: all 0.50s ease-out;
-	transition: all 0.50s ease-out;
-}
-.bbvm-mfp-fade.mfp-bg.mfp-ready {
-	opacity: 0.8;
-}
-.bbvm-mfp-fade.mfp-bg.mfp-removing {
-	opacity: 0;
-}
-.bbvm-mfp-fade.mfp-wrap .mfp-content {
-	opacity: 0;
-	-webkit-transition: all 0.50s ease-out;
-	-moz-transition: all 0.50s ease-out;
-	transition: all 0.50s ease-out;
-}
-.bbvm-mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-	opacity: 1;
-}
-.bbvm-mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-	opacity: 0;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed-slideshow img {
-	max-width: <?php echo absint( $settings->image_width ); ?>px;
-	margin: 0 auto;
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .circular-carousel-slide {
+	
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed-slideshow .instagram-image-slide {
 	width: 100%;

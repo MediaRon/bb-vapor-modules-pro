@@ -15,7 +15,7 @@ if ( typeof jQuery != 'undefined' ) {
 		{
 			margin: 10,
 			loop: <?php echo 'yes' === $settings->slide_loop ? 'true' : 'false'; ?>,
-			autoWidth: false,
+			autoWidth: true,
 			items: <?php echo absint( $settings->items ); ?>,
 			center: false,
 			dots: <?php echo 'yes' === $settings->show_nav_bullets ? 'true' : 'false'; ?>,
@@ -45,17 +45,4 @@ if ( typeof jQuery != 'undefined' ) {
 			}
 		}
 	);
-	<?php if ( 'yes' === $settings->lightbox ) : ?>
-		jQuery('.fl-node-<?php echo esc_html( $id ); ?> .bbvm-instagram-lightbox').magnificPopup({
-			type: 'image',
-			closeOnContentClick: true,
-			closeBtnInside: false,
-			removalDelay: 300,
-			mainClass: 'bbvm-mfp-fade',
-			zoom: {
-				enabled: false
-			},
-			titleSrc: 'title'
-		});
-	<?php endif; ?>
 }

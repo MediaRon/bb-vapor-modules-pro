@@ -16,14 +16,7 @@
 		foreach ( $settings->circles as $key => $circle ) {
 			?>
 			<div class="circular-carousel-slide">
-				<div class="circular-carousel-content">
-					<div class="circular-carousel-content-front">
-						Test Content
-					</div>
-					<div class="circular-carousel-content-back">
-						Back Content
-					</div>
-				</div>
+					Test Content
 			</div><!-- .circular-carousel-slide -->
 			<?php
 		}
