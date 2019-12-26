@@ -241,6 +241,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Timeline_Module();
 			}
 
+			// Circular Carousel module.
+			if ( $this->is_module_enabled( $module_options, 'circular-carousel' ) ) {
+				require_once 'bbvm-modules/circular-carousel/bbvm-circular-carousel.php';
+				new BBVapor_Circular_Carousel();
+			}
+
 			// Credit Card module.
 			if ( $this->is_module_enabled( $module_options, 'credit-cards' ) ) {
 				require_once 'bbvm-modules/credit-cards/bbvm-credit-cards.php';

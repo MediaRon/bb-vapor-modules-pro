@@ -33,24 +33,64 @@ FLBuilder::register_settings_form(
 		'title' => __( 'Carousel Settings', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
 			'general' => array(
-				'title'    => __( 'General', 'bb-vapor-modules-pro' ),
+				'title'    => __( 'Front', 'bb-vapor-modules-pro' ),
 				'sections' => array(
-					'general' => array(
-						'title'  => __( 'Add Headline Text', 'bb-vapor-modules-pro' ),
+					'front' => array(
+						'title'  => __( 'Add Front Content', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'headline'            => array(
-								'type'    => 'text',
-								'label'   => __( 'Headline Text', 'bb-vapor-modules' ),
-								'default' => '',
+							'background_image'            => array(
+								'type'        => 'photo',
+								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
+								'show_remove' => true,
 							),
-							'headline_color'      => array(
+							'overlay_background'            => array(
 								'type'       => 'color',
-								'label'      => __( 'Headline Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'text_content' => array(
+								'type' => 'textarea',
+								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
+							),
+							'text_color'      => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
-							'headline_typography' => array(
+							'text_typography' => array(
 								'type'       => 'typography',
-								'label'      => __( 'Headline Typography', 'bb-vapor-modules' ),
+								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
+								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+			'back' => array(
+				'title'    => __( 'Back', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => __( 'Add Back Content', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'back_background'            => array(
+								'type'       => 'color',
+								'label'      => __( 'Background Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'back_text_content' => array(
+								'type'  => 'textarea',
+								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
+							),
+							'back_text_color'      => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+							),
+							'back_text_typography' => array(
+								'type'       => 'typography',
+								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
 								'responsive' => true,
 							),
 						),
@@ -232,47 +272,6 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
-						),
-					),
-				),
-			),
-		),
-		'buttons' => array(
-			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'buttons' => array(
-					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'show_follow_us_button'   => array(
-							'type'    => 'select',
-							'label'   => __( 'Show Follow Us Button', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes',
-						),
-						'follow_background_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Follow Background Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'default'    => '408bd1',
-						),
-						'follow_text_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Show More Text Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'default'    => 'FFFFFF',
-						),
-						'follow_text'             => array(
-							'type'    => 'text',
-							'label'   => __( 'Follow Text', 'bb-vapor-modules-pro' ),
-							'default' => __( 'Follow on Instagram', 'bb-vapor-modules-pro' ),
-						),
-						'follow_icon'             => array(
-							'type'        => 'icon',
-							'label'       => __( 'Follow Icon', 'bb-vapor-modules-pro' ),
-							'show_remove' => true,
 						),
 					),
 				),
