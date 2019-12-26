@@ -76,6 +76,22 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'lightbox_caption',
+									),
+								),
+							),
+						),
+						'lightbox_caption'         => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Lightbox Caption', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
 						),
 						'card_padding'             => array(
 							'type'       => 'dimension',
