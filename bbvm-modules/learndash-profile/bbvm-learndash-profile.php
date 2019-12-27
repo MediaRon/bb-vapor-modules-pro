@@ -25,7 +25,7 @@ class BBVapor_LearnDash_Profile extends FLBuilderModule {
 FLBuilder::register_module(
 	'BBVapor_LearnDash_Profile',
 	array(
-		'options' => array(
+		'options'    => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
@@ -103,7 +103,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'image'   => array(
+		'image'      => array(
 			'title'    => __( 'Profile Image', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'container' => array(
@@ -130,6 +130,81 @@ FLBuilder::register_module(
 								'min'  => 25,
 								'max'  => 150,
 								'step' => 5,
+							),
+						),
+					),
+				),
+			),
+		),
+		'appearance' => array(
+			'title'    => __( 'Appearance', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'container' => array(
+					'title'  => __( 'Appearance', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'stats_text_color'                 => array(
+							'type'       => 'color',
+							'label'      => __( 'Stats Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-profile-wrapper .ld-profile-stats, .bbvm-learndash-profile-wrapper .ld-profile-stats .ld-profile-stat span',
+								'property' => 'color',
+							),
+						),
+						'search_color'                     => array(
+							'type'       => 'color',
+							'label'      => __( 'Search Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-profile-wrapper .ld-search-prompt, .bbvm-learndash-profile-wrapper .ld-search-prompt .ld-icon-search',
+								'property' => 'color',
+							),
+						),
+						'accent_color'                     => array(
+							'type'       => 'color',
+							'label'      => __( 'Accent Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'accent_text_color'                => array(
+							'type'       => 'color',
+							'label'      => __( 'Accent Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'course_progress_complete_color'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Course Progress Complete Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'course_progress_incomplete_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Course Progress Incomplete Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+					),
+				),
+			),
+		),
+		'typography' => array(
+			'title'    => __( 'Typography', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'container' => array(
+					'title'  => __( 'Typography', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'course_title' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Course Title Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-profile-wrapper .learndash-wrapper .ld-item-list .ld-course-title',
 							),
 						),
 					),

@@ -13,7 +13,7 @@
 	<?php
 	echo do_shortcode(
 		sprintf(
-			'[course_content %s num="true"]',
+			'[course_content %s num="false"]',
 			! empty( $settings->course_id ) ? 'course_id="' . $settings->course_id . '"' : ''
 		)
 	);
