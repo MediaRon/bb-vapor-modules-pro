@@ -30,5 +30,24 @@ FLBuilder::register_module(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
+		'options'   => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'alignment'      => array(
+							'type'    => 'align',
+							'label'   => __( 'Payment Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'left',
+						),
+						'course_typography' => array(
+							'type'  => 'typography',
+							'label' => __( 'Typography', 'bb-vapor-modules-pro' ),
+						),
+					),
+				),
+			),
+		),
 	)
 );

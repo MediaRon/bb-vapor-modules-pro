@@ -30,39 +30,72 @@ FLBuilder::register_module(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
-		'content'   => array(
-			'title'    => __( 'Content', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'options' => array(
-					'title'  => __( 'Content', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'visitor_content' => array(
-							'type'  => 'editor',
-							'label' => __( 'Visitor Content', 'bb-vapor-modules-pro' ),
-						),
-						'student_content' => array(
-							'type'  => 'editor',
-							'label' => __( 'Student Content', 'bb-vapor-modules-pro' ),
-						),
-					),
-				),
-			),
-		),
 		'options'   => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'options' => array(
 					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'course_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
-							'show_alpha' => true,
-							'show_reset' => true,
+						'login_label'      => array(
+							'type'  => 'text',
+							'label' => __( 'Login Label', 'bb-vapor-modules-pro' ),
 						),
-						'course_typography' => array(
-							'type'  => 'typography',
-							'label' => __( 'Typography', 'bb-vapor-modules-pro' ),
+						'logout_label'     => array(
+							'type'  => 'text',
+							'label' => __( 'Logout Label', 'bb-vapor-modules-pro' ),
+						),
+						'label_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'placement'        => array(
+							'type'    => 'align',
+							'label'   => __( 'Placement', 'bb-vapor-modules-pro' ),
+							'default' => 'left',
+							'values'  => array(
+								'left'   => '0 auto 0 0',
+								'center' => '0 auto',
+								'right'  => '0 0 0 auto',
+							),
+						),
+					),
+				),
+			),
+		),
+		'button'    => array(
+			'title'    => __( 'Button', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Button Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'text_color'             => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'text_color_hover'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'background_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'background_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'show_reset' => true,
+							'show_alpha' => true,
+						),
+						'button_border'          => array(
+							'type'  => 'border',
+							'label' => __( 'Border', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),
