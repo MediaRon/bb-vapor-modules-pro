@@ -19,5 +19,6 @@
 			! empty( $settings->logout_label ) ? 'logout_label="' . $settings->logout_label . '"' : ''
 		)
 	);
+	learndash_load_login_modal_html();
 	?>
 </div>
