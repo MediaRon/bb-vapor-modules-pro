@@ -15,7 +15,7 @@
 		<?php
 		foreach ( $settings->circles as $key => $circle ) {
 			?>
-			<div class="circular-carousel-slide">
+			<div class="bbvm-circular-carousel-slide" style="text-align: center;">
 					Test Content
 			</div><!-- .circular-carousel-slide -->
 			<?php
