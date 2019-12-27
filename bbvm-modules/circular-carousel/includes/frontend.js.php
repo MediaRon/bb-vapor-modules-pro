@@ -15,7 +15,7 @@ if ( typeof jQuery != 'undefined' ) {
 		{
 			margin: 10,
 			loop: <?php echo 'yes' === $settings->slide_loop ? 'true' : 'false'; ?>,
-			autoWidth: true,
+			autoWidth: false,
 			items: <?php echo absint( $settings->items ); ?>,
 			center: false,
 			dots: <?php echo 'yes' === $settings->show_nav_bullets ? 'true' : 'false'; ?>,

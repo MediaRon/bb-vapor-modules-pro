@@ -9,8 +9,16 @@
  */
 
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .circular-carousel-slide {
-	
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide {
+	max-width: 240px;
+	max-height: 240px;
+	height: 100vh;
+	width: 100%;
+	border: 1px solid red;
+	border-radius: 100%;
+	background-color: #FFF;
+	color: #000;
+	margin: 0 auto;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed-slideshow .instagram-image-slide {
 	width: 100%;
