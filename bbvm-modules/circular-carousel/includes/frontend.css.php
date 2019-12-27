@@ -19,6 +19,9 @@
 	background-color: #FFF;
 	color: #000;
 	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-instafeed-slideshow .instagram-image-slide {
 	width: 100%;
