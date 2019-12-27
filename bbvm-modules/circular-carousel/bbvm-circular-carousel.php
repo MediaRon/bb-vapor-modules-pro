@@ -50,7 +50,7 @@ FLBuilder::register_settings_form(
 								'show_alpha' => true,
 							),
 							'text_content' => array(
-								'type' => 'textarea',
+								'type'  => 'textarea',
 								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
 							),
 							'text_color'      => array(

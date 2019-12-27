@@ -15,8 +15,10 @@
 		<?php
 		foreach ( $settings->circles as $key => $circle ) {
 			?>
-			<div class="bbvm-circular-carousel-slide" style="text-align: center;">
-					Test Content
+			<div class="bbvm-circular-carousel-slide">
+					<div class="bbvm-circular-carousel-slide-front">
+						<?php echo wp_kses_post( $circle->text_content ); ?>
+					</div>
 			</div><!-- .circular-carousel-slide -->
 			<?php
 		}
