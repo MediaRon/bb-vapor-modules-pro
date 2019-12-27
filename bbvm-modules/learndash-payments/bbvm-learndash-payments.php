@@ -49,5 +49,21 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'styles'    => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'button_background_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Payment Button Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+					),
+				),
+			),
+		),
 	)
 );
