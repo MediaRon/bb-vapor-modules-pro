@@ -182,7 +182,7 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'border'   => array(
+						'border'             => array(
 							'type'  => 'border',
 							'label' => __( 'Container Border Color', 'bb-vapor-modules-pro' ),
 						),
@@ -198,7 +198,7 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'link_color'      => array(
+						'link_color'         => array(
 							'type'       => 'color',
 							'label'      => __( 'Link Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,

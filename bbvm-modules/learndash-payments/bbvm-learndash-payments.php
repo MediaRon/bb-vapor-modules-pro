@@ -36,7 +36,7 @@ FLBuilder::register_module(
 				'options' => array(
 					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'alignment'      => array(
+						'alignment'         => array(
 							'type'    => 'align',
 							'label'   => __( 'Payment Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'left',
