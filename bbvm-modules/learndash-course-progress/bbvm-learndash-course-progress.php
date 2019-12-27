@@ -30,5 +30,86 @@ FLBuilder::register_module(
 			'title' => __( 'LearnDash Options', 'bb-vapor-modules-pro' ),
 			'file'  => plugin_dir_path( __FILE__ ) . 'includes/loop-settings.php',
 		),
+		'options'   => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'background_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress',
+								'property' => 'background-color',
+							),
+						),
+						'border'           => array(
+							'type'    => 'border',
+							'label'   => __( 'Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress',
+								'property' => 'border',
+							),
+						),
+						'padding'          => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress',
+								'property' => 'padding',
+							),
+						),
+						'margin'           => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress',
+								'property' => 'margin',
+							),
+						),
+						'completed_color'  => array(
+							'type'       => 'color',
+							'label'      => __( 'Completed Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress-bar .ld-progress-bar-percentage',
+								'property' => 'background-color',
+							),
+						),
+						'incomplete_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Incomplete Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress-bar',
+								'property' => 'background-color',
+							),
+						),
+						'typography'       => array(
+							'type'       => 'typography',
+							'label'      => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-learndash-course-progress-wrapper .ld-progress-heading',
+							),
+						),
+					),
+				),
+			),
+		),
 	)
 );
