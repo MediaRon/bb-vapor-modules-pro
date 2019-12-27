@@ -10,6 +10,7 @@
 
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide {
+	position: relative;
 	max-width: 240px;
 	max-height: 240px;
 	height: 100vh;
@@ -22,7 +23,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front,
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back {
+	z-index: 2;
+}
+
 .fl-node-<?php echo esc_html( $id ); ?> .owl-dots .owl-dot span {
 	background: #<?php echo esc_html( $settings->nav_bullets_color ); ?>;
 }
@@ -92,14 +99,34 @@ FLBuilderCSS::dimension_field_rule(
 	margin: 0 !important;
 }
 <?php
+$count = 1;
 foreach ( $settings->circles as $key => $circle ) :
 	FLBuilderCSS::typography_field_rule(
 		array(
 			'settings'     => $circle,
 			'setting_name' => 'text_typography',
-			'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide-front",
+			'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .bbvm-circular-carousel-slide-front",
 		)
 	);
 	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> {
+		background-image: url(<?php echo esc_url( $circle->background_image_src ); ?>);
+		background-size: cover;
+		background-position: center center;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-front {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->text_color ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?>:before {
+		background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->overlay_background ) ); ?>;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: ' ';
+		z-index: 1;
+	}
 	<?php
+	++$count;
 endforeach;
