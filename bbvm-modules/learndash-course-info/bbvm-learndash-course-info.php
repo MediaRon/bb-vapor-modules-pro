@@ -170,5 +170,63 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'styles'    => array(
+			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'options' => array(
+					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'background_color'   => array(
+							'type'       => 'color',
+							'label'      => __( 'Container Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'border'   => array(
+							'type'  => 'border',
+							'label' => __( 'Container Border Color', 'bb-vapor-modules-pro' ),
+						),
+						'heading_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Heading Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'content_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'link_color'      => array(
+							'type'       => 'color',
+							'label'      => __( 'Link Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'heading_padding'    => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Heading Padding', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'heading_margin'     => array(
+							'type'       => 'dimension',
+							'label'      => __( 'Heading Margin', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'heading_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+						'content_typography' => array(
+							'type'       => 'typography',
+							'label'      => __( 'Content Typography', 'bb-vapor-modules-pro' ),
+							'responsive' => true,
+						),
+					),
+				),
+			),
+		),
 	)
 );
