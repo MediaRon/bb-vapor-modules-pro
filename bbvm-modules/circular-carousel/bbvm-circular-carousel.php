@@ -104,11 +104,47 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Add Back Content', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'back_background'            => array(
+							'back_background_image'            => array(
+								'type'        => 'photo',
+								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
+								'show_remove' => true,
+							),
+							'back_overlay_type' => array(
+								'type'    => 'select',
+								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
+								'default' => 'background',
+								'options' => array(
+									'background' => __( 'Background', 'bb-vapor-modules-pro' ),
+									'gradient'   => __( 'Gradient', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'background' => array(
+										'fields' => array(
+											'overlay_background',
+										),
+									),
+									'gradient'   => array(
+										'fields' => array(
+											'back_overlay_gradient',
+										),
+									),
+								),
+							),
+							'back_overlay_background'            => array(
 								'type'       => 'color',
-								'label'      => __( 'Background Color', 'bb-vapor-modules' ),
+								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
+							),
+							'back_overlay_gradient'              => array(
+								'type'       => 'gradient',
+								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'back_border'            => array(
+								'type'  => 'border',
+								'label' => __( 'Border', 'bb-vapor-modules' ),
 							),
 							'back_text_content' => array(
 								'type'  => 'textarea',
