@@ -18,7 +18,10 @@
 			?>
 			<div class="bbvm-circular-carousel-slide slide-<?php echo absint( $count ); ?>">
 					<div class="bbvm-circular-carousel-slide-front">
-						<?php echo wp_kses_post( $circle->text_content ); ?>
+						<div class="bbvm-carousel-content"><?php echo wp_kses_post( $circle->text_content ); ?></div>
+						<div class="bbvm-circular-carousel-slide-back">
+							<div class="bbvm-carousel-content"><?php echo wp_kses_post( $circle->back_text_content ); ?></div>
+						</div>
 					</div>
 			</div><!-- .circular-carousel-slide -->
 			<?php
