@@ -11,7 +11,7 @@ class BBVapor_Circular_Carousel extends FLBuilderModule {
 			array(
 				'name'            => __( 'Circular Carousel', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add a circular carousel', 'bb-vapor-modules-pro' ),
-				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+				'category'        => __( 'Carousels and Sliders', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/circular-carousel/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/circular-carousel/',
@@ -32,18 +32,50 @@ FLBuilder::register_settings_form(
 	array(
 		'title' => __( 'Carousel Settings', 'bb-vapor-modules-pro' ),
 		'tabs'  => array(
+			'link'    => array(
+				'title'    => __( 'Link', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'link' => array(
+						'title'  => __( 'Link', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'show_link' => array(
+								'type'    => 'select',
+								'label'   => __( 'Show a Link?', 'bb-vapor-modules' ),
+								'default' => 'no',
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'card_link',
+										),
+									),
+								),
+							),
+							'card_link' => array(
+								'type'          => 'link',
+								'label'         => __( 'Item Link', 'bb-vapor-modules-pro' ),
+								'show_target'   => true,
+								'show_nofollow' => true,
+							),
+						),
+					),
+				),
+			),
 			'general' => array(
 				'title'    => __( 'Front', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'front' => array(
 						'title'  => __( 'Add Front Content', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'background_image'            => array(
+							'background_image'   => array(
 								'type'        => 'photo',
 								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
 								'show_remove' => true,
 							),
-							'overlay_type' => array(
+							'overlay_type'       => array(
 								'type'    => 'select',
 								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
 								'default' => 'background',
@@ -64,32 +96,32 @@ FLBuilder::register_settings_form(
 									),
 								),
 							),
-							'overlay_background'            => array(
+							'overlay_background' => array(
 								'type'       => 'color',
 								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'overlay_gradient'              => array(
+							'overlay_gradient'   => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'front_border'            => array(
+							'front_border'       => array(
 								'type'  => 'border',
 								'label' => __( 'Border', 'bb-vapor-modules' ),
 							),
-							'text_content' => array(
+							'text_content'       => array(
 								'type'  => 'textarea',
 								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
 							),
-							'text_color'      => array(
+							'text_color'         => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
-							'text_typography' => array(
+							'text_typography'    => array(
 								'type'       => 'typography',
 								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
 								'responsive' => true,
@@ -98,18 +130,18 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'back' => array(
+			'back'    => array(
 				'title'    => __( 'Back', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'general' => array(
 						'title'  => __( 'Add Back Content', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'back_background_image'            => array(
+							'back_background_image'   => array(
 								'type'        => 'photo',
 								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
 								'show_remove' => true,
 							),
-							'back_overlay_type' => array(
+							'back_overlay_type'       => array(
 								'type'    => 'select',
 								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
 								'default' => 'background',
@@ -120,7 +152,7 @@ FLBuilder::register_settings_form(
 								'toggle'  => array(
 									'background' => array(
 										'fields' => array(
-											'overlay_background',
+											'back_overlay_background',
 										),
 									),
 									'gradient'   => array(
@@ -130,32 +162,32 @@ FLBuilder::register_settings_form(
 									),
 								),
 							),
-							'back_overlay_background'            => array(
+							'back_overlay_background' => array(
 								'type'       => 'color',
 								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'back_overlay_gradient'              => array(
+							'back_overlay_gradient'   => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'back_border'            => array(
+							'back_border'             => array(
 								'type'  => 'border',
 								'label' => __( 'Border', 'bb-vapor-modules' ),
 							),
-							'back_text_content' => array(
+							'back_text_content'       => array(
 								'type'  => 'textarea',
 								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
 							),
-							'back_text_color'      => array(
+							'back_text_color'         => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
-							'back_text_typography' => array(
+							'back_text_typography'    => array(
 								'type'       => 'typography',
 								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
 								'responsive' => true,
@@ -196,11 +228,11 @@ FLBuilder::register_module(
 								'step' => 1,
 							),
 						),
-						'carousel_width'              => array(
-							'type'        => 'unit',
-							'label'       => __( 'Carousel Item Width', 'bb-vapor-modules-pro' ),
-							'default'     => 250,
-							'slider'      => array(
+						'carousel_width'           => array(
+							'type'    => 'unit',
+							'label'   => __( 'Carousel Item Width', 'bb-vapor-modules-pro' ),
+							'default' => 250,
+							'slider'  => array(
 								'min'  => 250,
 								'max'  => 1000,
 								'step' => 10,

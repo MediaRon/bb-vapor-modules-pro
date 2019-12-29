@@ -11,7 +11,7 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 			array(
 				'name'            => __( 'Instagram Slideshow', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add an Instagram Slideshow', 'bb-vapor-modules-pro' ),
-				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+				'category'        => __( 'Carousels and Sliders', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/instagram-slideshow/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram-slideshow/',

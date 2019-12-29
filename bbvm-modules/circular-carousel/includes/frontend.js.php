@@ -1,11 +1,11 @@
 <?php
 /**
- * Instagram Slideshow Module.
+ * Circular Carousel Module.
  *
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.6.5
+ * @since 2.0.8
  */
 
 ?>

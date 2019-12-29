@@ -1,17 +1,43 @@
 <?php
 /**
- * Instagram Slideshow module.
+ * Circular Carousel Module.
  *
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.6.5
+ * @since 2.0.8
  */
 
 ?>
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow {
+	position: relative;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	max-width: <?php echo absint( $settings->carousel_width ); ?>px;
+	max-height: <?php echo absint( $settings->carousel_width ); ?>px;
+	margin: 0 auto;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+	overflow: hidden;
+	perspective: 1000;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-carousel-link {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 1000;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back {
-	position: relative;
+	position: absolute;
 	max-width: <?php echo absint( $settings->carousel_width ); ?>px;
 	max-height: <?php echo absint( $settings->carousel_width ); ?>px;
 	height: 100vh;
@@ -22,25 +48,23 @@
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	z-index: 4;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back {
 	position: absolute;
-	display: none;
+	display: flex;
 	z-index: 2;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front:hover .bbvm-circular-carousel-slide-back {
+.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card:hover .bbvm-circular-carousel-slide-back {
 	position: absolute;
+	transform: rotateY(180deg);
 	display: flex;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 10;
-}
-fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front:hover {
-	border: 0;
-	backround: transparent;
-	color: transparent;
+	text-align: center;
+	z-index: 1000 !important;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front .bbvm-carousel-content,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back .bbvm-carousel-content {
