@@ -1,5 +1,5 @@
 <?php // phpcs:ignore
-class BBVapor_Instagram_Slideshow extends FLBuilderModule {
+class BBVapor_Circular_Carousel extends FLBuilderModule {
 	/**
 	 * Class constructor.
 	 */
@@ -9,12 +9,12 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 		 */
 		parent::__construct(
 			array(
-				'name'            => __( 'Instagram Slideshow', 'bb-vapor-modules-pro' ),
-				'description'     => __( 'Add an Instagram Slideshow', 'bb-vapor-modules-pro' ),
+				'name'            => __( 'Circular Carousel', 'bb-vapor-modules-pro' ),
+				'description'     => __( 'Add a circular carousel', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Carousels and Sliders', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/instagram-slideshow/',
-				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram-slideshow/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/circular-carousel/',
+				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/circular-carousel/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.
 				'partial_refresh' => false, // Defaults to false and can be omitted.
@@ -25,26 +25,205 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 		$this->add_css( 'owl-carousel-css', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.carousel.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		$this->add_css( 'owl-carousel-theme', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'js/owl-carousel/assets/owl.theme.default.min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 		$this->add_css( 'animate', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/animate.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
-		$this->add_css( 'jquery-magnificpopup' );
-		$this->add_js( 'jquery-magnificpopup' );
 	}
 }
+FLBuilder::register_settings_form(
+	'bbvm_circular_carousel',
+	array(
+		'title' => __( 'Carousel Settings', 'bb-vapor-modules-pro' ),
+		'tabs'  => array(
+			'link'    => array(
+				'title'    => __( 'Link', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'link' => array(
+						'title'  => __( 'Link', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'show_link' => array(
+								'type'    => 'select',
+								'label'   => __( 'Show a Link?', 'bb-vapor-modules' ),
+								'default' => 'no',
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'card_link',
+										),
+									),
+								),
+							),
+							'card_link' => array(
+								'type'          => 'link',
+								'label'         => __( 'Item Link', 'bb-vapor-modules-pro' ),
+								'show_target'   => true,
+								'show_nofollow' => true,
+							),
+						),
+					),
+				),
+			),
+			'general' => array(
+				'title'    => __( 'Content', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'front' => array(
+						'title'  => __( 'Add Content', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'enable_hover_effect' => array(
+								'type'    => 'select',
+								'label'   => __( 'Enable Hover Effect?', 'bb-vapor-modules' ),
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'no',
+								'toggle'  => array(
+									'yes' => array(
+										'tabs' => array(
+											'hover',
+										),
+									),
+								),
+							),
+							'background_image'    => array(
+								'type'        => 'photo',
+								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
+								'show_remove' => true,
+							),
+							'overlay_type'        => array(
+								'type'    => 'select',
+								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
+								'default' => 'background',
+								'options' => array(
+									'background' => __( 'Background', 'bb-vapor-modules-pro' ),
+									'gradient'   => __( 'Gradient', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'background' => array(
+										'fields' => array(
+											'overlay_background',
+										),
+									),
+									'gradient'   => array(
+										'fields' => array(
+											'overlay_gradient',
+										),
+									),
+								),
+							),
+							'overlay_background'  => array(
+								'type'       => 'color',
+								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'overlay_gradient'    => array(
+								'type'       => 'gradient',
+								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'front_border'        => array(
+								'type'  => 'border',
+								'label' => __( 'Border', 'bb-vapor-modules' ),
+							),
+							'text_content'        => array(
+								'type'  => 'textarea',
+								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
+							),
+							'text_color'          => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+							),
+							'text_typography'     => array(
+								'type'       => 'typography',
+								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
+								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+			'hover'   => array(
+				'title'    => __( 'Hover Effect', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'effects' => array(
+						'title'  => __( 'Item Changes', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'effect_overlay_type'       => array(
+								'type'    => 'select',
+								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
+								'default' => 'background',
+								'options' => array(
+									'background' => __( 'Background', 'bb-vapor-modules-pro' ),
+									'gradient'   => __( 'Gradient', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'background' => array(
+										'fields' => array(
+											'effect_overlay_background',
+										),
+									),
+									'gradient'   => array(
+										'fields' => array(
+											'effect_overlay_background',
+										),
+									),
+								),
+							),
+							'effect_overlay_background' => array(
+								'type'       => 'color',
+								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'effect_overlay_gradient'   => array(
+								'type'       => 'gradient',
+								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
+								'show_reset' => true,
+								'show_alpha' => true,
+							),
+							'effect_border'             => array(
+								'type'  => 'border',
+								'label' => __( 'Border', 'bb-vapor-modules' ),
+							),
+							'effect_text_color'         => array(
+								'type'       => 'color',
+								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
+								'show_reset' => true,
+							),
+							'effect_text_typography'    => array(
+								'type'       => 'typography',
+								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
+								'responsive' => true,
+							),
+						),
+					),
+				),
+			),
+		),
+	)
+);
 /**
  * Register the module and its form settings.
  */
 FLBuilder::register_module(
-	'BBVapor_Instagram_Slideshow',
+	'BBVapor_Circular_Carousel',
 	array(
 		'general' => array(
-			'title'    => __( 'Instagram', 'bb-vapor-modules-pro' ),
+			'title'    => __( 'Carousel', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'general' => array(
-					'title'  => __( 'Instagram Settings', 'bb-vapor-modules-pro' ),
+					'title'  => __( 'Carousel Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'items_show'               => array(
-							'type'    => 'unit',
-							'label'   => __( 'Number of Instagram Photos to Show', 'bb-vapor-modules-pro' ),
-							'default' => '10',
+						'circles'                  => array(
+							'type'         => 'form',
+							'form'         => 'bbvm_circular_carousel',
+							'label'        => __( 'Circles', 'bb-vapor-modules-pro' ),
+							'multiple'     => true,
+							'preview_text' => 'headline',
 						),
 						'items'                    => array(
 							'type'    => 'unit',
@@ -56,51 +235,36 @@ FLBuilder::register_module(
 								'step' => 1,
 							),
 						),
-						'image_width'              => array(
+						'carousel_width'           => array(
 							'type'        => 'unit',
-							'label'       => __( 'Image Max Width', 'bb-vapor-modules-pro' ),
-							'description' => __( 'This only applies if you have selected one item in the carousel', 'bb-vapor-modules-pro' ),
-							'default'     => 400,
+							'label'       => __( 'Carousel Item Width', 'bb-vapor-modules-pro' ),
+							'default'     => 250,
 							'slider'      => array(
 								'min'  => 250,
-								'max'  => 2000,
-								'step' => 10,
+								'max'  => 1000,
+								'step' => 5,
+							),
+							'description' => __( 'A large card width is not recommended if you have multiple items in the carousel.', 'bb-vapor-modules-pro' ),
+						),
+						'carousel_width_mobile'    => array(
+							'type'    => 'unit',
+							'label'   => __( 'Carousel Width on Mobile Devices', 'bb-vapor-modules-pro' ),
+							'default' => 250,
+							'slider'  => array(
+								'min'  => 100,
+								'max'  => 350,
+								'step' => 5,
 							),
 
 						),
-						'lightbox'                 => array(
-							'type'    => 'select',
-							'label'   => __( 'Pop Up Images in a Lightbox', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'no',
-							'toggle'  => array(
-								'yes' => array(
-									'fields' => array(
-										'lightbox_caption',
-									),
-								),
-							),
-						),
-						'lightbox_caption'         => array(
-							'type'    => 'select',
-							'label'   => __( 'Show Lightbox Caption', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes',
-						),
 						'card_padding'             => array(
 							'type'       => 'dimension',
-							'label'      => __( 'Image Padding', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Carousel Item Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'card_margin'              => array(
 							'type'       => 'dimension',
-							'label'      => __( 'Image Margin', 'bb-vapor-modules-pro' ),
+							'label'      => __( 'Carousel Item Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 						),
 						'animation'                => array(
@@ -225,47 +389,6 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
-						),
-					),
-				),
-			),
-		),
-		'buttons' => array(
-			'title'    => __( 'Buttons', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'buttons' => array(
-					'title'  => __( 'Button Settings', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'show_follow_us_button'   => array(
-							'type'    => 'select',
-							'label'   => __( 'Show Follow Us Button', 'bb-vapor-modules-pro' ),
-							'options' => array(
-								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
-								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
-							),
-							'default' => 'yes',
-						),
-						'follow_background_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Follow Background Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'default'    => '408bd1',
-						),
-						'follow_text_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Show More Text Color', 'bb-vapor-modules-pro' ),
-							'show_reset' => true,
-							'default'    => 'FFFFFF',
-						),
-						'follow_text'             => array(
-							'type'    => 'text',
-							'label'   => __( 'Follow Text', 'bb-vapor-modules-pro' ),
-							'default' => __( 'Follow on Instagram', 'bb-vapor-modules-pro' ),
-						),
-						'follow_icon'             => array(
-							'type'        => 'icon',
-							'label'       => __( 'Follow Icon', 'bb-vapor-modules-pro' ),
-							'show_remove' => true,
 						),
 					),
 				),
