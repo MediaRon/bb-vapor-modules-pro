@@ -65,17 +65,33 @@ FLBuilder::register_settings_form(
 				),
 			),
 			'general' => array(
-				'title'    => __( 'Front', 'bb-vapor-modules-pro' ),
+				'title'    => __( 'Content', 'bb-vapor-modules-pro' ),
 				'sections' => array(
 					'front' => array(
-						'title'  => __( 'Add Front Content', 'bb-vapor-modules-pro' ),
+						'title'  => __( 'Add Content', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'background_image'   => array(
+							'enable_hover_effect' => array(
+								'type'    => 'select',
+								'label'   => __( 'Enable Hover Effect?', 'bb-vapor-modules' ),
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'no',
+								'toggle'  => array(
+									'yes' => array(
+										'tabs' => array(
+											'hover',
+										),
+									),
+								),
+							),
+							'background_image'    => array(
 								'type'        => 'photo',
 								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
 								'show_remove' => true,
 							),
-							'overlay_type'       => array(
+							'overlay_type'        => array(
 								'type'    => 'select',
 								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
 								'default' => 'background',
@@ -96,32 +112,32 @@ FLBuilder::register_settings_form(
 									),
 								),
 							),
-							'overlay_background' => array(
+							'overlay_background'  => array(
 								'type'       => 'color',
 								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'overlay_gradient'   => array(
+							'overlay_gradient'    => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'front_border'       => array(
+							'front_border'        => array(
 								'type'  => 'border',
 								'label' => __( 'Border', 'bb-vapor-modules' ),
 							),
-							'text_content'       => array(
+							'text_content'        => array(
 								'type'  => 'textarea',
 								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
 							),
-							'text_color'         => array(
+							'text_color'          => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
-							'text_typography'    => array(
+							'text_typography'     => array(
 								'type'       => 'typography',
 								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
 								'responsive' => true,
@@ -130,18 +146,13 @@ FLBuilder::register_settings_form(
 					),
 				),
 			),
-			'back'    => array(
-				'title'    => __( 'Back', 'bb-vapor-modules-pro' ),
+			'hover'   => array(
+				'title'    => __( 'Hover Effect', 'bb-vapor-modules-pro' ),
 				'sections' => array(
-					'general' => array(
-						'title'  => __( 'Add Back Content', 'bb-vapor-modules-pro' ),
+					'effects' => array(
+						'title'  => __( 'Item Changes', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'back_background_image'   => array(
-								'type'        => 'photo',
-								'label'       => __( 'Background Image', 'bb-vapor-modules' ),
-								'show_remove' => true,
-							),
-							'back_overlay_type'       => array(
+							'effect_overlay_type'       => array(
 								'type'    => 'select',
 								'label'   => __( 'Overlay Type', 'bb-vapor-modules-pro' ),
 								'default' => 'background',
@@ -152,42 +163,38 @@ FLBuilder::register_settings_form(
 								'toggle'  => array(
 									'background' => array(
 										'fields' => array(
-											'back_overlay_background',
+											'effect_overlay_background',
 										),
 									),
 									'gradient'   => array(
 										'fields' => array(
-											'back_overlay_gradient',
+											'effect_overlay_background',
 										),
 									),
 								),
 							),
-							'back_overlay_background' => array(
+							'effect_overlay_background' => array(
 								'type'       => 'color',
 								'label'      => __( 'Overlay Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'back_overlay_gradient'   => array(
+							'effect_overlay_gradient'   => array(
 								'type'       => 'gradient',
 								'label'      => __( 'Overlay Gradient', 'bb-vapor-modules' ),
 								'show_reset' => true,
 								'show_alpha' => true,
 							),
-							'back_border'             => array(
+							'effect_border'             => array(
 								'type'  => 'border',
 								'label' => __( 'Border', 'bb-vapor-modules' ),
 							),
-							'back_text_content'       => array(
-								'type'  => 'textarea',
-								'label' => __( 'Content', 'bb-vapor-modules-pro' ),
-							),
-							'back_text_color'         => array(
+							'effect_text_color'         => array(
 								'type'       => 'color',
 								'label'      => __( 'Text Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
-							'back_text_typography'    => array(
+							'effect_text_typography'    => array(
 								'type'       => 'typography',
 								'label'      => __( 'Text Typography', 'bb-vapor-modules' ),
 								'responsive' => true,
@@ -229,13 +236,24 @@ FLBuilder::register_module(
 							),
 						),
 						'carousel_width'           => array(
-							'type'    => 'unit',
-							'label'   => __( 'Carousel Item Width', 'bb-vapor-modules-pro' ),
-							'default' => 250,
-							'slider'  => array(
+							'type'        => 'unit',
+							'label'       => __( 'Carousel Item Width', 'bb-vapor-modules-pro' ),
+							'default'     => 250,
+							'slider'      => array(
 								'min'  => 250,
 								'max'  => 1000,
-								'step' => 10,
+								'step' => 5,
+							),
+							'description' => __( 'A large card width is not recommended if you have multiple items in the carousel.', 'bb-vapor-modules-pro' ),
+						),
+						'carousel_width_mobile'    => array(
+							'type'    => 'unit',
+							'label'   => __( 'Carousel Width on Mobile Devices', 'bb-vapor-modules-pro' ),
+							'default' => 250,
+							'slider'  => array(
+								'min'  => 100,
+								'max'  => 350,
+								'step' => 5,
 							),
 
 						),

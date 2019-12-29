@@ -14,61 +14,45 @@
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card-inner {
 	position: relative;
-	width: 100%;
-	height: 100vh;
-	max-width: <?php echo absint( $settings->carousel_width ); ?>px;
-	max-height: <?php echo absint( $settings->carousel_width ); ?>px;
+	width: <?php echo absint( $settings->carousel_width ); ?>px;
+	height: <?php echo absint( $settings->carousel_width ); ?>px;
 	margin: 0 auto;
 	text-align: center;
-	transition: transform 0.8s;
-	transform-style: preserve-3d;
 	overflow: hidden;
-	perspective: 1000;
+	transition: all 0.5s ease;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-carousel-link {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	display: block;
-	z-index: 1000;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card:hover .flip-card-inner {
-	transform: rotateY(180deg);
+	z-index: 10000;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back {
-	position: absolute;
-	max-width: <?php echo absint( $settings->carousel_width ); ?>px;
-	max-height: <?php echo absint( $settings->carousel_width ); ?>px;
-	height: 100vh;
-	width: 100%;
+	position: relative;
+	width: <?php echo absint( $settings->carousel_width ); ?>px;
+	height: <?php echo absint( $settings->carousel_width ); ?>px;
 	border-radius: 100%;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	transition: all 0.5s ease;
 	z-index: 4;
 }
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back {
-	position: absolute;
-	display: flex;
-	z-index: 2;
-}
-.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card:hover .bbvm-circular-carousel-slide-back {
-	position: absolute;
-	transform: rotateY(180deg);
-	display: flex;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	text-align: center;
-	z-index: 1000 !important;
+@media only screen and (max-width: 600px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back,
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .flip-card-inner {
+		width: <?php echo absint( $settings->carousel_width_mobile ); ?>px;
+		height: <?php echo absint( $settings->carousel_width_mobile ); ?>px;
+	}
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-front .bbvm-carousel-content,
 .fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide .bbvm-circular-carousel-slide-back .bbvm-carousel-content {
-	z-index: 2;
+	z-index: 1;
 }
 
 .fl-node-<?php echo esc_html( $id ); ?> .owl-dots .owl-dot span {
@@ -156,20 +140,6 @@ foreach ( $settings->circles as $key => $circle ) :
 			'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .bbvm-circular-carousel-slide-front",
 		)
 	);
-	FLBuilderCSS::typography_field_rule(
-		array(
-			'settings'     => $circle,
-			'setting_name' => 'back_text_typography',
-			'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .bbvm-circular-carousel-slide-back",
-		)
-	);
-	FLBuilderCSS::border_field_rule(
-		array(
-			'settings'     => $circle,
-			'setting_name' => 'back_border',
-			'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .bbvm-circular-carousel-slide-back",
-		)
-	);
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-front {
 		background-image: url(<?php echo esc_url( $circle->background_image_src ); ?>);
@@ -178,14 +148,6 @@ foreach ( $settings->circles as $key => $circle ) :
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-front {
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->text_color ) ); ?>
-	}
-	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-back {
-		background-image: url(<?php echo esc_url( $circle->back_background_image_src ); ?>);
-		background-size: cover;
-		background-position: center center;
-	}
-	.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-back {
-		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->back_text_color ) ); ?>
 	}
 	<?php if ( 'background' === $circle->overlay_type ) : ?>
 		.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-front:before {
@@ -215,10 +177,29 @@ foreach ( $settings->circles as $key => $circle ) :
 		}
 		<?php
 	endif;
-	if ( 'background' === $circle->back_overlay_type ) :
+	if ( 'yes' === $circle->enable_hover_effect ) :
+		FLBuilderCSS::typography_field_rule(
+			array(
+				'settings'     => $circle,
+				'setting_name' => 'effect_text_typography',
+				'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .flip-card-inner:hover .bbvm-circular-carousel-slide-front",
+			)
+		);
+		FLBuilderCSS::border_field_rule(
+			array(
+				'settings'     => $circle,
+				'setting_name' => 'effect_border',
+				'selector'     => ".fl-node-$id .bbvm-circular-carousel-slide.slide-$count .flip-card-inner:hover .bbvm-circular-carousel-slide-front",
+			)
+		);
 		?>
-		.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-back:before {
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->back_overlay_background ) ); ?>;
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .flip-card-inner:hover .bbvm-circular-carousel-slide-front .bbvm-carousel-content {
+			color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->effect_text_color ) ); ?>
+			z-index: 10;
+		}
+		<?php if ( 'background' === $circle->effect_overlay_type ) : ?>
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .flip-card-inner:hover .bbvm-circular-carousel-slide-front:before {
+			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $circle->effect_overlay_background ) ); ?>;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -227,22 +208,23 @@ foreach ( $settings->circles as $key => $circle ) :
 			content: ' ';
 			z-index: 1;
 		}
-		<?php
-	endif;
-	if ( 'gradient' === $circle->back_overlay_type ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .bbvm-circular-carousel-slide-back:before {
-			background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $circle->back_overlay_gradient ), true ) ); // phpcs:ignore ?>;
-			background-size: cover;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			content: ' ';
-			z-index: 1;
-		}
-		<?php
+			<?php
+		endif;
+		if ( 'gradient' === $circle->overlay_type ) :
+			?>
+			.fl-node-<?php echo esc_html( $id ); ?> .fl-node-circular-carousel-slideshow .bbvm-circular-carousel-slide.slide-<?php echo absint( $count ); ?> .flip-card-inner:hover .bbvm-circular-carousel-slide-front:before {
+				background-image: <?php echo FLBuilderColor::gradient( json_decode( json_encode( $circle->effect_overlay_gradient ), true ) ); // phpcs:ignore ?>;
+				background-size: cover;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				content: ' ';
+				z-index: 1;
+			}
+			<?php
+		endif;
 	endif;
 	++$count;
 endforeach;
