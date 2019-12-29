@@ -62,11 +62,11 @@
 						<?php
 						if ( 'yes' === $settings->lightbox ) :
 							?>
-							<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+							<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" title="<?php echo esc_attr( $user_data->caption->text ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" alt="<?php echo esc_attr( $user_data->caption->text ); ?>" /></a>
 							<?php
 						else :
 							?>
-							<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+							<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" alt="<?php echo esc_attr( $user_data->caption->text ); ?>" /></a>
 							<?php
 						endif;
 						?>

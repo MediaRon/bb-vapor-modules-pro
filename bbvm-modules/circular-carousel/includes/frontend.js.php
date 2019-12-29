@@ -1,11 +1,11 @@
 <?php
 /**
- * Instagram Slideshow Module.
+ * Circular Carousel Module.
  *
  * @link https://bbvapormodules.com
  *
  * @package BB Vapor Modules
- * @since 1.6.5
+ * @since 2.0.8
  */
 
 ?>
@@ -45,17 +45,4 @@ if ( typeof jQuery != 'undefined' ) {
 			}
 		}
 	);
-	<?php if ( 'yes' === $settings->lightbox ) : ?>
-		jQuery('.fl-node-<?php echo esc_html( $id ); ?> .bbvm-instagram-lightbox').magnificPopup({
-			type: 'image',
-			closeOnContentClick: true,
-			closeBtnInside: false,
-			removalDelay: 300,
-			mainClass: 'bbvm-mfp-fade',
-			zoom: {
-				enabled: false
-			},
-			titleSrc: 'title'
-		});
-	<?php endif; ?>
 }

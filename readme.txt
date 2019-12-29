@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 1.7.4
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,22 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 2.0.8 =
+* Released 2019-12-28
+* Released new Circular Carousel module.
+
+= 2.0.5 =
+* Released 2019-12-27
+* Numerous style options added for LearnDash modules.
+
+= 2.0.1 =
+* Released 2019-12-26
+* Allowing caption and zoom effect on the Instagram Slideshow module.
+
+= 2.0.0 =
+* Released 2019-12-25
+* Feature: Added LearnDash modules for LearnDash compatibility.
 
 = 1.7.4 =
 * Releassed 2019-12-22

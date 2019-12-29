@@ -124,33 +124,6 @@
 	color: #000000;
 }
 <?php
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id .instagram-image-slide",
-		'media'    => 'default', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
-		'props'    => array(
-			'width' => $settings->card_width . '%',
-		),
-	)
-);
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id .instagram-image-slide",
-		'media'    => 'medium', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
-		'props'    => array(
-			'width' => $settings->card_width_medium . '%',
-		),
-	)
-);
-FLBuilderCSS::rule(
-	array(
-		'selector' => ".fl-node-$id .instagram-image-slide",
-		'media'    => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
-		'props'    => array(
-			'width' => $settings->card_width_responsive . '%',
-		),
-	)
-);
 FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
@@ -184,4 +157,32 @@ FLBuilderCSS::dimension_field_rule(
 	background: transparent !important;
 	padding: 0 !important;
 	margin: 0 !important;
+}
+<?php
+if ( isset( $settings->lightbox_caption ) && 'yes' === $settings->lightbox_caption ) :
+	?>
+	.bbvm-mfp-fade .mfp-bottom-bar {
+		bottom: 0;
+		margin: 0;
+	}
+	.bbvm-mfp-fade .mfp-title {
+		text-align: center;
+		background: rgba(0,0,0,0.4);
+		font-size: 18px;
+		padding: 20px 20px;
+		line-height: 1.2;
+	}
+	<?php else : ?>
+	.bbvm-mfp-fade .mfp-bottom-bar {
+		display: none;
+	}
+<?php endif; ?>
+.fl-node-<?php echo esc_html( $id ); ?> .instagram-image-slide {
+	overflow: hidden;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .instagram-image-slide img {
+	transition: transform .5s ease;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .instagram-image-slide img:hover {
+	transform: scale(1.2);
 }
