@@ -36,11 +36,24 @@ FLBuilder::register_module(
 							'label'      => __( 'Minimum Height', 'bb-vapor-modules-pro' ),
 							'default'    => 400,
 							'responsive' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon',
+								'property'  => 'min-height',
+								'unit'      => 'px',
+								'important' => true,
+							),
 						),
 						'background_photo'        => array(
 							'type'        => 'photo',
 							'label'       => __( 'Background Photo', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
+							'preview'     => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon',
+								'property'  => 'background-image',
+								'important' => true,
+							),
 						),
 						'background_overlay'      => array(
 							'type'       => 'color',
@@ -48,11 +61,24 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '4f4f4f',
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon-overlay',
+								'property'  => 'background-color',
+								'important' => true,
+							),
 						),
 						'outer_border'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Outer Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 8,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
+								'property'  => 'border-width',
+								'important' => true,
+								'unit' => 'px',
+							),
 						),
 						'outer_border_color'      => array(
 							'type'       => 'color',
@@ -60,6 +86,11 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => '000000',
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
+								'property'  => 'border-color',
+							),
 						),
 						'outer_border_appearance' => array(
 							'type'    => 'select',
@@ -72,11 +103,23 @@ FLBuilder::register_module(
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'dashed',
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
+								'property'  => 'border-style',
+							),
 						),
 						'inner_border'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Inner Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 10,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon-overlay',
+								'property'  => 'border-width',
+								'important' => true,
+								'unit' => 'px',
+							),
 						),
 						'inner_border_color'      => array(
 							'type'       => 'color',
@@ -84,6 +127,11 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon-overlay',
+								'property'  => 'border-color',
+							),
 						),
 						'inner_border_appearance' => array(
 							'type'    => 'select',
@@ -96,11 +144,22 @@ FLBuilder::register_module(
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon-overlay',
+								'property'  => 'border-style',
+							),
 						),
 						'coupon_box_padding'      => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.bbvm-advanced-coupon',
+								'property'  => 'padding',
+								'unit' => 'px',
+							),
 						),
 					),
 				),
