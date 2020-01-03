@@ -72,12 +72,12 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Outer Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 8,
-							'preview'    => array(
+							'preview' => array(
 								'type'      => 'css',
 								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
 								'property'  => 'border-width',
 								'important' => true,
-								'unit' => 'px',
+								'unit'      => 'px',
 							),
 						),
 						'outer_border_color'      => array(
@@ -87,9 +87,9 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'default'    => '000000',
 							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
-								'property'  => 'border-color',
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-advanced-coupon-wrapper',
+								'property' => 'border-color',
 							),
 						),
 						'outer_border_appearance' => array(
@@ -103,22 +103,22 @@ FLBuilder::register_module(
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'dashed',
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.fl-bbvm-advanced-coupon-wrapper',
-								'property'  => 'border-style',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-advanced-coupon-wrapper',
+								'property' => 'border-style',
 							),
 						),
 						'inner_border'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Inner Border Width', 'bb-vapor-modules-pro' ),
 							'default' => 10,
-							'preview'    => array(
+							'preview' => array(
 								'type'      => 'css',
 								'selector'  => '.bbvm-advanced-coupon-overlay',
 								'property'  => 'border-width',
 								'important' => true,
-								'unit' => 'px',
+								'unit'      => 'px',
 							),
 						),
 						'inner_border_color'      => array(
@@ -128,9 +128,9 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
 							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.bbvm-advanced-coupon-overlay',
-								'property'  => 'border-color',
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-coupon-overlay',
+								'property' => 'border-color',
 							),
 						),
 						'inner_border_appearance' => array(
@@ -144,10 +144,10 @@ FLBuilder::register_module(
 								'dotted' => __( 'Dotted', 'bb-vapor-modules-pro' ),
 								'double' => __( 'Double', 'bb-vapor-modules-pro' ),
 							),
-							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.bbvm-advanced-coupon-overlay',
-								'property'  => 'border-style',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-coupon-overlay',
+								'property' => 'border-style',
 							),
 						),
 						'coupon_box_padding'      => array(
@@ -155,10 +155,10 @@ FLBuilder::register_module(
 							'label'      => __( 'Coupon Box Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
 							'preview'    => array(
-								'type'      => 'css',
-								'selector'  => '.bbvm-advanced-coupon',
-								'property'  => 'padding',
-								'unit' => 'px',
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-coupon',
+								'property' => 'padding',
+								'unit'     => 'px',
 							),
 						),
 					),
