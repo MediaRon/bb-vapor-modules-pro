@@ -216,11 +216,22 @@ FLBuilder::register_module(
 							'responsive'    => true,
 							'show_target'   => true,
 							'show_nofollow' => true,
+							'preview'       => array(),
 						),
 						'top_photo_align'   => array(
 							'type'    => 'align',
 							'label'   => __( 'Photo Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-top-photo',
+										'property' => 'text-align',
+									),
+								),
+							),
+
 						),
 						'top_photo_display' => array(
 							'type'    => 'select',
@@ -235,21 +246,60 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Photo Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-top-photo',
+										'property' => 'padding',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'top_photo_margin'  => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Photo Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-top-photo',
+										'property' => 'margin',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'top_photo_border'  => array(
 							'type'       => 'border',
 							'label'      => __( 'Photo Border', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-top-photo img',
+										'property' => 'border',
+									),
+								),
+							),
 						),
 						'icon_size'         => array(
 							'type'    => 'unit',
 							'label'   => __( 'Icon Size', 'bb-vapor-modules-pro' ),
 							'default' => 40,
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-icon span:before',
+										'property' => 'font-size',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'icon'              => array(
 							'type'        => 'icon',
@@ -257,14 +307,32 @@ FLBuilder::register_module(
 							'show_remove' => true,
 						),
 						'icon_align'        => array(
-							'type'  => 'align',
-							'label' => __( 'Icon Alignment', 'bb-vapor-modules-pro' ),
+							'type'    => 'align',
+							'label'   => __( 'Icon Alignment', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-icon',
+										'property' => 'text-align',
+									),
+								),
+							),
 						),
 						'icon_color'        => array(
 							'type'       => 'color',
 							'label'      => __( 'Icon Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-icon span:before',
+										'property' => 'color',
+									),
+								),
+							),
 						),
 						'icon_display'      => array(
 							'type'    => 'select',
@@ -279,11 +347,31 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Icon Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-icon',
+										'property' => 'padding',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'icon_margin'       => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Icon Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-advanced-coupon-icon',
+										'property' => 'margin',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 					),
 				),
