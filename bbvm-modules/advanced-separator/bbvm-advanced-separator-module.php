@@ -174,6 +174,23 @@ FLBuilder::register_module(
 							'responsive'  => true,
 							'description' => 'px',
 							'default'     => '50',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'height',
+										'important' => true,
+										'unit'      => 'px',
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'width',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon'               => array(
 							'type'  => 'icon',
@@ -285,16 +302,38 @@ FLBuilder::register_module(
 							'type'    => 'text',
 							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
 							'default' => '***',
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.line-content',
+							),
 						),
 						'content_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Separator Content Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.line-content',
+									),
+								),
+							),
 						),
 						'content_color'      => array(
 							'type'    => 'color',
 							'label'   => __( 'Content Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.line-content',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 					),
 				),
