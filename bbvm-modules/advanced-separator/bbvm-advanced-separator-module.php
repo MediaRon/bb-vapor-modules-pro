@@ -136,6 +136,11 @@ FLBuilder::register_module(
 										'unit' => 'px',
 										'important' => true,
 									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-radius',
+										'property'  => 'height',
+										'unit' => 'px',
+									),
 								),
 							),
 						),
@@ -196,6 +201,16 @@ FLBuilder::register_module(
 							'label'       => __( 'Enter a radius', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '0',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-radius',
+										'property'  => 'border-radius',
+										'unit' => 'px',
+									),
+								),
+							),
 						),
 						'photo'              => array(
 							'type'  => 'photo',
