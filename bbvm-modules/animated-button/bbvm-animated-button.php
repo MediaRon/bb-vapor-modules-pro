@@ -157,7 +157,6 @@ FLBuilder::register_module(
 									),
 								),
 							),
-							'preview' => array(),
 						),
 						'icon_animation_hover'            => array(
 							'type'    => 'select',
@@ -193,7 +192,6 @@ FLBuilder::register_module(
 								'hvr-icon-buzz-out'        => __( 'Icon Buzz Out', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'button_animation'                => array(
 							'type'    => 'select',
@@ -215,7 +213,6 @@ FLBuilder::register_module(
 								'speech'      => array( 'fields' => array( 'speech_bubble' ) ),
 								'curls'       => array( 'fields' => array( 'curls' ) ),
 							),
-							'preview' => array(),
 						),
 						'animation_type_2d'               => array(
 							'type'    => 'select',
@@ -253,7 +250,6 @@ FLBuilder::register_module(
 								'hvr-backward'            => __( 'Backward', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'animation_type_background'       => array(
 							'type'    => 'select',
@@ -280,7 +276,6 @@ FLBuilder::register_module(
 								'hvr-shutter-out-vertical' => __( 'Shutter Out Vertical', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'animation_type_background_color' => array(
 							'type'       => 'color',
@@ -288,7 +283,6 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => 'rgba(0,0,0,0.1)',
-							'preview'    => array(),
 						),
 						'animation_type_border'           => array(
 							'type'    => 'select',
@@ -314,7 +308,6 @@ FLBuilder::register_module(
 								'hvr-overline-from-right'  => __( 'Overline From Right', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'shadow_and_glow'                 => array(
 							'type'    => 'select',
@@ -330,7 +323,6 @@ FLBuilder::register_module(
 								'hvr-box-shadow-inset'  => __( 'Box Shadow Inset', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'shadow_and_glow_color'           => array(
 							'type'       => 'color',
@@ -338,7 +330,6 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => 'rgba(0, 0, 0, 0.5)',
-							'preview'    => array(),
 						),
 						'speech_bubble'                   => array(
 							'type'    => 'select',
@@ -355,7 +346,6 @@ FLBuilder::register_module(
 								'hvr-bubble-float-left'   => __( 'Bubble Float Left', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 						'curls'                           => array(
 							'type'    => 'select',
@@ -368,7 +358,6 @@ FLBuilder::register_module(
 								'hvr-curl-bottom-left'  => __( 'Curl Bottom Left', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'none',
-							'preview' => array(),
 						),
 					),
 				),
