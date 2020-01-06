@@ -40,15 +40,16 @@ if ( 'normal' === $settings->headline_select ) {
 	$bbvm_count = 0;
 	foreach ( $settings->headlines as $headline ) {
 		?>
-		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?>, .fl-node-<?php echo esc_html( $id ); ?>.bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> a {
+		.fl-node-<?php echo esc_html( $id ); ?> .bbvm-advanced-headline .bbvm-variable-headline-<?php echo absint( $bbvm_count ); ?> {
 			color: <?php echo esc_html( isset( $headline->headline_color ) ? '#' . $headline->headline_color : 'inherit' ); ?> !important;
+			display: <?php echo isset( $headline->headline_display ) ? esc_html( $headline->headline_display ) : 'inline'; ?>;
 		}
 		<?php
 		FLBuilderCSS::typography_field_rule(
 			array(
 				'settings'     => $headline,
 				'setting_name' => 'headline_typography',
-				'selector'     => ".fl-node-$id .bbvm-variable-headline-$bbvm_count,.fl-node-$id .bbvm-variable-headline-$bbvm_count a",
+				'selector'     => ".fl-node-$id .bbvm-variable-headline-$bbvm_count",
 			)
 		);
 		$bbvm_count++;

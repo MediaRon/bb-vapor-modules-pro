@@ -731,17 +731,17 @@ FLBuilder::register_module(
 							'default' => 'no',
 						),
 						'button_text'                   => array(
-							'type'  => 'text',
-							'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'type'    => 'text',
+							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),
 							'preview' => array(
 								'type'     => 'text',
 								'selector' => '.bbvm-advanced-coupon-button a',
 							),
 						),
 						'button_link'                   => array(
-							'type'  => 'link',
-							'label' => __( 'Button URL', 'bb-vapor-modules-pro' ),
-							'preview'    => array(),
+							'type'    => 'link',
+							'label'   => __( 'Button URL', 'bb-vapor-modules-pro' ),
+							'preview' => array(),
 						),
 						'button_icon'                   => array(
 							'type'        => 'icon',
@@ -827,7 +827,7 @@ FLBuilder::register_module(
 									array(
 										'selector' => '.bbvm-advanced-coupon-button a',
 										'property' => 'padding',
-										'unit' => 'px',
+										'unit'     => 'px',
 									),
 								),
 							),
@@ -842,7 +842,7 @@ FLBuilder::register_module(
 									array(
 										'selector' => '.bbvm-advanced-coupon-button a',
 										'property' => 'margin',
-										'unit' => 'px',
+										'unit'     => 'px',
 									),
 								),
 							),
@@ -861,9 +861,9 @@ FLBuilder::register_module(
 							),
 						),
 						'button_border'                 => array(
-							'type'  => 'border',
-							'label' => __( 'Button Border', 'bb-vapor-modules-pro' ),
-							'preview'    => array(
+							'type'    => 'border',
+							'label'   => __( 'Button Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
@@ -907,7 +907,7 @@ FLBuilder::register_module(
 							'type'        => 'textarea',
 							'label'       => __( 'Enter Disclaimer Text', 'bb-vapor-modules-pro' ),
 							'description' => __( 'HTML allowed', 'bb-vapor-modules-pro' ),
-							'preview' => array(
+							'preview'     => array(
 								'type'     => 'text',
 								'selector' => '.bbvm-advanced-coupon-disclaimer',
 							),
@@ -916,7 +916,7 @@ FLBuilder::register_module(
 							'type'       => 'typography',
 							'label'      => __( 'Disclaimer Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
-							'preview' => array(
+							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.bbvm-advanced-coupon-disclaimer',
 							),
@@ -925,7 +925,7 @@ FLBuilder::register_module(
 							'type'       => 'color',
 							'label'      => __( 'Disclaimer Text Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
-							'preview' => array(
+							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.bbvm-advanced-coupon-disclaimer',
 								'property' => 'color',
@@ -935,22 +935,22 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Disclaimer Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
-							'preview' => array(
+							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.bbvm-advanced-coupon-disclaimer',
 								'property' => 'padding',
-								'unit' => 'px',
+								'unit'     => 'px',
 							),
 						),
 						'disclaimer_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Disclaimer Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
-							'preview' => array(
+							'preview'    => array(
 								'type'     => 'css',
 								'selector' => '.bbvm-advanced-coupon-disclaimer',
 								'property' => 'margin',
-								'unit' => 'px',
+								'unit'     => 'px',
 							),
 						),
 					),
