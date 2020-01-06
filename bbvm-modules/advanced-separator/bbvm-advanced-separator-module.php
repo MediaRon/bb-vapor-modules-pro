@@ -38,6 +38,16 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator:before',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'style'              => array(
 							'type'    => 'select',
@@ -111,6 +121,23 @@ FLBuilder::register_module(
 							'label'       => __( 'Separator height', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '1',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator',
+										'property'  => 'height',
+										'unit' => 'px',
+										'important' => true,
+									),
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator:before',
+										'property'  => 'height',
+										'unit' => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'style_photo'        => array(
 							'type'  => 'photo',
