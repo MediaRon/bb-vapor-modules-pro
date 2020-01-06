@@ -46,6 +46,11 @@ FLBuilder::register_module(
 										'property'  => 'background-color',
 										'important' => true,
 									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'background-color',
+										'important' => true,
+									),
 								),
 							),
 						),
@@ -141,6 +146,12 @@ FLBuilder::register_module(
 										'property'  => 'height',
 										'unit' => 'px',
 									),
+									array(
+										'selector' => '.fl-bbvm-advanced-separator-line',
+										'property' => 'height',
+										'unit' => 'px',
+										'important' => true,
+									),
 								),
 							),
 						),
@@ -172,6 +183,17 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
 							'default' => '24',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'font-size',
+										'unit' => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon_style'         => array(
 							'type'    => 'select',
@@ -188,6 +210,16 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'background_color'   => array(
 							'type'       => 'color',
@@ -195,6 +227,16 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'radius'             => array(
 							'type'        => 'unit',
