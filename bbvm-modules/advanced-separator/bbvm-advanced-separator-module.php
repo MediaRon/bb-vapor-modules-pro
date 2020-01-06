@@ -126,30 +126,30 @@ FLBuilder::register_module(
 							'label'       => __( 'Separator height', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '1',
-							'preview'    => array(
+							'preview'     => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
 										'selector'  => 'hr.fl-bbvm-advanced-separator',
 										'property'  => 'height',
-										'unit' => 'px',
+										'unit'      => 'px',
 										'important' => true,
 									),
 									array(
 										'selector'  => 'hr.fl-bbvm-advanced-separator:before',
 										'property'  => 'height',
-										'unit' => 'px',
+										'unit'      => 'px',
 										'important' => true,
 									),
 									array(
-										'selector'  => '.fl-bbvm-advanced-separator-radius',
-										'property'  => 'height',
-										'unit' => 'px',
+										'selector' => '.fl-bbvm-advanced-separator-radius',
+										'property' => 'height',
+										'unit'     => 'px',
 									),
 									array(
-										'selector' => '.fl-bbvm-advanced-separator-line',
-										'property' => 'height',
-										'unit' => 'px',
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'height',
+										'unit'      => 'px',
 										'important' => true,
 									),
 								),
@@ -200,13 +200,13 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
 							'default' => '24',
-							'preview'    => array(
+							'preview' => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
 										'selector'  => '.fl-bbvm-advanced-separator-icon i',
 										'property'  => 'font-size',
-										'unit' => 'px',
+										'unit'      => 'px',
 										'important' => true,
 									),
 								),
@@ -260,13 +260,13 @@ FLBuilder::register_module(
 							'label'       => __( 'Enter a radius', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '0',
-							'preview'    => array(
+							'preview'     => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
-										'selector'  => '.fl-bbvm-advanced-separator-radius',
-										'property'  => 'border-radius',
-										'unit' => 'px',
+										'selector' => '.fl-bbvm-advanced-separator-radius',
+										'property' => 'border-radius',
+										'unit'     => 'px',
 									),
 								),
 							),
@@ -324,7 +324,7 @@ FLBuilder::register_module(
 							'type'    => 'color',
 							'label'   => __( 'Content Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
-							'preview'    => array(
+							'preview' => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
