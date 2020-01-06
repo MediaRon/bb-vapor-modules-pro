@@ -32,9 +32,13 @@ FLBuilder::register_module(
 					'title'  => __( 'Alerts', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'alert_text'       => array(
-							'type'  => 'textarea',
-							'label' => __( 'Alert Text', 'bb-vapor-modules-pro' ),
-							'rows'  => 5,
+							'type'    => 'textarea',
+							'label'   => __( 'Alert Text', 'bb-vapor-modules-pro' ),
+							'rows'    => 5,
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.fl-bbvm-alert-text',
+							),
 						),
 						'alert_style'      => array(
 							'type'    => 'select',
@@ -63,13 +67,33 @@ FLBuilder::register_module(
 							),
 						),
 						'alert_padding'    => array(
-							'type'  => 'dimension',
-							'label' => __( 'Alert Padding', 'bb-vapor-modules-pro' ),
+							'type'    => 'dimension',
+							'label'   => __( 'Alert Padding', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+										'property' => 'padding',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'border_radius'    => array(
 							'type'    => 'unit',
 							'label'   => __( 'Border Radius', 'bb-vapor-modules-pro' ),
 							'default' => '0',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+										'property' => 'border-radius',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'background_color' => array(
 							'type'       => 'color',
@@ -77,6 +101,15 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+										'property' => 'background-color',
+									),
+								),
+							),
 						),
 						'text_color'       => array(
 							'type'       => 'color',
@@ -84,6 +117,19 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alert-text *',
+										'property' => 'color',
+									),
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+										'property' => 'color',
+									),
+								),
+							),
 						),
 					),
 				),
@@ -99,11 +145,28 @@ FLBuilder::register_module(
 							'type'       => 'typography',
 							'label'      => __( 'Select a Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+									),
+								),
+							),
 						),
 						'alert_alignment'  => array(
 							'type'    => 'align',
 							'label'   => __( 'Alert Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alerts-for-beaverbuilder',
+										'property' => 'text-align',
+									),
+								),
+							),
 						),
 					),
 				),
@@ -141,6 +204,16 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Select an Icon Size', 'bb-vapor-modules-pro' ),
 							'default' => '32',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-alert-icon',
+										'property' => 'font-size',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 					),
 				),
@@ -171,13 +244,26 @@ FLBuilder::register_module(
 							),
 							'default' => 'no',
 						),
+						'button_location'               => array(
+							'type'    => 'link',
+							'label'   => __( 'Button Location', 'bb-vapor-modules-pro' ),
+							'preview' => array(),
+						),
 						'button_text'                   => array(
-							'type'  => 'text',
-							'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'type'    => 'text',
+							'label'   => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.fl-bbvm-alert-button a',
+							),
 						),
 						'button_typography'             => array(
-							'type'  => 'typography',
-							'label' => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+							'type'    => 'typography',
+							'label'   => __( 'Button Typography', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button',
+							),
 						),
 						'button_theme'                  => array(
 							'type'    => 'select',
@@ -205,36 +291,64 @@ FLBuilder::register_module(
 							'label'      => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a',
+								'property' => 'color',
+							),
 						),
 						'button_background_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a',
+								'property' => 'background-color',
+							),
 						),
 						'button_background_color_hover' => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Color on Hover', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a:hover',
+								'property' => 'background-color',
+							),
 						),
 						'button_border_radius'          => array(
 							'type'        => 'unit',
 							'label'       => __( 'Button Border Radius', 'bb-vapor-modules-pro' ),
 							'default'     => '5',
 							'description' => 'px',
+							'preview'     => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a',
+								'property' => 'border-radius',
+								'unit'     => 'px',
+							),
 						),
 						'button_padding'                => array(
-							'type'  => 'dimension',
-							'label' => __( 'Button Padding', 'bb-vapor-modules-pro' ),
+							'type'    => 'dimension',
+							'label'   => __( 'Button Padding', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'button_border_color'           => array(
-							'type'  => 'color',
-							'label' => __( 'Button Border Color', 'bb-vapor-modules-pro' ),
-						),
-						'button_location'               => array(
-							'type'  => 'link',
-							'label' => __( 'Button Location', 'bb-vapor-modules-pro' ),
+							'type'    => 'color',
+							'label'   => __( 'Button Border Color', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-alert-button a',
+								'property' => 'border-color',
+							),
 						),
 					),
 				),
