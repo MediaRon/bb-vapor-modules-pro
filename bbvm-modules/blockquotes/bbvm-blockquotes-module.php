@@ -32,23 +32,15 @@ FLBuilder::register_module(
 					'title'  => __( 'Settings', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'blockquote_text'        => array(
-							'type'    => 'textarea',
-							'label'   => __( 'Blockquote Text', 'bb-vapor-modules-pro' ),
-							'rows'    => '6',
-							'preview' => array(
-								'type'     => 'text',
-								'selector' => '.blockquote h2',
-							),
+							'type'  => 'textarea',
+							'label' => __( 'Blockquote Text', 'bb-vapor-modules-pro' ),
+							'rows'  => '6',
 						),
 						'blockquote_attribution' => array(
 							'type'        => 'textarea',
 							'label'       => __( 'Blockquote Attribution', 'bb-vapor-modules-pro' ),
 							'description' => __( 'May or may not be used depending on Blockquote style', 'bb-vapor-modules-pro' ),
 							'rows'        => '6',
-							'preview'     => array(
-								'type'     => 'text',
-								'selector' => '.blockquote h3',
-							),
 						),
 					),
 				),
