@@ -105,9 +105,28 @@ class BBVapor_Modules_Pro {
 	}
 
 	/**
+	 * Add Vapor to the front of all Vapor modules.
+	 */
+	public function render_scripts() {
+		?>
+		<style>
+		form[class*="fl-builder-bbvm-"] .fl-lightbox-header h1:before {
+			content: "Vapor " !important;
+			position: relative;
+			display: inline-block;
+			margin-right: 5px;
+		}
+		</style>
+		<?php
+	}
+
+	/**
 	 * Register modules and blocks.
 	 */
 	public function bbvm_beaver_builder_module_init() {
+
+		// Register Module Scripts
+		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 
 		// Register admin panel.
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
