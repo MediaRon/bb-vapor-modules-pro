@@ -39,15 +39,25 @@ FLBuilder::register_module(
 						'button_text'                      => array(
 							'type'  => 'text',
 							'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-button span',
+							),
+							'connections' => array( 'string' ),
 						),
 						'button_link'                      => array(
 							'type'  => 'link',
 							'label' => __( 'Button Link', 'bb-vapor-modules-pro' ),
+							'preview' => array( 'type' => 'none' ),
+							'connections'   => array( 'url' ),
 						),
 						'button_icon'                      => array(
 							'type'        => 'icon',
 							'label'       => __( 'Button Icon', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
+							'preview'     => array(
+								'type' => 'none',
+							),
 						),
 						'button_text_color'                => array(
 							'type'    => 'color',
