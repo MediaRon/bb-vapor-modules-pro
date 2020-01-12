@@ -192,31 +192,54 @@ FLBuilder::register_module(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-group-for-beaverbuilder',
+								'property' => 'text-align',
+							),
 						),
 						'button_alignment_tablet' => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment Tablet', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array( 'type' => false ),
 						),
 						'button_alignment_mobile' => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment on Mobile', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array( 'type' => false ),
 						),
 						'button_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'button_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+							),
 						),
 						'button_margin'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'property' => 'margin',
+								'unit'     => 'px',
+							),
 						),
 						'button_radius'           => array(
 							'type'       => 'dimension',
@@ -229,6 +252,12 @@ FLBuilder::register_module(
 							'default'     => '0',
 							'responsive'  => true,
 							'description' => 'px',
+							'preview'     => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'property' => 'min-width',
+								'unit'     => 'px',
+							),
 						),
 					),
 				),
