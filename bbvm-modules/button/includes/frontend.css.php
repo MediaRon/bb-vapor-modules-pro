@@ -162,13 +162,37 @@ if ( 'color' === $background_type ) {
 	$background_color_hover = isset( $settings->button_background_color_hover ) ? esc_attr( $settings->button_background_color_hover ) : 'FFFFFF';
 	$background_color_hover = BBVapor_Modules_Pro::get_color( $background_color_hover );
 }
+if ( 'transparent' !== $background_type ) {
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'button_border',
+			'selector'     => ".fl-node-$id .fl-bbvm-button-for-beaverbuilder",
+		)
+	);
+	FLBuilderCSS::dimension_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'button_radius',
+			'selector'     => ".fl-node-$id .fl-bbvm-button-for-beaverbuilder.bbvm-button",
+			'unit'         => 'px',
+			'props'        => array(
+				'border-top-left-radius'     => 'button_radius_top',
+				'border-top-right-radius'    => 'button_radius_right',
+				'border-bottom-left-radius'  => 'button_radius_bottom',
+				'border-bottom-right-radius' => 'button_radius_left',
+			),
+		)
+	);
+}
 ?>
 .fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color ) ); ?>;
+	text-decoration: none;
 	<?php
 	if ( 'color' === $background_type ) {
 		?>
-		background: <?php echo esc_html( $background_color ); ?>;
+		background-color: <?php echo esc_html( $background_color ); ?>;
 		<?php
 	} elseif ( 'gradient' === $background_type ) {
 		?>
@@ -180,6 +204,7 @@ if ( 'color' === $background_type ) {
 }
 .fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover {
 	color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
+	text-decoration: none;
 	<?php
 	if ( 'color' === $background_type ) {
 		?>
@@ -192,618 +217,546 @@ if ( 'color' === $background_type ) {
 	}
 	?>
 }
-<?php
-if ( 'transparent' === $settings->button_background_type ) :
-	?>
-	<?php
-	if ( 'iris' === $settings->button_style ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			top: 0;
-			left: 0;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			transform: translate3d(0,0,0);
-			border-style: solid;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			border-width: 2px 0 0 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:after {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			right: 0;
-			bottom: 0;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			transform: translate3d(0,0,0);
-			border-style: solid;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			border-width: 0 2px 2px 0;
-		}
-		<?php
-	endif;
-	if ( 'prospero' === $settings->button_style ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		<?php
-	endif;
-	if ( 'ferdinand' === $settings->button_style ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 2px;
-			-webkit-transform: scale3d(0,5,1);
-			transform: scale3d(0,5,1);
-			-webkit-transform-origin: 0% 50%;
-			transform-origin: 0% 50%;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			-webkit-transform: scale3d(1,1,1);
-			transform: scale3d(1,1,1);
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-		}
-		<?php
-	}
-	if ( 'francisco' === $settings->button_style ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			content: '';
-			position: absolute;
-			bottom: 100%;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			opacity: 0;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			opacity: 1;
-			bottom: 0;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-		}
-		<?php
-	}
-	if ( 'sebastion' === $settings->button_style ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			transform: scale3d(1,1,1);
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:after {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			-webkit-transform: scale3d(1,1,1);
-			top: auto;
-			bottom: 0;
-			right: 0;
-			-webkit-transform-origin: 100% 50%;
-			transform-origin: 100% 50%;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		<?php
-	}
-	if ( 'trinculo' === $settings->button_style ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> span {
-			display: inline-block;
-			-webkit-animation: anim-trinculo 0.6s forwards;
-			animation: anim-trinculo 0.6s forwards;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 4px;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		<?php
-	endif;
-	if ( 'valentine' === $settings->button_style ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 2px;
-			-webkit-animation: anim-valentine-height 0.6s forwards;
-			animation: anim-valentine-height 0.6s forwards;
-			height: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 2px;
-			-webkit-animation: anim-valentine-height 0.6s forwards;
-			animation: anim-valentine-height 0.6s forwards;
-			height: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> span:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			height: 2px;
-			-webkit-animation: anim-valentine-width 0.6s forwards;
-			animation: anim-valentine-width 0.6s forwards;
-			width: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> span:before {
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			height: 2px;
-			-webkit-animation: anim-valentine-width 0.6s forwards;
-			animation: anim-valentine-width 0.6s forwards;
-			width: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		<?php
-	endif;
-	if ( 'stephano' === $settings->button_style ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			opacity: 1;
-			bottom: -10px;
-			left: 0;
-			-webkit-transform-origin: left bottom;
-			transform-origin: left bottom;
-			-webkit-transform: rotate3d(0,0,1,-90deg);
-			transform: rotate3d(0,0,1,-90deg);
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> span:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			opacity: 1;
-			-webkit-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,10px,0);
-			transform: translate3d(0,10px,0);
-			transition: transform 0.3s,opacity 0.3s;
-			left: 0;
-			content: '';
-			position: absolute;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-			bottom: 0;
-			width: 100%;
-			height: 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:after {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			-webkit-transform: rotate3d(0,0,1,90deg);
-			transform: rotate3d(0,0,1,90deg);
-			transition: transform 0.3s,opacity 0.3s;
-			-webkit-transform-origin: right bottom;
-			transform-origin: right bottom;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 2px;
-			right: 0;
-			bottom: -10px;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
-		}
-		<?php
-	}
-	?>
-	.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-		moz-transition: all .4s ease-in-out;
-		-o-transition: all .4s ease-in-out;
-		-webkit-transition: all .4s ease-in-out;
-		transition: all .4s ease-in-out;
-		display: none;
-		height: auto;
-		width: auto;
-		top: inherit;
-		bottom: inherit;
-		background: transparent;
-	}
-	.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
-		moz-transition: all .4s ease-in-out;
-		-o-transition: all .4s ease-in-out;
-		-webkit-transition: all .4s ease-in-out;
-		transition: all .4s ease-in-out;
-		display: none;
-		height: auto;
-		width: auto;
-		top: inherit;
-		bottom: inherit;
-		background: transparent;
-	}
-	.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
-		moz-transition: all .4s ease-in-out;
-		-o-transition: all .4s ease-in-out;
-		-webkit-transition: all .4s ease-in-out;
-		transition: all .4s ease-in-out;
-		display: none;
-		height: auto;
-		width: auto;
-		top: inherit;
-		bottom: inherit;
-		background: transparent;
-	}
-	<?php
-	if ( 'iris' === $settings->button_style_hover ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			display: inline-block;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			top: 0;
-			left: 0;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			transform: translate3d(0,0,0);
-			border-style: solid;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			border-width: 2px 0 0 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
-			display: inline-block;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			right: 0;
-			bottom: 0;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 10px;
-			transform: translate3d(0,0,0);
-			border-style: solid;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			border-width: 0 2px 2px 0;
-		}
-		<?php
-		endif;
-	if ( 'prospero' === $settings->button_style_hover ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			background: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		<?php
-	endif;
-	if ( 'trinculo' === $settings->button_style_hover ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span {
-			display: inline-block;
-			-webkit-animation: anim-trinculo 0.6s forwards;
-			animation: anim-trinculo 0.6s forwards;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 4px;
-			max-height: 4px;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:after {
-			display: none;
-		}
-		<?php
-	endif;
-	if ( 'valentine' === $settings->button_style_hover ) :
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 2px;
-			-webkit-animation: anim-valentine-height 0.6s forwards;
-			animation: anim-valentine-height 0.6s forwards;
-			height: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 2px;
-			-webkit-animation: anim-valentine-height 0.6s forwards;
-			animation: anim-valentine-height 0.6s forwards;
-			height: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:after {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			height: 2px;
-			-webkit-animation: anim-valentine-width 0.6s forwards;
-			animation: anim-valentine-width 0.6s forwards;
-			width: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			height: 2px;
-			-webkit-animation: anim-valentine-width 0.6s forwards;
-			animation: anim-valentine-width 0.6s forwards;
-			width: 100%;
-			background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		<?php
-	endif;
-	if ( 'ferdinand' === $settings->button_style_hover ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			display: inline-block;
-			content: '';
-			position: absolute;
-			bottom: 0;
-			right: 0;
-			width: 100%;
-			height: 2px;
-			-webkit-transform: scale3d(0,5,1);
-			transform: scale3d(0,5,1);
-			-webkit-transform-origin: 0% 50%;
-			transform-origin: 0% 50%;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			-webkit-transform: scale3d(1,1,1);
-			transform: scale3d(1,1,1);
-		}
-		<?php
-	}
-	if ( 'francisco' === $settings->button_style_hover ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			display: inline-block;
-			content: '';
-			position: absolute;
-			bottom: 100%;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			opacity: 0;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			opacity: 1;
-			bottom: 0;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-		}
-		<?php
-	}
-	if ( 'sebastion' === $settings->button_style_hover ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			display: inline-block;
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 2px;
-			transform: scale3d(1,1,1);
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
-			display: inline-block;
-			content: '';
-			position: absolute;
-			right: 0;
-			width: 100%;
-			height: 2px;
-			-webkit-transform: scale3d(1,1,1);
-			top: auto;
-			bottom: 0;
-			-webkit-transform-origin: 100% 50%;
-			transform-origin: 100% 50%;
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		<?php
-	}
-	if ( 'stephano' === $settings->button_style_hover ) {
-		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			display: inline-block;
-			opacity: 1;
-			bottom: -10px;
-			left: 0;
-			-webkit-transform-origin: left bottom;
-			transform-origin: left bottom;
-			-webkit-transform: rotate3d(0,0,1,-90deg);
-			transform: rotate3d(0,0,1,-90deg);
-			background-color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			border-color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			display: inline-block;
-			opacity: 1;
-			-webkit-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,10px,0);
-			transform: translate3d(0,10px,0);
-			transition: transform 0.3s,opacity 0.3s;
-			left: 0;
-			content: '';
-			position: absolute;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			bottom: 0;
-			width: 100%;
-			height: 2px;
-		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
-			moz-transition: all .4s ease-in-out;
-			-o-transition: all .4s ease-in-out;
-			-webkit-transition: all .4s ease-in-out;
-			transition: all .4s ease-in-out;
-			display: inline-block;
-			-webkit-transform: rotate3d(0,0,1,90deg);
-			transform: rotate3d(0,0,1,90deg);
-			transition: transform 0.3s,opacity 0.3s;
-			-webkit-transform-origin: right bottom;
-			transform-origin: right bottom;
-			content: '';
-			position: absolute;
-			width: 10px;
-			height: 2px;
-			right: 0;
-			bottom: -10px;
-			background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-			border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
-		}
-		<?php
-	}
-	endif;
-?>
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.iris:not(:hover):before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	top: 0;
+	left: 0;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: translate3d(0,0,0);
+	border-style: solid;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	border-width: 2px 0 0 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.iris:not(:hover):after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	right: 0;
+	bottom: 0;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: translate3d(0,0,0);
+	border-style: solid;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	border-width: 0 2px 2px 0;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.prospero:not(:hover):before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.ferdinand:not(:hover):before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scale3d(0,5,1);
+	transform: scale3d(0,5,1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.francisco:not(:hover):before {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	opacity: 0;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	opacity: 1;
+	bottom: 0;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.sebastion:not(:hover):before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transform: scale3d(1,1,1);
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.sebastion:not(:hover):after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scale3d(1,1,1);
+	top: auto;
+	bottom: 0;
+	right: 0;
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.trinculo:not(:hover) span {
+	display: inline-block;
+	-webkit-animation: anim-trinculo 0.6s forwards;
+	animation: anim-trinculo 0.6s forwards;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.trinculo:not(:hover):before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.valentine:not(:hover):before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	-webkit-animation: anim-valentine-height 0.6s forwards;
+	animation: anim-valentine-height 0.6s forwards;
+	height: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.valentine:not(:hover):after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2px;
+	-webkit-animation: anim-valentine-height 0.6s forwards;
+	animation: anim-valentine-height 0.6s forwards;
+	height: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.valentine:not(:hover) span:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	-webkit-animation: anim-valentine-width 0.6s forwards;
+	animation: anim-valentine-width 0.6s forwards;
+	width: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.valentine:not(:hover) span:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	-webkit-animation: anim-valentine-width 0.6s forwards;
+	animation: anim-valentine-width 0.6s forwards;
+	width: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.stephano:not(:hover):before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	opacity: 1;
+	bottom: -10px;
+	left: 0;
+	-webkit-transform-origin: left bottom;
+	transform-origin: left bottom;
+	-webkit-transform: rotate3d(0,0,1,-90deg);
+	transform: rotate3d(0,0,1,-90deg);
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.stephano:not(:hover) span:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	transition: transform 0.3s,opacity 0.3s;
+	left: 0;
+	content: '';
+	position: absolute;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .transparent.stephano:not(:hover):after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	-webkit-transform: rotate3d(0,0,1,90deg);
+	transform: rotate3d(0,0,1,90deg);
+	transition: transform 0.3s,opacity 0.3s;
+	-webkit-transform-origin: right bottom;
+	transform-origin: right bottom;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 2px;
+	right: 0;
+	bottom: -10px;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: none;
+	height: auto;
+	width: auto;
+	top: inherit;
+	bottom: inherit;
+	background: transparent;
+}
+.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: none;
+	height: auto;
+	width: auto;
+	top: inherit;
+	bottom: inherit;
+	background: transparent;
+}
+.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: none;
+	height: auto;
+	width: auto;
+	top: inherit;
+	bottom: inherit;
+	background: transparent;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-iris:hover:before {
+	display: inline-block;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	top: 0;
+	left: 0;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: translate3d(0,0,0);
+	border-style: solid;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	border-width: 2px 0 0 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-iris:hover:after {
+	display: inline-block;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	right: 0;
+	bottom: 0;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	transform: translate3d(0,0,0);
+	border-style: solid;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	border-width: 0 2px 2px 0;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-prospero:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-trinculo:hover span {
+	display: inline-block;
+	-webkit-animation: anim-trinculo 0.6s forwards;
+	animation: anim-trinculo 0.6s forwards;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-trinculo:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	max-height: 4px;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-trinculo:hover span:after {
+	display: none;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-valentine:hover {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-valentine:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	-webkit-animation: anim-valentine-height 0.6s forwards;
+	animation: anim-valentine-height 0.6s forwards;
+	height: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-valentine:hover:after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2px;
+	-webkit-animation: anim-valentine-height 0.6s forwards;
+	animation: anim-valentine-height 0.6s forwards;
+	height: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-valentine:hover span:after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	-webkit-animation: anim-valentine-width 0.6s forwards;
+	animation: anim-valentine-width 0.6s forwards;
+	width: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-valentine:hover span:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	-webkit-animation: anim-valentine-width 0.6s forwards;
+	animation: anim-valentine-width 0.6s forwards;
+	width: 100%;
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-ferdinand:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: inline-block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scale3d(0,5,1);
+	transform: scale3d(0,5,1);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-francisco:hover:before {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	opacity: 0;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	opacity: 1;
+	bottom: 0;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-sebastion:hover:before {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	transform: scale3d(1,1,1);
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-sebastion:hover:after {
+	display: inline-block;
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scale3d(1,1,1);
+	top: auto;
+	bottom: 0;
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-stephano:hover:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: inline-block;
+	opacity: 1;
+	bottom: -10px;
+	left: 0;
+	-webkit-transform-origin: left bottom;
+	transform-origin: left bottom;
+	-webkit-transform: rotate3d(0,0,1,-90deg);
+	transform: rotate3d(0,0,1,-90deg);
+	background-color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	border-color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-stephano:hover span:before {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: inline-block;
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,10px,0);
+	transform: translate3d(0,10px,0);
+	transition: transform 0.3s,opacity 0.3s;
+	left: 0;
+	content: '';
+	position: absolute;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .hover-stephano:hover:after {
+	moz-transition: all .4s ease-in-out;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+	display: inline-block;
+	-webkit-transform: rotate3d(0,0,1,90deg);
+	transform: rotate3d(0,0,1,90deg);
+	transition: transform 0.3s,opacity 0.3s;
+	-webkit-transform-origin: right bottom;
+	transform-origin: right bottom;
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 2px;
+	right: 0;
+	bottom: -10px;
+	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+	border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color_hover ) ); ?>;
+}
 <?php
 FLBuilderCSS::dimension_field_rule(
 	array(
@@ -864,20 +817,6 @@ FLBuilderCSS::rule(
 		'media'    => 'responsive', // Optional. Can be `default`, `medium`, `responsive` or a custom statement.
 		'props'    => array(
 			'min-width' => $settings->button_min_width_responsive . 'px',
-		),
-	)
-);
-FLBuilderCSS::dimension_field_rule(
-	array(
-		'settings'     => $settings,
-		'setting_name' => 'button_radius',
-		'selector'     => ".fl-node-$id .fl-bbvm-button-for-beaverbuilder.bbvm-button",
-		'unit'         => 'px',
-		'props'        => array(
-			'border-top-left-radius'     => 'button_radius_top',
-			'border-top-right-radius'    => 'button_radius_right',
-			'border-bottom-left-radius'  => 'button_radius_bottom',
-			'border-bottom-right-radius' => 'button_radius_left',
 		),
 	)
 );
