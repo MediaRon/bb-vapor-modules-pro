@@ -455,24 +455,12 @@ if ( 'transparent' !== $background_type ) {
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
-	display: none;
-	height: auto;
-	width: auto;
-	top: inherit;
-	bottom: inherit;
-	background: transparent;
 }
 .fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
 	moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
-	display: none;
-	height: auto;
-	width: auto;
-	top: inherit;
-	bottom: inherit;
-	background: transparent;
 }
 .fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
 	moz-transition: all .4s ease-in-out;

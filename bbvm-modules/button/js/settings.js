@@ -67,7 +67,7 @@
 			if ( '' !== icon ) {
 				wrap.addClass( 'bbvm-button-has-icon' );
 
-				link.prepend( '<i class="bbvm-button-icon bbvm-button-icon-before ' + icon + '"></i>' );
+				link.prepend( '<i class="bbvm-button-icon bbvm-button-icon-before ' + icon + '"></i> ' );
 
 				if ( '' === text ) {
 					link.find( '.bbvm-button-icon' ).css( 'margin', '0' );
