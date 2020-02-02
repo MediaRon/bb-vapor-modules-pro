@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.8
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 2.1.0 =
+* Released 2020-02-02
+* Slowly adding preview functionality to existing modules.
+* Refactored admin panel to use static tabs instead of dynamic for better usability.
+* Added lightbox caption to Instagram module.
 
 = 2.0.8 =
 * Released 2019-12-28
