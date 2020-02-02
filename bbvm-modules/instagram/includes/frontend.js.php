@@ -35,7 +35,8 @@ if ( typeof jQuery != 'undefined' ) {
 					mainClass: 'bbvm-mfp-fade',
 					zoom: {
 						enabled: false
-					}
+					},
+					titleSrc: 'title'
 				});
 			}
 			if( false == response.pagination ) {
