@@ -38,6 +38,21 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator:before',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'style'              => array(
 							'type'    => 'select',
@@ -111,6 +126,34 @@ FLBuilder::register_module(
 							'label'       => __( 'Separator height', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '1',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator',
+										'property'  => 'height',
+										'unit'      => 'px',
+										'important' => true,
+									),
+									array(
+										'selector'  => 'hr.fl-bbvm-advanced-separator:before',
+										'property'  => 'height',
+										'unit'      => 'px',
+										'important' => true,
+									),
+									array(
+										'selector' => '.fl-bbvm-advanced-separator-radius',
+										'property' => 'height',
+										'unit'     => 'px',
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'height',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'style_photo'        => array(
 							'type'  => 'photo',
@@ -131,6 +174,23 @@ FLBuilder::register_module(
 							'responsive'  => true,
 							'description' => 'px',
 							'default'     => '50',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'height',
+										'important' => true,
+										'unit'      => 'px',
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'width',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon'               => array(
 							'type'  => 'icon',
@@ -140,6 +200,17 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
 							'default' => '24',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'font-size',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon_style'         => array(
 							'type'    => 'select',
@@ -156,6 +227,16 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'background_color'   => array(
 							'type'       => 'color',
@@ -163,12 +244,32 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'radius'             => array(
 							'type'        => 'unit',
 							'label'       => __( 'Enter a radius', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'default'     => '0',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.fl-bbvm-advanced-separator-radius',
+										'property' => 'border-radius',
+										'unit'     => 'px',
+									),
+								),
+							),
 						),
 						'photo'              => array(
 							'type'  => 'photo',
@@ -201,16 +302,38 @@ FLBuilder::register_module(
 							'type'    => 'text',
 							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
 							'default' => '***',
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.line-content',
+							),
 						),
 						'content_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Separator Content Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.line-content',
+									),
+								),
+							),
 						),
 						'content_color'      => array(
 							'type'    => 'color',
 							'label'   => __( 'Content Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.line-content',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 					),
 				),

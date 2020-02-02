@@ -37,27 +37,27 @@ FLBuilder::register_module(
 							'default' => 'button_id_' . rand(0,10000), // phpcs:ignore
 						),
 						'button_text'                      => array(
-							'type'  => 'text',
-							'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'type'        => 'text',
+							'label'       => __( 'Button Text', 'bb-vapor-modules-pro' ),
+							'preview'     => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-button span',
+							),
+							'connections' => array( 'string' ),
 						),
 						'button_link'                      => array(
-							'type'  => 'link',
-							'label' => __( 'Button Link', 'bb-vapor-modules-pro' ),
+							'type'        => 'link',
+							'label'       => __( 'Button Link', 'bb-vapor-modules-pro' ),
+							'preview'     => array( 'type' => 'none' ),
+							'connections' => array( 'url' ),
 						),
 						'button_icon'                      => array(
 							'type'        => 'icon',
 							'label'       => __( 'Button Icon', 'bb-vapor-modules-pro' ),
 							'show_remove' => true,
-						),
-						'button_text_color'                => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-						),
-						'button_text_color_hover'          => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
+							'preview'     => array(
+								'type' => 'none',
+							),
 						),
 						'button_background_type'           => array(
 							'type'    => 'select',
@@ -68,17 +68,20 @@ FLBuilder::register_module(
 								'gradient'    => __( 'Gradient', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'transparent',
+							'preview' => array( 'type' => 'none' ),
 							'toggle'  => array(
 								'color'       => array(
 									'fields' => array(
 										'button_background_color',
 										'button_background_color_hover',
+										'button_border',
 									),
 								),
 								'gradient'    => array(
 									'fields' => array(
 										'button_background_gradient',
 										'button_background_gradient_hover',
+										'button_border',
 									),
 								),
 								'transparent' => array(
@@ -91,12 +94,35 @@ FLBuilder::register_module(
 								),
 							),
 						),
+						'button_text_color'                => array(
+							'type'    => 'color',
+							'label'   => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button span',
+								'property' => 'color',
+							),
+						),
+						'button_text_color_hover'          => array(
+							'type'    => 'color',
+							'label'   => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
+							'default' => '000000',
+							'preview' => array(
+								'type' => 'none',
+							),
+						),
 						'button_background_color'          => array(
 							'type'       => 'color',
 							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder-wrapper .fl-bbvm-button-for-beaverbuilder.bbvm-button',
+								'property' => 'background-color',
+							),
 						),
 						'button_background_color_hover'    => array(
 							'type'       => 'color',
@@ -104,14 +130,25 @@ FLBuilder::register_module(
 							'show_alpha' => true,
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
+							'preview'    => array(
+								'type' => 'none',
+							),
 						),
 						'button_background_gradient'       => array(
-							'type'  => 'gradient',
-							'label' => __( 'Button Background Gradient', 'bb-vapor-modules-pro' ),
+							'type'    => 'gradient',
+							'label'   => __( 'Button Background Gradient', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder',
+								'property' => 'background-image',
+							),
 						),
 						'button_background_gradient_hover' => array(
-							'type'  => 'gradient',
-							'label' => __( 'Button Background Hover Gradient', 'bb-vapor-modules-pro' ),
+							'type'    => 'gradient',
+							'label'   => __( 'Button Background Hover Gradient', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type' => 'none',
+							),
 						),
 						'button_style'                     => array(
 							'type'    => 'select',
@@ -127,6 +164,7 @@ FLBuilder::register_module(
 								'trinculo'  => __( 'Trinculo', 'bb-vapor-modules-pro' ),
 								'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
 							),
+							'preview' => array( 'type' => 'none' ),
 						),
 						'button_style_hover'               => array(
 							'type'    => 'select',
@@ -142,16 +180,32 @@ FLBuilder::register_module(
 								'trinculo'  => __( 'Trinculo', 'bb-vapor-modules-pro' ),
 								'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
 							),
+							'preview' => array( 'type' => 'none' ),
+						),
+						'button_border'                    => array(
+							'type'    => 'border',
+							'label'   => __( 'Button Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'property' => 'border',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder',
+							),
 						),
 						'button_style_border_color'        => array(
 							'type'    => 'color',
 							'label'   => __( 'Button Style Border Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder',
+								'property' => 'border-color',
+							),
 						),
 						'button_style_border_color_hover'  => array(
 							'type'    => 'color',
 							'label'   => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
+							'preview' => array( 'type' => 'none' ),
 						),
 					),
 				),
@@ -167,26 +221,53 @@ FLBuilder::register_module(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder-wrapper',
+								'property' => 'text-align',
+							),
 						),
 						'button_padding'    => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'button_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
+							),
 						),
 						'button_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
+								'property' => 'margin',
+								'unit'     => 'px',
+							),
 						),
 						'button_radius'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Radius', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
+								'property' => 'border-radius',
+								'unit'     => 'px',
+							),
 						),
 						'button_min_width'  => array(
 							'type'        => 'unit',
@@ -194,6 +275,12 @@ FLBuilder::register_module(
 							'default'     => '0',
 							'responsive'  => true,
 							'description' => 'px',
+							'preview'     => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
+								'property' => 'min-width',
+								'unit'     => 'px',
+							),
 						),
 					),
 				),

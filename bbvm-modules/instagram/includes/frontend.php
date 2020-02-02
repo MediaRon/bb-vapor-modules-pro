@@ -15,7 +15,7 @@
 	$instagram = get_option( 'bbvm-modules-instagram', array() );
 	if ( ! isset( $instagram['token'] ) && is_user_logged_in() ) {
 		?>
-		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'instagram' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); // phpcs:ignore ?></a></p>
+		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-instagram' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); // phpcs:ignore ?></a></p>
 		<?php
 	} else {
 		$instagram_json = isset( $instagram['json'] ) ? $instagram['json'] : '';
@@ -77,11 +77,11 @@
 							else :
 								if ( 'yes' === $settings->lightbox ) :
 									?>
-									<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+									<a class="bbvm-instagram-lightbox" href="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" title="<?php echo esc_attr( $user_data->caption->text ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" title="<?php echo esc_attr( $user_data->caption->text ); ?>" alt="<?php echo esc_attr( $user_data->caption->text ); ?>" /></a>
 									<?php
 								else :
 									?>
-									<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" /></a>
+									<a href="<?php echo esc_url( $user_data->link ); ?>"><img src="<?php echo esc_url( $user_data->images->standard_resolution->url ); ?>" alt="<?php echo esc_attr( $user_data->caption->text ); ?>" /></a>
 									<?php
 								endif;
 								?>

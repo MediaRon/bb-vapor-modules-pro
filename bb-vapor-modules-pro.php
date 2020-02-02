@@ -125,7 +125,7 @@ class BBVapor_Modules_Pro {
 	 */
 	public function bbvm_beaver_builder_module_init() {
 
-		// Register Module Scripts
+		// Register Module Scripts.
 		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 
 		// Register admin panel.

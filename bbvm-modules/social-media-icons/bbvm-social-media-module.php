@@ -112,6 +112,12 @@ FLBuilder::register_module(
 							'label'       => __( 'Padding', 'bb-vapor-modules-pro' ),
 							'description' => 'px',
 							'responsive'  => true,
+							'preview'     => array(
+								'type'     => 'css',
+								'property' => 'padding',
+								'unit'     => 'px',
+								'selector' => '.bbvm-module-social-wrapper',
+							),
 						),
 						'orientation'         => array(
 							'type'    => 'select',
@@ -121,6 +127,7 @@ FLBuilder::register_module(
 								'horizontal' => __( 'Horizontal', 'bb-vapor-modules-pro' ),
 								'vertical'   => __( 'Vertical', 'bb-vapor-modules-pro' ),
 							),
+							'preview' => array( 'type' => false ),
 						),
 						'background_select'   => array(
 							'type'    => 'select',
@@ -153,14 +160,21 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'property'  => 'background-color',
+								'selector'  => '.bbvm-module-social-wrapper',
+								'important' => true,
+							),
 						),
 						'background_gradient' => array(
 							'type'    => 'gradient',
 							'label'   => __( 'Gradient Background Color', 'bb-vapor-modules-pro' ),
 							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.bbvm-module-social-wrapper',
-								'property' => 'background-image',
+								'type'      => 'css',
+								'selector'  => '.bbvm-module-social-wrapper',
+								'property'  => 'background',
+								'important' => true,
 							),
 						),
 						'fill'                => array(
@@ -169,8 +183,8 @@ FLBuilder::register_module(
 							'default' => 'none',
 							'options' => array(
 								'none'   => __( 'Select a color', 'bb-vapor-modules-pro' ),
-								'FFFFFF' => __( 'White', 'bb-vapor-modules-pro' ),
-								'000000' => __( 'Black', 'bb-vapor-modules-pro' ),
+								'white'  => __( 'White', 'bb-vapor-modules-pro' ),
+								'black'  => __( 'Black', 'bb-vapor-modules-pro' ),
 								'brand'  => __( 'Brand Colors', 'bb-vapor-modules-pro' ),
 								'custom' => __( 'Custom', 'bb-vapor-modules-pro' ),
 							),
@@ -179,6 +193,7 @@ FLBuilder::register_module(
 									'fields' => array( 'fill_custom' ),
 								),
 							),
+							'preview' => array( 'type' => false ),
 						),
 						'fill_custom'         => array(
 							'type'       => 'color',
@@ -186,6 +201,11 @@ FLBuilder::register_module(
 							'default'    => '333333',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'fill',
+								'selector' => '.bbvm-module-social.custom svg',
+							),
 						),
 						'icon_size'           => array(
 							'type'        => 'select',
@@ -198,6 +218,17 @@ FLBuilder::register_module(
 								'24' => '24px',
 								'36' => '36px',
 								'48' => '48px',
+							),
+							'preview'     => array( 'type' => false ),
+						),
+						'alignment'           => array(
+							'type'    => 'align',
+							'label'   => __( 'Alignment', 'bb-vapor-modules-pro' ),
+							'default' => 'left',
+							'preview' => array(
+								'type'     => 'css',
+								'property' => 'text-align',
+								'selector' => '.bbvm-module-social ',
 							),
 						),
 					),

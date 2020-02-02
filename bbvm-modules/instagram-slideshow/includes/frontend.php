@@ -15,7 +15,7 @@
 	$instagram = get_option( 'bbvm-modules-instagram', array() );
 	if ( ! isset( $instagram['token'] ) && is_user_logged_in() ) {
 		?>
-		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'instagram' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); // phpcs:ignore ?></a>
+		<p><?php esc_html_e( 'Please connect to Instagram in the plugin settings.', 'bb-vapor-modules-pro' ); ?>&nbsp;<a href="<?php echo esc_url( add_query_arg( array( 'page' => 'bb-vapor-modules-pro', 'tab' => 'tab-instagram' ), admin_url( 'options-general.php' ) ) ); ?>"><?php esc_html_e( 'Connect', 'bb-vapor-modules-pro' ); // phpcs:ignore ?></a>
 		<?php
 	} else {
 		$instagram_json = isset( $instagram['json'] ) ? $instagram['json'] : '';

@@ -120,27 +120,8 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_get_svg' ) ) :
 			}
 		}
 
-		/* Get Fill/Text Color */
-		$css = array();
-		if ( isset( $settings->fill ) && 'custom' === $settings->fill ) {
-
-			if ( 6 === strlen( $settings->fill_custom ) ) {
-				$fill_color = '#' . $settings->fill_custom;
-			} else {
-				$fill_color = $settings->fill_custom;
-			}
-			$css[] = sprintf( 'fill: %s', $fill_color );
-		} else {
-			if ( isset( $settings->fill ) ) {
-				if ( 'brand' !== $settings->fill && 'custom' !== $settings->fill ) {
-					$fill_color = '#' . $settings->fill;
-					$css[]      = sprintf( 'fill: %s', $fill_color );
-				}
-			}
-		}
-		$css = implode( ';', $css );
 		// Begin SVG markup.
-		$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img" style="' . esc_attr( $css ) . '">';
+		$svg = '<svg class="icon icon-' . esc_attr( $args['icon'] ) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 		// Display the title.
 		if ( $args['title'] ) {
 			$svg .= '<title id="title-' . $unique_id . '">' . esc_html( $args['title'] ) . '</title>';
@@ -204,12 +185,7 @@ endif;
 // Output Icons.
 $maybe_icons = bbvapor_modules_beaver_builder_social_get_icons();
 if ( isset( $settings->social_form ) ) {
-	$fill = '';
-	if ( isset( $settings->fill ) ) {
-		if ( 'custom' === $settings->fill || 'brand' === $settings->fill ) {
-			$fill = $settings->fill;
-		}
-	}
+	$fill      = $settings->fill;
 	$icon_size = '24';
 	if ( isset( $settings->icon_size ) ) {
 		$icon_size = $settings->icon_size;

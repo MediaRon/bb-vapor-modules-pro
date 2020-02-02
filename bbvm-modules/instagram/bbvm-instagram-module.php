@@ -155,6 +155,15 @@ FLBuilder::register_module(
 							),
 							'default' => 'no',
 						),
+						'lightbox_caption'              => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Lightbox Caption', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
+						),
 						'card_columns'                  => array(
 							'type'    => 'select',
 							'label'   => __( 'Number of Card Columns', 'bb-vapor-modules-pro' ),
@@ -178,6 +187,9 @@ FLBuilder::register_module(
 							'toggle'  => array(
 								'yes' => array(
 									'fields' => array(
+										'background_min_height_desktop',
+										'background_min_height_tablet',
+										'background_min_height_mobile',
 										'background_min_height',
 									),
 								),

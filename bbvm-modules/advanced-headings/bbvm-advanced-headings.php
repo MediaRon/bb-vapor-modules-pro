@@ -54,6 +54,15 @@ FLBuilder::register_settings_form(
 								'label'      => __( 'Headline Color', 'bb-vapor-modules' ),
 								'show_reset' => true,
 							),
+							'headline_display'    => array(
+								'type'    => 'select',
+								'label'   => __( 'Headline Display', 'bb-vapor-modules-pro' ),
+								'default' => 'inline',
+								'options' => array(
+									'inline' => __( 'Inline', 'bb-vapor-modules-pro' ),
+									'block'  => __( 'Block', 'bb-vapor-modules-pro' ),
+								),
+							),
 							'headline_typography' => array(
 								'type'       => 'typography',
 								'label'      => __( 'Headline Typography', 'bb-vapor-modules' ),
@@ -92,6 +101,7 @@ FLBuilder::register_module(
 							'type'       => 'link',
 							'label'      => __( 'Headline Link', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
+							'preview'    => array(),
 						),
 						'headline_select'      => array(
 							'type'    => 'select',
@@ -150,8 +160,12 @@ FLBuilder::register_module(
 							'default' => 'no',
 						),
 						'headline'             => array(
-							'type'  => 'text',
-							'label' => __( 'Enter Your Headline', 'bb-vapor-modules-pro' ),
+							'type'    => 'text',
+							'label'   => __( 'Enter Your Headline', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-advanced-headline span',
+							),
 						),
 						'headlines'            => array(
 							'type'         => 'form',
@@ -174,6 +188,11 @@ FLBuilder::register_module(
 							'label'   => __( 'Headline Alignment', 'bb-vapor-modules-pro' ),
 							'help'    => __( 'Headline style must be full width.', 'bb-vapor-modules-pro' ),
 							'default' => 'left',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline',
+								'property' => 'text-align',
+							),
 						),
 						'headline_color'       => array(
 							'type'       => 'color',
@@ -191,16 +210,32 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'headline_margin'      => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline',
+								'property' => 'margin',
+								'unit'     => 'px',
+							),
 						),
 						'headline_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline span',
+							),
 						),
 					),
 				),
@@ -213,8 +248,12 @@ FLBuilder::register_module(
 					'title'  => __( 'Description', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'description'            => array(
-							'type'  => 'editor',
-							'label' => __( 'Heading Description', 'bb-vapor-modules-pro' ),
+							'type'    => 'editor',
+							'label'   => __( 'Heading Description', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.description',
+							),
 						),
 						'description_color'      => array(
 							'type'       => 'color',
@@ -222,10 +261,19 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '000000',
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.description',
+								'property' => 'color',
+							),
 						),
 						'description_typography' => array(
-							'type'  => 'typography',
-							'label' => __( 'Description Typography', 'bb-vapor-modules-pro' ),
+							'type'    => 'typography',
+							'label'   => __( 'Description Typography', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.description',
+							),
 						),
 					),
 				),
@@ -320,6 +368,23 @@ FLBuilder::register_module(
 							'responsive'  => true,
 							'description' => 'px',
 							'default'     => '50',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'height',
+										'important' => true,
+										'unit'      => 'px',
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon img',
+										'property'  => 'width',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'background_photo'        => array(
 							'type'  => 'photo',
@@ -329,6 +394,10 @@ FLBuilder::register_module(
 							'type'    => 'text',
 							'label'   => __( 'Separator Content', 'bb-vapor-modules-pro' ),
 							'default' => '***',
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.line-content',
+							),
 						),
 						'line_content_color'      => array(
 							'type'       => 'color',
@@ -336,17 +405,52 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.line-content',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'line_content_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Separator Content Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.line-content',
+									),
+								),
+							),
 						),
 						'line_height'             => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height of Separator', 'bb-vapor-modules-pro' ),
 							'default'     => '2',
 							'description' => 'px',
+							'preview'     => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.bbvm-advanced-headline:after',
+										'property'  => 'border-bottom-width',
+										'unit'      => 'px',
+										'important' => true,
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'height',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon'                    => array(
 							'type'  => 'icon',
@@ -356,6 +460,17 @@ FLBuilder::register_module(
 							'type'    => 'unit',
 							'label'   => __( 'Enter an icon size', 'bb-vapor-modules-pro' ),
 							'default' => '24',
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'font-size',
+										'unit'      => 'px',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon_style'              => array(
 							'type'    => 'select',
@@ -372,6 +487,16 @@ FLBuilder::register_module(
 							'default'    => '000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon i',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'icon_background_color'   => array(
 							'type'       => 'color',
@@ -379,11 +504,27 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-icon',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'line_radius'             => array(
 							'type'    => 'unit',
 							'label'   => __( 'Radius of Separator', 'bb-vapor-modules-pro' ),
 							'default' => '5',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-advanced-headline:after',
+								'property' => 'border-radius',
+								'unit'     => 'px',
+							),
 						),
 						'line_type'               => array(
 							'type'    => 'select',
@@ -402,6 +543,21 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => '000000',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.bbvm-advanced-headline:after',
+										'property'  => 'border-bottom-color',
+										'important' => true,
+									),
+									array(
+										'selector'  => '.fl-bbvm-advanced-separator-line',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 					),
 				),
