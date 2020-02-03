@@ -46,6 +46,16 @@ FLBuilder::register_module(
 							'default' => __( 'wp-plugin-info-card', 'bb-vapor-modules-pro' ),
 							'help'    => __( 'Can be comma separated.', 'bb-vapor-modules-pro' ),
 						),
+						'multi'      => array(
+							'type'    => 'select',
+							'label'   => __( 'Output Multiple Items', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'true'  => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'false' => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'false',
+							'help'    => __( 'If you comma-separate slugs, this option will output all items instead of selecting the card randomly', 'bb-vapor-modules-pro' ),
+						),
 					),
 				),
 			),
@@ -77,6 +87,11 @@ FLBuilder::register_module(
 								'custom'   => __( 'Custom', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'scheme1',
+							'toggle'  => array(
+								'custom' => array(
+									'tabs' => 'colors',
+								),
+							),
 						),
 						'layout'     => array(
 							'type'    => 'select',
@@ -100,6 +115,96 @@ FLBuilder::register_module(
 								'full'   => __( 'Full Width Layout', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'full',
+						),
+					),
+				),
+			),
+		),
+		'colors'     => array(
+			'title'    => __( 'Colors', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'general' => array(
+					'title'  => __( 'Colors', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'text_color'                => array(
+							'type'       => 'color',
+							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.wp-pic.custom .wp-pic-no-plugin, .entry .wp-pic.custom p, .wp-pic.custom p, .wp-pic.custom .wp-pic-back a:not(.wp-pic-page):hover, .wp-pic.custom .wp-pic-back p, .wp-pic.custom:not(.wordpress) .wp-pic-author a, .wp-pic.custom .wp-pic-dl-link, .wp-pic.custom a.wp-pic-name, .wp-pic.custom .wp-pic-front a.wp-pic-name, .wp-pic.custom .wp-pic-flip .wp-pic-face.wp-pic-back, .wp-pic.custom .wp-pic-bar span, .wp-pic.custom .wp-pic-bar a, .wp-pic.custom .wp-pic-back a:not(.wp-pic-page), .wp-pic.custom .wp-pic-asset-bg-title, .wp-pic.custom .wp-pic-download-link span, .wp-pic.custom .wp-pic-download, .wp-pic.custom .wp-pic-page, .wp-pic.custom a.wp-pic-page',
+							),
+						),
+						'bar_color'                 => array(
+							'type'       => 'color',
+							'label'      => __( 'Bar', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.wp-pic.custom .wp-pic-bar, .wp-pic.custom .wp-pic-bar span:after, .wp-pic.custom .wp-pic-bar a:after',
+							),
+						),
+						'background_color'          => array(
+							'type'       => 'color',
+							'label'      => __( 'Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.wp-pic.custom > div> div',
+							),
+						),
+						'bar_text_color'            => array(
+							'type'       => 'color',
+							'label'      => __( 'Bar Item Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'property'  => 'color',
+								'selector'  => '.wp-pic.custom .wp-pic-rating, .wp-pic.custom .wp-pic-downloaded, .wp-pic.custom .wp-pic-requires',
+								'important' => true,
+							),
+						),
+						'bar_item_color'            => array(
+							'type'       => 'color',
+							'label'      => __( 'Bar Item Emphasis Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'property'  => 'color',
+								'selector'  => '.wp-pic.custom .wp-pic-bar em',
+								'important' => true,
+							),
+						),
+						'download_text_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Download Bar Text Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'property'  => 'color',
+								'selector'  => '.wp-pic-download-link span',
+								'important' => true,
+							),
+						),
+						'download_background_color' => array(
+							'type'       => 'color',
+							'label'      => __( 'Download Bar Background Color', 'bb-vapor-modules-pro' ),
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.wp-pic.custom .wp-pic-download, .wp-pic.custom .wp-pic-asset-bg, .wp-pic.custom a.wp-pic-page, .wp-pic.custom.flex .wp-pic-download-link span',
+							),
 						),
 					),
 				),

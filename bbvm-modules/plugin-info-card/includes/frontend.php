@@ -18,6 +18,7 @@
 				'scheme' => $settings->appearance,
 				'layout' => $settings->layout,
 				'align'  => $settings->align,
+				'multi'  => $settings->multi,
 			)
 		);
 		?>
