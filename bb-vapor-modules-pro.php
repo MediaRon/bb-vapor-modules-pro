@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 2.1.0
+ * Version: 2.1.1
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.1.0' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.1.1' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -228,6 +228,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'emailoctopus' ) && class_exists( 'EmailOctopus' ) ) {
 				require_once 'bbvm-modules/emailoctopus/bbvm-emailoctopus.php';
 				new BBVapor_EmailOctopus();
+			}
+
+			// WP Plugin Info Card module.
+			if ( $this->is_module_enabled( $module_options, 'plugin-info-card' ) && function_exists( 'wppic_shortcode_function' ) ) {
+				require_once 'bbvm-modules/plugin-info-card/bbvm-plugin-info-card.php';
+				new BBVapor_Plugin_Info_card();
 			}
 
 			// Pricing table module.
