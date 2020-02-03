@@ -230,6 +230,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_EmailOctopus();
 			}
 
+			// WP Plugin Info Card module.
+			if ( $this->is_module_enabled( $module_options, 'plugin-info-card' ) && function_exists( 'wppic_shortcode_function' ) ) {
+				require_once 'bbvm-modules/plugin-info-card/bbvm-plugin-info-card.php';
+				new BBVapor_Plugin_Info_card();
+			}
+
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
