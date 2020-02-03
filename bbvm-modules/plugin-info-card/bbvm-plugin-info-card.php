@@ -89,15 +89,15 @@ FLBuilder::register_module(
 							),
 							'default' => 'card',
 						),
-						'align'     => array(
+						'align'      => array(
 							'type'    => 'select',
 							'label'   => __( 'Align', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'left'      => __( 'left', 'bb-vapor-modules-pro' ),
+								'left'   => __( 'left', 'bb-vapor-modules-pro' ),
 								'center' => __( 'Center', 'bb-vapor-modules-pro' ),
-								'right'     => __( 'Right', 'bb-vapor-modules-pro' ),
-								'wide'      => __( 'Wide Layout', 'bb-vapor-modules-pro' ),
-								'full'      => __( 'Full Width Layout', 'bb-vapor-modules-pro' ),
+								'right'  => __( 'Right', 'bb-vapor-modules-pro' ),
+								'wide'   => __( 'Wide Layout', 'bb-vapor-modules-pro' ),
+								'full'   => __( 'Full Width Layout', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'full',
 						),

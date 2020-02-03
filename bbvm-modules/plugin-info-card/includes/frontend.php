@@ -13,11 +13,11 @@
 	<?php
 		echo wppic_shortcode_function( // phpcs:ignore
 			array(
-				'type'       => $settings->asset_type,
-				'slug'       => $settings->slug,
-				'scheme'     => $settings->appearance,
-				'layout'     => $settings->layout,
-				'align'      => $settings->align,
+				'type'   => $settings->asset_type,
+				'slug'   => $settings->slug,
+				'scheme' => $settings->appearance,
+				'layout' => $settings->layout,
+				'align'  => $settings->align,
 			)
 		);
 		?>
