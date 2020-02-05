@@ -8,7 +8,7 @@
  * @since 1.3.0
  */
 
-if ( 'double' === $settings->style || 'photo' === $settings->style || 'line' === $settings->style ) :
+if ( 'double' === $settings->style || 'photo' === $settings->style || 'line' === $settings->style || 'line_gradient' === $settings->style ) :
 	?>
 <hr class="fl-bbvm-advanced-separator" />
 	<?php

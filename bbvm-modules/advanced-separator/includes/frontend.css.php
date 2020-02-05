@@ -140,3 +140,16 @@ if ( 'line_icon' === $settings->style || 'line_photo' === $settings->style || 'l
 		)
 	);
 endif;
+if ( 'line_gradient' === $settings->style ) {
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator {
+		border: 0;
+		margin: 0.5em auto;
+		width: 100vw;
+		background-position: 50%;
+		box-sizing: border-box;
+		height: <?php echo absint( $settings->separator_height ); ?>px;
+		background-image: linear-gradient(90deg, <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->gradient_color_left ) ); ?>, <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->gradient_color_middle ) ); ?> 50%, <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->gradient_color_right ) ); ?> 100%);
+	}
+	<?php
+}
