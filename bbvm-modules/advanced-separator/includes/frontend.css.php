@@ -145,7 +145,7 @@ if ( 'line_gradient' === $settings->style ) {
 	.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-advanced-separator {
 		border: 0;
 		margin: 0.5em auto;
-		width: 100vw;
+		width: 100%;
 		background-position: 50%;
 		box-sizing: border-box;
 		height: <?php echo absint( $settings->separator_height ); ?>px;

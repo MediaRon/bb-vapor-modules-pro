@@ -94,7 +94,7 @@ FLBuilder::register_module(
 									'fields' => array(
 										'separator_height',
 										'gradient_color_left',
-										'gradient_color_center',
+										'gradient_color_middle',
 										'gradient_color_right',
 									),
 								),
