@@ -228,7 +228,7 @@ class BBVapor_BeaverBuilder_Admin {
 
 			<div id="prompt-tabs">
 				<h2 class="nav-tab-wrapper">
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
 					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show <?php echo 'tab-license' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-license" style="">License</a>
 					<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
 					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
@@ -237,7 +237,7 @@ class BBVapor_BeaverBuilder_Admin {
 				</h2>
 			</div>
 			<?php
-			if ( 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) ) {
+			if ( 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ) {
 				require_once 'admin/class-bbvm-admin-welcome.php';
 				$welcome_tab = new BBVM_Admin_Welcome();
 				$welcome_tab->output();
