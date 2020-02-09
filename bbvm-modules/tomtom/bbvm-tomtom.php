@@ -17,204 +17,214 @@ class BBVapor_TomTom extends FLBuilderModule {
 				'partial_refresh' => false, // Defaults to false and can be omitted.
 			)
 		);
+		$tomtom_api_key = get_option( 'bbvm_tomtom', '' );
+		if ( ! empty( $tomtom_api_key ) ) {
+			$this->add_js(
+				'bbvm-tom-tom',
+				BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/tomtom/tomtom-sdk/maps-web.min.js',
+				array( 'jquery' ),
+				'5.0.0',
+				false
+			);
+			$this->add_css(
+				'bbvm-tom-tom',
+				BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/tomtom/tomtom-sdk/maps.css',
+				array(),
+				'5.0.0',
+				'all'
+			);
+		}
 	}
 }
 $tomtom_api_key = get_option( 'bbvm_tomtom', '' );
 $notice         = '';
 if ( empty( $tomtom_api_key ) ) {
 	$notice = sprintf( /* translators: %s is the Admin URL to TomTom API Key entry */
-		__( '<span style="line-height: 1.45em; color: #a94442;">A TomTom API Key is necessary to show the TomTom Map. Enter your API Key in the <a href="%s" target="_blank" rel="noopener">TomTom Settings</a>.</span>', 'bb-vapor-modules-pro' ),
+		__( '<strong>A TomTom API Key is necessary to show the TomTom Map. Enter your API Key in the <a href="%s" target="_blank" rel="noopener">TomTom Settings</a>.</strong>', 'bb-vapor-modules-pro' ),
 		esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-tomtom' ) )
 	);
 }
+FLBuilder::register_settings_form(
+	'bbvm_tomtom_markers',
+	array(
+		'title' => __( 'Add Marker', 'bb-vapor-modules-pro' ),
+		'tabs'  => array(
+			'general' => array(
+				'title'    => __( 'Marker', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => __( 'Enter a Marker', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'marker_name' => array(
+								'type'  => 'text',
+								'label' => __( 'Marker Name', 'bb-vapor-modules-pro' ),
+							),
+							'latitude'    => array(
+								'type'  => 'text',
+								'label' => __( 'Latitude', 'bb-vapor-modules-pro' ),
+							),
+							'longitude'   => array(
+								'type'  => 'text',
+								'label' => __( 'Longitude', 'bb-vapor-modules-pro' ),
+							),
+							'marker_icon' => array(
+								'type'        => 'photo',
+								'label'       => __( 'Marker Icon', 'bb-vapor-modules-pro' ),
+								'show_remove' => true,
+								'description' => __( 'Square images are recommended', 'bb-vapor-modules-pro' ),
+							),
+							'show_info'   => array(
+								'type'    => 'select',
+								'label'   => __( 'Show Info Window', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'yes',
+								'toggle'  => array(
+									'yes' => array(
+										'tabs' => array(
+											'info',
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+			),
+			'info'    => array(
+				'title'    => __( 'Info Window', 'bb-vapor-modules-pro' ),
+				'sections' => array(
+					'general' => array(
+						'title'  => __( 'Marker Information', 'bb-vapor-modules-pro' ),
+						'fields' => array(
+							'location_name' => array(
+								'type'  => 'text',
+								'label' => __( 'Location Name', 'bb-vapor-modules-pro' ),
+							),
+							'location'      => array(
+								'type'  => 'textarea',
+								'label' => __( 'Location', 'bb-vapor-modules-pro' ),
+							),
+							'phone'         => array(
+								'type'  => 'text',
+								'label' => __( 'Phone Number', 'bb-vapor-modules-pro' ),
+							),
+							'show_link'     => array(
+								'type'    => 'select',
+								'label'   => __( 'Show Link?', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								),
+								'toggle'  => array(
+									'yes' => array(
+										'fields' => array(
+											'link_text',
+											'link_url',
+										),
+									),
+								),
+							),
+							'link_text'     => array(
+								'type'  => 'text',
+								'label' => __( 'Link Text', 'bb-vapor-modules-pro' ),
+							),
+							'link_url'      => array(
+								'type'          => 'link',
+								'label'         => __( 'URL', 'bb-vapor-modules-pro' ),
+								'show_target'   => true,
+								'show_nofollow' => true,
+							),
+						),
+					),
+				),
+			),
+		),
+	)
+);
 /**
  * Register the module and its form settings.
  */
 FLBuilder::register_module(
 	'BBVapor_TomTom',
 	array(
-		'general' => array(
-			'title'       => __( 'General', 'bb-vapor-modules-pro' ),
+		'markers' => array(
+			'title'       => __( 'Markers', 'bb-vapor-modules-pro' ),
 			'description' => $notice,
 			'sections'    => array(
-				'general' => array(
-					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
+				'markers' => array(
+					'title'  => __( 'Markers', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'button_id'                        => array(
+						'markers' => array(
+							'type'         => 'form',
+							'label'        => __( 'Marker', 'bb-vapor-modules-pro' ),
+							'form'         => 'bbvm_tomtom_markers',
+							'multiple'     => true,
+							'preview_text' => 'marker_name',
+						),
+					),
+				),
+			),
+		),
+		'options' => array(
+			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'center'   => array(
+					'title'  => __( 'Center View', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'latitude'   => array(
 							'type'    => 'text',
-							'label'   => __( 'Unique Button ID for Styling', 'bb-vapor-modules-pro' ),
-							'default' => 'button_id_' . rand(0,10000), // phpcs:ignore
+							'label'   => __( 'Latitude', 'bb-vapor-modules-pro' ),
+							'default' => '-96.5681667',
 						),
-						'button_text'                      => array(
-							'type'        => 'text',
-							'label'       => __( 'Button Text', 'bb-vapor-modules-pro' ),
-							'preview'     => array(
-								'type'     => 'text',
-								'selector' => '.bbvm-button span',
+						'longitude'  => array(
+							'type'    => 'text',
+							'label'   => __( 'Longitude', 'bb-vapor-modules-pro' ),
+							'default' => '41.1963831',
+						),
+						'zoom_level' => array(
+							'type'    => 'unit',
+							'label'   => __( 'Zoom Level', 'bb-vapor-modules-pro' ),
+							'slider'  => array(
+								'min'  => 1,
+								'max'  => 20,
+								'step' => 1,
 							),
-							'connections' => array( 'string' ),
+							'default' => 5,
 						),
-						'button_link'                      => array(
-							'type'        => 'link',
-							'label'       => __( 'Button Link', 'bb-vapor-modules-pro' ),
-							'preview'     => array( 'type' => 'none' ),
-							'connections' => array( 'url' ),
-						),
-						'button_icon'                      => array(
-							'type'        => 'icon',
-							'label'       => __( 'Button Icon', 'bb-vapor-modules-pro' ),
-							'show_remove' => true,
-							'preview'     => array(
-								'type' => 'none',
-							),
-						),
-						'button_background_type'           => array(
+					),
+				),
+				'controls' => array(
+					'title'  => __( 'Controls', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'pan_zoom'    => array(
 							'type'    => 'select',
-							'label'   => __( 'Button Background Type', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Allow Pan and Zoom?', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'transparent' => __( 'Transparent', 'bb-vapor-modules-pro' ),
-								'color'       => __( 'Color', 'bb-vapor-modules-pro' ),
-								'gradient'    => __( 'Gradient', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'default' => 'transparent',
-							'preview' => array( 'type' => 'none' ),
-							'toggle'  => array(
-								'color'       => array(
-									'fields' => array(
-										'button_background_color',
-										'button_background_color_hover',
-										'button_border',
-									),
-								),
-								'gradient'    => array(
-									'fields' => array(
-										'button_background_gradient',
-										'button_background_gradient_hover',
-										'button_border',
-									),
-								),
-								'transparent' => array(
-									'fields' => array(
-										'button_style',
-										'button_style_hover',
-										'button_style_border_color',
-										'button_style_border_color_hover',
-									),
-								),
-							),
+							'default' => 'yes',
 						),
-						'button_text_color'                => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Text Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.bbvm-button span',
-								'property' => 'color',
-							),
-						),
-						'button_text_color_hover'          => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Text Color on Hover', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-							'preview' => array(
-								'type' => 'none',
-							),
-						),
-						'button_background_color'          => array(
-							'type'       => 'color',
-							'label'      => __( 'Button Background Color', 'bb-vapor-modules-pro' ),
-							'show_alpha' => true,
-							'show_reset' => true,
-							'default'    => 'FFFFFF',
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder-wrapper .fl-bbvm-button-for-beaverbuilder.bbvm-button',
-								'property' => 'background-color',
-							),
-						),
-						'button_background_color_hover'    => array(
-							'type'       => 'color',
-							'label'      => __( 'Button Background Hover Color', 'bb-vapor-modules-pro' ),
-							'show_alpha' => true,
-							'show_reset' => true,
-							'default'    => 'FFFFFF',
-							'preview'    => array(
-								'type' => 'none',
-							),
-						),
-						'button_background_gradient'       => array(
-							'type'    => 'gradient',
-							'label'   => __( 'Button Background Gradient', 'bb-vapor-modules-pro' ),
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder',
-								'property' => 'background-image',
-							),
-						),
-						'button_background_gradient_hover' => array(
-							'type'    => 'gradient',
-							'label'   => __( 'Button Background Hover Gradient', 'bb-vapor-modules-pro' ),
-							'preview' => array(
-								'type' => 'none',
-							),
-						),
-						'button_style'                     => array(
+						'geolocation' => array(
 							'type'    => 'select',
-							'label'   => __( 'Button Style', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Allow Geolocation?', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'none'      => __( 'None', 'bb-vapor-modules-pro' ),
-								'iris'      => __( 'Iris', 'bb-vapor-modules-pro' ),
-								'ferdinand' => __( 'Ferdinand', 'bb-vapor-modules-pro' ),
-								'francisco' => __( 'Francisco', 'bb-vapor-modules-pro' ),
-								'prospero'  => __( 'Prospero', 'bb-vapor-modules-pro' ),
-								'sebastion' => __( 'Sebastian', 'bb-vapor-modules-pro' ),
-								'stephano'  => __( 'Stephano', 'bb-vapor-modules-pro' ),
-								'trinculo'  => __( 'Trinculo', 'bb-vapor-modules-pro' ),
-								'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
-							'preview' => array( 'type' => 'none' ),
+							'default' => 'yes',
 						),
-						'button_style_hover'               => array(
+						'mode'        => array(
 							'type'    => 'select',
-							'label'   => __( 'Button Style Hover', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Map Mode', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'none'      => __( 'None', 'bb-vapor-modules-pro' ),
-								'iris'      => __( 'Iris', 'bb-vapor-modules-pro' ),
-								'ferdinand' => __( 'Ferdinand', 'bb-vapor-modules-pro' ),
-								'francisco' => __( 'Francisco', 'bb-vapor-modules-pro' ),
-								'prospero'  => __( 'Prospero', 'bb-vapor-modules-pro' ),
-								'sebastion' => __( 'Sebastian', 'bb-vapor-modules-pro' ),
-								'stephano'  => __( 'Stephano', 'bb-vapor-modules-pro' ),
-								'trinculo'  => __( 'Trinculo', 'bb-vapor-modules-pro' ),
-								'valentine' => __( 'Valentine', 'bb-vapor-modules-pro' ),
+								'light' => __( 'Light', 'bb-vapor-modules-pro' ),
+								'dark'  => __( 'Dark', 'bb-vapor-modules-pro' ),
 							),
-							'preview' => array( 'type' => 'none' ),
-						),
-						'button_border'                    => array(
-							'type'    => 'border',
-							'label'   => __( 'Button Border', 'bb-vapor-modules-pro' ),
-							'preview' => array(
-								'type'     => 'css',
-								'property' => 'border',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder',
-							),
-						),
-						'button_style_border_color'        => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Style Border Color', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder',
-								'property' => 'border-color',
-							),
-						),
-						'button_style_border_color_hover'  => array(
-							'type'    => 'color',
-							'label'   => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
-							'default' => '000000',
-							'preview' => array( 'type' => 'none' ),
+							'default' => 'yes',
 						),
 					),
 				),
