@@ -242,6 +242,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_Pricing_Table();
 			}
 
+			// TomTom Map module.
+			if ( $this->is_module_enabled( $module_options, 'tomtom' ) ) {
+				require_once 'bbvm-modules/tomtom/bbvm-tomtom.php';
+				new BBVapor_TomTom();
+			}
+
 			// Simple Coupon module.
 			if ( $this->is_module_enabled( $module_options, 'simple-coupon' ) ) {
 				require_once 'bbvm-modules/simple-coupon/bbvm-simple-coupon.php';
