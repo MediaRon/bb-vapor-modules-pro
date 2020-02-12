@@ -150,7 +150,7 @@ FLBuilder::register_settings_form(
 FLBuilder::register_module(
 	'BBVapor_TomTom',
 	array(
-		'markers' => array(
+		'markers'    => array(
 			'title'       => __( 'Markers', 'bb-vapor-modules-pro' ),
 			'description' => $notice,
 			'sections'    => array(
@@ -168,7 +168,7 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'options' => array(
+		'options'    => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'map'      => array(
@@ -252,7 +252,52 @@ FLBuilder::register_module(
 				),
 			),
 		),
-		'styles'  => array(
+		'appearance' => array(
+			'title'       => __( 'Appearance', 'bb-vapor-modules-pro' ),
+			'description' => sprintf( /* translators: %s is the URL to the TomTom map styler */
+				__( '<strong>To use a custom map style, select custom and <a href="%s" target="_blank" rel="noopener">build out your layout</a>.</strong>', 'bb-vapor-modules-pro' ),
+				'https://developer.tomtom.com/maps-api/map-styler'
+			),
+			'sections'    => array(
+				'styles' => array(
+					'title'  => __( 'Appearance', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'map_style'    => array(
+							'type'    => 'select',
+							'label'   => __( 'Map Style', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'day'    => __( 'Day', 'bb-vapor-modules-pro' ),
+								'night'  => __( 'Night', 'bb-vapor-modules-pro' ),
+								'bw'     => __( 'Black and White', 'bb-vapor-modules-pro' ),
+								'custom' => __( 'Custom', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'day',
+							'toggle'  => array(
+								'custom' => array(
+									'fields' => array(
+										'map_json',
+										'map_json_html',
+									),
+								),
+							),
+							'default' => 'day',
+						),
+						'map_json'     => array(
+							'type'    => 'raw',
+							'content' => '<a target="_blank" href="https://developer.tomtom.com/maps-api/map-styler">Map Styler Documentation</a>',
+						),
+						'map_json_raw' => array(
+							'type'  => 'editor',
+							'label' => __( 'Raw JSON Input', 'bb-vapor-modules-pro' ),
+							'rows' => 30,
+							'media_buttons' => false,
+							'connections'   => array( 'string', 'html' ),
+						),
+					),
+				),
+			),
+		),
+		'styles'     => array(
 			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
 			'sections' => array(
 				'styles' => array(

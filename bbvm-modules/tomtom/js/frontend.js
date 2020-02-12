@@ -7,18 +7,18 @@ var bbvmTomTomMap;
 		this.latitude = args.center_lat;
 		this.longitude = args.center_long;
 		this.zoom = args.center_zoom;
+		this.style = args.map_style;
 		this.bbvmTomTomMapInit();
-		console.log( '' + this.nodeClass + ' .bbvm-tomtom-map .bbvm-map' );
 	}
 	bbvmTomTomMap.prototype = {
 		bbvmTomTomMapInit: function() {
 			var map = tt.map({
 				key: this.api,
 				container: jQuery( '' + this.nodeClass + ' .bbvm-tomtom-map .bbvm-map' )[0],
-				style: 'tomtom://vector/1/basic-main',
+				style: JSON.parse( this.style ),
 				center: [this.latitude, this.longitude],
 				zoom: this.zoom,
-				setMyLocationEnabled: true
+				setMyLocationEnabled: true,
 			});
 			map.addControl(new window.tt.FullscreenControl());
 			map.addControl(new window.tt.NavigationControl());
