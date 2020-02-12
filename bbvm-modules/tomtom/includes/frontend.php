@@ -8,7 +8,8 @@
  * @since 2.2.0
  */
 
+ //bbvm_debug( $settings );
 ?>
-<div class="fl-bbvm-tomtom-map">
-	<div class="map"></div>
+<div class="bbvm-tomtom-map">
+	<div class="bbvm-map"></div>
 </div>

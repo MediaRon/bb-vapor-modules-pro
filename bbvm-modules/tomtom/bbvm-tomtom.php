@@ -171,6 +171,28 @@ FLBuilder::register_module(
 		'options' => array(
 			'title'    => __( 'Options', 'bb-vapor-modules-pro' ),
 			'sections' => array(
+				'map'      => array(
+					'title'  => __( 'Map Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'width'  => array(
+							'type'         => 'unit',
+							'label'        => __( 'Width', 'bb-vapor-modules-pro' ),
+							'units'        => array( 'px', 'vw', '%' ),
+							'default_unit' => '%',
+							'default'      => 100,
+							'preview'      => array(
+								'type'     => 'css',
+								'property' => 'width',
+								'selector' => '.bbvm-map',
+							),
+						),
+						'height' => array(
+							'type'    => 'unit',
+							'label'   => __( 'Height', 'bb-vapor-modules-pro' ),
+							'default' => 500,
+						),
+					),
+				),
 				'center'   => array(
 					'title'  => __( 'Center View', 'bb-vapor-modules-pro' ),
 					'fields' => array(
@@ -192,7 +214,7 @@ FLBuilder::register_module(
 								'max'  => 20,
 								'step' => 1,
 							),
-							'default' => 5,
+							'default' => 3,
 						),
 					),
 				),
