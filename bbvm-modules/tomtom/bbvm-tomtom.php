@@ -230,21 +230,21 @@ FLBuilder::register_module(
 							),
 							'default' => 'yes',
 						),
-						'geolocation' => array(
+						'fullscreen'  => array(
 							'type'    => 'select',
-							'label'   => __( 'Allow Geolocation?', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Allow Fullscreen?', 'bb-vapor-modules-pro' ),
 							'options' => array(
 								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
 						),
-						'mode'        => array(
+						'geolocation' => array(
 							'type'    => 'select',
-							'label'   => __( 'Map Mode', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Allow Geolocation?', 'bb-vapor-modules-pro' ),
 							'options' => array(
-								'light' => __( 'Light', 'bb-vapor-modules-pro' ),
-								'dark'  => __( 'Dark', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
 						),
