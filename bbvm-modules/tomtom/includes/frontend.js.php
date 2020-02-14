@@ -28,7 +28,14 @@ switch ( $map_appearance ) {
 		center_long: '<?php echo esc_js( $settings->longitude ); ?>',
 		center_zoom: '<?php echo esc_js( $settings->zoom_level ); ?>',
 		map_style: '<?php echo $map_json; ?>', <?php // phpcs:ignore ?>
-		map_appearance: '<?php echo esc_js( $settings->map_style ); ?>'
+		map_appearance: '<?php echo esc_js( $settings->map_style ); ?>',
+		allow_geolocation: '<?php echo esc_js( $settings->geolocation ); ?>',
+		allow_fullscreen: '<?php echo esc_js( $settings->fullscreen ); ?>',
+		allow_panzoom: '<?php echo esc_js( $settings->pan_zoom ); ?>',
+		panzoom_location: '<?php echo esc_js( $settings->pan_zoom_location ); ?>',
+		geolocation_location: '<?php echo esc_js( $settings->geolocation_location ); ?>',
+		fullscreen_location: '<?php echo esc_js( $settings->fullscreen_location ); ?>',
 	};
+	console.log( args );
 	new bbvmTomTomMap( args );
 } )( jQuery );

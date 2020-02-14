@@ -9,6 +9,12 @@ var bbvmTomTomMap;
 		this.zoom = args.center_zoom;
 		this.style = args.map_style;
 		this.appearance = args.map_appearance;
+		this.geolocation = args.allow_geolocation;
+		this.geolocation_location = args.geolocation_location;
+		this.fullscreen = args.allow_fullscreen;
+		this.fullscreen_location = args.fullscreen_location;
+		this.panzoom = args.allow_panzoom;
+		this.panzoom_location = args.panzoom_location;
 		this.bbvmTomTomMapInit();
 	}
 	bbvmTomTomMap.prototype = {
@@ -21,14 +27,21 @@ var bbvmTomTomMap;
 				zoom: this.zoom,
 				setMyLocationEnabled: true,
 			});
-			map.addControl(new window.tt.FullscreenControl());
-			map.addControl(new window.tt.NavigationControl());
-			map.addControl(new window.tt.GeolocateControl({
-				positionOptions: {
-					enableHighAccuracy: true
-				},
-				trackUserLocation: true
-			 }));
+			if ( 'yes' === this.fullscreen ) {
+				map.addControl(new window.tt.FullscreenControl(), this.fullscreen_location);
+			}
+			if ( 'yes' === this.panzoom ) {
+				map.addControl(new window.tt.NavigationControl(), this.panzoom_location);
+			}
+			
+			if ( 'yes' === this.geolocation ) {
+				map.addControl(new window.tt.GeolocateControl({
+					positionOptions: {
+						enableHighAccuracy: true
+					},
+					trackUserLocation: true
+				 }), this.geolocation_location);
+			}
 		}
 	};
 })(jQuery);

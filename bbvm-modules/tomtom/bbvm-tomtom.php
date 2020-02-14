@@ -221,7 +221,7 @@ FLBuilder::register_module(
 				'controls' => array(
 					'title'  => __( 'Controls', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'pan_zoom'    => array(
+						'pan_zoom'             => array(
 							'type'    => 'select',
 							'label'   => __( 'Allow Pan and Zoom?', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -229,8 +229,26 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'pan_zoom_location',
+									),
+								),
+							),
 						),
-						'fullscreen'  => array(
+						'pan_zoom_location'    => array(
+							'type'    => 'select',
+							'label'   => __( 'Pan and Zoom Location', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'top-right'    => __( 'Top Right', 'bb-vapor-modules-pro' ),
+								'top-left'     => __( 'Top Left', 'bb-vapor-modules-pro' ),
+								'bottom-left'  => __( 'Bottom Left', 'bb-vapor-modules-pro' ),
+								'bottom-right' => __( 'Bottom Right', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'top-right',
+						),
+						'fullscreen'           => array(
 							'type'    => 'select',
 							'label'   => __( 'Allow Fullscreen?', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -238,8 +256,26 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'fullscreen_location',
+									),
+								),
+							),
 						),
-						'geolocation' => array(
+						'fullscreen_location'  => array(
+							'type'    => 'select',
+							'label'   => __( 'Full Screen Location', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'top-right'    => __( 'Top Right', 'bb-vapor-modules-pro' ),
+								'top-left'     => __( 'Top Left', 'bb-vapor-modules-pro' ),
+								'bottom-left'  => __( 'Bottom Left', 'bb-vapor-modules-pro' ),
+								'bottom-right' => __( 'Bottom Right', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'top-right',
+						),
+						'geolocation'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Allow Geolocation?', 'bb-vapor-modules-pro' ),
 							'options' => array(
@@ -247,6 +283,24 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'yes',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'geolocation_location',
+									),
+								),
+							),
+						),
+						'geolocation_location' => array(
+							'type'    => 'select',
+							'label'   => __( 'Geolocation Location', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'top-right'    => __( 'Top Right', 'bb-vapor-modules-pro' ),
+								'top-left'     => __( 'Top Left', 'bb-vapor-modules-pro' ),
+								'bottom-left'  => __( 'Bottom Left', 'bb-vapor-modules-pro' ),
+								'bottom-right' => __( 'Bottom Right', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'top-right',
 						),
 					),
 				),
