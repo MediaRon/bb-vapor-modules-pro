@@ -8,6 +8,7 @@ var bbvmTomTomMap;
 		this.longitude = args.center_long;
 		this.zoom = args.center_zoom;
 		this.style = args.map_style;
+		this.appearance = args.map_appearance;
 		this.bbvmTomTomMapInit();
 	}
 	bbvmTomTomMap.prototype = {
@@ -15,7 +16,7 @@ var bbvmTomTomMap;
 			var map = tt.map({
 				key: this.api,
 				container: jQuery( '' + this.nodeClass + ' .bbvm-tomtom-map .bbvm-map' )[0],
-				style: JSON.parse( this.style ),
+				style: 'custom' === this.appearance ? JSON.parse( this.style ) : this.appearance,
 				center: [this.latitude, this.longitude],
 				zoom: this.zoom,
 				setMyLocationEnabled: true,
