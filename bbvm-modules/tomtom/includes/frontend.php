@@ -9,6 +9,4 @@
  */
 
 ?>
-<div class="bbvm-tomtom-map">
-	<div class="bbvm-map"></div>
-</div>
+<div class="bbvm-map bbvm-tomtom-map"></div>

@@ -20,6 +20,17 @@ switch ( $map_appearance ) {
 }
 ?>
 ( function ( $ ) {
+	markers = new Array();
+	<?php
+	foreach ( $settings->markers as $marker ) {
+		?>
+		var location = [];
+		location['latitude'] = '<?php echo esc_js( $marker->latitude ); ?>';
+		location['longitude'] = '<?php echo esc_js( $marker->longitude ); ?>';
+		markers.push( location );
+		<?php
+	}
+	?>
 	var api_key = '<?php echo esc_js( get_option( 'bbvm_tomtom', '' ) ); ?>';
 	var args    = {
 		id: '<?php echo esc_js( $id ); ?>',
@@ -35,7 +46,7 @@ switch ( $map_appearance ) {
 		panzoom_location: '<?php echo esc_js( $settings->pan_zoom_location ); ?>',
 		geolocation_location: '<?php echo esc_js( $settings->geolocation_location ); ?>',
 		fullscreen_location: '<?php echo esc_js( $settings->fullscreen_location ); ?>',
+		markers: markers,
 	};
-	console.log( args );
 	new bbvmTomTomMap( args );
 } )( jQuery );
