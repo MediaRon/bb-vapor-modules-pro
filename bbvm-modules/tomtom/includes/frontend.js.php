@@ -20,7 +20,7 @@ switch ( $map_appearance ) {
 }
 ?>
 ( function ( $ ) {
-	markers = new Array();
+	var markers = new Array();
 	<?php
 	foreach ( $settings->markers as $marker ) {
 		?>
