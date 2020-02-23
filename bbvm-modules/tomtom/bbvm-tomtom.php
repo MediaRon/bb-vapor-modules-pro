@@ -178,6 +178,158 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
+							'toggle'  => array(
+								'yes' => array(
+									'tabs' => 'sidebar',
+								),
+							),
+						),
+					),
+				),
+			),
+		),
+		'sidebar'    => array(
+			'title'    => __( 'Sidebar', 'bb-vapor-modules-pro' ),
+			'sections' => array(
+				'sidebar_styles'  => array(
+					'title'  => __( 'Sidebar Options', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'sidebar_background' => array(
+							'type'       => 'color',
+							'label'      => __( 'Sidebar Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.bbvm-tomtom-map-sidebar',
+							),
+						),
+						'sidebar_border'     => array(
+							'type'    => 'border',
+							'label'   => __( 'Sidebar Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-tomtom-map-sidebar',
+							),
+						),
+					),
+				),
+				'sidebar_heading' => array(
+					'title'  => __( 'Sidebar Heading', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'heading_color'                  => array(
+							'type'    => 'color',
+							'label'   => __( 'Heading Color', 'bb-vapor-modules-pro' ),
+							'default' => '#000000',
+							'preview' => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-tomtom-map-sidebar h4',
+							),
+						),
+						'heading_background_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Heading Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#ebebeb',
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.bbvm-tomtom-map-sidebar h4',
+							),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'heading_background_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Heading Background Color Hover', 'bb-vapor-modules-pro' ),
+							'default'    => '#dddfe0',
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.bbvm-tomtom-map-sidebar h4:hover',
+							),
+							'show_alpha' => true,
+							'show_reset' => true,
+						),
+						'heading_border'                 => array(
+							'type'    => 'border',
+							'label'   => __( 'Heading Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-tomtom-map-sidebar h4',
+							),
+						),
+					),
+				),
+				'location_styles' => array(
+					'title'  => __( 'Location Styles', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'location_background'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Location Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.list-entry',
+							),
+						),
+						'location_background_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Location Background Color Hover', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.list-entry:hover',
+							),
+						),
+						'location_text_hover'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Location Text Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#000000',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.list-entry',
+							),
+						),
+						'location_link_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Location Link Color', 'bb-vapor-modules-pro' ),
+							'default'    => 'inherit',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.list-entry a',
+							),
+						),
+						'location_link_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Location Link Color Hover', 'bb-vapor-modules-pro' ),
+							'default'    => 'inherit',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.list-entry a:hover',
+							),
+						),
+						'location_border'           => array(
+							'type'    => 'border',
+							'label'   => __( 'Location Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.list-entry',
+							),
 						),
 					),
 				),

@@ -52,6 +52,45 @@ if ( 'yes' === $settings->sidebar ) :
 		padding: 15px 20px;
 		border-bottom: 1px solid #707070;
 	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-sidebar {
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->sidebar_background ) ); ?>;
+		height: 100%;
+		left: 0;
+		overflow-y: scroll;
+		position: absolute;
+		top: 0;
+		width: 25%;
+	}
+	<?php
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'sidebar_border',
+			'selector'     => ".fl-node-$id .bbvm-tomtom-map-sidebar",
+		)
+	);
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .city {
+		margin: 0;
+		padding: 15px 20px;
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->heading_color ) ); ?>;
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->heading_background_color ) ); ?>;
+		font-size: 1.0em;
+		cursor: pointer;
+		font-weight: 700;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .city:hover {
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->heading_background_color_hover ) ); ?>;
+	}
+	<?php
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'heading_border',
+			'selector'     => ".fl-node-$id .city",
+		)
+	);
+	?>
 	<?php
 else :
 	?>
