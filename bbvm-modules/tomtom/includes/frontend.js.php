@@ -27,6 +27,14 @@ switch ( $map_appearance ) {
 		var location = [];
 		location['latitude'] = '<?php echo esc_js( $marker->latitude ); ?>';
 		location['longitude'] = '<?php echo esc_js( $marker->longitude ); ?>';
+		location['show_info'] = '<?php echo esc_js( $marker->show_info ); ?>';
+		location['marker_icon'] = '<?php echo esc_js( $marker->marker_icon_src ); ?>';
+		location['name'] = '<?php echo esc_js( $marker->location_name ); ?>';
+		location['location'] = '<?php echo esc_js( $marker->location ); ?>';
+		location['phone'] = '<?php echo esc_js( $marker->phone ); ?>';
+		location['show_link'] = '<?php echo esc_js( $marker->show_link ); ?>';
+		location['link_text'] = '<?php echo esc_js( $marker->link_text ); ?>';
+		location['link_url'] = '<?php echo esc_js( $marker->link_url ); ?>';
 		markers.push( location );
 		<?php
 	}

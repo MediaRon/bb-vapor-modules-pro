@@ -31,13 +31,14 @@ var bbvm_tomtom_map;
 			// Add markers.
 			if( ( this.markers ).length > 0 ) {
 				for( i = 0; i < ( this.markers ).length ; i++ ) {
+					console.log( this.markers[i] );
 					var longlat = [
 						Number(this.markers[i].latitude),
 						Number(this.markers[i].longitude),
 					];
 					var element = document.createElement('div');
 					element.id = 'marker';
-					var marker = new tt.Marker({element: element}).setLngLat(longlat).addTo(bbvm_tomtom_map);
+					var marker = new tt.Marker({element: element}).setLngLat(longlat).setPopup(new tt.Popup({offset: 35}).setHTML('<strong>'+ this.markers[i].name +'</strong><br />' + this.markers[i].location + '<br /><a href="tel:' + this.markers[i].phone + '">' + this.markers[i].phone + '</a><br />' + '<a target="_blank" href="' + this.markers[i].link_url + '">' + this.markers[i].link_text+ '</a>' ) ).addTo(bbvm_tomtom_map);
 				}
 			}
 			if ('yes' === this.fullscreen) {
