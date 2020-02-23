@@ -19,11 +19,12 @@ var bbvm_tomtom_map;
 		this.markers = args.markers;
 		this.bbvmTomTomMapInit();
 	}
-	getMarkersBoundsForCity = function(city, markers) {
+	getMarkersBoundsForCity = function(city, markers, long, lat) {
 		var bounds = new tt.LngLatBounds();
 		markers.forEach(markerCity => {
-			if (markerCity.marker_category === city) {
-				bounds.extend([markerCity.latitude, markerCity.longitude]);
+			console.log( city );
+			if (markerCity.category == city) {
+				bounds.extend([lat, long]);
 			}
 		});
 		return bounds;
@@ -78,19 +79,24 @@ var bbvm_tomtom_map;
 			}
 			var markers = this.markers;
 			jQuery( this.nodeClass + ' .bbvm-tomtom-map-sidebar' ).on( 'click', '.city', function( e ) {
-				var city = $(this).data('data-category');
-				bbvm_tomtom_map.fitBounds(getMarkersBoundsForCity(city, markers), {padding: 50, zoom: 11});
+				var city = $(this).data('category');
+				var cityCat = $( this ).data( 'category-slug' );
+				var long = $(this).data('long');
+				var lat = $(this).data('lat');
+				bbvm_tomtom_map.fitBounds(getMarkersBoundsForCity(city, markers, long, lat), {padding: 50, zoom: 11});
 				// Toggle addresses.
 				$('.location-wrapper').each( function() {
-					if ( $(this).data('city') == city ) {
+					if ( $(this).data('category') === cityCat ) {
 						if ( $( this ).is( ':visible' ) ) {
 							$( this ).slideUp();
 						} else {
 							$( this ).slideDown();
+							console.log( city );
 						}
 						return;
 					} else {
 						$( this ).slideUp();
+						return;
 					}
 				} );
 			} );

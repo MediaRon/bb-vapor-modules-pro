@@ -22,8 +22,8 @@
 			asort( $categories );
 			foreach ( $categories as $category_name => $markers ) :
 				?>
-				<h4 class="city" data-category="<?php echo esc_attr( $category_name ); ?>"><?php echo esc_html( $markers[0]->marker_category ); ?></h4>
-				<div class="location-wrapper" style="display: none;">
+				<h4 class="city" data-category="<?php echo esc_attr( $markers[0]->marker_category ); ?>" data-category-slug="<?php echo esc_attr( $category_name ); ?>" data-long="<?php echo esc_attr( $markers[0]->longitude ); ?>" data-lat="<?php echo esc_attr( $markers[0]->latitude ); ?>"><?php echo esc_html( $markers[0]->marker_category ); ?></h4>
+				<div class="location-wrapper" style="display: none;" data-category="<?php echo esc_attr( $category_name ); ?>">
 				<?php
 				foreach ( $markers as $marker_data ) :
 					?>

@@ -35,6 +35,7 @@ switch ( $map_appearance ) {
 		location['show_link'] = '<?php echo esc_js( $marker->show_link ); ?>';
 		location['link_text'] = '<?php echo esc_js( $marker->link_text ); ?>';
 		location['link_url'] = '<?php echo esc_js( $marker->link_url ); ?>';
+		location['category'] = '<?php echo esc_js( $marker->marker_category ); ?>';
 		markers.push( location );
 		<?php
 	}
