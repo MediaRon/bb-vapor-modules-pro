@@ -17,7 +17,133 @@ define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.1.2' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
+add_filter( 'fl_builder_register_settings_form', 'probb_add_custom_tab_all_modules', 10, 2 );
+add_filter( 'fl_builder_is_node_visible', 'check_field_connections', 200, 2 );
+add_filter( 'fl_builder_register_settings_form', 'pmpro_settings_form', 10, 2 );
+function pmpro_settings_form( $form, $id ) {
+	if ( 'row' !== $id ) {
+		return $form;
+	}
+	if ( ! defined( 'PMPRO_VERSION' ) ) {
+		return $form;
+	}
+	global $membership_levels;
+	$levels = array();
+	foreach ( $membership_levels as $level ) {
+		$levels[ $level->id ] = $level->name;
+	}
+	$row_settings_pmpro = array(
+		'title'    => __( 'PMPro', 'uabb' ),
+		'sections' => array(
+			'pmpro' => array(
+				'title'  => __( 'General', 'uabb' ),
+				'fields' => array(
+					'pmpro_enable' => array(
+						'type' 	=> 'select',
+						'label' => __( 'Enable Paid Memberships Pro module visibility?', 'bb-vapor-modules-pro' ),
+						'options' 	=> array(
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+						),
+						'default' => 'no',
+						'toggle' => array(
+							'yes' => array(
+								'fields' => array(
+									'pmpro_memberships',
+								)
+							)
+						)
+					),
+					'pmpro_memberships' => array(
+						'label' => __( 'Select a level for module access', 'bb-vapor-modules-pro' ),
+						'type' 	=> 'select',
+						'options' 	=> $levels,
+						'multi-select'  => true,
+					),
+				),
+			),
+		),
+	);
 
+	$form['tabs'] = array_merge(
+		array_slice( $form['tabs'], 0, 2 ),
+		array( 'PMPro' => $row_settings_pmpro ),
+		array_slice( $form['tabs'], 2 )
+	);
+	return $form;
+}
+function check_field_connections( $is_visible, $node ) {
+	if ( ! defined( 'PMPRO_VERSION' ) ) {
+		return $is_visible;
+	}
+	if ( 'row' === $node->type ) {
+		if ( isset( $node->settings->pmpro_enable ) && 'yes' === $node->settings->pmpro_enable ) {
+			if ( pmpro_hasMembershipLevel( $node->settings->pmpro_memberships ) ) {
+				return $is_visible;
+			} else {
+				return false;
+			}
+		}
+	}
+	if ( isset( $node->settings->pmpro_enable ) && 'yes' === $node->settings->pmpro_enable && is_user_logged_in() ) {
+		if ( pmpro_hasMembershipLevel( $node->settings->pmpro_memberships ) ) {
+			return $is_visible;
+		} else {
+			return false;
+		}
+	}
+	return $is_visible;
+}
+function probb_add_custom_tab_all_modules( $form, $slug )
+{
+	if ( ! defined( 'PMPRO_VERSION' ) ) {
+		return $form;
+	}
+	$modules = FLBuilderModel::get_enabled_modules(); //* getting all active modules slug
+
+	if( in_array( $slug, $modules ) ) 
+	{	
+		global $membership_levels;
+		$levels = array();
+		foreach( $membership_levels as $level ) {
+			$levels[ $level->id ] = $level->name;
+		}
+		$form['pmpro-bb'] = array( //* my-custom-tab is the tab slug
+			'title' => __( 'PMPro', 'bb-vapor-modules-pro' ), //* Tab title
+			'sections' => array( //* create sections
+				'memberships' => array( //* "sec-1" is the slug
+					'title' => __( 'Membership Levels', 'fl-automator' ), //* Section title.
+					'fields' => array ( 
+						'pmpro_enable' => array(
+							'type' 	=> 'select',
+							'label' => __( 'Enable Paid Memberships Pro module visibility?', 'bb-vapor-modules-pro' ),
+							'options' 	=> array(
+									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
+							'toggle' => array(
+								'yes' => array(
+									'fields' => array(
+										'pmpro_memberships',
+									)
+								)
+							)
+						),
+						'pmpro_memberships' => array(
+							'label' => __( 'Select a level for module access', 'bb-vapor-modules-pro' ),
+							'type' 	=> 'select',
+							'options' 	=> $levels,
+							'multi-select'  => true,
+						),
+					)
+				), //* section 1 is end here
+			)
+		);
+	}
+
+	return $form;
+}
 /**
  * Main plugin class for BB Vapor Modules.
  */
