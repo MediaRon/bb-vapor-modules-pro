@@ -290,7 +290,7 @@ FLBuilder::register_module(
 								'selector' => '.list-entry:hover',
 							),
 						),
-						'location_text_hover'       => array(
+						'location_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Location Text Color', 'bb-vapor-modules-pro' ),
 							'default'    => '#000000',
@@ -329,6 +329,133 @@ FLBuilder::register_module(
 							'preview' => array(
 								'type'     => 'css',
 								'selector' => '.list-entry',
+							),
+						),
+					),
+				),
+			),
+		),
+		'infowindow' => array(
+			'title'       => __( 'Info Window', 'bb-vapor-modules-pro' ),
+			'description' => $notice,
+			'sections'    => array(
+				'infowindow'      => array(
+					'title'  => __( 'Info Window', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'info_background'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Window Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.mapboxgl-popup-content',
+							),
+						),
+						'info_background_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Window Background Color Hover', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.mapboxgl-popup-content:hover',
+							),
+						),
+						'info_text_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Window Text Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#000000',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.mapboxgl-popup-content',
+							),
+						),
+						'info_link_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Window Link Color', 'bb-vapor-modules-pro' ),
+							'default'    => 'inherit',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.mapboxgl-popup-content a',
+							),
+						),
+						'info_link_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Window Link Color Hover', 'bb-vapor-modules-pro' ),
+							'default'    => 'inherit',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.mapboxgl-popup-content a:hover',
+							),
+						),
+						'info_border'           => array(
+							'type'    => 'border',
+							'label'   => __( 'Info Window Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.mapboxgl-popup-content',
+							),
+						),
+					),
+				),
+				'infoclosebutton' => array(
+					'title'  => __( 'Info Window Close Button', 'bb-vapor-modules-pro' ),
+					'fields' => array(
+						'info_button_background'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Button Background Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.mapboxgl-popup-close-button',
+							),
+						),
+						'info_button_background_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Button Background Color on Hover', 'bb-vapor-modules-pro' ),
+							'default'    => '#a11d21',
+							'show_alpha' => true,
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.mapboxgl-popup-close-button:hover',
+							),
+						),
+						'info_button_text_color'       => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Button Color', 'bb-vapor-modules-pro' ),
+							'default'    => '#a11d21',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.mapboxgl-popup-close-button',
+							),
+						),
+						'info_button_text_color_hover' => array(
+							'type'       => 'color',
+							'label'      => __( 'Info Button Color on Hover', 'bb-vapor-modules-pro' ),
+							'default'    => '#FFFFFF',
+							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.mapboxgl-popup-close-button:hover',
 							),
 						),
 					),

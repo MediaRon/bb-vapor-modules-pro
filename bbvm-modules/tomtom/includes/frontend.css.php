@@ -91,7 +91,27 @@ if ( 'yes' === $settings->sidebar ) :
 		)
 	);
 	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .list-entry {
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->location_background ) ); ?>;
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->location_text_color ) ); ?>
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .list-entry:hover {
+		background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->location_background_hover ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .list-entry a {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->location_link_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .list-entry a {
+		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->location_link_color_hover ) ); ?>;
+	}
 	<?php
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'location_border',
+			'selector'     => ".fl-node-$id .list-entry",
+		)
+	);
 else :
 	?>
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-map {
@@ -103,8 +123,32 @@ else :
 	}
 	<?php
 endif;
+// Info Window Styles.
+?>
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_text_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content:hover {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content a {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_link_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content a:hover {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_link_color_hover ) ); ?>;
+}
+<?php
+FLBuilderCSS::border_field_rule(
+	array(
+		'settings'     => $settings,
+		'setting_name' => 'info_border',
+		'selector'     => ".fl-node-$id .mapboxgl-popup-content",
+	)
+);
 ?>
 <?php
+// Marker styles.
 $count = 0;
 foreach ( $settings->markers as $marker ) {
 	if ( ! empty( $marker->marker_icon_src ) ) {
@@ -136,6 +180,7 @@ foreach ( $settings->markers as $marker ) {
 	<?php
 	$count++;
 }
+// Info Window close Button.
 ?>
 .mapboxgl-popup-close-button {
 	position: absolute;
@@ -151,4 +196,11 @@ foreach ( $settings->markers as $marker ) {
 	background: #a11d21;
 	color: #FFF;
 }
-
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-close-button {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_background ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_text_color ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-close-button:hover {
+	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_background_hover ) ); ?>;
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_text_color_hover ) ); ?>;
+}
