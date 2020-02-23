@@ -19,6 +19,15 @@ var bbvm_tomtom_map;
 		this.markers = args.markers;
 		this.bbvmTomTomMapInit();
 	}
+	getMarkersBoundsForCity = function(city, markers) {
+		var bounds = new tt.LngLatBounds();
+		markers.forEach(markerCity => {
+			if (markerCity.marker_category === city) {
+				bounds.extend([markerCity.latitude, markerCity.longitude]);
+			}
+		});
+		return bounds;
+	}
 	bbvmTomTomMap.prototype = {
 		bbvmTomTomMapInit: function () {
 		var bbvm_tomtom_map = window.tt.map({
@@ -65,6 +74,24 @@ var bbvm_tomtom_map;
 					trackUserLocation: true
 				}), this.geolocation_location);
 			}
+			var markers = this.markers;
+			jQuery( this.nodeClass + ' .bbvm-tomtom-map-sidebar' ).on( 'click', '.city', function( e ) {
+				var city = $(this).data('data-category');
+				bbvm_tomtom_map.fitBounds(getMarkersBoundsForCity(city, markers), {padding: 50, zoom: 11});
+				// Toggle addresses.
+				$('.location-wrapper').each( function() {
+					if ( $(this).data('city') == city ) {
+						if ( $( this ).is( ':visible' ) ) {
+							$( this ).slideUp();
+						} else {
+							$( this ).slideDown();
+						}
+						return;
+					} else {
+						$( this ).slideUp();
+					}
+				} );
+			} );
 		}
 	};
 })(jQuery);

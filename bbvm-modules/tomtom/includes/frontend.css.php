@@ -9,7 +9,7 @@
  */
 
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> .bbvm-map {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-wrapper {
 	position: relative;
 	width: <?php echo absint( $settings->width ) . esc_html( $settings->width_unit ); ?>;
 	height: <?php echo absint( $settings->height ); ?>px;
@@ -17,6 +17,39 @@
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-marker {
 	position: relative;
 }
+<?php
+if ( 'yes' === $settings->sidebar ) :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-map {
+		bottom: 0;
+		left: 25%;
+		position: absolute;
+		top: 0;
+		width: 75%;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-sidebar {
+		-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+		box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+		height: 100%;
+		left: 0;
+		overflow-y: scroll;
+		position: absolute;
+		top: 0;
+		width: 25%;
+	}
+	<?php
+else :
+	?>
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-map {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+	<?php
+endif;
+?>
 <?php
 $count = 0;
 foreach ( $settings->markers as $marker ) {

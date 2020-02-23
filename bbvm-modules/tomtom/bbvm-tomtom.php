@@ -55,25 +55,30 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => __( 'Enter a Marker', 'bb-vapor-modules-pro' ),
 						'fields' => array(
-							'marker_name' => array(
+							'marker_name'     => array(
 								'type'  => 'text',
 								'label' => __( 'Marker Name', 'bb-vapor-modules-pro' ),
 							),
-							'latitude'    => array(
+							'latitude'        => array(
 								'type'  => 'text',
 								'label' => __( 'Latitude', 'bb-vapor-modules-pro' ),
 							),
-							'longitude'   => array(
+							'longitude'       => array(
 								'type'  => 'text',
 								'label' => __( 'Longitude', 'bb-vapor-modules-pro' ),
 							),
-							'marker_icon' => array(
+							'marker_icon'     => array(
 								'type'        => 'photo',
 								'label'       => __( 'Marker Icon', 'bb-vapor-modules-pro' ),
 								'show_remove' => true,
 								'description' => __( 'Square images are recommended', 'bb-vapor-modules-pro' ),
 							),
-							'show_info'   => array(
+							'marker_category' => array(
+								'type'        => 'text',
+								'label'       => __( 'Marker Category', 'bb-vapor-modules-pro' ),
+								'description' => __( 'The category that will be displayed if sidebar is true.', 'bb-vapor-modules-pro' ),
+							),
+							'show_info'       => array(
 								'type'    => 'select',
 								'label'   => __( 'Show Info Window', 'bb-vapor-modules-pro' ),
 								'options' => array(
@@ -163,6 +168,15 @@ FLBuilder::register_module(
 							'form'         => 'bbvm_tomtom_markers',
 							'multiple'     => true,
 							'preview_text' => 'marker_name',
+						),
+						'sidebar' => array(
+							'type'    => 'select',
+							'label'   => __( 'Enable Sidebar?', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'no',
 						),
 					),
 				),
@@ -350,81 +364,6 @@ FLBuilder::register_module(
 							'rows'          => 30,
 							'media_buttons' => false,
 							'connections'   => array( 'string', 'html' ),
-						),
-					),
-				),
-			),
-		),
-		'styles'     => array(
-			'title'    => __( 'Styles', 'bb-vapor-modules-pro' ),
-			'sections' => array(
-				'styles' => array(
-					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
-					'fields' => array(
-						'button_alignment'  => array(
-							'type'    => 'align',
-							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
-							'default' => 'center',
-							'preview' => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder-wrapper',
-								'property' => 'text-align',
-							),
-						),
-						'button_padding'    => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
-								'property' => 'padding',
-								'unit'     => 'px',
-							),
-						),
-						'button_typography' => array(
-							'type'       => 'typography',
-							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
-							),
-						),
-						'button_margin'     => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
-								'property' => 'margin',
-								'unit'     => 'px',
-							),
-						),
-						'button_radius'     => array(
-							'type'       => 'dimension',
-							'label'      => __( 'Button Radius', 'bb-vapor-modules-pro' ),
-							'responsive' => true,
-							'preview'    => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
-								'property' => 'border-radius',
-								'unit'     => 'px',
-							),
-						),
-						'button_min_width'  => array(
-							'type'        => 'unit',
-							'label'       => __( 'Button Min Width', 'bb-vapor-modules-pro' ),
-							'default'     => '0',
-							'responsive'  => true,
-							'description' => 'px',
-							'preview'     => array(
-								'type'     => 'css',
-								'selector' => '.fl-bbvm-button-for-beaverbuilder.bbvm-button',
-								'property' => 'min-width',
-								'unit'     => 'px',
-							),
 						),
 					),
 				),
