@@ -111,7 +111,7 @@ var bbvm_tomtom_map;
 					duration: 2000,
 				});
 				$(tt_markers).each( function() {
-					if ( this._lngLat.lat == long && this._lngLat.lng == lat ) {
+					if ( this._lngLat.lng == long && this._lngLat.lat == lat ) {
 						this.togglePopup();
 					}
 				} );

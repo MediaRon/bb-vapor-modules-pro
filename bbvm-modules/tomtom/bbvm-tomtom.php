@@ -123,6 +123,7 @@ FLBuilder::register_settings_form(
 									'no'  => __( 'No', 'bb-vapor-modules-pro' ),
 									'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 								),
+								'default' => 'yes',
 								'toggle'  => array(
 									'yes' => array(
 										'fields' => array(
