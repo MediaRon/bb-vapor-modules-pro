@@ -28,8 +28,7 @@ if ( 'yes' === $settings->sidebar ) :
 		width: 75%;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-sidebar {
-		-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
-		box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+		border: 1px solid #000;
 		height: 100%;
 		left: 0;
 		overflow-y: scroll;
