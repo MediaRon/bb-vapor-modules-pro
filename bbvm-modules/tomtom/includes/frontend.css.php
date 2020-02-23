@@ -204,3 +204,21 @@ foreach ( $settings->markers as $marker ) {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_background_hover ) ); ?>;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_button_text_color_hover ) ); ?>;
 }
+@media only screen and (max-width: 850px) {
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-map {
+		left: inherit;
+		top: inherit;
+		width: 100%;
+		position:relative;
+		height: 400px;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-sidebar {
+		position: relative;
+		max-height: 400px;
+		width: 100%;
+		overflow-y: scroll;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .bbvm-tomtom-map-wrapper {
+		height: auto;
+	}
+}
