@@ -37,8 +37,17 @@ var bbvm_tomtom_map;
 						Number(this.markers[i].longitude),
 					];
 					var element = document.createElement('div');
-					element.id = 'marker';
-					var marker = new tt.Marker({element: element}).setLngLat(longlat).setPopup(new tt.Popup({offset: 35}).setHTML('<strong>'+ this.markers[i].name +'</strong><br />' + this.markers[i].location + '<br /><a href="tel:' + this.markers[i].phone + '">' + this.markers[i].phone + '</a><br />' + '<a target="_blank" href="' + this.markers[i].link_url + '">' + this.markers[i].link_text+ '</a>' ) ).addTo(bbvm_tomtom_map);
+					element.className = 'marker-' + i;
+					var markerPopup = this.markers[i].show_info;
+					var marker = new tt.Marker({element: element}).setLngLat(longlat);
+					if ( 'yes' === markerPopup ) {
+						var markerHtml = '<strong>'+ this.markers[i].name +'</strong><br />' + this.markers[i].location + '<br /><a href="tel:' + this.markers[i].phone + '">' + this.markers[i].phone + '</a>';
+						if ( 'yes' === this.markers[i].show_link ) {
+							markerHtml += '<br />' + '<a target="_blank" href="' + this.markers[i].link_url + '">' + this.markers[i].link_text+ '</a>';
+						}
+						marker.setPopup(new tt.Popup({offset: 35}).setHTML( markerHtml ) );
+					}
+					marker.addTo(bbvm_tomtom_map);
 				}
 			}
 			if ('yes' === this.fullscreen) {

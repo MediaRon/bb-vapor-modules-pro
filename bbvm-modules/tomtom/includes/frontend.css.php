@@ -17,23 +17,50 @@
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-marker {
 	position: relative;
 }
-.fl-node-<?php echo esc_html( $id ); ?> #marker {
-	display: block;
-	position: absolute;
-	width: 20px;
-	height: 32px;
-	background-image: url(<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/tomtom/includes/location-pin.png' ); ?>);
-	background-size: cover;
-	background-repeat: no-repeat;
+<?php
+$count = 0;
+foreach ( $settings->markers as $marker ) {
+	if ( ! empty( $marker->marker_icon_src ) ) {
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .marker-<?php echo absint( $count ); ?> {
+			display: block;
+			position: absolute;
+			width: 32px;
+			height: 32px;
+			background-image: url(<?php echo esc_url( $marker->marker_icon_src ); ?>);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		<?php
+	} else {
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .marker-<?php echo absint( $count ); ?> {
+			display: block;
+			position: absolute;
+			width: 20px;
+			height: 32px;
+			background-image: url(<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/tomtom/includes/location-pin.png' ); ?>);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		<?php
+	}
+	?>
+	<?php
+	$count++;
 }
+?>
 .mapboxgl-popup-close-button {
+	position: absolute;
 	color: #a11d21;
 	margin: 0;
 	line-height: 1.0;
-	text-align: right;
 	padding: 5px;
+	top: 0;
+	right: 0;
 }
 .mapboxgl-popup-close-button:hover {
+	position: absolute;
 	background: #a11d21;
 	color: #FFF;
 }
