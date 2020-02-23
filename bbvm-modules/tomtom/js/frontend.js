@@ -37,6 +37,7 @@ var bbvm_tomtom_map;
 			center: [this.latitude, this.longitude],
 			zoom: this.zoom,
 		});
+		var tt_markers = new Array();
 			// Add markers.
 			if( ( this.markers ).length > 0 ) {
 				for( i = 0; i < ( this.markers ).length ; i++ ) {
@@ -57,6 +58,7 @@ var bbvm_tomtom_map;
 						marker.setPopup(new tt.Popup({offset: 35}).setHTML( markerHtml ) );
 					}
 					marker.addTo(bbvm_tomtom_map);
+					tt_markers.push( marker );
 				}
 			}
 			if ('yes' === this.fullscreen) {
@@ -89,6 +91,24 @@ var bbvm_tomtom_map;
 						return;
 					} else {
 						$( this ).slideUp();
+					}
+				} );
+			} );
+			$( this.nodeClass + ' .list-entry' ).on('click', function( e ) {
+				var long = $(this).data('long');
+				var lat = $(this).data('lat');
+				var longlat = [
+					lat,
+					long,
+				];
+				bbvm_tomtom_map.easeTo({
+					center: longlat,
+					zoom: 15,
+					duration: 2000,
+				});
+				$(tt_markers).each( function() {
+					if ( this._lngLat.lat == long && this._lngLat.lng == lat ) {
+						this.togglePopup();
 					}
 				} );
 			} );

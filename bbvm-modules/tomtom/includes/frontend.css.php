@@ -37,6 +37,22 @@ if ( 'yes' === $settings->sidebar ) :
 		top: 0;
 		width: 25%;
 	}
+	.fl-node-<?php echo esc_html( $id ); ?> .city {
+		margin: 0;
+		padding: 15px 20px;
+		background: #ebebeb;
+		font-size: 1.0em;
+		cursor: pointer;
+		font-weight: 700;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .city:hover {
+		background: #dddfe0
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .location-wrapper .list-entry {
+		margin: 0;
+		padding: 15px 20px;
+		border-bottom: 1px solid #707070;
+	}
 	<?php
 else :
 	?>
