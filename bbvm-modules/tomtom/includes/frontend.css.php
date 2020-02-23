@@ -17,12 +17,14 @@
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-marker {
 	position: relative;
 }
-#marker {
+.fl-node-<?php echo esc_html( $id ); ?> #marker {
 	display: block;
 	position: absolute;
 	width: 20px;
-	height: 20px;
-	background: red;
+	height: 32px;
+	background-image: url(<?php echo esc_url( BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/tomtom/includes/location-pin.png' ); ?>);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .mapboxgl-popup-close-button {
 	color: #a11d21;
