@@ -22,9 +22,8 @@ var bbvm_tomtom_map;
 	getMarkersBoundsForCity = function(city, markers, long, lat) {
 		var bounds = new tt.LngLatBounds();
 		markers.forEach(markerCity => {
-			console.log( city );
 			if (markerCity.category == city) {
-				bounds.extend([lat, long]);
+				bounds.extend([long, lat]);
 			}
 		});
 		return bounds;
@@ -42,10 +41,9 @@ var bbvm_tomtom_map;
 			// Add markers.
 			if( ( this.markers ).length > 0 ) {
 				for( i = 0; i < ( this.markers ).length ; i++ ) {
-					console.log( this.markers[i] );
 					var longlat = [
-						Number(this.markers[i].latitude),
 						Number(this.markers[i].longitude),
+						Number(this.markers[i].latitude),
 					];
 					var element = document.createElement('div');
 					element.className = 'marker-' + i;
@@ -104,8 +102,8 @@ var bbvm_tomtom_map;
 				var long = $(this).data('long');
 				var lat = $(this).data('lat');
 				var longlat = [
-					lat,
 					long,
+					lat,
 				];
 				bbvm_tomtom_map.easeTo({
 					center: longlat,
