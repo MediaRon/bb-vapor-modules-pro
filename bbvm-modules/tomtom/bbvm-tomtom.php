@@ -180,7 +180,7 @@ FLBuilder::register_module(
 							'default' => 'no',
 							'toggle'  => array(
 								'yes' => array(
-									'tabs' => 'sidebar',
+									'tabs' => array( 'sidebar' ),
 								),
 							),
 						),
@@ -336,9 +336,8 @@ FLBuilder::register_module(
 			),
 		),
 		'infowindow' => array(
-			'title'       => __( 'Info Window', 'bb-vapor-modules-pro' ),
-			'description' => $notice,
-			'sections'    => array(
+			'title'    => __( 'Info Window', 'bb-vapor-modules-pro' ),
+			'sections' => array(
 				'infowindow'      => array(
 					'title'  => __( 'Info Window', 'bb-vapor-modules-pro' ),
 					'fields' => array(
