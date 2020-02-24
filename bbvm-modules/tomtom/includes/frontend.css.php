@@ -128,9 +128,16 @@ endif;
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background ) ); ?>;
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_text_color ) ); ?>;
+	overflow: hidden;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-tip {
+	border-top-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background ) ); ?>;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content:hover {
 	background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background_hover ) ); ?>;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-tip:hover {
+	border-top-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_background_hover ) ); ?>;
 }
 .fl-node-<?php echo esc_html( $id ); ?> .mapboxgl-popup-content a {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->info_link_color ) ); ?>;
