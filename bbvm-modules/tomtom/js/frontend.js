@@ -76,6 +76,7 @@ var bbvm_tomtom_map;
 				}), this.geolocation_location);
 			}
 			var markers = this.markers;
+			var nodeClass = this.nodeClass;
 			jQuery( this.nodeClass + ' .bbvm-tomtom-map-sidebar' ).on( 'click', '.city', function( e ) {
 				var city = $(this).data('category');
 				var cityCat = $( this ).data( 'category-slug' );
@@ -83,7 +84,7 @@ var bbvm_tomtom_map;
 				var lat = $(this).data('lat');
 				bbvm_tomtom_map.fitBounds(getMarkersBoundsForCity(city, markers, long, lat), {padding: 50, zoom: 11});
 				// Toggle addresses.
-				$('.location-wrapper').each( function() {
+				$( nodeClass + ' .location-wrapper').each( function() {
 					if ( $(this).data('category') === cityCat ) {
 						if ( $( this ).is( ':visible' ) ) {
 							$( this ).slideUp();
