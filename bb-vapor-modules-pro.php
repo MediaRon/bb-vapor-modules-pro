@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 2.1.2
+ * Version: 2.2.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.1.2' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.0' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -240,6 +240,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
 				new BBVapor_Pricing_Table();
+			}
+
+			// TomTom Map module.
+			if ( $this->is_module_enabled( $module_options, 'tomtom' ) ) {
+				require_once 'bbvm-modules/tomtom/bbvm-tomtom.php';
+				new BBVapor_TomTom();
 			}
 
 			// Simple Coupon module.
