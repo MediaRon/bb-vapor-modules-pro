@@ -7,7 +7,7 @@ Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A growing list of Beaver Builder modules. WordPress 5.3 compatible.
+A growing list of Beaver Builder modules. WordPress 5.4 compatible.
 
 == Description ==
 
