@@ -1,7 +1,7 @@
 === Vapor Modules for Beaver Builder ===
 Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
-Tested up to: 5.3.2
+Tested up to: 5.4.0
 Requires PHP: 5.6
 Stable tag: 2.2.0
 License: GPLv2 or later
