@@ -17,7 +17,7 @@ class BBVapor_Animated_Button_Module extends FLBuilderModule {
 				'partial_refresh' => false, // Defaults to false and can be omitted.
 			)
 		);
-		$this->add_css( 'mrbb-hover', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/animated-button/css/hover-min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
+		$this->add_css( 'mrbb-hover', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/hover-min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 /**
