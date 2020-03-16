@@ -234,15 +234,19 @@ foreach ( $settings->button as $button ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> {
 			background: <?php echo esc_html( $background_color ); ?>;
+			background-color: 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
 			background: <?php echo esc_html( $background_color ); ?>;
+			background-color: 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:before {
 			background: <?php echo esc_html( $background_color ); ?>;
+			background-color: 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:hover:before {
 			background: <?php echo esc_html( $background_color_hover ); ?>;
+			background-color: 1s ease;
 		}
 		<?php
 	endif;
