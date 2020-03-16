@@ -23,6 +23,7 @@
 	}
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder .bbvm-button-wrapper {
+	position: relative;
 	display: inline-block;
 }
 @media only screen and (max-width: 500px) {
@@ -217,20 +218,22 @@ foreach ( $settings->button as $button ) :
 		?>
 	}
 	<?php
-	FLBuilderCSS::border_field_rule(
-		array(
-			'settings'     => $button,
-			'setting_name' => 'border',
-			'selector'     => ".fl-node-$id .button-{$count}",
-		)
-	);
-	FLBuilderCSS::border_field_rule(
-		array(
-			'settings'     => $button,
-			'setting_name' => 'border_hover',
-			'selector'     => ".fl-node-$id .button-{$count}:hover",
-		)
-	);
+	if ( 'color' === $button->button_background_type || 'gradient' === $button->button_background_type ) {
+		FLBuilderCSS::border_field_rule(
+			array(
+				'settings'     => $button,
+				'setting_name' => 'border',
+				'selector'     => ".fl-node-$id .button-{$count}",
+			)
+		);
+		FLBuilderCSS::border_field_rule(
+			array(
+				'settings'     => $button,
+				'setting_name' => 'border_hover',
+				'selector'     => ".fl-node-$id .button-{$count}:hover",
+			)
+		);
+	}
 	if ( 'none' !== $button->transition ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> {

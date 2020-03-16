@@ -70,6 +70,7 @@ FLBuilder::register_settings_form(
 											'button_background_color_hover',
 											'border',
 											'border_hover',
+											'transition',
 										),
 									),
 									'gradient'    => array(
@@ -78,6 +79,7 @@ FLBuilder::register_settings_form(
 											'button_background_gradient_hover',
 											'border',
 											'border_hover',
+											'transition',
 										),
 									),
 									'transparent' => array(
