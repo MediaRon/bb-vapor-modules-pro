@@ -203,6 +203,7 @@ foreach ( $settings->button as $button ) :
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_text_color_hover ) ); ?>;
 	}
 	.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
+		transition: all 1s ease;
 		<?php
 		if ( 'color' === $background_type ) {
 			?>
@@ -234,19 +235,19 @@ foreach ( $settings->button as $button ) :
 		?>
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> {
 			background: <?php echo esc_html( $background_color ); ?>;
-			background-color: 1s ease;
+			transition: all 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
 			background: <?php echo esc_html( $background_color ); ?>;
-			background-color: 1s ease;
+			transition: all 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:before {
 			background: <?php echo esc_html( $background_color ); ?>;
-			background-color: 1s ease;
+			transition: all 1s ease;
 		}
 		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:hover:before {
 			background: <?php echo esc_html( $background_color_hover ); ?>;
-			background-color: 1s ease;
+			transition: all 1s ease;
 		}
 		<?php
 	endif;
