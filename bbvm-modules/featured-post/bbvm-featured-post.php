@@ -84,6 +84,11 @@ FLBuilder::register_module(
 							'type'    => 'text',
 							'label'   => __( 'Category Name', 'bb-vapor-modules-pro' ),
 							'default' => 'Featured',
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-category span',
+							),
+							'connections' => array( 'string' ),
 						),
 					),
 				),
@@ -107,8 +112,13 @@ FLBuilder::register_module(
 						),
 						'continue_reading'         => array(
 							'type'    => 'text',
-							'label'   => __( 'Read More	 Text', 'bb-vapor-modules-pro' ),
+							'label'   => __( 'Read More Text', 'bb-vapor-modules-pro' ),
 							'default' => 'Read More →',
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-read-more',
+							),
+							'connections' => array( 'string' ),
 						),
 					),
 				),
@@ -121,24 +131,44 @@ FLBuilder::register_module(
 					'title'  => __( 'Category Display', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'category_padding'          => array(
-							'type'  => 'dimension',
-							'label' => __( 'Padding', 'bb-vapor-modules-pro' ),
+							'type'    => 'dimension',
+							'label'   => __( 'Padding', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'property' => 'padding',
+								'selector' => '.bbvm-category',
+							),
 						),
 						'category_color'            => array(
 							'type'       => 'color',
 							'label'      => __( 'Category Text Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-category span',
+							),
 						),
 						'category_background_color' => array(
 							'type'       => 'color',
 							'label'      => __( 'Category Background', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'background-color',
+								'selector' => '.bbvm-category',
+							),
 						),
 						'category_border'           => array(
-							'type'  => 'border',
-							'label' => __( 'Category Border', 'bb-vapor-modules-pro' ),
+							'type'    => 'border',
+							'label'   => __( 'Category Border', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'css',
+								'property' => 'border',
+								'selector' => '.bbvm-category',
+							),
 						),
 						'category_link_display'     => array(
 							'type'    => 'select',
@@ -163,6 +193,10 @@ FLBuilder::register_module(
 							'type'       => 'typography',
 							'label'      => __( 'Category Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-category span',
+							),
 						),
 					),
 				),
@@ -179,17 +213,31 @@ FLBuilder::register_module(
 							'label'      => __( 'Title Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-title a',
+							),
 						),
 						'title_color_hover' => array(
 							'type'       => 'color',
 							'label'      => __( 'Title Color on Hover', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-title a:hover',
+							),
 						),
 						'title_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Title Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-title a',
+							),
 						),
 					),
 				),
@@ -206,17 +254,32 @@ FLBuilder::register_module(
 							'label'      => __( 'Read More Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-read-more a',
+							),
+							
 						),
 						'read_more_color_hover' => array(
 							'type'       => 'color',
 							'label'      => __( 'Read More Color on Hover', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'property' => 'color',
+								'selector' => '.bbvm-read-more a:hover',
+							),
 						),
 						'read_more_typography'  => array(
 							'type'       => 'typography',
 							'label'      => __( 'Read More Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-read-more a',
+							),
 						),
 					),
 				),

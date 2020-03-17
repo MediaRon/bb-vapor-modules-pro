@@ -84,7 +84,7 @@ if ( $recent_posts->have_posts() ) :
 				if ( 'yes' === $settings->category_link_display ) {
 					printf( '<a href="%s">', esc_url( $settings->category_link ) );
 				}
-				echo wp_kses_post( $settings->category_name );
+				echo wp_kses_post( '<span>' . $settings->category_name . '</span>' );
 				if ( 'yes' === $settings->category_link_display ) {
 					echo '</a>';
 				}
@@ -112,6 +112,7 @@ if ( $recent_posts->have_posts() ) :
 			<?php
 		endif;
 	}
+	wp_reset_postdata();
 endif;
 ?>
 </div>
