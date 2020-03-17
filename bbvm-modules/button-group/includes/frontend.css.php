@@ -888,7 +888,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'button_margin',
-		'selector'     => ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
+		'selector'     => ".fl-node-$id .bbvm-button-wrapper",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'button_margin_top',
