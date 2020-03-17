@@ -81,10 +81,10 @@ FLBuilder::register_module(
 							),
 						),
 						'category_name'    => array(
-							'type'    => 'text',
-							'label'   => __( 'Category Name', 'bb-vapor-modules-pro' ),
-							'default' => 'Featured',
-							'preview' => array(
+							'type'        => 'text',
+							'label'       => __( 'Category Name', 'bb-vapor-modules-pro' ),
+							'default'     => 'Featured',
+							'preview'     => array(
 								'type'     => 'text',
 								'selector' => '.bbvm-category span',
 							),
@@ -111,10 +111,10 @@ FLBuilder::register_module(
 							),
 						),
 						'continue_reading'         => array(
-							'type'    => 'text',
-							'label'   => __( 'Read More Text', 'bb-vapor-modules-pro' ),
-							'default' => 'Read More →',
-							'preview' => array(
+							'type'        => 'text',
+							'label'       => __( 'Read More Text', 'bb-vapor-modules-pro' ),
+							'default'     => 'Read More →',
+							'preview'     => array(
 								'type'     => 'text',
 								'selector' => '.bbvm-read-more',
 							),
@@ -259,7 +259,7 @@ FLBuilder::register_module(
 								'property' => 'color',
 								'selector' => '.bbvm-read-more a',
 							),
-							
+
 						),
 						'read_more_color_hover' => array(
 							'type'       => 'color',

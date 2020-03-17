@@ -38,7 +38,7 @@ endif;
 <div class="bbvm-featured-post-wrapper">
 <?php
 $settings->posts_per_page = 1;
-$recent_posts = FLBuilderLoop::query( $settings );
+$recent_posts             = FLBuilderLoop::query( $settings );
 
 if ( $recent_posts->have_posts() ) :
 	while ( $recent_posts->have_posts() ) {
