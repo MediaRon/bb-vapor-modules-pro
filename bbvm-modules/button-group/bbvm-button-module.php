@@ -272,7 +272,7 @@ FLBuilder::register_module(
 							'responsive' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'selector' => '.bbvm-button-wrapper',
 								'property' => 'margin',
 								'unit'     => 'px',
 							),

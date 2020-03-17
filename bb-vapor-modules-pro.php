@@ -420,6 +420,12 @@ class BBVapor_Modules_Pro {
 				new BBVapor_PostSelect_Module();
 			}
 
+			// Featured Posts Module.
+			if ( $this->is_module_enabled( $module_options, 'featured-post' ) ) {
+				require_once 'bbvm-modules/featured-post/bbvm-featured-post.php';
+				new BBVapor_Featured_Post();
+			}
+
 			// Gists Module.
 			if ( $this->is_module_enabled( $module_options, 'gist' ) ) {
 				require_once 'bbvm-modules/gist/bbvm-gist-module.php';
