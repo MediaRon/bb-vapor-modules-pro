@@ -17,6 +17,7 @@ class BBVapor_Button_Module extends FLBuilderModule {
 				'partial_refresh' => false, // Defaults to false and can be omitted.
 			)
 		);
+		$this->add_css( 'mrbb-hover', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/hover-min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 /**
@@ -31,11 +32,6 @@ FLBuilder::register_module(
 				'general' => array(
 					'title'  => __( 'General', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'button_id'                        => array(
-							'type'    => 'text',
-							'label'   => __( 'Unique Button ID for Styling', 'bb-vapor-modules-pro' ),
-							'default' => 'button_id_' . rand(0,10000), // phpcs:ignore
-						),
 						'button_text'                      => array(
 							'type'        => 'text',
 							'label'       => __( 'Button Text', 'bb-vapor-modules-pro' ),
@@ -75,6 +71,8 @@ FLBuilder::register_module(
 										'button_background_color',
 										'button_background_color_hover',
 										'button_border',
+										'border_hover',
+										'transition',
 									),
 								),
 								'gradient'    => array(
@@ -82,6 +80,8 @@ FLBuilder::register_module(
 										'button_background_gradient',
 										'button_background_gradient_hover',
 										'button_border',
+										'border_hover',
+										'transition',
 									),
 								),
 								'transparent' => array(
@@ -206,6 +206,36 @@ FLBuilder::register_module(
 							'label'   => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
 							'preview' => array( 'type' => 'none' ),
+						),
+						'border_hover'                     => array(
+							'type'  => 'border',
+							'label' => __( 'Button Border on Hover', 'bb-vapor-modules-pro' ),
+						),
+						'transition'                       => array(
+							'type'    => 'select',
+							'label'   => __( 'Transition', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'none'                     => __( 'None', 'bb-vapor-modules-pro' ),
+								'hvr-fade'                 => __( 'Fade', 'bb-vapor-modules-pro' ),
+								'hvr-back-pulse'           => __( 'Pulse', 'bb-vapor-modules-pro' ),
+								'hvr-sweep-to-right'       => __( 'Sweep to Right', 'bb-vapor-modules-pro' ),
+								'hvr-sweep-to-left'        => __( 'Sweep to Left', 'bb-vapor-modules-pro' ),
+								'hvr-sweep-to-bottom'      => __( 'Sweep to Bottom', 'bb-vapor-modules-pro' ),
+								'hvr-sweep-to-top'         => __( 'Sweep to Top', 'bb-vapor-modules-pro' ),
+								'hvr-bounce-to-right'      => __( 'Bounce to Right', 'bb-vapor-modules-pro' ),
+								'hvr-bounce-to-left'       => __( 'Bounce to Left', 'bb-vapor-modules-pro' ),
+								'hvr-bounce-to-bottom'     => __( 'Bounce to Bottom', 'bb-vapor-modules-pro' ),
+								'hvr-bounce-to-top'        => __( 'Bounce to Top', 'bb-vapor-modules-pro' ),
+								'hvr-radial-out'           => __( 'Radial Out', 'bb-vapor-modules-pro' ),
+								'hvr-radial-in'            => __( 'Radial In', 'bb-vapor-modules-pro' ),
+								'hvr-rectangle-in'         => __( 'Rectangle In', 'bb-vapor-modules-pro' ),
+								'hvr-rectangle-out'        => __( 'Rectangle Out', 'bb-vapor-modules-pro' ),
+								'hvr-shutter-in-horizontal' => __( 'Shutter In Horizontal', 'bb-vapor-modules-pro' ),
+								'hvr-shutter-out-horizontal' => __( 'Shutter Out Horizontal', 'bb-vapor-modules-pro' ),
+								'hvr-shutter-in-vertical'  => __( 'Shutter In Vertical', 'bb-vapor-modules-pro' ),
+								'hvr-shutter-out-vertical' => __( 'Shutter Out Vertical', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'none',
 						),
 					),
 				),

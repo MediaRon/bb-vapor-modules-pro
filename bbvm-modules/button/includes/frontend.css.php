@@ -170,6 +170,13 @@ if ( 'transparent' !== $background_type ) {
 			'selector'     => ".fl-node-$id .fl-bbvm-button-for-beaverbuilder",
 		)
 	);
+	FLBuilderCSS::border_field_rule(
+		array(
+			'settings'     => $settings,
+			'setting_name' => 'border_hover',
+			'selector'     => ".fl-node-$id .fl-bbvm-button-for-beaverbuilder:hover",
+		)
+	);
 	FLBuilderCSS::dimension_field_rule(
 		array(
 			'settings'     => $settings,
@@ -184,9 +191,29 @@ if ( 'transparent' !== $background_type ) {
 			),
 		)
 	);
+	if ( 'none' !== $button->transition ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-for-beaverbuilder.bbvm-button {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-for-beaverbuilder.bbvm-button:hover {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-for-beaverbuilder.bbvm-button:before {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-for-beaverbuilder.bbvm-button.hvr-background:hover:before {
+			background: <?php echo esc_html( $background_color_hover ); ?>;
+			transition: all 1s ease;
+		}
+		<?php
+	endif;
 }
 ?>
-.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?> {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-button {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color ) ); ?>;
 	text-decoration: none;
 	<?php
@@ -202,8 +229,8 @@ if ( 'transparent' !== $background_type ) {
 	}
 	?>
 }
-.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover {
-	color: #<?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-button:hover {
+	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_text_color_hover ) ); ?>;
 	text-decoration: none;
 	<?php
 	if ( 'color' === $background_type ) {
@@ -450,19 +477,19 @@ if ( 'transparent' !== $background_type ) {
 	bottom: -10px;
 	background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->button_style_border_color ) ); ?>;
 }
-.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:before {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-button:hover:before {
 	moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
 }
-.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover:after {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-button:hover:after {
 	moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
 }
-.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $settings->button_id ); ?>:hover span:before {
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-button:hover span:before {
 	moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
