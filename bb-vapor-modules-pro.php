@@ -323,6 +323,10 @@ class BBVapor_Modules_Pro {
 			}
 
 			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'icon' ) ) {
+				require_once 'bbvm-modules/icon/bbvm-icon.php';
+				new BBVapor_Icon();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
 				require_once 'bbvm-modules/photo/bbvm-photo.php';
 				new BBVapor_Photo();
