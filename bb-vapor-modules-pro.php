@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 2.2.0
+ * Version: 2.2.1
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.0' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.1' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -323,6 +323,10 @@ class BBVapor_Modules_Pro {
 			}
 
 			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'icon' ) ) {
+				require_once 'bbvm-modules/icon/bbvm-icon.php';
+				new BBVapor_Icon();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
 				require_once 'bbvm-modules/photo/bbvm-photo.php';
 				new BBVapor_Photo();
