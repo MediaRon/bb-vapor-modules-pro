@@ -207,6 +207,9 @@ if ( 'right' === $settings->alignment ) {
 .fl-node-<?php echo esc_html( $id ); ?> .bbvm-text {
 	color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->text_color ) ); ?>;
 }
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-text p {
+	margin: 0;
+}
 <?php
 // Text Typography.
 FLBuilderCSS::typography_field_rule(

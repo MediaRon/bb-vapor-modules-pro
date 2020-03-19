@@ -3,7 +3,7 @@ Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
 Tested up to: 5.4.0
 Requires PHP: 5.6
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,12 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 2.2.1 =
+* Released 2020-03-18
+* Added <a href="https://bbvapormodules.com/modules/icon/">Icon module</a>.
+* Added <a href="https://bbvapormodules.com/modules/featured-post/">Featured Post module</a>.
+* Added hover transitions to the <a href="https://bbvapormodules.com/modules/buttons/">Buttons</a> and <a href="https://bbvapormodules.com/modules/button-group/">Button Group</a> modules with additional tweaks and fixes.
 
 = 2.2.0 =
 * Released 2020-02-24
