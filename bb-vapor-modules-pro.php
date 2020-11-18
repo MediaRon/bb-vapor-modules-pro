@@ -128,6 +128,8 @@ class BBVapor_Modules_Pro {
 		// Register Module Scripts.
 		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 
+		add_filter( 'block_categories', array( $this, 'block_category' ), 10, 2 );
+
 		// Register admin panel.
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
 		new BBVapor_BeaverBuilder_Admin();
@@ -618,6 +620,24 @@ class BBVapor_Modules_Pro {
 
 			add_shortcode( 'bbvm_bb_copyright', array( $this, 'bbvm_beaver_builder_copyright' ) );
 		}
+	}
+
+	/**
+	 * Add Gutenberg block category
+	 *
+	 * @param array  $categories Existing categories.
+	 * @param object $post The post object.
+	 */
+	public function block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			array(
+				array(
+					'slug'  => 'vapor',
+					'title' => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				),
+			)
+		);
 	}
 
 	/**
