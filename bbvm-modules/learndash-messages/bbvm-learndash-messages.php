@@ -54,15 +54,19 @@ FLBuilder::register_module(
 				'options' => array(
 					'title'  => __( 'Options', 'bb-vapor-modules-pro' ),
 					'fields' => array(
-						'course_color'      => array(
+						'course_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Content Color', 'bb-vapor-modules-pro' ),
 							'show_alpha' => true,
 							'show_reset' => true,
 						),
-						'course_typography' => array(
+						'course_typography'  => array(
 							'type'  => 'typography',
-							'label' => __( 'Typography', 'bb-vapor-modules-pro' ),
+							'label' => __( 'Content Typography', 'bb-vapor-modules-pro' ),
+						),
+						'heading_typography' => array(
+							'type'  => 'typography',
+							'label' => __( 'Heading Typography', 'bb-vapor-modules-pro' ),
 						),
 					),
 				),

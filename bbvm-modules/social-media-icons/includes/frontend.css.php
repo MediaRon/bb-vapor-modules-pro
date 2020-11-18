@@ -124,7 +124,19 @@ if ( isset( $settings->background_select ) ) {
 	}
 }
 ?>
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-module-social.black svg {
+	fill: #000000;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-module-social.white svg {
+	fill: #FFFFFF;
+}
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-module-social.custom svg {
+	fill: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $settings->fill_custom ) ); ?>
+}
 
+.fl-node-<?php echo esc_html( $id ); ?> .bbvm-module-social {
+	text-align: <?php echo esc_html( $settings->alignment ); ?>;
+}
 
 <?php
 FLBuilderCSS::dimension_field_rule(

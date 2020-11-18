@@ -235,3 +235,21 @@ FLBuilderCSS::typography_field_rule(
 		'selector'     => ".fl-node-$id .fl-bbvm-instagram-for-beaverbuilder .instagram-card .instagram-caption",
 	)
 );
+if ( isset( $settings->lightbox_caption ) && 'yes' === $settings->lightbox_caption ) :
+	?>
+	.bbvm-mfp-fade .mfp-bottom-bar {
+		bottom: 0;
+		margin: 0;
+	}
+	.bbvm-mfp-fade .mfp-title {
+		text-align: center;
+		background: rgba(0,0,0,0.4);
+		font-size: 18px;
+		padding: 20px 20px;
+		line-height: 1.2;
+	}
+	<?php else : ?>
+	.bbvm-mfp-fade .mfp-bottom-bar {
+		display: none;
+	}
+<?php endif; ?>

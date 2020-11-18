@@ -33,8 +33,12 @@ FLBuilder::register_module(
 					'title'  => __( 'Headlines', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'headline_text'       => array(
-							'type'  => 'text',
-							'label' => __( 'Headline Text', 'bb-vapor-modules-pro' ),
+							'type'    => 'text',
+							'label'   => __( 'Headline Text', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.bbvm-animated-headline',
+							),
 						),
 						'headline_tag'        => array(
 							'type'    => 'select',
@@ -53,21 +57,42 @@ FLBuilder::register_module(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-animated-headline',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'headline_margin'     => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Headline Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-animated-headline',
+								'property' => 'margin',
+								'unit'     => 'px',
+							),
 						),
 						'headline_text_color' => array(
 							'type'    => 'color',
 							'label'   => __( 'Headline Text Color', 'bb-vapor-modules-pro' ),
 							'default' => '000000',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-animated-headline',
+								'property' => 'color',
+							),
 						),
 						'headline_typography' => array(
 							'type'       => 'typography',
 							'label'      => __( 'Headline Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-animated-headline',
+							),
 						),
 					),
 				),

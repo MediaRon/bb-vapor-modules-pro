@@ -1,35 +1,60 @@
 {
-  "name": "bb-vapor-modules-pro",
-  "version": "1.2.0",
-  "description": "BB Vapor Modules Pro is a growing collection of modules for Beaver Builder",
-  "main": "gulpfile.js",
-  "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ronalfy/bb-vapor-modules-pro.git"
-  },
-  "keywords": [
-    "beaver",
-    "builder"
-  ],
-  "author": "MediaRon LLC",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/ronalfy/bb-vapor-modules-pro/issues"
-  },
-  "homepage": "https://github.com/ronalfy/bb-vapor-modules-pro#readme",
-  "devDependencies": {
-    "axios": "^0.19.0",
-    "cgb-scripts": "^1.18.1",
-    "create-guten-block": "^1.13.0",
-    "del": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-run": "^1.7.1",
-    "gulp-zip": "^5.0.0",
-    "html-to-react": "^1.3.4"
-  }
+	"name": "vapor-modules",
+	"version": "4.0.0",
+	"description": "Vapor Modules",
+	"main": "index.js",
+	"scripts": {
+		"watch": "webpack --watch",
+		"build": "webpack --mode development",
+		"deploy": "webpack --mode production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mediaron"
+	},
+	"author": "MediaRon LLC",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://mediaron.com"
+	},
+	"homepage": "https://mediaron.com",
+	"devDependencies": {
+		"@babel/cli": "^7.1.0",
+		"@babel/core": "^7.1.0",
+		"@babel/preset-env": "^7.1.0",
+		"@babel/preset-react": "^7.12.5",
+		"axios": "^0.19.2",
+		"babel-loader": "^8.0.2",
+		"babel-plugin-dynamic-import-node": "^2.3.3",
+		"babel-plugin-minify-mangle-names": "^0.5.0",
+		"css-loader": "^1.0.1",
+		"file-loader": "^6.0.0",
+		"grunt": "^1.3.0",
+		"grunt-contrib-compress": "^1.6.0",
+		"html-to-react": "^1.4.5",
+		"lodash": "^4.17.20",
+		"mini-css-extract-plugin": "^0.9.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"postcss-loader": "^3.0.0",
+		"qs": "^6.9.4",
+		"re-resizable": "^6.7.0",
+		"react": "^16.14.0",
+		"react-color-gradient-picker": "^0.1.2",
+		"react-dom": "^16.14.0",
+		"react-redux": "^7.2.0",
+		"react-router-dom": "^5.1.2",
+		"react-svg-loader": "^3.0.3",
+		"redux": "^4.0.5",
+		"redux-form": "^8.3.5",
+		"sass": "^1.29.0",
+		"sass-loader": "^10.0.5",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.2.0",
+		"webpack-cli": "^4.1.0"
+	},
+	"dependencies": {
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
+		"classnames": "^2.2.6",
+		"webpack-fix-style-only-entries": "^0.6.0"
+	}
 }

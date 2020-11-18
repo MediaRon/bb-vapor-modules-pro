@@ -1,13 +1,13 @@
 === Vapor Modules for Beaver Builder ===
 Tags: beaver builder, beaver builder modules, beaverbuilder
 Requires at least: 4.9
-Tested up to: 5.3.2
+Tested up to: 5.4.0
 Requires PHP: 5.6
-Stable tag: 1.7.4
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A growing list of Beaver Builder modules. WordPress 5.3 compatible.
+A growing list of Beaver Builder modules. WordPress 5.4 compatible.
 
 == Description ==
 
@@ -26,6 +26,47 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 2.2.1 =
+* Released 2020-03-18
+* Added <a href="https://bbvapormodules.com/modules/icon/">Icon module</a>.
+* Added <a href="https://bbvapormodules.com/modules/featured-post/">Featured Post module</a>.
+* Added hover transitions to the <a href="https://bbvapormodules.com/modules/buttons/">Buttons</a> and <a href="https://bbvapormodules.com/modules/button-group/">Button Group</a> modules with additional tweaks and fixes.
+
+= 2.2.0 =
+* Released 2020-02-24
+* Added <a href="https://bbvapormodules.com/modules/tomtom-map/">TomTom map module</a>.
+
+= 2.1.2 =
+* Released 2020-02-05
+* Added gradient line to advanced separator module.
+* Fixed admin panel so options appear immediately.
+
+= 2.1.1 =
+* Released 2020-02-03
+* Added Plugin Info Card module.
+
+= 2.1.0 =
+* Released 2020-02-02
+* Slowly adding preview functionality to existing modules.
+* Refactored admin panel to use static tabs instead of dynamic for better usability.
+* Added lightbox caption to Instagram module.
+
+= 2.0.8 =
+* Released 2019-12-28
+* Released new Circular Carousel module.
+
+= 2.0.5 =
+* Released 2019-12-27
+* Numerous style options added for LearnDash modules.
+
+= 2.0.1 =
+* Released 2019-12-26
+* Allowing caption and zoom effect on the Instagram Slideshow module.
+
+= 2.0.0 =
+* Released 2019-12-25
+* Feature: Added LearnDash modules for LearnDash compatibility.
 
 = 1.7.4 =
 * Releassed 2019-12-22

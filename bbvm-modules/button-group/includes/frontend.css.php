@@ -23,6 +23,7 @@
 	}
 }
 .fl-node-<?php echo esc_html( $id ); ?> .fl-bbvm-button-group-for-beaverbuilder .bbvm-button-wrapper {
+	position: relative;
 	display: inline-block;
 }
 @media only screen and (max-width: 500px) {
@@ -169,6 +170,7 @@
 	}
 }
 <?php
+$count = 0;
 foreach ( $settings->button as $button ) :
 	$background_color       = false;
 	$background_color_hover = false;
@@ -181,8 +183,10 @@ foreach ( $settings->button as $button ) :
 		$background_color_hover = BBVapor_Modules_Pro::get_color( $background_color_hover );
 	}
 	?>
-	.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?> {
+	.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> a.bbvm-button {
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_text_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> {
 		<?php
 		if ( 'color' === $background_type ) {
 			?>
@@ -196,8 +200,11 @@ foreach ( $settings->button as $button ) :
 		}
 		?>
 	}
-	.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover {
+	.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> a.bbvm-button:hover {
 		color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_text_color_hover ) ); ?>;
+	}
+	.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
+		transition: all 1s ease;
 		<?php
 		if ( 'color' === $background_type ) {
 			?>
@@ -211,12 +218,50 @@ foreach ( $settings->button as $button ) :
 		?>
 	}
 	<?php
+	if ( 'color' === $button->button_background_type || 'gradient' === $button->button_background_type ) {
+		FLBuilderCSS::border_field_rule(
+			array(
+				'settings'     => $button,
+				'setting_name' => 'border',
+				'selector'     => ".fl-node-$id .button-{$count}",
+			)
+		);
+		FLBuilderCSS::border_field_rule(
+			array(
+				'settings'     => $button,
+				'setting_name' => 'border_hover',
+				'selector'     => ".fl-node-$id .button-{$count}:hover",
+			)
+		);
+	}
+	if ( 'none' !== $button->transition ) :
+		?>
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:before {
+			background: <?php echo esc_html( $background_color ); ?>;
+			transition: all 1s ease;
+		}
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>.hvr-background:hover:before {
+			background: <?php echo esc_html( $background_color_hover ); ?>;
+			transition: all 1s ease;
+		}
+		<?php
+	endif;
+	?>
+	<?php
 	if ( 'transparent' === $button->button_background_type ) :
 		?>
 		<?php
 		if ( 'iris' === $button->button_style ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -232,7 +277,7 @@ foreach ( $settings->button as $button ) :
 				border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color ) ); ?>;
 				border-width: 2px 0 0 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:after {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -252,7 +297,7 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'prospero' === $button->button_style ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -270,7 +315,7 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'ferdinand' === $button->button_style ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				content: '';
 				position: absolute;
 				bottom: 0;
@@ -293,7 +338,7 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'francisco' === $button->button_style ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				content: '';
 				position: absolute;
 				bottom: 100%;
@@ -313,7 +358,7 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'sebastion' === $button->button_style ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				content: '';
 				position: absolute;
 				top: 0;
@@ -327,7 +372,7 @@ foreach ( $settings->button as $button ) :
 				transition: all .4s ease-in-out;
 				background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:after {
 				content: '';
 				position: absolute;
 				width: 100%;
@@ -348,12 +393,12 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'trinculo' === $button->button_style ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?> span {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> span {
 				display: inline-block;
 				-webkit-animation: anim-trinculo 0.6s forwards;
 				animation: anim-trinculo 0.6s forwards;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -371,7 +416,7 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'valentine' === $button->button_style ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				content: '';
 				display: block;
 				position: absolute;
@@ -383,7 +428,7 @@ foreach ( $settings->button as $button ) :
 				height: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:after {
 				content: '';
 				display: block;
 				position: absolute;
@@ -395,7 +440,7 @@ foreach ( $settings->button as $button ) :
 				height: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?> span:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> span:after {
 				content: '';
 				display: block;
 				position: absolute;
@@ -407,7 +452,7 @@ foreach ( $settings->button as $button ) :
 				width: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?> span:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> span:before {
 				content: '';
 				display: block;
 				position: absolute;
@@ -423,7 +468,7 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'stephano' === $button->button_style ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -441,7 +486,7 @@ foreach ( $settings->button as $button ) :
 				width: 10px;
 				height: 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?> span:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?> span:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -459,7 +504,7 @@ foreach ( $settings->button as $button ) :
 				width: 100%;
 				height: 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:after {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -480,7 +525,7 @@ foreach ( $settings->button as $button ) :
 			<?php
 		}
 		?>
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 			moz-transition: all .4s ease-in-out;
 			-o-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
@@ -492,7 +537,7 @@ foreach ( $settings->button as $button ) :
 			bottom: inherit;
 			background: transparent;
 		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:after {
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:after {
 			moz-transition: all .4s ease-in-out;
 			-o-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
@@ -504,7 +549,7 @@ foreach ( $settings->button as $button ) :
 			bottom: inherit;
 			background: transparent;
 		}
-		.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span:before {
+		.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span:before {
 			moz-transition: all .4s ease-in-out;
 			-o-transition: all .4s ease-in-out;
 			-webkit-transition: all .4s ease-in-out;
@@ -519,7 +564,7 @@ foreach ( $settings->button as $button ) :
 		<?php
 		if ( 'iris' === $button->button_style_hover ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				display: inline-block;
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
@@ -536,7 +581,7 @@ foreach ( $settings->button as $button ) :
 				border-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 				border-width: 2px 0 0 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:after {
 				display: inline-block;
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
@@ -557,7 +602,7 @@ foreach ( $settings->button as $button ) :
 			endif;
 		if ( 'prospero' === $button->button_style_hover ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -575,12 +620,12 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'trinculo' === $button->button_style_hover ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span {
 				display: inline-block;
 				-webkit-animation: anim-trinculo 0.6s forwards;
 				animation: anim-trinculo 0.6s forwards;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -595,20 +640,20 @@ foreach ( $settings->button as $button ) :
 				max-height: 4px;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span:after {
 				display: none;
 			}
 			<?php
 		endif;
 		if ( 'valentine' === $button->button_style_hover ) :
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
 				transition: all .4s ease-in-out;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -624,7 +669,7 @@ foreach ( $settings->button as $button ) :
 				height: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:after {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -640,7 +685,7 @@ foreach ( $settings->button as $button ) :
 				height: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span:after {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -656,7 +701,7 @@ foreach ( $settings->button as $button ) :
 				width: 100%;
 				background: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -676,7 +721,7 @@ foreach ( $settings->button as $button ) :
 		endif;
 		if ( 'ferdinand' === $button->button_style_hover ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -700,7 +745,7 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'francisco' === $button->button_style_hover ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				display: inline-block;
 				content: '';
 				position: absolute;
@@ -721,7 +766,7 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'sebastion' === $button->button_style_hover ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				display: inline-block;
 				content: '';
 				position: absolute;
@@ -736,7 +781,7 @@ foreach ( $settings->button as $button ) :
 				transition: all .4s ease-in-out;
 				background-color: <?php echo esc_html( BBVapor_Modules_Pro::get_color( $button->button_style_border_color_hover ) ); ?>;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:after {
 				display: inline-block;
 				content: '';
 				position: absolute;
@@ -758,7 +803,7 @@ foreach ( $settings->button as $button ) :
 		}
 		if ( 'stephano' === $button->button_style_hover ) {
 			?>
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -778,7 +823,7 @@ foreach ( $settings->button as $button ) :
 				width: 10px;
 				height: 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover span:before {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover span:before {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -798,7 +843,7 @@ foreach ( $settings->button as $button ) :
 				width: 100%;
 				height: 2px;
 			}
-			.fl-node-<?php echo esc_html( $id ); ?> #<?php echo esc_html( $button->button_id ); ?>:hover:after {
+			.fl-node-<?php echo esc_html( $id ); ?> .button-<?php echo absint( $count ); ?>:hover:after {
 				moz-transition: all .4s ease-in-out;
 				-o-transition: all .4s ease-in-out;
 				-webkit-transition: all .4s ease-in-out;
@@ -821,6 +866,7 @@ foreach ( $settings->button as $button ) :
 			<?php
 		}
 		endif;
+		$count++;
 	?>
 <?php endforeach; ?>
 <?php
@@ -842,7 +888,7 @@ FLBuilderCSS::dimension_field_rule(
 	array(
 		'settings'     => $settings,
 		'setting_name' => 'button_margin',
-		'selector'     => ".fl-node-$id .fl-bbvm-button-group-for-beaverbuilder a.bbvm-button",
+		'selector'     => ".fl-node-$id .bbvm-button-wrapper",
 		'unit'         => 'px',
 		'props'        => array(
 			'margin-top'    => 'button_margin_top',

@@ -17,6 +17,7 @@ class BBVapor_Button_Group_Module extends FLBuilderModule {
 				'partial_refresh' => false, // Defaults to false and can be omitted.
 			)
 		);
+		$this->add_css( 'mrbb-hover', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'css/hover-min.css', array(), BBVAPOR_PRO_BEAVER_BUILDER_VERSION, 'all' );
 	}
 }
 FLBuilder::register_settings_form(
@@ -30,11 +31,6 @@ FLBuilder::register_settings_form(
 					'general' => array(
 						'title'  => '',
 						'fields' => array(
-							'button_id'                  => array(
-								'type'    => 'text',
-								'label'   => __( 'Unique Button ID for Styling', 'bb-vapor-modules-pro' ),
-								'default' => 'button_id_' . rand(0,10000), // phpcs:ignore
-							),
 							'button_text'                => array(
 								'type'  => 'text',
 								'label' => __( 'Button Text', 'bb-vapor-modules-pro' ),
@@ -72,12 +68,18 @@ FLBuilder::register_settings_form(
 										'fields' => array(
 											'button_background_color',
 											'button_background_color_hover',
+											'border',
+											'border_hover',
+											'transition',
 										),
 									),
 									'gradient'    => array(
 										'fields' => array(
 											'button_background_gradient',
 											'button_background_gradient_hover',
+											'border',
+											'border_hover',
+											'transition',
 										),
 									),
 									'transparent' => array(
@@ -152,6 +154,40 @@ FLBuilder::register_settings_form(
 								'label'   => __( 'Button Style Border Color Hover', 'bb-vapor-modules-pro' ),
 								'default' => '000000',
 							),
+							'border'                     => array(
+								'type'  => 'border',
+								'label' => __( 'Button Border', 'bb-vapor-modules-pro' ),
+							),
+							'border_hover'               => array(
+								'type'  => 'border',
+								'label' => __( 'Button Border on Hover', 'bb-vapor-modules-pro' ),
+							),
+							'transition'                 => array(
+								'type'    => 'select',
+								'label'   => __( 'Transition', 'bb-vapor-modules-pro' ),
+								'options' => array(
+									'none'                 => __( 'None', 'bb-vapor-modules-pro' ),
+									'hvr-fade'             => __( 'Fade', 'bb-vapor-modules-pro' ),
+									'hvr-back-pulse'       => __( 'Pulse', 'bb-vapor-modules-pro' ),
+									'hvr-sweep-to-right'   => __( 'Sweep to Right', 'bb-vapor-modules-pro' ),
+									'hvr-sweep-to-left'    => __( 'Sweep to Left', 'bb-vapor-modules-pro' ),
+									'hvr-sweep-to-bottom'  => __( 'Sweep to Bottom', 'bb-vapor-modules-pro' ),
+									'hvr-sweep-to-top'     => __( 'Sweep to Top', 'bb-vapor-modules-pro' ),
+									'hvr-bounce-to-right'  => __( 'Bounce to Right', 'bb-vapor-modules-pro' ),
+									'hvr-bounce-to-left'   => __( 'Bounce to Left', 'bb-vapor-modules-pro' ),
+									'hvr-bounce-to-bottom' => __( 'Bounce to Bottom', 'bb-vapor-modules-pro' ),
+									'hvr-bounce-to-top'    => __( 'Bounce to Top', 'bb-vapor-modules-pro' ),
+									'hvr-radial-out'       => __( 'Radial Out', 'bb-vapor-modules-pro' ),
+									'hvr-radial-in'        => __( 'Radial In', 'bb-vapor-modules-pro' ),
+									'hvr-rectangle-in'     => __( 'Rectangle In', 'bb-vapor-modules-pro' ),
+									'hvr-rectangle-out'    => __( 'Rectangle Out', 'bb-vapor-modules-pro' ),
+									'hvr-shutter-in-horizontal' => __( 'Shutter In Horizontal', 'bb-vapor-modules-pro' ),
+									'hvr-shutter-out-horizontal' => __( 'Shutter Out Horizontal', 'bb-vapor-modules-pro' ),
+									'hvr-shutter-in-vertical' => __( 'Shutter In Vertical', 'bb-vapor-modules-pro' ),
+									'hvr-shutter-out-vertical' => __( 'Shutter Out Vertical', 'bb-vapor-modules-pro' ),
+								),
+								'default' => 'none',
+							),
 						),
 					),
 				),
@@ -192,31 +228,54 @@ FLBuilder::register_module(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array(
+								'type'     => 'css',
+								'selector' => '.fl-bbvm-button-group-for-beaverbuilder',
+								'property' => 'text-align',
+							),
 						),
 						'button_alignment_tablet' => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment Tablet', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array( 'type' => false ),
 						),
 						'button_alignment_mobile' => array(
 							'type'    => 'align',
 							'label'   => __( 'Button Alignment on Mobile', 'bb-vapor-modules-pro' ),
 							'default' => 'center',
+							'preview' => array( 'type' => false ),
 						),
 						'button_padding'          => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Padding', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'property' => 'padding',
+								'unit'     => 'px',
+							),
 						),
 						'button_typography'       => array(
 							'type'       => 'typography',
 							'label'      => __( 'Button Typography', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+							),
 						),
 						'button_margin'           => array(
 							'type'       => 'dimension',
 							'label'      => __( 'Button Margin', 'bb-vapor-modules-pro' ),
 							'responsive' => true,
+							'preview'    => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper',
+								'property' => 'margin',
+								'unit'     => 'px',
+							),
 						),
 						'button_radius'           => array(
 							'type'       => 'dimension',
@@ -229,6 +288,12 @@ FLBuilder::register_module(
 							'default'     => '0',
 							'responsive'  => true,
 							'description' => 'px',
+							'preview'     => array(
+								'type'     => 'css',
+								'selector' => '.bbvm-button-wrapper .bbvm-button',
+								'property' => 'min-width',
+								'unit'     => 'px',
+							),
 						),
 					),
 				),

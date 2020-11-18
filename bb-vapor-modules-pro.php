@@ -3,7 +3,7 @@
  * Plugin Name: BB Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 1.7.4
+ * Version: 2.2.1
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '1.7.4' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.1' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -105,9 +105,28 @@ class BBVapor_Modules_Pro {
 	}
 
 	/**
+	 * Add Vapor to the front of all Vapor modules.
+	 */
+	public function render_scripts() {
+		?>
+		<style>
+		form[class*="fl-builder-bbvm-"] .fl-lightbox-header h1:before {
+			content: "Vapor " !important;
+			position: relative;
+			display: inline-block;
+			margin-right: 5px;
+		}
+		</style>
+		<?php
+	}
+
+	/**
 	 * Register modules and blocks.
 	 */
 	public function bbvm_beaver_builder_module_init() {
+
+		// Register Module Scripts.
+		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 
 		// Register admin panel.
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
@@ -211,10 +230,22 @@ class BBVapor_Modules_Pro {
 				new BBVapor_EmailOctopus();
 			}
 
+			// WP Plugin Info Card module.
+			if ( $this->is_module_enabled( $module_options, 'plugin-info-card' ) && function_exists( 'wppic_shortcode_function' ) ) {
+				require_once 'bbvm-modules/plugin-info-card/bbvm-plugin-info-card.php';
+				new BBVapor_Plugin_Info_card();
+			}
+
 			// Pricing table module.
 			if ( $this->is_module_enabled( $module_options, 'pricing-table' ) ) {
 				require_once 'bbvm-modules/pricing-table/bbvm-pricing-table.php';
 				new BBVapor_Pricing_Table();
+			}
+
+			// TomTom Map module.
+			if ( $this->is_module_enabled( $module_options, 'tomtom' ) ) {
+				require_once 'bbvm-modules/tomtom/bbvm-tomtom.php';
+				new BBVapor_TomTom();
 			}
 
 			// Simple Coupon module.
@@ -239,6 +270,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'timeline' ) ) {
 				require_once 'bbvm-modules/timeline/bbvm-timeline.php';
 				new BBVapor_Timeline_Module();
+			}
+
+			// Circular Carousel module.
+			if ( $this->is_module_enabled( $module_options, 'circular-carousel' ) ) {
+				require_once 'bbvm-modules/circular-carousel/bbvm-circular-carousel.php';
+				new BBVapor_Circular_Carousel();
 			}
 
 			// Credit Card module.
@@ -286,6 +323,10 @@ class BBVapor_Modules_Pro {
 			}
 
 			// Photo modules.
+			if ( $this->is_module_enabled( $module_options, 'icon' ) ) {
+				require_once 'bbvm-modules/icon/bbvm-icon.php';
+				new BBVapor_Icon();
+			}
 			if ( $this->is_module_enabled( $module_options, 'photo' ) ) {
 				require_once 'bbvm-modules/photo/bbvm-photo.php';
 				new BBVapor_Photo();
@@ -381,6 +422,12 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'postselect' ) ) {
 				require_once 'bbvm-modules/postselect/bbvm-post-select-module.php';
 				new BBVapor_PostSelect_Module();
+			}
+
+			// Featured Posts Module.
+			if ( $this->is_module_enabled( $module_options, 'featured-post' ) ) {
+				require_once 'bbvm-modules/featured-post/bbvm-featured-post.php';
+				new BBVapor_Featured_Post();
 			}
 
 			// Gists Module.

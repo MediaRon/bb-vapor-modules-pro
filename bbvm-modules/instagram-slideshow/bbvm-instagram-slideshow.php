@@ -11,7 +11,7 @@ class BBVapor_Instagram_Slideshow extends FLBuilderModule {
 			array(
 				'name'            => __( 'Instagram Slideshow', 'bb-vapor-modules-pro' ),
 				'description'     => __( 'Add an Instagram Slideshow', 'bb-vapor-modules-pro' ),
-				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
+				'category'        => __( 'Carousels and Sliders', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/instagram-slideshow/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/instagram-slideshow/',
@@ -76,6 +76,22 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
 							),
 							'default' => 'no',
+							'toggle'  => array(
+								'yes' => array(
+									'fields' => array(
+										'lightbox_caption',
+									),
+								),
+							),
+						),
+						'lightbox_caption'         => array(
+							'type'    => 'select',
+							'label'   => __( 'Show Lightbox Caption', 'bb-vapor-modules-pro' ),
+							'options' => array(
+								'no'  => __( 'No', 'bb-vapor-modules-pro' ),
+								'yes' => __( 'Yes', 'bb-vapor-modules-pro' ),
+							),
+							'default' => 'yes',
 						),
 						'card_padding'             => array(
 							'type'       => 'dimension',

@@ -55,8 +55,15 @@ FLBuilder::register_module(
 					'title'  => __( 'Styles', 'bb-vapor-modules-pro' ),
 					'fields' => array(
 						'breadcrumb_padding'          => array(
-							'type'  => 'dimension',
-							'label' => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
+							'type'    => 'dimension',
+							'label'   => __( 'Select a Padding', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-breadcrumbs-for-beaverbuilder',
+								'property'  => 'padding',
+								'unit'      => 'px',
+								'important' => true,
+							),
 						),
 						'breadcrumb_background_color' => array(
 							'type'       => 'color',
@@ -64,18 +71,36 @@ FLBuilder::register_module(
 							'default'    => '#FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-breadcrumbs-for-beaverbuilder',
+								'property'  => 'background-color',
+								'important' => true,
+							),
 						),
 						'breadcrumb_text_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Select a Text Color', 'bb-vapor-modules-pro' ),
 							'default'    => '#000000',
 							'show_reset' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-breadcrumbs-for-beaverbuilder',
+								'property'  => 'color',
+								'important' => true,
+							),
 						),
 						'breadcrumb_link_color'       => array(
 							'type'       => 'color',
 							'label'      => __( 'Select a Link Color', 'bb-vapor-modules-pro' ),
 							'default'    => '#000000',
 							'show_reset' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-breadcrumbs-for-beaverbuilder a',
+								'property'  => 'color',
+								'important' => true,
+							),
 						),
 						'breadcrumb_link_hover_color' => array(
 							'type'       => 'color',
@@ -83,6 +108,12 @@ FLBuilder::register_module(
 							'default'    => '#000000',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'      => 'css',
+								'selector'  => '.fl-bbvm-breadcrumbs-for-beaverbuilder a:hover',
+								'property'  => 'color',
+								'important' => true,
+							),
 						),
 						'breadcrumb_typography'       => array(
 							'type'    => 'typography',

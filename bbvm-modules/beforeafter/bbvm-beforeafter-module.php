@@ -67,6 +67,32 @@ FLBuilder::register_module(
 							'label'      => __( 'Separator Line Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.bbvm-horizontal-handle:before',
+										'property' => 'background-color',
+									),
+									array(
+										'selector' => '.bbvm-horizontal-handle:after',
+										'property' => 'background-color',
+									),
+									array(
+										'selector' => '.bbvm-vertical-handle:after',
+										'property' => 'background-color',
+									),
+									array(
+										'selector' => '.bbvm-vertical-handle:before',
+										'property' => 'background-color',
+									),
+									array(
+										'selector'  => '.circle',
+										'property'  => 'border-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'separator_background_color' => array(
 							'type'       => 'color',
@@ -74,12 +100,37 @@ FLBuilder::register_module(
 							'show_reset' => true,
 							'show_alpha' => true,
 							'default'    => 'transparent',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.circle',
+										'property'  => 'background-color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'separator_arrow_color'      => array(
 							'type'       => 'color',
 							'label'      => __( 'Separator Arrow Color', 'bb-vapor-modules-pro' ),
 							'show_reset' => true,
 							'default'    => 'FFFFFF',
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector'  => '.left-arrow',
+										'property'  => 'color',
+										'important' => true,
+									),
+									array(
+										'selector'  => '.right-arrow',
+										'property'  => 'color',
+										'important' => true,
+									),
+								),
+							),
 						),
 						'separator_style'            => array(
 							'type'    => 'select',
@@ -118,17 +169,38 @@ FLBuilder::register_module(
 							'type'    => 'text',
 							'label'   => __( 'Before Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'Before', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.text-before',
+							),
 						),
 						'after_text'             => array(
 							'type'    => 'text',
 							'label'   => __( 'After Text', 'bb-vapor-modules-pro' ),
 							'default' => __( 'After', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'     => 'text',
+								'selector' => '.text-after',
+							),
 						),
 						'text_color'             => array(
 							'type'       => 'color',
 							'label'      => __( 'Text Color', 'bb-vapor-modules-pro' ),
 							'default'    => '000000',
 							'show_reset' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.text-after',
+										'property' => 'color',
+									),
+									array(
+										'selector' => '.text-before',
+										'property' => 'color',
+									),
+								),
+							),
 						),
 						'background_color'       => array(
 							'type'       => 'color',
@@ -136,10 +208,34 @@ FLBuilder::register_module(
 							'default'    => 'FFFFFF',
 							'show_reset' => true,
 							'show_alpha' => true,
+							'preview'    => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.text-after',
+										'property' => 'background-color',
+									),
+									array(
+										'selector' => '.text-before',
+										'property' => 'background-color',
+									),
+								),
+							),
 						),
 						'typography'             => array(
-							'type'  => 'typography',
-							'label' => __( 'Text Typography', 'bb-vapor-modules-pro' ),
+							'type'    => 'typography',
+							'label'   => __( 'Text Typography', 'bb-vapor-modules-pro' ),
+							'preview' => array(
+								'type'  => 'css',
+								'rules' => array(
+									array(
+										'selector' => '.text-after',
+									),
+									array(
+										'selector' => '.text-before',
+									),
+								),
+							),
 						),
 					),
 				),
