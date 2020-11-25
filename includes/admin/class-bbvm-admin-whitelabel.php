@@ -79,19 +79,19 @@ class BBVM_Admin_Whitelabel {
 						</tr>
 						<tr>
 							<th scope="row"><label for="bbvm-admin-label"><?php esc_html_e( 'Admin label', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td><input type="text" class="regular-text" id="bbvm-admin-label" value="<?php echo isset( $whitelabel['admin_label'] ) ? esc_attr( $whitelabel['admin_label'] ) : 'Vapor Modules for Beaver Builder'; ?>" name="whitelabel[admin_label]" placeholder="Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the admin label.', 'bb-vapor-modules-pro' ); ?></p></td>
+							<td><input type="text" class="regular-text" id="bbvm-admin-label" value="<?php echo isset( $whitelabel['admin_label'] ) ? esc_attr( $whitelabel['admin_label'] ) : 'Vapor Modules'; ?>" name="whitelabel[admin_label]" placeholder="Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the admin label.', 'bb-vapor-modules-pro' ); ?></p></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="bbvm-admin-welcome"><?php esc_html_e( 'Welcome Label', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td><input type="text" class="regular-text" id="bbvm-admin-welcome" value="<?php echo isset( $whitelabel['welcome_label'] ) ? esc_attr( $whitelabel['welcome_label'] ) : 'Welcome to BB Vapor Modules for Beaver Builder'; ?>" name="whitelabel[welcome_label]" placeholder="Welcome to BB Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the welcome label on the Welcome tab.', 'bb-vapor-modules-pro' ); ?></p></td>
+							<td><input type="text" class="regular-text"menu id="bbvm-admin-welcome" value="<?php echo isset( $whitelabel['welcome_label'] ) ? esc_attr( $whitelabel['welcome_label'] ) : 'Vapor Modules'; ?>" name="whitelabel[welcome_label]" placeholder="Welcome to BB Vapor Modules for Beaver Builder" /><p class="description"><?php esc_html_e( 'This will replace the welcome label on the Welcome tab.', 'bb-vapor-modules-pro' ); ?></p></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="bbvm-admin-menu-title"><?php esc_html_e( 'Menu Title', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td><input type="text" class="regular-text" id="bbvm-admin-menu-title" value="<?php echo isset( $whitelabel['menu_title'] ) ? esc_attr( $whitelabel['menu_title'] ) : 'Vapor Modules'; ?>" name="whitelabel[menu_title]" placeholder="Vapor Modules" /><p class="description"><?php esc_html_e( 'This will replace the menu label that shows up in the Settings section.', 'bb-vapor-modules-pro' ); ?></p></td>
+							<td><input type="text" class="regular-text" id="bbvm-admin-menu-title" value="<?php echo isset( $whitelabel['menu_title'] ) ? esc_attr( $whitelabel['menu_title'] ) : 'Vapor'; ?>" name="whitelabel[menu_title]" placeholder="Vapor" /><p class="description"><?php esc_html_e( 'This will replace the menu label that shows up in the Settings section.', 'bb-vapor-modules-pro' ); ?></p></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="bbvm-plugin-name"><?php esc_html_e( 'Plugin Name', 'bb-vapor-modules-pro' ); ?></label></th>
-							<td><input type="text" class="regular-text" id="bbvm-plugin-name" value="<?php echo isset( $whitelabel['plugin_name'] ) ? esc_attr( $whitelabel['plugin_name'] ) : 'BB Vapor Modules Pro'; ?>" name="whitelabel[plugin_name]" placeholder="BB Vapor Modules Pro" /><p class="description"><?php esc_html_e( 'This will replace the plugin name.', 'bb-vapor-modules-pro' ); ?></p></td>
+							<td><input type="text" class="regular-text" id="bbvm-plugin-name" value="<?php echo isset( $whitelabel['plugin_name'] ) ? esc_attr( $whitelabel['plugin_name'] ) : 'Vapor Modules'; ?>" name="whitelabel[plugin_name]" placeholder="Vapor Modules" /><p class="description"><?php esc_html_e( 'This will replace the plugin name.', 'bb-vapor-modules-pro' ); ?></p></td>
 						</tr>
 						<tr>
 							<th scope="row"><label for="bbvm-plugin-author"><?php esc_html_e( 'Plugin Author', 'bb-vapor-modules-pro' ); ?></label></th>

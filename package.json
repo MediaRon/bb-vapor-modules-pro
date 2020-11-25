@@ -1,7 +1,7 @@
 {
 	"name": "vapor-modules",
-	"version": "4.0.0",
-	"description": "Vapor Modules",
+	"version": "1.0.0",
+	"description": "Free Beaver Builder Modules",
 	"main": "index.js",
 	"scripts": {
 		"watch": "webpack --watch",
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/mediaron"
+		"url": "git+https://github.com/mediaron/bb-vapor-modules-pro"
 	},
 	"author": "MediaRon LLC",
 	"license": "GPL-3.0-or-later",
