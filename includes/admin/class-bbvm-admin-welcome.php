@@ -31,6 +31,9 @@ class BBVM_Admin_Welcome {
 	public function output() {
 		if ( isset( $_POST['submit'] ) && isset( $_POST['modules'] ) ) {
 			check_admin_referer( 'save_bbvm_beaver_builder_options' );
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 			$module_options = array();
 			foreach ( filter_input( INPUT_POST, 'modules', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY ) as $key => $module ) {
 				$module_options[ $key ] = $module;
@@ -42,9 +45,7 @@ class BBVM_Admin_Welcome {
 		}
 		?>
 		<div id="tab-welcome" class="tab-content">
-			<div><img style="max-width: 200px;" src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" alt="BB Vapor Modules Pro" /></div>
-			<h2><?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_welcome', esc_html__( 'Welcome to BB Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h2>
-			<h3><?php esc_html_e( 'Disable/Enable Modules', 'bb-vapor-modules-pro' ); ?></h3>
+			<h2><?php esc_html_e( 'Disable/Enable Modules', 'bb-vapor-modules-pro' ); ?></h2>
 			<?php
 			$options = get_option( 'bbvm_modules' );
 			$modules = BBVapor_BeaverBuilder_Admin::modules();
@@ -63,8 +64,8 @@ class BBVM_Admin_Welcome {
 				?>
 			">
 			<p>
-				<input type="radio" name="bbvm-options-toggle" id="toggle-on" /> <label for="toggle-on"><?php esc_html_e( 'Toggle All On', 'bb-vapor-modules-pro' ); ?></label><br />
-				<input type="radio" name="bbvm-options-toggle" id="toggle-off" /> <label for="toggle-off"><?php esc_html_e( 'Toggle All Off', 'bb-vapor-modules-pro' ); ?></label>
+				<input type="radio" name="bbvm-options-toggle" id="bbvm-toggle-on" /> <label for="bbvm-toggle-on"><?php esc_html_e( 'Toggle All On', 'bb-vapor-modules-pro' ); ?></label><br />
+				<input type="radio" name="bbvm-options-toggle" id="bbvm-toggle-off" /> <label for="bbvm-toggle-off"><?php esc_html_e( 'Toggle All Off', 'bb-vapor-modules-pro' ); ?></label>
 			</p>
 			<?php
 			wp_nonce_field( 'save_bbvm_beaver_builder_options' );
