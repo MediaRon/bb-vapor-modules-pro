@@ -233,7 +233,6 @@ class BBVapor_BeaverBuilder_Admin {
 					<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
 					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
 					<?php endif; ?>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show <?php echo 'tab-instagram' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-instagram" style="">Instagram</a>
 					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-tomtom' ) ); ?>" class="nav-tab show <?php echo 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-tomtom" style="">TomTom</a>
 				</h2>
 			</div>
@@ -252,11 +251,6 @@ class BBVapor_BeaverBuilder_Admin {
 				require_once 'admin/class-bbvm-admin-whitelabel.php';
 				$whitelabel = new BBVM_Admin_Whitelabel();
 				$whitelabel->output();
-			}
-			if ( 'tab-instagram' === filter_input( INPUT_GET, 'tab' ) ) {
-				require_once 'admin/class-bbvm-admin-instagram.php';
-				$instagram = new BBVM_Admin_Instagram();
-				$instagram->output();
 			}
 			if ( 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ) {
 				require_once 'admin/class-bbvm-admin-tomtom.php';

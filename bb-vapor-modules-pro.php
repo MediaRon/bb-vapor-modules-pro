@@ -1,9 +1,9 @@
 <?php // phpcs:ignoreline
 /**
- * Plugin Name: BB Vapor Modules Pro
+ * Plugin Name: Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 2.2.1
+ * Version: 3.0.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -11,7 +11,7 @@
  * Text Domain: bb-vapor-modules-pro
  * Domain Path: /languages
  */
-define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
+define( 'BBVAPOR_PRO_PLUGIN_NAME', 'Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.1' );
@@ -560,18 +560,6 @@ class BBVapor_Modules_Pro {
 						new BBVapor_Soliloquy_Dynamic_Module();
 					}
 				}
-			}
-
-			// Instagram.
-			if ( $this->is_module_enabled( $module_options, 'instagram' ) ) {
-				require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
-				new BBVapor_Instagram_Module();
-			}
-
-			// Instagram Slideshow.
-			if ( $this->is_module_enabled( $module_options, 'instagram-slideshow' ) ) {
-				require_once 'bbvm-modules/instagram-slideshow/bbvm-instagram-slideshow.php';
-				new BBVapor_Instagram_Slideshow();
 			}
 
 			// Featured Category.
