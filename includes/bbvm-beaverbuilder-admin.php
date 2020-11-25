@@ -27,7 +27,7 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @static
 	 * @var string $slug
 	 */
-	private static $slug = 'bb-vapor-modules-pro';
+	private static $slug = 'vapor-modules';
 
 	/**
 	 * Holds the URL to the admin panel page
@@ -115,10 +115,11 @@ class BBVapor_BeaverBuilder_Admin {
 		$hook = add_submenu_page(
 			'options-general.php',
 			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
-			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
+			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 			'manage_options',
-			'bb-vapor-modules-pro',
-			array( $this, 'admin_page' )
+			'vapor-modules',
+			array( $this, 'admin_page' ),
+			7
 		);
 		add_action( 'load-' . $hook, array( $this, 'add_admin_scripts' ) );
 	}
