@@ -55,7 +55,7 @@ class BBVM_Admin_Welcome {
 				echo esc_url(
 					add_query_arg(
 						array(
-							'page' => 'bb-vapor-modules-pro',
+							'page' => 'vapor-modules',
 							'tab'  => 'tab-welcome',
 						),
 						admin_url( 'options-general.php' )

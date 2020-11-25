@@ -96,7 +96,7 @@ class BBVapor_BeaverBuilder_Admin {
 	public function after_plugin_row( $plugin_file, $plugin_data, $status ) {
 		$license        = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		$license_status = get_site_option( 'bbvm_for_beaver_builder_license_status', false );
-		$options_url    = add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) );
+		$options_url    = add_query_arg( array( 'page' => 'vapor-modules' ), admin_url( 'options-general.php' ) );
 		if ( empty( $license ) || false === $license_status ) {
 			echo sprintf( '<tr class="active"><td colspan="3">%s <a href="%s">%s</a></td></tr>', esc_html__( 'Please enter a license to receive automatic updates.', 'bb-vapor-modules-pro' ), esc_url( $options_url ), esc_html__( 'Enter License.', 'bb-vapor-modules-pro' ) );
 		}
@@ -252,12 +252,12 @@ class BBVapor_BeaverBuilder_Admin {
 			</div>
 			<div id="prompt-tabs">
 				<h2 class="nav-tab-wrapper">
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show <?php echo 'tab-license' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-license" style="">License</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-license' ) ); ?>" class="nav-tab show <?php echo 'tab-license' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-license" style="">License</a>
 					<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
 					<?php endif; ?>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-tomtom' ) ); ?>" class="nav-tab show <?php echo 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-tomtom" style="">TomTom</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-tomtom' ) ); ?>" class="nav-tab show <?php echo 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-tomtom" style="">TomTom</a>
 				</h2>
 			</div>
 			<?php
