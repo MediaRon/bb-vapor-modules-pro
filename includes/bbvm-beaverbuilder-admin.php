@@ -246,8 +246,9 @@ class BBVapor_BeaverBuilder_Admin {
 	public function admin_page() {
 		?>
 		<div class="wrap">
-			<h1><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo_small', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ) ); ?>" height="20" width="20" alt="BB Vapor Modules Pro" />&nbsp;<?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_label', __( 'Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h1>
-
+			<div id="bbvm-logo-wrap">
+				<h1><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo_small', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" height="115" width="515" alt="Vapor Modules" /></h1>
+			</div>
 			<div id="prompt-tabs">
 				<h2 class="nav-tab-wrapper">
 					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
