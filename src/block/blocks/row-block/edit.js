@@ -122,25 +122,24 @@ class BB_Vapor_Row_Block extends Component {
 			<Fragment>
 				{this.state.loading &&
 				<Fragment>
-					<Placeholder>
-						<div>
+					<div className="vapor-block-placeholder">
+						<div className="vapor-spinner">
 							<Spinner />
 						</div>
-					</Placeholder>
+					</div>
 				</Fragment>
 				}
-				{!this.state.loading && '' === row &&
+				{!this.state.loading &&
 					<Fragment>
-						{ inspectorControls }
-						<Placeholder>
-							{__('Select a Row', 'bb-vapor-modules-pro')}
-						</Placeholder>
-					</Fragment>
-				}
-				{!this.state.loading && '' !== row &&
-					<Fragment>
-						{ inspectorControls }
-						{htmlToReactParser.parse(html)}
+						<div className="vapor-block-placeholder">
+							<h3>{__('Vapor Rows', 'bb-vapor-modules-pro')}</h3>
+							<SelectControl
+									label={ __( 'Saved Rows', 'bb-vapor-modules-pro' ) }
+									options={ savedRowsArray }
+									value={ row }
+									onChange={ ( value ) => { setAttributes( { row: value } ); } }
+							/>
+						</div>
 					</Fragment>
 				}
 			</Fragment>

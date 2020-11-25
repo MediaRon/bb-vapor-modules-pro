@@ -41,6 +41,7 @@ class BBVM_Row_Block {
 			array(
 				'methods'  => 'POST',
 				'callback' => array( $this, 'get_saved_rows' ),
+				'permissions_callback' => '__return_true',
 			)
 		);
 		register_rest_route(
@@ -49,6 +50,7 @@ class BBVM_Row_Block {
 			array(
 				'methods'  => 'POST',
 				'callback' => array( $this, 'get_row_content' ),
+				'permissions_callback' => '__return_true',
 			)
 		);
 	}
@@ -75,6 +77,14 @@ class BBVM_Row_Block {
 				'rest_nonce' => wp_create_nonce( 'wp_rest' ),
 			)
 		);
+		wp_register_style(
+			'bbvapor-editor-script',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'dist/blocks.editor.build.css',
+			array(),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			'all'
+		);
+
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations( 'bbvapor-row-block', 'bb-vapor-modules-pro' );
 		}
@@ -97,6 +107,7 @@ class BBVM_Row_Block {
 				),
 				'render_callback' => array( $this, 'frontend' ),
 				'editor_script'   => 'bbvapor-row-block',
+				'editor_style'    => 'bbvapor-editor-script',
 			)
 		);
 	}

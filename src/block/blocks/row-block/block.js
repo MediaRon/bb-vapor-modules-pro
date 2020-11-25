@@ -31,7 +31,9 @@ registerBlockType('bbvapor/row-block', {
 		__('vapor', 'bb-vapor-modules-pro'),
 	],
 	supports: {
-		align: true,
+		align: false,
+		classname: true,
+		anchor: true,
 	},
 	edit: edit,
 	save() {
