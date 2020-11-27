@@ -162,7 +162,7 @@ if ( ! function_exists( 'bbvapor_modules_beaver_builder_social_include_svg' ) ) 
 	 */
 	function bbvapor_modules_beaver_builder_social_include_svg() {
 		// Define SVG sprite file.
-		$path = BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/social-media-icons/includes/social-logos.svg';
+		$path = BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/social-media-icons/includes/social-logos.svg';
 
 		/**
 		 * Filter Social Icons Sprite.

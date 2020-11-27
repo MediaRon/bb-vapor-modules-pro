@@ -10,7 +10,7 @@ class BBVapor_Plugin_Info_card extends FLBuilderModule {
 				'description'     => __( 'Plugin Info Card module for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/plugin-info-card/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/plugin-info-card/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/plugin-info-card/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

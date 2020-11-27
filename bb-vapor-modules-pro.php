@@ -870,7 +870,7 @@ class BBVapor_Modules_Pro {
 	public function bbvm_beaver_builder_plugin_loaded() {
 		add_filter( 'bbvapor_load', '__return_false' );
 
-		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 20 );
+		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 2 );
 
 		add_action( 'wp_head', array( $this, 'maybe_include_calendly' ) );
 

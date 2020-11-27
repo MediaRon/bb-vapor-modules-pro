@@ -10,7 +10,7 @@ class BBVapor_Jetpack_Sharing_Module extends FLBuilderModule {
 				'description'     => __( 'Jetpack Sharing Icons for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/jetpack-sharing/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/jetpack-sharing/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/jetpack-sharing/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.
