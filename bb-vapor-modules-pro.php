@@ -1,9 +1,9 @@
 <?php // phpcs:ignoreline
 /**
- * Plugin Name: BB Vapor Modules Pro
+ * Plugin Name: Vapor Modules Pro
  * Plugin URI: https://bbvapormodules.com
  * Description: A growing selection of modules for Beaver Builder.
- * Version: 2.2.1
+ * Version: 3.0.0
  * Author: Ronald Huereca
  * Author URI: https://mediaron.com
  * Requires at least: 5.0
@@ -11,10 +11,10 @@
  * Text Domain: bb-vapor-modules-pro
  * Domain Path: /languages
  */
-define( 'BBVAPOR_PRO_PLUGIN_NAME', 'BB Vapor Modules Pro' );
+define( 'BBVAPOR_PRO_PLUGIN_NAME', 'Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.1' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '3.0.0' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -128,6 +128,8 @@ class BBVapor_Modules_Pro {
 		// Register Module Scripts.
 		add_action( 'wp_head', array( $this, 'render_scripts' ) );
 
+		add_filter( 'block_categories', array( $this, 'block_category' ), 10, 2 );
+
 		// Register admin panel.
 		require_once 'includes/bbvm-beaverbuilder-admin.php';
 		new BBVapor_BeaverBuilder_Admin();
@@ -154,6 +156,11 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'basic-breadcrumbs-module' ) ) {
 				require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
 				new BBVapor_Breadcrumbs_Module();
+			}
+
+			if ( $this->is_module_enabled( $module_options, 'gutenberg-block' ) ) {
+				require_once 'bbvm-modules/gutenberg-block/bbvm-gutenberg-block.php';
+				new BBVapor_Gutenberg_Module();
 			}
 
 			// LearnDash modules.
@@ -560,18 +567,6 @@ class BBVapor_Modules_Pro {
 				}
 			}
 
-			// Instagram.
-			if ( $this->is_module_enabled( $module_options, 'instagram' ) ) {
-				require_once 'bbvm-modules/instagram/bbvm-instagram-module.php';
-				new BBVapor_Instagram_Module();
-			}
-
-			// Instagram Slideshow.
-			if ( $this->is_module_enabled( $module_options, 'instagram-slideshow' ) ) {
-				require_once 'bbvm-modules/instagram-slideshow/bbvm-instagram-slideshow.php';
-				new BBVapor_Instagram_Slideshow();
-			}
-
 			// Featured Category.
 			if ( $this->is_module_enabled( $module_options, 'featured-category' ) ) {
 				require_once 'bbvm-modules/featured-category/bbvm-featured-category.php';
@@ -618,6 +613,24 @@ class BBVapor_Modules_Pro {
 
 			add_shortcode( 'bbvm_bb_copyright', array( $this, 'bbvm_beaver_builder_copyright' ) );
 		}
+	}
+
+	/**
+	 * Add Gutenberg block category
+	 *
+	 * @param array  $categories Existing categories.
+	 * @param object $post The post object.
+	 */
+	public function block_category( $categories, $post ) {
+		return array_merge(
+			$categories,
+			array(
+				array(
+					'slug'  => 'vapor',
+					'title' => __( 'Vapor', 'bb-vapor-modules-pro' ),
+				),
+			)
+		);
 	}
 
 	/**
@@ -862,7 +875,7 @@ class BBVapor_Modules_Pro {
 	public function bbvm_beaver_builder_plugin_loaded() {
 		add_filter( 'bbvapor_load', '__return_false' );
 
-		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 20 );
+		add_action( 'init', array( $this, 'bbvm_beaver_builder_module_init' ), 2 );
 
 		add_action( 'wp_head', array( $this, 'maybe_include_calendly' ) );
 

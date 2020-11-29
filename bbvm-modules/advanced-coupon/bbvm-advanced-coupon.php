@@ -10,7 +10,7 @@ class BBVapor_Advanced_Coupon extends FLBuilderModule {
 				'description'     => __( 'Advanced Coupon', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Base', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/advanced-coupon/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/advanced-coupon/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/advanced-coupon/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

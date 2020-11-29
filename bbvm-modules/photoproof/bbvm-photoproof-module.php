@@ -10,7 +10,7 @@ class BBVapor_Photoproof_Module extends FLBuilderModule {
 				'description'     => __( 'Photoproof for Beaver Builder', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'External Plugins', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/photoproof/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/photoproof/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/photoproof/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

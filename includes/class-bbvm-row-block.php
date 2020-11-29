@@ -41,14 +41,16 @@ class BBVM_Row_Block {
 			array(
 				'methods'  => 'POST',
 				'callback' => array( $this, 'get_saved_rows' ),
+				'permissions_callback' => '__return_true',
 			)
 		);
 		register_rest_route(
 			'bbvapor/v1',
-			'/get_row_content/',
+			'/get_modules/',
 			array(
 				'methods'  => 'POST',
-				'callback' => array( $this, 'get_row_content' ),
+				'callback' => array( $this, 'get_saved_modules' ),
+				'permissions_callback' => '__return_true',
 			)
 		);
 	}
@@ -75,6 +77,14 @@ class BBVM_Row_Block {
 				'rest_nonce' => wp_create_nonce( 'wp_rest' ),
 			)
 		);
+		wp_register_style(
+			'bbvapor-editor-script',
+			BBVAPOR_PRO_BEAVER_BUILDER_URL . 'dist/blocks.editor.build.css',
+			array(),
+			BBVAPOR_PRO_BEAVER_BUILDER_VERSION,
+			'all'
+		);
+
 		if ( function_exists( 'wp_set_script_translations' ) ) {
 			wp_set_script_translations( 'bbvapor-row-block', 'bb-vapor-modules-pro' );
 		}
@@ -97,6 +107,26 @@ class BBVM_Row_Block {
 				),
 				'render_callback' => array( $this, 'frontend' ),
 				'editor_script'   => 'bbvapor-row-block',
+				'editor_style'    => 'bbvapor-editor-script',
+			)
+		);
+
+		register_block_type(
+			'bbvapor/module-block',
+			array(
+				'attributes'      => array(
+					'row'   => array(
+						'type'    => 'string',
+						'default' => '',
+					),
+					'align' => array(
+						'type'    => 'string',
+						'default' => 'full',
+					),
+				),
+				'render_callback' => array( $this, 'frontend' ),
+				'editor_script'   => 'bbvapor-row-block',
+				'editor_style'    => 'bbvapor-editor-script',
 			)
 		);
 	}
@@ -117,6 +147,34 @@ class BBVM_Row_Block {
 							'taxonomy' => 'fl-builder-template-type',
 							'field'    => 'slug',
 							'terms'    => 'row',
+						),
+					),
+					'orderby'        => 'name',
+					'order'          => 'ASC',
+				)
+			);
+			return $posts;
+		} else {
+			return new \WP_Error( 'vapor_invalid_permissions', __( 'You do not have the correct permissions to edit this post.', 'bb-vapor-modules-pro' ), array( 'status' => 403 ) );
+		}
+	}
+
+	/**
+	 * Returns a list of saved rows from Beaver Builder.
+	 */
+	public function get_saved_modules() {
+		if ( current_user_can( 'edit_posts' ) ) {
+			// Get BB Rows.
+			$posts = get_posts(
+				array(
+					'post_type'      => 'fl-builder-template',
+					'post_status'    => 'publish',
+					'posts_per_page' => 100,
+					'tax_query'      => array( // phpcs:ignore
+						array(
+							'taxonomy' => 'fl-builder-template-type',
+							'field'    => 'slug',
+							'terms'    => 'module',
 						),
 					),
 					'orderby'        => 'name',

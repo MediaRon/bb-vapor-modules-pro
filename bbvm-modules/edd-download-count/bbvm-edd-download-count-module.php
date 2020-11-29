@@ -10,7 +10,7 @@ class BBVapor_EDD_Download_Count_Module extends FLBuilderModule {
 				'description'     => __( 'EDD Download Count', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'EDD', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/edd-download-count/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/edd-download-count/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/edd-download-count/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

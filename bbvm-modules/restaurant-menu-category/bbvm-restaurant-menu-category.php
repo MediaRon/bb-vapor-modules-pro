@@ -10,7 +10,7 @@ class BBVapor_Restaurant_Menu_Category extends FLBuilderModule {
 				'description'     => __( 'Add menu category for a restaurant', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Restaurant', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/restaurant-menu-category/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/restaurant-menu-category/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/restaurant-menu-category/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

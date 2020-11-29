@@ -15,18 +15,41 @@ import edit from './edit';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType('bbvapor/row-block', {
-	title: __('Vapor Row', 'bb-vapor-modules-pro'), // Block title.
+registerBlockType('bbvapor/module-block', {
+	title: __('Vapor Module', 'bb-vapor-modules-pro'), // Block title.
 	icon: {
 		src: (
-			<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="grip-horizontal" class="svg-inline--fa fa-grip-horizontal fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><g class="fa-group"><path class="fa-secondary" fill="#b01b1b" d="M96 288H32a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zm160 0h-64a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zm160 0h-64a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32z" opacity="0.5"></path><path class="fa-primary" fill="#b01b1b" d="M416 96h-64a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zM96 96H32a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32zm160 0h-64a32 32 0 0 0-32 32v64a32 32 0 0 0 32 32h64a32 32 0 0 0 32-32v-64a32 32 0 0 0-32-32z"></path></g></svg>
+			<svg
+				aria-hidden='true'
+				focusable='false'
+				data-prefix='fad'
+				data-icon='box'
+				class='svg-inline--fa fa-box fa-w-16'
+				role='img'
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 512 512'
+			>
+				<g class='fa-group'>
+					<path
+						class='fa-secondary'
+						fill='#b01b1b'
+						d='M512 224v240a48 48 0 0 1-48 48H48a48 48 0 0 1-48-48V224z'
+						opacity='0.4'
+					></path>
+					<path
+						class='fa-primary'
+						fill='#b01b1b'
+						d='M53.1 32.8L2.5 184.6c-.8 2.4-.8 4.9-1.2 7.4H240V0H98.6a47.87 47.87 0 0 0-45.5 32.8zm456.4 151.8L458.9 32.8A47.87 47.87 0 0 0 413.4 0H272v192h238.7c-.4-2.5-.4-5-1.2-7.4z'
+					></path>
+				</g>
+			</svg>
 		),
 	},
 	category: 'vapor',
 	keywords: [
 		__('beaver builder', 'bb-vapor-modules-pro'),
-		__('row block', 'bb-vapor-modules-pro'),
-		__('row', 'bb-vapor-modules-pro'),
+		__('module block', 'bb-vapor-modules-pro'),
+		__('module', 'bb-vapor-modules-pro'),
 		__('beaver', 'bb-vapor-modules-pro'),
 		__('vapor', 'bb-vapor-modules-pro'),
 	],

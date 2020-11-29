@@ -10,7 +10,7 @@ class BBVapor_Category_Grid_Module extends FLBuilderModule {
 				'description' => __( 'Category Grid', 'bb-vapor-modules-pro' ),
 				'category'    => __( 'Base', 'bb-vapor-modules-pro' ),
 				'group'       => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'         => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/category-grid/',
+				'dir'         => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/category-grid/',
 				'url'         => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/category-grid/',
 			)
 		);

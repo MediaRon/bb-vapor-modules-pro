@@ -114,7 +114,7 @@ class BBVM_Admin_License {
 			echo esc_url(
 				add_query_arg(
 					array(
-						'page' => 'bb-vapor-modules-pro',
+						'page' => 'vapor-modules',
 						'tab'  => 'tab-license',
 					),
 					admin_url( 'options-general.php' )

@@ -44,7 +44,7 @@ class BBVM_Admin_TomTom {
 			echo esc_url(
 				add_query_arg(
 					array(
-						'page' => 'bb-vapor-modules-pro',
+						'page' => 'vapor-modules',
 						'tab'  => 'tab-tomtom',
 					),
 					admin_url( 'options-general.php' )

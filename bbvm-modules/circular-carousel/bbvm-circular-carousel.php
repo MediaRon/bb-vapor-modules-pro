@@ -13,7 +13,7 @@ class BBVapor_Circular_Carousel extends FLBuilderModule {
 				'description'     => __( 'Add a circular carousel', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'Carousels and Sliders', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/circular-carousel/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/circular-carousel/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/circular-carousel/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.

@@ -31,7 +31,7 @@ const {
 } = wp.blockEditor;
 
 
-class BB_Vapor_Row_Block extends Component {
+class BB_Vapor_Module_Block extends Component {
 
 	constructor() {
 
@@ -47,7 +47,7 @@ class BB_Vapor_Row_Block extends Component {
 
 	getSavedRows = () => {
 		const refThis = this;
-		axios.post(bb_vapor.rest_url + `bbvapor/v1/get_rows/`, {}, { 'headers': { 'X-WP-Nonce': bb_vapor.rest_nonce } } ).then( (response) => {
+		axios.post(bb_vapor.rest_url + `bbvapor/v1/get_modules/`, {}, { 'headers': { 'X-WP-Nonce': bb_vapor.rest_nonce } } ).then( (response) => {
 			this.setState(
 				{
 					loading: false,
@@ -64,31 +64,6 @@ class BB_Vapor_Row_Block extends Component {
 		});
 	}
 
-	getRowContent = ( rowId ) => {
-		this.setState(
-			{
-				loading: true,
-			}
-		);
-		const refThis = this;
-		axios.post(bb_vapor.rest_url + `bbvapor/v1/get_row_content/`, { id: rowId }, { 'headers': { 'X-WP-Nonce': bb_vapor.rest_nonce } } ).then( (response) => {
-			refThis.props.attributes.html = response.data;
-			refThis.setState(
-				{
-					loading: false,
-					html: response.data,
-				}
-			);
-		})
-		.catch(function (error) {
-			refThis.setState(
-				{
-					loading: false,
-				}
-			);
-		});
-	}
-
 	componentDidMount = () => {
 		this.getSavedRows();
 	}
@@ -99,20 +74,20 @@ class BB_Vapor_Row_Block extends Component {
 		const htmlToReactParser = new HtmlToReactParser();
 
 		let savedRows = this.state.posts;
-		let savedRowsArray = [ { value: 0, label: __('Select a Row', 'bb-vapor-modules-pro' )}];
+		let savedRowsArray = [ { value: 0, label: __('Select a Module', 'bb-vapor-modules-pro' )}];
 		for (var key in savedRows) {
 			savedRowsArray.push({value: savedRows[key].ID, label: savedRows[key].post_title});
 		};
 
 		const inspectorControls = (
 			<InspectorControls>
-				<PanelBody title={ __( 'Saved Rows', 'bb-vapor-modules-pro' ) }>
+				<PanelBody title={ __( 'Saved Modules', 'bb-vapor-modules-pro' ) }>
 
 					<SelectControl
-							label={ __( 'Saved Rows', 'bb-vapor-modules-pro' ) }
+							label={ __( 'Saved Modules', 'bb-vapor-modules-pro' ) }
 							options={ savedRowsArray }
 							value={ row }
-							onChange={ ( value ) => { setAttributes( { row: value } ); this.getRowContent(value); } }
+							onChange={ ( value ) => { setAttributes( { row: value } );} }
 					/>
 				</PanelBody>
 			</InspectorControls>
@@ -133,7 +108,7 @@ class BB_Vapor_Row_Block extends Component {
 					<Fragment>
 						<div className="vapor-block-placeholder">
 							<SelectControl
-									label={ __( 'Saved Rows', 'bb-vapor-modules-pro' ) }
+									label={ __( 'Saved Modules', 'bb-vapor-modules-pro' ) }
 									options={ savedRowsArray }
 									value={ row }
 									onChange={ ( value ) => { setAttributes( { row: value } ); } }
@@ -151,4 +126,4 @@ export default withSelect(select => {
 	return {
 		post: getCurrentPost(),
 	};
-})(BB_Vapor_Row_Block);
+})(BB_Vapor_Module_Block);

@@ -20,6 +20,10 @@ class BBVM_Icons {
 	 */
 	public function register_icons() {
 
+		if ( ! class_exists( 'FLBuilderModel' ) ) {
+			return;
+		}
+
 		// Update initially.
 		$line_icons = get_option( 'bbvm_enabled_icons', 0 );
 

@@ -30,3 +30,7 @@ body .wrap h2.nav-tab-wrapper {
 	visibility: visible;
 	opacity: 1;
 }
+#bbvm-logo-wrap img { 
+	max-width: 300px;
+	height: auto;
+}

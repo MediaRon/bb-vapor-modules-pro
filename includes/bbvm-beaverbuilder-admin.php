@@ -27,7 +27,7 @@ class BBVapor_BeaverBuilder_Admin {
 	 * @static
 	 * @var string $slug
 	 */
-	private static $slug = 'bb-vapor-modules-pro';
+	private static $slug = 'vapor-modules';
 
 	/**
 	 * Holds the URL to the admin panel page
@@ -96,7 +96,7 @@ class BBVapor_BeaverBuilder_Admin {
 	public function after_plugin_row( $plugin_file, $plugin_data, $status ) {
 		$license        = get_site_option( 'bbvm_for_beaver_builder_license', '' );
 		$license_status = get_site_option( 'bbvm_for_beaver_builder_license_status', false );
-		$options_url    = add_query_arg( array( 'page' => 'bb-vapor-modules-pro' ), admin_url( 'options-general.php' ) );
+		$options_url    = add_query_arg( array( 'page' => 'vapor-modules' ), admin_url( 'options-general.php' ) );
 		if ( empty( $license ) || false === $license_status ) {
 			echo sprintf( '<tr class="active"><td colspan="3">%s <a href="%s">%s</a></td></tr>', esc_html__( 'Please enter a license to receive automatic updates.', 'bb-vapor-modules-pro' ), esc_url( $options_url ), esc_html__( 'Enter License.', 'bb-vapor-modules-pro' ) );
 		}
@@ -115,10 +115,11 @@ class BBVapor_BeaverBuilder_Admin {
 		$hook = add_submenu_page(
 			'options-general.php',
 			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
-			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor Modules', 'bb-vapor-modules-pro' ) ),
+			apply_filters( 'bbvm_whitelabel_menu_name', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
 			'manage_options',
-			'bb-vapor-modules-pro',
-			array( $this, 'admin_page' )
+			'vapor-modules',
+			array( $this, 'admin_page' ),
+			7
 		);
 		add_action( 'load-' . $hook, array( $this, 'add_admin_scripts' ) );
 	}
@@ -166,6 +167,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'card'                          => 'Card',
 			'card-group'                    => 'Card Group',
 			'category-grid'                 => 'Category Grid',
+			'circular-carousel'             => 'Circular Carousel',
 			'content-scroller'              => 'Content Scroller',
 			'columns'                       => 'Columns',
 			'copyright'                     => 'Copyright',
@@ -174,19 +176,39 @@ class BBVapor_BeaverBuilder_Admin {
 			'emailoctopus'                  => 'EmailOctopus',
 			'faq'                           => 'FAQ',
 			'featured-category'             => 'Featured Category',
+			'featured-post'                 => 'Featured Post',
 			'gist'                          => 'Gists',
 			'gravatar'                      => 'Gravatar',
 			'gravityforms'                  => 'Gravity Forms',
+			'icon'                          => 'Icon',
 			'instagram'                     => 'Instagram',
 			'instagram-slideshow'           => 'Instagram Slideshow',
 			'intermediate-separator'        => 'Intermediate Separator',
 			'jetpack-related-posts'         => 'Jetpack Related Posts',
 			'jetpack-sharing'               => 'Jetpack Sharing',
+			'learndash-certificates'        => 'LearnDash Certificates',
+			'learndash-courses'             => 'LearnDash Courses',
+			'learndash-course-content'      => 'LearnDash Course Content',
+			'learndash-course-info'         => 'LearnDash Course Info',
+			'learndash-course-progress'     => 'LearnDash Course Progress',
+			'learndash-course-status'       => 'LearnDash Course Status',
+			'learndash-lessons'             => 'LearnDash Lessons',
+			'learndash-login'               => 'LearnDash Login',
+
+			'learndash-messages'            => 'LearnDash Messages',
+			'learndash-payments'            => 'LearnDash Payments',
+			'learndash-profile'             => 'LearnDash Profile',
+			'learndash-topics'              => 'LearnDash Topics',
+			'learndash-quizzes'             => 'LearnDash Quizzes',
+			'learndash-quiz'                => 'LearnDash Quiz',
+			'learndash-user-status'         => 'LearnDash User Status',
+			'learndash-user-points'         => 'LearnDash User Points',
 			'markdown'                      => 'Markdown',
 			'photo'                         => 'Photo',
 			'photo-overlay'                 => 'Photo Overlay',
 			'photo-overlay-advanced'        => 'Photo Overlay Advanced',
 			'photoproof'                    => 'Photoproof',
+			'plugin-info-card'              => 'Plugin Info Card',
 			'postselect'                    => 'Post Select',
 			'pricing-table'                 => 'Pricing Table',
 			'restaurant-menu-category'      => 'Restaurant Menu Category',
@@ -203,6 +225,7 @@ class BBVapor_BeaverBuilder_Admin {
 			'syntax-highlighter-native'     => 'Syntax Highlighter Native',
 			'testimonials'                  => 'Testimonials',
 			'timeline'                      => 'Timeline',
+			'tomtom'                        => 'TomTom',
 			'twitter-embed'                 => 'Twitter Embed',
 			'unordered-list'                => 'Unordered List',
 			'user-profile'                  => 'User Profile',
@@ -224,17 +247,17 @@ class BBVapor_BeaverBuilder_Admin {
 	public function admin_page() {
 		?>
 		<div class="wrap">
-			<h1><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo_small', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/favicon.png' ) ); ?>" height="20" width="20" alt="BB Vapor Modules Pro" />&nbsp;<?php echo esc_html( apply_filters( 'bbvm_whitelabel_admin_label', __( 'Vapor Modules for Beaver Builder', 'bb-vapor-modules-pro' ) ) ); ?></h1>
-
+			<div id="bbvm-logo-wrap">
+				<h1><img src="<?php echo esc_url( apply_filters( 'bbvm_whitelabel_logo_small', BBVAPOR_PRO_BEAVER_BUILDER_URL . 'img/logo.png' ) ); ?>" height="115" width="515" alt="Vapor Modules" /></h1>
+			</div>
 			<div id="prompt-tabs">
 				<h2 class="nav-tab-wrapper">
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-license' ) ); ?>" class="nav-tab show <?php echo 'tab-license' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-license" style="">License</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-welcome' ) ); ?>" class="nav-tab show <?php echo 'tab-welcome' === filter_input( INPUT_GET, 'tab' ) || ! filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-welcome" style="">Welcome</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-license' ) ); ?>" class="nav-tab show <?php echo 'tab-license' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-license" style="">License</a>
 					<?php if ( ! defined( 'BBVM_HIDE_WHITELABEL' ) ) : ?>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-whitelabel' ) ); ?>" class="nav-tab show <?php echo 'tab-whitelabel' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-whitelabel" style="">Whitelabel</a>
 					<?php endif; ?>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-instagram' ) ); ?>" class="nav-tab show <?php echo 'tab-instagram' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-instagram" style="">Instagram</a>
-					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=bb-vapor-modules-pro&tab=tab-tomtom' ) ); ?>" class="nav-tab show <?php echo 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-tomtom" style="">TomTom</a>
+					<a href="<?php echo esc_url( admin_url( 'options-general.php?page=vapor-modules&tab=tab-tomtom' ) ); ?>" class="nav-tab show <?php echo 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ? 'nav-tab-active' : ''; ?>" data-tab-name="tab-tomtom" style="">TomTom</a>
 				</h2>
 			</div>
 			<?php
@@ -252,11 +275,6 @@ class BBVapor_BeaverBuilder_Admin {
 				require_once 'admin/class-bbvm-admin-whitelabel.php';
 				$whitelabel = new BBVM_Admin_Whitelabel();
 				$whitelabel->output();
-			}
-			if ( 'tab-instagram' === filter_input( INPUT_GET, 'tab' ) ) {
-				require_once 'admin/class-bbvm-admin-instagram.php';
-				$instagram = new BBVM_Admin_Instagram();
-				$instagram->output();
 			}
 			if ( 'tab-tomtom' === filter_input( INPUT_GET, 'tab' ) ) {
 				require_once 'admin/class-bbvm-admin-tomtom.php';

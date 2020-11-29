@@ -10,7 +10,7 @@ class BBVapor_WooCommerce_Add_To_Cart_Module extends FLBuilderModule {
 				'description'     => __( 'Add Cart', 'bb-vapor-modules-pro' ),
 				'category'        => __( 'WooCommerce', 'bb-vapor-modules-pro' ),
 				'group'           => apply_filters( 'bbvm_whitelabel_category', __( 'Vapor', 'bb-vapor-modules-pro' ) ),
-				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . 'bbvm-modules/woocommerce-add-to-cart/',
+				'dir'             => BBVAPOR_PRO_BEAVER_BUILDER_DIR . '/bbvm-modules/woocommerce-add-to-cart/',
 				'url'             => BBVAPOR_PRO_BEAVER_BUILDER_URL . 'bbvm-modules/woocommerce-add-to-cart/',
 				'editor_export'   => true, // Defaults to true and can be omitted.
 				'enabled'         => true, // Defaults to true and can be omitted.
