@@ -1,13 +1,13 @@
 === Vapor Modules for Beaver Builder ===
 Tags: beaver builder, beaver builder modules, beaverbuilder
-Requires at least: 4.9
+Requires at least: 5.0
 Tested up to: 5.4.0
 Requires PHP: 5.6
-Stable tag: 2.2.1
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A growing list of Beaver Builder modules. WordPress 5.4 compatible.
+A growing list of Beaver Builder modules. WordPress 5.6 compatible.
 
 == Description ==
 
@@ -26,6 +26,11 @@ A growing list of Beaver Builder modules.
 Go to <a href="https://bbvapormodules.com/modules/">our modules section</a> to see a demonstration of all the modules.
 
 == Changelog ==
+
+= 3.0.0
+* Released 2020-11-29
+* Gutenberg blocks for saved rows/modules.
+* Module for inserting Reusable Gutenberg blocks.
 
 = 2.2.1 =
 * Released 2020-03-18
