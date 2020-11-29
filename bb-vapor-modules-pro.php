@@ -14,7 +14,7 @@
 define( 'BBVAPOR_PRO_PLUGIN_NAME', 'Vapor Modules Pro' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_URL', plugins_url( '/', __FILE__ ) );
-define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '2.2.1' );
+define( 'BBVAPOR_PRO_BEAVER_BUILDER_VERSION', '3.0.0' );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_SLUG', plugin_basename( __FILE__ ) );
 define( 'BBVAPOR_PRO_BEAVER_BUILDER_FILE', __FILE__ );
 
@@ -156,6 +156,11 @@ class BBVapor_Modules_Pro {
 			if ( $this->is_module_enabled( $module_options, 'basic-breadcrumbs-module' ) ) {
 				require_once 'bbvm-modules/basic-breadcrumbs-module/bbvm-breadcrumbs-module.php';
 				new BBVapor_Breadcrumbs_Module();
+			}
+
+			if ( $this->is_module_enabled( $module_options, 'gutenberg-block' ) ) {
+				require_once 'bbvm-modules/gutenberg-block/bbvm-gutenberg-block.php';
+				new BBVapor_Gutenberg_Module();
 			}
 
 			// LearnDash modules.
