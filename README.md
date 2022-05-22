@@ -1,7 +1,5 @@
 # BB Vapor Modules Pro
 
-[![Build Status](https://travis-ci.org/ronalfy/bb-vapor-modules-pro.svg?branch=dev)](https://travis-ci.org/ronalfy/bb-vapor-modules-pro)
+This plugin is no longer being updated or maintained. Thanks for trying us out while it was fun.
 
-## Purchase a License
-
-<a href="https://bbvapormodules.com">Purchase a license for updates and support</a>.
+Please check out the <a href="https://github.com/MediaRon/bb-vapor-modules-pro/releases/tag/3.0.0">3.0.0 release</a>.
